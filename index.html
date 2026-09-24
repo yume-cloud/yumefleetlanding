@@ -1,0 +1,345 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Yume Fleet — учёт таксопарка: водители, машины, долги и штрафы</title>
+<meta name="description" content="Yume Fleet: система учёта для таксопарков и аренды авто водителям. Долг по каждому водителю каждый день, оплата ссылкой Kaspi, штрафы ПДД сами находят водителя, договор через eGov без визита в офис.">
+<link rel="canonical" href="https://yumefleet.com/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Yume Fleet — учёт таксопарка: водители, машины, долги и штрафы">
+<meta property="og:description" content="Долг по каждому водителю каждый день, оплата ссылкой Kaspi, штрафы ПДД сами находят водителя, договор через eGov. Настройка за день.">
+<meta property="og:url" content="https://yumefleet.com/">
+<meta property="og:image" content="https://yumefleet.com/assets/img/og.png">
+<link rel="icon" href="assets/logo/favicon.svg" type="image/svg+xml">
+<link rel="preload" as="font" type="font/woff2" href="assets/fonts/geist-800-cyrillic.woff2" crossorigin>
+<link rel="preload" as="font" type="font/woff2" href="assets/fonts/geist-400-cyrillic.woff2" crossorigin>
+<link rel="stylesheet" href="assets/fonts/fonts.css">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="mark" viewBox="0 0 42 18"><path d="M6 0l9 0-3 9-9 0z m18 0l9 0-3 9-9 0z m-12 9l9 0-3 9-9 0z m18 0l9 0-3 9-9 0z" fill="currentColor"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-play" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" stroke-width="2"/><path d="m10 8 6 4-6 4z" fill="currentColor"/></symbol>
+  <symbol id="i-wa" viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M8.5 9.5c0 3 2.5 5.5 5.5 5.5l1.5-1.5-2-1-1 1a4 4 0 0 1-2.5-2.5l1-1-1-2z" fill="currentColor"/></symbol>
+  <symbol id="i-up" viewBox="0 0 24 24"><path d="M12 19V5M5 12l7-7 7 7" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-alert" viewBox="0 0 24 24"><path d="M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0zM12 9v4M12 17h.01" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-wallet" viewBox="0 0 24 24"><path d="M3 7a2 2 0 0 1 2-2h13v4M3 7v11a2 2 0 0 0 2 2h15a1 1 0 0 0 1-1v-9a1 1 0 0 0-1-1H5a2 2 0 0 1-2-2z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><circle cx="16.5" cy="14" r="1.2" fill="currentColor"/></symbol>
+  <symbol id="i-car" viewBox="0 0 24 24"><path d="M5 11l1.5-4.5A2 2 0 0 1 8.4 5h7.2a2 2 0 0 1 1.9 1.5L19 11M3 11h18v6h-2M3 17h2M7 17h10" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="7" cy="17" r="2" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="17" cy="17" r="2" fill="none" stroke="currentColor" stroke-width="2"/></symbol>
+  <symbol id="i-user" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4" fill="none" stroke="currentColor" stroke-width="2"/><path d="M4 21a8 8 0 0 1 16 0" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+  <symbol id="i-doc" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8zM14 2v6h6M9 15l2 2 4-4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="m9 12 2 2 4-4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-wrench" viewBox="0 0 24 24"><path d="M14.7 6.3a4 4 0 0 0 5 5L13 18a2.1 2.1 0 0 1-3-3l6.7-6.7zM21 3l-4 4M3 21l4-4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 22s7-6.2 7-12a7 7 0 1 0-14 0c0 5.8 7 12 7 12z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><circle cx="12" cy="10" r="2.5" fill="none" stroke="currentColor" stroke-width="2"/></symbol>
+  <symbol id="i-phone" viewBox="0 0 24 24"><rect x="6" y="2" width="12" height="20" rx="2.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M11 18h2" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+  <symbol id="i-inbox" viewBox="0 0 24 24"><path d="M22 12h-6l-2 3h-4l-2-3H2M5.5 5h13L22 12v7H2v-7z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></symbol>
+  <symbol id="i-upload" viewBox="0 0 24 24"><path d="M12 16V4M6 10l6-6 6 6M4 20h16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-cal" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2" fill="none" stroke="currentColor" stroke-width="2"/><path d="M3 10h18M8 3v4M16 3v4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+  <symbol id="i-link" viewBox="0 0 24 24"><path d="M10 14a5 5 0 0 0 7 0l3-3a5 5 0 0 0-7-7l-1 1M14 10a5 5 0 0 0-7 0l-3 3a5 5 0 0 0 7 7l1-1" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+</svg>
+
+<!-- ============ NAV ============ -->
+<header class="nav">
+  <div class="wrap">
+    <a class="logo" href="./" aria-label="Yume Fleet"><i><svg><use href="#mark"/></svg></i><span><b>yume</b><em>fleet</em></span></a>
+    <nav aria-label="Основное меню">
+      <ul class="nav__menu">
+        <li><a href="#problems">Проблемы</a></li>
+        <li><a href="#features">Возможности</a></li>
+        <li><a href="#debt">Долги</a></li>
+        <li><a href="#driver">Водителю</a></li>
+        <li><a href="#faq">Вопросы</a></li>
+        <li><a href="#demo">Контакты</a></li>
+        <li><a class="nav__cta-m" href="#demo">Записаться на демо</a></li>
+      </ul>
+    </nav>
+    <div class="nav__actions">
+      <a class="nav__login" href="https://app.yumefleet.kz/">Войти</a>
+      <a class="btn btn--sm btn--yellow" href="#demo">Записаться на демо</a>
+      <button class="nav__burger" aria-label="Меню"><span></span></button>
+    </div>
+  </div>
+</header>
+
+<!-- ============ HERO ============ -->
+<section class="hero">
+  <div class="hero__checks"></div>
+  <div class="wrap">
+    <div class="hero__inner">
+      <div class="hero__pill"><b><svg width="14" height="6"><use href="#mark"/></svg> ТАКСОПАРКИ</b> Учёт парка и водителей · Казахстан</div>
+      <h1>Сколько вам должны <span class="hl">прямо сейчас?</span></h1>
+      <p class="lead">Если ответ занимает больше секунды, парк уже теряет. Yume Fleet держит водителей, машины и деньги в одном месте: долг растёт на экране каждый день, оплата приходит ссылкой Kaspi, штраф ПДД сам находит того, кто был за рулём.</p>
+      <div class="hero__ctas">
+        <a class="btn btn--lg btn--yellow" href="#demo">Записаться на демо <svg><use href="#i-arrow"/></svg></a>
+        <a class="btn btn--lg btn--ghost" href="#features"><svg><use href="#i-play"/></svg> Посмотреть возможности</a>
+      </div>
+      <div class="hero__trust">
+        <span><svg><use href="#i-check"/></svg> Для парков от 10 машин</span>
+        <span><svg><use href="#i-check"/></svg> Запуск за 1 день</span>
+        <span><svg><use href="#i-check"/></svg> Данные в Казахстане</span>
+      </div>
+    </div>
+    <div class="hero__stage">
+      <div class="hero__frame">
+        <img width="1800" height="1125" src="assets/screens/dashboard.webp" srcset="assets/screens/dashboard-960.webp 960w, assets/screens/dashboard.webp 1800w" sizes="(max-width: 1200px) 100vw, 1140px" alt="Главный экран Yume Fleet: выручка, машины в аренде, долги, загрузка парка" fetchpriority="high">
+        <div class="hero__fade"></div>
+      </div>
+      <div class="float float--1"><i><svg><use href="#i-alert"/></svg></i><div><b>Долг 27 000 ₸ · 3 дня</b>Ерлан С. · Chevrolet Cobalt</div></div>
+      <div class="float float--2"><i><svg><use href="#i-car"/></svg></i><div><b>Штраф ПДД 21 025 ₸</b>847 ABC 02 · привязан к водителю</div></div>
+      <div class="float float--3"><i><svg><use href="#i-wallet"/></svg></i><div><b>+ 9 000 ₸ Kaspi</b>оплата встала в баланс сама</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ METRICS ============ -->
+<div class="metrics">
+  <div class="wrap" data-stagger>
+    <div class="metric"><b data-count="1">1</b><span>день от регистрации до первой аренды в системе</span></div>
+    <div class="metric"><b>Kaspi</b><span>оплата ссылкой без входа, зачисление в баланс автоматически</span></div>
+    <div class="metric"><b data-count="3">3</b><span>способа подписать договор: eGov, SMS-код, вручную</span></div>
+    <div class="metric"><b data-count="50" data-suffix="%">50%</b><span>скидка на штраф ПДД, если оплатить за 7 дней. Система напомнит</span></div>
+  </div>
+</div>
+
+<!-- ============ PROBLEMS ============ -->
+<section class="section" id="problems">
+  <div class="wrap">
+    <div class="sec-head">
+      <div data-reveal><p class="eyebrow">Где теряет парк</p><h2>Три дыры, которых не видно в отчёте. Потому что отчёта тоже нет</h2></div>
+      <p class="lead" data-reveal style="--d:.1s">Мы разобрали, как живут парки на тетрадях, Excel и WhatsApp. Деньги уходят в трёх местах.</p>
+    </div>
+    <div class="pains" data-stagger>
+      <article class="pain"><span class="pain__num">01</span><small>МАШИНЫ</small><h3>Никто не знает, где машины</h3><p>Сколько свободно, у кого просрочка, какая в ремонте. Ответ собирается обзвоном за час и к вечеру уже врёт. Пока вы выясняете, машина стоит и не зарабатывает.</p></article>
+      <article class="pain"><span class="pain__num">02</span><small>ДЕНЬГИ</small><h3>Деньги уходят в переписку</h3><p>Перевод пришёл в WhatsApp и утонул между скриншотами. Долг всплывает в конце месяца, когда водитель уже сдал машину и спрашивать не с кого.</p></article>
+      <article class="pain"><span class="pain__num">03</span><small>ВОДИТЕЛИ</small><h3>Кому отдали машину, узнаёте потом</h3><p>Проверки до выдачи нет, договор лежит в папке. Штраф ПДД приходит, когда скидка сгорела, а водителя в парке уже нет.</p></article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SHIFT ============ -->
+<section class="section section--card" id="shift">
+  <div class="wrap">
+    <div class="sec-head sec-head--center" data-reveal>
+      <div><p class="eyebrow">Что меняется</p><h2>В первый день меняется одно: <span class="hl">когда</span> вы узнаёте о долге, штрафе и простое</h2><p class="lead">Внедрять месяцами нечего. Машины и водители заводятся за час, дальше система считает сама.</p></div>
+    </div>
+    <div class="shift" data-reveal>
+      <div class="shift__row"><div>Было</div><div></div><div>Стало</div></div>
+      <div class="shift__row"><div class="shift__was">Долг считали в конце месяца</div><div class="shift__arr"><svg><use href="#i-arrow"/></svg></div><div class="shift__now">Долг растёт на экране каждый день, с именем водителя и номером машины</div></div>
+      <div class="shift__row"><div class="shift__was">Оплату искали в скриншотах</div><div class="shift__arr"><svg><use href="#i-arrow"/></svg></div><div class="shift__now">Ссылка Kaspi привязана к аренде и не сгорает. Оплатил — сумма встала в баланс сама. Наличные менеджер отмечает там же</div></div>
+      <div class="shift__row"><div class="shift__was">Штраф ПДД всплывал после возврата машины</div><div class="shift__arr"><svg><use href="#i-arrow"/></svg></div><div class="shift__now">Штраф падает на машину сам и вешается на того, кто ездил в тот день. Водитель видит его в своём кабинете</div></div>
+      <div class="shift__row"><div class="shift__was">Договор: бумага и встреча в офисе</div><div class="shift__arr"><svg><use href="#i-arrow"/></svg></div><div class="shift__now">Договор собирается из аренды, подпись через eGov или SMS без визита</div></div>
+      <div class="shift__row"><div class="shift__was">Машина неизвестно где и в каком виде</div><div class="shift__arr"><svg><use href="#i-arrow"/></svg></div><div class="shift__now">У машины одно состояние: в аренде, свободна, в ремонте. Осмотр по чек-листу при выдаче и возврате</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TOOLS ============ -->
+<section class="section" id="tools">
+  <div class="wrap">
+    <div class="sec-head">
+      <div data-reveal><p class="eyebrow">Три экрана</p><h2>Менеджер перестаёт быть справочным бюро</h2></div>
+      <p class="lead" data-reveal style="--d:.1s">Три места, где вопрос закрывается экраном, а не звонком.</p>
+    </div>
+    <div class="tools" data-stagger>
+      <article class="tool"><i><svg><use href="#i-user"/></svg></i><h3>Водители</h3><p>Документы, права, история аренд, долг и депозит одним списком. Кому нельзя выдавать машину, видно до выдачи, а не в суде.</p><ul><li><svg><use href="#i-check"/></svg>Проверка по ИИН: реестр должников eGov и чёрный список парков</li><li><svg><use href="#i-check"/></svg>Депозит и рассрочка ущерба по ДТП</li><li><svg><use href="#i-check"/></svg>Баланс и выписка по каждому</li></ul></article>
+      <article class="tool"><i><svg><use href="#i-car"/></svg></i><h3>Парк</h3><p>Состояние, ОГПО, техосмотр, ремонты. Простой видно сразу: машина свободна и не зарабатывает ни тенге.</p><ul><li><svg><use href="#i-check"/></svg>ТО по пробегу или по дате с напоминаниями</li><li><svg><use href="#i-check"/></svg>Штрафы ПДД по каждой машине</li><li><svg><use href="#i-check"/></svg>Осмотры по чек-листу и путевые листы</li></ul></article>
+      <article class="tool"><i><svg><use href="#i-wallet"/></svg></i><h3>Деньги</h3><p>Начисления по дням, долги, переплаты, депозит. Предпросмотр и факт считает одна функция, поэтому цифры сходятся.</p><ul><li><svg><use href="#i-check"/></svg>Kaspi: ссылка, QR, автосписания</li><li><svg><use href="#i-check"/></svg>Залог отдельно от оплаты аренды</li><li><svg><use href="#i-check"/></svg>Окупаемость и простой по машине</li></ul></article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FEATURES (dark tabs) ============ -->
+<section class="section section--dark" id="features">
+  <div class="wrap">
+    <div class="sec-head">
+      <div data-reveal><p class="eyebrow">Что система делает за вас</p><h2>Шесть процессов, которые перестают жить в чатах и таблицах</h2></div>
+      <p class="lead" data-reveal style="--d:.1s">Экраны настоящего продукта. Нажимайте на вкладки или подождите, они листаются сами.</p>
+    </div>
+    <div class="feat">
+      <div class="tabs" data-reveal="left">
+        <button class="tab"><i class="tab__bar"></i><svg><use href="#i-wallet"/></svg><div><h3>Оплата ссылкой Kaspi</h3><p>Ссылка живёт, пока идёт аренда: после оплаты не сгорает, дедлайна нет. Наличные и переводы менеджер отмечает руками, они попадают в тот же баланс.</p></div></button>
+        <button class="tab"><i class="tab__bar"></i><svg><use href="#i-doc"/></svg><div><h3>Договор через eGov</h3><p>Договор, акт приёма-передачи и путевой лист собираются из аренды. Подпись через приложение eGov mobile или SMS-код, без визита в офис.</p></div></button>
+        <button class="tab"><i class="tab__bar"></i><svg><use href="#i-alert"/></svg><div><h3>Штрафы ПДД</h3><p>Штрафы приходят с протоколом, привязываются к аренде и водителю по моменту нарушения, оплата сверяется с ЕРАП. Срок 50-процентной скидки виден сразу.</p></div></button>
+        <button class="tab"><i class="tab__bar"></i><svg><use href="#i-wrench"/></svg><div><h3>ТО и осмотр</h3><p>Регламент по пробегу или дате с напоминаниями, наряды СТО, склад запчастей. Осмотр по чек-листу при выдаче и возврате.</p></div></button>
+        <button class="tab"><i class="tab__bar"></i><svg><use href="#i-shield"/></svg><div><h3>Водители и проверка</h3><p>Реестр должников eGov по ИИН и общий чёрный список парков до того, как машина выдана. Документы, депозит, история аренд.</p></div></button>
+        <button class="tab"><i class="tab__bar"></i><svg><use href="#i-cal"/></svg><div><h3>Аналитика парка</h3><p>Эффективность, окупаемость и амортизация по каждой машине. Видно, какая машина стоит и сколько это стоит парку.</p></div></button>
+      </div>
+      <div class="feat__stage" data-reveal="scale">
+        <div class="pane"><div class="pane__shot"><img width="1800" height="1125" src="assets/screens/payments.webp" alt="Экран платежей и автосписаний Yume Fleet" loading="lazy"></div><div class="pane__cap"><span class="dot"></span><b>Автосписания и Kaspi Pay</b>долг по дням, оплата ссылкой</div></div>
+        <div class="pane"><div class="pane__shot"><img width="1800" height="1125" src="assets/screens/documents.webp" alt="Подписание документов в Yume Fleet" loading="lazy"></div><div class="pane__cap"><span class="dot"></span><b>Документы</b>подписание через eGov и SMS</div></div>
+        <div class="pane"><div class="pane__shot"><img width="1800" height="1125" src="assets/screens/fines.webp" alt="Штрафы ПДД в Yume Fleet" loading="lazy"></div><div class="pane__cap"><span class="dot"></span><b>Штрафы ПДД</b>протокол, водитель, сверка с ЕРАП</div></div>
+        <div class="pane"><div class="pane__shot"><img width="1800" height="1125" src="assets/screens/garage.webp" alt="Техобслуживание в Yume Fleet" loading="lazy"></div><div class="pane__cap"><span class="dot"></span><b>ТО и СТО</b>регламент по пробегу</div></div>
+        <div class="pane"><div class="pane__shot"><img width="1800" height="1125" src="assets/screens/drivers.webp" alt="Список водителей Yume Fleet с долгами и просрочками" loading="lazy"></div><div class="pane__cap"><span class="dot"></span><b>Водители</b>долг, просрочка, статус машины</div></div>
+        <div class="pane"><div class="pane__shot"><img width="1800" height="1125" src="assets/screens/analytics.webp" alt="Аналитика автопарка Yume Fleet" loading="lazy"></div><div class="pane__cap"><span class="dot"></span><b>Аналитика</b>эффективность и окупаемость машин</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ DEBT LIVE ============ -->
+<section class="section" id="debt">
+  <div class="wrap debt">
+    <div data-reveal="left">
+      <p class="eyebrow">Долг каждый день</p>
+      <h2>Баланс водителя меняется сам. Вы только смотрите</h2>
+      <p class="lead" style="margin-top:18px">Каждый день аренды начисляется автоматически. Пришла оплата в Kaspi, сумма встала в баланс. Не пришла, долг вырос и подсветился. Никаких сверок в конце месяца.</p>
+      <ul class="debt__list">
+        <li><svg><use href="#i-check"/></svg>Начисление по дням, выходные не тарифицируются</li>
+        <li><svg><use href="#i-check"/></svg>Просрочка считается с грейс-периодом, штраф начисляется сам</li>
+        <li><svg><use href="#i-check"/></svg>История неизменяема: исправление — новая проводка, а не правка задним числом</li>
+        <li><svg><use href="#i-check"/></svg>Порядок погашения зафиксирован: сначала аренда, потом штрафы, потом ущерб</li>
+      </ul>
+      <a class="btn" href="#demo">Показать на моём парке <svg><use href="#i-arrow"/></svg></a>
+    </div>
+    <div class="ledger" data-reveal="right">
+      <div class="ledger__head"><b>Аренды · 5 активных</b><span><i></i> <em class="ledger__event">обновляется в реальном времени</em></span></div>
+      <table>
+        <thead><tr><th>Водитель</th><th>Машина</th><th>Тариф</th><th>Баланс</th></tr></thead>
+        <tbody></tbody>
+      </table>
+      <div class="ledger__foot"><span>Долг по парку сегодня</span><b>33 500 ₸</b></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FLOW ============ -->
+<section class="section section--card" id="start">
+  <div class="wrap">
+    <div class="sec-head sec-head--center" data-reveal>
+      <div><p class="eyebrow">Запуск</p><h2>Из Excel в систему за один день</h2><p class="lead">Мы заводим данные вместе с вами. Парк продолжает работать, ничего останавливать не нужно.</p></div>
+    </div>
+    <div class="flow">
+      <div class="flow__line"><i></i></div>
+      <div class="step" data-reveal><div class="step__n"><svg><use href="#i-upload"/></svg></div><small>ШАГ 01</small><h3>Машины</h3><p>Загружаем парк таблицей: госномер, техпаспорт, марка, модель. Категории и пункты создаются сами.</p></div>
+      <div class="step" data-reveal style="--d:.1s"><div class="step__n"><svg><use href="#i-user"/></svg></div><small>ШАГ 02</small><h3>Водители</h3><p>База водителей с ИИН и телефоном. Текущие долги вносятся как стартовый баланс.</p></div>
+      <div class="step" data-reveal style="--d:.2s"><div class="step__n"><svg><use href="#i-doc"/></svg></div><small>ШАГ 03</small><h3>Договор и Kaspi</h3><p>Подключаем ваш шаблон договора и кабинет Kaspi. С этого момента оплаты приходят сами.</p></div>
+      <div class="step" data-reveal style="--d:.3s"><div class="step__n"><svg><use href="#i-check"/></svg></div><small>ШАГ 04</small><h3>Команда</h3><p>Менеджеры получают приглашение ссылкой и роли. Вечером вы видите первый долг на экране.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ DRIVER APP ============ -->
+<section class="section" id="driver">
+  <div class="wrap drv">
+    <div data-reveal="left">
+      <p class="eyebrow">Водителю</p>
+      <h2>Водитель видит свой долг сам и платит с телефона</h2>
+      <p class="lead" style="margin-top:18px">Ссылка на оплату открывается без входа и пароля: аренда, машина, долг за сегодня, кнопка «Оплатить через Kaspi». Меньше звонков «сколько я должен», меньше споров.</p>
+      <ul class="drv__list">
+        <li><svg><use href="#i-check"/></svg>Долг, начисления по дням и история оплат</li>
+        <li><svg><use href="#i-check"/></svg>Штрафы ПДД с протоколом и сроком скидки</li>
+        <li><svg><use href="#i-check"/></svg>Договор и путевой лист под рукой</li>
+        <li><svg><use href="#i-check"/></svg>Вход по номеру телефона, без установки из стора</li>
+      </ul>
+    </div>
+    <div class="drv__phone" data-reveal="scale"><img width="860" height="1864" src="assets/screens/driver-mobile.webp" alt="Кабинет водителя Yume Fleet на телефоне: баланс, аренда, штрафы" loading="lazy"></div>
+  </div>
+</section>
+
+<!-- ============ INTEGRATIONS ============ -->
+<section class="section section--card" id="integrations">
+  <div class="wrap">
+    <div class="sec-head">
+      <div data-reveal><p class="eyebrow">Интеграции</p><h2>Подключается к тому, чем парк уже пользуется</h2></div>
+      <p class="lead" data-reveal style="--d:.1s">Ничего не нужно менять в привычных инструментах. Yume Fleet собирает данные из них в одно место.</p>
+    </div>
+    <div class="ints" data-stagger>
+      <a class="int" href="#features"><i><img src="assets/img/kaspi-symbol.svg" alt=""></i><div><b>Kaspi Pay</b><span>оплата ссылкой, QR, автосписания</span></div></a>
+      <a class="int" href="#features"><i>eGov</i><div><b>eGov mobile</b><span>подписание договоров и актов</span></div></a>
+      <a class="int" href="#features"><i>ЕРАП</i><div><b>Штрафы ПДД и ЕРАП</b><span>протоколы, сверка оплаты по БИН</span></div></a>
+      <a class="int" href="#features"><i>ИИН</i><div><b>Реестр должников</b><span>проверка водителя через data.egov.kz</span></div></a>
+      <a class="int" href="#features"><i><svg><use href="#i-shield"/></svg></i><div><b>Чёрный список парков</b><span>общая база проблемных водителей</span></div></a>
+      <a class="int int--soon" href="#features"><i><svg><use href="#i-pin"/></svg></i><div><b>Wialon GPS <em>скоро</em></b><span>где машина, пробег для ТО</span></div></a>
+      <a class="int int--soon" href="#features"><i>Я</i><div><b>Яндекс Флит <em>скоро</em></b><span>машины и водители из агрегатора</span></div></a>
+      <a class="int" href="#features"><i><svg><use href="#i-inbox"/></svg></i><div><b>Excel</b><span>импорт парка и водителей, экспорт отчётов</span></div></a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ REVIEWS ============ -->
+<section class="section" id="reviews">
+  <div class="wrap">
+    <div class="sec-head">
+      <div data-reveal><p class="eyebrow">Клиенты</p><h2>Что говорят парки</h2></div>
+      <p class="lead" data-reveal style="--d:.1s">Yume Fleet вырос из платформы Yume, на которой транспортные компании работают с 2024 года. Отзывы о ней ниже, отзывы о Fleet появятся после первых внедрений.</p>
+    </div>
+    <div class="reviews" data-stagger>
+      <article class="rev"><q>Те, кто работал с таксистами, знают, сколько проблем с долгами и штрафами. В системе есть встроенная проверка штрафов, мы не узнаём о них постфактум. Общий реестр должников сразу показывает проблемных ребят, а договоры подписываем онлайн без бумажной волокиты.</q><div class="rev__who"><i>Р</i><div><b>Руслан</b><small>Astana Park, таксопарк</small></div></div></article>
+      <article class="rev"><q>В прокате критически важна скорость ответа: пока думаешь, человек арендует у конкурентов. Заявки из мессенджеров падают в одно окно. Финансы стали прозрачнее: видим поступления, задолженности по каждой машине и сроки аренды.</q><div class="rev__who"><i>Ш</i><div><b>Шынгысхан</b><small>Qalarent.kz, автопрокат</small></div></div></article>
+      <article class="rev rev--ph"><q>Место для вашего отзыва: что было до системы, что поменялось за первый месяц и какая цифра это подтверждает.</q><div class="rev__who"><i>?</i><div><b>Имя</b><small>Таксопарк, город</small></div></div></article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section class="section section--card" id="faq">
+  <div class="wrap faq">
+    <div data-reveal="left"><p class="eyebrow">Вопросы</p><h2>Коротко о том, что спрашивают на первой встрече</h2><p class="lead" style="margin-top:18px">Остальное расскажем на демо за 20 минут.</p></div>
+    <div class="faq__list" data-reveal="right">
+      <div class="q is-open"><button>С какого размера парка есть смысл?<i></i></button><div class="q__a"><div><p>Система рассчитана на парк от десяти машин. На меньшем переносить данные дороже, чем вести их вручную. Верхнего предела нет: подписка считается за машину.</p></div></div></div>
+      <div class="q"><button>Сколько занимает перенос из Excel?<i></i></button><div class="q__a"><div><p>Машины и водителей заводим вместе с вами из вашей таблицы. На парк из 30–50 машин обычно уходит один рабочий день вместе с настройкой договора и Kaspi.</p></div></div></div>
+      <div class="q"><button>Как приходит оплата?<i></i></button><div class="q__a"><div><p>Водитель открывает ссылку на оплату без входа, платит через Kaspi по QR или счёту на телефон. Сумма зачисляется в его баланс автоматически. Наличные менеджер отмечает в той же аренде.</p></div></div></div>
+      <div class="q"><button>Когда появляются штрафы ПДД?<i></i></button><div class="q__a"><div><p>Машины парка подключаются к базе штрафов по госномеру и техпаспорту. Новые штрафы подтягиваются с протоколом, привязываются к аренде и водителю по моменту нарушения. Оплату можно сверить с ЕРАП по БИН компании.</p></div></div></div>
+      <div class="q"><button>Что происходит с депозитом?<i></i></button><div class="q__a"><div><p>Залог живёт отдельно от оплаты аренды: принять, зачесть в счёт долга или вернуть — три разных действия с фото и историей. Залоговые деньги не гасят долг сами по себе.</p></div></div></div>
+      <div class="q"><button>Кому принадлежат данные?<i></i></button><div class="q__a"><div><p>Вам. Данные хранятся в Казахстане, компании изолированы друг от друга на уровне базы, выгрузить всё в Excel можно в любой момент.</p></div></div></div>
+      <div class="q"><button>Чем Yume Fleet отличается от Yume для проката инвентаря?<i></i></button><div class="q__a"><div><p>Это отдельный продукт, спроектированный под таксопарк: водители, ежедневные начисления, штрафы ПДД, Яндекс Флит. Для проката инструмента и оборудования есть <a class="link" href="https://yume.cloud">yume.cloud</a>.</p></div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CTA ============ -->
+<section class="section section--yellow cta" id="demo">
+  <div class="wrap">
+    <div data-reveal="left">
+      <p class="eyebrow" style="color:var(--ink)">Демо</p>
+      <h2>Хватит считать парк вручную. Покажем ваши деньги на вашем парке</h2>
+      <p class="lead" style="margin-top:18px;color:var(--ink);opacity:.8">20 минут по видеосвязи. Заведём пару ваших машин и водителей и покажем, как выглядит долг, оплата и штраф в системе.</p>
+      <ul class="cta__list">
+        <li><svg><use href="#i-check"/></svg>Перезвоним в течение 15 минут в рабочее время</li>
+        <li><svg><use href="#i-check"/></svg>Заводим машины и водителей вместе с вами</li>
+        <li><svg><use href="#i-check"/></svg>Подписка за машину, без платы за внедрение</li>
+      </ul>
+      <a class="cta__wa" href="https://wa.me/77779479990" rel="noopener"><svg><use href="#i-wa"/></svg> Или напишите в WhatsApp: +7 777 947 99 90</a>
+    </div>
+    <form class="form" data-reveal="right" novalidate>
+      <div class="field"><label for="name">Имя</label><input id="name" name="name" placeholder="Как к вам обращаться" required autocomplete="name"></div>
+      <div class="field"><label for="phone">Телефон</label><input id="phone" name="phone" type="tel" placeholder="+7 777 000 00 00" required autocomplete="tel" inputmode="tel"></div>
+      <div class="field"><label for="cars">Сколько машин в парке</label><select id="cars" name="cars"><option>10–30 машин</option><option>30–100 машин</option><option>100+ машин</option><option>Аренда с выкупом</option><option>Автопрокат, не таксопарк</option></select></div>
+      <input type="text" name="website" tabindex="-1" autocomplete="off" class="hp" aria-hidden="true">
+      <button class="btn btn--lg" type="submit">Записаться на демо</button>
+      <label class="consent"><input type="checkbox" checked required> Согласен на обработку персональных данных в соответствии с <a href="https://yume.cloud/legal/privacy/" style="text-decoration:underline">политикой конфиденциальности</a></label>
+      <div class="form__ok"><div><i><svg><use href="#i-check"/></svg></i><h3>Заявка отправлена</h3><p style="color:var(--muted);margin-top:8px">Перезвоним в течение 15 минут в рабочее время.</p></div></div>
+    </form>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer__top">
+      <div class="footer__brand">
+        <a class="logo logo--dark" href="./"><i><svg><use href="#mark"/></svg></i><span><b>yume</b><em>fleet</em></span></a>
+        <p>Система учёта для таксопарков и аренды авто водителям. ТОО «Yume.Cloud», Алматы, Казахстан.</p>
+        <a href="tel:+77779479990">+7 777 947 99 90</a>
+        <a href="mailto:sales@yume.cloud">sales@yume.cloud</a>
+      </div>
+      <div><h4>Продукт</h4><ul><li><a href="#features">Возможности</a></li><li><a href="#debt">Долги и оплаты</a></li><li><a href="#driver">Водителю</a></li><li><a href="#integrations">Интеграции</a></li><li><a href="https://app.yumefleet.kz/" rel="noopener">Войти в систему</a></li></ul></div>
+      <div><h4>Компания</h4><ul><li><a href="#reviews">Клиенты</a></li><li><a href="#demo">Контакты</a></li><li><a href="https://www.linkedin.com/company/yume-cloud/" rel="noopener">LinkedIn</a></li><li><a href="https://www.instagram.com/yumecloudx/" rel="noopener">Instagram</a></li><li><a href="https://t.me/yumefleet" rel="noopener">Telegram</a></li></ul></div>
+      <div><h4>Документы</h4><ul><li><a href="https://yume.cloud/legal/privacy/">Политика конфиденциальности</a></li><li><a href="https://yume.cloud/legal/">Оферта и соглашения</a></li><li><a href="https://yume.cloud/delete-account/">Удаление аккаунта</a></li></ul></div>
+    </div>
+    <div class="footer__bot">
+      <div class="legal"><span>© ТОО «Yume.Cloud», 2026</span></div>
+      <a class="cloud" href="https://yume.cloud"><i></i> Сдаёте инвентарь, а не машины? yume.cloud</a>
+    </div>
+  </div>
+</footer>
+
+<a class="wa-fab" href="https://wa.me/77779479990" rel="noopener" aria-label="Написать в WhatsApp"><svg><use href="#i-wa"/></svg><span>Написать в WhatsApp</span></a>
+<button class="to-top" aria-label="Наверх"><svg><use href="#i-up"/></svg></button>
+
+<script src="js/main.js" defer></script>
+</body>
+</html>
