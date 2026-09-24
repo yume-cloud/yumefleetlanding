@@ -12,4 +12,4 @@
 Без бэкенда форма открывает WhatsApp с заполненным текстом. Чтобы отправлять заявки в Telegram, укажите адрес серверной функции в атрибуте `data-endpoint` у `<form class="form">` (функция такая же, как в репозитории yume.cloud, `api/lead.js`).
 
 ## Домен
-Settings → Pages → Custom domain: `yumefleet.com`. У регистратора: A-записи корня на 185.199.108.153, 185.199.109.153, 185.199.110.153, 185.199.111.153 и CNAME `www` → `kabdyzhanzhaina-lang.github.io`.
+Settings → Pages → Custom domain: `yumefleet.com`. У регистратора: A-записи корня на 185.199.108.153, 185.199.109.153, 185.199.110.153, 185.199.111.153 и CNAME `www` → `yume-cloud.github.io`.
