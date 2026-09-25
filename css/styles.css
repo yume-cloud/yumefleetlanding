@@ -349,3 +349,35 @@ p{margin:0}
 .int--soon{opacity:.85}
 .int b em{font-style:normal;font-size:10.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:2px 6px;border-radius:999px;background:var(--yellow-soft);color:var(--yellow-deep);margin-left:6px;vertical-align:middle}
 @media (max-width:600px){.ledger th,.ledger td{padding:10px 12px;font-size:13px}.plate{white-space:nowrap;font-size:11px;padding:2px 6px}.ledger td small{font-size:11px}}
+
+/* ============ CONTACTS PAGE ============ */
+.phero{padding:140px 0 48px;background:var(--bg);position:relative;overflow:hidden}
+.phero .hero__checks{mask-image:radial-gradient(50% 60% at 30% 0%,#000 10%,transparent 70%);-webkit-mask-image:radial-gradient(50% 60% at 30% 0%,#000 10%,transparent 70%)}
+.phero .wrap{position:relative;z-index:1}
+.phero h1{font-size:clamp(34px,4.6vw,56px);margin-bottom:18px}
+.crumbs{display:flex;gap:8px;font-size:13px;color:var(--muted);margin-bottom:22px}
+.crumbs b{color:var(--ink);font-weight:500}
+.contacts{display:grid;grid-template-columns:1fr 440px;gap:40px;align-items:start}
+.ccards{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.ccard{position:relative;display:flex;gap:16px;padding:22px;border-radius:var(--r-lg);background:var(--card);border:1px solid var(--line);transition:transform .4s var(--ease),box-shadow .4s var(--ease),border-color .3s}
+a.ccard:hover{transform:translateY(-3px);box-shadow:var(--shadow);border-color:#D9D0A0}
+.ccard i{width:44px;height:44px;border-radius:12px;background:var(--yellow-soft);color:var(--ink);display:grid;place-items:center;flex:none}
+.ccard i svg{width:22px;height:22px}
+.ccard small{display:block;font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);font-weight:600;margin-bottom:4px}
+.ccard b{display:block;font-size:18px;letter-spacing:-.01em;margin-bottom:6px}
+.ccard span{display:block;color:var(--muted);font-size:14px}
+.ccard__arr{position:absolute;right:18px;top:22px;width:18px;height:18px;color:var(--faint);transition:transform .3s var(--ease),color .3s}
+a.ccard:hover .ccard__arr{transform:translate(3px,-3px);color:var(--ink)}
+.ccard--wa{grid-column:1/-1;background:var(--yellow);border-color:var(--yellow)}
+.ccard--wa i{background:var(--ink);color:var(--yellow)}
+.ccard--wa span{color:var(--ink);opacity:.75}
+.ccard--wa .ccard__arr{color:var(--ink)}
+.contacts__form{background:var(--card);border:1px solid var(--line);border-radius:var(--r-lg);padding:28px}
+.contacts__form .form{box-shadow:none;padding:0}
+.quick{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.quick__i{display:grid;gap:10px;align-content:start;padding:24px;border-radius:var(--r);background:var(--card);border:1px solid var(--line);transition:transform .4s var(--ease),box-shadow .4s var(--ease)}
+.quick__i:hover{transform:translateY(-4px);box-shadow:var(--shadow)}
+.quick__i h3{font-size:17px}
+.quick__i p{color:var(--muted);font-size:14px}
+@media (max-width:980px){.contacts{grid-template-columns:1fr}.ccards{grid-template-columns:1fr}.quick{grid-template-columns:1fr 1fr}.phero{padding-top:110px}}
+@media (max-width:560px){.quick{grid-template-columns:1fr}}
