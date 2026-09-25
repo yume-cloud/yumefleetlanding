@@ -84,7 +84,7 @@
     <div class="contacts__form" data-reveal="right">
       <h2 style="font-size:26px;margin-bottom:8px">Записаться на демо</h2>
       <p class="lead" style="font-size:15px;margin-bottom:22px">Перезвоним в течение 15 минут в рабочее время или напишем в WhatsApp.</p>
-      <form class="form"  novalidate>
+      <form class="form" data-endpoint="https://yume-cloud-zzydfr.vercel.app/api/lead/" novalidate>
       <div class="field"><label for="name">Имя</label><input id="name" name="name" placeholder="Как к вам обращаться" required autocomplete="name"></div>
       <div class="field"><label for="phone">Телефон</label><input id="phone" name="phone" type="tel" placeholder="+7 777 000 00 00" required autocomplete="tel" inputmode="tel"></div>
       <div class="field"><label for="cars">Сколько машин в парке</label><select id="cars" name="cars"><option>10–30 машин</option><option>30–100 машин</option><option>100+ машин</option><option>Аренда с выкупом</option><option>Автопрокат, не таксопарк</option></select></div>
