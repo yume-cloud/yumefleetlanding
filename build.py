@@ -218,7 +218,7 @@ def page(p, body, R, desc):
 <link rel="preload" as="font" type="font/woff2" href="{R}assets/fonts/geist-800-cyrillic.woff2" crossorigin>
 <link rel="preload" as="font" type="font/woff2" href="{R}assets/fonts/geist-400-cyrillic.woff2" crossorigin>
 <link rel="stylesheet" href="{R}assets/fonts/fonts.css">
-<link rel="stylesheet" href="{R}css/styles.css?v=2">
+<link rel="stylesheet" href="{R}css/styles.css?v=3">
 </head>
 <body>
 
@@ -303,7 +303,7 @@ def shift(sec):
     return f'<div class="shift" data-reveal><div class="shift__row"><div>Было</div><div></div><div>Стало</div></div>{rows}</div>'
 
 def checks(items, cls='debt__list'):
-    return '<ul class="%s">%s</ul>' % (cls, ''.join(f'<li><svg><use href="#i-check"/></svg>{inline(it["check"])}</li>' for it in items if 'check' in it))
+    return '<ul class="%s checks">%s</ul>' % (cls, ''.join(f'<li><i><svg><use href="#i-check"/></svg></i><span>{inline(it["check"])}</span></li>' for it in items if 'check' in it))
 
 def text_block(sec, alt=False):
     paras = ''.join(f'<p>{inline(x)}</p>' for x in sec['paras'])
@@ -388,7 +388,7 @@ def home():
     # tools
     t = S['tools'][0]
     icons = ['i-user', 'i-car', 'i-wallet']
-    tools = ''.join(f'<article class="tool"><i><svg><use href="#{icons[k]}"/></svg></i><h3>{inline(it["name"])}</h3><p>{inline(it["text"])}</p><ul>' + ''.join(f'<li><svg><use href="#i-check"/></svg>{inline(c)}</li>' for c in it.get('checks', [])) + '</ul></article>' for k, it in enumerate(t['items']))
+    tools = ''.join(f'<article class="tool"><i><svg><use href="#{icons[k]}"/></svg></i><h3>{inline(it["name"])}</h3><p>{inline(it["text"])}</p><ul class="checks checks--sm">' + ''.join(f'<li><i><svg><use href="#i-check"/></svg></i><span>{inline(c)}</span></li>' for c in it.get('checks', [])) + '</ul></article>' for k, it in enumerate(t['items']))
     out += f'<section class="section" id="tools"><div class="wrap">{head(t)}<div class="tools" data-stagger>{tools}</div></div></section>\n'
     # text: история
     hist = S['text'][0]

@@ -497,3 +497,16 @@ h1 .tag,h2 .tag{font-size:12px;padding:3px 9px;vertical-align:middle}
 @media (max-width:480px){.form__row{grid-template-columns:1fr}}
 .int--soon{opacity:.8}
 .int b .tag{margin-left:6px;font-size:9.5px}
+
+/* checks lists */
+.checks{display:grid;gap:10px;margin:28px 0 32px;padding:0;list-style:none}
+.checks li{display:grid;grid-template-columns:24px 1fr;gap:10px;align-items:start;font-size:15px;line-height:1.5}
+.checks li i{width:24px;height:24px;border-radius:50%;background:var(--yellow-soft);display:grid;place-items:center;flex:none;margin-top:1px}
+.checks li i svg{width:13px;height:13px;color:var(--yellow-deep);margin:0}
+.checks li span{display:block}
+.checks strong{font-weight:600}
+.checks--sm{margin:4px 0 0;gap:8px}
+.checks--sm li{font-size:14px;grid-template-columns:20px 1fr;gap:8px}
+.checks--sm li i{width:20px;height:20px}
+.checks--sm li i svg{width:11px;height:11px}
+.drv__list.checks{margin-bottom:0}
