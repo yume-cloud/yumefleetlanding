@@ -368,8 +368,9 @@ def int_acc(sec, R):
         link = f'<a class="link" href="{href(it["link"], R)}">{T("more")} <svg><use href="#i-arrow"/></svg></a>' if it.get('link') else ''
         parts = [x.strip() for x in strip_md(it.get('text', '')).split('.') if x.strip()]
         sub = parts[0] if len(parts) > 1 else ''
+        sub_html = f'<small>{sub}</small>' if sub else ''
         out += (f'<div class="iacc{" iacc--soon" if soon else ""}{" is-open" if k == 0 else ""}">'
-                f'<button type="button">{ic}<span><b>{inline(name)}{it.get("tag_html", "")}</b>{f'<small>{sub}</small>' if sub else ''}</span><i class="iacc__x"></i></button>'
+                f'<button type="button">{ic}<span><b>{inline(name)}{it.get("tag_html", "")}</b>{sub_html}</span><i class="iacc__x"></i></button>'
                 f'<div class="iacc__a"><div><p>{inline(it.get("text", ""))}</p>{link}</div></div></div>')
     return f'<div class="iaccs" data-reveal>{out}</div>'
 
