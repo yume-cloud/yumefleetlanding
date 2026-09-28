@@ -139,7 +139,7 @@ NAV_FEATURES = [
 ]
 ICON_BY_PATH = {p: i for p, _, _, i in NAV_FEATURES}
 ICON_BY_PATH.update({'/kaspi-pay/': 'i-link', '/kaspi/': 'i-wallet'})
-FEATURE_IMG = {'/features/rentals/': ('rent-card.webp', 'Карточка аренды в Yume Fleet'), '/features/buyout/': ('buyout.webp', 'Аренда под выкуп в Yume Fleet'), '/features/shifts/': ('rents.webp', 'Список аренд Yume Fleet'), '/features/drivers/': ('driver-card.webp', 'Карточка водителя в Yume Fleet'), '/features/vehicles/': ('vehicle-card.webp', 'Карточка машины в Yume Fleet'), '/features/finance/': ('finance.webp', 'Финансы парка в Yume Fleet'), '/features/fines/': ('fines.webp', 'Штрафы ПДД в Yume Fleet'), '/features/documents/': ('waybills.webp', 'Документы и путевые листы в Yume Fleet'), '/features/investors/': ('sublease.webp', 'Субаренда и инвесторы в Yume Fleet'), '/features/analytics/': ('analytics.webp', 'Аналитика парка в Yume Fleet'), '/features/leads/': ('drivers.webp', 'База водителей и кандидатов в Yume Fleet'), '/features/settings/': ('settings.webp', 'Настройки парка в Yume Fleet'), '/kaspi-pay/': ('pay-link.webp', 'Оплата аренды по ссылке Kaspi Pay'), '/kaspi/': ('pay-link.webp', 'Оплата аренды через Kaspi'), '/integrations/': ('pay-link.webp', 'Оплата через Kaspi в Yume Fleet'), '/perehod/': ('dashboard.webp', 'Главный экран Yume Fleet'), '/features/': ('rent-card.webp', 'Карточка аренды в Yume Fleet')}
+FEATURE_IMG = {'/features/rentals/': ('screens/rent-card.webp', 'Карточка аренды в Yume Fleet'), '/features/buyout/': ('img/gen/F4.webp', 'Аренда под выкуп: машина, взнос и ключи'), '/features/shifts/': ('screens/rents.webp', 'Список аренд Yume Fleet'), '/features/drivers/': ('screens/driver-card.webp', 'Карточка водителя в Yume Fleet'), '/features/vehicles/': ('screens/vehicle-card.webp', 'Карточка машины в Yume Fleet'), '/features/finance/': ('screens/finance.webp', 'Финансы парка в Yume Fleet'), '/features/fines/': ('img/gen/F5.webp', 'Штраф ПДД: камера, протокол и срок скидки'), '/features/documents/': ('screens/waybills.webp', 'Документы и путевые листы в Yume Fleet'), '/features/investors/': ('screens/sublease.webp', 'Субаренда и инвесторы в Yume Fleet'), '/features/analytics/': ('screens/analytics.webp', 'Аналитика парка в Yume Fleet'), '/features/leads/': ('screens/drivers.webp', 'База водителей и кандидатов в Yume Fleet'), '/features/settings/': ('screens/settings.webp', 'Настройки парка в Yume Fleet'), '/kaspi-pay/': ('img/gen/F3.webp', 'Водитель платит за аренду с телефона'), '/kaspi/': ('screens/pay-link.webp', 'Оплата аренды через Kaspi'), '/integrations/': ('screens/pay-link.webp', 'Интеграции Yume Fleet'), '/perehod/': ('img/gen/F6.webp', 'Переход с Yume Cloud на Yume Fleet'), '/features/': ('img/gen/F1.webp', 'Таксопарк на платформе Yume Fleet')}
 INT_LOGO = {'Kaspi Pay': 'assets/img/int/kaspi.png', 'Kaspi Платежи': 'assets/img/int/kaspi.png', 'eGov mobile': 'assets/img/int/egov.png',
             'Штрафы ПДД, ЕРАП': 'assets/img/int/erap.svg', 'Штрафы ПДД и ЕРАП': 'assets/img/int/erap.svg', 'Реестр должников': 'assets/img/int/iin.svg',
             'GPS Wialon': 'assets/img/int/wialon.png', 'Wazzup': 'assets/img/int/wazzup.png', 'WhatsApp через Wazzup': 'assets/img/int/wazzup.png',
@@ -295,11 +295,12 @@ def page(p, body, R, desc):
 <meta property="og:description" content="{html.escape(desc)}">
 <meta property="og:url" content="{canon}">
 <meta property="og:image" content="{SITE}/assets/img/og.png">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="{R}assets/logo/favicon.svg" type="image/svg+xml">
 <link rel="preload" as="font" type="font/woff2" href="{R}assets/fonts/geist-800-cyrillic.woff2" crossorigin>
 <link rel="preload" as="font" type="font/woff2" href="{R}assets/fonts/geist-400-cyrillic.woff2" crossorigin>
 <style>{FONTS_CSS.replace('url(', 'url(' + R + 'assets/fonts/')}</style>
-<link rel="stylesheet" href="{R}css/styles.css?v=7">
+<link rel="stylesheet" href="{R}css/styles.css?v=8">
 {ld(p, body)}{analytics()}</head>
 <body>
 
@@ -413,7 +414,7 @@ def generic_section(sec, R, alt):
 
 def phero(sec, crumbs, R, extra='', img=None):
     lead = ''.join(f'<p class="lead">{inline(x)}</p>' for x in sec['paras'])
-    shot = f'<div class="phero__vis" data-reveal="scale"><img src="{R}assets/screens/{img[0]}" width="1800" height="1125" alt="{img[1]}" fetchpriority="high"></div>' if img else ''
+    shot = f'<div class="phero__vis" data-reveal="scale"><img src="{R}assets/{img[0]}" alt="{img[1]}" fetchpriority="high"></div>' if img else ''
     return f'''<section class="phero{" phero--grid" if img else ""}">
   <div class="hero__checks"></div>
   <div class="wrap">
