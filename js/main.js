@@ -88,6 +88,7 @@
   }
 
   /* faq */
+  $$('.iacc button').forEach(b => b.addEventListener('click', () => { const it = b.parentElement, open = it.classList.contains('is-open'); $$('.iacc.is-open').forEach(x => x.classList.remove('is-open')); if (!open) it.classList.add('is-open'); }));
   $$('.q button').forEach(b => b.addEventListener('click', () => { const q = b.parentElement, open = q.classList.contains('is-open'); $$('.q.is-open').forEach(x => x.classList.remove('is-open')); if (!open) q.classList.add('is-open'); }));
 
   /* form: POST to endpoint if configured, else WhatsApp with prefilled text */

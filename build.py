@@ -300,7 +300,7 @@ def page(p, body, R, desc):
 <link rel="preload" as="font" type="font/woff2" href="{R}assets/fonts/geist-800-cyrillic.woff2" crossorigin>
 <link rel="preload" as="font" type="font/woff2" href="{R}assets/fonts/geist-400-cyrillic.woff2" crossorigin>
 <style>{FONTS_CSS.replace('url(', 'url(' + R + 'assets/fonts/')}</style>
-<link rel="stylesheet" href="{R}css/styles.css?v=8">
+<link rel="stylesheet" href="{R}css/styles.css?v=9">
 {ld(p, body)}{analytics()}</head>
 <body>
 
@@ -312,7 +312,7 @@ def page(p, body, R, desc):
 
 {footer(R)}
 
-<script src="{R}js/main.js?v=3" defer></script>
+<script src="{R}js/main.js?v=4" defer></script>
 </body>
 </html>
 '''
@@ -358,6 +358,19 @@ def ints(sec, R):
         else:
             out += f'<div class="int{" int--soon" if soon else ""}">{inner}</div>'
     return f'<div class="ints" data-stagger>{out}</div>'
+
+def int_acc(sec, R):
+    out = ''
+    for k, it in enumerate(sec['items']):
+        name = it['name']; logo = INT_LOGO.get(name)
+        soon = any(c == 'soon' for c, _ in it['tags'])
+        ic = f'<i><img src="{R}{logo}" alt="" width="42" height="42"></i>' if logo else '<i><svg><use href="#i-link"/></svg></i>'
+        link = f'<a class="link" href="{href(it["link"], R)}">{T("more")} <svg><use href="#i-arrow"/></svg></a>' if it.get('link') else ''
+        sub = strip_md(it.get('text', '')).split('.')[0]
+        out += (f'<div class="iacc{" iacc--soon" if soon else ""}{" is-open" if k == 0 else ""}">'
+                f'<button type="button">{ic}<span><b>{inline(name)}{it.get("tag_html", "")}</b><small>{sub}</small></span><i class="iacc__x"></i></button>'
+                f'<div class="iacc__a"><div><p>{inline(it.get("text", ""))}</p>{link}</div></div></div>')
+    return f'<div class="iaccs" data-reveal>{out}</div>'
 
 STEP_ICONS = ['i-cal', 'i-upload', 'i-doc', 'i-user', 'i-check', 'i-wallet']
 def steps(sec, R):
@@ -498,9 +511,8 @@ def home():
     out += f'''<section class="section section--card" id="driver">
   <div class="wrap drv">
     <div data-reveal="left">{eyebrow(p2)}<h2>{inline(p2['title'])}</h2>{paras}{checks(p2['items'], 'drv__list')}</div>
-    <div class="drv__shots" data-reveal="scale">
+    <div class="drv__shots drv__shots--one" data-reveal="scale">
       <figure class="drv__shot"><img src="{R}assets/screens/pay-link.webp" width="1800" height="1125" alt="{T("drv_alt1")}" loading="lazy"><figcaption>{T("drv_cap1")}</figcaption></figure>
-      <figure class="drv__shot drv__shot--phone"><img src="{R}assets/screens/driver-mobile.webp" width="840" height="2080" alt="{T("drv_alt2")}" loading="lazy"><figcaption>{T("drv_cap2")} <em class="tag tag--soon">{T("soon")}</em></figcaption></figure>
     </div>
   </div>
 </section>
@@ -577,7 +589,7 @@ def inner(p):
     for s in secs:
         if s['type'] == 'hero': continue
         if s['type'] == 'cards' and p['path'] == '/integrations/':
-            body += f'<section class="section{" section--card" if alt else ""}"><div class="wrap">{head(s)}{ints(s, R)}</div></section>'
+            body += f'<section class="section{" section--card" if alt else ""}"><div class="wrap">{head(s)}{int_acc(s, R)}</div></section>'
         else:
             body += generic_section(s, R, alt)
         if s['type'] != 'cta': alt = not alt
