@@ -139,6 +139,7 @@ NAV_FEATURES = [
 ]
 ICON_BY_PATH = {p: i for p, _, _, i in NAV_FEATURES}
 ICON_BY_PATH.update({'/kaspi-pay/': 'i-link', '/kaspi/': 'i-wallet'})
+FEATURE_IMG = {'/features/rentals/': ('rent-card.webp', 'Карточка аренды в Yume Fleet'), '/features/buyout/': ('buyout.webp', 'Аренда под выкуп в Yume Fleet'), '/features/shifts/': ('rents.webp', 'Список аренд Yume Fleet'), '/features/drivers/': ('driver-card.webp', 'Карточка водителя в Yume Fleet'), '/features/vehicles/': ('vehicle-card.webp', 'Карточка машины в Yume Fleet'), '/features/finance/': ('finance.webp', 'Финансы парка в Yume Fleet'), '/features/fines/': ('fines.webp', 'Штрафы ПДД в Yume Fleet'), '/features/documents/': ('waybills.webp', 'Документы и путевые листы в Yume Fleet'), '/features/investors/': ('sublease.webp', 'Субаренда и инвесторы в Yume Fleet'), '/features/analytics/': ('analytics.webp', 'Аналитика парка в Yume Fleet'), '/features/leads/': ('drivers.webp', 'База водителей и кандидатов в Yume Fleet'), '/features/settings/': ('settings.webp', 'Настройки парка в Yume Fleet'), '/kaspi-pay/': ('pay-link.webp', 'Оплата аренды по ссылке Kaspi Pay'), '/kaspi/': ('pay-link.webp', 'Оплата аренды через Kaspi'), '/integrations/': ('pay-link.webp', 'Оплата через Kaspi в Yume Fleet'), '/perehod/': ('dashboard.webp', 'Главный экран Yume Fleet'), '/features/': ('rent-card.webp', 'Карточка аренды в Yume Fleet')}
 INT_LOGO = {'Kaspi Pay': 'assets/img/int/kaspi.png', 'Kaspi Платежи': 'assets/img/int/kaspi.png', 'eGov mobile': 'assets/img/int/egov.png',
             'Штрафы ПДД, ЕРАП': 'assets/img/int/erap.svg', 'Штрафы ПДД и ЕРАП': 'assets/img/int/erap.svg', 'Реестр должников': 'assets/img/int/iin.svg',
             'GPS Wialon': 'assets/img/int/wialon.png', 'Wazzup': 'assets/img/int/wazzup.png', 'WhatsApp через Wazzup': 'assets/img/int/wazzup.png',
@@ -298,7 +299,7 @@ def page(p, body, R, desc):
 <link rel="preload" as="font" type="font/woff2" href="{R}assets/fonts/geist-800-cyrillic.woff2" crossorigin>
 <link rel="preload" as="font" type="font/woff2" href="{R}assets/fonts/geist-400-cyrillic.woff2" crossorigin>
 <style>{FONTS_CSS.replace('url(', 'url(' + R + 'assets/fonts/')}</style>
-<link rel="stylesheet" href="{R}css/styles.css?v=5">
+<link rel="stylesheet" href="{R}css/styles.css?v=6">
 {ld(p, body)}{analytics()}</head>
 <body>
 
@@ -410,11 +411,13 @@ def generic_section(sec, R, alt):
         return cta(sec, R)
     return ''
 
-def phero(sec, crumbs, R, extra=''):
+def phero(sec, crumbs, R, extra='', img=None):
     lead = ''.join(f'<p class="lead">{inline(x)}</p>' for x in sec['paras'])
-    return f'''<section class="phero">
+    shot = f'<div class="phero__vis" data-reveal="scale"><img src="{R}assets/screens/{img[0]}" width="1800" height="1125" alt="{img[1]}" fetchpriority="high"></div>' if img else ''
+    return f'''<section class="phero{" phero--grid" if img else ""}">
   <div class="hero__checks"></div>
   <div class="wrap">
+    <div>
     <nav class="crumbs" aria-label="{T("crumbs")}">{crumbs}</nav>
     {eyebrow(sec)}
     <h1>{inline(sec['title'])}</h1>
@@ -423,6 +426,7 @@ def phero(sec, crumbs, R, extra=''):
       <a class="btn btn--lg btn--yellow" href="#demo">{T("demo")} <svg><use href="#i-arrow"/></svg></a>
       <a class="btn btn--lg btn--ghost" href="{WA}" rel="noopener"><svg><use href="#i-wa"/></svg> {T("wa_btn")}</a>
     </div>{extra}
+    </div>{shot}
   </div>
 </section>'''
 
@@ -564,7 +568,7 @@ def inner(p):
     hero = next((s for s in secs if s['type'] == 'hero'), None)
     body = ''
     if hero:
-        body += phero(hero, crumbs_for(p, R), R)
+        body += phero(hero, crumbs_for(p, R), R, img=FEATURE_IMG.get(p['path']))
         desc = strip_md(' '.join(hero['paras']))[:300]
     else:
         desc = strip_md(p['title'])
@@ -579,7 +583,7 @@ def inner(p):
     if p['path'] == '/features/' and not hero:
         # индекс возможностей: заголовок из первой секции
         first = secs[0]
-        body = phero(dict(title='Всё, чем живёт таксопарк', eyebrow='Возможности', paras=first['paras']), crumbs_for(p, R), R) + f'<section class="section section--card"><div class="wrap">{cards(first, R, 4)}</div></section>' + ''.join(generic_section(s, R, False) for s in secs[1:])
+        body = phero(dict(title='Всё, чем живёт таксопарк', eyebrow='Возможности', paras=first['paras']), crumbs_for(p, R), R, img=FEATURE_IMG.get('/features/')) + f'<section class="section section--card"><div class="wrap">{cards(first, R, 4)}</div></section>' + ''.join(generic_section(s, R, False) for s in secs[1:])
         desc = strip_md(' '.join(first['paras']))[:300]
     other = ''
     if p['path'].startswith('/features/') and p['path'] != '/features/':
