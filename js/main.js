@@ -12,6 +12,7 @@
   addEventListener('scroll', onScroll, { passive: true }); onScroll();
   $('.nav__burger')?.addEventListener('click', () => nav.classList.toggle('is-open'));
   $$('.nav__menu a').forEach(a => a.addEventListener('click', () => nav.classList.remove('is-open')));
+  $$('.dd__tgl').forEach(b => b.addEventListener('click', e => { e.preventDefault(); const li = b.closest('.has-dd'); const open = li.classList.contains('is-open'); $$('.has-dd.is-open').forEach(x => x.classList.remove('is-open')); if (!open) li.classList.add('is-open'); }));
   $$('.float').forEach(f => f.addEventListener('animationend', () => f.classList.add('is-live'), { once: true }));
   $$('.btn').forEach(b => b.addEventListener('pointermove', e => { const r = b.getBoundingClientRect(); b.style.setProperty('--mx', `${e.clientX - r.left}px`); b.style.setProperty('--my', `${e.clientY - r.top}px`); }));
 
@@ -30,12 +31,11 @@
   $$('[data-count]').forEach(el => cio.observe(el));
 
   /* flow line */
-  const flow = $('.flow');
-  if (flow) {
+  $$('.flow').forEach(flow => {
     const line = $('.flow__line i', flow), steps = $$('.step', flow);
     const upd = () => { const r = flow.getBoundingClientRect(), vh = innerHeight; const p = Math.min(1, Math.max(0, (vh * .8 - r.top) / (r.height + vh * .2))); line.style.setProperty('--p', p); steps.forEach((s, i) => s.classList.toggle('is-on', p >= (i + .5) / steps.length)); };
     addEventListener('scroll', upd, { passive: true }); upd();
-  }
+  });
 
   /* tabs */
   const tabs = $$('.tab'), panes = $$('.pane');
@@ -44,7 +44,7 @@
     const show = i => { cur = i; tabs.forEach((t, k) => t.classList.toggle('is-active', k === i)); panes.forEach((p, k) => p.classList.toggle('is-active', k === i)); };
     const auto = () => { clearInterval(timer); if (!reduced) timer = setInterval(() => show((cur + 1) % tabs.length), 6000); };
     tabs.forEach((t, i) => t.addEventListener('click', () => { show(i); auto(); }));
-    new IntersectionObserver(es => es.forEach(e => e.isIntersecting ? auto() : clearInterval(timer)), { threshold: .3 }).observe($('.feat'));
+    const featEl = $('.feat'); if (featEl) new IntersectionObserver(es => es.forEach(e => e.isIntersecting ? auto() : clearInterval(timer)), { threshold: .3 }).observe(featEl);
     show(0);
   }
 
@@ -100,10 +100,10 @@
   $$('.form input').forEach(i => i.addEventListener('input', () => i.classList.remove('is-invalid')));
   form?.addEventListener('submit', async e => {
     e.preventDefault();
-    const btn = $('button[type=submit]', form), name = $('#name', form), phone = $('#phone', form), cars = $('#cars', form);
+    const btn = $('button[type=submit]', form), name = $('#name', form), phone = $('#phone', form), cars = $('#cars', form), city = $('#city', form);
     if (!name.value.trim()) { name.focus(); name.classList.add('is-invalid'); return; }
     if (phone.value.replace(/\D/g, '').length < 11) { phone.focus(); phone.classList.add('is-invalid'); return; }
-    const payload = { name: name.value.trim(), phone: phone.value.trim(), segment: cars?.value || '', page: location.pathname, source: 'yumefleet.com', website: $('input[name=website]', form)?.value || '' };
+    const payload = { name: name.value.trim(), phone: phone.value.trim(), segment: [cars?.value, city?.value.trim()].filter(Boolean).join(' · '), page: location.pathname, source: 'yumefleet.com', website: $('input[name=website]', form)?.value || '' };
     const label = btn.textContent; btn.disabled = true; btn.textContent = 'Отправляем…';
     let sent = false;
     if (LEAD_ENDPOINT) {
