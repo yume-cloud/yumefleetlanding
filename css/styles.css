@@ -516,3 +516,4 @@ h1 .tag,h2 .tag{font-size:12px;padding:3px 9px;vertical-align:middle}
 .nav__lang{padding:8px 10px;font-weight:700;font-size:12px;letter-spacing:.08em;color:var(--ink);opacity:.7;border:1px solid currentColor;border-radius:8px;line-height:1}
 .nav__lang:hover{opacity:1}
 @media (max-width:1040px){.nav__lang{display:inline-flex}}
+.int b em.tag--soon{background:#E6E6E6;color:#4F4F4F}

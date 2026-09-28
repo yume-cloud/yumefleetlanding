@@ -298,7 +298,7 @@ def page(p, body, R, desc):
 <link rel="preload" as="font" type="font/woff2" href="{R}assets/fonts/geist-800-cyrillic.woff2" crossorigin>
 <link rel="preload" as="font" type="font/woff2" href="{R}assets/fonts/geist-400-cyrillic.woff2" crossorigin>
 <style>{FONTS_CSS.replace('url(', 'url(' + R + 'assets/fonts/')}</style>
-<link rel="stylesheet" href="{R}css/styles.css?v=4">
+<link rel="stylesheet" href="{R}css/styles.css?v=5">
 {ld(p, body)}{analytics()}</head>
 <body>
 
