@@ -1,0 +1,379 @@
+<!doctype html>
+<html lang="kk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Yume Fleet: таксопаркті басқаруға арналған платформа</title>
+<meta name="description" content="Тәуліктік және сатып алу шартымен жалдау есебі, қарызды бақылау, Kaspi Pay арқылы төлемдер, ЖҚЕ айыппұлдары, eGov арқылы онлайн қол қою, ТҚ және шеберхана. Бәрі бір жүйеде.">
+<link rel="canonical" href="https://yumefleet.com/kk/">
+<link rel="alternate" hreflang="ru" href="https://yumefleet.com/">
+<link rel="alternate" hreflang="kk" href="https://yumefleet.com/kk/">
+<link rel="alternate" hreflang="x-default" href="https://yumefleet.com/">
+<link rel="preload" as="image" href="../assets/screens/dashboard.webp" imagesrcset="../assets/screens/dashboard-960.webp 960w, ../assets/screens/dashboard.webp 1800w" imagesizes="(max-width: 1200px) 100vw, 1140px">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Yume Fleet: таксопаркті басқаруға арналған платформа">
+<meta property="og:description" content="Тәуліктік және сатып алу шартымен жалдау есебі, қарызды бақылау, Kaspi Pay арқылы төлемдер, ЖҚЕ айыппұлдары, eGov арқылы онлайн қол қою, ТҚ және шеберхана. Бәрі бір жүйеде.">
+<meta property="og:url" content="https://yumefleet.com/kk/">
+<meta property="og:image" content="https://yumefleet.com/assets/img/og.png">
+<link rel="icon" href="../assets/logo/favicon.svg" type="image/svg+xml">
+<link rel="preload" as="font" type="font/woff2" href="../assets/fonts/geist-800-cyrillic.woff2" crossorigin>
+<link rel="preload" as="font" type="font/woff2" href="../assets/fonts/geist-400-cyrillic.woff2" crossorigin>
+<style>/* cyrillic-ext */
+@font-face {
+  font-family: 'Geist';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(../assets/fonts/geist-400-cyrillic-ext.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Geist';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(../assets/fonts/geist-400-cyrillic.woff2) format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Geist';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(../assets/fonts/geist-400-latin-ext.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Geist';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(../assets/fonts/geist-400-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Geist';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(../assets/fonts/geist-500-cyrillic-ext.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Geist';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(../assets/fonts/geist-500-cyrillic.woff2) format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Geist';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(../assets/fonts/geist-500-latin-ext.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Geist';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(../assets/fonts/geist-500-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Geist';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(../assets/fonts/geist-600-cyrillic-ext.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Geist';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(../assets/fonts/geist-600-cyrillic.woff2) format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Geist';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(../assets/fonts/geist-600-latin-ext.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Geist';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(../assets/fonts/geist-600-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Geist';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(../assets/fonts/geist-700-cyrillic-ext.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Geist';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(../assets/fonts/geist-700-cyrillic.woff2) format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Geist';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(../assets/fonts/geist-700-latin-ext.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Geist';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(../assets/fonts/geist-700-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Geist';
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url(../assets/fonts/geist-800-cyrillic-ext.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Geist';
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url(../assets/fonts/geist-800-cyrillic.woff2) format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Geist';
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url(../assets/fonts/geist-800-latin-ext.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Geist';
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url(../assets/fonts/geist-800-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+</style>
+<link rel="stylesheet" href="../css/styles.css?v=4">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Organization", "name": "Yume Fleet", "legalName": "ТОО «Yume.Cloud»", "url": "https://yumefleet.com/", "logo": "https://yumefleet.com/assets/logo/tile.svg", "telephone": "+77779479990", "email": "sales@yume.cloud", "address": {"@type": "PostalAddress", "addressLocality": "Алматы", "addressCountry": "KZ"}, "sameAs": ["https://www.instagram.com/yumecloudx/", "https://t.me/yumefleet"]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Қандай парктерге жарайды?", "acceptedAnswer": {"@type": "Answer", "text": "Кез келген көлемдегі таксопаркке. Жазылым әр көлік үшін есептеледі."}}, {"@type": "Question", "name": "Yume Fleet-тің Yume Cloud-тан айырмашылығы неде?", "acceptedAnswer": {"@type": "Answer", "text": "Yume Fleet тек таксопарктерге жасалған: өз жалдау модельдері, ЖҚЕ айыппұлдары, сатып алу, субжалдау, лизинг. Yume Cloud мүкәммал прокатына арналған жүйе болып қалады."}}, {"@type": "Question", "name": "Мен Yume Cloud-та жұмыс істеймін. Не істеуім керек?", "acceptedAnswer": {"@type": "Answer", "text": "Қиын ештеңе жоқ: деректерді біз көшіреміз, баға бұрынғыдай қалады. Толығырақ «Yume Cloud клиенттеріне» бетінде."}}, {"@type": "Question", "name": "Жүргізуші қалай төлейді?", "acceptedAnswer": {"@type": "Answer", "text": "Kaspi Pay сілтемесі арқылы, кірусіз және парольсіз. Қолма-қол ақша мен аударымдарды менеджер сол жалдауда белгілейді."}}, {"@type": "Question", "name": "Депозитпен не болады?", "acceptedAnswer": {"@type": "Answer", "text": "Депозит жалдаудан бөлек есепке алынады және қарызды өзі өтемейді. Депозитті қабылдау, есепке алу немесе қайтару жеке әрекетпен, тарихымен жасалады."}}, {"@type": "Question", "name": "Деректер кімге тиесілі?", "acceptedAnswer": {"@type": "Answer", "text": "Сізге. Әр компанияның деректері оқшауланған, кез келген уақытта Excel-ге шығаруға болады."}}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "Yume Fleet", "applicationCategory": "BusinessApplication", "operatingSystem": "Web", "description": "Платформа для управления таксопарком: аренда посуточно и под выкуп, долги, Kaspi Pay, штрафы ПДД, подписание через eGov.", "url": "https://yumefleet.com/", "publisher": {"@type": "Organization", "name": "Yume Fleet"}, "offers": {"@type": "Offer", "priceCurrency": "KZT", "description": "Цена по запросу, подписка за каждую машину"}}</script>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="mark" viewBox="0 0 42 18"><path d="M6 0l9 0-3 9-9 0z m18 0l9 0-3 9-9 0z m-12 9l9 0-3 9-9 0z m18 0l9 0-3 9-9 0z" fill="currentColor"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-play" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" stroke-width="2"/><path d="m10 8 6 4-6 4z" fill="currentColor"/></symbol>
+  <symbol id="i-wa" viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M8.5 9.5c0 3 2.5 5.5 5.5 5.5l1.5-1.5-2-1-1 1a4 4 0 0 1-2.5-2.5l1-1-1-2z" fill="currentColor"/></symbol>
+  <symbol id="i-up" viewBox="0 0 24 24"><path d="M12 19V5M5 12l7-7 7 7" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-alert" viewBox="0 0 24 24"><path d="M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0zM12 9v4M12 17h.01" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-wallet" viewBox="0 0 24 24"><path d="M3 7a2 2 0 0 1 2-2h13v4M3 7v11a2 2 0 0 0 2 2h15a1 1 0 0 0 1-1v-9a1 1 0 0 0-1-1H5a2 2 0 0 1-2-2z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><circle cx="16.5" cy="14" r="1.2" fill="currentColor"/></symbol>
+  <symbol id="i-car" viewBox="0 0 24 24"><path d="M5 11l1.5-4.5A2 2 0 0 1 8.4 5h7.2a2 2 0 0 1 1.9 1.5L19 11M3 11h18v6h-2M3 17h2M7 17h10" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="7" cy="17" r="2" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="17" cy="17" r="2" fill="none" stroke="currentColor" stroke-width="2"/></symbol>
+  <symbol id="i-user" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4" fill="none" stroke="currentColor" stroke-width="2"/><path d="M4 21a8 8 0 0 1 16 0" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+  <symbol id="i-doc" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8zM14 2v6h6M9 15l2 2 4-4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="m9 12 2 2 4-4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-wrench" viewBox="0 0 24 24"><path d="M14.7 6.3a4 4 0 0 0 5 5L13 18a2.1 2.1 0 0 1-3-3l6.7-6.7zM21 3l-4 4M3 21l4-4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 22s7-6.2 7-12a7 7 0 1 0-14 0c0 5.8 7 12 7 12z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><circle cx="12" cy="10" r="2.5" fill="none" stroke="currentColor" stroke-width="2"/></symbol>
+  <symbol id="i-phone" viewBox="0 0 24 24"><rect x="6" y="2" width="12" height="20" rx="2.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M11 18h2" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+  <symbol id="i-inbox" viewBox="0 0 24 24"><path d="M22 12h-6l-2 3h-4l-2-3H2M5.5 5h13L22 12v7H2v-7z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></symbol>
+  <symbol id="i-upload" viewBox="0 0 24 24"><path d="M12 16V4M6 10l6-6 6 6M4 20h16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-cal" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2" fill="none" stroke="currentColor" stroke-width="2"/><path d="M3 10h18M8 3v4M16 3v4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+  <symbol id="i-link" viewBox="0 0 24 24"><path d="M10 14a5 5 0 0 0 7 0l3-3a5 5 0 0 0-7-7l-1 1M14 10a5 5 0 0 0-7 0l-3 3a5 5 0 0 0 7 7l1-1" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+  <symbol id="i-chev" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-chart" viewBox="0 0 24 24"><path d="M4 20v-8M10 20V5M16 20v-6M2 20h20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+  <symbol id="i-cog" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3" fill="none" stroke="currentColor" stroke-width="2"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.8-.3 1.7 1.7 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-1.1-1.5 1.7 1.7 0 0 0-1.8.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.8 1.7 1.7 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.1a1.7 1.7 0 0 0 1.5-1.1 1.7 1.7 0 0 0-.3-1.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.8.3H9a1.7 1.7 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.8-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.8V9a1.7 1.7 0 0 0 1.5 1H21a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></symbol>
+</svg>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="logo" href="../kk/"><i><svg><use href="#mark"/></svg></i><span><b>yume</b><em>fleet</em></span></a>
+    <nav aria-label="Негізгі мәзір">
+      <ul class="nav__menu">
+        <li><a href="../kk/" class="is-cur">Басты бет</a></li>
+        <li class="has-dd"><a href="../features/">Мүмкіндіктер <svg><use href="#i-chev"/></svg></a><button class="dd__tgl" aria-label="Мүмкіндіктерді ашу"><svg><use href="#i-chev"/></svg></button><div class="dd"><div class="dd__panel"><div class="dd__grid"><a class="dd__i" href="../features/rentals/"><svg><use href="#i-cal"/></svg><div><b>Жалдау карточкасы</b><small>Тәуліктік, мерзім, төлем кестесі</small></div></a><a class="dd__i" href="../features/buyout/"><svg><use href="#i-car"/></svg><div><b>Сатып алумен жалдау</b><small>Жарна, барысы, қалдық</small></div></a><a class="dd__i" href="../features/shifts/"><svg><use href="#i-user"/></svg><div><b>Ауысымдар</b><small>Бір көлікте екі жүргізуші</small></div></a><a class="dd__i" href="../features/drivers/"><svg><use href="#i-shield"/></svg><div><b>Жүргізушілер</b><small>Қарыз, депозит, сенімділік</small></div></a><a class="dd__i" href="../features/vehicles/"><svg><use href="#i-wrench"/></svg><div><b>Көліктер</b><small>ТҚ, жөндеу, қойма, өтелімділік</small></div></a><a class="dd__i" href="../features/finance/"><svg><use href="#i-wallet"/></svg><div><b>Ақша мен қарыздар</b><small>Есептеулер, төлемдер, өтеу</small></div></a><a class="dd__i" href="../features/fines/"><svg><use href="#i-alert"/></svg><div><b>ЖҚЕ айыппұлдары мен залал</b><small>Хаттама, жеңілдік, бөліп төлеу</small></div></a><a class="dd__i" href="../features/documents/"><svg><use href="#i-doc"/></svg><div><b>Құжаттар мен қол қою</b><small>Шарттар, актілер, eGov және SMS</small></div></a><a class="dd__i" href="../features/investors/"><svg><use href="#i-link"/></svg><div><b>Субжалдау және лизинг</b><small>Инвесторлар, үлестер, кредиттер</small></div></a><a class="dd__i" href="../features/analytics/"><svg><use href="#i-chart"/></svg><div><b>Аналитика</b><small>P&L, cash flow, өтелімділік</small></div></a><a class="dd__i" href="../features/leads/"><svg><use href="#i-wa"/></svg><div><b>WhatsApp және воронка</b><small>Жүргізуші өтінімдері жалдауға дейін</small></div></a><a class="dd__i" href="../features/settings/"><svg><use href="#i-cog"/></svg><div><b>Икемді баптаулар</b><small>Ережелер, рөлдер, бірнеше парк</small></div></a></div><a class="dd__all" href="../features/">Барлық мүмкіндіктер <svg><use href="#i-arrow"/></svg></a></div></div></li>
+        <li><a href="../integrations/">Интеграциялар</a></li>
+        <li><a href="../perehod/">Yume Cloud клиенттеріне</a></li>
+        <li><a href="../kk/contacts/">Байланыс</a></li>
+        <li><a class="nav__cta-m" href="#demo">Демоға жазылу</a></li>
+      </ul>
+    </nav>
+    <div class="nav__actions">
+      <a class="nav__lang" href="../" hreflang="ru" lang="ru">RU</a><a class="nav__login" href="https://app.yumefleet.kz/">Кіру</a>
+      <a class="btn btn--sm btn--yellow" href="#demo">Демоға жазылу</a>
+      <button class="nav__burger" aria-label="Мәзір"><span></span></button>
+    </div>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero__checks"></div>
+  <div class="wrap">
+    <div class="hero__inner">
+      <div class="hero__pill"><b><svg width="14" height="6"><use href="#mark"/></svg> ТАКСОПАРКТЕР</b> Қазақстан таксопарктеріне</div>
+      <h1>Таксопаркті басқаруға арналған бірыңғай <span class="hl">платформа.</span></h1>
+      <p class="lead">Тәуліктік және сатып алу шартымен жалдау есебі, <strong>қарызды бақылау,</strong> <strong>Kaspi Pay</strong> арқылы төлемдер, ЖҚЕ айыппұлдары, eGov арқылы онлайн қол қою, ТҚ және шеберхана. Бәрі бір жүйеде.</p>
+      <div class="hero__ctas">
+        <a class="btn btn--lg btn--yellow" href="#demo">Демоға жазылу <svg><use href="#i-arrow"/></svg></a>
+        <a class="btn btn--lg btn--ghost" href="https://app.yumefleet.kz/">Кіру</a>
+      </div>
+      <div class="hero__trust"><span><svg><use href="#i-check"/></svg> Тәуліктік және сатып алумен</span><span><svg><use href="#i-check"/></svg> Kaspi Pay біздің комиссиямызсыз</span><span><svg><use href="#i-check"/></svg> eGov арқылы қол қою</span></div>
+    </div>
+    <div class="hero__stage">
+      <div class="hero__frame">
+        <img width="1800" height="1125" src="../assets/screens/dashboard.webp" srcset="../assets/screens/dashboard-960.webp 960w, ../assets/screens/dashboard.webp 1800w" sizes="(max-width: 1200px) 100vw, 1140px" alt="Yume Fleet басты экраны: түсім, жалдаудағы көліктер, қарыздар" fetchpriority="high">
+        <div class="hero__fade"></div>
+      </div>
+      <div class="float float--1"><i><svg><use href="#i-alert"/></svg></i><div><b>Мерзімі өткен · 3 күн</b>Ерлан С. · Chevrolet Cobalt</div></div>
+      <div class="float float--2"><i><svg><use href="#i-car"/></svg></i><div><b>Жаңа ЖҚЕ айыппұлы</b>847 ABC 02 · жүргізушіге байланды</div></div>
+      <div class="float float--3"><i><svg><use href="#i-wallet"/></svg></i><div><b>Kaspi Pay арқылы төлем</b>+ 9 000 ₸ · жалдауға түсті</div></div>
+    </div>
+  </div>
+</section>
+<div class="metrics"><div class="wrap" data-stagger><div class="metric"><b>Кез келген жалдау шарты<em class="tag tag--new">новое</em></b><span>Тәуліктік, ауысымдық, белгіленген мерзім, <strong>сатып алу шартымен жалдау</strong>. Субжалдау мен лизинг есебі.</span></div><div class="metric"><b>Кім қарыз екені көрінеді</b><span>Барлық бап бойынша қарыз сомасы және әр жүргізуші бойынша <strong>мерзімі өткен күндер</strong>. Excel-сіз және ай соңындағы салыстырусыз.</span></div><div class="metric"><b>Жүргізуші өзі төлейді</b><span><strong>Жүргізушіге арналған</strong> сілтеме: күндерді өзі таңдап, <strong>Kaspi Pay</strong> арқылы төлейді. Төлем жүйеге өзі түседі.</span></div><div class="metric"><b>Айыппұлдар жоғалмайды</b><span>ЖҚЕ айыппұлдары хаттамасымен келіп, жүйеде <strong>жүргізушіге байланады</strong>.</span></div></div></div>
+<section class="section" id="tools"><div class="wrap"><div class="sec-head"><div data-reveal><p class="eyebrow">Құралдар</p><h2>Yume Fleet операциялық жұмысты өзіне алады</h2></div><p class="lead" data-reveal style="--d:.1s">Парктің ең көп уақыты кететін үш міндет.</p></div><div class="tools" data-stagger><article class="tool"><i><svg><use href="#i-user"/></svg></i><h3>Жүргізушілер есебі</h3><p>Жүргізушінің бүкіл тарихы бір карточкада: жалдаулар, төлемдер, қарыздар, айыппұлдар, құжаттар. Жүргізушіні табу, қарызын тексеру және көлік беру бірер минут алады.</p><ul class="checks checks--sm"><li><i><svg><use href="#i-check"/></svg></i><span>Борышкерлер тізілімі мен қара тізім бойынша тексеру</span></li><li><i><svg><use href="#i-check"/></svg></i><span>Депозит және ЖКО-дан кейінгі <strong>залалды бөліп төлеу</strong></span></li><li><i><svg><use href="#i-check"/></svg></i><span>Жүргізушінің <strong>сенімділік деңгейі</strong></span></li></ul></article><article class="tool"><i><svg><use href="#i-car"/></svg></i><h3>Паркті бақылау</h3><p>Әр көлік жүйеде: кім жүреді, ТҚ қашан, жүрісі қанша, қанша тапты.</p><ul class="checks checks--sm"><li><i><svg><use href="#i-check"/></svg></i><span>Еске салуы бар <strong>жүріс бойынша ТҚ</strong></span></li><li><i><svg><use href="#i-check"/></svg></i><span>Әр көлік бойынша ЖҚЕ айыппұлдары</span></li><li><i><svg><use href="#i-check"/></svg></i><span>Беру мен қайтарудағы тексерулер, жол парақтары</span></li></ul></article><article class="tool"><i><svg><use href="#i-wallet"/></svg></i><h3>Төлемдер мен қарыздар</h3><p>Есептеулер, төлемдер, қарыздар мен депозиттер бір журналда. Менеджер әр жүргізуші бойынша ақшаны көреді.</p><ul class="checks checks--sm"><li><i><svg><use href="#i-check"/></svg></i><span><strong>Kaspi Pay</strong> сілтемесі арқылы төлем</span></li><li><i><svg><use href="#i-check"/></svg></i><span>Депозит жалдаудан бөлек есепке алынады</span></li><li><i><svg><use href="#i-check"/></svg></i><span>Әр көліктің <strong>өтелімділігі</strong></span></li></ul></article></div></div></section>
+<section class="section section--dark" id="story"><div class="wrap story"><div data-reveal="left"><p class="eyebrow">Тарих</p><h2>2023 жылдан бері жалдауды басқарамыз. Енді таксопарктерге арналған жеке өнім.</h2></div><div class="story__body" data-reveal="right"><p><strong>2023 жылдан</strong> бері платформамыз жалдауды басқару үшін жұмыс істейді. Осы уақытта таксопарк қай жерде ақша жоғалтатынын көрдік: ешкім күн бойынша санамайтын қарыздар, WhatsApp-тағы төлемдер, көлік қайтарылғаннан кейін табылған айыппұлдар.</p><p><strong>Yume Fleet</strong> – жаңа мамандандырылған өнім: өз ядросы, көліктің, жүргізушінің және жалдаудың жаңа карточкалары, жетілдірілген жүйе. Yume Cloud-та жұмыс істегеннің бәрін ескеріп, дәл таксопарктерге қажеттісін қостық: <strong>сатып алу, субжалдау, лизинг, ауысымдар, жол парақтары және басқа да көп нәрсе</strong>.</p></div></div></section>
+<section class="section" id="debt">
+  <div class="wrap debt">
+    <div data-reveal="left"><p class="eyebrow">Төлемдер</p><h2>Барлық қарыз бен төлем нақты уақытта</h2><p class="lead" style="margin-top:18px">Жалдау <strong>күн сайын өзі есептеледі</strong>. Kaspi Pay төлемі жалдауға өзі түседі, мерзімі өткені бірден көрінеді. Ай соңында ешқандай салыстыру жоқ.</p><ul class="debt__list checks"><li><i><svg><use href="#i-check"/></svg></i><span>Күн сайын есептеу, <strong>парктің демалыс күні саналмайды</strong></span></li><li><i><svg><use href="#i-check"/></svg></i><span>Әр жалдау бойынша қарыз және <strong>мерзімі өткен күндер</strong></span></li><li><i><svg><use href="#i-check"/></svg></i><span><strong>Мерзімін өткізу айыппұлы</strong> автоматты түрде есептеледі</span></li><li><i><svg><use href="#i-check"/></svg></i><span>Түсінікті <strong>өтеу тәртібі</strong>: алдымен жалдау, сосын айыппұлдар, сосын залал</span></li><li><i><svg><use href="#i-check"/></svg></i><span>«Мерзімі өткен» және «Борышкер» статустары өзі қойылады</span></li><li><i><svg><use href="#i-check"/></svg></i><span>Төлем тарихы <strong>артқы күнмен түзетілмейді</strong>, тек жазбасы бар түзетумен</span></li></ul><a class="btn" href="#demo">Демоға жазылу <svg><use href="#i-arrow"/></svg></a></div>
+    <div class="ledger" data-reveal="right">
+      <div class="ledger__head"><b>Жалдаулар · мерзімі өткен</b><span><i></i> <em class="ledger__event">нақты уақытта жаңарады</em></span></div>
+      <table><thead><tr><th>Жүргізуші</th><th>Көлік</th><th>Ставка</th><th>Баланс</th></tr></thead><tbody></tbody></table>
+      <div class="ledger__foot"><span>Парк бойынша бүгінгі қарыз</span><b>33 500 ₸</b></div>
+    </div>
+  </div>
+</section>
+<section class="section section--card" id="driver">
+  <div class="wrap drv">
+    <div data-reveal="left"><p class="eyebrow">Жүргізушіге</p><h2>Жүргізуші өз жалдауын көреді және телефоннан төлейді</h2><p class="lead" style="margin-top:14px"><strong>Қазірдің өзінде</strong> жүргізуші WhatsApp немесе SMS арқылы сілтеме алады, қарызын көреді, күндерді таңдап, Kaspi Pay арқылы төлейді. Кірусіз және парольсіз.</p><p class="lead" style="margin-top:14px"><strong>Жақында</strong> жүргізушіге арналған мобильді қосымша шығады <em class="tag tag--soon">скоро</em>: жүргізушінің паркпен толыққанды жұмысы бір жерде. <strong>Менеджерге қоңырау азаяды</strong> және төлем туралы дау азаяды.</p><ul class="drv__list checks"><li><i><svg><use href="#i-check"/></svg></i><span>Kaspi арқылы жалдау және басқа төлемдерді төлеу</span></li><li><i><svg><use href="#i-check"/></svg></i><span><strong>Өз қаржысын бақылау</strong>: күн бойынша есептеулер, жалдау төлемдері, қарыз</span></li><li><i><svg><use href="#i-check"/></svg></i><span>Өз шығындарын есепке алу</span></li><li><i><svg><use href="#i-check"/></svg></i><span>ЖҚЕ айыппұлдары мен ЖКО</span></li><li><i><svg><use href="#i-check"/></svg></i><span>Телефоннан <strong>фотосымен көлікті тексеру</strong></span></li><li><i><svg><use href="#i-check"/></svg></i><span>Сатып алу: қанша жиналды және қанша қалды</span></li><li><i><svg><use href="#i-check"/></svg></i><span>Шарт пен құжаттар әрқашан қолжетімді</span></li></ul></div>
+    <div class="drv__shots" data-reveal="scale">
+      <figure class="drv__shot"><img src="../assets/screens/pay-link.webp" width="1800" height="1125" alt="Kaspi Pay сілтемесі арқылы жалдау төлемі беті" loading="lazy"><figcaption>Сілтеме арқылы төлем · қазірдің өзінде</figcaption></figure>
+      <figure class="drv__shot drv__shot--phone"><img src="../assets/screens/driver-mobile.webp" width="840" height="2080" alt="Yume Fleet жүргізуші қосымшасы" loading="lazy"><figcaption>Жүргізуші қосымшасы <em class="tag tag--soon">жақында</em></figcaption></figure>
+    </div>
+  </div>
+</section>
+<section class="section" id="buyout">
+  <div class="wrap promo">
+    <div class="promo__vis" data-reveal="scale">
+      <div class="bcard">
+        <div class="bcard__head"><span class="plate">847 ABC 02</span><b>Chevrolet Cobalt · 2022</b><em>Сатып алумен жалдау</em></div>
+        <div class="bcard__sum"><small>Сатып алу құны</small><b>7 200 000 ₸</b></div>
+        <div class="bcard__bar"><i style="--p:.62"></i></div>
+        <div class="bcard__row"><div><small>Жиналды</small><b class="pos">4 464 000 ₸</b></div><div><small>Қалды</small><b>2 736 000 ₸</b></div><div><small>Келесі төлем</small><b>9 000 ₸ · ертең</b></div></div>
+        <div class="bcard__steps"><span class="is-done">Жарна</span><span class="is-on">Сатып алу</span><span>Сатып алынды</span></div>
+      </div>
+    </div>
+    <div data-reveal="right"><p class="eyebrow">Сатып алу</p><h2>Жеке кестесіз сатып алу шартымен жалдау</h2><p class="lead" style="margin-top:18px">Жүргізуші көлікті жалдап, <strong>сатып алуға жарна жинайды</strong>. Жүйе кестені жүргізеді, қанша жиналғанын және қанша қалғанын көрсетеді.</p><ul class="debt__list checks"><li><i><svg><use href="#i-check"/></svg></i><span>Кезеңдер: жарна жинау, сатып алу, көлік сатып алынды</span></li><li><i><svg><use href="#i-check"/></svg></i><span>Сатып алу төлемі жалдаумен бір кестеде</span></li><li><i><svg><use href="#i-check"/></svg></i><span>Субжалдау, лизинг және парктің бөліп төлеуі сол жүйеде</span></li></ul><a class="link" href="../features/buyout/">Сатып алу туралы толығырақ <svg><use href="#i-arrow"/></svg></a></div>
+  </div>
+</section>
+<section class="section section--card" id="fines">
+  <div class="wrap promo promo--rev">
+    <div data-reveal="left"><p class="eyebrow">Айыппұлдар</p><h2>ЖҚЕ айыппұлы жүргізушіні өзі табады</h2><p class="lead" style="margin-top:18px">Қаулылар <strong>хаттамасымен</strong> келіп, сол сәтте рөлде болған жүргізушіге байланады. Айыппұлды қай күнге дейін <strong>жеңілдікпен</strong> төлеуге болатыны көрінеді.</p><ul class="debt__list checks"><li><i><svg><use href="#i-check"/></svg></i><span>Айыппұл карточкасында хаттама мен бұзушылық фотосы</span></li><li><i><svg><use href="#i-check"/></svg></i><span>Жеңілдік мерзімі менеджерге көрінеді</span></li><li><i><svg><use href="#i-check"/></svg></i><span>Айыппұл жүргізушінің қарызына қосылады</span></li><li><i><svg><use href="#i-check"/></svg></i><span>ЖКО-дан кейінгі залалды <strong>бөліп төлеуге</strong> болады</span></li></ul><a class="link" href="../features/fines/">Айыппұлдар туралы толығырақ <svg><use href="#i-arrow"/></svg></a></div>
+    <div class="promo__vis promo__vis--shot" data-reveal="scale"><img src="../assets/screens/fines.webp" width="1800" height="1125" alt="Yume Fleet-тегі ЖҚЕ айыппұлдары: хаттама, жүргізуші, жеңілдік мерзімі" loading="lazy"></div>
+  </div>
+</section>
+<section class="section" id="shift"><div class="wrap"><div class="sec-head sec-head--center" data-reveal><div><p class="eyebrow">Бұрын және қазір</p><h2>Парктің жұмысы қалай өзгереді</h2></div></div><div class="shift" data-reveal><div class="shift__row"><div>Было</div><div></div><div>Стало</div></div><div class="shift__row"><div class="shift__was">Қарызды ай соңында қолмен санайды</div><div class="shift__arr"><svg><use href="#i-arrow"/></svg></div><div class="shift__now">Қарыз бен мерзімі өткен күндер әр жалдау бойынша <strong>күн сайын көрінеді</strong></div></div><div class="shift__row"><div class="shift__was">Жүргізуші картаға аударады, менеджер төлемді іздейді</div><div class="shift__arr"><svg><use href="#i-arrow"/></svg></div><div class="shift__now">Жүргізуші <strong>Kaspi сілтемесі</strong> арқылы төлейді, төлем жалдауға өзі түседі</div></div><div class="shift__row"><div class="shift__was">Айыппұлды көлік қайтарылған соң біледі</div><div class="shift__arr"><svg><use href="#i-arrow"/></svg></div><div class="shift__now">Айыппұл <strong>хаттамасымен</strong> келеді және бірден жүргізушіге байланған</div></div><div class="shift__row"><div class="shift__was">Шарт қағазда, қол қою кездескенде</div><div class="shift__arr"><svg><use href="#i-arrow"/></svg></div><div class="shift__now">Шартқа кездесусіз <strong>eGov немесе SMS арқылы</strong> қол қояды</div></div><div class="shift__row"><div class="shift__was">Проблемалы жүргізушіні залалдан кейін біледі</div><div class="shift__arr"><svg><use href="#i-arrow"/></svg></div><div class="shift__now">Көлік берер алдында борышкерлер тізілімі мен қара тізім бойынша <strong>тексеру</strong></div></div><div class="shift__row"><div class="shift__was">Сатып алу мен субжалдау жеке кестеде</div><div class="shift__arr"><svg><use href="#i-arrow"/></svg></div><div class="shift__now"><strong>Сатып алу, субжалдау және лизинг</strong> жалдаумен бір жүйеде</div></div></div></div></section>
+<section class="section section--card" id="features"><div class="wrap"><div class="sec-head"><div data-reveal><p class="eyebrow">Мүмкіндіктер</p><h2>Таксопарк өмір сүретіннің бәрі</h2></div><p class="lead" data-reveal style="--d:.1s">Жалдау, жүргізуші және көлік карточкалары енді <strong>жұмыс аймағы</strong>: оларда төлем қабылдайды, көлікті ауыстырады, айыппұлдар мен құжаттарды қарайды, басқа экрандарға өтпей.</p></div><div class="cards cards--4"><a class="card card--link" href="../features/rentals/" data-reveal><i class="card__i"><svg><use href="#i-cal"/></svg></i><h3>Жалдау карточкасы</h3><p>Төлеуге қалғаны, <strong>күн бойынша төлем кестесі</strong>, төлем журналы, тексерулер, айыппұлдар, қызметтер, құжаттар. «Төлем қабылдау», «Көлікті ауыстыру», «Аяқтау» батырмалары. Тәуліктік, белгіленген мерзім.</p><span class="link">Толығырақ <svg><use href="#i-arrow"/></svg></span></a><a class="card card--link" href="../features/drivers/" data-reveal><i class="card__i"><svg><use href="#i-shield"/></svg></i><h3>Жүргізуші карточкасы</h3><p>Барлық жалдау, қарыз, депозит, айыппұлдар, құжаттар, <strong>сенімділік деңгейі</strong>. Оған көлік беруге бола ма, көрінеді.</p><span class="link">Толығырақ <svg><use href="#i-arrow"/></svg></span></a><a class="card card--link" href="../features/vehicles/" data-reveal><i class="card__i"><svg><use href="#i-wrench"/></svg></i><h3>Көлік карточкасы</h3><p>Қазір кім жүреді, жүрісі, <strong>ТҚ және жөндеулер</strong>, айыппұлдар, көліктің кірісі мен өтелімділігі. Шеберхана мен қосалқы бөлшектер қоймасы.</p><span class="link">Толығырақ <svg><use href="#i-arrow"/></svg></span></a><a class="card card--link" href="../features/buyout/" data-reveal><i class="card__i"><svg><use href="#i-car"/></svg></i><h3>Сатып алу шартымен жалдау</h3><p>Жүргізуші жарна жинап, <strong>көлікті сатып алады</strong>. Жүйе сатып алу барысы мен қалдықты жүргізеді.</p><span class="link">Толығырақ <svg><use href="#i-arrow"/></svg></span></a><a class="card card--link" href="../features/shifts/" data-reveal><i class="card__i"><svg><use href="#i-user"/></svg></i><h3>Ауысымдар мен ауысымдастар</h3><p>Бір көлікте екі жүргізуші, <strong>12/12 және 2/2 ауысымдар</strong>. Әрқайсысының қарызы мен айыппұлы бөлек.</p><span class="link">Толығырақ <svg><use href="#i-arrow"/></svg></span></a><a class="card card--link" href="../features/finance/" data-reveal><i class="card__i"><svg><use href="#i-wallet"/></svg></i><h3>Ақша мен қарыздар</h3><p>Күн бойынша есептеулер, төлем журналы, қарыздар, өтеу тәртібі.</p><span class="link">Толығырақ <svg><use href="#i-arrow"/></svg></span></a><a class="card card--link" href="../features/fines/" data-reveal><i class="card__i"><svg><use href="#i-alert"/></svg></i><h3>ЖҚЕ айыппұлдары мен залал</h3><p>ЕРАП-тан хаттамасымен айыппұлдар, парк айыппұлдары, залал және бөліп төлеу.</p><span class="link">Толығырақ <svg><use href="#i-arrow"/></svg></span></a><a class="card card--link" href="../features/documents/" data-reveal><i class="card__i"><svg><use href="#i-doc"/></svg></i><h3>Құжаттар мен қол қою</h3><p>Шарт, акт, жол парағы. eGov және SMS арқылы қол қою.</p><span class="link">Толығырақ <svg><use href="#i-arrow"/></svg></span></a><a class="card card--link" href="../features/investors/" data-reveal><i class="card__i"><svg><use href="#i-link"/></svg></i><h3>Субжалдау, инвесторлар, лизинг</h3><p>Инвесторлардың көліктері, инвестор үлесі, парктің кредиттері мен лизингі.</p><span class="link">Толығырақ <svg><use href="#i-arrow"/></svg></span></a><a class="card card--link" href="../features/analytics/" data-reveal><i class="card__i"><svg><use href="#i-chart"/></svg></i><h3>Аналитика</h3><p>Шолу, қаржы, P&amp;L, cash flow, көліктердің тиімділігі мен өтелімділігі, жүргізушілер, СТО.</p><span class="link">Толығырақ <svg><use href="#i-arrow"/></svg></span></a><a class="card card--link" href="../features/leads/" data-reveal><i class="card__i"><svg><use href="#i-wa"/></svg></i><h3>WhatsApp және өтінім воронкасы</h3><p>Wazzup арқылы жүргізушілермен хат алмасу және воронка: өтінімнен жалдауға дейін.</p><span class="link">Толығырақ <svg><use href="#i-arrow"/></svg></span></a><a class="card card--link" href="../features/settings/" data-reveal><i class="card__i"><svg><use href="#i-cog"/></svg></i><h3>Икемді баптаулар</h3><p>Жалдау ережелері, тарифтер, қызметтер, рөлдер мен құқықтар, бірнеше парк.</p><span class="link">Толығырақ <svg><use href="#i-arrow"/></svg></span></a><a class="card card--link" href="../kaspi-pay/" data-reveal><i class="card__i"><svg><use href="#i-link"/></svg></i><h3>Kaspi Pay сілтемесі арқылы төлем</h3><p>Сіздің Kaspi-мен тікелей байланыс, <strong>біздің комиссиямызсыз</strong>.</p><span class="link">Толығырақ <svg><use href="#i-arrow"/></svg></span></a><a class="card card--link" href="../kaspi/" data-reveal><i class="card__i"><svg><use href="#i-wallet"/></svg></i><h3>Kaspi Төлемдер</h3><p>Жеңілдікті комиссиямен ресми интеграция, <strong>2,5%</strong>.</p><span class="link">Толығырақ <svg><use href="#i-arrow"/></svg></span></a></div></div></section>
+<section class="section" id="integrations"><div class="wrap"><div class="sec-head"><div data-reveal><p class="eyebrow">Интеграциялар</p><h2>Қазақстан сервистеріне қосылған</h2></div></div><div class="ints" data-stagger><a class="int" href="../kaspi-pay/"><i><img src="../assets/img/int/kaspi.png" alt="" width="42" height="42"></i><div><b>Kaspi Pay</b><span>Сілтеме арқылы төлем, біздің комиссиямызсыз.</span></div></a><a class="int" href="../kaspi/"><i><img src="../assets/img/int/kaspi.png" alt="" width="42" height="42"></i><div><b>Kaspi Платежи</b><span>Ресми интеграция, комиссия 2,5%.</span></div></a><div class="int"><i><img src="../assets/img/int/egov.png" alt="" width="42" height="42"></i><div><b>eGov mobile</b><span>Шарттар мен актілерге қол қою.</span></div></div><div class="int"><i><img src="../assets/img/int/erap.svg" alt="" width="42" height="42"></i><div><b>Штрафы ПДД, ЕРАП</b><span>Хаттамасы бар қаулылар.</span></div></div><div class="int"><i><img src="../assets/img/int/iin.svg" alt="" width="42" height="42"></i><div><b>Реестр должников</b><span>Көлік берер алдында жүргізушіні тексеру.</span></div></div><div class="int"><i><img src="../assets/img/int/wialon.png" alt="" width="42" height="42"></i><div><b>GPS Wialon</b><span>Көлік қайда және жүрісі қанша.</span></div></div><div class="int"><i><img src="../assets/img/int/wazzup.png" alt="" width="42" height="42"></i><div><b>Wazzup</b><span>Жүргізушілермен хат алмасу және жүйедегі өтінімдер.</span></div></div><div class="int int--soon"><i><img src="../assets/img/int/yandex.svg" alt="" width="42" height="42"></i><div><b>Яндекс Про<em class="tag tag--soon">скоро</em></b><span>Интеграция әзірленуде.</span></div></div></div><p class="more" data-reveal><a class="link" href="../integrations/">Барлық интеграциялар <svg><use href="#i-arrow"/></svg></a></p></div></section>
+<section class="section section--card" id="start"><div class="wrap"><div class="sec-head sec-head--center" data-reveal><div><p class="eyebrow">Іске қосу</p><h2>Жұмысты қалай бастау керек</h2></div></div><div class="flow flow--4"><div class="flow__line"><i></i></div><div class="step" data-reveal style="--d:0.0s"><div class="step__n"><svg><use href="#i-cal"/></svg></div><small>ҚАДАМ 01</small><h3>Демо</h3><p>Жүйені сіздің парк көлеміндегі мысалда көрсетеміз.</p></div><div class="step" data-reveal style="--d:0.1s"><div class="step__n"><svg><use href="#i-upload"/></svg></div><small>ҚАДАМ 02</small><h3>Деректерді көшіру</h3><p>Көліктерді, жүргізушілерді және жалдауларды біз көшіреміз. Парк жұмысын жалғастырады.</p></div><div class="step" data-reveal style="--d:0.2s"><div class="step__n"><svg><use href="#i-doc"/></svg></div><small>ҚАДАМ 03</small><h3>Kaspi және шарттар</h3><p>Kaspi Pay мен шарт үлгісін қосамыз.</p></div><div class="step" data-reveal style="--d:0.3s"><div class="step__n"><svg><use href="#i-user"/></svg></div><small>ҚАДАМ 04</small><h3>Команда</h3><p>Менеджерлерді оқытамыз, рөлдерді бөлеміз. Бірінші апта күн сайын байланыстамыз.</p></div></div></div></section>
+<section class="section" id="reviews"><div class="wrap"><div class="sec-head"><div data-reveal><p class="eyebrow">Бізге сенеді</p><h2>Бізбен жұмыс істейтін таксопарктер</h2></div><p class="lead" data-reveal style="--d:.1s">Қазақстан таксопарктері Yume платформасында <strong>2023 жылдан</strong> бері жұмыс істейді. Yume Fleet осы тарихты жалғастырады.</p></div><div class="reviews" data-stagger><article class="rev" data-reveal><q>Таксистермен жұмыс істегендер қарыз бен айыппұлдан қанша проблема болатынын біледі. Жүйеде айыппұлдарды кіріктірілген тексеру бар, олар туралы кейін білмейміз. Ортақ борышкерлер тізілімі проблемалы адамдарды бірден көрсетеді, ал шарттарға қағазсыз онлайн қол қоямыз.</q><div class="rev__who"><i>Р</i><div><b>Руслан</b><small>Astana Park, таксопарк</small></div></div></article><article class="rev" data-reveal><q>Прокатта жауап жылдамдығы өте маңызды: ойланып тұрғанша адам бәсекелестен жалдап алады. Мессенджерлерден өтінімдер бір терезеге түседі. Қаржы айқын болды: түсімдерді, әр көлік бойынша қарызды және жалдау мерзімін көреміз.</q><div class="rev__who"><i>Ш</i><div><b>Шынгысхан</b><small>Qalarent.kz, автопрокат</small></div></div></article><article class="rev" data-reveal><q>Қағаздарды ғана емес, автопарктің өзін де ретке келтіруге көмектескен тамаша бағдарлама. ТҚ есебі модулі май немесе колодка ауыстыру уақыты келгенін алдын ала ескертеді, ал жөндеу тарихы көлікті паркте ұстау тиімді ме, соны көрсетеді.</q><div class="rev__who"><i>Н</i><div><b>Нурлан</b><small>Таксопарк №1</small></div></div></article></div></div></section>
+<section class="section section--card" id="price"><div class="wrap price" data-reveal><p class="eyebrow">Баға</p><h2>Баға сұрау бойынша</h2><p class="lead">Жазылым <strong>әр көлік үшін</strong> есептеледі, барлық модуль кіреді. Бағаны демода парк көлеміне қарай айтамыз.</p><a class="btn btn--lg btn--yellow" href="#demo">Бағаны демода білу <svg><use href="#i-arrow"/></svg></a></div></section>
+<section class="section" id="faq"><div class="wrap faq"><div data-reveal="left"><p class="eyebrow">Сұрақ-жауап</p><h2>Сұрақтар</h2><p class="lead" style="margin-top:18px">Қалғанын 20 минуттық демода көрсетеміз.</p></div><div class="faq__list" data-reveal="right"><div class="q is-open"><button>Қандай парктерге жарайды?<i></i></button><div class="q__a"><div><p>Кез келген көлемдегі таксопаркке. Жазылым әр көлік үшін есептеледі.</p></div></div></div><div class="q"><button>Yume Fleet-тің Yume Cloud-тан айырмашылығы неде?<i></i></button><div class="q__a"><div><p>Yume Fleet тек таксопарктерге жасалған: өз жалдау модельдері, ЖҚЕ айыппұлдары, сатып алу, субжалдау, лизинг. Yume Cloud мүкәммал прокатына арналған жүйе болып қалады.</p></div></div></div><div class="q"><button>Мен Yume Cloud-та жұмыс істеймін. Не істеуім керек?<i></i></button><div class="q__a"><div><p>Қиын ештеңе жоқ: деректерді біз көшіреміз, баға бұрынғыдай қалады. Толығырақ «Yume Cloud клиенттеріне» бетінде.</p></div></div></div><div class="q"><button>Жүргізуші қалай төлейді?<i></i></button><div class="q__a"><div><p>Kaspi Pay сілтемесі арқылы, кірусіз және парольсіз. Қолма-қол ақша мен аударымдарды менеджер сол жалдауда белгілейді.</p></div></div></div><div class="q"><button>Депозитпен не болады?<i></i></button><div class="q__a"><div><p>Депозит жалдаудан бөлек есепке алынады және қарызды өзі өтемейді. Депозитті қабылдау, есепке алу немесе қайтару жеке әрекетпен, тарихымен жасалады.</p></div></div></div><div class="q"><button>Деректер кімге тиесілі?<i></i></button><div class="q__a"><div><p>Сізге. Әр компанияның деректері оқшауланған, кез келген уақытта Excel-ге шығаруға болады.</p></div></div></div></div></div></section>
+<section class="section section--yellow cta" id="demo">
+  <div class="wrap">
+    <div data-reveal="left">
+      <p class="eyebrow" style="color:var(--ink)">Демо</p>
+      <h2>Демоға жазылу</h2>
+      <p class="lead" style="margin-top:18px;color:var(--ink);opacity:.8">Жүйені 20 минутта сіздің парк көлеміндегі мысалда көрсетеміз.</p>
+      <ul class="cta__list"><li><svg><use href="#i-check"/></svg>Жұмыс уақытында 15 минут ішінде қайта қоңырау шаламыз</li><li><svg><use href="#i-check"/></svg>Сіздің парк көлеміндегі мысалда көрсетеміз</li><li><svg><use href="#i-check"/></svg>Деректерді біз көшіреміз, парк жұмысын жалғастырады</li></ul>
+      <a class="cta__wa" href="https://wa.me/77779479990" rel="noopener"><svg><use href="#i-wa"/></svg> Немесе WhatsApp-қа жазыңыз: +7 777 947 99 90</a>
+    </div>
+    <form class="form" data-reveal="right" data-endpoint="https://yume-cloud-zzydfr.vercel.app/api/lead/" novalidate>
+      <div class="field"><label for="name">Аты</label><input id="name" name="name" placeholder="Сізге қалай жүгінуге болады" required autocomplete="name"></div>
+      <div class="field"><label for="phone">Телефон</label><input id="phone" name="phone" type="tel" placeholder="+7 777 000 00 00" required autocomplete="tel" inputmode="tel"></div>
+      <div class="form__row">
+        <div class="field"><label for="cars">Паркте қанша көлік</label><select id="cars" name="cars"><option>10 көлікке дейін</option><option>10–30 көлік</option><option>30–100 көлік</option><option>100+ көлік</option></select></div>
+        <div class="field"><label for="city">Қала</label><input id="city" name="city" placeholder="Алматы" autocomplete="address-level2"></div>
+      </div>
+      <input type="text" name="website" tabindex="-1" autocomplete="off" class="hp" aria-hidden="true">
+      <button class="btn btn--lg" type="submit">Демоға жазылу</button>
+      <label class="consent"><input type="checkbox" checked required> Жеке деректерімді өңдеуге келісемін, <a href="https://yume.cloud/legal/privacy/" style="text-decoration:underline">құпиялылық саясатына сәйкес</a></label>
+      <div class="form__ok"><div><i><svg><use href="#i-check"/></svg></i><h3>Өтінім жіберілді</h3><p style="color:var(--muted);margin-top:8px">Жұмыс уақытында 15 минут ішінде қайта қоңырау шаламыз.</p></div></div>
+    </form>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer__top">
+      <div class="footer__brand">
+        <a class="logo logo--dark" href="../"><i><svg><use href="#mark"/></svg></i><span><b>yume</b><em>fleet</em></span></a>
+        <p>Таксопаркті басқаруға арналған платформа. «Yume.Cloud» ЖШС, Алматы, Қазақстан.</p>
+        <a href="tel:+77779479990">+7 777 947 99 90</a>
+        <a href="mailto:sales@yume.cloud">sales@yume.cloud</a>
+      </div>
+      <div><h4>Мүмкіндіктер</h4><ul><li><a href="../features/rentals/">Жалдау карточкасы</a></li><li><a href="../features/buyout/">Сатып алумен жалдау</a></li><li><a href="../features/shifts/">Ауысымдар</a></li><li><a href="../features/drivers/">Жүргізушілер</a></li><li><a href="../features/vehicles/">Көліктер</a></li><li><a href="../features/finance/">Ақша мен қарыздар</a></li><li><a href="../features/">Барлық мүмкіндіктер</a></li></ul></div>
+      <div><h4>Өнім</h4><ul><li><a href="../kaspi-pay/">Kaspi Pay сілтемесі арқылы төлем</a></li><li><a href="../kaspi/">Kaspi Төлемдер 2,5%</a></li><li><a href="../integrations/">Интеграциялар</a></li><li><a href="../perehod/">Yume Cloud клиенттеріне</a></li><li><a href="../kk/contacts/">Байланыс</a></li><li><a href="https://app.yumefleet.kz/" rel="noopener">Жүйеге кіру</a></li></ul></div>
+      <div><h4>Құжаттар</h4><ul><li><a href="https://yume.cloud/legal/privacy/" rel="noopener">Құпиялылық саясаты</a></li><li><a href="https://yume.cloud/legal/oferta/" rel="noopener">Жария оферта</a></li><li><a href="https://yume.cloud/legal/terms/" rel="noopener">Пайдаланушы келісімі</a></li><li><a href="https://yume.cloud/legal/recurring/" rel="noopener">Рекурренттік төлемдер</a></li><li><a href="https://yume.cloud/legal/refund/" rel="noopener">Төлемдерді болдырмау және қайтару</a></li><li><a href="https://yume.cloud/legal/payment/" rel="noopener">Төлем тәртібі</a></li><li><a href="https://yume.cloud/delete-account/" rel="noopener">Аккаунтты жою</a></li></ul></div>
+    </div>
+    <div class="footer__bot">
+      <div class="legal"><span>© «Yume.Cloud» ЖШС, 2026</span><a href="https://www.instagram.com/yumecloudx/" rel="noopener">Instagram</a><a href="https://t.me/yumefleet" rel="noopener">Telegram</a></div>
+      <a class="cloud" href="https://yume.cloud/kk/"><i></i> Көлік емес, мүкәммал жалға бересіз бе? yume.cloud</a>
+    </div>
+  </div>
+</footer>
+<a class="wa-fab" href="https://wa.me/77779479990" rel="noopener" aria-label="WhatsApp-қа жазу"><svg><use href="#i-wa"/></svg><span>WhatsApp-қа жазу</span></a>
+<button class="to-top" aria-label="Жоғарыға"><svg><use href="#i-up"/></svg></button>
+<a class="wa-fab" href="https://wa.me/77779479990" rel="noopener" aria-label="Написать в WhatsApp"><svg><use href="#i-wa"/></svg><span>Написать в WhatsApp</span></a>
+<button class="to-top" aria-label="Наверх"><svg><use href="#i-up"/></svg></button>
+
+<script src="../js/main.js?v=3" defer></script>
+</body>
+</html>

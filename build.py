@@ -5,6 +5,45 @@ import re, os, html, datetime
 
 ROOT = os.path.dirname(os.path.abspath(__file__))
 SRC = open(os.path.join(ROOT, 'content', 'CONTENT.md'), encoding='utf-8').read()
+SRC_KK = open(os.path.join(ROOT, 'content', 'CONTENT.kk.md'), encoding='utf-8').read()
+GA_ID = ''      # счётчик Google Analytics для yumefleet.com, например G-XXXXXXX
+FB_PIXEL = ''   # Meta Pixel ID для yumefleet.com
+FONTS_CSS = open(os.path.join(ROOT, 'assets', 'fonts', 'fonts.css'), encoding='utf-8').read()
+L = 'ru'
+UI = {
+ 'ru': dict(home='Главная', features='Возможности', dd_open='Раскрыть возможности', all_features='Все возможности', integrations='Интеграции', perehod='Для клиентов Yume Cloud', contacts='Контакты', demo='Записаться на демо', login='Войти', menu='Основное меню', burger='Меню',
+   footer_about='Платформа для управления таксопарком. ТОО «Yume.Cloud», Алматы, Казахстан.', product='Продукт', kaspi_pay='Оплата по ссылке Kaspi Pay', kaspi='Kaspi Платежи 2,5%', login_sys='Войти в систему', docs='Документы',
+   doc_list=['Политика конфиденциальности', 'Публичная оферта', 'Пользовательское соглашение', 'Рекуррентные платежи', 'Отмена и возврат платежей', 'Процедура оплаты', 'Удаление аккаунта'], copy='© ТОО «Yume.Cloud», 2026', cloud='Сдаёте инвентарь, а не машины? yume.cloud', wa='Написать в WhatsApp', top='Наверх',
+   f_name='Имя', f_name_ph='Как к вам обращаться', f_phone='Телефон', f_cars='Сколько машин в парке', f_cars_opts=['до 10 машин', '10–30 машин', '30–100 машин', '100+ машин'], f_city='Город', f_city_ph='Алматы', f_consent='Согласен на обработку персональных данных в соответствии с', f_policy='политикой конфиденциальности', f_ok='Заявка отправлена', f_ok_sub='Перезвоним в течение 15 минут в рабочее время.',
+   cta_eyebrow='Демо', cta_list=['Перезвоним в течение 15 минут в рабочее время', 'Показываем на примере парка вашего размера', 'Данные переносим мы, парк продолжает работать'], cta_wa='Или напишите в WhatsApp', cta_default='Записаться на демо', cta_lead='Покажем систему за 20 минут на примере парка вашего размера.',
+   more='Подробнее', step='ШАГ', how='Как это работает', faq_lead='Остальное покажем на демо за 20 минут.', faq_eyebrow='FAQ', wa_btn='Написать в WhatsApp',
+   pill='ТАКСОПАРКИ', trust=['Посуточно и под выкуп', 'Kaspi Pay без нашей комиссии', 'Подпись через eGov'], hero_alt='Главный экран Yume Fleet: выручка, машины в аренде, долги',
+   fl1=('Просрочено · 3 дня', 'Ерлан С. · Chevrolet Cobalt'), fl2=('Новый штраф ПДД', '847 ABC 02 · привязан к водителю'), fl3=('Оплата через Kaspi Pay', '+ 9 000 ₸ · зачислено в аренду'),
+   ledger_head='Аренды · с просрочкой', ledger_live='обновляется в реальном времени', ledger_cols=['Водитель', 'Машина', 'Ставка', 'Баланс'], ledger_foot='Долг по парку сегодня',
+   drv_cap1='Оплата по ссылке · уже сейчас', drv_cap2='Приложение водителя', drv_alt1='Страница оплаты аренды по ссылке Kaspi Pay', drv_alt2='Приложение водителя Yume Fleet', soon='скоро',
+   bc_type='Аренда под выкуп', bc_price='Стоимость выкупа', bc_saved='Накоплено', bc_left='Осталось', bc_next='Ближайший платёж', bc_next_v='9 000 ₸ · завтра', bc_steps=['Взнос', 'Выкуп', 'Выкуплено'], more_buyout='Подробнее про выкуп', more_fines='Подробнее про штрафы', fines_alt='Штрафы ПДД в Yume Fleet: протокол, водитель, срок скидки',
+   all_ints='Все интеграции', price_btn='Узнать цену на демо',
+   c_wa='WhatsApp, самый быстрый способ', c_wa_sub='Демо, вопросы по продукту и переходу', c_phone='Телефон', c_phone_sub='Пн–Пт 9:00–19:00, Сб 10:00–16:00 по Алматы', c_tg='Telegram', c_tg_sub='Канал поддержки и обновлений', c_sales='Продажи и партнёрство', c_sales_sub='Коммерческие предложения, интеграции, договоры', c_sup='Поддержка парков', c_sup_sub='Вопросы по работе системы', c_office='Офис', c_city='Алматы, Казахстан', c_office_sub='ТОО «Yume.Cloud». Встречи по договорённости, демо по видеосвязи.', c_login='Вход для парков', c_login_sub='Кабинет парка', c_form_h='Записаться на демо', c_form_p='Покажем систему за 20 минут на примере парка вашего размера.', crumbs='Хлебные крошки',
+   t404='Страница не найдена', h404='Такой страницы нет', p404='Возможно, ссылка устарела. Вот куда можно пойти дальше.', to_home='На главную'),
+ 'kk': dict(home='Басты бет', features='Мүмкіндіктер', dd_open='Мүмкіндіктерді ашу', all_features='Барлық мүмкіндіктер', integrations='Интеграциялар', perehod='Yume Cloud клиенттеріне', contacts='Байланыс', demo='Демоға жазылу', login='Кіру', menu='Негізгі мәзір', burger='Мәзір',
+   footer_about='Таксопаркті басқаруға арналған платформа. «Yume.Cloud» ЖШС, Алматы, Қазақстан.', product='Өнім', kaspi_pay='Kaspi Pay сілтемесі арқылы төлем', kaspi='Kaspi Төлемдер 2,5%', login_sys='Жүйеге кіру', docs='Құжаттар',
+   doc_list=['Құпиялылық саясаты', 'Жария оферта', 'Пайдаланушы келісімі', 'Рекурренттік төлемдер', 'Төлемдерді болдырмау және қайтару', 'Төлем тәртібі', 'Аккаунтты жою'], copy='© «Yume.Cloud» ЖШС, 2026', cloud='Көлік емес, мүкәммал жалға бересіз бе? yume.cloud', wa='WhatsApp-қа жазу', top='Жоғарыға',
+   f_name='Аты', f_name_ph='Сізге қалай жүгінуге болады', f_phone='Телефон', f_cars='Паркте қанша көлік', f_cars_opts=['10 көлікке дейін', '10–30 көлік', '30–100 көлік', '100+ көлік'], f_city='Қала', f_city_ph='Алматы', f_consent='Жеке деректерімді өңдеуге келісемін,', f_policy='құпиялылық саясатына сәйкес', f_ok='Өтінім жіберілді', f_ok_sub='Жұмыс уақытында 15 минут ішінде қайта қоңырау шаламыз.',
+   cta_eyebrow='Демо', cta_list=['Жұмыс уақытында 15 минут ішінде қайта қоңырау шаламыз', 'Сіздің парк көлеміндегі мысалда көрсетеміз', 'Деректерді біз көшіреміз, парк жұмысын жалғастырады'], cta_wa='Немесе WhatsApp-қа жазыңыз', cta_default='Демоға жазылу', cta_lead='Жүйені 20 минутта сіздің парк көлеміндегі мысалда көрсетеміз.',
+   more='Толығырақ', step='ҚАДАМ', how='Қалай жұмыс істейді', faq_lead='Қалғанын 20 минуттық демода көрсетеміз.', faq_eyebrow='Сұрақ-жауап', wa_btn='WhatsApp-қа жазу',
+   pill='ТАКСОПАРКТЕР', trust=['Тәуліктік және сатып алумен', 'Kaspi Pay біздің комиссиямызсыз', 'eGov арқылы қол қою'], hero_alt='Yume Fleet басты экраны: түсім, жалдаудағы көліктер, қарыздар',
+   fl1=('Мерзімі өткен · 3 күн', 'Ерлан С. · Chevrolet Cobalt'), fl2=('Жаңа ЖҚЕ айыппұлы', '847 ABC 02 · жүргізушіге байланды'), fl3=('Kaspi Pay арқылы төлем', '+ 9 000 ₸ · жалдауға түсті'),
+   ledger_head='Жалдаулар · мерзімі өткен', ledger_live='нақты уақытта жаңарады', ledger_cols=['Жүргізуші', 'Көлік', 'Ставка', 'Баланс'], ledger_foot='Парк бойынша бүгінгі қарыз',
+   drv_cap1='Сілтеме арқылы төлем · қазірдің өзінде', drv_cap2='Жүргізуші қосымшасы', drv_alt1='Kaspi Pay сілтемесі арқылы жалдау төлемі беті', drv_alt2='Yume Fleet жүргізуші қосымшасы', soon='жақында',
+   bc_type='Сатып алумен жалдау', bc_price='Сатып алу құны', bc_saved='Жиналды', bc_left='Қалды', bc_next='Келесі төлем', bc_next_v='9 000 ₸ · ертең', bc_steps=['Жарна', 'Сатып алу', 'Сатып алынды'], more_buyout='Сатып алу туралы толығырақ', more_fines='Айыппұлдар туралы толығырақ', fines_alt='Yume Fleet-тегі ЖҚЕ айыппұлдары: хаттама, жүргізуші, жеңілдік мерзімі',
+   all_ints='Барлық интеграциялар', price_btn='Бағаны демода білу',
+   c_wa='WhatsApp, ең жылдам тәсіл', c_wa_sub='Демо, өнім және көшу бойынша сұрақтар', c_phone='Телефон', c_phone_sub='Дс–Жм 9:00–19:00, Сб 10:00–16:00, Алматы уақыты', c_tg='Telegram', c_tg_sub='Қолдау және жаңартулар арнасы', c_sales='Сату және серіктестік', c_sales_sub='Коммерциялық ұсыныстар, интеграциялар, шарттар', c_sup='Парктерді қолдау', c_sup_sub='Жүйенің жұмысы бойынша сұрақтар', c_office='Кеңсе', c_city='Алматы, Қазақстан', c_office_sub='«Yume.Cloud» ЖШС. Кездесулер келісім бойынша, демо бейнебайланыс арқылы.', c_login='Парктер үшін кіру', c_login_sub='Парк кабинеті', c_form_h='Демоға жазылу', c_form_p='Жүйені 20 минутта сіздің парк көлеміндегі мысалда көрсетеміз.', crumbs='Нан үгінділері',
+   t404='Бет табылмады', h404='Мұндай бет жоқ', p404='Сілтеме ескірген болуы мүмкін. Әрі қарай қайда баруға болады.', to_home='Басты бетке'),
+}
+NAV_KK = {'/features/rentals/': ('Жалдау карточкасы', 'Тәуліктік, мерзім, төлем кестесі'), '/features/buyout/': ('Сатып алумен жалдау', 'Жарна, барысы, қалдық'), '/features/shifts/': ('Ауысымдар', 'Бір көлікте екі жүргізуші'), '/features/drivers/': ('Жүргізушілер', 'Қарыз, депозит, сенімділік'), '/features/vehicles/': ('Көліктер', 'ТҚ, жөндеу, қойма, өтелімділік'), '/features/finance/': ('Ақша мен қарыздар', 'Есептеулер, төлемдер, өтеу'), '/features/fines/': ('ЖҚЕ айыппұлдары мен залал', 'Хаттама, жеңілдік, бөліп төлеу'), '/features/documents/': ('Құжаттар мен қол қою', 'Шарттар, актілер, eGov және SMS'), '/features/investors/': ('Субжалдау және лизинг', 'Инвесторлар, үлестер, кредиттер'), '/features/analytics/': ('Аналитика', 'P&L, cash flow, өтелімділік'), '/features/leads/': ('WhatsApp және воронка', 'Жүргізуші өтінімдері жалдауға дейін'), '/features/settings/': ('Икемді баптаулар', 'Ережелер, рөлдер, бірнеше парк')}
+def T(k): return UI[L][k]
+def nav_feats():
+    return [(p, NAV_KK[p][0] if L == 'kk' else n, NAV_KK[p][1] if L == 'kk' else s, i) for p, n, s, i in NAV_FEATURES]
 SITE = 'https://yumefleet.com'
 PHONE = '+7 777 947 99 90'
 WA = 'https://wa.me/77779479990'
@@ -53,10 +92,10 @@ def parse_item(line):
         return dict(check=m.group(1))
     return dict(text=line[1:].strip())
 
-def parse():
+def parse(src=None):
     pages = []
     cur = None; sec = None
-    for raw in SRC.split('\n'):
+    for raw in (src or SRC).split('\n'):
         line = raw.rstrip()
         if line.startswith('## Страница '):
             m = re.match(r'## Страница (\S+) — (.+)$', line)
@@ -81,6 +120,8 @@ def parse():
 
 PAGES = parse()
 BY_PATH = {p['path']: p for p in PAGES}
+PAGES_KK = parse(SRC_KK)
+BY_PATH_KK = {p['path']: p for p in PAGES_KK}
 
 NAV_FEATURES = [
  ('/features/rentals/', 'Карточка аренды', 'Посуточно, срок, график оплат', 'i-cal'),
@@ -116,99 +157,138 @@ def href(path, R):
     return R + path.lstrip('/') if path != '/' else R
 
 def nav(R, path):
-    dd = ''.join(f'<a class="dd__i" href="{href(p, R)}"><svg><use href="#{i}"/></svg><div><b>{n}</b><small>{s}</small></div></a>' for p, n, s, i in NAV_FEATURES)
+    dd = ''.join(f'<a class="dd__i" href="{href(p, R)}"><svg><use href="#{i}"/></svg><div><b>{n}</b><small>{s}</small></div></a>' for p, n, s, i in nav_feats())
     act = lambda p: ' class="is-cur"' if p == path else ''
+    home_href = href('/kk/', R) if L == 'kk' else R
+    alt = {'/': '/kk/', '/contacts/': '/kk/contacts/', '/kk/': '/', '/kk/contacts/': '/contacts/'}.get(path)
+    lang = f'<a class="nav__lang" href="{href(alt, R)}" hreflang="{"ru" if L == "kk" else "kk"}" lang="{"ru" if L == "kk" else "kk"}">{"RU" if L == "kk" else "KZ"}</a>' if alt else ''
+    contacts_href = href('/kk/contacts/' if L == 'kk' else '/contacts/', R)
     return f'''<header class="nav">
   <div class="wrap">
-    <a class="logo" href="{R}" aria-label="Yume Fleet"><i><svg><use href="#mark"/></svg></i><span><b>yume</b><em>fleet</em></span></a>
-    <nav aria-label="Основное меню">
+    <a class="logo" href="{home_href}"><i><svg><use href="#mark"/></svg></i><span><b>yume</b><em>fleet</em></span></a>
+    <nav aria-label="{T("menu")}">
       <ul class="nav__menu">
-        <li><a href="{R}"{act('/')}>Главная</a></li>
-        <li class="has-dd"><a href="{href('/features/', R)}"{act('/features/')}>Возможности <svg><use href="#i-chev"/></svg></a><button class="dd__tgl" aria-label="Раскрыть возможности"><svg><use href="#i-chev"/></svg></button><div class="dd"><div class="dd__panel"><div class="dd__grid">{dd}</div><a class="dd__all" href="{href('/features/', R)}">Все возможности <svg><use href="#i-arrow"/></svg></a></div></div></li>
-        <li><a href="{href('/integrations/', R)}"{act('/integrations/')}>Интеграции</a></li>
-        <li><a href="{href('/perehod/', R)}"{act('/perehod/')}>Для клиентов Yume Cloud</a></li>
-        <li><a href="{href('/contacts/', R)}"{act('/contacts/')}>Контакты</a></li>
-        <li><a class="nav__cta-m" href="#demo">Записаться на демо</a></li>
+        <li><a href="{home_href}"{act('/kk/' if L == 'kk' else '/')}>{T("home")}</a></li>
+        <li class="has-dd"><a href="{href('/features/', R)}"{act('/features/')}>{T("features")} <svg><use href="#i-chev"/></svg></a><button class="dd__tgl" aria-label="{T("dd_open")}"><svg><use href="#i-chev"/></svg></button><div class="dd"><div class="dd__panel"><div class="dd__grid">{dd}</div><a class="dd__all" href="{href('/features/', R)}">{T("all_features")} <svg><use href="#i-arrow"/></svg></a></div></div></li>
+        <li><a href="{href('/integrations/', R)}"{act('/integrations/')}>{T("integrations")}</a></li>
+        <li><a href="{href('/perehod/', R)}"{act('/perehod/')}>{T("perehod")}</a></li>
+        <li><a href="{contacts_href}"{act('/kk/contacts/' if L == 'kk' else '/contacts/')}>{T("contacts")}</a></li>
+        <li><a class="nav__cta-m" href="#demo">{T("demo")}</a></li>
       </ul>
     </nav>
     <div class="nav__actions">
-      <a class="nav__login" href="{LOGIN}">Войти</a>
-      <a class="btn btn--sm btn--yellow" href="#demo">Записаться на демо</a>
-      <button class="nav__burger" aria-label="Меню"><span></span></button>
+      {lang}<a class="nav__login" href="{LOGIN}">{T("login")}</a>
+      <a class="btn btn--sm btn--yellow" href="#demo">{T("demo")}</a>
+      <button class="nav__burger" aria-label="{T("burger")}"><span></span></button>
     </div>
   </div>
 </header>'''
 
 def footer(R):
-    feats = ''.join(f'<li><a href="{href(p, R)}">{n}</a></li>' for p, n, _, _ in NAV_FEATURES[:6])
+    feats = ''.join(f'<li><a href="{href(p, R)}">{n}</a></li>' for p, n, _, _ in nav_feats()[:6])
+    D = T("doc_list"); docs_urls = ['https://yume.cloud/legal/privacy/', 'https://yume.cloud/legal/oferta/', 'https://yume.cloud/legal/terms/', 'https://yume.cloud/legal/recurring/', 'https://yume.cloud/legal/refund/', 'https://yume.cloud/legal/payment/', 'https://yume.cloud/delete-account/']
+    docs = ''.join(f'<li><a href="{u}" rel="noopener">{n}</a></li>' for n, u in zip(D, docs_urls))
+    contacts_href = href('/kk/contacts/' if L == 'kk' else '/contacts/', R)
     return f'''<footer class="footer">
   <div class="wrap">
     <div class="footer__top">
       <div class="footer__brand">
         <a class="logo logo--dark" href="{R}"><i><svg><use href="#mark"/></svg></i><span><b>yume</b><em>fleet</em></span></a>
-        <p>Платформа для управления таксопарком. ТОО «Yume.Cloud», Алматы, Казахстан.</p>
+        <p>{T("footer_about")}</p>
         <a href="tel:+77779479990">{PHONE}</a>
         <a href="mailto:sales@yume.cloud">sales@yume.cloud</a>
       </div>
-      <div><h4>Возможности</h4><ul>{feats}<li><a href="{href('/features/', R)}">Все возможности</a></li></ul></div>
-      <div><h4>Продукт</h4><ul><li><a href="{href('/kaspi-pay/', R)}">Оплата по ссылке Kaspi Pay</a></li><li><a href="{href('/kaspi/', R)}">Kaspi Платежи 2,5%</a></li><li><a href="{href('/integrations/', R)}">Интеграции</a></li><li><a href="{href('/perehod/', R)}">Для клиентов Yume Cloud</a></li><li><a href="{href('/contacts/', R)}">Контакты</a></li><li><a href="{LOGIN}" rel="noopener">Войти в систему</a></li></ul></div>
-      <div><h4>Документы</h4><ul><li><a href="https://yume.cloud/legal/privacy/" rel="noopener">Политика конфиденциальности</a></li><li><a href="https://yume.cloud/legal/oferta/" rel="noopener">Публичная оферта</a></li><li><a href="https://yume.cloud/legal/terms/" rel="noopener">Пользовательское соглашение</a></li><li><a href="https://yume.cloud/legal/recurring/" rel="noopener">Рекуррентные платежи</a></li><li><a href="https://yume.cloud/legal/refund/" rel="noopener">Отмена и возврат платежей</a></li><li><a href="https://yume.cloud/legal/payment/" rel="noopener">Процедура оплаты</a></li><li><a href="https://yume.cloud/delete-account/" rel="noopener">Удаление аккаунта</a></li></ul></div>
+      <div><h4>{T("features")}</h4><ul>{feats}<li><a href="{href('/features/', R)}">{T("all_features")}</a></li></ul></div>
+      <div><h4>{T("product")}</h4><ul><li><a href="{href('/kaspi-pay/', R)}">{T("kaspi_pay")}</a></li><li><a href="{href('/kaspi/', R)}">{T("kaspi")}</a></li><li><a href="{href('/integrations/', R)}">{T("integrations")}</a></li><li><a href="{href('/perehod/', R)}">{T("perehod")}</a></li><li><a href="{contacts_href}">{T("contacts")}</a></li><li><a href="{LOGIN}" rel="noopener">{T("login_sys")}</a></li></ul></div>
+      <div><h4>{T("docs")}</h4><ul>{docs}</ul></div>
     </div>
     <div class="footer__bot">
-      <div class="legal"><span>© ТОО «Yume.Cloud», 2026</span><a href="https://www.instagram.com/yumecloudx/" rel="noopener">Instagram</a><a href="https://t.me/yumefleet" rel="noopener">Telegram</a></div>
-      <a class="cloud" href="https://yume.cloud"><i></i> Сдаёте инвентарь, а не машины? yume.cloud</a>
+      <div class="legal"><span>{T("copy")}</span><a href="https://www.instagram.com/yumecloudx/" rel="noopener">Instagram</a><a href="https://t.me/yumefleet" rel="noopener">Telegram</a></div>
+      <a class="cloud" href="https://yume.cloud{'/kk/' if L == 'kk' else ''}"><i></i> {T("cloud")}</a>
     </div>
   </div>
 </footer>
+<a class="wa-fab" href="{WA}" rel="noopener" aria-label="{T("wa")}"><svg><use href="#i-wa"/></svg><span>{T("wa")}</span></a>
+<button class="to-top" aria-label="{T("top")}"><svg><use href="#i-up"/></svg></button>
 <a class="wa-fab" href="{WA}" rel="noopener" aria-label="Написать в WhatsApp"><svg><use href="#i-wa"/></svg><span>Написать в WhatsApp</span></a>
 <button class="to-top" aria-label="Наверх"><svg><use href="#i-up"/></svg></button>'''
 
 def form(R):
+    opts = ''.join(f'<option>{o}</option>' for o in T("f_cars_opts"))
     return f'''<form class="form" data-reveal="right" data-endpoint="{LEAD}" novalidate>
-      <div class="field"><label for="name">Имя</label><input id="name" name="name" placeholder="Как к вам обращаться" required autocomplete="name"></div>
-      <div class="field"><label for="phone">Телефон</label><input id="phone" name="phone" type="tel" placeholder="+7 777 000 00 00" required autocomplete="tel" inputmode="tel"></div>
+      <div class="field"><label for="name">{T("f_name")}</label><input id="name" name="name" placeholder="{T("f_name_ph")}" required autocomplete="name"></div>
+      <div class="field"><label for="phone">{T("f_phone")}</label><input id="phone" name="phone" type="tel" placeholder="+7 777 000 00 00" required autocomplete="tel" inputmode="tel"></div>
       <div class="form__row">
-        <div class="field"><label for="cars">Сколько машин в парке</label><select id="cars" name="cars"><option>до 10 машин</option><option>10–30 машин</option><option>30–100 машин</option><option>100+ машин</option></select></div>
-        <div class="field"><label for="city">Город</label><input id="city" name="city" placeholder="Алматы" autocomplete="address-level2"></div>
+        <div class="field"><label for="cars">{T("f_cars")}</label><select id="cars" name="cars">{opts}</select></div>
+        <div class="field"><label for="city">{T("f_city")}</label><input id="city" name="city" placeholder="{T("f_city_ph")}" autocomplete="address-level2"></div>
       </div>
       <input type="text" name="website" tabindex="-1" autocomplete="off" class="hp" aria-hidden="true">
-      <button class="btn btn--lg" type="submit">Записаться на демо</button>
-      <label class="consent"><input type="checkbox" checked required> Согласен на обработку персональных данных в соответствии с <a href="https://yume.cloud/legal/privacy/" style="text-decoration:underline">политикой конфиденциальности</a></label>
-      <div class="form__ok"><div><i><svg><use href="#i-check"/></svg></i><h3>Заявка отправлена</h3><p style="color:var(--muted);margin-top:8px">Перезвоним в течение 15 минут в рабочее время.</p></div></div>
+      <button class="btn btn--lg" type="submit">{T("demo")}</button>
+      <label class="consent"><input type="checkbox" checked required> {T("f_consent")} <a href="https://yume.cloud/legal/privacy/" style="text-decoration:underline">{T("f_policy")}</a></label>
+      <div class="form__ok"><div><i><svg><use href="#i-check"/></svg></i><h3>{T("f_ok")}</h3><p style="color:var(--muted);margin-top:8px">{T("f_ok_sub")}</p></div></div>
     </form>'''
 
 def cta(sec, R):
-    title = strip_md(sec['title']) or 'Записаться на демо'
-    lead = inline(' '.join(sec['paras'])) or 'Покажем систему за 20 минут на примере парка вашего размера.'
+    title = strip_md(sec['title']) or T("cta_default")
+    lead = inline(' '.join(sec['paras'])) or T("cta_lead")
+    lis = ''.join(f'<li><svg><use href="#i-check"/></svg>{x}</li>' for x in T("cta_list"))
     return f'''<section class="section section--yellow cta" id="demo">
   <div class="wrap">
     <div data-reveal="left">
-      <p class="eyebrow" style="color:var(--ink)">Демо</p>
+      <p class="eyebrow" style="color:var(--ink)">{T("cta_eyebrow")}</p>
       <h2>{html.escape(title)}</h2>
       <p class="lead" style="margin-top:18px;color:var(--ink);opacity:.8">{lead}</p>
-      <ul class="cta__list">
-        <li><svg><use href="#i-check"/></svg>Перезвоним в течение 15 минут в рабочее время</li>
-        <li><svg><use href="#i-check"/></svg>Показываем на примере парка вашего размера</li>
-        <li><svg><use href="#i-check"/></svg>Данные переносим мы, парк продолжает работать</li>
-      </ul>
-      <a class="cta__wa" href="{WA}" rel="noopener"><svg><use href="#i-wa"/></svg> Или напишите в WhatsApp: {PHONE}</a>
+      <ul class="cta__list">{lis}</ul>
+      <a class="cta__wa" href="{WA}" rel="noopener"><svg><use href="#i-wa"/></svg> {T("cta_wa")}: {PHONE}</a>
     </div>
     {form(R)}
   </div>
 </section>'''
 
+def ld(p, body):
+    import json
+    org = {'@context': 'https://schema.org', '@type': 'Organization', 'name': 'Yume Fleet', 'legalName': 'ТОО «Yume.Cloud»', 'url': SITE + '/', 'logo': SITE + '/assets/logo/tile.svg', 'telephone': '+77779479990', 'email': 'sales@yume.cloud', 'address': {'@type': 'PostalAddress', 'addressLocality': 'Алматы', 'addressCountry': 'KZ'}, 'sameAs': ['https://www.instagram.com/yumecloudx/', 'https://t.me/yumefleet']}
+    blocks = [org]
+    crumbs = re.findall(r'<nav class="crumbs"[^>]*>(.*?)</nav>', body, re.S)
+    if crumbs:
+        items = re.findall(r'<a href="([^"]+)">([^<]+)</a>|<b>([^<]+)</b>', crumbs[0])
+        lst = []; pos = 1
+        for h, n, b in items:
+            lst.append({'@type': 'ListItem', 'position': pos, 'name': n or b, 'item': (SITE + p['path']) if b else (SITE + '/' + h.replace('../', '').replace('./', ''))}); pos += 1
+        blocks.append({'@context': 'https://schema.org', '@type': 'BreadcrumbList', 'itemListElement': lst})
+    qs = re.findall(r'<div class="q(?: is-open)?"><button>(.*?)<i></i></button><div class="q__a"><div><p>(.*?)</p>', body, re.S)
+    st = lambda x: re.sub(r'<[^>]+>', '', x).strip()
+    if qs: blocks.append({'@context': 'https://schema.org', '@type': 'FAQPage', 'mainEntity': [{'@type': 'Question', 'name': st(q), 'acceptedAnswer': {'@type': 'Answer', 'text': st(a)}} for q, a in qs]})
+    if p['path'] in ('/', '/kk/'):
+        blocks.append({'@context': 'https://schema.org', '@type': 'SoftwareApplication', 'name': 'Yume Fleet', 'applicationCategory': 'BusinessApplication', 'operatingSystem': 'Web', 'description': 'Платформа для управления таксопарком: аренда посуточно и под выкуп, долги, Kaspi Pay, штрафы ПДД, подписание через eGov.', 'url': SITE + '/', 'publisher': {'@type': 'Organization', 'name': 'Yume Fleet'}, 'offers': {'@type': 'Offer', 'priceCurrency': 'KZT', 'description': 'Цена по запросу, подписка за каждую машину'}})
+    return ''.join('<script type="application/ld+json">' + json.dumps(b, ensure_ascii=False) + '</script>\n' for b in blocks)
+
+def analytics():
+    if not GA_ID and not FB_PIXEL: return ''
+    ga = f"var g=document.createElement('script');g.async=true;g.src='https://www.googletagmanager.com/gtag/js?id={GA_ID}';document.head.appendChild(g);gtag('js',new Date());gtag('config','{GA_ID}');" if GA_ID else ''
+    fb = f"var f=document.createElement('script');f.async=true;f.src='https://connect.facebook.net/en_US/fbevents.js';document.head.appendChild(f);fbq('init','{FB_PIXEL}');fbq('track','PageView');" if FB_PIXEL else ''
+    return ("<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}"
+            "!function(f,b){if(f.fbq)return;var n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[]}(window,document);"
+            "(function(){var done=false;function load(){if(done)return;done=true;" + ga + fb + "}"
+            "['scroll','pointerdown','keydown','touchstart'].forEach(function(e){addEventListener(e,load,{once:true,passive:true})});setTimeout(load,4000);})();</script>\n")
+
 def page(p, body, R, desc):
     title = html.escape(p['title'])
     if not title.startswith('Yume Fleet'): title += ' — Yume Fleet'
     canon = SITE + p['path']
+    alt = {'/': '/kk/', '/contacts/': '/kk/contacts/', '/kk/': '/', '/kk/contacts/': '/contacts/'}.get(p['path'])
+    ru = p['path'].replace('/kk', '', 1) if L == 'kk' else p['path']
+    hreflang = f'<link rel="alternate" hreflang="ru" href="{SITE}{ru}">\n<link rel="alternate" hreflang="kk" href="{SITE}/kk{ru}">\n<link rel="alternate" hreflang="x-default" href="{SITE}{ru}">\n' if alt else ''
+    preload = f'<link rel="preload" as="image" href="{R}assets/screens/dashboard.webp" imagesrcset="{R}assets/screens/dashboard-960.webp 960w, {R}assets/screens/dashboard.webp 1800w" imagesizes="(max-width: 1200px) 100vw, 1140px">\n' if p['path'] in ('/', '/kk/') else ''
     return f'''<!doctype html>
-<html lang="ru">
+<html lang="{L}">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{title}</title>
 <meta name="description" content="{html.escape(desc)}">
 <link rel="canonical" href="{canon}">
+{hreflang}{preload}
 <meta property="og:type" content="website">
 <meta property="og:title" content="{title}">
 <meta property="og:description" content="{html.escape(desc)}">
@@ -217,9 +297,9 @@ def page(p, body, R, desc):
 <link rel="icon" href="{R}assets/logo/favicon.svg" type="image/svg+xml">
 <link rel="preload" as="font" type="font/woff2" href="{R}assets/fonts/geist-800-cyrillic.woff2" crossorigin>
 <link rel="preload" as="font" type="font/woff2" href="{R}assets/fonts/geist-400-cyrillic.woff2" crossorigin>
-<link rel="stylesheet" href="{R}assets/fonts/fonts.css">
-<link rel="stylesheet" href="{R}css/styles.css?v=3">
-</head>
+<style>{FONTS_CSS.replace('url(', 'url(' + R + 'assets/fonts/')}</style>
+<link rel="stylesheet" href="{R}css/styles.css?v=4">
+{ld(p, body)}{analytics()}</head>
 <body>
 
 {SPRITE}
@@ -230,7 +310,7 @@ def page(p, body, R, desc):
 
 {footer(R)}
 
-<script src="{R}js/main.js?v=2" defer></script>
+<script src="{R}js/main.js?v=3" defer></script>
 </body>
 </html>
 '''
@@ -259,7 +339,7 @@ def cards(sec, R, cols=None):
         tag = it.get('tag_html', '')
         body = f'{ic}<h3>{inline(it["name"])}{tag}</h3><p>{inline(it.get("text", ""))}</p>'
         if link:
-            out += f'<a class="card card--link" href="{href(link, R)}" data-reveal>{body}<span class="link">Подробнее <svg><use href="#i-arrow"/></svg></span></a>'
+            out += f'<a class="card card--link" href="{href(link, R)}" data-reveal>{body}<span class="link">{T("more")} <svg><use href="#i-arrow"/></svg></span></a>'
         else:
             out += f'<article class="card" data-reveal>{body}</article>'
     return f'<div class="{cls}">{out}</div>'
@@ -282,7 +362,7 @@ def steps(sec, R):
     n = len(sec['items'])
     out = f'<div class="flow flow--{n}"><div class="flow__line"><i></i></div>'
     for k, it in enumerate(sec['items']):
-        out += f'<div class="step" data-reveal style="--d:{k*.1:.1f}s"><div class="step__n"><svg><use href="#{STEP_ICONS[k % len(STEP_ICONS)]}"/></svg></div><small>ШАГ 0{k+1}</small><h3>{inline(it["name"])}</h3><p>{inline(it.get("text", ""))}</p></div>'
+        out += f'<div class="step" data-reveal style="--d:{k*.1:.1f}s"><div class="step__n"><svg><use href="#{STEP_ICONS[k % len(STEP_ICONS)]}"/></svg></div><small>{T("step")} 0{k+1}</small><h3>{inline(it["name"])}</h3><p>{inline(it.get("text", ""))}</p></div>'
     return out + '</div>'
 
 def faq(sec):
@@ -317,11 +397,11 @@ def generic_section(sec, R, alt):
     if t == 'cards':
         return f'<section class="{cls}"><div class="wrap">{head(sec)}{cards(sec, R)}</div></section>'
     if t == 'steps':
-        return f'<section class="{cls}"><div class="wrap">{head(sec, "Как это работает", center=True)}{steps(sec, R)}</div></section>'
+        return f'<section class="{cls}"><div class="wrap">{head(sec, T("how"), center=True)}{steps(sec, R)}</div></section>'
     if t == 'text':
         return text_block(sec, alt)
     if t == 'faq':
-        return f'<section class="{cls}" id="faq"><div class="wrap faq"><div data-reveal="left"><p class="eyebrow">FAQ</p><h2>{inline(sec["title"])}</h2><p class="lead" style="margin-top:18px">Остальное покажем на демо за 20 минут.</p></div><div class="faq__list" data-reveal="right">{faq(sec)}</div></div></section>'
+        return f'<section class="{cls}" id="faq"><div class="wrap faq"><div data-reveal="left"><p class="eyebrow">{T("faq_eyebrow")}</p><h2>{inline(sec["title"])}</h2><p class="lead" style="margin-top:18px">{T("faq_lead")}</p></div><div class="faq__list" data-reveal="right">{faq(sec)}</div></div></section>'
     if t == 'table':
         return f'<section class="{cls}"><div class="wrap">{head(sec, center=True)}{shift(sec)}</div></section>'
     if t == 'quotes':
@@ -335,49 +415,48 @@ def phero(sec, crumbs, R, extra=''):
     return f'''<section class="phero">
   <div class="hero__checks"></div>
   <div class="wrap">
-    <nav class="crumbs" aria-label="Хлебные крошки">{crumbs}</nav>
+    <nav class="crumbs" aria-label="{T("crumbs")}">{crumbs}</nav>
     {eyebrow(sec)}
     <h1>{inline(sec['title'])}</h1>
     {lead}
     <div class="hero__ctas" style="justify-content:flex-start;opacity:1;animation:none;margin-top:28px">
-      <a class="btn btn--lg btn--yellow" href="#demo">Записаться на демо <svg><use href="#i-arrow"/></svg></a>
-      <a class="btn btn--lg btn--ghost" href="{WA}" rel="noopener"><svg><use href="#i-wa"/></svg> Написать в WhatsApp</a>
+      <a class="btn btn--lg btn--yellow" href="#demo">{T("demo")} <svg><use href="#i-arrow"/></svg></a>
+      <a class="btn btn--lg btn--ghost" href="{WA}" rel="noopener"><svg><use href="#i-wa"/></svg> {T("wa_btn")}</a>
     </div>{extra}
   </div>
 </section>'''
 
 # ------------------------------------------------------------------ главная
 def home():
-    p = BY_PATH['/']; R = './'
+    p = (BY_PATH_KK if L == 'kk' else BY_PATH)['/kk/' if L == 'kk' else '/']; R = rel(p['path'])
     S = {}
     for s in p['sections']:
         S.setdefault(s['type'], []).append(s)
     hero = S['hero'][0]
+    words = strip_md(hero['title']).split(' ')
+    h1 = ' '.join(words[:-1]) + ' <span class="hl">' + words[-1] + '</span>'
+    trust = ''.join(f'<span><svg><use href="#i-check"/></svg> {x}</span>' for x in T("trust"))
     out = f'''<section class="hero">
   <div class="hero__checks"></div>
   <div class="wrap">
     <div class="hero__inner">
-      <div class="hero__pill"><b><svg width="14" height="6"><use href="#mark"/></svg> ТАКСОПАРКИ</b> {strip_md(hero['eyebrow'])}</div>
-      <h1>Единая платформа для управления <span class="hl">таксопарком.</span></h1>
+      <div class="hero__pill"><b><svg width="14" height="6"><use href="#mark"/></svg> {T("pill")}</b> {strip_md(hero['eyebrow'])}</div>
+      <h1>{h1}</h1>
       <p class="lead">{inline(hero['paras'][0])}</p>
       <div class="hero__ctas">
-        <a class="btn btn--lg btn--yellow" href="#demo">Записаться на демо <svg><use href="#i-arrow"/></svg></a>
-        <a class="btn btn--lg btn--ghost" href="{LOGIN}">Войти</a>
+        <a class="btn btn--lg btn--yellow" href="#demo">{T("demo")} <svg><use href="#i-arrow"/></svg></a>
+        <a class="btn btn--lg btn--ghost" href="{LOGIN}">{T("login")}</a>
       </div>
-      <div class="hero__trust">
-        <span><svg><use href="#i-check"/></svg> Посуточно и под выкуп</span>
-        <span><svg><use href="#i-check"/></svg> Kaspi Pay без нашей комиссии</span>
-        <span><svg><use href="#i-check"/></svg> Подпись через eGov</span>
-      </div>
+      <div class="hero__trust">{trust}</div>
     </div>
     <div class="hero__stage">
       <div class="hero__frame">
-        <img width="1800" height="1125" src="assets/screens/dashboard.webp" srcset="assets/screens/dashboard-960.webp 960w, assets/screens/dashboard.webp 1800w" sizes="(max-width: 1200px) 100vw, 1140px" alt="Главный экран Yume Fleet: выручка, машины в аренде, долги" fetchpriority="high">
+        <img width="1800" height="1125" src="{R}assets/screens/dashboard.webp" srcset="{R}assets/screens/dashboard-960.webp 960w, {R}assets/screens/dashboard.webp 1800w" sizes="(max-width: 1200px) 100vw, 1140px" alt="{T("hero_alt")}" fetchpriority="high">
         <div class="hero__fade"></div>
       </div>
-      <div class="float float--1"><i><svg><use href="#i-alert"/></svg></i><div><b>Просрочено · 3 дня</b>Ерлан С. · Chevrolet Cobalt</div></div>
-      <div class="float float--2"><i><svg><use href="#i-car"/></svg></i><div><b>Новый штраф ПДД</b>847 ABC 02 · привязан к водителю</div></div>
-      <div class="float float--3"><i><svg><use href="#i-wallet"/></svg></i><div><b>Оплата через Kaspi Pay</b>+ 9 000 ₸ · зачислено в аренду</div></div>
+      <div class="float float--1"><i><svg><use href="#i-alert"/></svg></i><div><b>{T("fl1")[0]}</b>{T("fl1")[1]}</div></div>
+      <div class="float float--2"><i><svg><use href="#i-car"/></svg></i><div><b>{T("fl2")[0]}</b>{T("fl2")[1]}</div></div>
+      <div class="float float--3"><i><svg><use href="#i-wallet"/></svg></i><div><b>{T("fl3")[0]}</b>{T("fl3")[1]}</div></div>
     </div>
   </div>
 </section>
@@ -399,11 +478,11 @@ def home():
     p1 = pr[0]
     out += f'''<section class="section" id="debt">
   <div class="wrap debt">
-    <div data-reveal="left">{eyebrow(p1)}<h2>{inline(p1['title'])}</h2><p class="lead" style="margin-top:18px">{inline(p1['paras'][0])}</p>{checks(p1['items'])}<a class="btn" href="#demo">{p1['button'] or 'Записаться на демо'} <svg><use href="#i-arrow"/></svg></a></div>
+    <div data-reveal="left">{eyebrow(p1)}<h2>{inline(p1['title'])}</h2><p class="lead" style="margin-top:18px">{inline(p1['paras'][0])}</p>{checks(p1['items'])}<a class="btn" href="#demo">{p1['button'] or T("demo")} <svg><use href="#i-arrow"/></svg></a></div>
     <div class="ledger" data-reveal="right">
-      <div class="ledger__head"><b>Аренды · с просрочкой</b><span><i></i> <em class="ledger__event">обновляется в реальном времени</em></span></div>
-      <table><thead><tr><th>Водитель</th><th>Машина</th><th>Ставка</th><th>Баланс</th></tr></thead><tbody></tbody></table>
-      <div class="ledger__foot"><span>Долг по парку сегодня</span><b>33 500 ₸</b></div>
+      <div class="ledger__head"><b>{T("ledger_head")}</b><span><i></i> <em class="ledger__event">{T("ledger_live")}</em></span></div>
+      <table><thead><tr>{''.join(f'<th>{c}</th>' for c in T("ledger_cols"))}</tr></thead><tbody></tbody></table>
+      <div class="ledger__foot"><span>{T("ledger_foot")}</span><b>33 500 ₸</b></div>
     </div>
   </div>
 </section>
@@ -415,8 +494,8 @@ def home():
   <div class="wrap drv">
     <div data-reveal="left">{eyebrow(p2)}<h2>{inline(p2['title'])}</h2>{paras}{checks(p2['items'], 'drv__list')}</div>
     <div class="drv__shots" data-reveal="scale">
-      <figure class="drv__shot"><img src="assets/screens/pay-link.webp" width="1800" height="1125" alt="Страница оплаты аренды по ссылке Kaspi Pay" loading="lazy"><figcaption>Оплата по ссылке · уже сейчас</figcaption></figure>
-      <figure class="drv__shot drv__shot--phone"><img src="assets/screens/driver-mobile.webp" width="840" height="2080" alt="Приложение водителя Yume Fleet" loading="lazy"><figcaption>Приложение водителя <em class="tag tag--soon">скоро</em></figcaption></figure>
+      <figure class="drv__shot"><img src="{R}assets/screens/pay-link.webp" width="1800" height="1125" alt="{T("drv_alt1")}" loading="lazy"><figcaption>{T("drv_cap1")}</figcaption></figure>
+      <figure class="drv__shot drv__shot--phone"><img src="{R}assets/screens/driver-mobile.webp" width="840" height="2080" alt="{T("drv_alt2")}" loading="lazy"><figcaption>{T("drv_cap2")} <em class="tag tag--soon">{T("soon")}</em></figcaption></figure>
     </div>
   </div>
 </section>
@@ -427,20 +506,20 @@ def home():
   <div class="wrap promo">
     <div class="promo__vis" data-reveal="scale">
       <div class="bcard">
-        <div class="bcard__head"><span class="plate">847 ABC 02</span><b>Chevrolet Cobalt · 2022</b><em>Аренда под выкуп</em></div>
-        <div class="bcard__sum"><small>Стоимость выкупа</small><b>7 200 000 ₸</b></div>
+        <div class="bcard__head"><span class="plate">847 ABC 02</span><b>Chevrolet Cobalt · 2022</b><em>{T("bc_type")}</em></div>
+        <div class="bcard__sum"><small>{T("bc_price")}</small><b>7 200 000 ₸</b></div>
         <div class="bcard__bar"><i style="--p:.62"></i></div>
-        <div class="bcard__row"><div><small>Накоплено</small><b class="pos">4 464 000 ₸</b></div><div><small>Осталось</small><b>2 736 000 ₸</b></div><div><small>Ближайший платёж</small><b>9 000 ₸ · завтра</b></div></div>
-        <div class="bcard__steps"><span class="is-done">Взнос</span><span class="is-on">Выкуп</span><span>Выкуплено</span></div>
+        <div class="bcard__row"><div><small>{T("bc_saved")}</small><b class="pos">4 464 000 ₸</b></div><div><small>{T("bc_left")}</small><b>2 736 000 ₸</b></div><div><small>{T("bc_next")}</small><b>{T("bc_next_v")}</b></div></div>
+        <div class="bcard__steps"><span class="is-done">{T("bc_steps")[0]}</span><span class="is-on">{T("bc_steps")[1]}</span><span>{T("bc_steps")[2]}</span></div>
       </div>
     </div>
-    <div data-reveal="right">{eyebrow(p3)}<h2>{inline(p3['title'])}</h2><p class="lead" style="margin-top:18px">{inline(p3['paras'][0])}</p>{checks(p3['items'])}<a class="link" href="features/buyout/">Подробнее про выкуп <svg><use href="#i-arrow"/></svg></a></div>
+    <div data-reveal="right">{eyebrow(p3)}<h2>{inline(p3['title'])}</h2><p class="lead" style="margin-top:18px">{inline(p3['paras'][0])}</p>{checks(p3['items'])}<a class="link" href="{R}features/buyout/">{T("more_buyout")} <svg><use href="#i-arrow"/></svg></a></div>
   </div>
 </section>
 <section class="section section--card" id="fines">
   <div class="wrap promo promo--rev">
-    <div data-reveal="left">{eyebrow(p4)}<h2>{inline(p4['title'])}</h2><p class="lead" style="margin-top:18px">{inline(p4['paras'][0])}</p>{checks(p4['items'])}<a class="link" href="features/fines/">Подробнее про штрафы <svg><use href="#i-arrow"/></svg></a></div>
-    <div class="promo__vis promo__vis--shot" data-reveal="scale"><img src="assets/screens/fines.webp" width="1800" height="1125" alt="Штрафы ПДД в Yume Fleet: протокол, водитель, срок скидки" loading="lazy"></div>
+    <div data-reveal="left">{eyebrow(p4)}<h2>{inline(p4['title'])}</h2><p class="lead" style="margin-top:18px">{inline(p4['paras'][0])}</p>{checks(p4['items'])}<a class="link" href="{R}features/fines/">{T("more_fines")} <svg><use href="#i-arrow"/></svg></a></div>
+    <div class="promo__vis promo__vis--shot" data-reveal="scale"><img src="{R}assets/screens/fines.webp" width="1800" height="1125" alt="{T("fines_alt")}" loading="lazy"></div>
   </div>
 </section>
 '''
@@ -452,7 +531,7 @@ def home():
     out += f'<section class="section section--card" id="features"><div class="wrap">{head(c1)}{cards(c1, R, 4)}</div></section>\n'
     # cards 3: интеграции
     c2 = S['cards'][2]
-    out += f'<section class="section" id="integrations"><div class="wrap">{head(c2)}{ints(c2, R)}<p class="more" data-reveal><a class="link" href="integrations/">Все интеграции <svg><use href="#i-arrow"/></svg></a></p></div></section>\n'
+    out += f'<section class="section" id="integrations"><div class="wrap">{head(c2)}{ints(c2, R)}<p class="more" data-reveal><a class="link" href="{R}integrations/">{T("all_ints")} <svg><use href="#i-arrow"/></svg></a></p></div></section>\n'
     # steps
     st = S['steps'][0]
     out += f'<section class="section section--card" id="start"><div class="wrap">{head(st, center=True)}{steps(st, R)}</div></section>\n'
@@ -461,12 +540,12 @@ def home():
     out += f'<section class="section" id="reviews"><div class="wrap">{head(q)}{quotes(q)}</div></section>\n'
     # text: цена
     pr_ = S['text'][1]
-    out += f'<section class="section section--card" id="price"><div class="wrap price" data-reveal>{eyebrow(pr_)}<h2>{inline(pr_["title"])}</h2><p class="lead">{inline(pr_["paras"][0])}</p><a class="btn btn--lg btn--yellow" href="#demo">Узнать цену на демо <svg><use href="#i-arrow"/></svg></a></div></section>\n'
+    out += f'<section class="section section--card" id="price"><div class="wrap price" data-reveal>{eyebrow(pr_)}<h2>{inline(pr_["title"])}</h2><p class="lead">{inline(pr_["paras"][0])}</p><a class="btn btn--lg btn--yellow" href="#demo">{T("price_btn")} <svg><use href="#i-arrow"/></svg></a></div></section>\n'
     # faq
     out += generic_section(S['faq'][0], R, False) + '\n'
     out += cta(S['cta'][0], R)
     desc = strip_md(hero['paras'][0])
-    write('/index.html', page(p, out, R, desc))
+    write(p['path'] + 'index.html', page(p, out, R, desc))
 
 # ------------------------------------------------------------------ внутренние
 def crumbs_for(p, R):
@@ -510,11 +589,11 @@ def inner(p):
     write(p['path'] + 'index.html', page(p, body, R, desc))
 
 def contacts():
-    p = BY_PATH['/contacts/']; R = rel('/contacts/'); hero = p['sections'][0]
+    p = (BY_PATH_KK if L == 'kk' else BY_PATH)['/kk/contacts/' if L == 'kk' else '/contacts/']; R = rel(p['path']); hero = p['sections'][0]
     body = f'''<section class="phero">
   <div class="hero__checks"></div>
   <div class="wrap">
-    <nav class="crumbs" aria-label="Хлебные крошки"><a href="{R}">Главная</a><span>/</span><b>Контакты</b></nav>
+    <nav class="crumbs" aria-label="{T("crumbs")}"><a href="{href('/kk/', R) if L == 'kk' else R}">{T("home")}</a><span>/</span><b>{T("contacts")}</b></nav>
     {eyebrow(hero)}
     <h1>{inline(hero['title'])}</h1>
     <p class="lead">{inline(hero['paras'][0])}</p>
@@ -523,22 +602,22 @@ def contacts():
 <section class="section" style="padding-top:0">
   <div class="wrap contacts">
     <div class="ccards" data-stagger>
-      <a class="ccard ccard--wa" href="{WA}?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5%21%20%D0%A5%D0%BE%D1%87%D1%83%20%D0%B4%D0%B5%D0%BC%D0%BE%20Yume%20Fleet" rel="noopener"><i><svg><use href="#i-wa"/></svg></i><div><small>WhatsApp, самый быстрый способ</small><b>{PHONE}</b><span>Демо, вопросы по продукту и переходу</span></div><svg class="ccard__arr"><use href="#i-arrow"/></svg></a>
-      <a class="ccard" href="tel:+77779479990"><i><svg><use href="#i-phone"/></svg></i><div><small>Телефон</small><b>{PHONE}</b><span>Пн–Пт 9:00–19:00, Сб 10:00–16:00 по Алматы</span></div><svg class="ccard__arr"><use href="#i-arrow"/></svg></a>
-      <a class="ccard" href="https://t.me/yumefleet" rel="noopener"><i><svg><use href="#i-inbox"/></svg></i><div><small>Telegram</small><b>@yumefleet</b><span>Канал поддержки и обновлений</span></div><svg class="ccard__arr"><use href="#i-arrow"/></svg></a>
-      <a class="ccard" href="mailto:sales@yume.cloud"><i><svg><use href="#i-doc"/></svg></i><div><small>Продажи и партнёрство</small><b>sales@yume.cloud</b><span>Коммерческие предложения, интеграции, договоры</span></div><svg class="ccard__arr"><use href="#i-arrow"/></svg></a>
-      <a class="ccard" href="mailto:support.cloud@yume.kz"><i><svg><use href="#i-shield"/></svg></i><div><small>Поддержка парков</small><b>support.cloud@yume.kz</b><span>Вопросы по работе системы</span></div><svg class="ccard__arr"><use href="#i-arrow"/></svg></a>
-      <div class="ccard"><i><svg><use href="#i-pin"/></svg></i><div><small>Офис</small><b>Алматы, Казахстан</b><span>ТОО «Yume.Cloud». Встречи по договорённости, демо по видеосвязи.</span></div></div>
-      <div class="ccard"><i><svg><use href="#i-user"/></svg></i><div><small>Вход для парков</small><b><a href="{LOGIN}" rel="noopener">app.yumefleet.kz</a></b><span>Кабинет парка</span></div></div>
+      <a class="ccard ccard--wa" href="{WA}?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5%21%20%D0%A5%D0%BE%D1%87%D1%83%20%D0%B4%D0%B5%D0%BC%D0%BE%20Yume%20Fleet" rel="noopener"><i><svg><use href="#i-wa"/></svg></i><div><small>{T("c_wa")}</small><b>{PHONE}</b><span>{T("c_wa_sub")}</span></div><svg class="ccard__arr"><use href="#i-arrow"/></svg></a>
+      <a class="ccard" href="tel:+77779479990"><i><svg><use href="#i-phone"/></svg></i><div><small>{T("c_phone")}</small><b>{PHONE}</b><span>{T("c_phone_sub")}</span></div><svg class="ccard__arr"><use href="#i-arrow"/></svg></a>
+      <a class="ccard" href="https://t.me/yumefleet" rel="noopener"><i><svg><use href="#i-inbox"/></svg></i><div><small>{T("c_tg")}</small><b>@yumefleet</b><span>{T("c_tg_sub")}</span></div><svg class="ccard__arr"><use href="#i-arrow"/></svg></a>
+      <a class="ccard" href="mailto:sales@yume.cloud"><i><svg><use href="#i-doc"/></svg></i><div><small>{T("c_sales")}</small><b>sales@yume.cloud</b><span>{T("c_sales_sub")}</span></div><svg class="ccard__arr"><use href="#i-arrow"/></svg></a>
+      <a class="ccard" href="mailto:support.cloud@yume.kz"><i><svg><use href="#i-shield"/></svg></i><div><small>{T("c_sup")}</small><b>support.cloud@yume.kz</b><span>{T("c_sup_sub")}</span></div><svg class="ccard__arr"><use href="#i-arrow"/></svg></a>
+      <div class="ccard"><i><svg><use href="#i-pin"/></svg></i><div><small>{T("c_office")}</small><b>{T("c_city")}</b><span>{T("c_office_sub")}</span></div></div>
+      <div class="ccard"><i><svg><use href="#i-user"/></svg></i><div><small>{T("c_login")}</small><b><a href="{LOGIN}" rel="noopener">app.yumefleet.kz</a></b><span>{T("c_login_sub")}</span></div></div>
     </div>
     <div class="contacts__form" data-reveal="right" id="demo">
-      <h2 style="font-size:26px;margin-bottom:8px">Записаться на демо</h2>
-      <p class="lead" style="font-size:15px;margin-bottom:22px">Покажем систему за 20 минут на примере парка вашего размера.</p>
+      <h2 style="font-size:26px;margin-bottom:8px">{T("c_form_h")}</h2>
+      <p class="lead" style="font-size:15px;margin-bottom:22px">{T("c_form_p")}</p>
       {form(R).replace(' data-reveal="right"', '')}
     </div>
   </div>
 </section>'''
-    write('/contacts/index.html', page(p, body, R, strip_md(hero['paras'][0])))
+    write(p['path'] + 'index.html', page(p, body, R, strip_md(hero['paras'][0])))
 
 # ------------------------------------------------------------------ служебные
 def write(path, content):
@@ -549,13 +628,13 @@ def write(path, content):
 
 def service():
     today = datetime.date.today().isoformat()
-    paths = [p['path'] for p in PAGES]
+    paths = [p['path'] for p in PAGES] + [p['path'] for p in PAGES_KK]
     urls = ''.join(f'  <url><loc>{SITE}{u}</loc><lastmod>{today}</lastmod><priority>{"1.0" if u == "/" else "0.8"}</priority></url>\n' for u in paths)
     write('/sitemap.xml', f'<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n{urls}</urlset>\n')
     write('/robots.txt', f'User-agent: *\nAllow: /\n\nSitemap: {SITE}/sitemap.xml\n')
-    p404 = dict(path='/404.html', title='Страница не найдена')
-    body = '''<section class="phero" style="min-height:70vh;display:grid;align-items:center"><div class="hero__checks"></div><div class="wrap"><p class="eyebrow">Ошибка 404</p><h1>Такой страницы нет</h1><p class="lead">Возможно, ссылка устарела. Вот куда можно пойти дальше.</p><div class="hero__ctas" style="justify-content:flex-start;opacity:1;animation:none;margin-top:28px"><a class="btn btn--lg btn--yellow" href="./">На главную <svg><use href="#i-arrow"/></svg></a><a class="btn btn--lg btn--ghost" href="features/">Возможности</a></div></div></section>'''
-    write('/404.html', page(p404, body, './', 'Страница не найдена.'))
+    p404 = dict(path='/404.html', title=T("t404"))
+    body = f'''<section class="phero" style="min-height:70vh;display:grid;align-items:center"><div class="hero__checks"></div><div class="wrap"><p class="eyebrow">404</p><h1>{T("h404")}</h1><p class="lead">{T("p404")}</p><div class="hero__ctas" style="justify-content:flex-start;opacity:1;animation:none;margin-top:28px"><a class="btn btn--lg btn--yellow" href="./">{T("to_home")} <svg><use href="#i-arrow"/></svg></a><a class="btn btn--lg btn--ghost" href="features/">{T("features")}</a></div></div></section>'''
+    write('/404.html', page(p404, body, './', T("t404") + '.'))
     write('/.nojekyll', '')
 
 home()
@@ -564,3 +643,6 @@ for p in PAGES:
     inner(p)
 contacts()
 service()
+L = 'kk'
+home()
+contacts()

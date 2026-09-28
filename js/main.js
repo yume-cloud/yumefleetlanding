@@ -65,12 +65,13 @@
       if (total) total.textContent = fmt(debt) + ' ₸';
     };
     render(rows);
+    const kk = document.documentElement.lang === 'kk';
     const script = [
-      { i: 0, bal: -18000, note: 'Kaspi: +9 000 ₸ от Ерлана' },
-      { i: 1, bal: -8500, note: 'Новый день: начислено 8 500 ₸' },
-      { i: 4, bal: 5500, note: 'Kaspi: +12 000 ₸ от Айбека' },
-      { i: 0, bal: -9000, note: 'Kaspi: +9 000 ₸ от Ерлана' },
-      { i: 1, bal: 0, note: 'Наличные: 8 500 ₸ отметил менеджер' },
+      { i: 0, bal: -18000, note: kk ? 'Kaspi: Ерланнан +9 000 ₸' : 'Kaspi: +9 000 ₸ от Ерлана' },
+      { i: 1, bal: -8500, note: kk ? 'Жаңа күн: 8 500 ₸ есептелді' : 'Новый день: начислено 8 500 ₸' },
+      { i: 4, bal: 5500, note: kk ? 'Kaspi: Айбектен +12 000 ₸' : 'Kaspi: +12 000 ₸ от Айбека' },
+      { i: 0, bal: -9000, note: kk ? 'Kaspi: Ерланнан +9 000 ₸' : 'Kaspi: +9 000 ₸ от Ерлана' },
+      { i: 1, bal: 0, note: kk ? 'Қолма-қол: 8 500 ₸ менеджер белгіледі' : 'Наличные: 8 500 ₸ отметил менеджер' },
     ];
     let started = false;
     const play = async () => {
@@ -104,7 +105,7 @@
     if (!name.value.trim()) { name.focus(); name.classList.add('is-invalid'); return; }
     if (phone.value.replace(/\D/g, '').length < 11) { phone.focus(); phone.classList.add('is-invalid'); return; }
     const payload = { name: name.value.trim(), phone: phone.value.trim(), segment: [cars?.value, city?.value.trim()].filter(Boolean).join(' · '), page: location.pathname, source: 'yumefleet.com', website: $('input[name=website]', form)?.value || '' };
-    const label = btn.textContent; btn.disabled = true; btn.textContent = 'Отправляем…';
+    const label = btn.textContent; btn.disabled = true; btn.textContent = document.documentElement.lang === 'kk' ? 'Жіберілуде…' : 'Отправляем…';
     let sent = false;
     if (LEAD_ENDPOINT) {
       try { const r = await fetch(LEAD_ENDPOINT, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload) }); const j = await r.json().catch(() => ({})); sent = r.ok && j.ok; } catch (x) { sent = false; }

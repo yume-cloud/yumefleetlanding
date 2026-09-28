@@ -510,3 +510,9 @@ h1 .tag,h2 .tag{font-size:12px;padding:3px 9px;vertical-align:middle}
 .checks--sm li i{width:20px;height:20px}
 .checks--sm li i svg{width:11px;height:11px}
 .drv__list.checks{margin-bottom:0}
+/* a11y + lang */
+.tag--soon{background:#E6E6E6;color:#4F4F4F}
+.int--soon{opacity:1}.int--soon i{filter:grayscale(1);opacity:.6}
+.nav__lang{padding:8px 10px;font-weight:700;font-size:12px;letter-spacing:.08em;color:var(--ink);opacity:.7;border:1px solid currentColor;border-radius:8px;line-height:1}
+.nav__lang:hover{opacity:1}
+@media (max-width:1040px){.nav__lang{display:inline-flex}}
