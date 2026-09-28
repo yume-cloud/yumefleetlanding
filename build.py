@@ -137,6 +137,20 @@ NAV_FEATURES = [
  ('/features/leads/', 'WhatsApp и воронка', 'Заявки водителей до аренды', 'i-wa'),
  ('/features/settings/', 'Гибкие настройки', 'Правила, роли, несколько парков', 'i-cog'),
 ]
+NAV_INTS = [
+ ('/kaspi-pay/', 'Kaspi Pay', 'Оплата по ссылке, без нашей комиссии', 'Сілтеме арқылы төлем, комиссиясыз', 'assets/img/int/kaspi.png'),
+ ('/kaspi/', 'Kaspi Платежи', 'Официальная интеграция, 2,5%', 'Ресми интеграция, 2,5%', 'assets/img/int/kaspi.png'),
+ ('/integrations/', 'eGov mobile', 'Подписание договоров и актов', 'Шарттар мен актілерге қол қою', 'assets/img/int/egov.png'),
+ ('/integrations/', 'Штрафы ПДД и ЕРАП', 'Постановления с протоколом', 'Хаттамасы бар қаулылар', 'assets/img/int/erap.svg'),
+ ('/integrations/', 'Реестр должников', 'Проверка водителя до выдачи', 'Көлік берер алдында тексеру', 'assets/img/int/iin.svg'),
+ ('/integrations/', 'Чёрный список парков', 'Общая база проблемных водителей', 'Проблемалы жүргізушілердің базасы', 'assets/logo/tile-dark-yellow-mark.svg'),
+ ('/integrations/', 'GPS Wialon', 'Местоположение и пробег машин', 'Көліктің орны және жүрісі', 'assets/img/int/wialon.png'),
+ ('/integrations/', 'WhatsApp через Wazzup', 'Переписка и заявки в системе', 'Жүйедегі хат алмасу мен өтінімдер', 'assets/img/int/wazzup.png'),
+ ('/integrations/', 'ИИ-ассистент', 'Ответы по арендам и деньгам парка', 'Жалдау мен парк ақшасы бойынша жауаптар', 'assets/img/int/ai.svg'),
+]
+def nav_ints():
+    return [(p, n, (sk if L == 'kk' else sr), logo) for p, n, sr, sk, logo in NAV_INTS]
+
 ICON_BY_PATH = {p: i for p, _, _, i in NAV_FEATURES}
 ICON_BY_PATH.update({'/kaspi-pay/': 'i-link', '/kaspi/': 'i-wallet'})
 FEATURE_IMG = {'/features/rentals/': ('screens/rent-card.webp', 'Карточка аренды в Yume Fleet'), '/features/buyout/': ('img/gen/F4.webp', 'Аренда под выкуп: машина, взнос и ключи'), '/features/shifts/': ('screens/rents.webp', 'Список аренд Yume Fleet'), '/features/drivers/': ('screens/driver-card.webp', 'Карточка водителя в Yume Fleet'), '/features/vehicles/': ('screens/vehicle-card.webp', 'Карточка машины в Yume Fleet'), '/features/finance/': ('screens/finance.webp', 'Финансы парка в Yume Fleet'), '/features/fines/': ('img/gen/F5.webp', 'Штраф ПДД: камера, протокол и срок скидки'), '/features/documents/': ('screens/waybills.webp', 'Документы и путевые листы в Yume Fleet'), '/features/investors/': ('screens/sublease.webp', 'Субаренда и инвесторы в Yume Fleet'), '/features/analytics/': ('screens/analytics.webp', 'Аналитика парка в Yume Fleet'), '/features/leads/': ('screens/drivers.webp', 'База водителей и кандидатов в Yume Fleet'), '/features/settings/': ('screens/settings.webp', 'Настройки парка в Yume Fleet'), '/kaspi-pay/': ('img/gen/F3.webp', 'Водитель платит за аренду с телефона'), '/kaspi/': ('screens/pay-link.webp', 'Оплата аренды через Kaspi'), '/integrations/': ('screens/pay-link.webp', 'Интеграции Yume Fleet'), '/perehod/': ('img/gen/F6.webp', 'Переход с Yume Cloud на Yume Fleet'), '/features/': ('img/gen/F1.webp', 'Таксопарк на платформе Yume Fleet')}
@@ -159,6 +173,7 @@ def href(path, R):
 
 def nav(R, path):
     dd = ''.join(f'<a class="dd__i" href="{href(p, R)}"><svg><use href="#{i}"/></svg><div><b>{n}</b><small>{s}</small></div></a>' for p, n, s, i in nav_feats())
+    ddi = ''.join(f'<a class="dd__i" href="{href(p, R)}"><i class="dd__logo"><img src="{R}{logo}" alt="" width="28" height="28" loading="lazy"></i><div><b>{n}</b><small>{s}</small></div></a>' for p, n, s, logo in nav_ints())
     act = lambda p: ' class="is-cur"' if p == path else ''
     home_href = href('/kk/', R) if L == 'kk' else R
     alt = {'/': '/kk/', '/contacts/': '/kk/contacts/', '/kk/': '/', '/kk/contacts/': '/contacts/'}.get(path)
@@ -171,7 +186,7 @@ def nav(R, path):
       <ul class="nav__menu">
         <li><a href="{home_href}"{act('/kk/' if L == 'kk' else '/')}>{T("home")}</a></li>
         <li class="has-dd"><a href="{href('/features/', R)}"{act('/features/')}>{T("features")} <svg><use href="#i-chev"/></svg></a><button class="dd__tgl" aria-label="{T("dd_open")}"><svg><use href="#i-chev"/></svg></button><div class="dd"><div class="dd__panel"><div class="dd__grid">{dd}</div><a class="dd__all" href="{href('/features/', R)}">{T("all_features")} <svg><use href="#i-arrow"/></svg></a></div></div></li>
-        <li><a href="{href('/integrations/', R)}"{act('/integrations/')}>{T("integrations")}</a></li>
+        <li class="has-dd"><a href="{href('/integrations/', R)}"{act('/integrations/')}>{T("integrations")} <svg><use href="#i-chev"/></svg></a><button class="dd__tgl" aria-label="{T('integrations')}"><svg><use href="#i-chev"/></svg></button><div class="dd"><div class="dd__panel"><div class="dd__grid">{ddi}</div><a class="dd__all" href="{href('/integrations/', R)}">{T('all_ints')} <svg><use href="#i-arrow"/></svg></a></div></div></li>
         <li><a href="{href('/perehod/', R)}"{act('/perehod/')}>{T("perehod")}</a></li>
         <li><a href="{contacts_href}"{act('/kk/contacts/' if L == 'kk' else '/contacts/')}>{T("contacts")}</a></li>
         <li><a class="nav__cta-m" href="#demo">{T("demo")}</a></li>
@@ -300,7 +315,7 @@ def page(p, body, R, desc):
 <link rel="preload" as="font" type="font/woff2" href="{R}assets/fonts/geist-800-cyrillic.woff2" crossorigin>
 <link rel="preload" as="font" type="font/woff2" href="{R}assets/fonts/geist-400-cyrillic.woff2" crossorigin>
 <style>{FONTS_CSS.replace('url(', 'url(' + R + 'assets/fonts/')}</style>
-<link rel="stylesheet" href="{R}css/styles.css?v=9">
+<link rel="stylesheet" href="{R}css/styles.css?v=10">
 {ld(p, body)}{analytics()}</head>
 <body>
 
@@ -591,7 +606,7 @@ def inner(p):
     for s in secs:
         if s['type'] == 'hero': continue
         if s['type'] == 'cards' and p['path'] == '/integrations/':
-            body += f'<section class="section{" section--card" if alt else ""}"><div class="wrap">{head(s)}{int_acc(s, R)}</div></section>'
+            body += f'<section class="section{" section--card" if alt else ""}"><div class="wrap">{head(s)}{ints(s, R)}</div></section>'
         else:
             body += generic_section(s, R, alt)
         if s['type'] != 'cta': alt = not alt
