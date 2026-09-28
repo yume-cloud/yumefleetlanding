@@ -366,8 +366,8 @@ def int_acc(sec, R):
         soon = any(c == 'soon' for c, _ in it['tags'])
         ic = f'<i><img src="{R}{logo}" alt="" width="42" height="42"></i>' if logo else '<i><svg><use href="#i-link"/></svg></i>'
         link = f'<a class="link" href="{href(it["link"], R)}">{T("more")} <svg><use href="#i-arrow"/></svg></a>' if it.get('link') else ''
-        parts = [x.strip() for x in strip_md(it.get('text', '')).split('.') if x.strip()]
-        sub = parts[0] if len(parts) > 1 else ''
+        parts = [x.strip() for x in re.split(r'(?<=\.)\s+', strip_md(it.get('text', ''))) if x.strip()]
+        sub = parts[0].rstrip('.') if len(parts) > 1 else ''
         sub_html = f'<small>{sub}</small>' if sub else ''
         out += (f'<div class="iacc{" iacc--soon" if soon else ""}{" is-open" if k == 0 else ""}">'
                 f'<button type="button">{ic}<span><b>{inline(name)}{it.get("tag_html", "")}</b>{sub_html}</span><i class="iacc__x"></i></button>'
