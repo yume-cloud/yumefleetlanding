@@ -523,3 +523,4 @@ h1 .tag,h2 .tag{font-size:12px;padding:3px 9px;vertical-align:middle}
 .phero__vis img{width:100%;border-radius:14px;border:1px solid var(--line);box-shadow:var(--shadow);background:#fff}
 .phero--grid .lead{max-width:none}
 @media (max-width:980px){.phero--grid .wrap{grid-template-columns:1fr;gap:32px}}
+@media (max-width:600px){.ledger th:nth-child(3),.ledger td:nth-child(3){display:none}.hero__pill{max-width:100%;white-space:normal;text-align:left}}
