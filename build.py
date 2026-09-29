@@ -12,7 +12,7 @@ FONTS_CSS = open(os.path.join(ROOT, 'assets', 'fonts', 'fonts.css'), encoding='u
 L = 'ru'
 UI = {
  'ru': dict(home='Главная', features='Возможности', dd_open='Раскрыть возможности', all_features='Все возможности', integrations='Интеграции', perehod='Для клиентов Yume Cloud', contacts='Контакты', demo='Записаться на демо', login='Войти', menu='Основное меню', burger='Меню',
-   footer_about='Платформа для управления таксопарком. ТОО «Yume.Cloud», Алматы, Казахстан.', product='Продукт', kaspi_pay='Оплата по ссылке Kaspi Pay', kaspi='Kaspi Платежи 2,5%', login_sys='Войти в систему', docs='Документы',
+   footer_about='Платформа для управления таксопарком. ТОО «Yume.Cloud», Алматы, Казахстан.', product='Продукт', kaspi_pay='Оплата по ссылке Kaspi Pay', login_sys='Войти в систему', docs='Документы',
    doc_list=['Политика конфиденциальности', 'Публичная оферта', 'Пользовательское соглашение', 'Рекуррентные платежи', 'Отмена и возврат платежей', 'Процедура оплаты', 'Удаление аккаунта'], copy='© ТОО «Yume.Cloud», 2026', cloud='Сдаёте инвентарь, а не машины? yume.cloud', wa='Написать в WhatsApp', top='Наверх',
    f_name='Имя', f_name_ph='Как к вам обращаться', f_phone='Телефон', f_cars='Сколько машин в парке', f_cars_opts=['до 10 машин', '10–30 машин', '30–100 машин', '100+ машин'], f_city='Город', f_city_ph='Алматы', f_consent='Согласен на обработку персональных данных в соответствии с', f_policy='политикой конфиденциальности', f_ok='Заявка отправлена', f_ok_sub='Перезвоним в течение 15 минут в рабочее время.',
    cta_eyebrow='Демо', cta_list=['Перезвоним в течение 15 минут в рабочее время', 'Показываем на примере парка вашего размера', 'Данные переносим мы, парк продолжает работать'], cta_wa='Или напишите в WhatsApp', cta_default='Записаться на демо', cta_lead='Покажем систему за 20 минут на примере парка вашего размера.',
@@ -23,10 +23,10 @@ UI = {
    drv_cap1='Оплата по ссылке · уже сейчас', drv_cap2='Приложение водителя', drv_alt1='Страница оплаты аренды по ссылке Kaspi Pay', drv_alt2='Приложение водителя Yume Fleet', soon='скоро',
    bc_type='Аренда под выкуп', bc_price='Стоимость выкупа', bc_saved='Накоплено', bc_left='Осталось', bc_next='Ближайший платёж', bc_next_v='9 000 ₸ · завтра', bc_steps=['Взнос', 'Выкуп', 'Выкуплено'], more_buyout='Подробнее про выкуп', more_fines='Подробнее про штрафы', fines_alt='Штрафы ПДД в Yume Fleet: протокол, водитель, срок скидки',
    all_ints='Все интеграции', price_btn='Узнать цену на демо',
-   c_wa='WhatsApp, самый быстрый способ', c_wa_sub='Демо, вопросы по продукту и переходу', c_phone='Телефон', c_phone_sub='Пн–Пт 9:00–19:00, Сб 10:00–16:00 по Алматы', c_tg='Telegram', c_tg_sub='Канал поддержки и обновлений', c_sales='Продажи и партнёрство', c_sales_sub='Коммерческие предложения, интеграции, договоры', c_sup='Поддержка парков', c_sup_sub='Вопросы по работе системы', c_office='Офис', c_city='Алматы, Казахстан', c_office_sub='ТОО «Yume.Cloud». Встречи по договорённости, демо по видеосвязи.', c_login='Вход для парков', c_login_sub='Кабинет парка', c_form_h='Записаться на демо', c_form_p='Покажем систему за 20 минут на примере парка вашего размера.', crumbs='Хлебные крошки',
+   c_wa='WhatsApp, самый быстрый способ', c_wa_sub='Демо, вопросы по продукту и переходу', c_phone='Телефон', c_phone_sub='Пн–Пт 9:00–19:00, Сб 10:00–16:00 по Алматы', c_inst='Instagram', c_inst_sub='Новости продукта и парков', c_yt='YouTube', c_yt_sub='Видео о работе системы', c_sales='Продажи и партнёрство', c_sales_sub='Коммерческие предложения, интеграции, договоры', c_sup='Поддержка парков', c_sup_sub='Вопросы по работе системы', c_office='Офис', c_city='Алматы, Казахстан', c_office_sub='ТОО «Yume.Cloud». Встречи по договорённости, демо по видеосвязи.', c_login='Вход для парков', c_login_sub='Кабинет парка', c_form_h='Записаться на демо', c_form_p='Покажем систему за 20 минут на примере парка вашего размера.', crumbs='Хлебные крошки',
    t404='Страница не найдена', h404='Такой страницы нет', p404='Возможно, ссылка устарела. Вот куда можно пойти дальше.', to_home='На главную'),
  'kk': dict(home='Басты бет', features='Мүмкіндіктер', dd_open='Мүмкіндіктерді ашу', all_features='Барлық мүмкіндіктер', integrations='Интеграциялар', perehod='Yume Cloud клиенттеріне', contacts='Байланыс', demo='Демоға жазылу', login='Кіру', menu='Негізгі мәзір', burger='Мәзір',
-   footer_about='Таксопаркті басқаруға арналған платформа. «Yume.Cloud» ЖШС, Алматы, Қазақстан.', product='Өнім', kaspi_pay='Kaspi Pay сілтемесі арқылы төлем', kaspi='Kaspi Төлемдер 2,5%', login_sys='Жүйеге кіру', docs='Құжаттар',
+   footer_about='Таксопаркті басқаруға арналған платформа. «Yume.Cloud» ЖШС, Алматы, Қазақстан.', product='Өнім', kaspi_pay='Kaspi Pay сілтемесі арқылы төлем', login_sys='Жүйеге кіру', docs='Құжаттар',
    doc_list=['Құпиялылық саясаты', 'Жария оферта', 'Пайдаланушы келісімі', 'Рекурренттік төлемдер', 'Төлемдерді болдырмау және қайтару', 'Төлем тәртібі', 'Аккаунтты жою'], copy='© «Yume.Cloud» ЖШС, 2026', cloud='Көлік емес, мүкәммал жалға бересіз бе? yume.cloud', wa='WhatsApp-қа жазу', top='Жоғарыға',
    f_name='Аты', f_name_ph='Сізге қалай жүгінуге болады', f_phone='Телефон', f_cars='Паркте қанша көлік', f_cars_opts=['10 көлікке дейін', '10–30 көлік', '30–100 көлік', '100+ көлік'], f_city='Қала', f_city_ph='Алматы', f_consent='Жеке деректерімді өңдеуге келісемін,', f_policy='құпиялылық саясатына сәйкес', f_ok='Өтінім жіберілді', f_ok_sub='Жұмыс уақытында 15 минут ішінде қайта қоңырау шаламыз.',
    cta_eyebrow='Демо', cta_list=['Жұмыс уақытында 15 минут ішінде қайта қоңырау шаламыз', 'Сіздің парк көлеміндегі мысалда көрсетеміз', 'Деректерді біз көшіреміз, парк жұмысын жалғастырады'], cta_wa='Немесе WhatsApp-қа жазыңыз', cta_default='Демоға жазылу', cta_lead='Жүйені 20 минутта сіздің парк көлеміндегі мысалда көрсетеміз.',
@@ -37,7 +37,7 @@ UI = {
    drv_cap1='Сілтеме арқылы төлем · қазірдің өзінде', drv_cap2='Жүргізуші қосымшасы', drv_alt1='Kaspi Pay сілтемесі арқылы жалдау төлемі беті', drv_alt2='Yume Fleet жүргізуші қосымшасы', soon='жақында',
    bc_type='Сатып алумен жалдау', bc_price='Сатып алу құны', bc_saved='Жиналды', bc_left='Қалды', bc_next='Келесі төлем', bc_next_v='9 000 ₸ · ертең', bc_steps=['Жарна', 'Сатып алу', 'Сатып алынды'], more_buyout='Сатып алу туралы толығырақ', more_fines='Айыппұлдар туралы толығырақ', fines_alt='Yume Fleet-тегі ЖҚЕ айыппұлдары: хаттама, жүргізуші, жеңілдік мерзімі',
    all_ints='Барлық интеграциялар', price_btn='Бағаны демода білу',
-   c_wa='WhatsApp, ең жылдам тәсіл', c_wa_sub='Демо, өнім және көшу бойынша сұрақтар', c_phone='Телефон', c_phone_sub='Дс–Жм 9:00–19:00, Сб 10:00–16:00, Алматы уақыты', c_tg='Telegram', c_tg_sub='Қолдау және жаңартулар арнасы', c_sales='Сату және серіктестік', c_sales_sub='Коммерциялық ұсыныстар, интеграциялар, шарттар', c_sup='Парктерді қолдау', c_sup_sub='Жүйенің жұмысы бойынша сұрақтар', c_office='Кеңсе', c_city='Алматы, Қазақстан', c_office_sub='«Yume.Cloud» ЖШС. Кездесулер келісім бойынша, демо бейнебайланыс арқылы.', c_login='Парктер үшін кіру', c_login_sub='Парк кабинеті', c_form_h='Демоға жазылу', c_form_p='Жүйені 20 минутта сіздің парк көлеміндегі мысалда көрсетеміз.', crumbs='Нан үгінділері',
+   c_wa='WhatsApp, ең жылдам тәсіл', c_wa_sub='Демо, өнім және көшу бойынша сұрақтар', c_phone='Телефон', c_phone_sub='Дс–Жм 9:00–19:00, Сб 10:00–16:00, Алматы уақыты', c_inst='Instagram', c_inst_sub='Өнім және парктер жаңалықтары', c_yt='YouTube', c_yt_sub='Жүйенің жұмысы туралы бейнелер', c_sales='Сату және серіктестік', c_sales_sub='Коммерциялық ұсыныстар, интеграциялар, шарттар', c_sup='Парктерді қолдау', c_sup_sub='Жүйенің жұмысы бойынша сұрақтар', c_office='Кеңсе', c_city='Алматы, Қазақстан', c_office_sub='«Yume.Cloud» ЖШС. Кездесулер келісім бойынша, демо бейнебайланыс арқылы.', c_login='Парктер үшін кіру', c_login_sub='Парк кабинеті', c_form_h='Демоға жазылу', c_form_p='Жүйені 20 минутта сіздің парк көлеміндегі мысалда көрсетеміз.', crumbs='Нан үгінділері',
    t404='Бет табылмады', h404='Мұндай бет жоқ', p404='Сілтеме ескірген болуы мүмкін. Әрі қарай қайда баруға болады.', to_home='Басты бетке'),
 }
 NAV_KK = {'/features/rentals/': ('Жалдау карточкасы', 'Тәуліктік, мерзім, төлем кестесі'), '/features/buyout/': ('Сатып алумен жалдау', 'Жарна, барысы, қалдық'), '/features/shifts/': ('Ауысымдар', 'Бір көлікте екі жүргізуші'), '/features/drivers/': ('Жүргізушілер', 'Қарыз, депозит, сенімділік'), '/features/vehicles/': ('Көліктер', 'ТҚ, жөндеу, қойма, өтелімділік'), '/features/finance/': ('Ақша мен қарыздар', 'Есептеулер, төлемдер, өтеу'), '/features/fines/': ('ЖҚЕ айыппұлдары мен залал', 'Хаттама, жеңілдік, бөліп төлеу'), '/features/documents/': ('Құжаттар мен қол қою', 'Шарттар, актілер, eGov және SMS'), '/features/investors/': ('Субжалдау және лизинг', 'Инвесторлар, үлестер, кредиттер'), '/features/analytics/': ('Аналитика', 'P&L, cash flow, өтелімділік'), '/features/leads/': ('WhatsApp және воронка', 'Жүргізуші өтінімдері жалдауға дейін'), '/features/settings/': ('Икемді баптаулар', 'Ережелер, рөлдер, бірнеше парк')}
@@ -48,6 +48,8 @@ SITE = 'https://yumefleet.com'
 PHONE = '+7 777 947 99 90'
 WA = 'https://wa.me/77779479990'
 LOGIN = 'https://app.yumefleet.kz/'
+INST = 'https://www.instagram.com/yumecloudx/'
+YT = 'https://www.youtube.com/@yumecloud'
 LEAD = 'https://yume-cloud-zzydfr.vercel.app/api/lead/'
 
 # ------------------------------------------------------------------ разбор markdown
@@ -139,22 +141,21 @@ NAV_FEATURES = [
 ]
 NAV_INTS = [
  ('/kaspi-pay/', 'Kaspi Pay', 'Оплата по ссылке, без нашей комиссии', 'Сілтеме арқылы төлем, комиссиясыз', 'assets/img/int/kaspi.png'),
- ('/kaspi/', 'Kaspi Платежи', 'Официальная интеграция, 2,5%', 'Ресми интеграция, 2,5%', 'assets/img/int/kaspi.png'),
  ('/integrations/', 'eGov mobile', 'Подписание договоров и актов', 'Шарттар мен актілерге қол қою', 'assets/img/int/egov.png'),
  ('/integrations/', 'Штрафы ПДД и ЕРАП', 'Постановления с протоколом', 'Хаттамасы бар қаулылар', 'assets/img/int/erap.svg'),
  ('/integrations/', 'Реестр должников', 'Проверка водителя до выдачи', 'Көлік берер алдында тексеру', 'assets/img/int/iin.svg'),
  ('/integrations/', 'Чёрный список парков', 'Общая база проблемных водителей', 'Проблемалы жүргізушілердің базасы', 'assets/logo/tile-dark-yellow-mark.svg'),
- ('/integrations/', 'GPS Wialon', 'Местоположение и пробег машин', 'Көліктің орны және жүрісі', 'assets/img/int/wialon.png'),
  ('/integrations/', 'WhatsApp через Wazzup', 'Переписка и заявки в системе', 'Жүйедегі хат алмасу мен өтінімдер', 'assets/img/int/wazzup.png'),
+ ('/integrations/', 'GPS Wialon', 'Местоположение и пробег машин', 'Көліктің орны және жүрісі', 'assets/img/int/wialon.png'),
  ('/integrations/', 'ИИ-ассистент', 'Ответы по арендам и деньгам парка', 'Жалдау мен парк ақшасы бойынша жауаптар', 'assets/img/int/ai.svg'),
 ]
 def nav_ints():
     return [(p, n, (sk if L == 'kk' else sr), logo) for p, n, sr, sk, logo in NAV_INTS]
 
 ICON_BY_PATH = {p: i for p, _, _, i in NAV_FEATURES}
-ICON_BY_PATH.update({'/kaspi-pay/': 'i-link', '/kaspi/': 'i-wallet'})
-FEATURE_IMG = {'/features/rentals/': ('screens/rent-card.webp', 'Карточка аренды в Yume Fleet'), '/features/buyout/': ('img/gen/F4.webp', 'Аренда под выкуп: машина, взнос и ключи'), '/features/shifts/': ('screens/rents.webp', 'Список аренд Yume Fleet'), '/features/drivers/': ('screens/driver-card.webp', 'Карточка водителя в Yume Fleet'), '/features/vehicles/': ('screens/vehicle-card.webp', 'Карточка машины в Yume Fleet'), '/features/finance/': ('screens/finance.webp', 'Финансы парка в Yume Fleet'), '/features/fines/': ('img/gen/F5.webp', 'Штраф ПДД: камера, протокол и срок скидки'), '/features/documents/': ('screens/waybills.webp', 'Документы и путевые листы в Yume Fleet'), '/features/investors/': ('screens/sublease.webp', 'Субаренда и инвесторы в Yume Fleet'), '/features/analytics/': ('screens/analytics.webp', 'Аналитика парка в Yume Fleet'), '/features/leads/': ('screens/drivers.webp', 'База водителей и кандидатов в Yume Fleet'), '/features/settings/': ('screens/settings.webp', 'Настройки парка в Yume Fleet'), '/kaspi-pay/': ('img/gen/F3.webp', 'Водитель платит за аренду с телефона'), '/kaspi/': ('screens/pay-link.webp', 'Оплата аренды через Kaspi'), '/integrations/': ('screens/pay-link.webp', 'Интеграции Yume Fleet'), '/perehod/': ('img/gen/F6.webp', 'Переход с Yume Cloud на Yume Fleet'), '/features/': ('img/gen/F1.webp', 'Таксопарк на платформе Yume Fleet')}
-INT_LOGO = {'Kaspi Pay': 'assets/img/int/kaspi.png', 'Kaspi Платежи': 'assets/img/int/kaspi.png', 'eGov mobile': 'assets/img/int/egov.png',
+ICON_BY_PATH.update({'/kaspi-pay/': 'i-link'})
+FEATURE_IMG = {'/features/rentals/': ('screens/rent-card.webp', 'Карточка аренды в Yume Fleet'), '/features/buyout/': ('img/gen/F4.webp', 'Аренда под выкуп: машина, взнос и ключи'), '/features/shifts/': ('screens/rents.webp', 'Список аренд Yume Fleet'), '/features/drivers/': ('screens/driver-card.webp', 'Карточка водителя в Yume Fleet'), '/features/vehicles/': ('screens/vehicle-card.webp', 'Карточка машины в Yume Fleet'), '/features/finance/': ('screens/finance.webp', 'Финансы парка в Yume Fleet'), '/features/fines/': ('img/gen/F5.webp', 'Штраф ПДД: камера, протокол и срок скидки'), '/features/documents/': ('screens/waybills.webp', 'Документы и путевые листы в Yume Fleet'), '/features/investors/': ('screens/sublease.webp', 'Субаренда и инвесторы в Yume Fleet'), '/features/analytics/': ('screens/analytics.webp', 'Аналитика парка в Yume Fleet'), '/features/leads/': ('screens/drivers.webp', 'База водителей и кандидатов в Yume Fleet'), '/features/settings/': ('screens/settings.webp', 'Настройки парка в Yume Fleet'), '/kaspi-pay/': ('img/gen/F3.webp', 'Водитель платит за аренду с телефона'), '/integrations/': ('screens/pay-link.webp', 'Интеграции Yume Fleet'), '/perehod/': ('img/gen/F6.webp', 'Переход с Yume Cloud на Yume Fleet'), '/features/': ('img/gen/F1.webp', 'Таксопарк на платформе Yume Fleet')}
+INT_LOGO = {'Kaspi Pay': 'assets/img/int/kaspi.png', 'eGov mobile': 'assets/img/int/egov.png',
             'Штрафы ПДД, ЕРАП': 'assets/img/int/erap.svg', 'Штрафы ПДД и ЕРАП': 'assets/img/int/erap.svg', 'Реестр должников': 'assets/img/int/iin.svg',
             'GPS Wialon': 'assets/img/int/wialon.png', 'Wazzup': 'assets/img/int/wazzup.png', 'WhatsApp через Wazzup': 'assets/img/int/wazzup.png',
             'Яндекс Про': 'assets/img/int/yandex.svg', 'Чёрный список парков': 'assets/logo/tile-dark-yellow-mark.svg', 'ИИ-ассистент': 'assets/img/int/ai.svg',
@@ -215,19 +216,18 @@ def footer(R):
         <a href="mailto:sales@yume.cloud">sales@yume.cloud</a>
       </div>
       <div><h4>{T("features")}</h4><ul>{feats}<li><a href="{href('/features/', R)}">{T("all_features")}</a></li></ul></div>
-      <div><h4>{T("product")}</h4><ul><li><a href="{href('/kaspi-pay/', R)}">{T("kaspi_pay")}</a></li><li><a href="{href('/kaspi/', R)}">{T("kaspi")}</a></li><li><a href="{href('/integrations/', R)}">{T("integrations")}</a></li><li><a href="{href('/perehod/', R)}">{T("perehod")}</a></li><li><a href="{contacts_href}">{T("contacts")}</a></li><li><a href="{LOGIN}" rel="noopener">{T("login_sys")}</a></li></ul></div>
+      <div><h4>{T("product")}</h4><ul><li><a href="{href('/kaspi-pay/', R)}">{T("kaspi_pay")}</a></li><li><a href="{href('/integrations/', R)}">{T("integrations")}</a></li><li><a href="{href('/perehod/', R)}">{T("perehod")}</a></li><li><a href="{contacts_href}">{T("contacts")}</a></li><li><a href="{LOGIN}" rel="noopener">{T("login_sys")}</a></li></ul></div>
       <div><h4>{T("docs")}</h4><ul>{docs}</ul></div>
     </div>
     <div class="footer__bot">
-      <div class="legal"><span>{T("copy")}</span><a href="https://www.instagram.com/yumecloudx/" rel="noopener">Instagram</a><a href="https://t.me/yumefleet" rel="noopener">Telegram</a></div>
-      <a class="cloud" href="https://yume.cloud{'/kk/' if L == 'kk' else ''}"><i></i> {T("cloud")}</a>
+      <div class="legal"><span>{T("copy")}</span><a href="{INST}" rel="noopener">Instagram</a><a href="{YT}" rel="noopener">YouTube</a></div>
+      <a class="cloud" href="https://yume.cloud{'/kk/' if L == 'kk' else ''}" rel="noopener">{T("cloud")} <svg><use href="#i-arrow"/></svg></a>
     </div>
   </div>
 </footer>
 <a class="wa-fab" href="{WA}" rel="noopener" aria-label="{T("wa")}"><svg><use href="#i-wa"/></svg><span>{T("wa")}</span></a>
 <button class="to-top" aria-label="{T("top")}"><svg><use href="#i-up"/></svg></button>
-<a class="wa-fab" href="{WA}" rel="noopener" aria-label="Написать в WhatsApp"><svg><use href="#i-wa"/></svg><span>Написать в WhatsApp</span></a>
-<button class="to-top" aria-label="Наверх"><svg><use href="#i-up"/></svg></button>'''
+'''
 
 def form(R):
     opts = ''.join(f'<option>{o}</option>' for o in T("f_cars_opts"))
@@ -263,7 +263,7 @@ def cta(sec, R):
 
 def ld(p, body):
     import json
-    org = {'@context': 'https://schema.org', '@type': 'Organization', 'name': 'Yume Fleet', 'legalName': 'ТОО «Yume.Cloud»', 'url': SITE + '/', 'logo': SITE + '/assets/logo/tile.svg', 'telephone': '+77779479990', 'email': 'sales@yume.cloud', 'address': {'@type': 'PostalAddress', 'addressLocality': 'Алматы', 'addressCountry': 'KZ'}, 'sameAs': ['https://www.instagram.com/yumecloudx/', 'https://t.me/yumefleet']}
+    org = {'@context': 'https://schema.org', '@type': 'Organization', 'name': 'Yume Fleet', 'legalName': 'ТОО «Yume.Cloud»', 'url': SITE + '/', 'logo': SITE + '/assets/logo/tile.svg', 'telephone': '+77779479990', 'email': 'sales@yume.cloud', 'address': {'@type': 'PostalAddress', 'addressLocality': 'Алматы', 'addressCountry': 'KZ'}, 'sameAs': [INST, YT]}
     blocks = [org]
     crumbs = re.findall(r'<nav class="crumbs"[^>]*>(.*?)</nav>', body, re.S)
     if crumbs:
@@ -575,7 +575,8 @@ def home():
     out += f'<section class="section" id="reviews"><div class="wrap">{head(q)}{quotes(q)}</div></section>\n'
     # text: цена
     pr_ = S['text'][1]
-    out += f'<section class="section section--card" id="price"><div class="wrap price" data-reveal>{eyebrow(pr_)}<h2>{inline(pr_["title"])}</h2><p class="lead">{inline(pr_["paras"][0])}</p><a class="btn btn--lg btn--yellow" href="#demo">{T("price_btn")} <svg><use href="#i-arrow"/></svg></a></div></section>\n'
+    pr_paras = ''.join('<p class="lead">' + inline(x) + '</p>' for x in pr_['paras'])
+    out += f'<section class="section section--card" id="price"><div class="wrap price" data-reveal>{eyebrow(pr_)}<h2>{inline(pr_["title"])}</h2>{pr_paras}<a class="btn btn--lg btn--yellow" href="#demo">{T("price_btn")} <svg><use href="#i-arrow"/></svg></a></div></section>\n'
     # faq
     out += generic_section(S['faq'][0], R, False) + '\n'
     out += cta(S['cta'][0], R)
@@ -588,7 +589,7 @@ def crumbs_for(p, R):
     parts = [f'<a href="{R}">Главная</a>']
     if path.startswith('/features/') and path != '/features/':
         parts.append(f'<a href="{href("/features/", R)}">Возможности</a>')
-    short = {'/features/': 'Возможности', '/integrations/': 'Интеграции', '/perehod/': 'Для клиентов Yume Cloud', '/contacts/': 'Контакты', '/kaspi-pay/': 'Kaspi Pay', '/kaspi/': 'Kaspi Платежи'}
+    short = {'/features/': 'Возможности', '/integrations/': 'Интеграции', '/perehod/': 'Для клиентов Yume Cloud', '/contacts/': 'Контакты', '/kaspi-pay/': 'Kaspi Pay'}
     name = short.get(path) or next((n for pp, n, _, _ in NAV_FEATURES if pp == path), strip_md(p['title']))
     parts.append(f'<b>{name}</b>')
     return '<span>/</span>'.join(parts)
@@ -639,11 +640,8 @@ def contacts():
     <div class="ccards" data-stagger>
       <a class="ccard ccard--wa" href="{WA}?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5%21%20%D0%A5%D0%BE%D1%87%D1%83%20%D0%B4%D0%B5%D0%BC%D0%BE%20Yume%20Fleet" rel="noopener"><i><svg><use href="#i-wa"/></svg></i><div><small>{T("c_wa")}</small><b>{PHONE}</b><span>{T("c_wa_sub")}</span></div><svg class="ccard__arr"><use href="#i-arrow"/></svg></a>
       <a class="ccard" href="tel:+77779479990"><i><svg><use href="#i-phone"/></svg></i><div><small>{T("c_phone")}</small><b>{PHONE}</b><span>{T("c_phone_sub")}</span></div><svg class="ccard__arr"><use href="#i-arrow"/></svg></a>
-      <a class="ccard" href="https://t.me/yumefleet" rel="noopener"><i><svg><use href="#i-inbox"/></svg></i><div><small>{T("c_tg")}</small><b>@yumefleet</b><span>{T("c_tg_sub")}</span></div><svg class="ccard__arr"><use href="#i-arrow"/></svg></a>
-      <a class="ccard" href="mailto:sales@yume.cloud"><i><svg><use href="#i-doc"/></svg></i><div><small>{T("c_sales")}</small><b>sales@yume.cloud</b><span>{T("c_sales_sub")}</span></div><svg class="ccard__arr"><use href="#i-arrow"/></svg></a>
-      <a class="ccard" href="mailto:support.cloud@yume.kz"><i><svg><use href="#i-shield"/></svg></i><div><small>{T("c_sup")}</small><b>support.cloud@yume.kz</b><span>{T("c_sup_sub")}</span></div><svg class="ccard__arr"><use href="#i-arrow"/></svg></a>
-      <div class="ccard"><i><svg><use href="#i-pin"/></svg></i><div><small>{T("c_office")}</small><b>{T("c_city")}</b><span>{T("c_office_sub")}</span></div></div>
-      <div class="ccard"><i><svg><use href="#i-user"/></svg></i><div><small>{T("c_login")}</small><b><a href="{LOGIN}" rel="noopener">app.yumefleet.kz</a></b><span>{T("c_login_sub")}</span></div></div>
+      <a class="ccard" href="{INST}" rel="noopener"><i><svg><use href="#i-inst"/></svg></i><div><small>{T("c_inst")}</small><b>@yumecloudx</b><span>{T("c_inst_sub")}</span></div><svg class="ccard__arr"><use href="#i-arrow"/></svg></a>
+      <a class="ccard" href="{YT}" rel="noopener"><i><svg><use href="#i-yt"/></svg></i><div><small>{T("c_yt")}</small><b>@yumecloud</b><span>{T("c_yt_sub")}</span></div><svg class="ccard__arr"><use href="#i-arrow"/></svg></a>
     </div>
     <div class="contacts__form" data-reveal="right" id="demo">
       <h2 style="font-size:26px;margin-bottom:8px">{T("c_form_h")}</h2>
