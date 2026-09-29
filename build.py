@@ -315,7 +315,7 @@ def page(p, body, R, desc):
 <link rel="preload" as="font" type="font/woff2" href="{R}assets/fonts/geist-800-cyrillic.woff2" crossorigin>
 <link rel="preload" as="font" type="font/woff2" href="{R}assets/fonts/geist-400-cyrillic.woff2" crossorigin>
 <style>{FONTS_CSS.replace('url(', 'url(' + R + 'assets/fonts/')}</style>
-<link rel="stylesheet" href="{R}css/styles.css?v=10">
+<link rel="stylesheet" href="{R}css/styles.css?v=11">
 {ld(p, body)}{analytics()}</head>
 <body>
 
@@ -354,7 +354,8 @@ def cards(sec, R, cols=None):
         icon = ICON_BY_PATH.get(link, '')
         ic = f'<i class="card__i"><svg><use href="#{icon}"/></svg></i>' if icon else ''
         tag = it.get('tag_html', '')
-        body = f'{ic}<h3>{inline(it["name"])}{tag}</h3><p>{inline(it.get("text", ""))}</p>'
+        top = f'<div class="card__top">{ic}{tag}</div>' if (ic or tag) else ''
+        body = f'{top}<h3>{inline(it["name"])}</h3><p>{inline(it.get("text", ""))}</p>'
         if link:
             out += f'<a class="card card--link" href="{href(link, R)}" data-reveal>{body}<span class="link">{T("more")} <svg><use href="#i-arrow"/></svg></span></a>'
         else:
