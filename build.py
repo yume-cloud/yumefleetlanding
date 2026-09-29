@@ -18,7 +18,7 @@ UI = {
    cta_eyebrow='Демо', cta_list=['Перезвоним в течение 15 минут в рабочее время', 'Показываем на примере парка вашего размера', 'Данные переносим мы, парк продолжает работать'], cta_wa='Или напишите в WhatsApp', cta_default='Записаться на демо', cta_lead='Покажем систему за 20 минут на примере парка вашего размера.',
    more='Подробнее', step='ШАГ', how='Как это работает', faq_lead='Остальное покажем на демо за 20 минут.', faq_eyebrow='FAQ', wa_btn='Написать в WhatsApp',
    pill='ТАКСОПАРКИ', trust=['Посуточно и под выкуп', 'Kaspi Pay без нашей комиссии', 'Подпись через eGov'], hero_alt='Главный экран Yume Fleet: выручка, машины в аренде, долги',
-   fl1=('Просрочено · 3 дня', 'Ерлан С. · Chevrolet Cobalt'), fl2=('Новый штраф ПДД', '847 ABC 02 · привязан к водителю'), fl3=('Оплата через Kaspi Pay', '+ 9 000 ₸ · зачислено в аренду'),
+   fl1=('Просрочено · 3 дня', 'Ерлан С. · Chevrolet Cobalt'), fl2=('Новый штраф ПДД', '348 KBA 02 · привязан к водителю'), fl3=('Оплата через Kaspi Pay', '+ 9 000 ₸ · зачислено в аренду'),
    ledger_head='Аренды · с просрочкой', ledger_live='обновляется в реальном времени', ledger_cols=['Водитель', 'Машина', 'Ставка', 'Баланс'], ledger_foot='Долг по парку сегодня',
    drv_cap1='Оплата по ссылке · уже сейчас', drv_cap2='Приложение водителя', drv_alt1='Страница оплаты аренды по ссылке Kaspi Pay', drv_alt2='Приложение водителя Yume Fleet', soon='скоро',
    bc_type='Аренда под выкуп', bc_price='Стоимость выкупа', bc_saved='Накоплено', bc_left='Осталось', bc_next='Ближайший платёж', bc_next_v='9 000 ₸ · завтра', bc_steps=['Взнос', 'Выкуп', 'Выкуплено'], more_buyout='Подробнее про выкуп', more_fines='Подробнее про штрафы', fines_alt='Штрафы ПДД в Yume Fleet: протокол, водитель, срок скидки',
@@ -32,7 +32,7 @@ UI = {
    cta_eyebrow='Демо', cta_list=['Жұмыс уақытында 15 минут ішінде қайта қоңырау шаламыз', 'Сіздің парк көлеміндегі мысалда көрсетеміз', 'Деректерді біз көшіреміз, парк жұмысын жалғастырады'], cta_wa='Немесе WhatsApp-қа жазыңыз', cta_default='Демоға жазылу', cta_lead='Жүйені 20 минутта сіздің парк көлеміндегі мысалда көрсетеміз.',
    more='Толығырақ', step='ҚАДАМ', how='Қалай жұмыс істейді', faq_lead='Қалғанын 20 минуттық демода көрсетеміз.', faq_eyebrow='Сұрақ-жауап', wa_btn='WhatsApp-қа жазу',
    pill='ТАКСОПАРКТЕР', trust=['Тәуліктік және сатып алумен', 'Kaspi Pay біздің комиссиямызсыз', 'eGov арқылы қол қою'], hero_alt='Yume Fleet басты экраны: түсім, жалдаудағы көліктер, қарыздар',
-   fl1=('Мерзімі өткен · 3 күн', 'Ерлан С. · Chevrolet Cobalt'), fl2=('Жаңа ЖҚЕ айыппұлы', '847 ABC 02 · жүргізушіге байланды'), fl3=('Kaspi Pay арқылы төлем', '+ 9 000 ₸ · жалдауға түсті'),
+   fl1=('Мерзімі өткен · 3 күн', 'Ерлан С. · Chevrolet Cobalt'), fl2=('Жаңа ЖҚЕ айыппұлы', '348 KBA 02 · жүргізушіге байланды'), fl3=('Kaspi Pay арқылы төлем', '+ 9 000 ₸ · жалдауға түсті'),
    ledger_head='Жалдаулар · мерзімі өткен', ledger_live='нақты уақытта жаңарады', ledger_cols=['Жүргізуші', 'Көлік', 'Ставка', 'Баланс'], ledger_foot='Парк бойынша бүгінгі қарыз',
    drv_cap1='Сілтеме арқылы төлем · қазірдің өзінде', drv_cap2='Жүргізуші қосымшасы', drv_alt1='Kaspi Pay сілтемесі арқылы жалдау төлемі беті', drv_alt2='Yume Fleet жүргізуші қосымшасы', soon='жақында',
    bc_type='Сатып алумен жалдау', bc_price='Сатып алу құны', bc_saved='Жиналды', bc_left='Қалды', bc_next='Келесі төлем', bc_next_v='9 000 ₸ · ертең', bc_steps=['Жарна', 'Сатып алу', 'Сатып алынды'], more_buyout='Сатып алу туралы толығырақ', more_fines='Айыппұлдар туралы толығырақ', fines_alt='Yume Fleet-тегі ЖҚЕ айыппұлдары: хаттама, жүргізуші, жеңілдік мерзімі',
@@ -47,7 +47,7 @@ def nav_feats():
 SITE = 'https://yumefleet.com'
 PHONE = '+7 777 947 99 90'
 WA = 'https://wa.me/77779479990'
-LOGIN = 'https://app.yumefleet.kz/'
+LOGIN = 'https://dev.yumefleet.kz/login'
 INST = 'https://www.instagram.com/yumecloudx/'
 YT = 'https://www.youtube.com/@yumecloud'
 LEAD = 'https://yume-cloud-zzydfr.vercel.app/api/lead/'
@@ -213,7 +213,7 @@ def footer(R):
         <a class="logo logo--dark" href="{R}"><i><svg><use href="#mark"/></svg></i><span><b>yume</b><em>fleet</em></span></a>
         <p>{T("footer_about")}</p>
         <a href="tel:+77779479990">{PHONE}</a>
-        <a href="mailto:sales@yume.cloud">sales@yume.cloud</a>
+        <a href="{WA}" rel="noopener">WhatsApp</a>
       </div>
       <div><h4>{T("features")}</h4><ul>{feats}<li><a href="{href('/features/', R)}">{T("all_features")}</a></li></ul></div>
       <div><h4>{T("product")}</h4><ul><li><a href="{href('/kaspi-pay/', R)}">{T("kaspi_pay")}</a></li><li><a href="{href('/integrations/', R)}">{T("integrations")}</a></li><li><a href="{href('/perehod/', R)}">{T("perehod")}</a></li><li><a href="{contacts_href}">{T("contacts")}</a></li><li><a href="{LOGIN}" rel="noopener">{T("login_sys")}</a></li></ul></div>
@@ -263,7 +263,7 @@ def cta(sec, R):
 
 def ld(p, body):
     import json
-    org = {'@context': 'https://schema.org', '@type': 'Organization', 'name': 'Yume Fleet', 'legalName': 'ТОО «Yume.Cloud»', 'url': SITE + '/', 'logo': SITE + '/assets/logo/tile.svg', 'telephone': '+77779479990', 'email': 'sales@yume.cloud', 'address': {'@type': 'PostalAddress', 'addressLocality': 'Алматы', 'addressCountry': 'KZ'}, 'sameAs': [INST, YT]}
+    org = {'@context': 'https://schema.org', '@type': 'Organization', 'name': 'Yume Fleet', 'legalName': 'ТОО «Yume.Cloud»', 'url': SITE + '/', 'logo': SITE + '/assets/logo/tile.svg', 'telephone': '+77779479990', 'address': {'@type': 'PostalAddress', 'addressLocality': 'Алматы', 'addressCountry': 'KZ'}, 'sameAs': [INST, YT]}
     blocks = [org]
     crumbs = re.findall(r'<nav class="crumbs"[^>]*>(.*?)</nav>', body, re.S)
     if crumbs:
@@ -349,12 +349,15 @@ def cards(sec, R, cols=None):
     items = sec['items']; n = len(items)
     cls = 'cards cards--%d' % (cols or (4 if n % 4 == 0 or n > 9 else 3 if n % 3 == 0 else 2 if n == 2 else 4 if n in (7, 5) else 3))
     out = ''
+    any_icon = any(ICON_BY_PATH.get(i.get('link', '')) for i in items)
+    any_tag = any(i.get('tag_html') for i in items)
+    top_cls = 'card__top' if any_icon else 'card__top card__top--slim'
     for it in items:
         link = it.get('link', '')
         icon = ICON_BY_PATH.get(link, '')
         ic = f'<i class="card__i"><svg><use href="#{icon}"/></svg></i>' if icon else ''
         tag = it.get('tag_html', '')
-        top = f'<div class="card__top">{ic}{tag}</div>' if (ic or tag) else ''
+        top = f'<div class="{top_cls}">{ic}{tag}</div>' if (any_icon or any_tag) else ''
         body = f'{top}<h3>{inline(it["name"])}</h3><p>{inline(it.get("text", ""))}</p>'
         if link:
             out += f'<a class="card card--link" href="{href(link, R)}" data-reveal>{body}<span class="link">{T("more")} <svg><use href="#i-arrow"/></svg></span></a>'
@@ -541,7 +544,7 @@ def home():
   <div class="wrap promo">
     <div class="promo__vis" data-reveal="scale">
       <div class="bcard">
-        <div class="bcard__head"><span class="plate">847 ABC 02</span><b>Chevrolet Cobalt · 2022</b><em>{T("bc_type")}</em></div>
+        <div class="bcard__head"><span class="plate">015 ADM 02</span><b>Chevrolet Cobalt · 2022</b><em>{T("bc_type")}</em></div>
         <div class="bcard__sum"><small>{T("bc_price")}</small><b>7 200 000 ₸</b></div>
         <div class="bcard__bar"><i style="--p:.62"></i></div>
         <div class="bcard__row"><div><small>{T("bc_saved")}</small><b class="pos">4 464 000 ₸</b></div><div><small>{T("bc_left")}</small><b>2 736 000 ₸</b></div><div><small>{T("bc_next")}</small><b>{T("bc_next_v")}</b></div></div>

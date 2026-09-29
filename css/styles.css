@@ -212,8 +212,8 @@ p{margin:0}
 .ledger td{padding:13px 20px;border-top:1px solid var(--line-2)}
 .ledger td b{font-weight:600}
 .ledger td small{display:block;color:var(--muted);font-size:12px}
-.plate{display:inline-flex;align-items:center;gap:6px;padding:2px 8px;border:1.5px solid var(--ink);border-radius:5px;font-weight:700;font-size:12px;letter-spacing:.06em;background:#fff}
-.plate::before{content:"KZ";font-size:8px;font-weight:800;padding:1px 3px;background:var(--ink);color:#fff;border-radius:2px}
+.plate{display:inline-flex;align-items:center;overflow:hidden;white-space:nowrap;border:1.5px solid #14141c;border-radius:4px;background:#fff;color:#14141c;font-weight:800;font-size:11.5px;letter-spacing:.04em;line-height:1;padding:5px 7px 5px 0;font-variant-numeric:tabular-nums}
+.plate::before{content:"KZ";align-self:stretch;display:flex;align-items:flex-end;justify-content:center;margin:-5px 7px -5px 0;padding:3px 3.5px 2px;background:#1E9ED9 radial-gradient(circle at 50% 26%,#F5C84B 0 2px,transparent 2.4px);color:#fff;font-size:7px;font-weight:800;letter-spacing:.02em}
 .neg{color:var(--bad);font-weight:700}.pos{color:var(--ok);font-weight:700}.zero{color:var(--muted)}
 .ledger tr.is-new td{animation:rowin .8s var(--ease) both;background:var(--yellow-tint)}
 @keyframes rowin{from{opacity:0;transform:translateX(-8px)}to{opacity:1;transform:none;background:transparent}}
@@ -350,7 +350,7 @@ p{margin:0}
 @keyframes flash{0%{color:var(--ink);font-weight:600}100%{color:var(--muted);font-weight:400}}
 .int--soon{opacity:.85}
 .int b em{font-style:normal;font-size:10.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:2px 6px;border-radius:999px;background:var(--yellow-soft);color:var(--yellow-deep);margin-left:6px;vertical-align:middle}
-@media (max-width:600px){.ledger th,.ledger td{padding:10px 12px;font-size:13px}.plate{white-space:nowrap;font-size:11px;padding:2px 6px}.ledger td small{font-size:11px}}
+@media (max-width:600px){.ledger th,.ledger td{padding:10px 12px;font-size:13px}.plate{font-size:10.5px}.ledger td small{font-size:11px}}
 
 /* ============ CONTACTS PAGE ============ */
 .phero{padding:140px 0 48px;background:var(--bg);position:relative;overflow:hidden}
@@ -554,6 +554,7 @@ h1 .tag,h2 .tag{font-size:12px;padding:3px 9px;vertical-align:middle}
 .dd__logo img{width:28px;height:28px;object-fit:cover}
 .nav__menu .dd__i .dd__logo{margin-top:2px}
 .card__top{display:flex;align-items:center;justify-content:space-between;gap:12px;width:100%;min-height:44px}
+.card__top--slim{min-height:22px}
 .card__top .card__i{margin-bottom:0}
 .card__top .tag{margin-left:auto;flex:none}
 .card h3 .tag{margin-left:8px}

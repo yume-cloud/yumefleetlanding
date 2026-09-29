@@ -52,11 +52,11 @@
   const ledger = $('.ledger tbody');
   if (ledger) {
     const rows = [
-      ['Ерлан Сапаров', 'Chevrolet Cobalt', '847 ABC 02', 9000, -27000],
-      ['Асхат Жумабек', 'Hyundai Accent', '123 KZA 02', 8500, 0],
-      ['Дамир Оспанов', 'Kia Rio', '555 BBB 01', 9500, 4200],
-      ['Нурлан Ким', 'Chevrolet Onix', '214 ACB 02', 10000, 0],
-      ['Айбек Тулеу', 'Kia K5', '777 AAA 02', 12000, -6500],
+      ['Ерлан Сапаров', 'Chevrolet Cobalt', '015 ADM 02', 9000, -27000],
+      ['Асхат Жумабек', 'Hyundai Accent', '348 KBA 02', 8500, 0],
+      ['Дамир Оспанов', 'Kia Rio', '762 SNA 01', 9500, 4200],
+      ['Нурлан Ким', 'Chevrolet Onix', '209 TCA 02', 10000, 0],
+      ['Айбек Тулеу', 'Kia K5', '581 MRA 02', 12000, -6500],
     ];
     const total = $('.ledger__foot b');
     const render = (rs, newIdx = -1) => {
