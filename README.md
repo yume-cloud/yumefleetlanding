@@ -7,7 +7,8 @@
 - `build.py` — генерирует весь сайт из `content/CONTENT.md` (русская версия) и `content/CONTENT.kk.md` (казахская). Тексты правятся в CONTENT.md, а не в HTML.
 - `index.html` и разделы — результат сборки, коммитятся вместе с исходником:
   - `/features/` и 12 страниц возможностей: `rentals`, `buyout`, `shifts`, `vehicles`, `drivers`, `finance`, `fines`, `documents`, `investors`, `leads`, `analytics`, `settings`
-  - `/integrations/`, `/kaspi-pay/`, `/perehod/` (для клиентов Yume Cloud), `/contacts/`
+  - `/integrations/` и 8 страниц интеграций: `/kaspi-pay/` плюс `egov`, `erap`, `debtors`, `blacklist`, `wazzup`, `wialon`, `ai` внутри `/integrations/`
+  - `/perehod/` (для клиентов Yume Cloud), `/contacts/`
   - `/kk/` и `/kk/contacts/` — казахская версия
   - `sitemap.xml`, `robots.txt`, `404.html`
 - `css/styles.css` — стили. Токены бренда: жёлтый `#F0B100`, текст `#0D0D0D`, фон `#FAFAFA`, шрифт Geist.

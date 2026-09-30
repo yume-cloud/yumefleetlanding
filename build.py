@@ -150,13 +150,13 @@ NAV_FEATURES = [
 ]
 NAV_INTS = [
  ('/kaspi-pay/', 'Kaspi Pay', 'Оплата по ссылке, без нашей комиссии', 'Сілтеме арқылы төлем, комиссиясыз', 'assets/img/int/kaspi.png'),
- ('/integrations/', 'eGov mobile', 'Подписание договоров и актов', 'Шарттар мен актілерге қол қою', 'assets/img/int/egov.png'),
- ('/integrations/', 'Штрафы ПДД и ЕРАП', 'Постановления с протоколом', 'Хаттамасы бар қаулылар', 'assets/img/int/erap.svg'),
- ('/integrations/', 'Реестр должников', 'Проверка водителя до выдачи', 'Көлік берер алдында тексеру', 'assets/img/int/iin.svg'),
- ('/integrations/', 'Чёрный список парков', 'Общая база проблемных водителей', 'Проблемалы жүргізушілердің базасы', 'assets/logo/tile-dark-yellow-mark.svg'),
- ('/integrations/', 'WhatsApp через Wazzup', 'Переписка и заявки в системе', 'Жүйедегі хат алмасу мен өтінімдер', 'assets/img/int/wazzup.png'),
- ('/integrations/', 'GPS Wialon', 'Местоположение и пробег машин', 'Көліктің орны және жүрісі', 'assets/img/int/wialon.png'),
- ('/integrations/', 'ИИ-ассистент', 'Ответы по арендам и деньгам парка', 'Жалдау мен парк ақшасы бойынша жауаптар', 'assets/img/int/ai.svg'),
+ ('/integrations/egov/', 'eGov mobile', 'Подписание договоров и актов', 'Шарттар мен актілерге қол қою', 'assets/img/int/egov.png'),
+ ('/integrations/erap/', 'Штрафы ПДД и ЕРАП', 'Постановления с протоколом', 'Хаттамасы бар қаулылар', 'assets/img/int/erap.svg'),
+ ('/integrations/debtors/', 'Реестр должников', 'Проверка водителя до выдачи', 'Көлік берер алдында тексеру', 'assets/img/int/iin.svg'),
+ ('/integrations/blacklist/', 'Чёрный список парков', 'Общая база проблемных водителей', 'Проблемалы жүргізушілердің базасы', 'assets/logo/tile-dark-yellow-mark.svg'),
+ ('/integrations/wazzup/', 'WhatsApp через Wazzup', 'Переписка и заявки в системе', 'Жүйедегі хат алмасу мен өтінімдер', 'assets/img/int/wazzup.png'),
+ ('/integrations/wialon/', 'GPS Wialon', 'Местоположение и пробег машин', 'Көліктің орны және жүрісі', 'assets/img/int/wialon.png'),
+ ('/integrations/ai/', 'ИИ-ассистент', 'Ответы по арендам и деньгам парка', 'Жалдау мен парк ақшасы бойынша жауаптар', 'assets/img/int/ai.svg'),
 ]
 def nav_ints():
     return [(p, n, (sk if L == 'kk' else sr), logo) for p, n, sr, sk, logo in NAV_INTS]
@@ -464,16 +464,18 @@ def generic_section(sec, R, alt):
         return cta(sec, R)
     return ''
 
-def phero(sec, crumbs, R, extra='', img=None):
+def phero(sec, crumbs, R, extra='', img=None, vis=''):
     lead = ''.join(f'<p class="lead">{inline(x)}</p>' for x in sec['paras'])
-    if img:
+    if vis:
+        shot = vis
+    elif img:
         w, h = IMG_WH.get(img[0], (0, 0))
         dims = f' width="{w}" height="{h}"' if w else ''
         card = ' phero__vis--card' if img[0].startswith('cards/') else ''
         shot = f'<div class="phero__vis{card}" data-reveal="scale"><img src="{R}assets/{img[0]}"{dims} alt="{img[1]}" fetchpriority="high"></div>'
     else:
         shot = ''
-    return f'''<section class="phero{" phero--grid" if img else ""}">
+    return f'''<section class="phero{" phero--grid" if (img or vis) else ""}">
   <div class="hero__checks"></div>
   <div class="wrap">
     <div>
@@ -488,6 +490,18 @@ def phero(sec, crumbs, R, extra='', img=None):
     </div>{shot}
   </div>
 </section>'''
+
+def int_hero_vis(path, R):
+    """Первый экран страницы интеграции: плитка с логотипом сервиса."""
+    if not path.startswith('/integrations/') or path == '/integrations/': return ''
+    row = next((r for r in NAV_INTS if r[0] == path), None)
+    if not row: return ''
+    _, name, sub, _, logo = row
+    return (f'<div class="phero__vis phero__vis--logo" data-reveal="scale"><div class="intcard">'
+            f'<i><img src="{R}{logo}" alt="" width="72" height="72"></i>'
+            f'<b>{name}</b><span>{sub}</span>'
+            f'<em><svg><use href="#i-check"/></svg> Работает внутри Yume Fleet</em>'
+            f'</div></div>')
 
 # ------------------------------------------------------------------ главная
 def home():
@@ -616,8 +630,11 @@ def crumbs_for(p, R):
     parts = [f'<a href="{R}">Главная</a>']
     if path.startswith('/features/') and path != '/features/':
         parts.append(f'<a href="{href("/features/", R)}">Возможности</a>')
+    if path.startswith('/integrations/') and path != '/integrations/':
+        parts.append(f'<a href="{href("/integrations/", R)}">Интеграции</a>')
     short = {'/features/': 'Возможности', '/integrations/': 'Интеграции', '/perehod/': 'Для клиентов Yume Cloud', '/contacts/': 'Контакты', '/kaspi-pay/': 'Kaspi Pay'}
-    name = short.get(path) or next((n for pp, n, _, _ in NAV_FEATURES if pp == path), strip_md(p['title']))
+    name = (short.get(path) or next((n for pp, n, _, _ in NAV_FEATURES if pp == path), '')
+            or next((n for pp, n, _, _, _ in NAV_INTS if pp == path), '') or strip_md(p['title']))
     parts.append(f'<b>{name}</b>')
     return '<span>/</span>'.join(parts)
 
@@ -627,7 +644,7 @@ def inner(p):
     hero = next((s for s in secs if s['type'] == 'hero'), None)
     body = ''
     if hero:
-        body += phero(hero, crumbs_for(p, R), R, img=FEATURE_IMG.get(p['path']))
+        body += phero(hero, crumbs_for(p, R), R, img=FEATURE_IMG.get(p['path']), vis=int_hero_vis(p['path'], R))
         desc = strip_md(' '.join(hero['paras']))[:300]
     else:
         desc = strip_md(p['title'])
@@ -644,6 +661,12 @@ def inner(p):
         first = secs[0]
         body = phero(dict(title='Всё, чем живёт таксопарк', eyebrow='Возможности', paras=first['paras']), crumbs_for(p, R), R, img=FEATURE_IMG.get('/features/')) + f'<section class="section section--card"><div class="wrap">{cards(first, R, 4)}</div></section>' + ''.join(generic_section(s, R, False) for s in secs[1:])
         desc = strip_md(' '.join(first['paras']))[:300]
+    other = ''
+    if p['path'].startswith('/integrations/') and p['path'] != '/integrations/':
+        links = ''.join(f'<a class="chip chip--logo" href="{href(pp, R)}"><img src="{R}{logo}" alt="" width="20" height="20" loading="lazy">{n}</a>'
+                        for pp, n, _, _, logo in NAV_INTS if pp != p['path'])
+        other = f'<section class="section section--card"><div class="wrap"><div class="sec-head"><div data-reveal><p class="eyebrow">Ещё</p><h2>Другие интеграции</h2></div></div><div class="chips" data-reveal>{links}</div></div></section>'
+        body = body.replace('<section class="section section--yellow cta"', other + '<section class="section section--yellow cta"', 1)
     other = ''
     if p['path'].startswith('/features/') and p['path'] != '/features/':
         links = ''.join(f'<a class="chip" href="{href(pp, R)}"><svg><use href="#{i}"/></svg>{n}</a>' for pp, n, _, i in NAV_FEATURES if pp != p['path'])
