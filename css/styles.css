@@ -526,15 +526,9 @@ h1 .tag,h2 .tag{font-size:12px;padding:3px 9px;vertical-align:middle}
 .phero--grid .lead{max-width:none}
 /* карточки: своя скруглённая форма и тень уже нарисованы в картинке — рамка скриншота не нужна */
 .phero__vis--card img,.promo__vis--card img{display:block;width:100%;max-width:520px;margin-inline:auto;border:0;border-radius:0;background:none;box-shadow:none}
-/* первый экран страницы интеграции: плитка с логотипом сервиса */
-.phero__vis--logo{display:grid;place-items:center}
-.intcard{display:grid;justify-items:center;text-align:center;gap:10px;width:100%;max-width:380px;padding:44px 32px 36px;border-radius:22px;background:var(--card);border:1px solid var(--line);box-shadow:var(--shadow)}
-.intcard i{width:96px;height:96px;border-radius:24px;display:grid;place-items:center;font-style:normal;overflow:hidden;background:var(--bg);border:1px solid var(--line)}
-.intcard i img{width:96px;height:96px;object-fit:cover;border-radius:24px}
-.intcard b{font-size:23px;letter-spacing:-.01em}
-.intcard span{font-size:15px;color:var(--muted);max-width:26ch}
-.intcard em{display:inline-flex;align-items:center;gap:6px;margin-top:6px;font-style:normal;font-size:13px;font-weight:600;padding:7px 14px;border-radius:999px;background:var(--yellow-soft);color:var(--yellow-deep)}
-.intcard em svg{width:14px;height:14px}
+/* страница интеграции: логотип сервиса в надзаголовке и в чипах */
+.eyebrow--logo::before{display:none}
+.eyebrow--logo img{width:22px;height:22px;border-radius:6px;object-fit:cover}
 .chip--logo img{width:20px;height:20px;border-radius:6px;object-fit:cover}
 @media (max-width:980px){.phero--grid .wrap{grid-template-columns:1fr;gap:32px}}
 @media (max-width:600px){.ledger th:nth-child(3),.ledger td:nth-child(3){display:none}.hero__pill{max-width:100%;white-space:normal;text-align:left}}

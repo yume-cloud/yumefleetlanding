@@ -164,11 +164,11 @@ def nav_ints():
 ICON_BY_PATH = {p: i for p, _, _, i in NAV_FEATURES}
 ICON_BY_PATH.update({'/kaspi-pay/': 'i-link'})
 # ширина/высота картинок в первом экране раздела — против скачка вёрстки
-IMG_WH = {'cards/rent.webp': (1483, 1080), 'cards/rent-debt.webp': (1098, 1080), 'cards/drivers.webp': (1135, 1080),
+IMG_WH = {'img/gen/INT-egov.webp': (1500, 750), 'img/gen/INT-erap.webp': (1500, 750), 'img/gen/INT-debtors.webp': (1500, 750), 'img/gen/INT-blacklist.webp': (1500, 750), 'img/gen/INT-wazzup.webp': (1500, 750), 'img/gen/INT-wialon.webp': (1500, 750), 'img/gen/INT-ai.webp': (1500, 750), 'cards/rent.webp': (1483, 1080), 'cards/rent-debt.webp': (1098, 1080), 'cards/drivers.webp': (1135, 1080),
           'cards/finance.webp': (1167, 1080), 'cards/waybills.webp': (1201, 1080), 'cards/sublease.webp': (1183, 1080),
           'cards/payment.webp': (1221, 1080), 'cards/analytics.webp': (1102, 1080), 'cards/settings.webp': (1295, 1080)}
 
-FEATURE_IMG = {'/features/rentals/': ('cards/rent-debt.webp', 'Карточка аренды: стоимость, долг и просрочка'), '/features/buyout/': ('img/gen/F4.webp', 'Аренда под выкуп: машина, взнос и ключи'), '/features/shifts/': ('cards/rent.webp', 'Карточка аренды: машина, водитель и сроки'), '/features/drivers/': ('screens/driver-card.webp', 'Карточка водителя в Yume Fleet'), '/features/vehicles/': ('screens/vehicle-card.webp', 'Карточка машины в Yume Fleet'), '/features/finance/': ('cards/finance.webp', 'Карточка финансов парка: поступления, расходы, отчёты'), '/features/fines/': ('img/gen/F5.webp', 'Штраф ПДД: камера, протокол и срок скидки'), '/features/documents/': ('cards/waybills.webp', 'Карточка путевых листов: выпуск, пробег и история'), '/features/investors/': ('cards/sublease.webp', 'Карточка субаренды: передача авто, договоры и доходы'), '/features/analytics/': ('cards/analytics.webp', 'Карточка аналитики: выручка, утилизация и долг парка'), '/features/leads/': ('cards/drivers.webp', 'Карточка водителей: документы, допуски и график'), '/features/settings/': ('cards/settings.webp', 'Карточка настроек парка: параметры, правила и интеграции'), '/kaspi-pay/': ('img/gen/F3.webp', 'Водитель платит за аренду с телефона'), '/integrations/': ('cards/payment.webp', 'Карточка платежа: сумма, дата и закрытая аренда'), '/perehod/': ('img/gen/F6.webp', 'Переход с Yume Cloud на Yume Fleet'), '/features/': ('img/gen/F1.webp', 'Таксопарк на платформе Yume Fleet')}
+FEATURE_IMG = {'/features/rentals/': ('cards/rent-debt.webp', 'Карточка аренды: стоимость, долг и просрочка'), '/features/buyout/': ('img/gen/F4.webp', 'Аренда под выкуп: машина, взнос и ключи'), '/features/shifts/': ('cards/rent.webp', 'Карточка аренды: машина, водитель и сроки'), '/features/drivers/': ('screens/driver-card.webp', 'Карточка водителя в Yume Fleet'), '/features/vehicles/': ('screens/vehicle-card.webp', 'Карточка машины в Yume Fleet'), '/features/finance/': ('cards/finance.webp', 'Карточка финансов парка: поступления, расходы, отчёты'), '/features/fines/': ('img/gen/F5.webp', 'Штраф ПДД: камера, протокол и срок скидки'), '/features/documents/': ('cards/waybills.webp', 'Карточка путевых листов: выпуск, пробег и история'), '/features/investors/': ('cards/sublease.webp', 'Карточка субаренды: передача авто, договоры и доходы'), '/features/analytics/': ('cards/analytics.webp', 'Карточка аналитики: выручка, утилизация и долг парка'), '/features/leads/': ('cards/drivers.webp', 'Карточка водителей: документы, допуски и график'), '/features/settings/': ('cards/settings.webp', 'Карточка настроек парка: параметры, правила и интеграции'), '/kaspi-pay/': ('img/gen/F3.webp', 'Водитель платит за аренду с телефона'), '/integrations/': ('cards/payment.webp', 'Карточка платежа: сумма, дата и закрытая аренда'), '/perehod/': ('img/gen/F6.webp', 'Переход с Yume Cloud на Yume Fleet'), '/integrations/egov/': ('img/gen/INT-egov.webp', 'Подписание договора через eGov mobile'), '/integrations/erap/': ('img/gen/INT-erap.webp', 'Штраф ПДД привязывается к водителю'), '/integrations/debtors/': ('img/gen/INT-debtors.webp', 'Проверка водителя по реестру должников'), '/integrations/blacklist/': ('img/gen/INT-blacklist.webp', 'Общий чёрный список парков'), '/integrations/wazzup/': ('img/gen/INT-wazzup.webp', 'Заявки из WhatsApp попадают в воронку'), '/integrations/wialon/': ('img/gen/INT-wialon.webp', 'Местоположение и пробег машины через GPS Wialon'), '/integrations/ai/': ('img/gen/INT-ai.webp', 'ИИ-ассистент отвечает по данным парка'), '/features/': ('img/gen/F1.webp', 'Таксопарк на платформе Yume Fleet')}
 INT_LOGO = {'Kaspi Pay': 'assets/img/int/kaspi.png', 'eGov mobile': 'assets/img/int/egov.png',
             'Штрафы ПДД, ЕРАП': 'assets/img/int/erap.svg', 'Штрафы ПДД и ЕРАП': 'assets/img/int/erap.svg', 'Реестр должников': 'assets/img/int/iin.svg',
             'GPS Wialon': 'assets/img/int/wialon.png', 'Wazzup': 'assets/img/int/wazzup.png', 'WhatsApp через Wazzup': 'assets/img/int/wazzup.png',
@@ -464,23 +464,24 @@ def generic_section(sec, R, alt):
         return cta(sec, R)
     return ''
 
-def phero(sec, crumbs, R, extra='', img=None, vis=''):
+def phero(sec, crumbs, R, extra='', img=None, logo=''):
     lead = ''.join(f'<p class="lead">{inline(x)}</p>' for x in sec['paras'])
-    if vis:
-        shot = vis
-    elif img:
+    if img:
         w, h = IMG_WH.get(img[0], (0, 0))
         dims = f' width="{w}" height="{h}"' if w else ''
         card = ' phero__vis--card' if img[0].startswith('cards/') else ''
         shot = f'<div class="phero__vis{card}" data-reveal="scale"><img src="{R}assets/{img[0]}"{dims} alt="{img[1]}" fetchpriority="high"></div>'
     else:
         shot = ''
-    return f'''<section class="phero{" phero--grid" if (img or vis) else ""}">
+    eb = eyebrow(sec)
+    if logo and eb:
+        eb = eb.replace('<p class="eyebrow">', f'<p class="eyebrow eyebrow--logo">{logo}', 1)
+    return f'''<section class="phero{" phero--grid" if img else ""}">
   <div class="hero__checks"></div>
   <div class="wrap">
     <div>
     <nav class="crumbs" aria-label="{T("crumbs")}">{crumbs}</nav>
-    {eyebrow(sec)}
+    {eb}
     <h1>{inline(sec['title'])}</h1>
     {lead}
     <div class="hero__ctas" style="justify-content:flex-start;opacity:1;animation:none;margin-top:28px">
@@ -491,17 +492,11 @@ def phero(sec, crumbs, R, extra='', img=None, vis=''):
   </div>
 </section>'''
 
-def int_hero_vis(path, R):
-    """Первый экран страницы интеграции: плитка с логотипом сервиса."""
+def int_logo(path, R):
+    """Логотип сервиса в надзаголовке страницы интеграции."""
     if not path.startswith('/integrations/') or path == '/integrations/': return ''
     row = next((r for r in NAV_INTS if r[0] == path), None)
-    if not row: return ''
-    _, name, sub, _, logo = row
-    return (f'<div class="phero__vis phero__vis--logo" data-reveal="scale"><div class="intcard">'
-            f'<i><img src="{R}{logo}" alt="" width="72" height="72"></i>'
-            f'<b>{name}</b><span>{sub}</span>'
-            f'<em><svg><use href="#i-check"/></svg> Работает внутри Yume Fleet</em>'
-            f'</div></div>')
+    return f'<img src="{R}{row[4]}" alt="" width="22" height="22" loading="lazy">' if row else ''
 
 # ------------------------------------------------------------------ главная
 def home():
@@ -644,7 +639,7 @@ def inner(p):
     hero = next((s for s in secs if s['type'] == 'hero'), None)
     body = ''
     if hero:
-        body += phero(hero, crumbs_for(p, R), R, img=FEATURE_IMG.get(p['path']), vis=int_hero_vis(p['path'], R))
+        body += phero(hero, crumbs_for(p, R), R, img=FEATURE_IMG.get(p['path']), logo=int_logo(p['path'], R))
         desc = strip_md(' '.join(hero['paras']))[:300]
     else:
         desc = strip_md(p['title'])
