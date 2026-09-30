@@ -21,7 +21,7 @@ UI = {
    fl1=('Просрочено · 3 дня', 'Ерлан С. · Chevrolet Cobalt'), fl2=('Новый штраф ПДД', '348 KBA 02 · привязан к водителю'), fl3=('Оплата через Kaspi Pay', '+ 9 000 ₸ · зачислено в аренду'),
    ledger_head='Аренды · с просрочкой', ledger_live='обновляется в реальном времени', ledger_cols=['Водитель', 'Машина', 'Ставка', 'Баланс'], ledger_foot='Долг по парку сегодня',
    drv_cap1='Оплата по ссылке · уже сейчас', drv_cap2='Приложение водителя', drv_alt1='Страница оплаты аренды по ссылке Kaspi Pay', drv_alt2='Приложение водителя Yume Fleet', soon='скоро',
-   bc_type='Аренда под выкуп', bc_price='Стоимость выкупа', bc_saved='Накоплено', bc_left='Осталось', bc_next='Ближайший платёж', bc_next_v='9 000 ₸ · завтра', bc_steps=['Взнос', 'Выкуп', 'Выкуплено'], more_buyout='Подробнее про выкуп', more_fines='Подробнее про штрафы', fines_alt='Штрафы ПДД в Yume Fleet: протокол, водитель, срок скидки',
+   bc_type='Аренда под выкуп', bc_price='Стоимость выкупа', bc_saved='Накоплено', bc_left='Осталось', bc_next='Ближайший платёж', bc_next_v='9 000 ₸ · завтра', bc_steps=['Взнос', 'Выкуп', 'Выкуплено'], more_buyout='Подробнее про выкуп', more_fines='Подробнее про штрафы', fines_alt='Карточка штрафа ПДД: нарушение, сумма, машина и водитель',
    all_ints='Все интеграции', price_btn='Узнать цену на демо',
    c_wa='WhatsApp, самый быстрый способ', c_wa_sub='Демо, вопросы по продукту и переходу', c_phone='Телефон', c_phone_sub='Пн–Пт 9:00–19:00, Сб 10:00–16:00 по Алматы', c_inst='Instagram', c_inst_sub='Новости продукта и парков', c_yt='YouTube', c_yt_sub='Видео о работе системы', c_sales='Продажи и партнёрство', c_sales_sub='Коммерческие предложения, интеграции, договоры', c_sup='Поддержка парков', c_sup_sub='Вопросы по работе системы', c_office='Офис', c_city='Алматы, Казахстан', c_office_sub='ТОО «Yume.Cloud». Встречи по договорённости, демо по видеосвязи.', c_login='Вход для парков', c_login_sub='Кабинет парка', c_form_h='Записаться на демо', c_form_p='Покажем систему за 20 минут на примере парка вашего размера.', crumbs='Хлебные крошки',
    t404='Страница не найдена', h404='Такой страницы нет', p404='Возможно, ссылка устарела. Вот куда можно пойти дальше.', to_home='На главную'),
@@ -35,7 +35,7 @@ UI = {
    fl1=('Мерзімі өткен · 3 күн', 'Ерлан С. · Chevrolet Cobalt'), fl2=('Жаңа ЖҚЕ айыппұлы', '348 KBA 02 · жүргізушіге байланды'), fl3=('Kaspi Pay арқылы төлем', '+ 9 000 ₸ · жалдауға түсті'),
    ledger_head='Жалдаулар · мерзімі өткен', ledger_live='нақты уақытта жаңарады', ledger_cols=['Жүргізуші', 'Көлік', 'Ставка', 'Баланс'], ledger_foot='Парк бойынша бүгінгі қарыз',
    drv_cap1='Сілтеме арқылы төлем · қазірдің өзінде', drv_cap2='Жүргізуші қосымшасы', drv_alt1='Kaspi Pay сілтемесі арқылы жалдау төлемі беті', drv_alt2='Yume Fleet жүргізуші қосымшасы', soon='жақында',
-   bc_type='Сатып алумен жалдау', bc_price='Сатып алу құны', bc_saved='Жиналды', bc_left='Қалды', bc_next='Келесі төлем', bc_next_v='9 000 ₸ · ертең', bc_steps=['Жарна', 'Сатып алу', 'Сатып алынды'], more_buyout='Сатып алу туралы толығырақ', more_fines='Айыппұлдар туралы толығырақ', fines_alt='Yume Fleet-тегі ЖҚЕ айыппұлдары: хаттама, жүргізуші, жеңілдік мерзімі',
+   bc_type='Сатып алумен жалдау', bc_price='Сатып алу құны', bc_saved='Жиналды', bc_left='Қалды', bc_next='Келесі төлем', bc_next_v='9 000 ₸ · ертең', bc_steps=['Жарна', 'Сатып алу', 'Сатып алынды'], more_buyout='Сатып алу туралы толығырақ', more_fines='Айыппұлдар туралы толығырақ', fines_alt='ЖҚЕ айыппұл картасы: бұзушылық, сома, көлік және жүргізуші',
    all_ints='Барлық интеграциялар', price_btn='Бағаны демода білу',
    c_wa='WhatsApp, ең жылдам тәсіл', c_wa_sub='Демо, өнім және көшу бойынша сұрақтар', c_phone='Телефон', c_phone_sub='Дс–Жм 9:00–19:00, Сб 10:00–16:00, Алматы уақыты', c_inst='Instagram', c_inst_sub='Өнім және парктер жаңалықтары', c_yt='YouTube', c_yt_sub='Жүйенің жұмысы туралы бейнелер', c_sales='Сату және серіктестік', c_sales_sub='Коммерциялық ұсыныстар, интеграциялар, шарттар', c_sup='Парктерді қолдау', c_sup_sub='Жүйенің жұмысы бойынша сұрақтар', c_office='Кеңсе', c_city='Алматы, Қазақстан', c_office_sub='«Yume.Cloud» ЖШС. Кездесулер келісім бойынша, демо бейнебайланыс арқылы.', c_login='Парктер үшін кіру', c_login_sub='Парк кабинеті', c_form_h='Демоға жазылу', c_form_p='Жүйені 20 минутта сіздің парк көлеміндегі мысалда көрсетеміз.', crumbs='Нан үгінділері',
    t404='Бет табылмады', h404='Мұндай бет жоқ', p404='Сілтеме ескірген болуы мүмкін. Әрі қарай қайда баруға болады.', to_home='Басты бетке'),
@@ -154,7 +154,12 @@ def nav_ints():
 
 ICON_BY_PATH = {p: i for p, _, _, i in NAV_FEATURES}
 ICON_BY_PATH.update({'/kaspi-pay/': 'i-link'})
-FEATURE_IMG = {'/features/rentals/': ('screens/rent-card.webp', 'Карточка аренды в Yume Fleet'), '/features/buyout/': ('img/gen/F4.webp', 'Аренда под выкуп: машина, взнос и ключи'), '/features/shifts/': ('screens/rents.webp', 'Список аренд Yume Fleet'), '/features/drivers/': ('screens/driver-card.webp', 'Карточка водителя в Yume Fleet'), '/features/vehicles/': ('screens/vehicle-card.webp', 'Карточка машины в Yume Fleet'), '/features/finance/': ('screens/finance.webp', 'Финансы парка в Yume Fleet'), '/features/fines/': ('img/gen/F5.webp', 'Штраф ПДД: камера, протокол и срок скидки'), '/features/documents/': ('screens/waybills.webp', 'Документы и путевые листы в Yume Fleet'), '/features/investors/': ('screens/sublease.webp', 'Субаренда и инвесторы в Yume Fleet'), '/features/analytics/': ('screens/analytics.webp', 'Аналитика парка в Yume Fleet'), '/features/leads/': ('screens/drivers.webp', 'База водителей и кандидатов в Yume Fleet'), '/features/settings/': ('screens/settings.webp', 'Настройки парка в Yume Fleet'), '/kaspi-pay/': ('img/gen/F3.webp', 'Водитель платит за аренду с телефона'), '/integrations/': ('screens/payments.webp', 'Журнал платежей парка в Yume Fleet'), '/perehod/': ('img/gen/F6.webp', 'Переход с Yume Cloud на Yume Fleet'), '/features/': ('img/gen/F1.webp', 'Таксопарк на платформе Yume Fleet')}
+# ширина/высота картинок в первом экране раздела — против скачка вёрстки
+IMG_WH = {'cards/rent.webp': (1483, 1080), 'cards/rent-debt.webp': (1098, 1080), 'cards/drivers.webp': (1135, 1080),
+          'cards/finance.webp': (1167, 1080), 'cards/waybills.webp': (1201, 1080), 'cards/sublease.webp': (1183, 1080),
+          'cards/payment.webp': (1221, 1080), 'cards/analytics.webp': (1102, 1080), 'cards/settings.webp': (1295, 1080)}
+
+FEATURE_IMG = {'/features/rentals/': ('cards/rent-debt.webp', 'Карточка аренды: стоимость, долг и просрочка'), '/features/buyout/': ('img/gen/F4.webp', 'Аренда под выкуп: машина, взнос и ключи'), '/features/shifts/': ('cards/rent.webp', 'Карточка аренды: машина, водитель и сроки'), '/features/drivers/': ('screens/driver-card.webp', 'Карточка водителя в Yume Fleet'), '/features/vehicles/': ('screens/vehicle-card.webp', 'Карточка машины в Yume Fleet'), '/features/finance/': ('cards/finance.webp', 'Карточка финансов парка: поступления, расходы, отчёты'), '/features/fines/': ('img/gen/F5.webp', 'Штраф ПДД: камера, протокол и срок скидки'), '/features/documents/': ('cards/waybills.webp', 'Карточка путевых листов: выпуск, пробег и история'), '/features/investors/': ('cards/sublease.webp', 'Карточка субаренды: передача авто, договоры и доходы'), '/features/analytics/': ('cards/analytics.webp', 'Карточка аналитики: выручка, утилизация и долг парка'), '/features/leads/': ('cards/drivers.webp', 'Карточка водителей: документы, допуски и график'), '/features/settings/': ('cards/settings.webp', 'Карточка настроек парка: параметры, правила и интеграции'), '/kaspi-pay/': ('img/gen/F3.webp', 'Водитель платит за аренду с телефона'), '/integrations/': ('cards/payment.webp', 'Карточка платежа: сумма, дата и закрытая аренда'), '/perehod/': ('img/gen/F6.webp', 'Переход с Yume Cloud на Yume Fleet'), '/features/': ('img/gen/F1.webp', 'Таксопарк на платформе Yume Fleet')}
 INT_LOGO = {'Kaspi Pay': 'assets/img/int/kaspi.png', 'eGov mobile': 'assets/img/int/egov.png',
             'Штрафы ПДД, ЕРАП': 'assets/img/int/erap.svg', 'Штрафы ПДД и ЕРАП': 'assets/img/int/erap.svg', 'Реестр должников': 'assets/img/int/iin.svg',
             'GPS Wialon': 'assets/img/int/wialon.png', 'Wazzup': 'assets/img/int/wazzup.png', 'WhatsApp через Wazzup': 'assets/img/int/wazzup.png',
@@ -448,7 +453,13 @@ def generic_section(sec, R, alt):
 
 def phero(sec, crumbs, R, extra='', img=None):
     lead = ''.join(f'<p class="lead">{inline(x)}</p>' for x in sec['paras'])
-    shot = f'<div class="phero__vis" data-reveal="scale"><img src="{R}assets/{img[0]}" alt="{img[1]}" fetchpriority="high"></div>' if img else ''
+    if img:
+        w, h = IMG_WH.get(img[0], (0, 0))
+        dims = f' width="{w}" height="{h}"' if w else ''
+        card = ' phero__vis--card' if img[0].startswith('cards/') else ''
+        shot = f'<div class="phero__vis{card}" data-reveal="scale"><img src="{R}assets/{img[0]}"{dims} alt="{img[1]}" fetchpriority="high"></div>'
+    else:
+        shot = ''
     return f'''<section class="phero{" phero--grid" if img else ""}">
   <div class="hero__checks"></div>
   <div class="wrap">
@@ -557,7 +568,7 @@ def home():
 <section class="section section--card" id="fines">
   <div class="wrap promo promo--rev">
     <div data-reveal="left">{eyebrow(p4)}<h2>{inline(p4['title'])}</h2><p class="lead" style="margin-top:18px">{inline(p4['paras'][0])}</p>{checks(p4['items'])}<a class="link" href="{R}features/fines/">{T("more_fines")} <svg><use href="#i-arrow"/></svg></a></div>
-    <div class="promo__vis promo__vis--shot" data-reveal="scale"><img src="{R}assets/screens/fines.webp" width="1800" height="1125" alt="{T("fines_alt")}" loading="lazy"></div>
+    <div class="promo__vis promo__vis--card" data-reveal="scale"><img src="{R}assets/cards/fine.webp" width="1615" height="1080" alt="{T("fines_alt")}" loading="lazy"></div>
   </div>
 </section>
 '''
