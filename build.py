@@ -65,7 +65,7 @@ TAGS = {'НОВОЕ': ('new', 'новое'), 'ЛУЧШЕ': ('better', 'лучш�
 
 def inline(t):
     """**жирный** → <strong>, [ТЕГ] → бейдж, [?] убираем."""
-    t = html.escape(t, quote=False)
+    t = html.escape(t, quote=False).replace("&lt;br&gt;", "<br>")
     t = re.sub(r'\*\*(.+?)\*\*', r'<strong>\1</strong>', t)
     t = re.sub(r'\s*\[\?\]', '', t)
     def tag(m):
@@ -79,6 +79,7 @@ def inline(t):
 def strip_md(t):
     t = re.sub(r'\*\*(.+?)\*\*', r'\1', t)
     t = re.sub(r'\s*\[[^\]]+\]', '', t)
+    t = t.replace('<br>', ' ')
     return t.strip()
 
 def tags_of(t):
@@ -432,7 +433,7 @@ def quotes(sec):
     return f'<div class="reviews" data-stagger>{out}</div>'
 
 def shift(sec):
-    rows = ''.join(f'<div class="shift__row"><div class="shift__was">{strip_md(it["was"])}</div><div class="shift__arr"><svg><use href="#i-arrow"/></svg></div><div class="shift__now">{inline(it["now"])}</div></div>' for it in sec['items'])
+    rows = ''.join(f'<div class="shift__row"><div class="shift__was"><span style="color:#ef4444;margin-right:6px">✖</span>{strip_md(it["was"])}</div><div class="shift__arr"><svg><use href="#i-arrow"/></svg></div><div class="shift__now"><span style="color:#22c55e;margin-right:6px">✔</span>{inline(it["now"])}</div></div>' for it in sec['items'])
     return f'<div class="shift" data-reveal><div class="shift__row"><div>Было</div><div></div><div>Стало</div></div>{rows}</div>'
 
 def checks(items, cls='debt__list'):
@@ -556,7 +557,7 @@ def home():
   <div class="wrap drv">
     <div data-reveal="left">{eyebrow(p2)}<h2>{inline(p2['title'])}</h2>{paras}{checks(p2['items'], 'drv__list')}</div>
     <div class="drv__shots drv__shots--one" data-reveal="scale">
-      <figure class="drv__shot drv__shot--free"><img src="{R}assets/screens/pay-phone.webp" width="443" height="885" alt="{T("drv_alt1")}" loading="lazy"><figcaption>{T("drv_cap1")}</figcaption></figure>
+      <figure class="drv__shot drv__shot--free"><img src="{R}assets/screens/pay-phone.png" width="443" height="885" alt="{T("drv_alt1")}" loading="lazy"><figcaption>{T("drv_cap1")}</figcaption></figure>
     </div>
   </div>
 </section>
