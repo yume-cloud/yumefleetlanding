@@ -303,6 +303,10 @@ def analytics():
 
 def page(p, body, R, desc):
     title = html.escape(p['title'])
+    nav_html = nav(R, p['path'])
+    if 'id="demo"' not in body:
+        # своей формы на странице нет (404) — ведём на форму главной
+        nav_html = nav_html.replace('href="#demo"', f'href="{R}#demo"')
     if not title.startswith('Yume Fleet'): title += ' — Yume Fleet'
     canon = SITE + p['path']
     alt = {'/': '/kk/', '/contacts/': '/kk/contacts/', '/kk/': '/', '/kk/contacts/': '/contacts/'}.get(p['path'])
@@ -334,7 +338,7 @@ def page(p, body, R, desc):
 
 {SPRITE}
 
-{nav(R, p['path'])}
+{nav_html}
 
 {body}
 
