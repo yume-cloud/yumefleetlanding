@@ -11,8 +11,11 @@
 
 **Картинки по этим промптам уже сгенерированы и стоят на страницах** — файлы лежат
 в `assets/img/gen/`. Промпты оставлены здесь, чтобы можно было перегенерировать любую
-картинку, не собирая описание заново. «Чёрный список» пришлось делать со второго раза,
-его промпт ниже — уже исправленный.
+картинку, не собирая описание заново.
+
+**Фон обязательно чисто белый, а объект должен заполнять кадр.** Первая версия была
+сделана на светло-сером фоне и с мелким объектом посередине — на странице это читалось
+как серая коробка, непохожая на остальные картинки сайта. Блок стиля ниже уже исправлен.
 
 **Текста на картинках быть не должно.** Сайт двуязычный, а надпись внутри картинки не
 переводится и не правится. Все подписи даёт вёрстка.
@@ -25,19 +28,23 @@
 
 ```
 3D product illustration, soft studio lighting, matte and translucent glossy materials,
-objects floating on a seamless very light warm-grey background, soft contact shadows,
-three-quarter view, amber yellow #F0B100 as the main accent, soft violet #6C5CE7 as
-secondary, white and light grey neutrals, red only for alerts, clean and friendly,
-generous empty space around the subject, 2:1 landscape.
-No text, no letters, no numbers, no logos, no brand marks, no watermark.
+objects on a pure white seamless background #FFFFFF, only a soft subtle contact shadow
+directly beneath the objects, no vignette, no grey gradient, three-quarter view,
+amber yellow #F0B100 as the main accent, soft violet #6C5CE7 as secondary, white and
+light grey neutrals, red only for alerts, clean and friendly.
+The subject is LARGE and fills most of the frame, tightly framed with only a small even
+margin, centred, wide 2:1 landscape composition.
+Absolutely no text, no letters, no handwriting, no numbers, no logos, no brand marks,
+no watermark.
 ```
 
 ## Негативный промпт
 
 ```
-text, letters, words, numbers, captions, UI labels, logos, brand marks, watermark,
-dark background, harsh shadows, heavy gradients, cluttered composition, photorealistic
-human faces, stock-photo look, neon, cyberpunk
+text, letters, words, numbers, handwriting, signature scribble, captions, UI labels,
+logos, brand marks, watermark, grey background, vignette, dark background, harsh shadows,
+heavy gradients, small subject lost in empty space, cluttered composition,
+photorealistic human faces, stock-photo look, neon, cyberpunk
 ```
 
 ---
@@ -104,6 +111,13 @@ a soft violet glow behind the sparkle.
 ```
 
 ---
+
+## Если фон всё равно вышел сероватым
+
+Модель нет-нет да и добавит лёгкое затемнение по краям. Это лечится выравниванием фона:
+по рамке кадра берётся только фон, по нему строится квадратичная поверхность освещения,
+и картинка на неё делится. Объект при этом не трогается. Скрипт занимает десяток строк
+на Pillow и numpy — три картинки из семи пришлось так поправить.
 
 ## Если картинки не сойдутся между собой
 
