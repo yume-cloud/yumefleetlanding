@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """Генерирует сайт Yume Fleet из content/CONTENT.md.
 Запуск: python3 build.py. Пути относительные, чтобы сайт работал и на GitHub Pages, и на yumefleet.com."""
-import re, os, html, datetime
+import re, os, html, datetime, hashlib
 
 ROOT = os.path.dirname(os.path.abspath(__file__))
 SRC = open(os.path.join(ROOT, 'content', 'CONTENT.md'), encoding='utf-8').read()
@@ -9,6 +9,14 @@ SRC_KK = open(os.path.join(ROOT, 'content', 'CONTENT.kk.md'), encoding='utf-8').
 GA_ID = ''      # счётчик Google Analytics для yumefleet.com, например G-XXXXXXX
 FB_PIXEL = ''   # Meta Pixel ID для yumefleet.com
 FONTS_CSS = open(os.path.join(ROOT, 'assets', 'fonts', 'fonts.css'), encoding='utf-8').read()
+
+def ver(rel):
+    """Версия файла по его содержимому: браузер обязан перекачать стили после каждой правки."""
+    try:
+        return hashlib.md5(open(os.path.join(ROOT, *rel.split('/')), 'rb').read()).hexdigest()[:8]
+    except OSError:
+        return '1'
+CSS_V, JS_V = ver('css/styles.css'), ver('js/main.js')
 L = 'ru'
 UI = {
  'ru': dict(home='Главная', features='Возможности', dd_open='Раскрыть возможности', all_features='Все возможности', integrations='Интеграции', perehod='Для клиентов Yume Cloud', contacts='Контакты', demo='Записаться на демо', login='Войти', menu='Основное меню', burger='Меню',
@@ -320,7 +328,7 @@ def page(p, body, R, desc):
 <link rel="preload" as="font" type="font/woff2" href="{R}assets/fonts/geist-800-cyrillic.woff2" crossorigin>
 <link rel="preload" as="font" type="font/woff2" href="{R}assets/fonts/geist-400-cyrillic.woff2" crossorigin>
 <style>{FONTS_CSS.replace('url(', 'url(' + R + 'assets/fonts/')}</style>
-<link rel="stylesheet" href="{R}css/styles.css?v=11">
+<link rel="stylesheet" href="{R}css/styles.css?v={CSS_V}">
 {ld(p, body)}{analytics()}</head>
 <body>
 
@@ -332,7 +340,7 @@ def page(p, body, R, desc):
 
 {footer(R)}
 
-<script src="{R}js/main.js?v=4" defer></script>
+<script src="{R}js/main.js?v={JS_V}" defer></script>
 </body>
 </html>
 '''
