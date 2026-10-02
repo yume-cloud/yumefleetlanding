@@ -93,7 +93,7 @@
 
   /* form: POST to endpoint if configured, else WhatsApp with prefilled text */
   const form = $('.form');
-  const LEAD_ENDPOINT = form?.dataset.endpoint || '';
+  const LEAD_ENDPOINT = form?.dataset.endpoint || '', DONE_URL = form?.dataset.done || '';
   $('#phone')?.addEventListener('input', e => {
     let d = e.target.value.replace(/\D/g, '').replace(/^8/, '7').slice(0, 11); if (d && d[0] !== '7') d = '7' + d;
     const p = [d.slice(1, 4), d.slice(4, 7), d.slice(7, 9), d.slice(9, 11)];
@@ -117,6 +117,9 @@
     }
     form.classList.add('is-done'); btn.disabled = false; btn.textContent = label;
     try { window.gtag && gtag('event', 'generate_lead', { product: 'fleet' }); } catch (x) {}
+    // заявка ушла на сервер — уводим на страницу «спасибо».
+    // если сервер не ответил, человек остаётся здесь: у него открыт WhatsApp с текстом заявки
+    if (sent && DONE_URL) setTimeout(() => location.assign(DONE_URL), 250);
   });
 
   $('.to-top')?.addEventListener('click', () => scrollTo({ top: 0, behavior: reduced ? 'auto' : 'smooth' }));

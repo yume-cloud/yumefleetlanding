@@ -32,7 +32,10 @@ UI = {
    bc_type='Аренда под выкуп', bc_price='Стоимость выкупа', bc_saved='Накоплено', bc_left='Осталось', bc_next='Ближайший платёж', bc_next_v='9 000 ₸ · завтра', bc_steps=['Взнос', 'Выкуп', 'Выкуплено'], more_buyout='Подробнее про выкуп', more_fines='Подробнее про штрафы', fines_alt='Карточка штрафа ПДД: нарушение, сумма, машина и водитель',
    all_ints='Все интеграции', price_btn='Узнать цену на демо',
    c_wa='WhatsApp, самый быстрый способ', c_wa_sub='Демо, вопросы по продукту и переходу', c_phone='Телефон', c_phone_sub='Пн–Пт 9:00–19:00, Сб 10:00–16:00 по Алматы', c_inst='Instagram', c_inst_sub='Новости продукта и парков', c_yt='YouTube', c_yt_sub='Видео о работе системы', c_sales='Продажи и партнёрство', c_sales_sub='Коммерческие предложения, интеграции, договоры', c_sup='Поддержка парков', c_sup_sub='Вопросы по работе системы', c_office='Офис', c_city='Алматы, Казахстан', c_office_sub='ТОО «Yume.Cloud». Встречи по договорённости, демо по видеосвязи.', c_login='Вход для парков', c_login_sub='Кабинет парка', c_form_h='Записаться на демо', c_form_p='Покажем систему за 20 минут на примере парка вашего размера.', crumbs='Хлебные крошки',
-   t404='Страница не найдена', h404='Такой страницы нет', p404='Возможно, ссылка устарела. Вот куда можно пойти дальше.', to_home='На главную'),
+   t404='Страница не найдена', h404='Такой страницы нет', p404='Возможно, ссылка устарела. Вот куда можно пойти дальше.', to_home='На главную',
+   ty_eyebrow='Заявка принята', ty_title='Спасибо, заявка у нас', ty_desc='Заявка на демо Yume Fleet принята. Перезвоним в течение 15 минут в рабочее время.',
+   ty_lead='Перезвоним в течение 15 минут в рабочее время: будни 9:00–19:00, суббота 10:00–16:00 по Алматы.',
+   ty_next='Пока ждёте, посмотрите', ty_items=[('Как всё устроено', 'features/'), ('Оплата через Kaspi', 'kaspi-pay/'), ('Переход с Yume Cloud', 'perehod/')]),
  'kk': dict(home='Басты бет', features='Мүмкіндіктер', dd_open='Мүмкіндіктерді ашу', all_features='Барлық мүмкіндіктер', integrations='Интеграциялар', perehod='Yume Cloud клиенттеріне', contacts='Байланыс', demo='Демоға жазылу', login='Кіру', menu='Негізгі мәзір', burger='Мәзір',
    footer_about='Таксопаркті басқаруға арналған платформа. «Yume.Cloud» ЖШС, Алматы, Қазақстан.', product='Өнім', kaspi_pay='Kaspi Pay сілтемесі арқылы төлем', login_sys='Жүйеге кіру', docs='Құжаттар',
    doc_list=['Құпиялылық саясаты', 'Жария оферта', 'Пайдаланушы келісімі', 'Рекурренттік төлемдер', 'Төлемдерді болдырмау және қайтару', 'Төлем тәртібі', 'Аккаунтты жою'], copy='© «Yume.Cloud» ЖШС, 2026', cloud='Көлік емес, мүкәммал жалға бересіз бе? yume.cloud', wa='WhatsApp-қа жазу', top='Жоғарыға',
@@ -46,7 +49,10 @@ UI = {
    bc_type='Сатып алумен жалдау', bc_price='Сатып алу құны', bc_saved='Жиналды', bc_left='Қалды', bc_next='Келесі төлем', bc_next_v='9 000 ₸ · ертең', bc_steps=['Жарна', 'Сатып алу', 'Сатып алынды'], more_buyout='Сатып алу туралы толығырақ', more_fines='Айыппұлдар туралы толығырақ', fines_alt='ЖҚЕ айыппұл картасы: бұзушылық, сома, көлік және жүргізуші',
    all_ints='Барлық интеграциялар', price_btn='Бағаны демода білу',
    c_wa='WhatsApp, ең жылдам тәсіл', c_wa_sub='Демо, өнім және көшу бойынша сұрақтар', c_phone='Телефон', c_phone_sub='Дс–Жм 9:00–19:00, Сб 10:00–16:00, Алматы уақыты', c_inst='Instagram', c_inst_sub='Өнім және парктер жаңалықтары', c_yt='YouTube', c_yt_sub='Жүйенің жұмысы туралы бейнелер', c_sales='Сату және серіктестік', c_sales_sub='Коммерциялық ұсыныстар, интеграциялар, шарттар', c_sup='Парктерді қолдау', c_sup_sub='Жүйенің жұмысы бойынша сұрақтар', c_office='Кеңсе', c_city='Алматы, Қазақстан', c_office_sub='«Yume.Cloud» ЖШС. Кездесулер келісім бойынша, демо бейнебайланыс арқылы.', c_login='Парктер үшін кіру', c_login_sub='Парк кабинеті', c_form_h='Демоға жазылу', c_form_p='Жүйені 20 минутта сіздің парк көлеміндегі мысалда көрсетеміз.', crumbs='Нан үгінділері',
-   t404='Бет табылмады', h404='Мұндай бет жоқ', p404='Сілтеме ескірген болуы мүмкін. Әрі қарай қайда баруға болады.', to_home='Басты бетке'),
+   t404='Бет табылмады', h404='Мұндай бет жоқ', p404='Сілтеме ескірген болуы мүмкін. Әрі қарай қайда баруға болады.', to_home='Басты бетке',
+   ty_eyebrow='Өтінім қабылданды', ty_title='Рақмет, өтінім бізде', ty_desc='Yume Fleet демосына өтінім қабылданды. Жұмыс уақытында 15 минут ішінде қайта қоңырау шаламыз.',
+   ty_lead='Жұмыс уақытында 15 минут ішінде қайта қоңырау шаламыз: жұмыс күндері 9:00–19:00, сенбі 10:00–16:00 Алматы уақытымен.',
+   ty_next='Күтіп тұрғанда қараңыз', ty_items=[('Бәрі қалай құрылған', 'features/'), ('Kaspi арқылы төлем', 'kaspi-pay/'), ('Yume Cloud-тан көшу', 'perehod/')]),
 }
 NAV_KK = {'/features/rentals/': ('Жалдау карточкасы', 'Тәуліктік, мерзім, төлем кестесі'), '/features/buyout/': ('Сатып алумен жалдау', 'Жарна, барысы, қалдық'), '/features/shifts/': ('Ауысымдар', 'Бір көлікте екі жүргізуші'), '/features/drivers/': ('Жүргізушілер', 'Қарыз, депозит, сенімділік'), '/features/vehicles/': ('Көліктер', 'ТҚ, жөндеу, қойма, өтелімділік'), '/features/finance/': ('Ақша мен қарыздар', 'Есептеулер, төлемдер, өтеу'), '/features/fines/': ('ЖҚЕ айыппұлдары мен залал', 'Хаттама, жеңілдік, бөліп төлеу'), '/features/documents/': ('Құжаттар мен қол қою', 'Шарттар, актілер, eGov және SMS'), '/features/investors/': ('Субжалдау және лизинг', 'Инвесторлар, үлестер, кредиттер'), '/features/analytics/': ('Аналитика', 'P&L, cash flow, өтелімділік'), '/features/leads/': ('WhatsApp және воронка', 'Жүргізуші өтінімдері жалдауға дейін'), '/features/settings/': ('Икемді баптаулар', 'Ережелер, рөлдер, бірнеше парк')}
 def T(k): return UI[L][k]
@@ -245,7 +251,7 @@ def footer(R):
 
 def form(R):
     opts = ''.join(f'<option>{o}</option>' for o in T("f_cars_opts"))
-    return f'''<form class="form" data-reveal="right" data-endpoint="{LEAD}" novalidate>
+    return f'''<form class="form" data-reveal="right" data-endpoint="{LEAD}" data-done="{R}{'kk/spasibo/' if L == 'kk' else 'spasibo/'}" novalidate>
       <div class="field"><label for="name">{T("f_name")}</label><input id="name" name="name" placeholder="{T("f_name_ph")}" required autocomplete="name"></div>
       <div class="field"><label for="phone">{T("f_phone")}</label><input id="phone" name="phone" type="tel" placeholder="+7 777 000 00 00" required autocomplete="tel" inputmode="tel"></div>
       <div class="form__row">
@@ -302,7 +308,7 @@ def analytics():
             "(function(){var done=false;function load(){if(done)return;done=true;" + ga + fb + "}"
             "['scroll','pointerdown','keydown','touchstart'].forEach(function(e){addEventListener(e,load,{once:true,passive:true})});setTimeout(load,4000);})();</script>\n")
 
-def page(p, body, R, desc):
+def page(p, body, R, desc, noindex=False):
     title = html.escape(p['title'])
     nav_html = nav(R, p['path'])
     if 'id="demo"' not in body:
@@ -322,7 +328,7 @@ def page(p, body, R, desc):
 <title>{title}</title>
 <meta name="description" content="{html.escape(desc)}">
 <link rel="canonical" href="{canon}">
-{hreflang}{preload}
+{'<meta name="robots" content="noindex, follow">' + chr(10) if noindex else ''}{hreflang}{preload}
 <meta property="og:type" content="website">
 <meta property="og:title" content="{title}">
 <meta property="og:description" content="{html.escape(desc)}">
@@ -697,6 +703,34 @@ def contacts():
 </section>'''
     write(p['path'] + 'index.html', page(p, body, R, strip_md(hero['paras'][0])))
 
+def spasibo():
+    """Страница после отправки заявки. Не индексируется и не попадает в карту сайта."""
+    path = '/kk/spasibo/' if L == 'kk' else '/spasibo/'
+    R = rel(path)
+    p = dict(path=path, title=T("ty_title"))
+    cards_html = ''.join(
+        f'<a class="chip" href="{R}{href_}"><svg><use href="#i-arrow"/></svg>{name}</a>'
+        for name, href_ in T("ty_items"))
+    body = f'''<section class="phero" style="min-height:62vh;display:grid;align-items:center">
+  <div class="hero__checks"></div>
+  <div class="wrap">
+    <div style="max-width:720px">
+      <p class="eyebrow">{T("ty_eyebrow")}</p>
+      <h1>{T("ty_title")}</h1>
+      <p class="lead" style="margin-top:18px">{T("ty_lead")}</p>
+      <div class="hero__ctas" style="justify-content:flex-start;opacity:1;animation:none;margin-top:28px">
+        <a class="btn btn--lg btn--yellow" href="{WA}" rel="noopener"><svg><use href="#i-wa"/></svg> {T("wa_btn")}</a>
+        <a class="btn btn--lg btn--ghost" href="{href('/kk/', R) if L == 'kk' else R}">{T("to_home")}</a>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="section section--card"><div class="wrap">
+  <div class="sec-head"><div data-reveal><h2>{T("ty_next")}</h2></div></div>
+  <div class="chips" data-reveal>{cards_html}</div>
+</div></section>'''
+    write(path + 'index.html', page(p, body, R, T("ty_desc"), noindex=True))
+
 # ------------------------------------------------------------------ служебные
 def write(path, content):
     full = os.path.join(ROOT, path.lstrip('/'))
@@ -720,7 +754,9 @@ for p in PAGES:
     if p['path'] in ('/', '/contacts/'): continue
     inner(p)
 contacts()
+spasibo()
 service()
 L = 'kk'
 home()
 contacts()
+spasibo()
