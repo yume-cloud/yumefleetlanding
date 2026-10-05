@@ -144,17 +144,17 @@
     }
   }
 
-  /* rental card: debt, then a Kaspi day is paid. Static on a phone. */
+  /* rental kinds: daily, shifts, fixed term, buyout. Static on a phone. */
   const rent = $('[data-rentplay]');
   if (rent) {
-    const due = $('[data-rent-due]', rent), day = $$('[data-rent-day]', rent).slice(-1)[0];
+    const kinds = $$('[data-rent-kind]', rent), facts = $$('[data-rent-fact]', rent);
     const narrow = matchMedia('(max-width: 900px)').matches;
-    const set = step => { rent.dataset.step = step; if (due) due.textContent = (step === 'pay' ? '−18 000' : '−27 000') + ' ₸'; day?.classList.toggle('is-paid', step === 'pay'); };
-    if (reduced || narrow) set('pay');
-    else {
-      const steps = [['base', 1600], ['pay', 2200]];
+    const set = i => { rent.dataset.kind = i; kinds.forEach(k => k.classList.toggle('is-on', k.dataset.rentKind === String(i))); facts.forEach(f => f.classList.toggle('is-on', f.dataset.rentFact === String(i))); };
+    set(0);
+    kinds.forEach(k => k.addEventListener('click', () => set(Number(k.dataset.rentKind))));
+    if (!(reduced || narrow)) {
       let n = 0, started = false;
-      const loop = async () => { while (true) { const [step, pause] = steps[n % steps.length]; set(step); n++; await wait(pause); } };
+      const loop = async () => { while (true) { set(n % kinds.length); n++; await wait(1700); } };
       new IntersectionObserver(es => { if (es[0].isIntersecting && !started) { started = true; loop(); } }, { threshold: .35 }).observe(rent);
     }
   }
