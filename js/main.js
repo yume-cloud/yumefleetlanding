@@ -157,7 +157,7 @@
       if (!title || !vis || matchMedia('(max-width: 900px)').matches) { if (vis) vis.style.marginTop = ''; return; }
       const wrap = title.closest('.wrap');
       vis.style.marginTop = (title.getBoundingClientRect().top - wrap.getBoundingClientRect().top) + 'px';
-      rent.querySelector('.rcard').style.height = title.getBoundingClientRect().height + 'px';
+      rent.querySelector('.rcard').style.height = '';
     };
     fit(); addEventListener('resize', fit);
     kinds.forEach(k => k.addEventListener('click', () => set(Number(k.dataset.rentKind))));
