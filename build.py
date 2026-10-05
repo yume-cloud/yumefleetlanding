@@ -490,6 +490,7 @@ def rent_scene():
     facts = ''.join(f'<div data-rent-fact="{i}"><b>{html.escape(a)}</b><span>{html.escape(b)}</span></div>' for i, (a, b) in enumerate(T('rent_facts')))
     return f'''<div class="phero__vis" data-reveal="scale"><div class="rentplay" data-rentplay data-kind="0" aria-hidden="true">
       <div class="rcard">
+        <svg class="rentcur" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 2.5v15.2l4.1-3.7 3.2 6.4 2.1-.9-3.2-6.3 5.6-.3z"/></svg>
         <header><span class="plate">015 ADM 02</span><div><b>Ерлан С.</b><small>Chevrolet Cobalt</small></div></header>
         <div class="rcard__kinds">{chips}</div>
         <div class="rcard__facts">{facts}</div>

@@ -153,8 +153,8 @@
     set(0);
     kinds.forEach(k => k.addEventListener('click', () => set(Number(k.dataset.rentKind))));
     if (!(reduced || narrow)) {
-      let n = 0, started = false;
-      const loop = async () => { while (true) { set(n % kinds.length); n++; await wait(1700); } };
+      let n = 1, started = false;
+      const loop = async () => { while (true) { const i = n % kinds.length; rent.dataset.move = i; await wait(720); rent.dataset.press = '1'; kinds[i].classList.add('is-press'); await wait(160); set(i); rent.dataset.press = '0'; kinds[i].classList.remove('is-press'); n++; await wait(1100); } };
       new IntersectionObserver(es => { if (es[0].isIntersecting && !started) { started = true; loop(); } }, { threshold: .35 }).observe(rent);
     }
   }
