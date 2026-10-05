@@ -88,6 +88,50 @@
     new IntersectionObserver(es => { if (es[0].isIntersecting && !started) { started = true; play(); } }, { threshold: .3 }).observe($('.ledger'));
   }
 
+  /* finance: who owes, and how many days — a new day accrues, Kaspi pays it down */
+  const fin = $('[data-finplay]');
+  if (fin) {
+    const rows = $$('[data-fin-row]', fin);
+    const days = rows.map(r => $('[data-fin-days]', r));
+    const sums = rows.map(r => $('[data-fin-sum]', r));
+    const event = $('[data-fin-event]', fin), total = $('[data-fin-total]', fin), toast = $('[data-fin-toast]', fin);
+    const kk = document.documentElement.lang === 'kk';
+    const dayWord = n => kk ? (n ? n + ' күн' : 'бүгін') : (n > 4 ? n + ' дней' : n > 1 ? n + ' дня' : n ? '1 день' : 'сегодня');
+    const base = [[3, 27000], [1, 12000], [0, 8500]];
+    const script = [
+      { row: 2, d: 1, s: 17000, total: '56 000 ₸', note: kk ? 'Жаңа күн: Асхатқа 8 500 ₸ есептелді' : 'Новый день: Асхату начислено 8 500 ₸', step: 'day' },
+      { row: 0, d: 2, s: 18000, total: '47 000 ₸', note: kk ? 'Kaspi: Ерланнан +9 000 ₸' : 'Kaspi: +9 000 ₸ от Ерлана', step: 'pay', toast: kk ? '9 000 ₸ түсті · 2 күн қалды' : '9 000 ₸ зачислено · осталось 2 дня' },
+      { row: 2, d: 0, s: 8500, total: '38 500 ₸', note: kk ? 'Қолма-қол: 8 500 ₸ менеджер белгіледі' : 'Наличные: 8 500 ₸ отметил менеджер', step: 'cash' },
+    ];
+    const paint = (state, hot) => {
+      rows.forEach((r, i) => {
+        r.classList.toggle('is-hot', state[i][0] >= 2);
+        r.classList.toggle('is-in', i === hot);
+        if (days[i]) days[i].textContent = dayWord(state[i][0]);
+        if (sums[i]) sums[i].textContent = fmt(state[i][1]) + ' ₸';
+      });
+    };
+    const state = base.map(x => x.slice());
+    paint(state, -1);
+    if (!reduced) {
+      let n = 0, started = false;
+      const loop = async () => {
+        while (true) {
+          await wait(2400);
+          const s = script[n % script.length]; n++;
+          state[s.row] = [s.d, s.s];
+          paint(state, s.row);
+          if (total) total.textContent = s.total;
+          fin.dataset.step = s.step;
+          if (toast && s.toast) toast.textContent = s.toast;
+          if (event) { event.classList.add('is-out'); await wait(360); event.textContent = s.note; event.classList.remove('is-out'); }
+          if (n % script.length === 0) { await wait(2600); base.forEach((b, i) => state[i] = b.slice()); paint(state, -1); if (total) total.textContent = '47 500 ₸'; fin.dataset.step = '0'; }
+        }
+      };
+      new IntersectionObserver(es => { if (es[0].isIntersecting && !started) { started = true; loop(); } }, { threshold: .35 }).observe(fin);
+    }
+  }
+
   /* driver pay scene: debt → pick days → Kaspi → posted */
   const pay = $('[data-payplay]');
   if (pay) {
