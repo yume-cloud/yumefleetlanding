@@ -575,6 +575,14 @@ h1 .tag,h2 .tag{font-size:12px;padding:3px 9px;vertical-align:middle}
 /* phero with screenshot */
 .phero--grid .wrap{display:grid;grid-template-columns:1.05fr 1fr;gap:48px;align-items:start}
 .phero__vis img{width:100%;border-radius:14px;border:1px solid var(--line);box-shadow:var(--shadow);background:#fff}
+.driverplay{position:relative}
+.dvcard{background:#fff;border:1px solid var(--line);border-radius:var(--r-lg);padding:22px;box-shadow:var(--shadow);display:grid;gap:16px}
+.dvcard header{display:flex;justify-content:space-between;align-items:baseline}
+.dvcard header small{color:var(--muted);font-size:13px}
+.dvcard__rows{display:grid;gap:8px}
+.dvcard__rows div{display:flex;justify-content:space-between;gap:12px;align-items:baseline;padding:10px 12px;border-radius:10px;background:var(--bg)}
+.dvcard__rows small{color:var(--muted);font-weight:650}
+.dvcard__rows b{font-size:15px;letter-spacing:-.02em;text-align:right}
 .drvplay{position:relative}
 .dcard{background:#fff;border:1px solid var(--line);border-radius:var(--r-lg);padding:22px;box-shadow:var(--shadow);display:flex;flex-direction:column;gap:14px}
 .dcard header{display:flex;justify-content:space-between;align-items:baseline}
@@ -596,7 +604,7 @@ h1 .tag,h2 .tag{font-size:12px;padding:3px 9px;vertical-align:middle}
 .rcard__kinds button{min-height:46px;border:1px solid var(--line);border-radius:12px;background:var(--bg);color:var(--muted);font:inherit;font-size:14px;font-weight:700;cursor:pointer;transition:transform .15s var(--ease)}
 .rcard__kinds button.is-press{transform:scale(.97)}
 .rcard__kinds button.is-on{background:var(--yellow);border-color:var(--yellow);color:var(--ink)}
-.rcard__facts{position:relative;min-height:176px;flex:none}
+.rcard__facts{position:relative;min-height:176px;flex:none;overflow:visible}
 .rcard__facts>[data-rent-fact]{position:absolute;inset:0;display:flex;flex-direction:column;gap:4px;padding:14px 16px;border-radius:12px;background:#fff;border:1px solid var(--line);opacity:0;transform:translateY(8px);transition:opacity .45s var(--ease),transform .45s var(--ease);pointer-events:none}
 .rcard__facts>[data-rent-fact].is-on{opacity:1;transform:none}
 .rcard__facts b{font-size:18px;letter-spacing:-.03em}
