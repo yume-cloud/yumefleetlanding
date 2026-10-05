@@ -149,7 +149,7 @@
   if (ov) {
     const tabs = $$('[data-drv-tab]', ov), panes = $$('[data-drv-pane]', ov);
     const order = [0, 2, 4];
-    const set = i => { ov.dataset.tab = i; tabs.forEach(t => t.classList.toggle('is-on', t.dataset.drvTab === String(i))); panes.forEach(p => p.classList.toggle('is-on', p.dataset.drvPane === String(i))); };
+    const set = i => { const shown = panes.some(p => p.dataset.drvPane === String(i)) ? i : 0; ov.dataset.tab = shown; tabs.forEach(t => t.classList.toggle('is-on', t.dataset.drvTab === String(shown))); panes.forEach(p => p.classList.toggle('is-on', p.dataset.drvPane === String(shown))); };
     set(0);
     const title = ov.closest('.phero')?.querySelector('h1');
     const vis = ov.closest('.phero__vis');
@@ -165,6 +165,27 @@
       const aim = i => { const b = tabs.find(t => t.dataset.drvTab === String(i)).getBoundingClientRect(), r = ov.getBoundingClientRect(); if (cur) { cur.style.left = (b.left - r.left + 10) + 'px'; cur.style.top = (b.top - r.top + 6) + 'px'; } };
       const loop = async () => { while (true) { const i = order[n % order.length]; aim(i); cur && (cur.style.opacity = '1'); await wait(700); ov.dataset.press = '1'; await wait(150); set(i); ov.dataset.press = '0'; n++; await wait(1600); } };
       new IntersectionObserver(es => { if (es[0].isIntersecting && !started) { started = true; loop(); } }, { threshold: .35 }).observe(ov);
+    }
+  }
+
+  /* vehicle card: cursor opens ТО, then Доход */
+  const veh = $('[data-vehplay]');
+  if (veh) {
+    const tabs = $$('[data-veh-tab]', veh), panes = $$('[data-veh-pane]', veh);
+    const order = [0, 1, 3];
+    const set = i => { const shown = panes.some(p => p.dataset.vehPane === String(i)) ? i : 0; veh.dataset.tab = shown; tabs.forEach(t => t.classList.toggle('is-on', t.dataset.vehTab === String(shown))); panes.forEach(p => p.classList.toggle('is-on', p.dataset.vehPane === String(shown))); };
+    set(0);
+    const title = veh.closest('.phero')?.querySelector('h1');
+    const vis = veh.closest('.phero__vis');
+    const fit = () => { if (!title || !vis || matchMedia('(max-width: 980px)').matches) { if (vis) vis.style.marginTop = ''; return; } vis.style.marginTop = (title.getBoundingClientRect().top - title.closest('.wrap').getBoundingClientRect().top) + 'px'; };
+    fit(); addEventListener('resize', fit);
+    tabs.forEach(t => t.addEventListener('click', () => set(Number(t.dataset.vehTab))));
+    if (!(reduced || matchMedia('(max-width: 900px)').matches)) {
+      const cur = $('.ovcur', veh);
+      let n = 1, started = false;
+      const aim = i => { const b = tabs.find(t => t.dataset.vehTab === String(i)).getBoundingClientRect(), r = veh.getBoundingClientRect(); if (cur) { cur.style.left = (b.left - r.left + 10) + 'px'; cur.style.top = (b.top - r.top + 6) + 'px'; } };
+      const loop = async () => { while (true) { const i = order[n % order.length]; aim(i); cur && (cur.style.opacity = '1'); await wait(700); veh.dataset.press = '1'; await wait(150); set(i); veh.dataset.press = '0'; n++; await wait(1600); } };
+      new IntersectionObserver(es => { if (es[0].isIntersecting && !started) { started = true; loop(); } }, { threshold: .35 }).observe(veh);
     }
   }
 
