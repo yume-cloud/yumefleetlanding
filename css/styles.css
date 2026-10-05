@@ -575,6 +575,24 @@ h1 .tag,h2 .tag{font-size:12px;padding:3px 9px;vertical-align:middle}
 /* phero with screenshot */
 .phero--grid .wrap{display:grid;grid-template-columns:1.05fr 1fr;gap:48px;align-items:center}
 .phero__vis img{width:100%;border-radius:14px;border:1px solid var(--line);box-shadow:var(--shadow);background:#fff}
+.rentplay{min-height:420px}
+.rcard{background:#fff;border:1px solid var(--line);border-radius:var(--r-lg);padding:22px;box-shadow:var(--shadow);display:flex;flex-direction:column;gap:12px}
+.rcard header{display:flex;align-items:center;gap:12px}
+.rcard header div{display:grid;gap:2px}
+.rcard header small{color:var(--muted);font-size:13px}
+.rcard__due{display:flex;justify-content:space-between;align-items:baseline}
+.rcard__due small{color:var(--muted);font-size:13px}
+.rcard__due b{font-size:32px;font-weight:800;letter-spacing:-.03em;color:var(--bad);transition:color .4s}
+.rentplay[data-step="pay"] .rcard__due b{color:var(--ink)}
+.rcard__tabs{display:flex;gap:8px;font-size:13px;font-weight:700}
+.rcard__tabs i{font-style:normal;padding:8px 12px;border-radius:9px;background:var(--ink);color:#fff}
+.rcard__tabs span{padding:8px 12px;border-radius:9px;color:var(--muted);border:1px solid var(--line)}
+.rcard__days{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+.rcard__days li{display:flex;justify-content:space-between;padding:10px 12px;border-radius:10px;background:var(--bg);font-weight:600}
+.rcard__days li.is-paid{background:var(--ok-soft);color:var(--ok)}
+.rcard__pay{padding:12px;border-radius:10px;background:var(--yellow-tint);font-weight:700;text-align:center;opacity:0;transform:translateY(6px);transition:opacity .5s var(--ease),transform .5s var(--ease)}
+.rentplay[data-step="pay"] .rcard__pay{opacity:1;transform:none}
+@media (max-width:900px){.rentplay{min-height:0}.rcard__pay{opacity:1;transform:none}.rcard__due b{color:var(--ink)}}
 .phero--grid .lead{max-width:none}
 /* карточки: своя скруглённая форма и тень уже нарисованы в картинке — рамка скриншота не нужна */
 .phero__vis--card img,.promo__vis--card img{display:block;width:100%;max-width:520px;margin-inline:auto;border:0;border-radius:0;background:none;box-shadow:none}

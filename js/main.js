@@ -144,6 +144,21 @@
     }
   }
 
+  /* rental card: debt, then a Kaspi day is paid. Static on a phone. */
+  const rent = $('[data-rentplay]');
+  if (rent) {
+    const due = $('[data-rent-due]', rent), day = $$('[data-rent-day]', rent).slice(-1)[0];
+    const narrow = matchMedia('(max-width: 900px)').matches;
+    const set = step => { rent.dataset.step = step; if (due) due.textContent = (step === 'pay' ? '−18 000' : '−27 000') + ' ₸'; day?.classList.toggle('is-paid', step === 'pay'); };
+    if (reduced || narrow) set('pay');
+    else {
+      const steps = [['base', 1600], ['pay', 2200]];
+      let n = 0, started = false;
+      const loop = async () => { while (true) { const [step, pause] = steps[n % steps.length]; set(step); n++; await wait(pause); } };
+      new IntersectionObserver(es => { if (es[0].isIntersecting && !started) { started = true; loop(); } }, { threshold: .35 }).observe(rent);
+    }
+  }
+
   /* fine: protocol arrives, driver is found, amount joins his debt */
   const fine = $('[data-fineplay]');
   if (fine) {

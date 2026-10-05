@@ -33,7 +33,7 @@ UI = {
     pay_days=['1 сент', '2 сент', '3 сент'], pay_pick='Выбрать дни', pay_kaspi='Оплатить в Kaspi',
     pay_done='Оплачено', pay_done_sub='Зачислено в аренду', pay_toast='12 000 ₸ зачислено в аренду',
     pay_caps=['Видит долг по дням', 'Сам выбирает дни', 'Платит в Kaspi'],
-   bc_type='Аренда под выкуп', bc_price='Стоимость выкупа', bc_saved='Накоплено', bc_left='Осталось', bc_next='Ближайший платёж', bc_next_v='9 000 ₸ · завтра', bc_steps=['Взнос', 'Выкуп', 'Выкуплено'], bc_line='Kaspi · +9 000 ₸ · в выкуп', bc_toast='9 000 ₸ зачислено в выкуп', bc_setup='Аренда под выкуп · 7 200 000 ₸', bc_form='Новая аренда под выкуп', bc_create='Создать аренду', bc_fields=['Водитель', 'Машина', 'Тип', 'Стоимость выкупа', 'Взнос', 'Ставка в день'], bc_vals=['Ерлан С.', '015 ADM 02', 'Аренда под выкуп', '7 200 000 ₸', '1 500 000 ₸', '9 000 ₸'], more_buyout='Подробнее про выкуп', more_fines='Подробнее про штрафы', fines_alt='Карточка штрафа ПДД: нарушение, сумма, машина и водитель', fn_title='Штраф ПДД', fn_offence='Превышение скорости', fn_when='12 сент · 14:20', fn_who='Ищем водителя…', fn_found='Ерлан С. · был за рулём', fn_sum='21 625 ₸', fn_disc='со скидкой 10 812 ₸ · до 27 сент', fn_debt='Добавлен к долгу Ерлана', fn_toast='Штраф привязан к водителю', fn_cam='Камера · пр. Абая', fn_shot='Снимок с камеры',
+   bc_type='Аренда под выкуп', bc_price='Стоимость выкупа', bc_saved='Накоплено', bc_left='Осталось', bc_next='Ближайший платёж', bc_next_v='9 000 ₸ · завтра', bc_steps=['Взнос', 'Выкуп', 'Выкуплено'], bc_line='Kaspi · +9 000 ₸ · в выкуп', bc_toast='9 000 ₸ зачислено в выкуп', bc_setup='Аренда под выкуп · 7 200 000 ₸', bc_form='Новая аренда под выкуп', bc_create='Создать аренду', bc_fields=['Водитель', 'Машина', 'Тип', 'Стоимость выкупа', 'Взнос', 'Ставка в день'], bc_vals=['Ерлан С.', '015 ADM 02', 'Аренда под выкуп', '7 200 000 ₸', '1 500 000 ₸', '9 000 ₸'], more_buyout='Подробнее про выкуп', more_fines='Подробнее про штрафы', fines_alt='Карточка штрафа ПДД: нарушение, сумма, машина и водитель', rent_on='в аренде', rent_due='Остаток к оплате', rent_tab='График', rent_tabs=['Платежи', 'Штрафы'], rent_days=['10 сент', '11 сент', '12 сент'], rent_pay='Kaspi · +9 000 ₸ · 12 сент', fn_title='Штраф ПДД', fn_offence='Превышение скорости', fn_when='12 сент · 14:20', fn_who='Ищем водителя…', fn_found='Ерлан С. · был за рулём', fn_sum='21 625 ₸', fn_disc='со скидкой 10 812 ₸ · до 27 сент', fn_debt='Добавлен к долгу Ерлана', fn_toast='Штраф привязан к водителю', fn_cam='Камера · пр. Абая', fn_shot='Снимок с камеры',
    all_ints='Все интеграции', price_btn='Узнать цену на демо',
    c_wa='WhatsApp, самый быстрый способ', c_wa_sub='Демо, вопросы по продукту и переходу', c_phone='Телефон', c_phone_sub='Пн–Пт 9:00–19:00, Сб 10:00–16:00 по Алматы', c_inst='Instagram', c_inst_sub='Новости продукта и парков', c_yt='YouTube', c_yt_sub='Видео о работе системы', c_sales='Продажи и партнёрство', c_sales_sub='Коммерческие предложения, интеграции, договоры', c_sup='Поддержка парков', c_sup_sub='Вопросы по работе системы', c_office='Офис', c_city='Алматы, Казахстан', c_office_sub='ТОО «Yume.Cloud». Встречи по договорённости, демо по видеосвязи.', c_login='Вход для парков', c_login_sub='Кабинет парка', c_form_h='Записаться на демо', c_form_p='Покажем систему за 20 минут на примере парка вашего размера.', crumbs='Хлебные крошки',
    t404='Страница не найдена', h404='Такой страницы нет', p404='Возможно, ссылка устарела. Вот куда можно пойти дальше.', to_home='На главную',
@@ -54,7 +54,7 @@ UI = {
     pay_days=['1 қыр', '2 қыр', '3 қыр'], pay_pick='Күндерді таңдау', pay_kaspi='Kaspi-де төлеу',
     pay_done='Төленді', pay_done_sub='Жалдауға түсті', pay_toast='12 000 ₸ жалдауға түсті',
     pay_caps=['Күндік қарызды көреді', 'Күндерді өзі таңдайды', 'Kaspi-де төлейді'],
-   bc_type='Сатып алумен жалдау', bc_price='Сатып алу құны', bc_saved='Жиналды', bc_left='Қалды', bc_next='Келесі төлем', bc_next_v='9 000 ₸ · ертең', bc_steps=['Жарна', 'Сатып алу', 'Сатып алынды'], bc_line='Kaspi · +9 000 ₸ · сатып алуға', bc_toast='9 000 ₸ сатып алуға түсті', bc_setup='Сатып алумен жалдау · 7 200 000 ₸', bc_form='Жаңа сатып алумен жалдау', bc_create='Жалдау құру', bc_fields=['Жүргізуші', 'Көлік', 'Түрі', 'Сатып алу құны', 'Жарна', 'Күндік ставка'], bc_vals=['Ерлан С.', '015 ADM 02', 'Сатып алумен жалдау', '7 200 000 ₸', '1 500 000 ₸', '9 000 ₸'], more_buyout='Сатып алу туралы толығырақ', more_fines='Айыппұлдар туралы толығырақ', fines_alt='ЖҚЕ айыппұл картасы: бұзушылық, сома, көлік және жүргізуші', fn_title='ЖҚЕ айыппұлы', fn_offence='Жылдамдықты асыру', fn_when='12 қыр · 14:20', fn_who='Жүргізушіні іздейміз…', fn_found='Ерлан С. · рульде болған', fn_sum='21 625 ₸', fn_disc='жеңілдікпен 10 812 ₸ · 27 қыр дейін', fn_debt='Ерланның қарызына қосылды', fn_toast='Айыппұл жүргізушіге байланды', fn_cam='Камера · Абай даңғылы', fn_shot='Камерадағы сурет',
+   bc_type='Сатып алумен жалдау', bc_price='Сатып алу құны', bc_saved='Жиналды', bc_left='Қалды', bc_next='Келесі төлем', bc_next_v='9 000 ₸ · ертең', bc_steps=['Жарна', 'Сатып алу', 'Сатып алынды'], bc_line='Kaspi · +9 000 ₸ · сатып алуға', bc_toast='9 000 ₸ сатып алуға түсті', bc_setup='Сатып алумен жалдау · 7 200 000 ₸', bc_form='Жаңа сатып алумен жалдау', bc_create='Жалдау құру', bc_fields=['Жүргізуші', 'Көлік', 'Түрі', 'Сатып алу құны', 'Жарна', 'Күндік ставка'], bc_vals=['Ерлан С.', '015 ADM 02', 'Сатып алумен жалдау', '7 200 000 ₸', '1 500 000 ₸', '9 000 ₸'], more_buyout='Сатып алу туралы толығырақ', more_fines='Айыппұлдар туралы толығырақ', fines_alt='ЖҚЕ айыппұл картасы: бұзушылық, сома, көлік және жүргізуші', rent_on='жалдауда', rent_due='Төлемге қалды', rent_tab='Кесте', rent_tabs=['Төлемдер', 'Айыппұлдар'], rent_days=['10 қыр', '11 қыр', '12 қыр'], rent_pay='Kaspi · +9 000 ₸ · 12 қыр', fn_title='ЖҚЕ айыппұлы', fn_offence='Жылдамдықты асыру', fn_when='12 қыр · 14:20', fn_who='Жүргізушіні іздейміз…', fn_found='Ерлан С. · рульде болған', fn_sum='21 625 ₸', fn_disc='жеңілдікпен 10 812 ₸ · 27 қыр дейін', fn_debt='Ерланның қарызына қосылды', fn_toast='Айыппұл жүргізушіге байланды', fn_cam='Камера · Абай даңғылы', fn_shot='Камерадағы сурет',
    all_ints='Барлық интеграциялар', price_btn='Бағаны демода білу',
    c_wa='WhatsApp, ең жылдам тәсіл', c_wa_sub='Демо, өнім және көшу бойынша сұрақтар', c_phone='Телефон', c_phone_sub='Дс–Жм 9:00–19:00, Сб 10:00–16:00, Алматы уақыты', c_inst='Instagram', c_inst_sub='Өнім және парктер жаңалықтары', c_yt='YouTube', c_yt_sub='Жүйенің жұмысы туралы бейнелер', c_sales='Сату және серіктестік', c_sales_sub='Коммерциялық ұсыныстар, интеграциялар, шарттар', c_sup='Парктерді қолдау', c_sup_sub='Жүйенің жұмысы бойынша сұрақтар', c_office='Кеңсе', c_city='Алматы, Қазақстан', c_office_sub='«Yume.Cloud» ЖШС. Кездесулер келісім бойынша, демо бейнебайланыс арқылы.', c_login='Парктер үшін кіру', c_login_sub='Парк кабинеті', c_form_h='Демоға жазылу', c_form_p='Жүйені 20 минутта сіздің парк көлеміндегі мысалда көрсетеміз.', crumbs='Нан үгінділері',
    t404='Бет табылмады', h404='Мұндай бет жоқ', p404='Сілтеме ескірген болуы мүмкін. Әрі қарай қайда баруға болады.', to_home='Басты бетке',
@@ -478,9 +478,23 @@ def generic_section(sec, R, alt):
         return cta(sec, R)
     return ''
 
-def phero(sec, crumbs, R, extra='', img=None, logo=''):
+def rent_scene():
+    days = ''.join(f'<li data-rent-day><span>{html.escape(d)}</span><b>9 000 ₸</b></li>' for d in T('rent_days'))
+    return f'''<div class="phero__vis" data-reveal="scale"><div class="rentplay" data-rentplay data-step="base" aria-hidden="true">
+      <div class="rcard">
+        <header><span class="plate">015 ADM 02</span><div><b>Ерлан С.</b><small>Chevrolet Cobalt · {T("rent_on")}</small></div></header>
+        <p class="rcard__due"><small>{T("rent_due")}</small><b data-rent-due>−27 000 ₸</b></p>
+        <p class="rcard__tabs"><i>{T("rent_tab")}</i><span>{T("rent_tabs")[0]}</span><span>{T("rent_tabs")[1]}</span></p>
+        <ul class="rcard__days">{days}</ul>
+        <div class="rcard__pay" data-rent-pay>{T("rent_pay")}</div>
+      </div>
+    </div></div>'''
+
+def phero(sec, crumbs, R, extra='', img=None, logo='', vis=''):
     lead = ''.join(f'<p class="lead">{inline(x)}</p>' for x in sec['paras'])
-    if img:
+    if vis:
+        shot = vis
+    elif img:
         w, h = IMG_WH.get(img[0], (0, 0))
         dims = f' width="{w}" height="{h}"' if w else ''
         card = ' phero__vis--card' if img[0].startswith('cards/') else ''
@@ -490,7 +504,7 @@ def phero(sec, crumbs, R, extra='', img=None, logo=''):
     eb = eyebrow(sec)
     if logo and eb:
         eb = eb.replace('<p class="eyebrow">', f'<p class="eyebrow eyebrow--logo">{logo}', 1)
-    return f'''<section class="phero{" phero--grid" if img else ""}">
+    return f'''<section class="phero{" phero--grid" if img or vis else ""}">
   <div class="hero__checks"></div>
   <div class="wrap">
     <div>
@@ -697,7 +711,7 @@ def inner(p):
     hero = next((s for s in secs if s['type'] == 'hero'), None)
     body = ''
     if hero:
-        body += phero(hero, crumbs_for(p, R), R, img=FEATURE_IMG.get(p['path']), logo=int_logo(p['path'], R))
+        body += phero(hero, crumbs_for(p, R), R, img=None if p['path'] == '/features/rentals/' else FEATURE_IMG.get(p['path']), logo=int_logo(p['path'], R), vis=rent_scene() if p['path'] == '/features/rentals/' else '')
         desc = strip_md(' '.join(hero['paras']))[:300]
     else:
         desc = strip_md(p['title'])
