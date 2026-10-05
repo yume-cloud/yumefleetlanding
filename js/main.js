@@ -77,7 +77,7 @@
     const play = async () => {
       let k = 0;
       while (true) {
-        await wait(reduced ? 3000 : 2600);
+        await wait(reduced ? 3000 : 3400);
         const s = script[k % script.length]; k++;
         rows[s.i][4] = s.bal; render(rows, s.i);
         const ev = $('.ledger__event'); if (ev) { ev.textContent = s.note; ev.classList.remove('is-flash'); void ev.offsetWidth; ev.classList.add('is-flash'); }
