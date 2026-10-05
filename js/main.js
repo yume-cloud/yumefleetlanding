@@ -149,7 +149,7 @@
   if (rent) {
     const kinds = $$('[data-rent-kind]', rent), facts = $$('[data-rent-fact]', rent);
     const narrow = matchMedia('(max-width: 900px)').matches;
-    const set = i => { rent.dataset.kind = i; kinds.forEach(k => k.classList.toggle('is-on', k.dataset.rentKind === String(i))); facts.forEach(f => f.classList.toggle('is-on', f.dataset.rentFact === String(i))); };
+    const set = i => { rent.dataset.kind = i; kinds.forEach(k => k.classList.toggle('is-on', k.dataset.rentKind === String(i))); facts.forEach(f => f.classList.toggle('is-on', f.dataset.rentFact === String(i))); rent.querySelector('.rcard__facts').style.minHeight = (facts[i].offsetHeight || 148) + 'px'; };
     set(0);
     const title = document.querySelector('.phero h1');
     const vis = rent.closest('.phero__vis');
