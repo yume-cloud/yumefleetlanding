@@ -585,7 +585,7 @@ h1 .tag,h2 .tag{font-size:12px;padding:3px 9px;vertical-align:middle}
 .rcard__kinds button{min-height:0;border:1px solid var(--line);border-radius:10px;background:var(--bg);color:var(--muted);font:inherit;font-size:13px;font-weight:700;cursor:pointer;transition:transform .15s var(--ease)}
 .rcard__kinds button.is-press{transform:scale(.97)}
 .rcard__kinds button.is-on{background:var(--yellow);border-color:var(--yellow);color:var(--ink)}
-.rcard__facts{display:none}
+.rcard__facts{position:relative;min-height:52px;flex:none}
 .rcard__facts div{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:center;gap:6px;padding:16px;border-radius:12px;background:var(--bg);opacity:0;transform:translateY(8px);transition:opacity .45s var(--ease),transform .45s var(--ease)}
 .rcard__facts div.is-on{opacity:1;transform:none}
 .rcard__facts b{font-size:18px;letter-spacing:-.03em}
