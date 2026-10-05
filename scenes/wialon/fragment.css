@@ -1,0 +1,45 @@
+/* wialon hero scene — prefix gpsplay */
+.gpsplay{position:relative;width:100%;max-width:520px;margin-inline:auto;background:#fff;border:1px solid var(--line,#E3E3E3);border-radius:16px;box-shadow:var(--shadow,0 20px 40px -20px rgba(13,13,13,.25));padding:18px;color:#0D0D0D;font-variant-numeric:tabular-nums;box-sizing:border-box}
+.gpsplay *{box-sizing:border-box}
+.gpsplay__head{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:12px}
+.gpsplay__car{display:flex;align-items:center;gap:12px;min-width:0}
+.gpsplay__car div{display:flex;flex-direction:column;line-height:1.2;min-width:0}
+.gpsplay__car b{font-size:15px;font-weight:700;white-space:nowrap}
+.gpsplay__car span:not(.plate){font-size:12.5px;color:#727272;white-space:nowrap}
+.gpsplay__src{display:inline-flex;align-items:center;gap:6px;font-size:12px;font-weight:600;color:#727272;white-space:nowrap}
+.gpsplay__src i{width:8px;height:8px;border-radius:50%;background:#D9D9D9;transition:background .4s}
+.gpsplay[data-step="map"] .gpsplay__src i,.gpsplay[data-step="odo"] .gpsplay__src i,.gpsplay[data-step="done"] .gpsplay__src i{background:#2EA043}
+
+.gpsplay__tile{position:relative;border:1px solid #EDEDED;border-radius:12px;padding:14px 16px;background:#fff}
+.gpsplay__tile small{display:block;font-size:12px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:#727272}
+.gpsplay__tile em{display:block;font-style:normal;font-size:12.5px;color:#727272;margin-top:4px}
+.gpsplay__num,.gpsplay__who{display:block;font-size:26px;line-height:1.15;font-weight:800;letter-spacing:-.01em;margin-top:4px;white-space:nowrap}
+.gpsplay__row{display:grid;grid-template-columns:1fr 1.25fr;gap:10px;margin-top:10px}
+
+/* map: streets are static, the trail draws itself to the pin, pin appears at the end of the trail */
+.gpsplay__tile--map{padding:0;overflow:hidden;background:#F6F6F6}
+.gpsplay__lab{position:absolute;left:10px;top:8px;z-index:1;padding:6px 8px 7px;border-radius:8px;background:rgba(246,246,246,.92)}
+.gpsplay__lab em{margin-top:2px;font-size:14px;font-weight:700;color:#0D0D0D;opacity:0;transform:translateY(4px);transition:opacity .4s cubic-bezier(.3,.7,.2,1),transform .4s cubic-bezier(.3,.7,.2,1)}
+.gpsplay[data-step="map"] .gpsplay__lab em,.gpsplay[data-step="odo"] .gpsplay__lab em,.gpsplay[data-step="done"] .gpsplay__lab em{opacity:1;transform:none;transition-delay:1s}
+.gpsplay__map{display:block;width:100%;height:150px}
+.gpsplay__streets path{fill:none;stroke:#E1E1E1;stroke-width:6;stroke-linecap:round}
+.gpsplay__trail{fill:none;stroke:#F0B100;stroke-width:4;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:100;stroke-dashoffset:100;transition:stroke-dashoffset 1.3s cubic-bezier(.4,.6,.2,1)}
+.gpsplay[data-step="map"] .gpsplay__trail,.gpsplay[data-step="odo"] .gpsplay__trail,.gpsplay[data-step="done"] .gpsplay__trail{stroke-dashoffset:0}
+.gpsplay__pin{opacity:0;transform-box:fill-box;transform-origin:center;transition:opacity .3s;transition-delay:1.15s}
+.gpsplay[data-step="map"] .gpsplay__pin,.gpsplay[data-step="odo"] .gpsplay__pin,.gpsplay[data-step="done"] .gpsplay__pin{opacity:1}
+.gpsplay__pulse{fill:#F0B100;opacity:0;transform-box:fill-box;transform-origin:center}
+.gpsplay[data-step="odo"] .gpsplay__pulse,.gpsplay[data-step="done"] .gpsplay__pulse{animation:gpsplay-pulse 1.8s ease-out infinite}
+@keyframes gpsplay-pulse{0%{transform:scale(1);opacity:.5}100%{transform:scale(3);opacity:0}}
+
+.gpsplay__foot{margin:12px 0 0;font-size:12.5px;line-height:1.4;color:#727272;opacity:0;transition:opacity .5s}
+.gpsplay[data-step="done"] .gpsplay__foot{opacity:1}
+
+/* final state without motion: narrow screens and reduced motion */
+@media (max-width:900px),(prefers-reduced-motion:reduce){
+  .gpsplay__trail,.gpsplay__pin,.gpsplay__lab em,.gpsplay__src i,.gpsplay__foot{transition:none!important}
+  .gpsplay__pulse{animation:none!important;opacity:0!important}
+}
+@media (max-width:520px){
+  .gpsplay__row{grid-template-columns:1fr}
+  .gpsplay__num,.gpsplay__who{font-size:22px}
+}

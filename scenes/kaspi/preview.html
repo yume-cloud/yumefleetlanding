@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Сцена: Kaspi Pay — preview</title>
+<link rel="stylesheet" href="../../css/styles.css">
+<link rel="stylesheet" href="fragment.css">
+<style>
+  body{background:#FAFAFA}
+  .pv{width:1100px;margin:0 auto;padding:72px 0 80px;display:grid;grid-template-columns:1.05fr 1fr;gap:48px;align-items:start}
+  .pv h1{font-size:48px;margin-bottom:18px}
+  .pv .lead{max-width:none}
+</style>
+</head>
+<body>
+<section class="pv">
+  <div>
+    <p class="eyebrow">Kaspi Pay</p>
+    <h1>Водитель платит по ссылке. Оплата приходит в аренду сама.</h1>
+    <p class="lead"><strong>Одна ссылка на всю аренду.</strong> Водитель открывает её с телефона без пароля, выбирает дни и платит в Kaspi. Система подключается напрямую к Kaspi вашего парка, деньги сразу у вас, комиссию мы не берём.</p>
+  </div>
+  <div class="phero__vis">
+    <!-- fragment.html -->
+    <div class="kpay" data-kpay data-step="in" aria-hidden="true">
+      <div class="kpay__phone">
+        <header class="kpay__head">
+          <span class="plate">015 ADM 02</span>
+          <b>Chevrolet Cobalt · 2022</b>
+        </header>
+        <p class="kpay__who">Водитель <b>Ерлан С.</b> · ставка 9 000 ₸ в день</p>
+
+        <div class="kpay__debt">
+          <small>Долг по аренде</small>
+          <b data-kpay-debt>27 000 ₸</b>
+          <em data-kpay-debtnote>3 дня не оплачены</em>
+        </div>
+
+        <div class="kpay__pick">
+          <small>Какие дни закрываете</small>
+          <div class="kpay__days">
+            <button type="button" class="kpay__day" data-kpay-day="0"><span>4 окт</span><i>9 000 ₸</i></button>
+            <button type="button" class="kpay__day" data-kpay-day="1"><span>5 окт</span><i>9 000 ₸</i></button>
+            <button type="button" class="kpay__day" data-kpay-day="2"><span>6 окт</span><i>9 000 ₸</i></button>
+          </div>
+        </div>
+
+        <button type="button" class="kpay__btn" data-kpay-btn>
+          <span class="kpay__btn-a" data-kpay-btn-a>Выберите дни</span>
+          <span class="kpay__btn-b" data-kpay-btn-b>Оплатить в Kaspi · <b data-kpay-sum>0 ₸</b></span>
+        </button>
+
+        <div class="kpay__done" data-kpay-done>
+          <i>✓</i>
+          <span>Kaspi · <b data-kpay-paid>18 000 ₸</b> · зачислено в аренду</span>
+        </div>
+
+        <p class="kpay__foot">
+          <span>Ссылка одна на всю аренду</span>
+          <span>Комиссия Yume Fleet · <b>0 ₸</b></span>
+        </p>
+
+        <div class="kpay__sheet" data-kpay-sheet>
+          <div class="kpay__sheet-top"><b>Kaspi.kz</b><span data-kpay-sheet-st>Оплата</span></div>
+          <div class="kpay__sheet-sum"><small>К оплате</small><b data-kpay-sheet-sum>18 000 ₸</b></div>
+          <div class="kpay__sheet-row"><span>Получатель</span><b>Kaspi парка</b></div>
+          <div class="kpay__sheet-row"><span>Комиссия Yume Fleet</span><b>0 ₸</b></div>
+          <div class="kpay__sheet-bar"><i data-kpay-sheet-bar></i></div>
+        </div>
+      </div>
+
+      <svg class="kpay__cur" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 2.5v15.2l4.1-3.7 3.2 6.4 2.1-.9-3.2-6.3 5.6-.3z"/></svg>
+    </div>
+  </div>
+</section>
+<script src="fragment.js"></script>
+</body>
+</html>

@@ -197,7 +197,7 @@
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 </style>
-<link rel="stylesheet" href="../../css/styles.css?v=09c311d0">
+<link rel="stylesheet" href="../../css/styles.css?v=dd6fa318">
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Organization", "name": "Yume Fleet", "legalName": "ТОО «Yume.Cloud»", "url": "https://yumefleet.com/", "logo": "https://yumefleet.com/assets/logo/tile.svg", "telephone": "+77779479990", "address": {"@type": "PostalAddress", "addressLocality": "Алматы", "addressCountry": "KZ"}, "sameAs": ["https://www.instagram.com/yumecloudx/", "https://www.youtube.com/@yumecloud"]}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://yumefleet.com/"}, {"@type": "ListItem", "position": 2, "name": "Интеграции", "item": "https://yumefleet.com/integrations/"}, {"@type": "ListItem", "position": 3, "name": "GPS Wialon", "item": "https://yumefleet.com/integrations/wialon/"}]}</script>
 </head>
@@ -264,7 +264,47 @@
       <a class="btn btn--lg btn--yellow" href="#demo">Записаться на демо <svg><use href="#i-arrow"/></svg></a>
       <a class="btn btn--lg btn--ghost" href="https://wa.me/77779479990" rel="noopener"><svg><use href="#i-wa"/></svg> Написать в WhatsApp</a>
     </div>
-    </div><div class="phero__vis" data-reveal="scale"><img src="../../assets/img/gen/INT-wialon.webp" width="1500" height="750" alt="Местоположение и пробег машины через GPS Wialon" fetchpriority="high"></div>
+    </div><div class="phero__vis" data-reveal="scale"><div class="gpsplay" data-gpsplay data-step="0" aria-label="Карточка машины 015 ADM 02: местоположение по трекеру Wialon и пробег">
+  <div class="gpsplay__head">
+    <div class="gpsplay__car">
+      <span class="plate">015 ADM 02</span>
+      <div><b>Chevrolet Cobalt</b><span>2022 · в аренде</span></div>
+    </div>
+    <span class="gpsplay__src"><i></i>Wialon</span>
+  </div>
+
+  <section class="gpsplay__tile gpsplay__tile--map">
+    <div class="gpsplay__lab"><small>Местоположение</small><em class="gpsplay__city">Алматы</em></div>
+    <svg class="gpsplay__map" viewBox="0 0 460 150" preserveAspectRatio="none" aria-hidden="true">
+      <g class="gpsplay__streets">
+        <path d="M0 38 H460"/><path d="M0 96 H460"/><path d="M0 128 H460"/>
+        <path d="M70 0 V150"/><path d="M165 0 V150"/><path d="M262 0 V150"/><path d="M372 0 V150"/>
+        <path d="M0 68 H262"/><path d="M262 68 L460 20"/>
+      </g>
+      <path class="gpsplay__trail" pathLength="100" d="M18 128 H70 V96 H165 V38 H262 V68 L330 68"/>
+      <g class="gpsplay__pin" transform="translate(330 68)">
+        <circle class="gpsplay__pulse" r="8"/>
+        <circle r="7" fill="#fff" stroke="#0D0D0D" stroke-width="2"/>
+        <circle r="3" fill="#F0B100"/>
+      </g>
+    </svg>
+  </section>
+
+  <div class="gpsplay__row">
+    <section class="gpsplay__tile gpsplay__tile--odo">
+      <small>Пробег</small>
+      <b class="gpsplay__num" data-gpsplay-num="48312" data-gpsplay-suffix=" км" data-gpsplay-at="odo">0 км</b>
+      <em>по трекеру, без звонка водителю</em>
+    </section>
+    <section class="gpsplay__tile gpsplay__tile--rent">
+      <small>Аренда</small>
+      <b class="gpsplay__who">Ерлан С.</b>
+      <em>ставка 9 000 ₸ в сутки · сменщик Асан</em>
+    </section>
+  </div>
+
+  <p class="gpsplay__foot">Подключается по запросу: напишите, какие трекеры стоят в парке.</p>
+</div></div>
   </div>
 </section><section class="section section--card"><div class="wrap"><div class="sec-head"><div data-reveal><h2>Что это даёт</h2></div></div><div class="cards cards--3"><article class="card" data-reveal><h3>Местоположение</h3><p>Где машина сейчас — в системе, без отдельного кабинета.</p></article><article class="card" data-reveal><h3>Пробег</h3><p>Текущий пробег в карточке, не нужно звонить водителю.</p></article><article class="card" data-reveal><h3>Рядом с арендой</h3><p>Машина, водитель, аренда и GPS в одном месте.</p></article></div></div></section><section class="section">
   <div class="wrap prose" data-reveal><h2>Интеграция новая</h2><div class="prose__body"><p>GPS Wialon подключается по запросу. Напишите, какие трекеры стоят в парке, — посмотрим на демо.</p></div></div>
@@ -315,6 +355,6 @@
 <button class="to-top" aria-label="Наверх"><svg><use href="#i-up"/></svg></button>
 
 
-<script src="../../js/main.js?v=1e267d2b" defer></script>
+<script src="../../js/main.js?v=695155d7" defer></script>
 </body>
 </html>

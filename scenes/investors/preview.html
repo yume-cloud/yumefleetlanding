@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Preview · investors scene</title>
+<link rel="stylesheet" href="../../assets/fonts/fonts.css">
+<link rel="stylesheet" href="../../css/styles.css">
+<link rel="stylesheet" href="fragment.css">
+<style>body{background:var(--bg)} .pv{width:1100px;margin:0 auto;padding:72px 0;display:grid;grid-template-columns:1.05fr 1fr;gap:48px;align-items:start} .pv .eyebrow .tag{margin-left:0} .pv h1{font-size:52px;margin-bottom:18px}</style>
+</head><body>
+<main class="pv">
+  <div>
+    <div class="eyebrow">Новое</div>
+    <h1>Субаренда, инвесторы и лизинг в той же системе</h1>
+    <p class="lead">Машины инвесторов, <b>доля инвестора</b>, кредиты и лизинг парка. Больше не нужна отдельная таблица.</p>
+  </div>
+  <div class="phero__vis">
+<div class="invplay" data-invplay data-step="open" aria-hidden="true">
+  <div class="invplay__card invplay__card--inv">
+    <div class="invplay__head">
+      <span class="invplay__eyebrow">Ссылка для инвестора</span>
+    </div>
+    <div class="invplay__car">
+      <span class="plate plate--sm">015 ADM 02</span>
+      <span>Chevrolet Cobalt 2022</span>
+    </div>
+    <div class="invplay__row">
+      <span class="invplay__lbl">Доход машины · 30 дней</span>
+      <b class="invplay__num" data-inv-income>0 ₸</b>
+    </div>
+    <div class="invplay__share">
+      <div class="invplay__sharehead">
+        <span class="invplay__lbl">Доля инвестора 50 %</span>
+        <b class="invplay__num invplay__num--acc" data-inv-share>0 ₸</b>
+      </div>
+      <div class="invplay__bar" data-inv-bar><i></i></div>
+      <div class="invplay__split">
+        <span>Инвестору <b data-inv-share2>0 ₸</b></span>
+        <span>Парку <b data-inv-park>0 ₸</b></span>
+      </div>
+    </div>
+    <div class="invplay__lock" data-inv-lock>
+      <svg viewBox="0 0 16 16" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="7" width="10" height="7" rx="1.6"/><path d="M5.5 7V5a2.5 2.5 0 0 1 5 0v2"/></svg>
+      <span>Ставка аренды и водитель инвестору не показываются</span>
+    </div>
+  </div>
+
+  <div class="invplay__card invplay__card--lease">
+    <div class="invplay__head">
+      <span class="invplay__eyebrow">Лизинг</span>
+      <span class="invplay__period">банк</span>
+    </div>
+    <div class="invplay__lbl">Остаток</div>
+    <b class="invplay__big" data-inv-left>7 200 000 ₸</b>
+    <div class="invplay__of">из 7 200 000 ₸</div>
+    <svg class="invplay__chart" viewBox="0 0 240 96" preserveAspectRatio="none">
+      <defs>
+        <linearGradient id="invplay-g" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0" stop-color="#F0B100" stop-opacity=".35"/>
+          <stop offset="1" stop-color="#F0B100" stop-opacity="0"/>
+        </linearGradient>
+      </defs>
+      <path class="invplay__area" d="M0 94 C40 92 70 86 100 72 C135 56 170 38 200 22 L240 8 L240 96 L0 96 Z" fill="url(#invplay-g)"/>
+      <path class="invplay__line" data-inv-line d="M0 94 C40 92 70 86 100 72 C135 56 170 38 200 22 L240 8" fill="none" stroke="#F0B100" stroke-width="2.5" stroke-linecap="round"/>
+      <circle class="invplay__dot" cx="240" cy="8" r="4" fill="#0D0D0D"/>
+    </svg>
+    <div class="invplay__paid">
+      <span class="invplay__lbl">Выплачено банку</span>
+      <b data-inv-paid>0 ₸</b>
+    </div>
+  </div>
+</div>
+
+  </div>
+</main>
+<script src="fragment.js"></script>
+</body></html>

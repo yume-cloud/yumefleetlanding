@@ -197,7 +197,7 @@
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 </style>
-<link rel="stylesheet" href="../../css/styles.css?v=09c311d0">
+<link rel="stylesheet" href="../../css/styles.css?v=dd6fa318">
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Organization", "name": "Yume Fleet", "legalName": "ТОО «Yume.Cloud»", "url": "https://yumefleet.com/", "logo": "https://yumefleet.com/assets/logo/tile.svg", "telephone": "+77779479990", "address": {"@type": "PostalAddress", "addressLocality": "Алматы", "addressCountry": "KZ"}, "sameAs": ["https://www.instagram.com/yumecloudx/", "https://www.youtube.com/@yumecloud"]}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://yumefleet.com/"}, {"@type": "ListItem", "position": 2, "name": "Возможности", "item": "https://yumefleet.com/features/"}, {"@type": "ListItem", "position": 3, "name": "Смены и сменщики", "item": "https://yumefleet.com/features/shifts/"}]}</script>
 </head>
@@ -264,7 +264,53 @@
       <a class="btn btn--lg btn--yellow" href="#demo">Записаться на демо <svg><use href="#i-arrow"/></svg></a>
       <a class="btn btn--lg btn--ghost" href="https://wa.me/77779479990" rel="noopener"><svg><use href="#i-wa"/></svg> Написать в WhatsApp</a>
     </div>
-    </div><div class="phero__vis phero__vis--card" data-reveal="scale"><img src="../../assets/cards/rent.webp" width="1483" height="1080" alt="Карточка аренды: машина, водитель и сроки" fetchpriority="high"></div>
+    </div><div class="phero__vis" data-reveal="scale"><div class="shiftplay" data-shiftplay data-step="0">
+  <article class="shiftplay__card" aria-label="Одна машина, две аренды по сменам">
+    <header class="shiftplay__head">
+      <span class="plate">015 ADM 02</span>
+      <div>
+        <b>Chevrolet Cobalt 2022</b>
+        <small>Смены 12/12 · две аренды</small>
+      </div>
+    </header>
+
+    <div class="shiftplay__day" aria-hidden="true">
+      <i class="shiftplay__half shiftplay__half--d"><span>08:00</span>день<span>20:00</span></i>
+      <i class="shiftplay__half shiftplay__half--n">ночь<span>08:00</span></i>
+      <em class="shiftplay__fine" title="Штраф ПДД, 14:20">14:20</em>
+    </div>
+
+    <div class="shiftplay__tabs" role="tablist">
+      <button type="button" role="tab" data-shiftplay-tab="0" class="is-on">Ерлан С. · день</button>
+      <button type="button" role="tab" data-shiftplay-tab="1">Асан · ночь</button>
+    </div>
+
+    <div class="shiftplay__facts">
+      <section data-shiftplay-fact="0" class="is-on">
+        <div class="shiftplay__row">
+          <span>Долг по аренде</span>
+          <b class="shiftplay__sum" data-shiftplay-sum="18000">0 ₸</b>
+        </div>
+        <small>2 смены × 9 000 ₸ не оплачены</small>
+        <div class="shiftplay__bar" data-shiftplay-bar="5" aria-hidden="true"><i></i></div>
+        <small class="shiftplay__cap">Оплачено 5 смен из 7</small>
+        <div class="shiftplay__note shiftplay__note--fine">Штраф ПДД <b>21 625 ₸</b> · 14:20, его смена, был за рулём</div>
+      </section>
+
+      <section data-shiftplay-fact="1">
+        <div class="shiftplay__row">
+          <span>Долг по аренде</span>
+          <b class="shiftplay__sum" data-shiftplay-sum="0">0 ₸</b>
+        </div>
+        <small>7 смен × 9 000 ₸ оплачены</small>
+        <div class="shiftplay__bar" data-shiftplay-bar="7" aria-hidden="true"><i></i></div>
+        <small class="shiftplay__cap">Оплачено 7 смен из 7</small>
+        <div class="shiftplay__note shiftplay__note--ok">Штраф 21 625 ₸ в 14:20 не его: дневная смена. Штрафов ПДД нет</div>
+      </section>
+    </div>
+  </article>
+  <svg class="shiftplay__cur" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 2.5v15.2l4.1-3.7 3.2 6.4 2.1-.9-3.2-6.3 5.6-.3z"/></svg>
+</div></div>
   </div>
 </section><section class="section section--card"><div class="wrap"><div class="sec-head"><div data-reveal><h2>Как это работает</h2></div></div><div class="cards cards--3"><article class="card" data-reveal><h3>Сменщики</h3><p>На одну машину выдаются две аренды. Система спрашивает менеджера: <strong>это сменщики или ошибка</strong> выбора машины.</p></article><article class="card" data-reveal><h3>Вид смены</h3><p><strong>12/12</strong>: дневная и ночная смена. <strong>2/2</strong>: бригада A и бригада B.</p></article><article class="card" data-reveal><h3>Смена в условиях</h3><p>Смена записывается в условия аренды и видна в карточке аренды, в списке аренд и в карточке машины.</p></article><article class="card" data-reveal><h3>Отдельный долг</h3><p>Начисления и оплаты у каждого сменщика свои. Долг одного не ложится на другого.</p></article><article class="card" data-reveal><h3>Штрафы по сменам</h3><p>Штраф ПДД привязывается к тому, кто был за рулём. Если по времени не определить, штраф попадает в очередь <strong>«Требует внимания»</strong>, и менеджер решает сам.</p></article><article class="card" data-reveal><h3>Фильтр по сменам</h3><p>В списке аренд фильтр: со сменами или без.</p></article></div></div></section><section class="section">
   <div class="wrap prose" data-reveal><h2>Режим парка</h2><div class="prose__body"><p>Парк сам выбирает: одна машина только у одного водителя или разрешены сменщики.</p></div></div>
@@ -315,6 +361,6 @@
 <button class="to-top" aria-label="Наверх"><svg><use href="#i-up"/></svg></button>
 
 
-<script src="../../js/main.js?v=1e267d2b" defer></script>
+<script src="../../js/main.js?v=695155d7" defer></script>
 </body>
 </html>

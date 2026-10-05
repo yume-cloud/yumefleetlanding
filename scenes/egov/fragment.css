@@ -1,0 +1,58 @@
+/* scene: egov — /integrations/egov/ hero. Driver's phone: contract → tap eGov mobile → signing sheet → signed, PDF in the rental card. Prefix: egovplay, scope [data-egovplay] */
+.egovplay{--eg-ease:cubic-bezier(.22,1,.36,1);position:relative;width:100%;max-width:380px;margin-inline:auto;font-variant-numeric:tabular-nums;color:#0D0D0D}
+.egovplay__phone{position:relative;overflow:hidden;background:#fff;border:1px solid #E3E3E3;border-radius:16px;padding:22px 22px 20px;box-shadow:0 24px 60px -28px rgba(13,13,13,.28);display:grid;gap:14px;transition:opacity .5s var(--eg-ease),transform .5s var(--eg-ease),border-color .4s}
+.egovplay[data-step="reset"] .egovplay__phone{opacity:0;transform:translateY(10px)}
+.egovplay[data-step="signed"] .egovplay__phone,.egovplay[data-step="hold"] .egovplay__phone{border-color:#F0B100}
+
+.egovplay__head{display:grid;gap:4px}
+.egovplay__head small{font-size:12px;color:#727272}
+.egovplay__title{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap}
+.egovplay__title b{font-size:20px;font-weight:800;letter-spacing:-.02em}
+.egovplay__st{font-style:normal;font-size:12px;font-weight:700;padding:4px 10px;border-radius:999px;background:#F2F2F2;color:#727272;transition:background .35s,color .35s}
+.egovplay[data-step="signed"] .egovplay__st,.egovplay[data-step="hold"] .egovplay__st{background:#F0B100;color:#0D0D0D}
+
+.egovplay__rows{margin:0;display:grid;gap:8px}
+.egovplay__rows div{display:flex;align-items:center;justify-content:space-between;gap:12px;font-size:13.5px;padding-bottom:8px;border-bottom:1px solid #F0F0F0}
+.egovplay__rows dt{color:#727272}
+.egovplay__rows dd{margin:0;font-weight:600}
+.egovplay__from{margin:-6px 0 0;font-size:12px;color:#727272}
+
+/* button: two captions, one visible */
+.egovplay__btn{position:relative;display:grid;min-height:48px;padding:0 20px;border:0;border-radius:12px;background:#0D0D0D;color:#fff;font:inherit;font-size:15px;font-weight:700;line-height:1;cursor:pointer;overflow:hidden;transition:transform .15s var(--eg-ease),background .35s,color .35s}
+.egovplay__btn span{grid-area:1/1;display:flex;align-items:center;justify-content:center;gap:8px;white-space:nowrap;transition:opacity .3s}
+.egovplay__btn i{font-style:normal;display:grid;place-items:center;width:18px;height:18px;border-radius:50%;background:#0D0D0D;color:#F0B100;font-size:11px}
+.egovplay__btn-b{opacity:0}
+.egovplay__btn.is-press{transform:scale(.97)}
+.egovplay[data-step="signed"] .egovplay__btn,.egovplay[data-step="hold"] .egovplay__btn{background:#F0B100;color:#0D0D0D}
+.egovplay[data-step="signed"] .egovplay__btn-a,.egovplay[data-step="hold"] .egovplay__btn-a{opacity:0}
+.egovplay[data-step="signed"] .egovplay__btn-b,.egovplay[data-step="hold"] .egovplay__btn-b{opacity:1}
+.egovplay__hint{margin:-6px 0 0;font-size:12px;color:#727272;text-align:center}
+
+/* signed PDF card: grows in on the final step */
+.egovplay__pdf{display:flex;align-items:center;gap:12px;padding:12px 14px;border:1px solid #E3E3E3;border-radius:12px;background:#FAFAFA;max-height:0;padding-top:0;padding-bottom:0;margin-top:-14px;opacity:0;overflow:hidden;transform:translateY(6px);transition:max-height .5s var(--eg-ease),padding .5s var(--eg-ease),margin .5s var(--eg-ease),opacity .4s,transform .5s var(--eg-ease)}
+.egovplay[data-step="signed"] .egovplay__pdf,.egovplay[data-step="hold"] .egovplay__pdf{max-height:90px;padding-top:12px;padding-bottom:12px;margin-top:0;opacity:1;transform:none}
+.egovplay__pdf-ic{flex:none;display:grid;place-items:center;width:40px;height:44px;border-radius:8px;background:#0D0D0D;color:#F0B100;font-style:normal;font-size:11px;font-weight:800;letter-spacing:.04em}
+.egovplay__pdf b{display:block;font-size:13px;font-weight:700}
+.egovplay__pdf small{display:block;font-size:12px;color:#727272;margin-top:2px}
+
+/* eGov sheet slides up over the phone */
+.egovplay__sheet{position:absolute;left:0;right:0;bottom:0;z-index:2;background:#fff;border-top:1px solid #E3E3E3;border-radius:16px 16px 0 0;padding:18px 22px 20px;box-shadow:0 -18px 40px -20px rgba(13,13,13,.3);display:grid;gap:10px;transform:translateY(105%);transition:transform .55s var(--eg-ease)}
+.egovplay[data-step="sign"] .egovplay__sheet{transform:none}
+.egovplay__sheet-top{display:flex;justify-content:space-between;font-size:13px}
+.egovplay__sheet-top b{font-weight:800}
+.egovplay__sheet-top span{color:#727272}
+.egovplay__sheet-doc{display:grid;gap:2px}
+.egovplay__sheet-doc small{font-size:12px;color:#727272}
+.egovplay__sheet-doc b{font-size:20px;font-weight:800;letter-spacing:-.02em}
+.egovplay__sheet-row{display:flex;justify-content:space-between;font-size:13px;color:#727272}
+.egovplay__sheet-row b{color:#0D0D0D;font-weight:600}
+.egovplay__sheet-bar{height:6px;border-radius:999px;background:#F2F2F2;overflow:hidden;margin-top:4px}
+.egovplay__sheet-bar i{display:block;height:100%;width:100%;background:#F0B100;transform-origin:left;transform:scaleX(var(--p,0))}
+
+/* cursor: same SVG as the rental scene */
+.egovplay__cur{position:absolute;z-index:3;width:24px;height:24px;left:40%;top:60%;fill:#14141c;stroke:#fff;stroke-width:1.4;stroke-linejoin:round;filter:drop-shadow(0 3px 4px rgba(20,20,28,.3));pointer-events:none;opacity:0;transition:left .6s cubic-bezier(.4,0,.2,1),top .6s cubic-bezier(.4,0,.2,1),transform .15s,opacity .3s}
+.egovplay[data-press="1"] .egovplay__cur{transform:scale(.86)}
+
+@media (max-width:900px){.egovplay__cur{display:none}}
+@media (prefers-reduced-motion:reduce){.egovplay__cur{display:none}.egovplay *{transition:none!important;animation:none!important}}
+@media (max-width:420px){.egovplay__phone{padding:18px 16px 16px}.egovplay__sheet{padding:16px 16px 18px}}

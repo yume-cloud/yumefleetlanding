@@ -1,0 +1,69 @@
+/* scene: debtors — /integrations/debtors/ hero. Driver request: one registry row, "Проверяем…" → "Чисто", date stays in the card, issue unlocks. No cursor. Prefix: debtplay, scope [data-debtplay] */
+.debtplay{--dp-ease:cubic-bezier(.22,1,.36,1);position:relative;width:100%;max-width:440px;margin-inline:auto;font-variant-numeric:tabular-nums;color:#0D0D0D}
+.debtplay__card{position:relative;overflow:hidden;background:#fff;border:1px solid #E3E3E3;border-radius:16px;padding:22px 22px 20px;box-shadow:0 24px 60px -28px rgba(13,13,13,.28);display:grid;gap:14px;transition:opacity .5s var(--dp-ease),transform .5s var(--dp-ease),border-color .5s}
+.debtplay[data-step="reset"] .debtplay__card{opacity:0;transform:translateY(10px)}
+.debtplay[data-step="clean"] .debtplay__card,.debtplay[data-step="hold"] .debtplay__card{border-color:#F0B100}
+
+/* head: who + which car */
+.debtplay__head{display:flex;justify-content:space-between;align-items:flex-start;gap:12px}
+.debtplay__who{display:grid;gap:3px}
+.debtplay__who small{font-size:12px;color:#727272}
+.debtplay__who b{font-size:20px;font-weight:800;letter-spacing:-.02em;line-height:1.1}
+.debtplay__who span{font-size:12.5px;color:#727272;letter-spacing:.02em}
+.debtplay__car{display:grid;gap:5px;justify-items:end;text-align:right}
+.debtplay__car em{font-style:normal;font-size:12.5px;color:#727272;white-space:nowrap}
+
+/* the one registry row */
+.debtplay__row{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:12px 14px;border:1px solid #E3E3E3;border-radius:12px;background:#FAFAFA;transition:background .4s,border-color .4s}
+.debtplay[data-step="clean"] .debtplay__row,.debtplay[data-step="hold"] .debtplay__row{background:#FFF8E1;border-color:#F0B100}
+.debtplay__src{display:flex;align-items:center;gap:10px;min-width:0}
+.debtplay__src div{display:grid;gap:2px;min-width:0}
+.debtplay__src b{font-size:14px;font-weight:700;line-height:1.2}
+.debtplay__src span{font-size:11.5px;color:#727272;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.debtplay__ico{flex:none;width:30px;height:30px;border-radius:8px;background:#0D0D0D;display:grid;place-items:center;transition:background .4s}
+.debtplay__ico::before{content:"";width:12px;height:14px;border:2px solid #fff;border-radius:2px 2px 3px 3px;box-sizing:border-box;background:linear-gradient(#fff,#fff) 50% 45%/6px 1.5px no-repeat,linear-gradient(#fff,#fff) 50% 70%/6px 1.5px no-repeat}
+.debtplay[data-step="clean"] .debtplay__ico,.debtplay[data-step="hold"] .debtplay__ico{background:#1F9D5B}
+
+.debtplay__res{position:relative;flex:none;display:grid;font-size:13px;font-weight:700;white-space:nowrap}
+.debtplay__res span{grid-area:1/1;display:inline-flex;align-items:center;justify-content:flex-end;height:26px;padding:0 10px;border-radius:999px;transition:opacity .35s,transform .45s var(--dp-ease)}
+.debtplay__wait{color:#727272;background:#EDEDED}
+.debtplay__wait::after{content:"";display:inline-block;width:10px;height:10px;margin-left:6px;border-radius:50%;border:2px solid #C8C8C8;border-top-color:#727272;animation:debtplay-spin .8s linear infinite}
+.debtplay__ok{color:#fff;background:#1F9D5B;opacity:0;transform:scale(.85)}
+.debtplay[data-step="clean"] .debtplay__wait,.debtplay[data-step="hold"] .debtplay__wait{opacity:0}
+.debtplay[data-step="clean"] .debtplay__ok,.debtplay[data-step="hold"] .debtplay__ok{opacity:1;transform:none}
+.debtplay[data-step="in"] .debtplay__wait{opacity:0}
+@keyframes debtplay-spin{to{transform:rotate(360deg)}}
+
+/* progress: the bar travels, never jumps (rAF in js) */
+.debtplay__bar{height:5px;margin:-6px 2px 0;border-radius:999px;background:#EDEDED;overflow:hidden;transition:opacity .4s}
+.debtplay__bar i{display:block;height:100%;width:calc(var(--p,0)*100%);background:#F0B100;border-radius:999px;transition:background .4s}
+.debtplay[data-step="clean"] .debtplay__bar i,.debtplay[data-step="hold"] .debtplay__bar i{background:#1F9D5B}
+
+/* verdict line: two captions in one cell */
+.debtplay__verdict{position:relative;display:grid;margin:-2px 0 0;font-size:13px;color:#727272;line-height:1.35;min-height:18px}
+.debtplay__verdict span{grid-area:1/1;transition:opacity .35s}
+.debtplay__verdict b{color:#0D0D0D;font-weight:700}
+.debtplay__verdict-b{opacity:0}
+.debtplay[data-step="clean"] .debtplay__verdict-a,.debtplay[data-step="hold"] .debtplay__verdict-a{opacity:0}
+.debtplay[data-step="clean"] .debtplay__verdict-b,.debtplay[data-step="hold"] .debtplay__verdict-b{opacity:1}
+
+/* issue block: locked → unlocked */
+.debtplay__issue{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:12px 14px;border-radius:12px;background:#0D0D0D;color:#fff;transition:background .45s,color .45s}
+.debtplay__issue-txt{display:grid;gap:2px}
+.debtplay__issue-txt small{font-size:11.5px;opacity:.7}
+.debtplay__issue-txt b{grid-area:2/1;font-size:15px;font-weight:800;transition:opacity .35s}
+.debtplay__issue-b{opacity:0}
+.debtplay[data-step="clean"] .debtplay__issue-a,.debtplay[data-step="hold"] .debtplay__issue-a{opacity:0}
+.debtplay[data-step="clean"] .debtplay__issue-b,.debtplay[data-step="hold"] .debtplay__issue-b{opacity:1}
+.debtplay[data-step="clean"] .debtplay__issue,.debtplay[data-step="hold"] .debtplay__issue{background:#F0B100;color:#0D0D0D}
+.debtplay__lock{flex:none;position:relative;width:34px;height:34px;border-radius:50%;background:rgba(255,255,255,.14);display:grid;place-items:center;transition:background .45s}
+.debtplay[data-step="clean"] .debtplay__lock,.debtplay[data-step="hold"] .debtplay__lock{background:rgba(13,13,13,.1)}
+.debtplay__lock i{position:relative;display:block;width:14px;height:10px;border-radius:2px;background:currentColor;margin-top:6px;transition:transform .4s}
+.debtplay__lock i::before{content:"";position:absolute;left:2px;top:-7px;width:10px;height:10px;border:2px solid currentColor;border-bottom:0;border-radius:6px 6px 0 0;box-sizing:border-box;transform-origin:left bottom;transition:transform .45s var(--dp-ease)}
+.debtplay[data-step="clean"] .debtplay__lock i::before,.debtplay[data-step="hold"] .debtplay__lock i::before{transform:translateX(-5px) rotate(-28deg)}
+
+.debtplay__foot{margin:-2px 0 0;font-size:12px;color:#727272;line-height:1.4}
+
+@media (prefers-reduced-motion:reduce){.debtplay *{transition:none!important;animation:none!important}.debtplay__wait::after{display:none}}
+@media (max-width:900px){.debtplay__wait::after{display:none}}
+@media (max-width:420px){.debtplay__card{padding:18px 16px 16px}.debtplay__head{flex-direction:column}.debtplay__car{justify-items:start;text-align:left}.debtplay__src span{white-space:normal}}

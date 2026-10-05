@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Сцена: ИИ-ассистент — preview</title>
+<link rel="stylesheet" href="../../css/styles.css">
+<link rel="stylesheet" href="fragment.css">
+<style>
+  body{background:#FAFAFA}
+  .pv{width:1100px;margin:0 auto;padding:72px 0 80px;display:grid;grid-template-columns:1.05fr 1fr;gap:48px;align-items:start}
+  .pv h1{font-size:48px;margin-bottom:18px}
+  .pv .lead{max-width:none}
+</style>
+</head>
+<body>
+<section class="pv">
+  <div>
+    <p class="eyebrow">ИИ-ассистент</p>
+    <h1>Спросите о парке словами</h1>
+    <p class="lead">Ассистент отвечает на вопросы <strong>по данным вашего парка</strong>: аренды, водители, машины и деньги. Отчёт собирать не нужно.</p>
+  </div>
+  <div class="phero__vis">
+    <!-- fragment.html -->
+    <div class="aiplay" data-aiplay data-step="in" aria-hidden="true">
+      <div class="aiplay__card">
+        <header class="aiplay__head">
+          <span class="aiplay__src"><i></i>Главная парка · ИИ-ассистент</span>
+          <em class="aiplay__stage" data-aiplay-stage>Вопрос</em>
+        </header>
+
+        <div class="aiplay__ask">
+          <div class="aiplay__input" data-aiplay-input>
+            <span class="aiplay__ph" data-aiplay-ph>Спросите о парке словами…</span>
+            <span class="aiplay__text" data-aiplay-text></span><i class="aiplay__caret" data-aiplay-caret></i>
+          </div>
+          <button class="aiplay__btn" type="button" tabindex="-1" data-aiplay-btn><b data-aiplay-btn-b>Спросить</b></button>
+        </div>
+
+        <div class="aiplay__answer" data-aiplay-answer>
+          <div class="aiplay__skel" aria-hidden="true">
+            <i></i><i></i><i></i>
+            <div class="aiplay__think"><b></b><b></b><b></b><span>Смотрю аренды и долги</span></div>
+          </div>
+          <p class="aiplay__lead">Долг есть у <b>одного</b> водителя</p>
+          <div class="aiplay__row">
+            <div class="aiplay__who">
+              <b>Ерлан С.</b>
+              <small><span class="plate">015 ADM 02</span><span>Chevrolet Cobalt 2022</span></small>
+            </div>
+            <div class="aiplay__num">
+              <b data-aiplay-days>0 дней</b>
+              <small>просрочка</small>
+            </div>
+            <div class="aiplay__num aiplay__num--sum">
+              <b data-aiplay-sum>0 ₸</b>
+              <small>2 × 9 000 ₸ в день</small>
+            </div>
+          </div>
+          <p class="aiplay__foot">Второй сменщик Асан — без долга</p>
+        </div>
+
+        <div class="aiplay__steps">
+          <span data-aiplay-s0>Вопрос</span>
+          <span data-aiplay-s1>Данные парка</span>
+          <span data-aiplay-s2>Ответ</span>
+        </div>
+      </div>
+      <svg class="aiplay__cur" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 2.5v15.2l4.1-3.7 3.2 6.4 2.1-.9-3.2-6.3 5.6-.3z"/></svg>
+    </div>
+  </div>
+</section>
+<script src="fragment.js"></script>
+</body>
+</html>

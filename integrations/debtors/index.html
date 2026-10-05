@@ -197,7 +197,7 @@
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 </style>
-<link rel="stylesheet" href="../../css/styles.css?v=09c311d0">
+<link rel="stylesheet" href="../../css/styles.css?v=dd6fa318">
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Organization", "name": "Yume Fleet", "legalName": "ТОО «Yume.Cloud»", "url": "https://yumefleet.com/", "logo": "https://yumefleet.com/assets/logo/tile.svg", "telephone": "+77779479990", "address": {"@type": "PostalAddress", "addressLocality": "Алматы", "addressCountry": "KZ"}, "sameAs": ["https://www.instagram.com/yumecloudx/", "https://www.youtube.com/@yumecloud"]}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://yumefleet.com/"}, {"@type": "ListItem", "position": 2, "name": "Интеграции", "item": "https://yumefleet.com/integrations/"}, {"@type": "ListItem", "position": 3, "name": "Реестр должников", "item": "https://yumefleet.com/integrations/debtors/"}]}</script>
 </head>
@@ -264,7 +264,52 @@
       <a class="btn btn--lg btn--yellow" href="#demo">Записаться на демо <svg><use href="#i-arrow"/></svg></a>
       <a class="btn btn--lg btn--ghost" href="https://wa.me/77779479990" rel="noopener"><svg><use href="#i-wa"/></svg> Написать в WhatsApp</a>
     </div>
-    </div><div class="phero__vis" data-reveal="scale"><img src="../../assets/img/gen/INT-debtors.webp" width="1500" height="750" alt="Проверка водителя по реестру должников" fetchpriority="high"></div>
+    </div><div class="phero__vis" data-reveal="scale"><div class="debtplay" data-debtplay data-step="in" aria-hidden="true">
+  <div class="debtplay__card">
+    <header class="debtplay__head">
+      <div class="debtplay__who">
+        <small>Заявка из WhatsApp</small>
+        <b>Ерлан С.</b>
+        <span>ИИН 90••••••••12</span>
+      </div>
+      <div class="debtplay__car">
+        <span class="plate plate--sm">015 ADM 02</span>
+        <em>Chevrolet Cobalt · 2022</em>
+      </div>
+    </header>
+
+    <div class="debtplay__row">
+      <div class="debtplay__src">
+        <i class="debtplay__ico"></i>
+        <div>
+          <b>Реестр должников</b>
+          <span>data.egov.kz · запрос по ИИН</span>
+        </div>
+      </div>
+      <div class="debtplay__res">
+        <span class="debtplay__wait" data-debtplay-wait>Проверяем…</span>
+        <span class="debtplay__ok">✓ Чисто</span>
+      </div>
+    </div>
+    <div class="debtplay__bar"><i data-debtplay-bar></i></div>
+
+    <p class="debtplay__verdict">
+      <span class="debtplay__verdict-a">Запрос по ИИН отправлен</span>
+      <span class="debtplay__verdict-b">Исполнительных производств нет · проверено <b data-debtplay-date>6 окт, 10:42</b></span>
+    </p>
+
+    <div class="debtplay__issue">
+      <div class="debtplay__issue-txt">
+        <small>Выдача машины</small>
+        <b class="debtplay__issue-a">Ждёт проверки</b>
+        <b class="debtplay__issue-b">Можно выдавать</b>
+      </div>
+      <span class="debtplay__lock" aria-hidden="true"><i></i></span>
+    </div>
+
+    <p class="debtplay__foot">Результат и дата остаются в карточке водителя. Повторим перед договором.</p>
+  </div>
+</div></div>
   </div>
 </section><section class="section section--card"><div class="wrap"><div class="sec-head"><div data-reveal><h2>Зачем проверять</h2></div></div><div class="cards cards--3"><article class="card" data-reveal><h3>Исполнительные производства</h3><p>Видно, есть ли долги, по которым уже работают судебные исполнители.</p></article><article class="card" data-reveal><h3>До выдачи, а не после</h3><p>Проверка идёт на заявке и ещё раз перед подписанием договора.</p></article><article class="card" data-reveal><h3>Результат в карточке</h3><p>Дата и результат проверки остаются в карточке водителя.</p></article></div></div></section><section class="section"><div class="wrap"><div class="sec-head sec-head--center" data-reveal><div><p class="eyebrow">Как это работает</p><h2>Где проверка встречается в работе</h2></div></div><div class="flow flow--4"><div class="flow__line"><i></i></div><div class="step" data-reveal style="--d:0.0s"><div class="step__n"><svg><use href="#i-cal"/></svg></div><small>ШАГ 01</small><h3>Заявка из WhatsApp</h3><p>Кандидат написал — проверка до первого звонка.</p></div><div class="step" data-reveal style="--d:0.1s"><div class="step__n"><svg><use href="#i-upload"/></svg></div><small>ШАГ 02</small><h3>Перед договором</h3><p>Ещё одна проверка перед подписанием и выдачей.</p></div><div class="step" data-reveal style="--d:0.2s"><div class="step__n"><svg><use href="#i-doc"/></svg></div><small>ШАГ 03</small><h3>Чёрный список рядом</h3><p>Вместе с реестром проверяется <strong>общая база парков</strong>.</p></div><div class="step" data-reveal style="--d:0.3s"><div class="step__n"><svg><use href="#i-user"/></svg></div><small>ШАГ 04</small><h3>Уровень надёжности</h3><p>Система отмечает водителей <strong>в зоне риска</strong> по оплатам и истории.</p></div></div></div></section><section class="section section--card"><div class="wrap"><div class="sec-head"><div data-reveal><h2>Что ещё помогает решить</h2></div></div><div class="cards cards--3"><a class="card card--link" href="../../integrations/blacklist/" data-reveal><h3>Чёрный список парков</h3><p>Общая база проблемных водителей на Yume Fleet.</p><span class="link">Подробнее <svg><use href="#i-arrow"/></svg></span></a><article class="card" data-reveal><h3>Депозит</h3><p>Депозит по аренде и его остаток видно в карточке.</p></article><article class="card" data-reveal><h3>История аренд</h3><p>Прошлые аренды водителя, его долги и просрочки.</p></article></div></div></section><section class="section section--card"><div class="wrap"><div class="sec-head"><div data-reveal><p class="eyebrow">Ещё</p><h2>Другие интеграции</h2></div></div><div class="chips" data-reveal><a class="chip chip--logo" href="../../kaspi-pay/"><img src="../../assets/img/int/kaspi.png" alt="" width="20" height="20" loading="lazy">Kaspi Pay</a><a class="chip chip--logo" href="../../integrations/egov/"><img src="../../assets/img/int/egov.png" alt="" width="20" height="20" loading="lazy">eGov mobile</a><a class="chip chip--logo" href="../../integrations/erap/"><img src="../../assets/img/int/erap.svg" alt="" width="20" height="20" loading="lazy">Штрафы ПДД и ЕРАП</a><a class="chip chip--logo" href="../../integrations/blacklist/"><img src="../../assets/logo/tile-dark-yellow-mark.svg" alt="" width="20" height="20" loading="lazy">Чёрный список парков</a><a class="chip chip--logo" href="../../integrations/wazzup/"><img src="../../assets/img/int/wazzup.png" alt="" width="20" height="20" loading="lazy">WhatsApp через Wazzup</a><a class="chip chip--logo" href="../../integrations/wialon/"><img src="../../assets/img/int/wialon.png" alt="" width="20" height="20" loading="lazy">GPS Wialon</a><a class="chip chip--logo" href="../../integrations/ai/"><img src="../../assets/img/int/ai.svg" alt="" width="20" height="20" loading="lazy">ИИ-ассистент</a></div></div></section><section class="section section--yellow cta" id="demo">
   <div class="wrap">
@@ -313,6 +358,6 @@
 <button class="to-top" aria-label="Наверх"><svg><use href="#i-up"/></svg></button>
 
 
-<script src="../../js/main.js?v=1e267d2b" defer></script>
+<script src="../../js/main.js?v=695155d7" defer></script>
 </body>
 </html>

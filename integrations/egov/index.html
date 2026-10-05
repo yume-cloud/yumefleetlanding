@@ -197,7 +197,7 @@
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 </style>
-<link rel="stylesheet" href="../../css/styles.css?v=09c311d0">
+<link rel="stylesheet" href="../../css/styles.css?v=dd6fa318">
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Organization", "name": "Yume Fleet", "legalName": "ТОО «Yume.Cloud»", "url": "https://yumefleet.com/", "logo": "https://yumefleet.com/assets/logo/tile.svg", "telephone": "+77779479990", "address": {"@type": "PostalAddress", "addressLocality": "Алматы", "addressCountry": "KZ"}, "sameAs": ["https://www.instagram.com/yumecloudx/", "https://www.youtube.com/@yumecloud"]}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://yumefleet.com/"}, {"@type": "ListItem", "position": 2, "name": "Интеграции", "item": "https://yumefleet.com/integrations/"}, {"@type": "ListItem", "position": 3, "name": "eGov mobile", "item": "https://yumefleet.com/integrations/egov/"}]}</script>
 </head>
@@ -264,7 +264,49 @@
       <a class="btn btn--lg btn--yellow" href="#demo">Записаться на демо <svg><use href="#i-arrow"/></svg></a>
       <a class="btn btn--lg btn--ghost" href="https://wa.me/77779479990" rel="noopener"><svg><use href="#i-wa"/></svg> Написать в WhatsApp</a>
     </div>
-    </div><div class="phero__vis" data-reveal="scale"><img src="../../assets/img/gen/INT-egov.webp" width="1500" height="750" alt="Подписание договора через eGov mobile" fetchpriority="high"></div>
+    </div><div class="phero__vis" data-reveal="scale"><div class="egovplay" data-egovplay data-step="in" aria-hidden="true">
+  <div class="egovplay__phone">
+    <header class="egovplay__head">
+      <small>Документ</small>
+      <div class="egovplay__title">
+        <b>Договор аренды</b>
+        <em class="egovplay__st" data-egovplay-st>Ожидает подписи</em>
+      </div>
+    </header>
+
+    <dl class="egovplay__rows">
+      <div><dt>Водитель</dt><dd>Ерлан С.</dd></div>
+      <div><dt>Машина</dt><dd><span class="plate plate--sm">015 ADM 02</span></dd></div>
+      <div><dt>Модель</dt><dd>Chevrolet Cobalt 2022</dd></div>
+      <div><dt>Ставка</dt><dd>9 000 ₸ в день</dd></div>
+    </dl>
+    <p class="egovplay__from">Данные подставлены из аренды</p>
+
+    <button type="button" class="egovplay__btn" data-egovplay-btn>
+      <span class="egovplay__btn-a" data-egovplay-btn-a>Подписать в eGov mobile</span>
+      <span class="egovplay__btn-b"><i>✓</i> Подписано в eGov mobile</span>
+    </button>
+    <p class="egovplay__hint" data-egovplay-hint>Подписывает водитель, приезжать в офис не нужно</p>
+
+    <div class="egovplay__pdf" data-egovplay-pdf>
+      <i class="egovplay__pdf-ic">PDF</i>
+      <div>
+        <b>Договор аренды · 015 ADM 02.pdf</b>
+        <small>В карточке аренды, водителя и машины</small>
+      </div>
+    </div>
+
+    <div class="egovplay__sheet" data-egovplay-sheet>
+      <div class="egovplay__sheet-top"><b>eGov mobile</b><span data-egovplay-sheet-st>Подписание</span></div>
+      <div class="egovplay__sheet-doc"><small>Документ</small><b>Договор аренды</b></div>
+      <div class="egovplay__sheet-row"><span>Подписывает</span><b>Ерлан С.</b></div>
+      <div class="egovplay__sheet-row"><span>Способ</span><b>ЭЦП</b></div>
+      <div class="egovplay__sheet-bar"><i data-egovplay-bar></i></div>
+    </div>
+  </div>
+
+  <svg class="egovplay__cur" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 2.5v15.2l4.1-3.7 3.2 6.4 2.1-.9-3.2-6.3 5.6-.3z"/></svg>
+</div></div>
   </div>
 </section><section class="section section--card"><div class="wrap"><div class="sec-head sec-head--center" data-reveal><div><p class="eyebrow">Как это работает</p><h2>Как проходит подписание</h2></div></div><div class="flow flow--4"><div class="flow__line"><i></i></div><div class="step" data-reveal style="--d:0.0s"><div class="step__n"><svg><use href="#i-cal"/></svg></div><small>ШАГ 01</small><h3>Документ собирается из аренды</h3><p>Шаблон парка заполняется данными водителя, машины и условий.</p></div><div class="step" data-reveal style="--d:0.1s"><div class="step__n"><svg><use href="#i-upload"/></svg></div><small>ШАГ 02</small><h3>Парк подписывает</h3><p>Директор подписывает вручную или <strong>ЭЦП через eGov mobile</strong>.</p></div><div class="step" data-reveal style="--d:0.2s"><div class="step__n"><svg><use href="#i-doc"/></svg></div><small>ШАГ 03</small><h3>Водитель получает ссылку</h3><p>Ссылка уходит в WhatsApp или SMS, пароль не нужен.</p></div><div class="step" data-reveal style="--d:0.3s"><div class="step__n"><svg><use href="#i-user"/></svg></div><small>ШАГ 04</small><h3>Подписанный PDF в системе</h3><p>Документ ложится в карточку аренды, водителя и машины.</p></div></div></div></section><section class="section"><div class="wrap"><div class="sec-head"><div data-reveal><h2>Что подписывается</h2></div></div><div class="cards cards--4"><article class="card" data-reveal><h3>Договор аренды</h3><p>Шаблон парка, данные подставляются из аренды.</p></article><article class="card" data-reveal><h3>Акт приёма-передачи</h3><p>Выдача и возврат машины, вместе с фото осмотра.</p></article><article class="card" data-reveal><h3>Путевые листы<em class="tag tag--better">лучше</em></h3><p><strong>На день, неделю или месяц</strong> сразу на все машины.</p></article><article class="card" data-reveal><h3>Соглашение по ущербу</h3><p>Возмещение после ДТП, в том числе в рассрочку.</p></article></div></div></section><section class="section section--card"><div class="wrap"><div class="sec-head"><div data-reveal><h2>Что видит менеджер</h2></div></div><div class="cards cards--3"><article class="card" data-reveal><h3>Очередь подписания</h3><p>Кто подписал, кто ещё нет и кому пора напомнить.</p></article><article class="card" data-reveal><h3>Причина отказа</h3><p>Если водитель отказался, видно на каком шаге.</p></article><article class="card" data-reveal><h3>Остаток лимитов</h3><p>Сколько SMS и подписей осталось у парка в этом месяце.</p></article></div></div></section><section class="section">
   <div class="wrap prose" data-reveal><h2>Если у водителя нет ЭЦП</h2><div class="prose__body"><p>ЭЦП нужна не всем. Парк может подписать документ вручную, а водитель — <strong>кодом из SMS</strong>: открывает ссылку, вводит код, документ считается подписанным.</p></div></div>
@@ -315,6 +357,6 @@
 <button class="to-top" aria-label="Наверх"><svg><use href="#i-up"/></svg></button>
 
 
-<script src="../../js/main.js?v=1e267d2b" defer></script>
+<script src="../../js/main.js?v=695155d7" defer></script>
 </body>
 </html>

@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Сцена: Реестр должников — preview</title>
+<link rel="stylesheet" href="../../css/styles.css">
+<link rel="stylesheet" href="fragment.css">
+<style>
+  body{background:#FAFAFA}
+  .pv{width:1100px;margin:0 auto;padding:72px 0 80px;display:grid;grid-template-columns:1.05fr 1fr;gap:48px;align-items:start}
+  .pv h1{font-size:48px;margin-bottom:18px}
+  .pv .lead{max-width:none}
+</style>
+</head>
+<body>
+<section class="pv">
+  <div>
+    <p class="eyebrow">Реестр должников</p>
+    <h1>Проверка водителя до выдачи машины</h1>
+    <p class="lead">Водителя проверяют <strong>по ИИН через data.egov.kz</strong> — ещё на заявке, до того как ключи уехали.</p>
+  </div>
+  <div class="phero__vis">
+    <!-- fragment.html -->
+    <div class="debtplay" data-debtplay data-step="in" aria-hidden="true">
+      <div class="debtplay__card">
+        <header class="debtplay__head">
+          <div class="debtplay__who">
+            <small>Заявка из WhatsApp</small>
+            <b>Ерлан С.</b>
+            <span>ИИН 90••••••••12</span>
+          </div>
+          <div class="debtplay__car">
+            <span class="plate plate--sm">015 ADM 02</span>
+            <em>Chevrolet Cobalt · 2022</em>
+          </div>
+        </header>
+
+        <div class="debtplay__row">
+          <div class="debtplay__src">
+            <i class="debtplay__ico"></i>
+            <div>
+              <b>Реестр должников</b>
+              <span>data.egov.kz · запрос по ИИН</span>
+            </div>
+          </div>
+          <div class="debtplay__res">
+            <span class="debtplay__wait" data-debtplay-wait>Проверяем…</span>
+            <span class="debtplay__ok">✓ Чисто</span>
+          </div>
+        </div>
+        <div class="debtplay__bar"><i data-debtplay-bar></i></div>
+
+        <p class="debtplay__verdict">
+          <span class="debtplay__verdict-a">Запрос по ИИН отправлен</span>
+          <span class="debtplay__verdict-b">Исполнительных производств нет · проверено <b data-debtplay-date>6 окт, 10:42</b></span>
+        </p>
+
+        <div class="debtplay__issue">
+          <div class="debtplay__issue-txt">
+            <small>Выдача машины</small>
+            <b class="debtplay__issue-a">Ждёт проверки</b>
+            <b class="debtplay__issue-b">Можно выдавать</b>
+          </div>
+          <span class="debtplay__lock" aria-hidden="true"><i></i></span>
+        </div>
+
+        <p class="debtplay__foot">Результат и дата остаются в карточке водителя. Повторим перед договором.</p>
+      </div>
+    </div>
+  </div>
+</section>
+<script src="fragment.js"></script>
+</body>
+</html>

@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Сцена: штрафы ПДД и ЕРАП — preview</title>
+<link rel="stylesheet" href="../../css/styles.css">
+<link rel="stylesheet" href="fragment.css">
+<style>
+  body{background:#FAFAFA}
+  .pv{width:1100px;max-width:100%;box-sizing:border-box;margin:0 auto;padding:72px 24px 80px;display:grid;grid-template-columns:1.05fr 1fr;gap:48px;align-items:start}
+  @media (max-width:900px){.pv{grid-template-columns:1fr;gap:32px}.pv h1{font-size:36px}}
+  .pv h1{font-size:48px;margin-bottom:18px}
+  .pv .lead{max-width:none}
+</style>
+</head>
+<body>
+<section class="pv">
+  <div>
+    <p class="eyebrow">Штрафы ПДД и ЕРАП</p>
+    <h1>Штраф находит водителя сам</h1>
+    <p class="lead">Постановления приходят <strong>с протоколом</strong> по госномеру и привязываются к водителю, который был за рулём в момент нарушения. Оплата сверяется с ЕРАП.</p>
+  </div>
+  <div class="phero__vis">
+    <!-- fragment.html -->
+    <div class="erapplay" data-erapplay data-step="in" aria-hidden="true">
+      <div class="erapplay__card">
+        <header class="erapplay__head">
+          <span class="erapplay__src"><i></i>Постановление · пришло из ЕРАП</span>
+          <em class="erapplay__stage" data-erapplay-stage>Протокол</em>
+        </header>
+
+        <div class="erapplay__proto">
+          <div>
+            <b>Превышение скорости</b>
+            <small>4 окт · 14:32 · Алматы, пр. Абая</small>
+          </div>
+          <b class="erapplay__sum">21 625 ₸</b>
+        </div>
+
+        <div class="erapplay__row erapplay__car" data-erapplay-car>
+          <small>Госномер</small>
+          <div class="erapplay__carline">
+            <span class="plate">015 ADM 02</span>
+            <span class="erapplay__arrow">→</span>
+            <b class="erapplay__model">Chevrolet Cobalt · 2022</b>
+          </div>
+        </div>
+
+        <div class="erapplay__row erapplay__who" data-erapplay-who>
+          <small>Кто был за рулём в 14:32</small>
+          <div class="erapplay__shift">
+            <span class="erapplay__seg erapplay__seg--a" data-erapplay-seg-a>Ерлан С. · 08–20</span>
+            <span class="erapplay__seg erapplay__seg--b">Асан · 20–08</span>
+            <i class="erapplay__mark" data-erapplay-mark><span>14:32</span></i>
+          </div>
+          <p class="erapplay__found" data-erapplay-found><i>✓</i><b>Ерлан С.</b> был за рулём · смена 08:00–20:00</p>
+        </div>
+
+        <div class="erapplay__debt" data-erapplay-debt>
+          <small>К долгу водителя</small>
+          <b data-erapplay-amount>+0 ₸</b>
+          <em>оплата сверяется с ЕРАП</em>
+        </div>
+
+        <div class="erapplay__steps">
+          <span data-erapplay-s0>Протокол</span>
+          <span data-erapplay-s1>Госномер</span>
+          <span data-erapplay-s2>Водитель</span>
+          <span data-erapplay-s3>В долг</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<script src="fragment.js"></script>
+</body>
+</html>

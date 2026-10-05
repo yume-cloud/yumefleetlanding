@@ -197,7 +197,7 @@
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 </style>
-<link rel="stylesheet" href="../../css/styles.css?v=09c311d0">
+<link rel="stylesheet" href="../../css/styles.css?v=dd6fa318">
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Organization", "name": "Yume Fleet", "legalName": "ТОО «Yume.Cloud»", "url": "https://yumefleet.com/", "logo": "https://yumefleet.com/assets/logo/tile.svg", "telephone": "+77779479990", "address": {"@type": "PostalAddress", "addressLocality": "Алматы", "addressCountry": "KZ"}, "sameAs": ["https://www.instagram.com/yumecloudx/", "https://www.youtube.com/@yumecloud"]}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://yumefleet.com/"}, {"@type": "ListItem", "position": 2, "name": "Интеграции", "item": "https://yumefleet.com/integrations/"}, {"@type": "ListItem", "position": 3, "name": "WhatsApp через Wazzup", "item": "https://yumefleet.com/integrations/wazzup/"}]}</script>
 </head>
@@ -264,7 +264,62 @@
       <a class="btn btn--lg btn--yellow" href="#demo">Записаться на демо <svg><use href="#i-arrow"/></svg></a>
       <a class="btn btn--lg btn--ghost" href="https://wa.me/77779479990" rel="noopener"><svg><use href="#i-wa"/></svg> Написать в WhatsApp</a>
     </div>
-    </div><div class="phero__vis" data-reveal="scale"><img src="../../assets/img/gen/INT-wazzup.webp" width="1500" height="750" alt="Заявки из WhatsApp попадают в воронку" fetchpriority="high"></div>
+    </div><div class="phero__vis" data-reveal="scale"><div class="wazplay" data-wazplay data-step="in" aria-hidden="true">
+  <div class="wazplay__card">
+
+    <!-- left: WhatsApp chat inside the system -->
+    <section class="wazplay__chat">
+      <header class="wazplay__head">
+        <i class="wazplay__wa"></i>
+        <div class="wazplay__who"><b>Ерлан С.</b><small>номер парка</small></div>
+        <span class="wazplay__tag">в системе</span>
+      </header>
+
+      <div class="wazplay__msgs">
+        <p class="wazplay__day">Сегодня</p>
+
+        <div class="wazplay__typing" data-wazplay-typing><i></i><i></i><i></i></div>
+
+        <p class="wazplay__bubble wazplay__bubble--in" data-wazplay-in>
+          Здравствуйте! Сколько у меня сейчас долг по аренде?
+          <time>12:04</time>
+        </p>
+
+        <p class="wazplay__bubble wazplay__bubble--out" data-wazplay-out>
+          Ерлан, долг <b>27 000 ₸</b>: 4, 5 и 6 октября по 9 000 ₸.
+          <time>12:05</time>
+        </p>
+        <small class="wazplay__from" data-wazplay-from>Менеджер · с номера парка</small>
+      </div>
+    </section>
+
+    <!-- right: who writes, his rental and debt -->
+    <aside class="wazplay__side">
+      <small class="wazplay__sidecap">Рядом с чатом</small>
+
+      <div class="wazplay__drv">
+        <b>Ерлан С.</b>
+        <span>водитель · сменщик Асан</span>
+      </div>
+
+      <div class="wazplay__car">
+        <span class="plate plate--sm">015 ADM 02</span>
+        <span class="wazplay__carname">Chevrolet Cobalt 2022</span>
+      </div>
+
+      <dl class="wazplay__rows">
+        <div><dt>Аренда</dt><dd>9 000 ₸ в день</dd></div>
+        <div class="wazplay__debt" data-wazplay-debtrow>
+          <dt>Долг</dt>
+          <dd><b data-wazplay-debt>0 ₸</b><em>3 дня не оплачены</em></dd>
+        </div>
+      </dl>
+
+      <small class="wazplay__foot">Переписка остаётся в Yume Fleet</small>
+    </aside>
+
+  </div>
+</div></div>
   </div>
 </section><section class="section section--card"><div class="wrap"><div class="sec-head"><div data-reveal><h2>Чаты в системе</h2></div></div><div class="cards cards--3"><article class="card" data-reveal><h3>Одно окно</h3><p>Все переписки с водителями и кандидатами в системе, а не в телефонах менеджеров.</p></article><article class="card" data-reveal><h3>Номер парка<em class="tag tag--better">лучше</em></h3><p>Уволился менеджер — переписка осталась у вас.</p></article><article class="card" data-reveal><h3>Рядом с данными</h3><p>Рядом с чатом видно, кто водитель, его аренда и долг.</p></article></div></div></section><section class="section"><div class="wrap"><div class="sec-head sec-head--center" data-reveal><div><p class="eyebrow">Как это работает</p><h2>Заявка доходит до аренды</h2></div></div><div class="flow flow--4"><div class="flow__line"><i></i></div><div class="step" data-reveal style="--d:0.0s"><div class="step__n"><svg><use href="#i-cal"/></svg></div><small>ШАГ 01</small><h3>Заявка</h3><p>Кандидат пишет в WhatsApp, заявка <strong>появляется в воронке сама</strong>.</p></div><div class="step" data-reveal style="--d:0.1s"><div class="step__n"><svg><use href="#i-upload"/></svg></div><small>ШАГ 02</small><h3>Этапы</h3><p>Менеджер ведёт её по этапам: новая, связались, документы, проверка.</p></div><div class="step" data-reveal style="--d:0.2s"><div class="step__n"><svg><use href="#i-doc"/></svg></div><small>ШАГ 03</small><h3>Проверка</h3><p>Реестр должников и чёрный список — до выдачи машины.</p></div><div class="step" data-reveal style="--d:0.3s"><div class="step__n"><svg><use href="#i-user"/></svg></div><small>ШАГ 04</small><h3>Аренда</h3><p>Одобренная заявка <strong>превращается в аренду</strong> без повторного ввода данных.</p></div></div></div></section><section class="section section--card">
   <div class="wrap prose" data-reveal><h2>Видно, что приносит реклама</h2><div class="prose__body"><p>Сколько заявок пришло и сколько дошло до аренды — видно по воронке. Ни одна заявка не остаётся без ответа.</p></div></div>
@@ -315,6 +370,6 @@
 <button class="to-top" aria-label="Наверх"><svg><use href="#i-up"/></svg></button>
 
 
-<script src="../../js/main.js?v=1e267d2b" defer></script>
+<script src="../../js/main.js?v=695155d7" defer></script>
 </body>
 </html>

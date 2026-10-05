@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Сцена: смены и сменщики — превью</title>
+<link rel="stylesheet" href="../../css/styles.css">
+<link rel="stylesheet" href="fragment.css">
+<style>
+  body{background:#FAFAFA;margin:0}
+  .pv{width:1100px;margin:0 auto;padding:64px 40px;display:grid;grid-template-columns:1.05fr .95fr;gap:48px;align-items:center;min-height:100vh;box-sizing:border-box}
+  .pv h1{font-size:44px;line-height:1.08;letter-spacing:-.035em;margin:0 0 18px}
+  .pv .lead{font-size:18px;color:#727272;max-width:520px;margin:0}
+  .pv .eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:700;color:#727272;margin-bottom:16px}
+  .pv .eyebrow::before{content:"";width:8px;height:8px;border-radius:50%;background:#F0B100}
+</style>
+</head>
+<body>
+<main class="pv">
+  <div>
+    <div class="eyebrow">Смены и сменщики</div>
+    <h1>Две смены на одной машине, у каждого водителя свой учёт</h1>
+    <p class="lead">Машина работает круглые сутки, водители меняются. У каждого сменщика своя аренда, свой долг и свои штрафы.</p>
+  </div>
+  <div class="phero__vis">
+    <!-- fragment.html -->
+    <div class="shiftplay" data-shiftplay data-step="0">
+      <article class="shiftplay__card" aria-label="Одна машина, две аренды по сменам">
+        <header class="shiftplay__head">
+          <span class="plate">015 ADM 02</span>
+          <div>
+            <b>Chevrolet Cobalt 2022</b>
+            <small>Смены 12/12 · две аренды</small>
+          </div>
+        </header>
+
+        <div class="shiftplay__day" aria-hidden="true">
+          <i class="shiftplay__half shiftplay__half--d"><span>08:00</span>день<span>20:00</span></i>
+          <i class="shiftplay__half shiftplay__half--n">ночь<span>08:00</span></i>
+          <em class="shiftplay__fine" title="Штраф ПДД, 14:20">14:20</em>
+        </div>
+
+        <div class="shiftplay__tabs" role="tablist">
+          <button type="button" role="tab" data-shiftplay-tab="0" class="is-on">Ерлан С. · день</button>
+          <button type="button" role="tab" data-shiftplay-tab="1">Асан · ночь</button>
+        </div>
+
+        <div class="shiftplay__facts">
+          <section data-shiftplay-fact="0" class="is-on">
+            <div class="shiftplay__row">
+              <span>Долг по аренде</span>
+              <b class="shiftplay__sum" data-shiftplay-sum="18000">0 ₸</b>
+            </div>
+            <small>2 смены × 9 000 ₸ не оплачены</small>
+            <div class="shiftplay__bar" data-shiftplay-bar="5" aria-hidden="true"><i></i></div>
+            <small class="shiftplay__cap">Оплачено 5 смен из 7</small>
+            <div class="shiftplay__note shiftplay__note--fine">Штраф ПДД <b>21 625 ₸</b> · 14:20, его смена, был за рулём</div>
+          </section>
+
+          <section data-shiftplay-fact="1">
+            <div class="shiftplay__row">
+              <span>Долг по аренде</span>
+              <b class="shiftplay__sum" data-shiftplay-sum="0">0 ₸</b>
+            </div>
+            <small>7 смен × 9 000 ₸ оплачены</small>
+            <div class="shiftplay__bar" data-shiftplay-bar="7" aria-hidden="true"><i></i></div>
+            <small class="shiftplay__cap">Оплачено 7 смен из 7</small>
+            <div class="shiftplay__note shiftplay__note--ok">Штраф 21 625 ₸ в 14:20 не его: дневная смена. Штрафов ПДД нет</div>
+          </section>
+        </div>
+      </article>
+      <svg class="shiftplay__cur" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 2.5v15.2l4.1-3.7 3.2 6.4 2.1-.9-3.2-6.3 5.6-.3z"/></svg>
+    </div>
+    <!-- /fragment.html -->
+  </div>
+</main>
+<script src="fragment.js"></script>
+</body>
+</html>

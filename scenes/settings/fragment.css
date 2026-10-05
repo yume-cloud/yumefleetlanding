@@ -1,0 +1,61 @@
+/* settings scene: park rules (schedule 7/0, rate 9 000, Kaspi switch). Prefix setplay, attribute data-setplay. */
+.setplay{position:relative;max-width:460px;margin-inline:auto;--sp-ease:cubic-bezier(.22,1,.36,1)}
+.setplay__card{position:relative;background:#fff;border:1px solid #E3E3E3;border-radius:16px;padding:20px;box-shadow:0 24px 60px -28px rgba(13,13,13,.28);display:flex;flex-direction:column;gap:12px;color:#0D0D0D}
+.setplay__head{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:2px}
+.setplay__head div{display:grid;gap:2px;min-width:0}
+.setplay__head b{font-size:15px;letter-spacing:-.02em;white-space:nowrap}
+.setplay__head small{color:#727272;font-size:13px}
+.setplay__saved{font-size:12px;font-weight:700;padding:5px 10px;border-radius:99px;background:#E4F5EB;color:#0D0D0D;opacity:0;transform:translateY(-4px);transition:opacity .4s var(--sp-ease),transform .4s var(--sp-ease)}
+.setplay[data-step="2"] .setplay__saved{opacity:1;transform:none}
+
+/* rows */
+.setplay__row{display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:34px}
+.setplay__row--pay{align-items:flex-start}
+.setplay__lab{color:#727272;font-size:13px;font-weight:600;white-space:nowrap;padding-top:0}
+.setplay__row--pay .setplay__lab{padding-top:8px}
+.setplay__seg{display:inline-flex;padding:3px;border-radius:10px;background:#F2F2F2;gap:2px}
+.setplay__seg i{font-style:normal;font-size:13px;font-weight:800;padding:5px 12px;border-radius:8px;color:#727272}
+.setplay__seg i.is-on{background:#0D0D0D;color:#F5F5F5}
+.setplay__rate{font-size:22px;letter-spacing:-.03em;font-variant-numeric:tabular-nums;white-space:nowrap}
+.setplay__pays{list-style:none;margin:0;padding:0;display:grid;gap:6px;width:236px}
+.setplay__pays li{display:flex;align-items:center;justify-content:space-between;gap:10px;min-height:32px;padding:0 0 0 10px;border:1px solid #E3E3E3;border-radius:10px;font-size:13px;font-weight:700}
+.setplay__pays em{font-style:normal;white-space:nowrap}
+
+/* switch: 44×24, knob slides, no jump */
+.setplay__sw{position:relative;flex:none;width:44px;height:24px;margin:3px 4px 3px 0;border:0;padding:0;border-radius:99px;background:#D8D8D8;cursor:pointer;transition:background .35s var(--sp-ease),transform .15s var(--sp-ease)}
+.setplay__sw::after{content:"";position:absolute;top:3px;left:3px;width:18px;height:18px;border-radius:50%;background:#fff;box-shadow:0 1px 3px rgba(13,13,13,.3);transition:left .35s var(--sp-ease)}
+.setplay__sw.is-on{background:#F0B100}
+.setplay__sw.is-on::after{left:23px}
+.setplay__sw.is-press{transform:scale(.94)}
+i.setplay__sw{cursor:default}
+
+/* rental preview: how the rules land in a rental */
+.setplay__rent{display:flex;flex-direction:column;gap:10px;margin-top:4px;padding:14px 16px;border-radius:12px;border:1px solid #E3E3E3;background:#FAFAFA;transition:border-color .45s var(--sp-ease)}
+.setplay[data-step="2"] .setplay__rent{border-color:#F0B100}
+.setplay__rent>header{display:flex;align-items:center;gap:10px}
+.setplay__rent>header div{display:grid;gap:1px;min-width:0}
+.setplay__rent>header b{font-size:14px;letter-spacing:-.01em}
+.setplay__rent>header small{color:#727272;font-size:12px;font-weight:600}
+.setplay__week{display:grid;grid-template-columns:repeat(7,1fr);gap:4px}
+.setplay__week i{height:8px;border-radius:99px;background:#EDEDED;position:relative;overflow:hidden}
+.setplay__week i::after{content:"";position:absolute;inset:0;background:#F0B100;transform:scaleX(0);transform-origin:left;transition:transform .4s var(--sp-ease)}
+.setplay[data-step="1"] .setplay__week i::after,.setplay[data-step="2"] .setplay__week i::after{transform:none}
+.setplay__week i:nth-child(1)::after{transition-delay:.0s}.setplay__week i:nth-child(2)::after{transition-delay:.08s}.setplay__week i:nth-child(3)::after{transition-delay:.16s}.setplay__week i:nth-child(4)::after{transition-delay:.24s}.setplay__week i:nth-child(5)::after{transition-delay:.32s}.setplay__week i:nth-child(6)::after{transition-delay:.4s}.setplay__week i:nth-child(7)::after{transition-delay:.48s}
+.setplay__sum{display:flex;align-items:baseline;justify-content:space-between;gap:10px}
+.setplay__sum span{color:#727272;font-size:12px;font-weight:600}
+.setplay__sum b{font-size:18px;letter-spacing:-.02em;font-variant-numeric:tabular-nums;white-space:nowrap}
+.setplay__chips{display:flex;flex-wrap:wrap;gap:6px}
+.setplay__chips span{font-size:12px;font-weight:700;padding:4px 10px;border-radius:99px;background:#fff;border:1px solid #E3E3E3}
+.setplay__chip--kaspi{background:#F0B100!important;border-color:#F0B100!important;opacity:0;transform:scale(.8);transition:opacity .4s var(--sp-ease),transform .4s var(--sp-ease)}
+.setplay[data-step="2"] .setplay__chip--kaspi{opacity:1;transform:none}
+
+/* cursor, same figure as on the rentals page */
+.setplay__cur{position:absolute;z-index:3;width:24px;height:24px;left:40px;top:120px;fill:#14141c;stroke:#fff;stroke-width:1.4;stroke-linejoin:round;filter:drop-shadow(0 3px 4px rgba(20,20,28,.3));pointer-events:none;opacity:0;transition:left .7s cubic-bezier(.4,0,.2,1),top .7s cubic-bezier(.4,0,.2,1),transform .15s,opacity .3s}
+.setplay[data-press="1"] .setplay__cur{transform:scale(.86)}
+.setplay[data-reset="1"] .setplay__card *{transition:none!important}
+
+@media (max-width:900px){.setplay__cur{display:none}}
+@media (prefers-reduced-motion:reduce){
+  .setplay__cur{display:none}
+  .setplay *{transition:none!important}
+}

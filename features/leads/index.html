@@ -197,7 +197,7 @@
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 </style>
-<link rel="stylesheet" href="../../css/styles.css?v=09c311d0">
+<link rel="stylesheet" href="../../css/styles.css?v=dd6fa318">
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Organization", "name": "Yume Fleet", "legalName": "ТОО «Yume.Cloud»", "url": "https://yumefleet.com/", "logo": "https://yumefleet.com/assets/logo/tile.svg", "telephone": "+77779479990", "address": {"@type": "PostalAddress", "addressLocality": "Алматы", "addressCountry": "KZ"}, "sameAs": ["https://www.instagram.com/yumecloudx/", "https://www.youtube.com/@yumecloud"]}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://yumefleet.com/"}, {"@type": "ListItem", "position": 2, "name": "Возможности", "item": "https://yumefleet.com/features/"}, {"@type": "ListItem", "position": 3, "name": "WhatsApp и воронка", "item": "https://yumefleet.com/features/leads/"}]}</script>
 </head>
@@ -264,7 +264,50 @@
       <a class="btn btn--lg btn--yellow" href="#demo">Записаться на демо <svg><use href="#i-arrow"/></svg></a>
       <a class="btn btn--lg btn--ghost" href="https://wa.me/77779479990" rel="noopener"><svg><use href="#i-wa"/></svg> Написать в WhatsApp</a>
     </div>
-    </div><div class="phero__vis phero__vis--card" data-reveal="scale"><img src="../../assets/cards/drivers.webp" width="1135" height="1080" alt="Карточка водителей: документы, допуски и график" fetchpriority="high"></div>
+    </div><div class="phero__vis" data-reveal="scale"><div class="leadplay" data-leadplay data-step="in" aria-hidden="true">
+  <div class="leadplay__card">
+    <svg class="leadplay__cur" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 2.5v15.2l4.1-3.7 3.2 6.4 2.1-.9-3.2-6.3 5.6-.3z"/></svg>
+
+    <!-- WhatsApp chat (via Wazzup) -->
+    <section class="leadplay__chat">
+      <header class="leadplay__chathead">
+        <i class="leadplay__wa"></i>
+        <div><b>Ерлан С.</b><small>WhatsApp · номер парка</small></div>
+      </header>
+      <div class="leadplay__msgs">
+        <div class="leadplay__typing"><i></i><i></i><i></i></div>
+        <p class="leadplay__bubble">Здравствуйте! Хочу взять машину в аренду. Cobalt 2022 ещё свободен?<time>12:04</time></p>
+      </div>
+    </section>
+
+    <!-- lead card appears from the message -->
+    <section class="leadplay__lead">
+      <div class="leadplay__leadtop">
+        <div><small>Заявка из WhatsApp</small><b>Ерлан С.</b></div>
+        <span class="leadplay__stage"><span data-leadplay-stage>Новая</span></span>
+      </div>
+
+      <div class="leadplay__want">
+        <span class="plate plate--sm">015 ADM 02</span>
+        <span class="leadplay__wantcar">Chevrolet Cobalt 2022 · 9 000 ₸ в день</span>
+      </div>
+
+      <div class="leadplay__track" role="list">
+        <i class="leadplay__fill" data-leadplay-fill></i>
+        <button type="button" class="leadplay__st is-on" data-leadplay-st="0">Новая</button>
+        <button type="button" class="leadplay__st" data-leadplay-st="1">Связались</button>
+        <button type="button" class="leadplay__st" data-leadplay-st="2">Документы</button>
+        <button type="button" class="leadplay__st" data-leadplay-st="3">Проверка</button>
+      </div>
+
+      <ul class="leadplay__checks">
+        <li><span>Реестр должников</span><em data-leadplay-c1><i class="leadplay__spin"></i><b>не найден</b></em></li>
+        <li><span>Чёрный список парков</span><em data-leadplay-c2><i class="leadplay__spin"></i><b>не найден</b></em></li>
+      </ul>
+      <small class="leadplay__hint"><span class="leadplay__hint-a">Менеджер ведёт заявку по этапам</span><span class="leadplay__hint-b">Выдачу машины подтверждает менеджер</span></small>
+    </section>
+  </div>
+</div></div>
   </div>
 </section><section class="section section--card"><div class="wrap"><div class="sec-head"><div data-reveal><h2>WhatsApp через Wazzup</h2></div></div><div class="cards cards--3"><article class="card" data-reveal><h3>Чаты в системе</h3><p>Все переписки с водителями и кандидатами <strong>в одном окне</strong>, а не в телефонах менеджеров.</p></article><article class="card" data-reveal><h3>Номер парка</h3><p>Пишете с рабочего номера WhatsApp парка. Уволился менеджер, переписка осталась у вас.</p></article><article class="card" data-reveal><h3>Рядом с данными</h3><p>Рядом с чатом видно, кто водитель, его аренда и долг.</p></article></div></div></section><section class="section"><div class="wrap"><div class="sec-head sec-head--center" data-reveal><div><p class="eyebrow">Как это работает</p><h2>Воронка заявок</h2></div></div><div class="flow flow--4"><div class="flow__line"><i></i></div><div class="step" data-reveal style="--d:0.0s"><div class="step__n"><svg><use href="#i-cal"/></svg></div><small>ШАГ 01</small><h3>Заявка</h3><p>Кандидат пишет в WhatsApp, заявка <strong>появляется в воронке сама</strong>.</p></div><div class="step" data-reveal style="--d:0.1s"><div class="step__n"><svg><use href="#i-upload"/></svg></div><small>ШАГ 02</small><h3>Этапы</h3><p>Менеджер ведёт заявку по этапам: новая, связались, документы, проверка.</p></div><div class="step" data-reveal style="--d:0.2s"><div class="step__n"><svg><use href="#i-doc"/></svg></div><small>ШАГ 03</small><h3>Проверка</h3><p>Проверка по реестру должников и чёрному списку до выдачи машины.</p></div><div class="step" data-reveal style="--d:0.3s"><div class="step__n"><svg><use href="#i-user"/></svg></div><small>ШАГ 04</small><h3>Аренда</h3><p>Одобренная заявка <strong>превращается в аренду</strong> без повторного ввода данных.</p></div></div></div></section><section class="section section--card">
   <div class="wrap prose" data-reveal><h2>Что это даёт</h2><div class="prose__body"><p>Видно, <strong>сколько заявок пришло</strong> и сколько дошло до аренды. Ни одна заявка не остаётся без ответа.</p></div></div>
@@ -315,6 +358,6 @@
 <button class="to-top" aria-label="Наверх"><svg><use href="#i-up"/></svg></button>
 
 
-<script src="../../js/main.js?v=1e267d2b" defer></script>
+<script src="../../js/main.js?v=695155d7" defer></script>
 </body>
 </html>

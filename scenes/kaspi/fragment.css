@@ -1,0 +1,72 @@
+/* scene: kaspi — /kaspi-pay/ hero. Driver's phone: debt → pick days → pay in Kaspi → debt shrinks. Prefix: kpay, scope [data-kpay] */
+.kpay{--kp-ease:cubic-bezier(.22,1,.36,1);position:relative;width:100%;max-width:380px;margin-inline:auto;font-variant-numeric:tabular-nums;color:#0D0D0D}
+.kpay__phone{position:relative;overflow:hidden;background:#fff;border:1px solid #E3E3E3;border-radius:16px;padding:22px 22px 20px;box-shadow:0 24px 60px -28px rgba(13,13,13,.28);display:grid;gap:16px;transition:opacity .5s var(--kp-ease),transform .5s var(--kp-ease)}
+.kpay[data-step="reset"] .kpay__phone{opacity:0;transform:translateY(10px)}
+
+.kpay__head{display:flex;gap:12px;align-items:center;flex-wrap:wrap;font-size:14px}
+.kpay__head b{font-weight:600}
+.kpay__who{margin:-8px 0 0;font-size:13px;color:#727272}
+.kpay__who b{color:#0D0D0D;font-weight:600}
+
+.kpay__debt{display:grid;gap:4px}
+.kpay__debt small{font-size:12px;color:#727272}
+.kpay__debt b{font-size:clamp(30px,3vw,38px);font-weight:800;letter-spacing:-.03em;line-height:1.05;transition:color .4s}
+.kpay__debt em{font-style:normal;font-size:12px;font-weight:600;color:#C2410C;transition:color .4s}
+.kpay[data-step="paid"] .kpay__debt em,.kpay[data-step="hold"] .kpay__debt em{color:#1F9D5B}
+
+.kpay__pick{display:grid;gap:8px}
+.kpay__pick small{font-size:12px;color:#727272}
+.kpay__days{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.kpay__day{display:grid;gap:2px;min-height:52px;padding:8px 6px;border:1px solid #E3E3E3;border-radius:12px;background:#FAFAFA;color:#0D0D0D;font:inherit;text-align:center;cursor:pointer;transition:transform .15s var(--kp-ease),background .25s,border-color .25s,color .25s}
+.kpay__day span{font-size:13px;font-weight:700}
+.kpay__day i{font-style:normal;font-size:11.5px;color:#727272;transition:color .25s}
+.kpay__day.is-on{background:#FFF8E1;border-color:#F0B100;box-shadow:inset 0 0 0 1px #F0B100}
+.kpay__day.is-press{transform:scale(.94)}
+.kpay__day.is-paid{background:#E4F5EB;border-color:transparent;color:#1F9D5B;box-shadow:none}
+.kpay__day.is-paid i{color:#1F9D5B}
+.kpay__day.is-paid i::before{content:"✓ "}
+
+/* pay button: two captions, one visible */
+.kpay__btn{position:relative;display:grid;min-height:48px;padding:0 20px;border:0;border-radius:12px;background:#0D0D0D;color:#fff;font:inherit;font-size:15px;font-weight:700;line-height:1;cursor:pointer;overflow:hidden;transition:transform .15s var(--kp-ease),background .35s,color .35s}
+.kpay__btn span{grid-area:1/1;display:flex;align-items:center;justify-content:center;gap:4px;white-space:nowrap;transition:opacity .3s}
+.kpay__btn b{font-weight:800}
+.kpay__btn-b{opacity:0}
+.kpay[data-step="in"] .kpay__btn{background:#E3E3E3;color:#727272}
+.kpay[data-step="pick1"] .kpay__btn-a,.kpay[data-step="pick2"] .kpay__btn-a,.kpay[data-step="aim"] .kpay__btn-a,.kpay[data-step="kaspi"] .kpay__btn-a,.kpay[data-step="paid"] .kpay__btn-a,.kpay[data-step="hold"] .kpay__btn-a{opacity:0}
+.kpay[data-step="pick1"] .kpay__btn-b,.kpay[data-step="pick2"] .kpay__btn-b,.kpay[data-step="aim"] .kpay__btn-b,.kpay[data-step="kaspi"] .kpay__btn-b,.kpay[data-step="paid"] .kpay__btn-b,.kpay[data-step="hold"] .kpay__btn-b{opacity:1}
+.kpay__btn.is-press{transform:scale(.97)}
+.kpay[data-step="paid"] .kpay__btn,.kpay[data-step="hold"] .kpay__btn{display:none}
+
+/* result line takes the button's place */
+.kpay__done{display:none;align-items:center;gap:10px;min-height:48px;padding:10px 12px;border-radius:12px;background:#FFF8E1;border:1px solid #F0B100;font-size:14px;font-weight:600;color:#0D0D0D}
+.kpay__done i{width:20px;height:20px;border-radius:50%;background:#1F9D5B;color:#fff;display:grid;place-items:center;flex:none;font-size:12px;font-style:normal}
+.kpay__done b{font-weight:800}
+.kpay[data-step="paid"] .kpay__done,.kpay[data-step="hold"] .kpay__done{display:flex}
+
+.kpay__foot{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;margin:-4px 0 0;font-size:12px;color:#727272}
+.kpay__foot b{color:#0D0D0D;font-weight:700}
+
+/* Kaspi sheet slides up over the phone */
+.kpay__phone::after{content:"";position:absolute;inset:0;z-index:1;background:rgba(255,255,255,.62);opacity:0;pointer-events:none;transition:opacity .45s}
+.kpay[data-step="kaspi"] .kpay__phone::after{opacity:1}
+.kpay__sheet{position:absolute;z-index:2;left:0;right:0;bottom:0;padding:14px 22px 20px;background:#fff;border-top:1px solid #E3E3E3;border-radius:16px 16px 0 0;box-shadow:0 -18px 40px -24px rgba(13,13,13,.35);display:grid;gap:10px;transform:translateY(105%);transition:transform .55s var(--kp-ease)}
+.kpay[data-step="kaspi"] .kpay__sheet{transform:none}
+.kpay__sheet-top{display:flex;justify-content:space-between;align-items:center;font-size:13px}
+.kpay__sheet-top b{display:inline-flex;align-items:center;gap:7px;font-weight:800;font-size:15px}
+.kpay__sheet-top b::before{content:"";width:18px;height:18px;border-radius:5px;background:#F14635}
+.kpay__sheet-top span{color:#727272;font-weight:600}
+.kpay__sheet-sum{display:grid;gap:2px}
+.kpay__sheet-sum small{font-size:12px;color:#727272}
+.kpay__sheet-sum b{font-size:28px;font-weight:800;letter-spacing:-.03em;line-height:1.05}
+.kpay__sheet-row{display:flex;justify-content:space-between;font-size:13px;color:#727272;padding-top:8px;border-top:1px solid #EDEDED}
+.kpay__sheet-row b{color:#0D0D0D;font-weight:600}
+.kpay__sheet-bar{height:6px;border-radius:999px;background:#EDEDED;overflow:hidden}
+.kpay__sheet-bar i{display:block;height:100%;width:calc(var(--p,0)*100%);background:#F14635;border-radius:999px}
+
+/* cursor, same figure as on the rentals page */
+.kpay__cur{position:absolute;z-index:3;width:24px;height:24px;left:40%;top:60%;fill:#14141c;stroke:#fff;stroke-width:1.4;stroke-linejoin:round;filter:drop-shadow(0 3px 4px rgba(20,20,28,.3));pointer-events:none;opacity:0;transition:left .6s cubic-bezier(.4,0,.2,1),top .6s cubic-bezier(.4,0,.2,1),transform .15s,opacity .3s}
+.kpay[data-press="1"] .kpay__cur{transform:scale(.86)}
+
+@media (max-width:900px){.kpay__cur{display:none}}
+@media (prefers-reduced-motion:reduce){.kpay__cur{display:none}.kpay *{transition:none!important;animation:none!important}}
+@media (max-width:420px){.kpay__phone{padding:18px 16px 16px}.kpay__foot{flex-direction:column;gap:4px}}

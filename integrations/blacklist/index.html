@@ -197,7 +197,7 @@
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 </style>
-<link rel="stylesheet" href="../../css/styles.css?v=09c311d0">
+<link rel="stylesheet" href="../../css/styles.css?v=dd6fa318">
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Organization", "name": "Yume Fleet", "legalName": "ТОО «Yume.Cloud»", "url": "https://yumefleet.com/", "logo": "https://yumefleet.com/assets/logo/tile.svg", "telephone": "+77779479990", "address": {"@type": "PostalAddress", "addressLocality": "Алматы", "addressCountry": "KZ"}, "sameAs": ["https://www.instagram.com/yumecloudx/", "https://www.youtube.com/@yumecloud"]}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://yumefleet.com/"}, {"@type": "ListItem", "position": 2, "name": "Интеграции", "item": "https://yumefleet.com/integrations/"}, {"@type": "ListItem", "position": 3, "name": "Чёрный список парков", "item": "https://yumefleet.com/integrations/blacklist/"}]}</script>
 </head>
@@ -264,7 +264,39 @@
       <a class="btn btn--lg btn--yellow" href="#demo">Записаться на демо <svg><use href="#i-arrow"/></svg></a>
       <a class="btn btn--lg btn--ghost" href="https://wa.me/77779479990" rel="noopener"><svg><use href="#i-wa"/></svg> Написать в WhatsApp</a>
     </div>
-    </div><div class="phero__vis" data-reveal="scale"><img src="../../assets/img/gen/INT-blacklist.webp" width="1500" height="750" alt="Общий чёрный список парков" fetchpriority="high"></div>
+    </div><div class="phero__vis" data-reveal="scale"><div class="blplay" data-blplay data-step="in" aria-hidden="true">
+  <div class="blplay__card">
+    <header class="blplay__head">
+      <span class="blplay__src"><svg viewBox="0 0 24 24"><path d="M4 20l1.3-4A8 8 0 1 1 8 18.7z"/><path d="M9 11h6M9 14h4"/></svg>Заявка из WhatsApp</span>
+      <em class="blplay__status" data-blplay-status>Проверяем</em>
+    </header>
+
+    <p class="blplay__who"><b>Ерлан С.</b> · просит <b>Chevrolet Cobalt 2022</b></p>
+    <p class="blplay__ask"><span class="plate plate--sm">015 ADM 02</span><span>ставка 9 000 ₸ в день · сменщик Асан</span></p>
+
+    <ul class="blplay__checks">
+      <li class="blplay__check" data-blplay-row="debt">
+        <i class="blplay__bar"><b data-blplay-bar="debt"></b></i>
+        <span class="blplay__name">Реестр должников</span>
+        <em class="blplay__res" data-blplay-res="debt">ищем…</em>
+      </li>
+      <li class="blplay__check" data-blplay-row="list">
+        <i class="blplay__bar"><b data-blplay-bar="list"></b></i>
+        <span class="blplay__name">Чёрный список парков</span>
+        <em class="blplay__res" data-blplay-res="list">ищем…</em>
+      </li>
+    </ul>
+
+    <div class="blplay__hit" data-blplay-hit><div class="blplay__hit-in"><div class="blplay__hit-box">
+      <div class="blplay__hit-top">
+        <span class="blplay__flag"><svg viewBox="0 0 24 24"><path d="M12 3l9.5 17h-19z"/><path d="M12 10v4M12 17.5v.5"/></svg>Запись другого парка</span>
+        <small>не ваша · на Yume Fleet</small>
+      </div>
+      <p class="blplay__reason"><small>Причина</small><b>Не вернул машину</b></p>
+      <p class="blplay__foot" data-blplay-foot>Оба результата — в карточке водителя до выдачи</p>
+    </div></div></div>
+  </div>
+</div></div>
   </div>
 </section><section class="section section--card"><div class="wrap"><div class="sec-head"><div data-reveal><h2>Как устроено</h2></div></div><div class="cards cards--4"><article class="card" data-reveal><h3>База общая</h3><p>Записи добавляют парки, которые работают на платформе.</p></article><article class="card" data-reveal><h3>Видна причина</h3><p>Не просто отметка, а за что водитель попал в список.</p></article><article class="card" data-reveal><h3>Проверка на заявке</h3><p>Кандидат из WhatsApp проверяется вместе с реестром должников.</p></article><article class="card" data-reveal><h3>Свои записи</h3><p>Парк добавляет своих проблемных водителей и помогает остальным.</p></article></div></div></section><section class="section">
   <div class="wrap prose" data-reveal><h2>Вместе с реестром должников</h2><div class="prose__body"><p>Проверка по чёрному списку идёт <strong>одновременно</strong> с проверкой по реестру должников: оба результата видно в карточке водителя до выдачи машины.</p></div></div>
@@ -315,6 +347,6 @@
 <button class="to-top" aria-label="Наверх"><svg><use href="#i-up"/></svg></button>
 
 
-<script src="../../js/main.js?v=1e267d2b" defer></script>
+<script src="../../js/main.js?v=695155d7" defer></script>
 </body>
 </html>

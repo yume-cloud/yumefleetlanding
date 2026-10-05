@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Сцена: переход на Yume Fleet — preview</title>
+<link rel="stylesheet" href="../../css/styles.css">
+<link rel="stylesheet" href="fragment.css">
+<style>
+  body{background:#FAFAFA}
+  .pv{width:1100px;margin:0 auto;padding:72px 0 80px;display:grid;grid-template-columns:1.05fr 1fr;gap:48px;align-items:start}
+  .pv h1{font-size:48px;margin-bottom:18px}
+  .pv .lead{max-width:none}
+</style>
+</head>
+<body>
+<section class="pv">
+  <div>
+    <p class="eyebrow">Для таксопарков на Yume Cloud</p>
+    <h1>Переходим на Yume Fleet</h1>
+    <p class="lead">Yume Fleet: новая версия для таксопарков. <strong>Данные переносим мы, цена прежняя.</strong> Всё, чем вы пользуетесь, остаётся, и появились новые возможности.</p>
+  </div>
+  <div class="phero__vis">
+    <!-- fragment.html -->
+    <div class="moveplay" data-moveplay data-step="in" aria-hidden="true">
+      <div class="moveplay__card">
+        <header class="moveplay__head">
+          <span class="moveplay__from">Yume Cloud</span>
+          <svg class="moveplay__arrow" viewBox="0 0 24 24"><path d="M4 12h15M13 6l6 6-6 6"/></svg>
+          <span class="moveplay__to">Yume Fleet</span>
+          <em class="moveplay__count"><b data-moveplay-count>0</b> из 3</em>
+        </header>
+
+        <div class="moveplay__bar"><i data-moveplay-bar></i></div>
+
+        <ul class="moveplay__list">
+          <li class="moveplay__row" data-moveplay-row="cars">
+            <i class="moveplay__check"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7"/></svg></i>
+            <div class="moveplay__body">
+              <b>Машины</b>
+              <span><span class="plate plate--sm">015 ADM 02</span> Chevrolet Cobalt · 2022</span>
+            </div>
+            <small class="moveplay__state" data-moveplay-state>в очереди</small>
+          </li>
+          <li class="moveplay__row" data-moveplay-row="drivers">
+            <i class="moveplay__check"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7"/></svg></i>
+            <div class="moveplay__body">
+              <b>Водители</b>
+              <span>Ерлан С. · сменщик Асан</span>
+            </div>
+            <small class="moveplay__state" data-moveplay-state>в очереди</small>
+          </li>
+          <li class="moveplay__row" data-moveplay-row="rents">
+            <i class="moveplay__check"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7"/></svg></i>
+            <div class="moveplay__body">
+              <b>Аренды</b>
+              <span><i>9 000 ₸ в день</i><i>выкуп 7 200 000 ₸</i><i>взнос 1 500 000 ₸</i></span>
+            </div>
+            <small class="moveplay__state" data-moveplay-state>в очереди</small>
+          </li>
+        </ul>
+
+        <footer class="moveplay__foot" data-moveplay-foot>
+          <span class="moveplay__tag"><svg viewBox="0 0 24 24"><rect x="5" y="10" width="14" height="10" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg>Цена прежняя</span>
+          <span class="moveplay__tag"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7"/></svg>Данные переносим мы</span>
+        </footer>
+      </div>
+    </div>
+  </div>
+</section>
+<script src="fragment.js"></script>
+</body>
+</html>

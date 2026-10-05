@@ -1,0 +1,51 @@
+/* investors scene — prefix invplay */
+.invplay{display:grid;grid-template-columns:1.55fr 1fr;gap:12px;align-items:start;font-family:var(--font,"Geist",system-ui,sans-serif);color:#0D0D0D;font-variant-numeric:tabular-nums}
+.invplay__card{position:relative;background:#fff;border:1px solid #E3E3E3;border-radius:16px;box-shadow:0 24px 60px -28px rgba(13,13,13,.28);padding:16px 18px 18px;min-width:0;opacity:0;transform:translateY(12px);transition:opacity .5s cubic-bezier(.22,1,.36,1),transform .6s cubic-bezier(.22,1,.36,1)}
+.invplay__card--lease{transition-delay:.12s}
+.invplay:not([data-step="open"]) .invplay__card{opacity:1;transform:none}
+
+.invplay__head{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:14px}
+.invplay__eyebrow{font-size:11px;font-weight:700;letter-spacing:.06em;white-space:nowrap;text-transform:uppercase;color:#727272}
+.invplay__eyebrow::before{content:"";display:inline-block;width:10px;height:10px;border-radius:3px;background:#F0B100;margin-right:7px;vertical-align:-1px}
+.invplay__period{font-size:11.5px;font-weight:600;color:#727272;padding:3px 8px;border-radius:999px;background:#FAFAFA;border:1px solid #EDEDED;white-space:nowrap}
+
+.invplay__car{display:flex;align-items:center;gap:8px;font-size:13px;font-weight:600;min-width:0;padding-bottom:14px;border-bottom:1px solid #EDEDED}
+.invplay__car .plate{flex:none}
+.invplay__car span:last-child{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+
+.invplay__row{display:flex;justify-content:space-between;align-items:baseline;gap:10px;padding:14px 0 12px}
+.invplay__lbl{font-size:13px;color:#727272}
+.invplay__num{font-size:20px;font-weight:800;letter-spacing:-.03em;white-space:nowrap}
+.invplay__num--acc{color:#0D0D0D}
+
+.invplay__share{padding:12px 14px 12px;border-radius:12px;background:#FFF8E1}
+.invplay__sharehead{display:flex;justify-content:space-between;align-items:baseline;gap:10px}
+.invplay__sharehead .invplay__lbl{white-space:nowrap}
+.invplay__bar{--p:0;height:10px;margin-top:10px;border-radius:999px;background:#fff;border:1px solid #F0DDA0;overflow:hidden}
+.invplay__bar i{display:block;height:100%;width:calc(var(--p) * 100%);background:#F0B100;border-radius:999px;transition:width 1.3s cubic-bezier(.22,1,.36,1)}
+.invplay__split{display:flex;justify-content:space-between;gap:10px;margin-top:9px;font-size:12px;color:#727272;white-space:nowrap}
+.invplay__split b{color:#0D0D0D;font-weight:700}
+
+.invplay__lock{display:flex;align-items:center;gap:8px;margin-top:12px;padding:8px 10px;border-radius:10px;background:#FAFAFA;border:1px dashed #D9D9D9;font-size:12px;color:#727272;line-height:1.3;opacity:0;transform:translateY(6px);transition:opacity .45s,transform .5s cubic-bezier(.22,1,.36,1)}
+.invplay__lock svg{flex:none;color:#0D0D0D}
+.invplay[data-step="share"] .invplay__lock,.invplay[data-step="lease"] .invplay__lock,.invplay[data-step="done"] .invplay__lock{opacity:1;transform:none}
+.invplay[data-step="done"] .invplay__lock{border-color:#F0B100;background:#FFF8E1;color:#0D0D0D}
+
+.invplay__big{display:block;font-size:24px;font-weight:800;letter-spacing:-.035em;line-height:1.05;margin-top:2px;white-space:nowrap}
+.invplay__of{font-size:12px;color:#A3A3A3;margin-top:4px}
+.invplay__chart{display:block;width:100%;height:84px;margin-top:14px;overflow:visible}
+.invplay__line{stroke-dasharray:330;stroke-dashoffset:330;transition:stroke-dashoffset 1.6s cubic-bezier(.22,1,.36,1)}
+.invplay__area,.invplay__dot{opacity:0;transition:opacity .6s}
+.invplay__dot{transition-delay:1.3s}
+.invplay__area{transition-delay:.6s}
+.invplay[data-step="lease"] .invplay__line,.invplay[data-step="done"] .invplay__line{stroke-dashoffset:0}
+.invplay[data-step="lease"] .invplay__area,.invplay[data-step="done"] .invplay__area,
+.invplay[data-step="lease"] .invplay__dot,.invplay[data-step="done"] .invplay__dot{opacity:1}
+.invplay__paid{display:grid;gap:2px;margin-top:10px;padding-top:10px;border-top:1px solid #EDEDED;font-size:13px}
+.invplay__paid b{font-weight:700;white-space:nowrap}
+
+@media (max-width:560px){.invplay{grid-template-columns:1fr}}
+@media (max-width:900px),(prefers-reduced-motion:reduce){
+  .invplay__card,.invplay__bar i,.invplay__lock,.invplay__line,.invplay__area,.invplay__dot{transition:none}
+  .invplay__card{opacity:1;transform:none}
+}

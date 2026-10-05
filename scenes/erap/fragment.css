@@ -1,0 +1,53 @@
+/* scene: erap — /integrations/erap/ hero. Prefix: erapplay */
+.erapplay{position:relative;width:100%;max-width:520px;margin-inline:auto;font-variant-numeric:tabular-nums;color:var(--ink,#0D0D0D)}
+.erapplay__card{background:var(--card,#fff);border:1px solid var(--line,#E3E3E3);border-radius:16px;padding:22px 24px;box-shadow:var(--shadow,0 24px 60px -28px rgba(13,13,13,.28));display:grid;gap:16px;transition:opacity .5s cubic-bezier(.22,1,.36,1),transform .5s cubic-bezier(.22,1,.36,1)}
+.erapplay[data-step="reset"] .erapplay__card{opacity:0;transform:translateY(10px)}
+
+.erapplay__head{display:flex;gap:12px;align-items:center;flex-wrap:wrap;font-size:13px}
+.erapplay__src{display:inline-flex;align-items:center;gap:8px;font-weight:600;color:var(--muted,#727272)}
+.erapplay__src i{width:8px;height:8px;border-radius:50%;background:var(--yellow,#F0B100);box-shadow:0 0 0 0 rgba(240,177,0,.5);animation:erapplay-ping 1.6s ease-out infinite}
+@keyframes erapplay-ping{0%{box-shadow:0 0 0 0 rgba(240,177,0,.55)}100%{box-shadow:0 0 0 9px rgba(240,177,0,0)}}
+.erapplay__stage{font-style:normal;margin-left:auto;font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:5px 10px;border-radius:999px;background:var(--yellow,#F0B100);color:var(--ink,#0D0D0D);border:1px solid var(--yellow,#F0B100)}
+
+.erapplay__proto{display:flex;align-items:flex-start;justify-content:space-between;gap:16px;padding-bottom:16px;border-bottom:1px solid var(--line,#E3E3E3)}
+.erapplay__proto>div{display:grid;gap:4px}
+.erapplay__proto>div b{font-size:17px;font-weight:700;letter-spacing:-.01em}
+.erapplay__proto small{font-size:12px;color:var(--muted,#727272)}
+.erapplay__sum{flex:none;font-size:clamp(24px,2.6vw,30px);font-weight:800;letter-spacing:-.03em;line-height:1.05}
+
+.erapplay__row{display:grid;gap:8px}
+.erapplay__row small{font-size:12px;color:var(--muted,#727272)}
+.erapplay__carline{display:flex;align-items:center;gap:10px;flex-wrap:wrap;font-size:14px}
+.erapplay__arrow{color:var(--muted,#727272);opacity:0;transition:opacity .4s}
+.erapplay__model{font-weight:600;opacity:0;transform:translateX(-6px);transition:opacity .45s cubic-bezier(.22,1,.36,1),transform .45s cubic-bezier(.22,1,.36,1)}
+.erapplay[data-step="car"] .erapplay__arrow,.erapplay[data-step="who"] .erapplay__arrow,.erapplay[data-step="found"] .erapplay__arrow,.erapplay[data-step="debt"] .erapplay__arrow,.erapplay[data-step="hold"] .erapplay__arrow,
+.erapplay[data-step="car"] .erapplay__model,.erapplay[data-step="who"] .erapplay__model,.erapplay[data-step="found"] .erapplay__model,.erapplay[data-step="debt"] .erapplay__model,.erapplay[data-step="hold"] .erapplay__model{opacity:1;transform:none}
+
+.erapplay__who{opacity:.45;transition:opacity .4s}
+.erapplay[data-step="who"] .erapplay__who,.erapplay[data-step="found"] .erapplay__who,.erapplay[data-step="debt"] .erapplay__who,.erapplay[data-step="hold"] .erapplay__who{opacity:1}
+.erapplay__shift{position:relative;display:flex;gap:3px;height:30px;margin-bottom:28px}
+.erapplay__seg{flex:1;display:flex;align-items:center;padding:0 10px;border-radius:8px;background:var(--bg,#FAFAFA);border:1px solid var(--line,#E3E3E3);font-size:12px;font-weight:600;color:var(--muted,#727272);white-space:nowrap;overflow:hidden;transition:background .4s,color .4s,border-color .4s}
+.erapplay__seg.is-on{background:var(--yellow-tint,#FFF8E1);border-color:var(--yellow,#F0B100);color:var(--ink,#0D0D0D)}
+.erapplay__mark{position:absolute;top:-4px;bottom:-4px;left:calc(var(--x,0)*100%);width:2px;margin-left:-1px;background:var(--ink,#0D0D0D);border-radius:2px;opacity:0;transition:left 1.1s cubic-bezier(.22,1,.36,1),opacity .3s}
+.erapplay__mark span{position:absolute;top:100%;left:50%;transform:translate(-50%,4px);font-size:11px;font-weight:700;font-style:normal;white-space:nowrap}
+.erapplay[data-step="who"] .erapplay__mark,.erapplay[data-step="found"] .erapplay__mark,.erapplay[data-step="debt"] .erapplay__mark,.erapplay[data-step="hold"] .erapplay__mark{opacity:1}
+
+.erapplay__found{margin:0;display:flex;align-items:center;gap:8px;font-size:14px;color:var(--muted,#727272);opacity:0;transform:translateY(4px);transition:opacity .4s,transform .4s}
+.erapplay__found i{width:18px;height:18px;border-radius:50%;background:var(--ok,#1F9D5B);color:#fff;display:grid;place-items:center;font-size:11px;font-style:normal;flex:none}
+.erapplay__found b{color:var(--ink,#0D0D0D);font-weight:700}
+.erapplay[data-step="found"] .erapplay__found,.erapplay[data-step="debt"] .erapplay__found,.erapplay[data-step="hold"] .erapplay__found{opacity:1;transform:none}
+
+.erapplay__debt{display:grid;grid-template-columns:1fr auto;align-items:center;column-gap:12px;padding:10px 12px;border-radius:10px;background:var(--bg,#FAFAFA);border:1px solid var(--line,#E3E3E3);transition:background .4s,border-color .4s}
+.erapplay__debt small{grid-column:1;font-size:12px;color:var(--muted,#727272)}
+.erapplay__debt em{grid-column:1}
+.erapplay__debt b{grid-column:2;grid-row:1/3;justify-self:end;font-size:22px;font-weight:800;letter-spacing:-.02em;color:var(--muted,#727272);transition:color .4s}
+.erapplay__debt em{font-style:normal;font-size:12px;color:var(--muted,#727272)}
+.erapplay[data-step="debt"] .erapplay__debt,.erapplay[data-step="hold"] .erapplay__debt{background:var(--yellow-tint,#FFF8E1);border-color:transparent}
+.erapplay[data-step="debt"] .erapplay__debt b,.erapplay[data-step="hold"] .erapplay__debt b{color:var(--ink,#0D0D0D)}
+
+.erapplay__steps{display:flex;gap:8px;font-size:13px;font-weight:700}
+.erapplay__steps span{flex:1;display:flex;align-items:center;justify-content:center;min-height:40px;padding:0 6px;border-radius:12px;background:var(--bg,#FAFAFA);color:var(--muted,#727272);border:1px solid var(--line,#E3E3E3);line-height:1;white-space:nowrap;transition:background .4s,color .4s,border-color .4s}
+.erapplay__steps .is-on{background:var(--yellow,#F0B100);color:var(--ink,#0D0D0D);border-color:var(--yellow,#F0B100)}
+.erapplay__steps .is-done{background:var(--ok-soft,#E4F5EB);color:var(--ok,#1F9D5B);border-color:transparent}
+
+@media (max-width:520px){.erapplay__proto{flex-direction:column;gap:6px}.erapplay__steps{flex-wrap:wrap}.erapplay__steps span{flex:1 1 45%}.erapplay__seg{font-size:11px;padding:0 6px}}

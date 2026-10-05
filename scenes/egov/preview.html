@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Сцена: eGov mobile — preview</title>
+<link rel="stylesheet" href="../../css/styles.css">
+<link rel="stylesheet" href="fragment.css">
+<style>
+  body{background:#FAFAFA}
+  .pv{width:1100px;margin:0 auto;padding:72px 0 80px;display:grid;grid-template-columns:1.05fr 1fr;gap:48px;align-items:start}
+  .pv h1{font-size:48px;margin-bottom:18px}
+  .pv .lead{max-width:none}
+</style>
+</head>
+<body>
+<section class="pv">
+  <div>
+    <p class="eyebrow">eGov mobile</p>
+    <h1>Договор подписывают из дома</h1>
+    <p class="lead">Договор, акт приёма-передачи и путевой лист собираются из аренды. Водитель подписывает <strong>через eGov mobile или кодом из SMS</strong> — приезжать в офис не нужно.</p>
+  </div>
+  <div class="phero__vis">
+    <!-- fragment.html -->
+    <div class="egovplay" data-egovplay data-step="in" aria-hidden="true">
+      <div class="egovplay__phone">
+        <header class="egovplay__head">
+          <small>Документ</small>
+          <div class="egovplay__title">
+            <b>Договор аренды</b>
+            <em class="egovplay__st" data-egovplay-st>Ожидает подписи</em>
+          </div>
+        </header>
+
+        <dl class="egovplay__rows">
+          <div><dt>Водитель</dt><dd>Ерлан С.</dd></div>
+          <div><dt>Машина</dt><dd><span class="plate plate--sm">015 ADM 02</span></dd></div>
+          <div><dt>Модель</dt><dd>Chevrolet Cobalt 2022</dd></div>
+          <div><dt>Ставка</dt><dd>9 000 ₸ в день</dd></div>
+        </dl>
+        <p class="egovplay__from">Данные подставлены из аренды</p>
+
+        <button type="button" class="egovplay__btn" data-egovplay-btn>
+          <span class="egovplay__btn-a" data-egovplay-btn-a>Подписать в eGov mobile</span>
+          <span class="egovplay__btn-b"><i>✓</i> Подписано в eGov mobile</span>
+        </button>
+        <p class="egovplay__hint" data-egovplay-hint>Подписывает водитель, приезжать в офис не нужно</p>
+
+        <div class="egovplay__pdf" data-egovplay-pdf>
+          <i class="egovplay__pdf-ic">PDF</i>
+          <div>
+            <b>Договор аренды · 015 ADM 02.pdf</b>
+            <small>В карточке аренды, водителя и машины</small>
+          </div>
+        </div>
+
+        <div class="egovplay__sheet" data-egovplay-sheet>
+          <div class="egovplay__sheet-top"><b>eGov mobile</b><span data-egovplay-sheet-st>Подписание</span></div>
+          <div class="egovplay__sheet-doc"><small>Документ</small><b>Договор аренды</b></div>
+          <div class="egovplay__sheet-row"><span>Подписывает</span><b>Ерлан С.</b></div>
+          <div class="egovplay__sheet-row"><span>Способ</span><b>ЭЦП</b></div>
+          <div class="egovplay__sheet-bar"><i data-egovplay-bar></i></div>
+        </div>
+      </div>
+
+      <svg class="egovplay__cur" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 2.5v15.2l4.1-3.7 3.2 6.4 2.1-.9-3.2-6.3 5.6-.3z"/></svg>
+    </div>
+  </div>
+</section>
+<script src="fragment.js"></script>
+</body>
+</html>

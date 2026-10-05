@@ -638,6 +638,765 @@ def rent_scene():
 def features_art(R):
     return f'<div class="phero__vis phero__vis--art" data-reveal="scale"><img src="{R}assets/img/features-hero.png" width="822" height="543" alt="" fetchpriority="high"></div>'
 
+def documents_scene():
+    return '''<div class="phero__vis" data-reveal="scale"><div class="docplay" data-docplay data-step="empty" aria-hidden="true">
+  <div class="docplay__card">
+    <svg class="docplay__cur" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 2.5v15.2l4.1-3.7 3.2 6.4 2.1-.9-3.2-6.3 5.6-.3z"/></svg>
+    <header class="docplay__head">
+      <div><small>Документ</small><b>Договор аренды</b></div>
+      <span class="docplay__status"><i class="docplay__st docplay__st--draft">Черновик</i><i class="docplay__st docplay__st--done">Подписан</i></span>
+    </header>
+    <p class="docplay__from">Данные подставлены из аренды</p>
+    <dl class="docplay__rows">
+      <div class="docplay__row" style="--i:0"><dt>Водитель</dt><dd><span class="docplay__ph"></span><span class="docplay__val">Ерлан С.</span></dd></div>
+      <div class="docplay__row" style="--i:1"><dt>Машина</dt><dd><span class="docplay__ph"></span><span class="docplay__val"><span class="plate plate--sm">015 ADM 02</span></span></dd></div>
+      <div class="docplay__row" style="--i:2"><dt>Модель</dt><dd><span class="docplay__ph"></span><span class="docplay__val">Chevrolet Cobalt 2022</span></dd></div>
+      <div class="docplay__row" style="--i:3"><dt>Ставка</dt><dd><span class="docplay__ph"></span><span class="docplay__val">9 000 ₸ в день</span></dd></div>
+    </dl>
+    <footer class="docplay__foot">
+      <button type="button" class="docplay__btn" data-docplay-btn><span class="docplay__btn-txt">Подписать в eGov</span><span class="docplay__btn-ok"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Подписано в eGov</span></button>
+      <small class="docplay__hint"><span class="docplay__hint-a">Подписывает водитель в eGov mobile</span><span class="docplay__hint-b">Договор в карточке аренды, водителя и машины</span></small>
+    </footer>
+  </div>
+</div></div>'''
+
+def investors_scene():
+    return '''<div class="phero__vis" data-reveal="scale"><div class="invplay" data-invplay data-step="open" aria-hidden="true">
+  <div class="invplay__card invplay__card--inv">
+    <div class="invplay__head">
+      <span class="invplay__eyebrow">Ссылка для инвестора</span>
+    </div>
+    <div class="invplay__car">
+      <span class="plate plate--sm">015 ADM 02</span>
+      <span>Chevrolet Cobalt 2022</span>
+    </div>
+    <div class="invplay__row">
+      <span class="invplay__lbl">Доход машины · 30 дней</span>
+      <b class="invplay__num" data-inv-income>0 ₸</b>
+    </div>
+    <div class="invplay__share">
+      <div class="invplay__sharehead">
+        <span class="invplay__lbl">Доля инвестора 50 %</span>
+        <b class="invplay__num invplay__num--acc" data-inv-share>0 ₸</b>
+      </div>
+      <div class="invplay__bar" data-inv-bar><i></i></div>
+      <div class="invplay__split">
+        <span>Инвестору <b data-inv-share2>0 ₸</b></span>
+        <span>Парку <b data-inv-park>0 ₸</b></span>
+      </div>
+    </div>
+    <div class="invplay__lock" data-inv-lock>
+      <svg viewBox="0 0 16 16" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="7" width="10" height="7" rx="1.6"/><path d="M5.5 7V5a2.5 2.5 0 0 1 5 0v2"/></svg>
+      <span>Ставка аренды и водитель инвестору не показываются</span>
+    </div>
+  </div>
+
+  <div class="invplay__card invplay__card--lease">
+    <div class="invplay__head">
+      <span class="invplay__eyebrow">Лизинг</span>
+      <span class="invplay__period">банк</span>
+    </div>
+    <div class="invplay__lbl">Остаток</div>
+    <b class="invplay__big" data-inv-left>7 200 000 ₸</b>
+    <div class="invplay__of">из 7 200 000 ₸</div>
+    <svg class="invplay__chart" viewBox="0 0 240 96" preserveAspectRatio="none">
+      <defs>
+        <linearGradient id="invplay-g" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0" stop-color="#F0B100" stop-opacity=".35"/>
+          <stop offset="1" stop-color="#F0B100" stop-opacity="0"/>
+        </linearGradient>
+      </defs>
+      <path class="invplay__area" d="M0 94 C40 92 70 86 100 72 C135 56 170 38 200 22 L240 8 L240 96 L0 96 Z" fill="url(#invplay-g)"/>
+      <path class="invplay__line" data-inv-line d="M0 94 C40 92 70 86 100 72 C135 56 170 38 200 22 L240 8" fill="none" stroke="#F0B100" stroke-width="2.5" stroke-linecap="round"/>
+      <circle class="invplay__dot" cx="240" cy="8" r="4" fill="#0D0D0D"/>
+    </svg>
+    <div class="invplay__paid">
+      <span class="invplay__lbl">Выплачено банку</span>
+      <b data-inv-paid>0 ₸</b>
+    </div>
+  </div>
+</div></div>'''
+
+def buyout_scene():
+    return '''<div class="phero__vis" data-reveal="scale"><div class="bopage" data-bopage data-step="in" aria-hidden="true">
+  <div class="bopage__card">
+    <header class="bopage__head">
+      <span class="plate">015 ADM 02</span>
+      <b>Chevrolet Cobalt · 2022</b>
+      <em class="bopage__stage" data-bopage-stage>Взнос</em>
+    </header>
+    <p class="bopage__who">Водитель <b>Ерлан С.</b> · сменщик Асан</p>
+
+    <div class="bopage__sum">
+      <small>Стоимость выкупа</small>
+      <b>7 200 000 ₸</b>
+      <span class="bopage__lock"><svg viewBox="0 0 24 24"><rect x="5" y="10" width="14" height="10" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg>зафиксирована в договоре</span>
+    </div>
+
+    <div class="bopage__bar">
+      <i class="bopage__bar-fill" data-bopage-bar></i>
+      <i class="bopage__bar-mark" data-bopage-mark><span>взнос 1 500 000 ₸</span></i>
+    </div>
+
+    <div class="bopage__row">
+      <div><small>Накоплено</small><b class="bopage__pos" data-bopage-saved>0 ₸</b></div>
+      <div><small>Осталось</small><b data-bopage-left>7 200 000 ₸</b></div>
+      <div><small>Ставка</small><b>9 000 ₸ <i>в день</i></b></div>
+    </div>
+
+    <div class="bopage__pay" data-bopage-pay>
+      <i>✓</i>
+      <span data-bopage-payline>Ближайший платёж · 9 000 ₸ · во взнос</span>
+      <em>−9 000 ₸ к остатку</em>
+    </div>
+
+    <div class="bopage__steps">
+      <span data-bopage-s0>Взнос</span>
+      <span data-bopage-s1>Выкуп</span>
+      <span data-bopage-s2>Выкуплено</span>
+    </div>
+  </div>
+</div></div>'''
+
+def shifts_scene():
+    return '''<div class="phero__vis" data-reveal="scale"><div class="shiftplay" data-shiftplay data-step="0">
+  <article class="shiftplay__card" aria-label="Одна машина, две аренды по сменам">
+    <header class="shiftplay__head">
+      <span class="plate">015 ADM 02</span>
+      <div>
+        <b>Chevrolet Cobalt 2022</b>
+        <small>Смены 12/12 · две аренды</small>
+      </div>
+    </header>
+
+    <div class="shiftplay__day" aria-hidden="true">
+      <i class="shiftplay__half shiftplay__half--d"><span>08:00</span>день<span>20:00</span></i>
+      <i class="shiftplay__half shiftplay__half--n">ночь<span>08:00</span></i>
+      <em class="shiftplay__fine" title="Штраф ПДД, 14:20">14:20</em>
+    </div>
+
+    <div class="shiftplay__tabs" role="tablist">
+      <button type="button" role="tab" data-shiftplay-tab="0" class="is-on">Ерлан С. · день</button>
+      <button type="button" role="tab" data-shiftplay-tab="1">Асан · ночь</button>
+    </div>
+
+    <div class="shiftplay__facts">
+      <section data-shiftplay-fact="0" class="is-on">
+        <div class="shiftplay__row">
+          <span>Долг по аренде</span>
+          <b class="shiftplay__sum" data-shiftplay-sum="18000">0 ₸</b>
+        </div>
+        <small>2 смены × 9 000 ₸ не оплачены</small>
+        <div class="shiftplay__bar" data-shiftplay-bar="5" aria-hidden="true"><i></i></div>
+        <small class="shiftplay__cap">Оплачено 5 смен из 7</small>
+        <div class="shiftplay__note shiftplay__note--fine">Штраф ПДД <b>21 625 ₸</b> · 14:20, его смена, был за рулём</div>
+      </section>
+
+      <section data-shiftplay-fact="1">
+        <div class="shiftplay__row">
+          <span>Долг по аренде</span>
+          <b class="shiftplay__sum" data-shiftplay-sum="0">0 ₸</b>
+        </div>
+        <small>7 смен × 9 000 ₸ оплачены</small>
+        <div class="shiftplay__bar" data-shiftplay-bar="7" aria-hidden="true"><i></i></div>
+        <small class="shiftplay__cap">Оплачено 7 смен из 7</small>
+        <div class="shiftplay__note shiftplay__note--ok">Штраф 21 625 ₸ в 14:20 не его: дневная смена. Штрафов ПДД нет</div>
+      </section>
+    </div>
+  </article>
+  <svg class="shiftplay__cur" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 2.5v15.2l4.1-3.7 3.2 6.4 2.1-.9-3.2-6.3 5.6-.3z"/></svg>
+</div></div>'''
+
+def analytics_scene():
+    return '''<div class="phero__vis" data-reveal="scale"><div class="anaplay" data-anaplay data-step="0" aria-label="Обзор парка за неделю: выручка, машины в аренде, долг">
+  <div class="anaplay__head"><b>Обзор парка</b><span>неделя · 14 машин</span></div>
+  <section class="anaplay__tile anaplay__tile--rev">
+    <small>Выручка</small>
+    <b class="anaplay__num" data-anaplay-num="756000" data-anaplay-suffix=" ₸" data-anaplay-at="rev">0 ₸</b>
+    <em>84 ставки × 9 000 ₸</em>
+    <div class="anaplay__bars" aria-hidden="true">
+      <i style="--h:86%"><span>пн</span></i><i style="--h:79%"><span>вт</span></i><i style="--h:93%"><span>ср</span></i><i style="--h:86%"><span>чт</span></i><i style="--h:100%"><span>пт</span></i><i style="--h:71%"><span>сб</span></i><i style="--h:86%"><span>вс</span></i>
+    </div>
+  </section>
+  <div class="anaplay__row">
+    <section class="anaplay__tile anaplay__tile--load">
+      <small>В аренде</small>
+      <b class="anaplay__num"><span data-anaplay-num="12" data-anaplay-at="load">0</span> <u>из 14</u></b>
+      <svg class="anaplay__ring" viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="20"/><circle class="anaplay__arc" cx="24" cy="24" r="20" pathLength="100"/></svg>
+      <em>2 машины простаивают</em>
+    </section>
+    <section class="anaplay__tile anaplay__tile--debt">
+      <small>Долг</small>
+      <b class="anaplay__num" data-anaplay-num="39625" data-anaplay-suffix=" ₸" data-anaplay-at="debt">0 ₸</b>
+      <ul class="anaplay__list">
+        <li><span>Ерлан С. <span class="plate plate--sm">015 ADM 02</span></span><b>21 625 ₸</b><i>штраф</i></li>
+        <li><span>Асан</span><b>18 000 ₸</b><i>2 ставки</i></li>
+      </ul>
+    </section>
+  </div>
+</div></div>'''
+
+def leads_scene():
+    return '''<div class="phero__vis" data-reveal="scale"><div class="leadplay" data-leadplay data-step="in" aria-hidden="true">
+  <div class="leadplay__card">
+    <svg class="leadplay__cur" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 2.5v15.2l4.1-3.7 3.2 6.4 2.1-.9-3.2-6.3 5.6-.3z"/></svg>
+
+    <!-- WhatsApp chat (via Wazzup) -->
+    <section class="leadplay__chat">
+      <header class="leadplay__chathead">
+        <i class="leadplay__wa"></i>
+        <div><b>Ерлан С.</b><small>WhatsApp · номер парка</small></div>
+      </header>
+      <div class="leadplay__msgs">
+        <div class="leadplay__typing"><i></i><i></i><i></i></div>
+        <p class="leadplay__bubble">Здравствуйте! Хочу взять машину в аренду. Cobalt 2022 ещё свободен?<time>12:04</time></p>
+      </div>
+    </section>
+
+    <!-- lead card appears from the message -->
+    <section class="leadplay__lead">
+      <div class="leadplay__leadtop">
+        <div><small>Заявка из WhatsApp</small><b>Ерлан С.</b></div>
+        <span class="leadplay__stage"><span data-leadplay-stage>Новая</span></span>
+      </div>
+
+      <div class="leadplay__want">
+        <span class="plate plate--sm">015 ADM 02</span>
+        <span class="leadplay__wantcar">Chevrolet Cobalt 2022 · 9 000 ₸ в день</span>
+      </div>
+
+      <div class="leadplay__track" role="list">
+        <i class="leadplay__fill" data-leadplay-fill></i>
+        <button type="button" class="leadplay__st is-on" data-leadplay-st="0">Новая</button>
+        <button type="button" class="leadplay__st" data-leadplay-st="1">Связались</button>
+        <button type="button" class="leadplay__st" data-leadplay-st="2">Документы</button>
+        <button type="button" class="leadplay__st" data-leadplay-st="3">Проверка</button>
+      </div>
+
+      <ul class="leadplay__checks">
+        <li><span>Реестр должников</span><em data-leadplay-c1><i class="leadplay__spin"></i><b>не найден</b></em></li>
+        <li><span>Чёрный список парков</span><em data-leadplay-c2><i class="leadplay__spin"></i><b>не найден</b></em></li>
+      </ul>
+      <small class="leadplay__hint"><span class="leadplay__hint-a">Менеджер ведёт заявку по этапам</span><span class="leadplay__hint-b">Выдачу машины подтверждает менеджер</span></small>
+    </section>
+  </div>
+</div></div>'''
+
+def settings_scene():
+    return '''<div class="phero__vis" data-reveal="scale"><div class="setplay" data-setplay data-step="0">
+  <article class="setplay__card" aria-label="Правила парка: график, ставка, способы оплаты">
+    <header class="setplay__head">
+      <div>
+        <b>Правила парка</b>
+        <small>Применяются к новым арендам</small>
+      </div>
+      <span class="setplay__saved" data-setplay-saved>Сохранено</span>
+    </header>
+
+    <div class="setplay__row">
+      <span class="setplay__lab">График</span>
+      <div class="setplay__seg" role="group" aria-label="График">
+        <i class="is-on">7/0</i><i>6/1</i>
+      </div>
+    </div>
+
+    <div class="setplay__row">
+      <span class="setplay__lab">Ставка в день</span>
+      <b class="setplay__rate" data-setplay-rate="9000">0 ₸</b>
+    </div>
+
+    <div class="setplay__row setplay__row--pay">
+      <span class="setplay__lab">Способы оплаты</span>
+      <ul class="setplay__pays">
+        <li><em>Наличные</em><i class="setplay__sw is-on" aria-hidden="true"></i></li>
+        <li><em>Перевод</em><i class="setplay__sw is-on" aria-hidden="true"></i></li>
+        <li><em>Kaspi · оплата по ссылке</em><button type="button" class="setplay__sw" data-setplay-kaspi role="switch" aria-checked="false" aria-label="Kaspi"></button></li>
+      </ul>
+    </div>
+
+    <section class="setplay__rent" aria-label="Как правила попадают в аренду">
+      <header>
+        <span class="plate plate--sm">015 ADM 02</span>
+        <div><b>Ерлан С.</b><small>Chevrolet Cobalt 2022</small></div>
+      </header>
+      <div class="setplay__week" aria-hidden="true">
+        <i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+      </div>
+      <div class="setplay__sum">
+        <span>Неделя 7/0 × 9 000 ₸</span>
+        <b data-setplay-week="63000">0 ₸</b>
+      </div>
+      <div class="setplay__chips">
+        <span>Наличные</span><span>Перевод</span><span class="setplay__chip--kaspi" data-setplay-chip>Kaspi</span>
+      </div>
+    </section>
+  </article>
+  <svg class="setplay__cur" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 2.5v15.2l4.1-3.7 3.2 6.4 2.1-.9-3.2-6.3 5.6-.3z"/></svg>
+</div></div>'''
+
+def kaspi_scene():
+    return '''<div class="phero__vis" data-reveal="scale"><div class="kpay" data-kpay data-step="in" aria-hidden="true">
+  <div class="kpay__phone">
+    <header class="kpay__head">
+      <span class="plate">015 ADM 02</span>
+      <b>Chevrolet Cobalt · 2022</b>
+    </header>
+    <p class="kpay__who">Водитель <b>Ерлан С.</b> · ставка 9 000 ₸ в день</p>
+
+    <div class="kpay__debt">
+      <small>Долг по аренде</small>
+      <b data-kpay-debt>27 000 ₸</b>
+      <em data-kpay-debtnote>3 дня не оплачены</em>
+    </div>
+
+    <div class="kpay__pick">
+      <small>Какие дни закрываете</small>
+      <div class="kpay__days">
+        <button type="button" class="kpay__day" data-kpay-day="0"><span>4 окт</span><i>9 000 ₸</i></button>
+        <button type="button" class="kpay__day" data-kpay-day="1"><span>5 окт</span><i>9 000 ₸</i></button>
+        <button type="button" class="kpay__day" data-kpay-day="2"><span>6 окт</span><i>9 000 ₸</i></button>
+      </div>
+    </div>
+
+    <button type="button" class="kpay__btn" data-kpay-btn>
+      <span class="kpay__btn-a" data-kpay-btn-a>Выберите дни</span>
+      <span class="kpay__btn-b" data-kpay-btn-b>Оплатить в Kaspi · <b data-kpay-sum>0 ₸</b></span>
+    </button>
+
+    <div class="kpay__done" data-kpay-done>
+      <i>✓</i>
+      <span>Kaspi · <b data-kpay-paid>18 000 ₸</b> · зачислено в аренду</span>
+    </div>
+
+    <p class="kpay__foot">
+      <span>Ссылка одна на всю аренду</span>
+      <span>Комиссия Yume Fleet · <b>0 ₸</b></span>
+    </p>
+
+    <div class="kpay__sheet" data-kpay-sheet>
+      <div class="kpay__sheet-top"><b>Kaspi.kz</b><span data-kpay-sheet-st>Оплата</span></div>
+      <div class="kpay__sheet-sum"><small>К оплате</small><b data-kpay-sheet-sum>18 000 ₸</b></div>
+      <div class="kpay__sheet-row"><span>Получатель</span><b>Kaspi парка</b></div>
+      <div class="kpay__sheet-row"><span>Комиссия Yume Fleet</span><b>0 ₸</b></div>
+      <div class="kpay__sheet-bar"><i data-kpay-sheet-bar></i></div>
+    </div>
+  </div>
+
+  <svg class="kpay__cur" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 2.5v15.2l4.1-3.7 3.2 6.4 2.1-.9-3.2-6.3 5.6-.3z"/></svg>
+</div></div>'''
+
+def hub_scene():
+    return '''<div class="phero__vis" data-reveal="scale"><div class="hubplay" data-hubplay data-step="0" aria-hidden="true">
+  <div class="hubplay__card">
+    <header class="hubplay__head">
+      <div><small class="hubplay__rent">Аренда <span class="plate plate--sm">015 ADM 02</span></small><b>Сервисы Казахстана</b></div>
+      <span class="hubplay__count"><b data-hubplay-n>0</b> из 5</span>
+    </header>
+    <div class="hubplay__bar"><i></i></div>
+    <ul class="hubplay__list">
+      <li class="hubplay__row" style="--i:1">
+        <span class="hubplay__ico"><svg viewBox="0 0 24 24"><path d="M4 7h16v10H4z" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M4 11h16" stroke="currentColor" stroke-width="1.8"/></svg></span>
+        <span class="hubplay__txt"><b>Kaspi Pay</b><small>9 000 ₸ по ссылке, зачислено в аренду</small></span>
+        <span class="hubplay__ok"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      </li>
+      <li class="hubplay__row" style="--i:2">
+        <span class="hubplay__ico"><svg viewBox="0 0 24 24"><path d="M6 3h9l4 4v14H6z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M9 14l2 2 4-5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        <span class="hubplay__txt"><b>eGov mobile</b><small>Договор подписан, Ерлан С.</small></span>
+        <span class="hubplay__ok"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      </li>
+      <li class="hubplay__row" style="--i:3">
+        <span class="hubplay__ico"><svg viewBox="0 0 24 24"><path d="M12 3l8 4v5c0 5-3.5 8-8 9-4.5-1-8-4-8-9V7z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M12 8v5M12 16h.01" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></span>
+        <span class="hubplay__txt"><b>Штрафы ПДД и ЕРАП</b><small>Постановление 21 625 ₸ с протоколом</small></span>
+        <span class="hubplay__ok"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      </li>
+      <li class="hubplay__row" style="--i:4">
+        <span class="hubplay__ico"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="3.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M5 20c0-3.5 3-6 7-6s7 2.5 7 6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></span>
+        <span class="hubplay__txt"><b>Реестр должников</b><small>Ерлан С. проверен до выдачи</small></span>
+        <span class="hubplay__ok"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      </li>
+      <li class="hubplay__row" style="--i:5">
+        <span class="hubplay__ico"><svg viewBox="0 0 24 24"><path d="M12 21s-6-5.2-6-10.5a6 6 0 0 1 12 0C18 15.8 12 21 12 21z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><circle cx="12" cy="10.5" r="2.2" fill="none" stroke="currentColor" stroke-width="1.8"/></svg></span>
+        <span class="hubplay__txt"><b>GPS Wialon</b><small>Местоположение и пробег машины</small></span>
+        <span class="hubplay__ok"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      </li>
+    </ul>
+    <p class="hubplay__foot">Всё в одной системе</p>
+  </div>
+</div></div>'''
+
+def egov_scene():
+    return '''<div class="phero__vis" data-reveal="scale"><div class="egovplay" data-egovplay data-step="in" aria-hidden="true">
+  <div class="egovplay__phone">
+    <header class="egovplay__head">
+      <small>Документ</small>
+      <div class="egovplay__title">
+        <b>Договор аренды</b>
+        <em class="egovplay__st" data-egovplay-st>Ожидает подписи</em>
+      </div>
+    </header>
+
+    <dl class="egovplay__rows">
+      <div><dt>Водитель</dt><dd>Ерлан С.</dd></div>
+      <div><dt>Машина</dt><dd><span class="plate plate--sm">015 ADM 02</span></dd></div>
+      <div><dt>Модель</dt><dd>Chevrolet Cobalt 2022</dd></div>
+      <div><dt>Ставка</dt><dd>9 000 ₸ в день</dd></div>
+    </dl>
+    <p class="egovplay__from">Данные подставлены из аренды</p>
+
+    <button type="button" class="egovplay__btn" data-egovplay-btn>
+      <span class="egovplay__btn-a" data-egovplay-btn-a>Подписать в eGov mobile</span>
+      <span class="egovplay__btn-b"><i>✓</i> Подписано в eGov mobile</span>
+    </button>
+    <p class="egovplay__hint" data-egovplay-hint>Подписывает водитель, приезжать в офис не нужно</p>
+
+    <div class="egovplay__pdf" data-egovplay-pdf>
+      <i class="egovplay__pdf-ic">PDF</i>
+      <div>
+        <b>Договор аренды · 015 ADM 02.pdf</b>
+        <small>В карточке аренды, водителя и машины</small>
+      </div>
+    </div>
+
+    <div class="egovplay__sheet" data-egovplay-sheet>
+      <div class="egovplay__sheet-top"><b>eGov mobile</b><span data-egovplay-sheet-st>Подписание</span></div>
+      <div class="egovplay__sheet-doc"><small>Документ</small><b>Договор аренды</b></div>
+      <div class="egovplay__sheet-row"><span>Подписывает</span><b>Ерлан С.</b></div>
+      <div class="egovplay__sheet-row"><span>Способ</span><b>ЭЦП</b></div>
+      <div class="egovplay__sheet-bar"><i data-egovplay-bar></i></div>
+    </div>
+  </div>
+
+  <svg class="egovplay__cur" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 2.5v15.2l4.1-3.7 3.2 6.4 2.1-.9-3.2-6.3 5.6-.3z"/></svg>
+</div></div>'''
+
+def erap_scene():
+    return '''<div class="phero__vis" data-reveal="scale"><div class="erapplay" data-erapplay data-step="in" aria-hidden="true">
+  <div class="erapplay__card">
+    <header class="erapplay__head">
+      <span class="erapplay__src"><i></i>Постановление · пришло из ЕРАП</span>
+      <em class="erapplay__stage" data-erapplay-stage>Протокол</em>
+    </header>
+
+    <div class="erapplay__proto">
+      <div>
+        <b>Превышение скорости</b>
+        <small>4 окт · 14:32 · Алматы, пр. Абая</small>
+      </div>
+      <b class="erapplay__sum">21 625 ₸</b>
+    </div>
+
+    <div class="erapplay__row erapplay__car" data-erapplay-car>
+      <small>Госномер</small>
+      <div class="erapplay__carline">
+        <span class="plate">015 ADM 02</span>
+        <span class="erapplay__arrow">→</span>
+        <b class="erapplay__model">Chevrolet Cobalt · 2022</b>
+      </div>
+    </div>
+
+    <div class="erapplay__row erapplay__who" data-erapplay-who>
+      <small>Кто был за рулём в 14:32</small>
+      <div class="erapplay__shift">
+        <span class="erapplay__seg erapplay__seg--a" data-erapplay-seg-a>Ерлан С. · 08–20</span>
+        <span class="erapplay__seg erapplay__seg--b">Асан · 20–08</span>
+        <i class="erapplay__mark" data-erapplay-mark><span>14:32</span></i>
+      </div>
+      <p class="erapplay__found" data-erapplay-found><i>✓</i><b>Ерлан С.</b> был за рулём · смена 08:00–20:00</p>
+    </div>
+
+    <div class="erapplay__debt" data-erapplay-debt>
+      <small>К долгу водителя</small>
+      <b data-erapplay-amount>+0 ₸</b>
+      <em>оплата сверяется с ЕРАП</em>
+    </div>
+
+    <div class="erapplay__steps">
+      <span data-erapplay-s0>Протокол</span>
+      <span data-erapplay-s1>Госномер</span>
+      <span data-erapplay-s2>Водитель</span>
+      <span data-erapplay-s3>В долг</span>
+    </div>
+  </div>
+</div></div>'''
+
+def debtors_scene():
+    return '''<div class="phero__vis" data-reveal="scale"><div class="debtplay" data-debtplay data-step="in" aria-hidden="true">
+  <div class="debtplay__card">
+    <header class="debtplay__head">
+      <div class="debtplay__who">
+        <small>Заявка из WhatsApp</small>
+        <b>Ерлан С.</b>
+        <span>ИИН 90••••••••12</span>
+      </div>
+      <div class="debtplay__car">
+        <span class="plate plate--sm">015 ADM 02</span>
+        <em>Chevrolet Cobalt · 2022</em>
+      </div>
+    </header>
+
+    <div class="debtplay__row">
+      <div class="debtplay__src">
+        <i class="debtplay__ico"></i>
+        <div>
+          <b>Реестр должников</b>
+          <span>data.egov.kz · запрос по ИИН</span>
+        </div>
+      </div>
+      <div class="debtplay__res">
+        <span class="debtplay__wait" data-debtplay-wait>Проверяем…</span>
+        <span class="debtplay__ok">✓ Чисто</span>
+      </div>
+    </div>
+    <div class="debtplay__bar"><i data-debtplay-bar></i></div>
+
+    <p class="debtplay__verdict">
+      <span class="debtplay__verdict-a">Запрос по ИИН отправлен</span>
+      <span class="debtplay__verdict-b">Исполнительных производств нет · проверено <b data-debtplay-date>6 окт, 10:42</b></span>
+    </p>
+
+    <div class="debtplay__issue">
+      <div class="debtplay__issue-txt">
+        <small>Выдача машины</small>
+        <b class="debtplay__issue-a">Ждёт проверки</b>
+        <b class="debtplay__issue-b">Можно выдавать</b>
+      </div>
+      <span class="debtplay__lock" aria-hidden="true"><i></i></span>
+    </div>
+
+    <p class="debtplay__foot">Результат и дата остаются в карточке водителя. Повторим перед договором.</p>
+  </div>
+</div></div>'''
+
+def blacklist_scene():
+    return '''<div class="phero__vis" data-reveal="scale"><div class="blplay" data-blplay data-step="in" aria-hidden="true">
+  <div class="blplay__card">
+    <header class="blplay__head">
+      <span class="blplay__src"><svg viewBox="0 0 24 24"><path d="M4 20l1.3-4A8 8 0 1 1 8 18.7z"/><path d="M9 11h6M9 14h4"/></svg>Заявка из WhatsApp</span>
+      <em class="blplay__status" data-blplay-status>Проверяем</em>
+    </header>
+
+    <p class="blplay__who"><b>Ерлан С.</b> · просит <b>Chevrolet Cobalt 2022</b></p>
+    <p class="blplay__ask"><span class="plate plate--sm">015 ADM 02</span><span>ставка 9 000 ₸ в день · сменщик Асан</span></p>
+
+    <ul class="blplay__checks">
+      <li class="blplay__check" data-blplay-row="debt">
+        <i class="blplay__bar"><b data-blplay-bar="debt"></b></i>
+        <span class="blplay__name">Реестр должников</span>
+        <em class="blplay__res" data-blplay-res="debt">ищем…</em>
+      </li>
+      <li class="blplay__check" data-blplay-row="list">
+        <i class="blplay__bar"><b data-blplay-bar="list"></b></i>
+        <span class="blplay__name">Чёрный список парков</span>
+        <em class="blplay__res" data-blplay-res="list">ищем…</em>
+      </li>
+    </ul>
+
+    <div class="blplay__hit" data-blplay-hit><div class="blplay__hit-in"><div class="blplay__hit-box">
+      <div class="blplay__hit-top">
+        <span class="blplay__flag"><svg viewBox="0 0 24 24"><path d="M12 3l9.5 17h-19z"/><path d="M12 10v4M12 17.5v.5"/></svg>Запись другого парка</span>
+        <small>не ваша · на Yume Fleet</small>
+      </div>
+      <p class="blplay__reason"><small>Причина</small><b>Не вернул машину</b></p>
+      <p class="blplay__foot" data-blplay-foot>Оба результата — в карточке водителя до выдачи</p>
+    </div></div></div>
+  </div>
+</div></div>'''
+
+def wazzup_scene():
+    return '''<div class="phero__vis" data-reveal="scale"><div class="wazplay" data-wazplay data-step="in" aria-hidden="true">
+  <div class="wazplay__card">
+
+    <!-- left: WhatsApp chat inside the system -->
+    <section class="wazplay__chat">
+      <header class="wazplay__head">
+        <i class="wazplay__wa"></i>
+        <div class="wazplay__who"><b>Ерлан С.</b><small>номер парка</small></div>
+        <span class="wazplay__tag">в системе</span>
+      </header>
+
+      <div class="wazplay__msgs">
+        <p class="wazplay__day">Сегодня</p>
+
+        <div class="wazplay__typing" data-wazplay-typing><i></i><i></i><i></i></div>
+
+        <p class="wazplay__bubble wazplay__bubble--in" data-wazplay-in>
+          Здравствуйте! Сколько у меня сейчас долг по аренде?
+          <time>12:04</time>
+        </p>
+
+        <p class="wazplay__bubble wazplay__bubble--out" data-wazplay-out>
+          Ерлан, долг <b>27 000 ₸</b>: 4, 5 и 6 октября по 9 000 ₸.
+          <time>12:05</time>
+        </p>
+        <small class="wazplay__from" data-wazplay-from>Менеджер · с номера парка</small>
+      </div>
+    </section>
+
+    <!-- right: who writes, his rental and debt -->
+    <aside class="wazplay__side">
+      <small class="wazplay__sidecap">Рядом с чатом</small>
+
+      <div class="wazplay__drv">
+        <b>Ерлан С.</b>
+        <span>водитель · сменщик Асан</span>
+      </div>
+
+      <div class="wazplay__car">
+        <span class="plate plate--sm">015 ADM 02</span>
+        <span class="wazplay__carname">Chevrolet Cobalt 2022</span>
+      </div>
+
+      <dl class="wazplay__rows">
+        <div><dt>Аренда</dt><dd>9 000 ₸ в день</dd></div>
+        <div class="wazplay__debt" data-wazplay-debtrow>
+          <dt>Долг</dt>
+          <dd><b data-wazplay-debt>0 ₸</b><em>3 дня не оплачены</em></dd>
+        </div>
+      </dl>
+
+      <small class="wazplay__foot">Переписка остаётся в Yume Fleet</small>
+    </aside>
+
+  </div>
+</div></div>'''
+
+def wialon_scene():
+    return '''<div class="phero__vis" data-reveal="scale"><div class="gpsplay" data-gpsplay data-step="0" aria-label="Карточка машины 015 ADM 02: местоположение по трекеру Wialon и пробег">
+  <div class="gpsplay__head">
+    <div class="gpsplay__car">
+      <span class="plate">015 ADM 02</span>
+      <div><b>Chevrolet Cobalt</b><span>2022 · в аренде</span></div>
+    </div>
+    <span class="gpsplay__src"><i></i>Wialon</span>
+  </div>
+
+  <section class="gpsplay__tile gpsplay__tile--map">
+    <div class="gpsplay__lab"><small>Местоположение</small><em class="gpsplay__city">Алматы</em></div>
+    <svg class="gpsplay__map" viewBox="0 0 460 150" preserveAspectRatio="none" aria-hidden="true">
+      <g class="gpsplay__streets">
+        <path d="M0 38 H460"/><path d="M0 96 H460"/><path d="M0 128 H460"/>
+        <path d="M70 0 V150"/><path d="M165 0 V150"/><path d="M262 0 V150"/><path d="M372 0 V150"/>
+        <path d="M0 68 H262"/><path d="M262 68 L460 20"/>
+      </g>
+      <path class="gpsplay__trail" pathLength="100" d="M18 128 H70 V96 H165 V38 H262 V68 L330 68"/>
+      <g class="gpsplay__pin" transform="translate(330 68)">
+        <circle class="gpsplay__pulse" r="8"/>
+        <circle r="7" fill="#fff" stroke="#0D0D0D" stroke-width="2"/>
+        <circle r="3" fill="#F0B100"/>
+      </g>
+    </svg>
+  </section>
+
+  <div class="gpsplay__row">
+    <section class="gpsplay__tile gpsplay__tile--odo">
+      <small>Пробег</small>
+      <b class="gpsplay__num" data-gpsplay-num="48312" data-gpsplay-suffix=" км" data-gpsplay-at="odo">0 км</b>
+      <em>по трекеру, без звонка водителю</em>
+    </section>
+    <section class="gpsplay__tile gpsplay__tile--rent">
+      <small>Аренда</small>
+      <b class="gpsplay__who">Ерлан С.</b>
+      <em>ставка 9 000 ₸ в сутки · сменщик Асан</em>
+    </section>
+  </div>
+
+  <p class="gpsplay__foot">Подключается по запросу: напишите, какие трекеры стоят в парке.</p>
+</div></div>'''
+
+def ai_scene():
+    return '''<div class="phero__vis" data-reveal="scale"><div class="aiplay" data-aiplay data-step="in" aria-hidden="true">
+  <div class="aiplay__card">
+    <header class="aiplay__head">
+      <span class="aiplay__src"><i></i>Главная парка · ИИ-ассистент</span>
+      <em class="aiplay__stage" data-aiplay-stage>Вопрос</em>
+    </header>
+
+    <div class="aiplay__ask">
+      <div class="aiplay__input" data-aiplay-input>
+        <span class="aiplay__ph" data-aiplay-ph>Спросите о парке словами…</span>
+        <span class="aiplay__text" data-aiplay-text></span><i class="aiplay__caret" data-aiplay-caret></i>
+      </div>
+      <button class="aiplay__btn" type="button" tabindex="-1" data-aiplay-btn><b data-aiplay-btn-b>Спросить</b></button>
+    </div>
+
+    <div class="aiplay__answer" data-aiplay-answer>
+      <div class="aiplay__skel" aria-hidden="true">
+        <i></i><i></i><i></i>
+        <div class="aiplay__think"><b></b><b></b><b></b><span>Смотрю аренды и долги</span></div>
+      </div>
+      <p class="aiplay__lead">Долг есть у <b>одного</b> водителя</p>
+      <div class="aiplay__row">
+        <div class="aiplay__who">
+          <b>Ерлан С.</b>
+          <small><span class="plate">015 ADM 02</span><span>Chevrolet Cobalt 2022</span></small>
+        </div>
+        <div class="aiplay__num">
+          <b data-aiplay-days>0 дней</b>
+          <small>просрочка</small>
+        </div>
+        <div class="aiplay__num aiplay__num--sum">
+          <b data-aiplay-sum>0 ₸</b>
+          <small>2 × 9 000 ₸ в день</small>
+        </div>
+      </div>
+      <p class="aiplay__foot">Второй сменщик Асан — без долга</p>
+    </div>
+
+    <div class="aiplay__steps">
+      <span data-aiplay-s0>Вопрос</span>
+      <span data-aiplay-s1>Данные парка</span>
+      <span data-aiplay-s2>Ответ</span>
+    </div>
+  </div>
+  <svg class="aiplay__cur" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 2.5v15.2l4.1-3.7 3.2 6.4 2.1-.9-3.2-6.3 5.6-.3z"/></svg>
+</div></div>'''
+
+def perehod_scene():
+    return '''<div class="phero__vis" data-reveal="scale"><div class="moveplay" data-moveplay data-step="in" aria-hidden="true">
+  <div class="moveplay__card">
+    <header class="moveplay__head">
+      <span class="moveplay__from">Yume Cloud</span>
+      <svg class="moveplay__arrow" viewBox="0 0 24 24"><path d="M4 12h15M13 6l6 6-6 6"/></svg>
+      <span class="moveplay__to">Yume Fleet</span>
+      <em class="moveplay__count"><b data-moveplay-count>0</b> из 3</em>
+    </header>
+
+    <div class="moveplay__bar"><i data-moveplay-bar></i></div>
+
+    <ul class="moveplay__list">
+      <li class="moveplay__row" data-moveplay-row="cars">
+        <i class="moveplay__check"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7"/></svg></i>
+        <div class="moveplay__body">
+          <b>Машины</b>
+          <span><span class="plate plate--sm">015 ADM 02</span> Chevrolet Cobalt · 2022</span>
+        </div>
+        <small class="moveplay__state" data-moveplay-state>в очереди</small>
+      </li>
+      <li class="moveplay__row" data-moveplay-row="drivers">
+        <i class="moveplay__check"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7"/></svg></i>
+        <div class="moveplay__body">
+          <b>Водители</b>
+          <span>Ерлан С. · сменщик Асан</span>
+        </div>
+        <small class="moveplay__state" data-moveplay-state>в очереди</small>
+      </li>
+      <li class="moveplay__row" data-moveplay-row="rents">
+        <i class="moveplay__check"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7"/></svg></i>
+        <div class="moveplay__body">
+          <b>Аренды</b>
+          <span><i>9 000 ₸ в день</i><i>выкуп 7 200 000 ₸</i><i>взнос 1 500 000 ₸</i></span>
+        </div>
+        <small class="moveplay__state" data-moveplay-state>в очереди</small>
+      </li>
+    </ul>
+
+    <footer class="moveplay__foot" data-moveplay-foot>
+      <span class="moveplay__tag"><svg viewBox="0 0 24 24"><rect x="5" y="10" width="14" height="10" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg>Цена прежняя</span>
+      <span class="moveplay__tag"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7"/></svg>Данные переносим мы</span>
+    </footer>
+  </div>
+</div></div>'''
+
 def fines_scene():
     """Карточка штрафа: пришло → привязано к водителю → скидка видна."""
     ru = L == 'ru'
@@ -880,7 +1639,7 @@ def inner(p):
     hero = next((s for s in secs if s['type'] == 'hero'), None)
     body = ''
     if hero:
-        vis = {'/features/rentals/': rent_scene, '/features/drivers/': driver_scene, '/features/check/': drv_scene, '/features/vehicles/': vehicle_scene, '/features/finance/': finance_scene, '/features/fines/': fines_scene}.get(p['path'])
+        vis = {'/features/rentals/': rent_scene, '/features/drivers/': driver_scene, '/features/check/': drv_scene, '/features/vehicles/': vehicle_scene, '/features/finance/': finance_scene, '/features/fines/': fines_scene, '/features/documents/': documents_scene, '/features/investors/': investors_scene, '/features/buyout/': buyout_scene, '/features/shifts/': shifts_scene, '/features/analytics/': analytics_scene, '/features/leads/': leads_scene, '/features/settings/': settings_scene, '/kaspi-pay/': kaspi_scene, '/integrations/': hub_scene, '/integrations/egov/': egov_scene, '/integrations/erap/': erap_scene, '/integrations/debtors/': debtors_scene, '/integrations/blacklist/': blacklist_scene, '/integrations/wazzup/': wazzup_scene, '/integrations/wialon/': wialon_scene, '/integrations/ai/': ai_scene, '/perehod/': perehod_scene}.get(p['path'])
         body += phero(hero, crumbs_for(p, R), R, img=None if vis else FEATURE_IMG.get(p['path']), logo=int_logo(p['path'], R), vis=vis() if vis else '')
         desc = strip_md(' '.join(hero['paras']))[:300]
     else:
