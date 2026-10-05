@@ -575,6 +575,18 @@ h1 .tag,h2 .tag{font-size:12px;padding:3px 9px;vertical-align:middle}
 /* phero with screenshot */
 .phero--grid .wrap{display:grid;grid-template-columns:1.05fr 1fr;gap:48px;align-items:start}
 .phero__vis img{width:100%;border-radius:14px;border:1px solid var(--line);box-shadow:var(--shadow);background:#fff}
+.drvplay{position:relative}
+.dcard{background:#fff;border:1px solid var(--line);border-radius:var(--r-lg);padding:22px;box-shadow:var(--shadow);display:flex;flex-direction:column;gap:14px}
+.dcard header{display:flex;justify-content:space-between;align-items:baseline}
+.dcard header small{color:var(--muted);font-size:13px}
+.dcard ul{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+.dcard li{display:grid;grid-template-columns:22px 1fr auto;gap:10px;align-items:center;min-height:42px;padding:0 12px;border-radius:10px;background:var(--bg);font-weight:650}
+.dcard li i{width:8px;height:8px;border-radius:50%;background:var(--line)}
+.dcard li b{font-size:12px;color:var(--muted)}
+.dcard li.is-on i{background:var(--ok)}
+.dcard__ok{padding:12px;border-radius:10px;background:var(--line);color:var(--muted);text-align:center;font-weight:700;transition:background .4s,color .4s}
+.drvplay[data-step="3"] .dcard__ok{background:var(--ok);color:#fff}
+@media (max-width:900px){.drvplay[data-step="3"] .dcard__ok,.dcard__ok{background:var(--ok);color:#fff}}
 .rentplay{position:relative}
 .rcard{position:relative;background:#fff;border:1px solid var(--line);border-radius:var(--r-lg);padding:20px;box-shadow:var(--shadow);display:flex;flex-direction:column;gap:12px}
 .rcard header{display:flex;align-items:center;gap:12px}
@@ -584,7 +596,7 @@ h1 .tag,h2 .tag{font-size:12px;padding:3px 9px;vertical-align:middle}
 .rcard__kinds button{min-height:46px;border:1px solid var(--line);border-radius:12px;background:var(--bg);color:var(--muted);font:inherit;font-size:14px;font-weight:700;cursor:pointer;transition:transform .15s var(--ease)}
 .rcard__kinds button.is-press{transform:scale(.97)}
 .rcard__kinds button.is-on{background:var(--yellow);border-color:var(--yellow);color:var(--ink)}
-.rcard__facts{position:relative;min-height:148px;flex:none}
+.rcard__facts{position:relative;min-height:176px;flex:none}
 .rcard__facts>[data-rent-fact]{position:absolute;inset:0;display:flex;flex-direction:column;gap:4px;padding:14px 16px;border-radius:12px;background:#fff;border:1px solid var(--line);opacity:0;transform:translateY(8px);transition:opacity .45s var(--ease),transform .45s var(--ease);pointer-events:none}
 .rcard__facts>[data-rent-fact].is-on{opacity:1;transform:none}
 .rcard__facts b{font-size:18px;letter-spacing:-.03em}

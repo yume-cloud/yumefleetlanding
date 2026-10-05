@@ -144,6 +144,21 @@
     }
   }
 
+  /* driver check: three checks, then "can issue". Static on a phone. */
+  const drv = $('[data-drvplay]');
+  if (drv) {
+    const rows = $$('[data-drv-row]', drv);
+    const kk = document.documentElement.lang === 'kk';
+    const narrow = matchMedia('(max-width: 900px)').matches;
+    const set = n => { drv.dataset.step = n; rows.forEach((r, i) => { const on = i < n; r.classList.toggle('is-on', on); const b = $('b', r); if (b) b.textContent = on ? (kk ? 'таза' : 'чисто') : ''; }); };
+    if (reduced || narrow) set(3);
+    else {
+      let n = 0, started = false;
+      const loop = async () => { while (true) { set(n % 4); n++; await wait(n % 4 === 0 ? 1800 : 700); } };
+      new IntersectionObserver(es => { if (es[0].isIntersecting && !started) { started = true; loop(); } }, { threshold: .35 }).observe(drv);
+    }
+  }
+
   /* rental kinds: daily, shifts, fixed term, buyout. Static on a phone. */
   const rent = $('[data-rentplay]');
   if (rent) {
