@@ -201,7 +201,7 @@
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 </style>
-<link rel="stylesheet" href="../css/styles.css?v=a5d8644d">
+<link rel="stylesheet" href="../css/styles.css?v=2155f906">
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Organization", "name": "Yume Fleet", "legalName": "ТОО «Yume.Cloud»", "url": "https://yumefleet.com/", "logo": "https://yumefleet.com/assets/logo/tile.svg", "telephone": "+77779479990", "address": {"@type": "PostalAddress", "addressLocality": "Алматы", "addressCountry": "KZ"}, "sameAs": ["https://www.instagram.com/yumecloudx/", "https://www.youtube.com/@yumecloud"]}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Қандай парктерге жарайды?", "acceptedAnswer": {"@type": "Answer", "text": "Кез келген көлемдегі таксопаркке. Жазылым әр көлік үшін есептеледі."}}, {"@type": "Question", "name": "Yume Fleet-тің Yume Cloud-тан айырмашылығы неде?", "acceptedAnswer": {"@type": "Answer", "text": "Yume Fleet тек таксопарктерге жасалған: өз жалдау модельдері, ЖҚЕ айыппұлдары, сатып алу, субжалдау, лизинг. Yume Cloud мүкәммал прокатына арналған жүйе болып қалады."}}, {"@type": "Question", "name": "Мен Yume Cloud-та жұмыс істеймін. Не істеуім керек?", "acceptedAnswer": {"@type": "Answer", "text": "Қиын ештеңе жоқ: деректерді біз көшіреміз, баға бұрынғыдай қалады. Толығырақ «Yume Cloud клиенттеріне» бетінде."}}, {"@type": "Question", "name": "Жүргізуші қалай төлейді?", "acceptedAnswer": {"@type": "Answer", "text": "Kaspi Pay сілтемесі арқылы, кірусіз және парольсіз. Қолма-қол ақша мен аударымдарды менеджер сол жалдауда белгілейді."}}, {"@type": "Question", "name": "Депозитпен не болады?", "acceptedAnswer": {"@type": "Answer", "text": "Депозит жалдаудан бөлек есепке алынады және қарызды өзі өтемейді. Депозитті қабылдау, есепке алу немесе қайтару жеке әрекетпен, тарихымен жасалады."}}, {"@type": "Question", "name": "Деректер кімге тиесілі?", "acceptedAnswer": {"@type": "Answer", "text": "Сізге. Әр компанияның деректері оқшауланған, кез келген уақытта Excel-ге шығаруға болады."}}]}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "Yume Fleet", "applicationCategory": "BusinessApplication", "operatingSystem": "Web", "description": "Платформа для управления таксопарком: аренда посуточно и под выкуп, долги, Kaspi Pay, штрафы ПДД, подписание через eGov.", "url": "https://yumefleet.com/", "publisher": {"@type": "Organization", "name": "Yume Fleet"}, "offers": {"@type": "Offer", "priceCurrency": "KZT", "description": "Цена по запросу, подписка за каждую машину"}}</script>
@@ -331,6 +331,7 @@
           </div>
           <div class="bform__btn" data-buy-create>Жалдау құру</div>
         </div>
+        <svg class="buycur" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 2l14 12h-6l2.2 7-3.2 1L8.6 15H4z"/></svg>
         <div class="bcard">
           <div class="bcard__head"><span class="plate">015 ADM 02</span><b>Chevrolet Cobalt · 2022</b><em data-buy-type>Сатып алумен жалдау · 7 200 000 ₸</em></div>
           <div class="bcard__sum"><small>Сатып алу құны</small><b>7 200 000 ₸</b></div>
@@ -349,7 +350,8 @@
   <div class="wrap promo promo--rev">
     <div data-reveal="left"><p class="eyebrow">Айыппұлдар</p><h2>ЖҚЕ айыппұлы жүргізушіні өзі табады</h2><p class="lead" style="margin-top:18px">Қаулылар <strong>хаттамасымен</strong> келіп, сол сәтте рөлде болған жүргізушіге байланады. Айыппұлды қай күнге дейін <strong>жеңілдікпен</strong> төлеуге болатыны көрінеді.</p><ul class="debt__list checks"><li><i><svg><use href="#i-check"/></svg></i><span>Айыппұл карточкасында хаттама мен бұзушылық фотосы</span></li><li><i><svg><use href="#i-check"/></svg></i><span>Жеңілдік мерзімі менеджерге көрінеді</span></li><li><i><svg><use href="#i-check"/></svg></i><span>Айыппұл жүргізушінің қарызына қосылады</span></li><li><i><svg><use href="#i-check"/></svg></i><span>ЖКО-дан кейінгі залалды <strong>бөліп төлеуге</strong> болады</span></li></ul><a class="link" href="../features/fines/">Айыппұлдар туралы толығырақ <svg><use href="#i-arrow"/></svg></a></div>
     <div class="promo__vis" data-reveal="scale">
-      <div class="fineplay" data-fineplay data-step="in" aria-hidden="true">
+      <div class="fineplay" data-fineplay data-step="photo" aria-hidden="true">
+        <div class="fphoto"><div class="fphoto__shot"><span class="plate">015 ADM 02</span><b>Камера · Абай даңғылы</b><small>12 қыр · 14:20</small></div><p>Камерадағы сурет</p></div>
         <div class="fcard">
           <header><span class="fcard__cam"><svg viewBox="0 0 24 24"><path d="M4 8h3l2-2h6l2 2h3v11H4z"/><circle cx="12" cy="13" r="3.2"/></svg></span><div><b>ЖҚЕ айыппұлы</b><small>12 қыр · 14:20</small></div><span class="plate">015 ADM 02</span></header>
           <p class="fcard__off">Жылдамдықты асыру</p>
@@ -417,6 +419,6 @@
 <button class="to-top" aria-label="Жоғарыға"><svg><use href="#i-up"/></svg></button>
 
 
-<script src="../js/main.js?v=d95cb508" defer></script>
+<script src="../js/main.js?v=7363c6e1" defer></script>
 </body>
 </html>

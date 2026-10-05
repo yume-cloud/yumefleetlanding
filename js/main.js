@@ -137,7 +137,7 @@
     };
     if (reduced) { set('done', fields.length); }
     else {
-      const script = [['form', 0, 250], ['form', 6, 850], ['open', 6, 650], ['card', 6, 400], ['grow', 6, 1500], ['pay', 6, 750], ['done', 6, 1800]];
+      const script = [['form', 0, 250], ['form', 6, 700], ['aim', 6, 850], ['open', 6, 520], ['card', 6, 400], ['grow', 6, 1500], ['pay', 6, 750], ['done', 6, 1800]];
       let n = 0, started = false;
       const loop = async () => { while (true) { const [step, filled, pause] = script[n % script.length]; set(step, filled); n++; await wait(pause); } };
       new IntersectionObserver(es => { if (es[0].isIntersecting && !started) { started = true; loop(); } }, { threshold: .35 }).observe(buy);
@@ -153,7 +153,7 @@
     const set = step => { fine.dataset.step = step; if (who) who.textContent = step === 'in' ? searching : found; };
     if (reduced) set('debt');
     else {
-      const steps = [['in', 700], ['found', 1400], ['debt', 1800]];
+      const steps = [['photo', 1100], ['found', 1400], ['debt', 1800]];
       let n = 0, started = false;
       const loop = async () => { while (true) { const [step, pause] = steps[n % steps.length]; set(step); n++; await wait(pause); } };
       new IntersectionObserver(es => { if (es[0].isIntersecting && !started) { started = true; loop(); } }, { threshold: .35 }).observe(fine);
