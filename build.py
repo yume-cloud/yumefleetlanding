@@ -176,6 +176,7 @@ def nav_ints():
     return [(p, n, (sk if L == 'kk' else sr), logo) for p, n, sr, sk, logo in NAV_INTS]
 
 ICON_BY_PATH = {p: i for p, _, _, i in NAV_FEATURES}
+ICON_BY_NAME = {'Посуточная аренда': 'i-cal', 'Фиксированный срок': 'i-flag'}
 ICON_BY_PATH.update({'/kaspi-pay/': 'i-link'})
 # ширина/высота картинок в первом экране раздела — против скачка вёрстки
 IMG_WH = {'img/gen/INT-egov.webp': (1500, 750), 'img/gen/INT-erap.webp': (1500, 750), 'img/gen/INT-debtors.webp': (1500, 750), 'img/gen/INT-blacklist.webp': (1500, 750), 'img/gen/INT-wazzup.webp': (1500, 750), 'img/gen/INT-wialon.webp': (1500, 750), 'img/gen/INT-ai.webp': (1500, 750), 'cards/rent.webp': (1483, 1080), 'cards/rent-debt.webp': (1098, 1080), 'cards/drivers.webp': (1135, 1080),
@@ -386,7 +387,7 @@ def cards(sec, R, cols=None):
     top_cls = 'card__top' if any_icon else 'card__top card__top--slim'
     for it in items:
         link = it.get('link', '')
-        icon = ICON_BY_PATH.get(link, '')
+        icon = ICON_BY_PATH.get(link, '') or ICON_BY_NAME.get(strip_md(it['name']), '')
         ic = f'<i class="card__i"><svg><use href="#{icon}"/></svg></i>' if icon else ''
         tag = it.get('tag_html', '')
         top = f'<div class="{top_cls}">{ic}{tag}</div>' if (any_icon or any_tag) else ''
