@@ -151,10 +151,21 @@
     const narrow = matchMedia('(max-width: 900px)').matches;
     const set = i => { rent.dataset.kind = i; kinds.forEach(k => k.classList.toggle('is-on', k.dataset.rentKind === String(i))); facts.forEach(f => f.classList.toggle('is-on', f.dataset.rentFact === String(i))); };
     set(0);
+    const title = document.querySelector('.phero h1');
+    const vis = rent.closest('.phero__vis');
+    const fit = () => {
+      if (!title || !vis || matchMedia('(max-width: 900px)').matches) { if (vis) vis.style.marginTop = ''; return; }
+      const wrap = title.closest('.wrap');
+      vis.style.marginTop = (title.getBoundingClientRect().top - wrap.getBoundingClientRect().top) + 'px';
+      rent.querySelector('.rcard').style.height = title.getBoundingClientRect().height + 'px';
+    };
+    fit(); addEventListener('resize', fit);
     kinds.forEach(k => k.addEventListener('click', () => set(Number(k.dataset.rentKind))));
     if (!(reduced || narrow)) {
       let n = 1, started = false;
-      const loop = async () => { while (true) { const i = n % kinds.length; rent.dataset.move = i; await wait(720); rent.dataset.press = '1'; kinds[i].classList.add('is-press'); await wait(160); set(i); rent.dataset.press = '0'; kinds[i].classList.remove('is-press'); n++; await wait(1100); } };
+      const cur = $('.rentcur', rent);
+      const aim = i => { const b = kinds[i].getBoundingClientRect(), r = rent.getBoundingClientRect(); if (cur) { cur.style.left = (b.left - r.left + 18) + 'px'; cur.style.top = (b.top - r.top + 8) + 'px'; } };
+      const loop = async () => { while (true) { const i = n % kinds.length; aim(i); cur && (cur.style.opacity = '1'); await wait(720); rent.dataset.press = '1'; kinds[i].classList.add('is-press'); await wait(160); set(i); rent.dataset.press = '0'; kinds[i].classList.remove('is-press'); n++; await wait(1100); } };
       new IntersectionObserver(es => { if (es[0].isIntersecting && !started) { started = true; loop(); } }, { threshold: .35 }).observe(rent);
     }
   }
