@@ -469,10 +469,14 @@ h1 .tag,h2 .tag{font-size:12px;padding:3px 9px;vertical-align:middle}
 .buyplay .bcard{overflow:hidden;gap:12px;padding:20px 22px}
 .fineplay{position:relative;height:420px}
 .fcard{height:348px;background:var(--card);border:1px solid var(--line);border-radius:var(--r-lg);padding:22px;box-shadow:var(--shadow);display:flex;flex-direction:column;gap:8px}
-.fcard header{display:flex;align-items:center;justify-content:space-between;gap:12px}
-.fcard header b{font-size:18px;letter-spacing:-.02em}
-.fcard__off{margin-top:8px;font-size:16px;font-weight:650}
-.fcard__when,.fcard__who{font-size:14px;color:var(--muted)}
+.fcard header{display:flex;align-items:center;gap:12px}
+.fcard header div{display:grid;gap:2px;margin-right:auto}
+.fcard header b{font-size:16px;letter-spacing:-.02em}
+.fcard header small{font-size:12px;color:var(--muted);font-weight:500}
+.fcard__cam{width:44px;height:44px;border-radius:12px;background:var(--yellow);display:grid;place-items:center;flex:none}
+.fcard__cam svg{width:22px;height:22px;fill:none;stroke:var(--ink);stroke-width:1.8;stroke-linejoin:round}
+.fcard__off{margin-top:14px;font-size:16px;font-weight:650}
+.fcard__who{font-size:14px;color:var(--muted)}
 .fcard__who{min-height:22px;transition:color .45s var(--ease)}
 .fineplay[data-step="found"] .fcard__who,.fineplay[data-step="debt"] .fcard__who{color:var(--ink);font-weight:650}
 .fcard__sum{margin-top:8px;font-size:36px;font-weight:800;letter-spacing:-.03em;line-height:1;opacity:0;transform:translateY(8px);transition:opacity .55s var(--ease),transform .55s var(--ease)}
