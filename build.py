@@ -390,8 +390,14 @@ def cards(sec, R, cols=None):
         icon = ICON_BY_PATH.get(link, '') or ICON_BY_NAME.get(strip_md(it['name']), '')
         ic = f'<i class="card__i"><svg><use href="#{icon}"/></svg></i>' if icon else ''
         tag = it.get('tag_html', '')
-        top = f'<div class="{top_cls}">{ic}{tag}</div>' if (any_icon or any_tag) else ''
-        body = f'{top}<h3>{inline(it["name"])}</h3><p>{inline(it.get("text", ""))}</p>'
+        title = inline(it["name"])
+        if ic:
+            top = f'<div class="{top_cls}">{ic}{tag}</div>'
+            heading = f'<h3>{title}</h3>'
+        else:
+            top = ''
+            heading = f'<h3>{title}{tag}</h3>'
+        body = f'{top}{heading}<p>{inline(it.get("text", ""))}</p>'
         if link:
             out += f'<a class="card card--link" href="{href(link, R)}" data-reveal>{body}<span class="link">{T("more")} <svg><use href="#i-arrow"/></svg></span></a>'
         else:

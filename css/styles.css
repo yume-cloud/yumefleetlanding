@@ -633,7 +633,8 @@ h1 .tag,h2 .tag{font-size:12px;padding:3px 9px;vertical-align:middle}
 .card__top--slim{min-height:22px}
 .card__top .card__i{margin-bottom:0}
 .card__top .tag{margin-left:auto;flex:none}
-.card h3 .tag{margin-left:8px}
+.card h3:has(.tag){display:flex;align-items:center;gap:10px}
+.card h3 .tag{margin-left:auto;flex:none}
 
 /* driver pay scene */
 .payplay{display:flex;justify-content:center}
