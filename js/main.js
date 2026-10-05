@@ -144,16 +144,26 @@
     }
   }
 
-  /* driver overview: debt ticks, then a payment lands */
+  /* driver overview: cursor opens Долг, then Документы */
   const ov = $('[data-driverplay]');
   if (ov) {
-    const sum = $('[data-drv-sum]', ov);
-    const money = n => fmt(n) + ' ₸';
-    const set = step => { ov.dataset.step = step; if (sum) sum.textContent = money(step === 'pay' ? 9000 : 18000); };
-    if (reduced) set('pay');
-    else {
-      let n = 0, started = false;
-      const loop = async () => { while (true) { set(n % 2 ? 'pay' : 'debt'); n++; await wait(2200); } };
+    const tabs = $$('[data-drv-tab]', ov), panes = $$('[data-drv-pane]', ov);
+    const order = [0, 2, 4];
+    const set = i => { ov.dataset.tab = i; tabs.forEach(t => t.classList.toggle('is-on', t.dataset.drvTab === String(i))); panes.forEach(p => p.classList.toggle('is-on', p.dataset.drvPane === String(i))); };
+    set(0);
+    const title = ov.closest('.phero')?.querySelector('h1');
+    const vis = ov.closest('.phero__vis');
+    const fit = () => {
+      if (!title || !vis || matchMedia('(max-width: 980px)').matches) { if (vis) vis.style.marginTop = ''; return; }
+      vis.style.marginTop = (title.getBoundingClientRect().top - title.closest('.wrap').getBoundingClientRect().top) + 'px';
+    };
+    fit(); addEventListener('resize', fit);
+    tabs.forEach(t => t.addEventListener('click', () => set(Number(t.dataset.drvTab))));
+    if (!(reduced || matchMedia('(max-width: 900px)').matches)) {
+      const cur = $('.ovcur', ov);
+      let n = 1, started = false;
+      const aim = i => { const b = tabs.find(t => t.dataset.drvTab === String(i)).getBoundingClientRect(), r = ov.getBoundingClientRect(); if (cur) { cur.style.left = (b.left - r.left + 10) + 'px'; cur.style.top = (b.top - r.top + 6) + 'px'; } };
+      const loop = async () => { while (true) { const i = order[n % order.length]; aim(i); cur && (cur.style.opacity = '1'); await wait(700); ov.dataset.press = '1'; await wait(150); set(i); ov.dataset.press = '0'; n++; await wait(1600); } };
       new IntersectionObserver(es => { if (es[0].isIntersecting && !started) { started = true; loop(); } }, { threshold: .35 }).observe(ov);
     }
   }
@@ -183,10 +193,8 @@
     const title = document.querySelector('.phero h1');
     const vis = rent.closest('.phero__vis');
     const fit = () => {
-      if (!title || !vis || matchMedia('(max-width: 900px)').matches) { if (vis) vis.style.marginTop = ''; return; }
-      const wrap = title.closest('.wrap');
-      vis.style.marginTop = (title.getBoundingClientRect().top - wrap.getBoundingClientRect().top) + 'px';
-      rent.querySelector('.rcard').style.height = '';
+      if (!title || !vis || matchMedia('(max-width: 980px)').matches) { if (vis) vis.style.marginTop = ''; return; }
+      vis.style.marginTop = (title.getBoundingClientRect().top - title.closest('.wrap').getBoundingClientRect().top) + 'px';
     };
     fit(); addEventListener('resize', fit);
     kinds.forEach(k => k.addEventListener('click', () => set(Number(k.dataset.rentKind))));

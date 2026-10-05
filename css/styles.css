@@ -583,8 +583,14 @@ h1 .tag,h2 .tag{font-size:12px;padding:3px 9px;vertical-align:middle}
 .ov>header small{color:var(--muted)}
 .ov>header em{margin-left:auto;font-style:normal;font-size:11px;font-weight:700;padding:3px 8px;border-radius:999px;background:var(--ok-soft);color:var(--ok)}
 .ov__tabs{display:flex;gap:4px;padding:0 10px 8px;overflow:hidden}
-.ov__tabs span{padding:5px 8px;border-radius:8px;color:var(--muted);font-weight:650;white-space:nowrap}
+.ov__tabs button{padding:5px 8px;border-radius:8px;border:0;background:transparent;color:var(--muted);font:inherit;font-size:12px;font-weight:650;white-space:nowrap;cursor:pointer}
 .ov__tabs .is-on{background:var(--yellow);color:var(--ink)}
+.ov__body{position:relative;min-height:248px}
+.ov__pane{position:absolute;inset:0;opacity:0;transform:translateY(8px);transition:opacity .4s var(--ease),transform .4s var(--ease);pointer-events:none;padding:0 10px 12px}
+.ov__pane.is-on{opacity:1;transform:none}
+.ov section>header span{font-variant-numeric:tabular-nums}
+.ovcur{position:absolute;z-index:3;width:22px;height:22px;fill:#14141c;stroke:#fff;stroke-width:1.4;stroke-linejoin:round;filter:drop-shadow(0 3px 4px rgba(20,20,28,.3));pointer-events:none;opacity:0;transition:left .6s cubic-bezier(.4,0,.2,1),top .6s cubic-bezier(.4,0,.2,1),transform .15s,opacity .3s}
+.driverplay[data-press="1"] .ovcur{transform:scale(.86)}
 .ov__grid{display:grid;grid-template-columns:1.4fr .9fr;gap:8px;padding:0 10px 12px}
 .ov section{background:var(--bg);border-radius:12px;padding:10px}
 .ov section>header{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px}
@@ -662,7 +668,7 @@ h1 .tag,h2 .tag{font-size:12px;padding:3px 9px;vertical-align:middle}
 .rfig--buy span b+b::before{background:var(--line)}
 .rentcur{position:absolute;z-index:3;width:24px;height:24px;left:18px;top:64px;fill:#14141c;stroke:#fff;stroke-width:1.4;stroke-linejoin:round;filter:drop-shadow(0 3px 4px rgba(20,20,28,.3));pointer-events:none;opacity:0;transition:left .7s cubic-bezier(.4,0,.2,1),top .7s cubic-bezier(.4,0,.2,1),transform .15s,opacity .3s}
 .rentplay[data-press="1"] .rentcur{transform:scale(.86)}
-@media (max-width:900px){.rentcur{display:none}}
+@media (max-width:900px){.rentcur,.ovcur{display:none}}
 .rcard__facts span{color:var(--muted);font-weight:600}
 @media (max-width:900px){.rcard{height:auto}}
 .phero--grid .lead{max-width:none}
