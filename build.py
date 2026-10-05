@@ -182,7 +182,7 @@ ICON_BY_PATH = {p: i for p, _, _, i in LIST_FEATURES}
 ICON_BY_NAME = {
     'Посуточная аренда': 'i-cal', 'Фиксированный срок': 'i-flag',
     'Начисления по дням': 'i-cal', 'Долг в днях': 'i-alert', 'Приём оплаты': 'i-wallet',
-    'История не переписывается': 'i-doc', 'Точные начисления': 'i-check',
+    'История не переписывается': 'i-doc', 'Точные начисления': 'i-check', 'Сводка для владельца': 'i-chart',
     'Главная': 'i-chart', 'Окупаемость машин': 'i-car', 'Загрузка': 'i-pin', 'Выгрузка': 'i-upload',
 }
 ICON_BY_PATH.update({'/kaspi-pay/': 'i-link'})
@@ -388,6 +388,8 @@ def head(sec, default_eyebrow='', center=False):
 
 def cards(sec, R, cols=None):
     items = sec['items']; n = len(items)
+    if cols is None and strip_md(sec.get('title', '')) == 'Как считаются деньги':
+        cols = 2
     cls = 'cards cards--%d' % (cols or (4 if n % 4 == 0 or n > 9 else 3 if n % 3 == 0 else 2 if n == 2 else 4 if n in (7, 5) else 3))
     out = ''
     any_icon = any(ICON_BY_PATH.get(i.get('link', '')) for i in items)
@@ -632,6 +634,9 @@ def rent_scene():
         <div class="rcard__facts">{''.join(facts)}</div>
       </div>
     </div></div>'''
+
+def features_art(R):
+    return f'<div class="phero__vis phero__vis--art" data-reveal="scale"><img src="{R}assets/img/features-car.svg" width="640" height="520" alt="Машина и возможности Yume Fleet: аренда, Kaspi, штраф ПДД, выкуп"></div>'
 
 def finance_scene():
     """Та же лента, что на главной: одна анимация, а не вторая таблица."""
@@ -878,7 +883,7 @@ def inner(p):
     if p['path'] == '/features/' and not hero:
         # индекс возможностей: заголовок из первой секции
         first = secs[0]
-        body = phero(dict(title='Всё, чем живёт таксопарк', eyebrow='Возможности', paras=first['paras']), crumbs_for(p, R), R) + f'<section class="section section--card"><div class="wrap">{cards(first, R, 4)}</div></section>' + ''.join(generic_section(s, R, False) for s in secs[1:])
+        body = phero(dict(title='Всё, чем живёт таксопарк', eyebrow='Возможности', paras=first['paras']), crumbs_for(p, R), R, vis=features_art(R)) + f'<section class="section section--card"><div class="wrap">{cards(first, R, 4)}</div></section>' + ''.join(generic_section(s, R, False) for s in secs[1:])
         desc = strip_md(' '.join(first['paras']))[:300]
     other = ''
     if p['path'].startswith('/integrations/') and p['path'] != '/integrations/':
