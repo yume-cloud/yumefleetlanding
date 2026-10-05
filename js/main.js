@@ -244,6 +244,19 @@
     }
   }
 
+  /* features hub: four capabilities light up in turn */
+  const hub = $('[data-hub]');
+  if (hub) {
+    const rows = $$('[data-hub-row]', hub);
+    const set = n => { hub.dataset.step = String(n); rows.forEach((r, i) => r.classList.toggle('is-on', i === n)); };
+    if (reduced) set(0);
+    else {
+      let n = 0, started = false;
+      const loop = async () => { while (true) { set(n % rows.length); n++; await wait(1600); } };
+      new IntersectionObserver(es => { if (es[0].isIntersecting && !started) { started = true; loop(); } }, { threshold: .35 }).observe(hub);
+    }
+  }
+
   /* faq */
   $$('.iacc button').forEach(b => b.addEventListener('click', () => { const it = b.parentElement, open = it.classList.contains('is-open'); $$('.iacc.is-open').forEach(x => x.classList.remove('is-open')); if (!open) it.classList.add('is-open'); }));
   $$('.q button').forEach(b => b.addEventListener('click', () => { const q = b.parentElement, open = q.classList.contains('is-open'); $$('.q.is-open').forEach(x => x.classList.remove('is-open')); if (!open) q.classList.add('is-open'); }));

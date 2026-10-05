@@ -389,7 +389,7 @@ def head(sec, default_eyebrow='', center=False):
 def cards(sec, R, cols=None):
     items = sec['items']; n = len(items)
     if cols is None and strip_md(sec.get('title', '')) == 'Как считаются деньги':
-        cols = 2
+        cols = 3
     cls = 'cards cards--%d' % (cols or (4 if n % 4 == 0 or n > 9 else 3 if n % 3 == 0 else 2 if n == 2 else 4 if n in (7, 5) else 3))
     out = ''
     any_icon = any(ICON_BY_PATH.get(i.get('link', '')) for i in items)
@@ -636,7 +636,25 @@ def rent_scene():
     </div></div>'''
 
 def features_art(R):
-    return f'<div class="phero__vis phero__vis--art" data-reveal="scale"><img src="{R}assets/img/features-car.svg" width="640" height="520" alt="Машина и возможности Yume Fleet: аренда, Kaspi, штраф ПДД, выкуп"></div>'
+    """Сцена вместо картинки: машина и четыре возможности, которые загораются по очереди."""
+    items = [
+        ('i-cal', 'Аренда', '9 000 ₸ / день'),
+        ('i-wallet', 'Kaspi', '+9 000 ₸'),
+        ('i-alert', 'Штраф ПДД', '21 625 ₸'),
+        ('i-car', 'Выкуп', '4 455 000 ₸'),
+    ]
+    rows = ''.join(
+        f'<li data-hub-row><i><svg><use href="#{ic}"/></svg></i><div><b>{html.escape(name)}</b><em>{html.escape(val)}</em></div></li>'
+        for ic, name, val in items)
+    return f'''<div class="phero__vis" data-reveal="scale"><div class="hub" data-hub data-step="0" aria-hidden="true">
+      <svg class="hub__car" viewBox="0 0 320 150" aria-hidden="true">
+        <path d="M26 92h268M46 92l22-34a18 18 0 0 1 16-8h92l30 26 46 4a14 14 0 0 1 12 14v8" fill="none" stroke="#14141c" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M78 52h52l10 18H74z" fill="#F0B100" stroke="#14141c" stroke-width="3" stroke-linejoin="round"/>
+        <circle cx="92" cy="98" r="16" fill="#fff" stroke="#14141c" stroke-width="3"/><circle cx="92" cy="98" r="6" fill="#14141c"/>
+        <circle cx="236" cy="98" r="16" fill="#fff" stroke="#14141c" stroke-width="3"/><circle cx="236" cy="98" r="6" fill="#14141c"/>
+      </svg>
+      <ul class="hub__rows">{rows}</ul>
+    </div></div>'''
 
 def finance_scene():
     """Та же лента, что на главной: одна анимация, а не вторая таблица."""

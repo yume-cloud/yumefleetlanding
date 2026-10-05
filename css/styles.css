@@ -212,8 +212,10 @@ p{margin:0}
 .ledger td{padding:13px 20px;border-top:1px solid var(--line-2)}
 .ledger td b{font-weight:600}
 .ledger td small{display:block;color:var(--muted);font-size:12px}
-.plate{display:inline-flex;align-items:center;overflow:hidden;white-space:nowrap;border:1.5px solid #14141c;border-radius:4px;background:#fff;color:#14141c;font-weight:800;font-size:11.5px;letter-spacing:.04em;line-height:1;min-height:28px;padding:0 8px 0 0;font-variant-numeric:tabular-nums}
-.plate::before{content:"KZ";align-self:stretch;display:flex;align-items:flex-end;justify-content:center;flex:none;min-width:20px;margin:0 8px 0 0;padding:5px 4px 3px;background:#1E9ED9 radial-gradient(circle at 50% 28%,#F5C84B 0 2.2px,transparent 2.6px);color:#fff;font-size:7px;font-weight:800;letter-spacing:.02em}
+.plate{display:inline-flex;align-items:center;white-space:nowrap;border:1.5px solid #111827;border-radius:3px;background:#fff;color:#111827;font-weight:700;font-size:12px;letter-spacing:.04em;line-height:1;height:28px;padding:0 8px 0 0;font-variant-numeric:tabular-nums}
+.plate::before{content:"";flex:none;width:22px;height:18px;margin:0 6px 0 3px;border-right:1px solid #111827;background:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 22 18'><rect x='3' y='1' width='14' height='8' rx='1' fill='%2300afca'/><circle cx='10' cy='5' r='2.4' fill='%23F5C84B'/><text x='10' y='16.5' text-anchor='middle' font-family='sans-serif' font-size='7' font-weight='700' fill='%230b3b42'>KZ</text></svg>") center/22px 18px no-repeat}
+.plate--sm{height:24px;font-size:11px;padding:0 6px 0 0}
+.plate--sm::before{width:18px;height:16px;margin:0 4px 0 2px;background-size:18px 16px}
 .neg{color:var(--bad);font-weight:700}.pos{color:var(--ok);font-weight:700}.zero{color:var(--muted)}
 .ledger tr.is-new td{animation:rowin 2.2s cubic-bezier(.4,0,.2,1) both}
 @keyframes rowin{0%{background:transparent}30%{background:#F0B100}100%{background:transparent}}
@@ -594,7 +596,16 @@ h1 .tag,h2 .tag{font-size:12px;padding:3px 9px;vertical-align:middle}
 /* phero with screenshot */
 .phero--grid .wrap{display:grid;grid-template-columns:1.05fr 1fr;gap:48px;align-items:start}
 .phero__vis img{width:100%;border-radius:14px;border:1px solid var(--line);box-shadow:var(--shadow);background:#fff}
-.phero__vis--art img{border:0;border-radius:0;background:transparent;box-shadow:none}
+.hub{background:#fff;border:1px solid var(--line);border-radius:16px;box-shadow:var(--shadow);padding:18px 18px 14px;display:grid;gap:12px}
+.hub__car{width:100%;height:auto}
+.hub__rows{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.hub__rows li{display:flex;align-items:center;gap:10px;padding:10px;border-radius:12px;background:var(--bg);border:1px solid transparent;transition:background .4s,border-color .4s}
+.hub__rows i{width:32px;height:32px;border-radius:9px;background:#fff;border:1px solid var(--line);display:grid;place-items:center;flex:none;color:var(--muted)}
+.hub__rows i svg{width:16px;height:16px}
+.hub__rows b{display:block;font-weight:700}
+.hub__rows em{display:block;font-style:normal;color:var(--muted);font-size:11px;margin-top:2px;font-variant-numeric:tabular-nums}
+.hub__rows li.is-on{background:var(--yellow-tint);border-color:var(--yellow)}
+.hub__rows li.is-on i{background:var(--yellow);border-color:var(--yellow);color:var(--ink)}
 .driverplay{position:relative}
 .ov{background:#fff;border:1px solid var(--line);border-radius:16px;box-shadow:var(--shadow);overflow:hidden;font-size:12px}
 .ov>header{display:flex;align-items:baseline;gap:8px;padding:12px 14px 10px}
@@ -688,7 +699,7 @@ h1 .tag,h2 .tag{font-size:12px;padding:3px 9px;vertical-align:middle}
 .ov__rows>li>span{font-weight:700;font-variant-numeric:tabular-nums;font-size:12px}
 .ov__fine div{min-width:0}
 .ov__fine em{display:flex;align-items:center;gap:6px;margin-top:3px}
-.plate--sm{height:auto;min-height:24px;font-size:10px;padding:0 6px 0 0}
+
 .ov__car .neg{margin-left:auto;color:#dc2626;font-variant-numeric:tabular-nums}
 .driverplay[data-step="1"] [data-drv-sum]{background:var(--yellow-tint);border-radius:4px}
 .drvplay{position:relative}
