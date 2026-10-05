@@ -29,6 +29,10 @@ UI = {
    fl1=('Просрочено · 3 дня', 'Ерлан С. · Chevrolet Cobalt'), fl2=('Новый штраф ПДД', '348 KBA 02 · привязан к водителю'), fl3=('Оплата через Kaspi Pay', '+ 9 000 ₸ · зачислено в аренду'),
    ledger_head='Аренды · с просрочкой', ledger_live='обновляется в реальном времени', ledger_cols=['Водитель', 'Машина', 'Ставка', 'Баланс'], ledger_foot='Долг по парку сегодня',
    drv_cap1='Оплата по ссылке · уже сейчас', drv_cap2='Приложение водителя', drv_alt1='Страница оплаты аренды по ссылке Kaspi Pay', drv_alt2='Приложение водителя Yume Fleet', soon='скоро',
+    pay_hi='Привет, Данияр', pay_sub='К оплате за аренду', pay_badge='не оплачено 3 дня', pay_rate='по 6 000 ₸ в день',
+    pay_days=['1 сент', '2 сент', '3 сент'], pay_pick='Выбрать дни', pay_kaspi='Оплатить в Kaspi',
+    pay_done='Оплачено', pay_done_sub='Зачислено в аренду', pay_toast='12 000 ₸ зачислено в аренду',
+    pay_caps=['Видит долг по дням', 'Сам выбирает дни', 'Платит в Kaspi'],
    bc_type='Аренда под выкуп', bc_price='Стоимость выкупа', bc_saved='Накоплено', bc_left='Осталось', bc_next='Ближайший платёж', bc_next_v='9 000 ₸ · завтра', bc_steps=['Взнос', 'Выкуп', 'Выкуплено'], more_buyout='Подробнее про выкуп', more_fines='Подробнее про штрафы', fines_alt='Карточка штрафа ПДД: нарушение, сумма, машина и водитель',
    all_ints='Все интеграции', price_btn='Узнать цену на демо',
    c_wa='WhatsApp, самый быстрый способ', c_wa_sub='Демо, вопросы по продукту и переходу', c_phone='Телефон', c_phone_sub='Пн–Пт 9:00–19:00, Сб 10:00–16:00 по Алматы', c_inst='Instagram', c_inst_sub='Новости продукта и парков', c_yt='YouTube', c_yt_sub='Видео о работе системы', c_sales='Продажи и партнёрство', c_sales_sub='Коммерческие предложения, интеграции, договоры', c_sup='Поддержка парков', c_sup_sub='Вопросы по работе системы', c_office='Офис', c_city='Алматы, Казахстан', c_office_sub='ТОО «Yume.Cloud». Встречи по договорённости, демо по видеосвязи.', c_login='Вход для парков', c_login_sub='Кабинет парка', c_form_h='Записаться на демо', c_form_p='Покажем систему за 20 минут на примере парка вашего размера.', crumbs='Хлебные крошки',
@@ -46,6 +50,10 @@ UI = {
    fl1=('Мерзімі өткен · 3 күн', 'Ерлан С. · Chevrolet Cobalt'), fl2=('Жаңа ЖҚЕ айыппұлы', '348 KBA 02 · жүргізушіге байланды'), fl3=('Kaspi Pay арқылы төлем', '+ 9 000 ₸ · жалдауға түсті'),
    ledger_head='Жалдаулар · мерзімі өткен', ledger_live='нақты уақытта жаңарады', ledger_cols=['Жүргізуші', 'Көлік', 'Ставка', 'Баланс'], ledger_foot='Парк бойынша бүгінгі қарыз',
    drv_cap1='Сілтеме арқылы төлем · қазірдің өзінде', drv_cap2='Жүргізуші қосымшасы', drv_alt1='Kaspi Pay сілтемесі арқылы жалдау төлемі беті', drv_alt2='Yume Fleet жүргізуші қосымшасы', soon='жақында',
+    pay_hi='Сәлем, Данияр', pay_sub='Жалдау бойынша төлем', pay_badge='3 күн төленбеген', pay_rate='күніне 6 000 ₸',
+    pay_days=['1 қыр', '2 қыр', '3 қыр'], pay_pick='Күндерді таңдау', pay_kaspi='Kaspi-де төлеу',
+    pay_done='Төленді', pay_done_sub='Жалдауға түсті', pay_toast='12 000 ₸ жалдауға түсті',
+    pay_caps=['Күндік қарызды көреді', 'Күндерді өзі таңдайды', 'Kaspi-де төлейді'],
    bc_type='Сатып алумен жалдау', bc_price='Сатып алу құны', bc_saved='Жиналды', bc_left='Қалды', bc_next='Келесі төлем', bc_next_v='9 000 ₸ · ертең', bc_steps=['Жарна', 'Сатып алу', 'Сатып алынды'], more_buyout='Сатып алу туралы толығырақ', more_fines='Айыппұлдар туралы толығырақ', fines_alt='ЖҚЕ айыппұл картасы: бұзушылық, сома, көлік және жүргізуші',
    all_ints='Барлық интеграциялар', price_btn='Бағаны демода білу',
    c_wa='WhatsApp, ең жылдам тәсіл', c_wa_sub='Демо, өнім және көшу бойынша сұрақтар', c_phone='Телефон', c_phone_sub='Дс–Жм 9:00–19:00, Сб 10:00–16:00, Алматы уақыты', c_inst='Instagram', c_inst_sub='Өнім және парктер жаңалықтары', c_yt='YouTube', c_yt_sub='Жүйенің жұмысы туралы бейнелер', c_sales='Сату және серіктестік', c_sales_sub='Коммерциялық ұсыныстар, интеграциялар, шарттар', c_sup='Парктерді қолдау', c_sup_sub='Жүйенің жұмысы бойынша сұрақтар', c_office='Кеңсе', c_city='Алматы, Қазақстан', c_office_sub='«Yume.Cloud» ЖШС. Кездесулер келісім бойынша, демо бейнебайланыс арқылы.', c_login='Парктер үшін кіру', c_login_sub='Парк кабинеті', c_form_h='Демоға жазылу', c_form_p='Жүйені 20 минутта сіздің парк көлеміндегі мысалда көрсетеміз.', crumbs='Нан үгінділері',
@@ -568,11 +576,30 @@ def home():
     # promo 2: для водителя
     p2 = pr[1]
     paras = ''.join(f'<p class="lead" style="margin-top:14px">{inline(x)}</p>' for x in p2['paras'])
+    days = ''.join(f'<li data-day="6000"><i></i><span>{html.escape(d)}</span><b>6 000 ₸</b></li>' for d in T('pay_days'))
     out += f'''<section class="section section--card" id="driver">
   <div class="wrap drv">
     <div data-reveal="left">{eyebrow(p2)}<h2>{inline(p2['title'])}</h2>{paras}{checks(p2['items'], 'drv__list')}</div>
-    <div class="drv__shots drv__shots--one" data-reveal="scale">
-      <figure class="drv__shot drv__shot--free"><img src="{R}assets/screens/pay-phone.png" width="443" height="885" alt="{T("drv_alt1")}" loading="lazy"><figcaption>{T("drv_cap1")}</figcaption></figure>
+    <div class="payplay" data-payplay data-step="debt" data-pick="{html.escape(T("pay_pick"))}" data-kaspi="{html.escape(T("pay_kaspi"))}" data-caps="{html.escape("|".join(T("pay_caps")))}" data-reveal="scale" aria-hidden="true">
+      <div class="payplay__stage">
+        <div class="payplay__toast"><i>✓</i><span>{html.escape(T("pay_toast"))}</span></div>
+        <div class="payplay__phone">
+          <div class="payplay__bezel">
+            <header class="payplay__top"><b>yumefleet</b><em data-pay-cap>{html.escape(T("pay_caps")[0])}</em></header>
+            <div class="payplay__body">
+              <p class="payplay__hi">{html.escape(T("pay_hi"))}</p>
+              <p class="payplay__sub">{html.escape(T("pay_sub"))}</p>
+              <p class="payplay__sum" data-pay-sum>18 000 ₸</p>
+              <p class="payplay__badge">{html.escape(T("pay_badge"))}</p>
+              <p class="payplay__meta"><span class="plate">847 ABC 02</span><span>Chevrolet Cobalt · {html.escape(T("pay_rate"))}</span></p>
+              <ul class="payplay__days">{days}</ul>
+              <div class="payplay__btn" data-pay-btn>{html.escape(T("pay_pick"))}</div>
+            </div>
+            <div class="payplay__sheet"><b>Kaspi</b><strong>12 000 ₸</strong><span>{html.escape(T("pay_kaspi"))}</span></div>
+            <div class="payplay__ok"><i>✓</i><b>{html.escape(T("pay_done"))}</b><span>{html.escape(T("pay_done_sub"))}</span></div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </section>

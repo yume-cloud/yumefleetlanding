@@ -87,6 +87,29 @@
     new IntersectionObserver(es => { if (es[0].isIntersecting && !started) { started = true; play(); } }, { threshold: .3 }).observe($('.ledger'));
   }
 
+  /* driver pay scene: debt → pick days → Kaspi → posted */
+  const pay = $('[data-payplay]');
+  if (pay) {
+    const sum = $('[data-pay-sum]', pay), cap = $('[data-pay-cap]', pay), btn = $('[data-pay-btn]', pay);
+    const days = $$('[data-day]', pay);
+    const caps = (pay.dataset.caps || '').split('|');
+    const set = step => {
+      pay.dataset.step = step;
+      const picked = step !== 'debt';
+      days.forEach((d, i) => d.classList.toggle('is-on', picked && i < 2));
+      if (sum) { sum.textContent = picked ? '12 000 ₸' : '18 000 ₸'; sum.classList.remove('is-flash'); void sum.offsetWidth; sum.classList.add('is-flash'); }
+      if (btn) btn.textContent = picked ? pay.dataset.kaspi : pay.dataset.pick;
+      if (cap) cap.textContent = caps[step === 'debt' ? 0 : step === 'days' ? 1 : 2] || '';
+    };
+    if (reduced) set('days');
+    else {
+      const steps = ['debt', 'days', 'kaspi', 'ok'];
+      let n = 0, started = false;
+      const loop = async () => { while (true) { set(steps[n % steps.length]); n++; await wait(n % steps.length === 0 ? 2800 : 2200); } };
+      new IntersectionObserver(es => { if (es[0].isIntersecting && !started) { started = true; loop(); } }, { threshold: .35 }).observe(pay);
+    }
+  }
+
   /* faq */
   $$('.iacc button').forEach(b => b.addEventListener('click', () => { const it = b.parentElement, open = it.classList.contains('is-open'); $$('.iacc.is-open').forEach(x => x.classList.remove('is-open')); if (!open) it.classList.add('is-open'); }));
   $$('.q button').forEach(b => b.addEventListener('click', () => { const q = b.parentElement, open = q.classList.contains('is-open'); $$('.q.is-open').forEach(x => x.classList.remove('is-open')); if (!open) q.classList.add('is-open'); }));
