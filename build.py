@@ -618,7 +618,7 @@ def home():
           </div>
           <div class="bform__btn" data-buy-create>{T("bc_create")}</div>
         </div>
-        <svg class="buycur" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 2l14 12h-6l2.2 7-3.2 1L8.6 15H4z"/></svg>
+        <svg class="buycur" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 2.5v15.2l4.1-3.7 3.2 6.4 2.1-.9-3.2-6.3 5.6-.3z"/></svg>
         <div class="bcard">
           <div class="bcard__head"><span class="plate">015 ADM 02</span><b>Chevrolet Cobalt · 2022</b><em data-buy-type>{T("bc_setup")}</em></div>
           <div class="bcard__sum"><small>{T("bc_price")}</small><b>7 200 000 ₸</b></div>
@@ -637,8 +637,7 @@ def home():
   <div class="wrap promo">
     <div data-reveal="left">{eyebrow(p4)}<h2>{inline(p4['title'])}</h2><p class="lead" style="margin-top:18px">{inline(p4['paras'][0])}</p>{checks(p4['items'])}<a class="link" href="{R}features/fines/">{T("more_fines")} <svg><use href="#i-arrow"/></svg></a></div>
     <div class="promo__vis" data-reveal="scale">
-      <div class="fineplay" data-fineplay data-step="photo" aria-hidden="true">
-        <div class="fphoto"><div class="fphoto__shot"><span class="plate">015 ADM 02</span><b>{T("fn_cam")}</b><small>{T("fn_when")}</small></div><p>{T("fn_shot")}</p></div>
+      <div class="fineplay" data-fineplay data-step="in" aria-hidden="true">
         <div class="fcard">
           <header><span class="fcard__cam"><svg viewBox="0 0 24 24"><path d="M4 8h3l2-2h6l2 2h3v11H4z"/><circle cx="12" cy="13" r="3.2"/></svg></span><div><b>{T("fn_title")}</b><small>{T("fn_when")}</small></div><span class="plate">015 ADM 02</span></header>
           <p class="fcard__off">{T("fn_offence")}</p>
