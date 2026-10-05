@@ -197,7 +197,7 @@
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 </style>
-<link rel="stylesheet" href="../../css/styles.css?v=a8ebb222">
+<link rel="stylesheet" href="../../css/styles.css?v=5832eb8f">
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Organization", "name": "Yume Fleet", "legalName": "ТОО «Yume.Cloud»", "url": "https://yumefleet.com/", "logo": "https://yumefleet.com/assets/logo/tile.svg", "telephone": "+77779479990", "address": {"@type": "PostalAddress", "addressLocality": "Алматы", "addressCountry": "KZ"}, "sameAs": ["https://www.instagram.com/yumecloudx/", "https://www.youtube.com/@yumecloud"]}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://yumefleet.com/"}, {"@type": "ListItem", "position": 2, "name": "Возможности", "item": "https://yumefleet.com/features/"}, {"@type": "ListItem", "position": 3, "name": "Водители", "item": "https://yumefleet.com/features/drivers/"}]}</script>
 </head>
@@ -268,18 +268,18 @@
       <div class="ov">
         <svg class="ovcur" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 2.5v15.2l4.1-3.7 3.2 6.4 2.1-.9-3.2-6.3 5.6-.3z"/></svg>
         <header><b>Ерлан С.</b><small>ИИН ···0123</small><em>Надёжный</em></header>
-        <div class="ov__tabs"><button type="button" data-drv-tab="0">Обзор</button><button type="button" data-drv-tab="1">Аренды</button><button type="button" data-drv-tab="2">Долг</button><button type="button" data-drv-tab="3">Депозит</button><button type="button" data-drv-tab="4">Документы</button></div>
+        <div class="ov__tabs"><button type="button" data-drv-tab="0">Обзор</button><button type="button" data-drv-tab="2">Долг</button><button type="button" data-drv-tab="4">Документы</button></div>
         <div class="ov__body">
           <div class="ov__pane" data-drv-pane="0">
             <div class="ov__grid">
               <div class="ov__main">
                 <section>
-                  <header><b>Текущая аренда</b><span>В аренде</span></header>
-                  <div class="ov__car"><i><svg><use href="#i-car"/></svg></i><div><b>Chevrolet Cobalt</b><span class="plate">015 ADM 02</span></div><em>9 000 ₸ / день</em></div>
+                  <header><b>Текущая аренда</b><span class="ov__pill ov__pill--ok">В аренде</span></header>
+                  <div class="ov__car"><i><svg><use href="#i-car"/></svg></i><div><b>Chevrolet Cobalt</b><span class="plate">015 ADM 02</span></div><em>9 000 ₸<small>/ день</small></em></div>
                 </section>
                 <section>
                   <header><b>Последние события</b></header>
-                  <ul><li><b>Оплата Kaspi</b><span>−9 000 ₸</span><em>сегодня</em></li><li><b>Штраф ПДД</b><span>+21 625 ₸</span><em>12 сент</em></li><li><b>Выдача машины</b><span>Cobalt</span><em>1 сент</em></li></ul>
+                  <ul class="ov__evs"><li class="ov__ev"><i class="ov__dot ov__dot--pos"></i><div><b>Оплата Kaspi</b><em>сегодня</em></div><span class="pos">−9 000 ₸</span></li><li class="ov__ev"><i class="ov__dot ov__dot--neg"></i><div><b>Штраф ПДД</b><em>12 сент</em></div><span class="neg">+21 625 ₸</span></li><li class="ov__ev"><i class="ov__dot "></i><div><b>Выдача машины</b><em>1 сент</em></div><span class="">Cobalt</span></li></ul>
                 </section>
               </div>
               <aside>
@@ -291,21 +291,27 @@
                 </section>
                 <section>
                   <header><b>Состав долга</b></header>
-                  <ul><li><span>Аренда</span><b>18 000 ₸</b></li><li><span>Штрафы ПДД</span><b>21 625 ₸</b></li><li><span>Ущерб</span><b>0 ₸</b></li></ul>
+                  <ul class="ov__kv"><li><span>Аренда</span><b>18 000 ₸</b></li><li><span>Штрафы ПДД</span><b>21 625 ₸</b></li><li><span>Ущерб</span><b class=zero>0 ₸</b></li></ul>
                 </section>
               </aside>
             </div>
           </div>
           <div class="ov__pane" data-drv-pane="2">
-            <section>
-              <header><b>Долг</b><span>18 000 ₸</span></header>
-              <ul><li><b>Аренда · 2 дня</b><span>18 000 ₸</span></li><li><b>Kaspi · сегодня</b><span>−9 000 ₸</span></li><li><b>Штраф ПДД · 12 сент</b><span>21 625 ₸</span></li></ul>
+            <div class="ov__tiles">
+              <div class="ov__tile ov__tile--debt"><small>Долг</small><b>18 000 ₸</b></div>
+              <div class="ov__tile"><small>Депозит</small><b>50 000 ₸</b></div>
+            </div>
+            <section class="ov__journal">
+              <header><b>Журнал</b></header>
+              <div class="ov__cols"><span>Операция</span><span>Когда</span><span>Сумма</span></div>
+              <ul><li><b>Аренда</b><em>2 дня</em><span class="neg">+18 000 ₸</span></li><li><b>Оплата Kaspi</b><em>сегодня</em><span class="pos">−9 000 ₸</span></li><li><b>Штраф ПДД</b><em>12 сент</em><span class="neg">+21 625 ₸</span></li></ul>
+              <footer><span>Итого долг</span><b>18 000 ₸</b></footer>
             </section>
           </div>
           <div class="ov__pane" data-drv-pane="4">
-            <section>
+            <section class="ov__docsec">
               <header><b>Документы</b></header>
-              <ul><li><b>Договор аренды</b><span>подписан</span></li><li><b>Удостоверение</b><span>до 2028</span></li><li><b>Акт выдачи</b><span>1 сент</span></li></ul>
+              <ul class="ov__docs"><li><i><svg><use href="#i-doc"/></svg></i><b>Договор аренды</b><span class="ov__pill ov__pill--ok">подписан</span></li><li><i><svg><use href="#i-doc"/></svg></i><b>Удостоверение</b><span class="ov__pill ov__pill--ok">до 2028</span></li><li><i><svg><use href="#i-doc"/></svg></i><b>Акт выдачи</b><span class="ov__pill">1 сент</span></li></ul>
             </section>
           </div>
         </div>
