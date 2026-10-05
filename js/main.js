@@ -144,6 +144,20 @@
     }
   }
 
+  /* driver overview: debt ticks, then a payment lands */
+  const ov = $('[data-driverplay]');
+  if (ov) {
+    const sum = $('[data-drv-sum]', ov);
+    const money = n => fmt(n) + ' ₸';
+    const set = step => { ov.dataset.step = step; if (sum) sum.textContent = money(step === 'pay' ? 9000 : 18000); };
+    if (reduced) set('pay');
+    else {
+      let n = 0, started = false;
+      const loop = async () => { while (true) { set(n % 2 ? 'pay' : 'debt'); n++; await wait(2200); } };
+      new IntersectionObserver(es => { if (es[0].isIntersecting && !started) { started = true; loop(); } }, { threshold: .35 }).observe(ov);
+    }
+  }
+
   /* driver check: three checks, then "can issue". Static on a phone. */
   const drv = $('[data-drvplay]');
   if (drv) {
