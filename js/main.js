@@ -107,7 +107,7 @@
       const steps = ['debt', 'days', 'kaspi', 'ok'];
       let n = 0, started = false;
       const loop = async () => { while (true) { set(steps[n % steps.length]); n++; await wait(n % steps.length === 0 ? 2800 : 2200); } };
-      new IntersectionObserver(es => { if (es[0].isIntersecting && !started) { started = true; loop(); } }, { threshold: .35 }).observe(pay);
+      new IntersectionObserver(es => { if (es[0].isIntersecting && !started) { started = true; loop(); } }, { threshold: .05 }).observe(pay);
     }
   }
 
@@ -140,7 +140,7 @@
       const script = [['form', 0, 250], ['form', 6, 700], ['aim', 6, 850], ['open', 6, 520], ['card', 6, 400], ['grow', 6, 1500], ['pay', 6, 750], ['done', 6, 1800]];
       let n = 0, started = false;
       const loop = async () => { while (true) { const [step, filled, pause] = script[n % script.length]; set(step, filled); n++; await wait(pause); } };
-      new IntersectionObserver(es => { if (es[0].isIntersecting && !started) { started = true; loop(); } }, { threshold: .35 }).observe(buy);
+      new IntersectionObserver(es => { if (es[0].isIntersecting && !started) { started = true; loop(); } }, { threshold: .05 }).observe(buy);
     }
   }
 
@@ -164,7 +164,7 @@
       let n = 1, started = false;
       const aim = i => { const b = tabs.find(t => t.dataset.drvTab === String(i)).getBoundingClientRect(), r = ov.getBoundingClientRect(); if (cur) { cur.style.left = (b.right - r.left - 18) + 'px'; cur.style.top = (b.top - r.top + 6) + 'px'; } };
       const loop = async () => { while (true) { const i = order[n % order.length]; aim(i); cur && (cur.style.opacity = '1'); await wait(700); ov.dataset.press = '1'; await wait(150); set(i); ov.dataset.press = '0'; n++; await wait(1600); } };
-      new IntersectionObserver(es => { if (es[0].isIntersecting && !started) { started = true; loop(); } }, { threshold: .35 }).observe(ov);
+      new IntersectionObserver(es => { if (es[0].isIntersecting && !started) { started = true; loop(); } }, { threshold: .05 }).observe(ov);
     }
   }
 
@@ -185,7 +185,7 @@
       let n = 1, started = false;
       const aim = i => { const b = tabs.find(t => t.dataset.vehTab === String(i)).getBoundingClientRect(), r = veh.getBoundingClientRect(); if (cur) { cur.style.left = (b.right - r.left - 18) + 'px'; cur.style.top = (b.top - r.top + 6) + 'px'; } };
       const loop = async () => { while (true) { const i = order[n % order.length]; aim(i); cur && (cur.style.opacity = '1'); await wait(700); veh.dataset.press = '1'; await wait(150); set(i); veh.dataset.press = '0'; n++; await wait(1600); } };
-      new IntersectionObserver(es => { if (es[0].isIntersecting && !started) { started = true; loop(); } }, { threshold: .35 }).observe(veh);
+      new IntersectionObserver(es => { if (es[0].isIntersecting && !started) { started = true; loop(); } }, { threshold: .05 }).observe(veh);
     }
   }
 
@@ -228,7 +228,7 @@
         await wait(2800);
       }
     };
-    new IntersectionObserver(es => { if (es[0].isIntersecting && !started) { started = true; loop(); } }, { threshold: .35 }).observe(doc);
+    new IntersectionObserver(es => { if (es[0].isIntersecting && !started) { started = true; loop(); } }, { threshold: .05 }).observe(doc);
   })();
   /* scene investors */
   /* investors: investor link card — income counts, share bar fills, lease chart draws */
@@ -240,13 +240,14 @@
     const bar = $('[data-inv-bar]'), left = $('[data-inv-left]'), paid = $('[data-inv-paid]');
     const fmt = (n) => Math.round(n).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ' ') + ' ₸';
     const INCOME = 270000, SHARE = 135000, TOTAL = 7200000, DOWN = 1500000; // доход за 30 дней; доля 50 %; выкуп; взнос
+    const shown = el => { const t = (el && el.textContent || '').replace(/[^\d]/g, ''); return t ? Number(t) : 0; };
     const still = matchMedia('(prefers-reduced-motion: reduce)').matches || matchMedia('(max-width: 900px)').matches;
     const ease = (t) => 1 - Math.pow(1 - t, 3);
     const tweens = new Map();
     const tween = (el, to, ms) => {
       if (!el) return;
       cancelAnimationFrame(tweens.get(el));
-      const from = el._v || 0;
+      const from = el._v == null ? shown(el) : el._v;
       if (still || ms === 0) { el._v = to; el.textContent = fmt(to); return; }
       const t0 = performance.now();
       const tick = (now) => {
@@ -274,7 +275,7 @@
     const script = [['open', 500], ['income', 1500], ['share', 1700], ['lease', 2100], ['done', 3600]];
     let n = 0, started = false;
     const loop = async () => { while (true) { const [step, pause] = script[n % script.length]; set(step); n++; await wait(pause); } };
-    new IntersectionObserver((es) => { if (es[0].isIntersecting && !started) { started = true; loop(); } }, { threshold: 0.35 }).observe(inv);
+    new IntersectionObserver((es) => { if (es[0].isIntersecting && !started) { started = true; loop(); } }, { threshold: 0.05 }).observe(inv);
   })();
   /* scene buyout */
   /* scene: buyout — /features/buyout/ hero. Scope: [data-bopage] */
@@ -408,7 +409,7 @@
         await wait(hold);
       }
     };
-    new IntersectionObserver(es => { if (es[0].isIntersecting && !started) { started = true; loop(); } }, { threshold: .35 }).observe(root);
+    new IntersectionObserver(es => { if (es[0].isIntersecting && !started) { started = true; loop(); } }, { threshold: .05 }).observe(root);
   })();
   /* scene analytics */
   /* analytics scene: revenue bars → ring of cars in rent → debt with breakdown. No cursor: nothing is clicked. */
@@ -442,7 +443,7 @@
     const wait = ms => new Promise(r => setTimeout(r, ms));
     let n = 0, started = false;
     const loop = async () => { while (true) { const [step, pause] = steps[n % steps.length]; set(step); n++; await wait(pause); } };
-    new IntersectionObserver(es => { if (es[0].isIntersecting && !started) { started = true; loop(); } }, { threshold: .35 }).observe(ana);
+    new IntersectionObserver(es => { if (es[0].isIntersecting && !started) { started = true; loop(); } }, { threshold: .05 }).observe(ana);
   })();
   /* scene leads */
   /* leads scene: WhatsApp message → lead card → cursor moves it to «Проверка» → registry checks come back */
@@ -506,7 +507,7 @@
         await wait(3600); /* final frame holds longest */
       }
     };
-    new IntersectionObserver(es => { if (es[0].isIntersecting && !started) { started = true; loop(); } }, { threshold: .35 }).observe(root);
+    new IntersectionObserver(es => { if (es[0].isIntersecting && !started) { started = true; loop(); } }, { threshold: .05 }).observe(root);
   })();
   /* scene settings */
   /* settings scene: park rules. Cursor flips one switch (Kaspi); the rental below picks up the rule. */
@@ -577,7 +578,7 @@
         await wait(400);
       }
     };
-    new IntersectionObserver(es => { if (es[0].isIntersecting && !started) { started = true; loop(); } }, { threshold: .35 }).observe(root);
+    new IntersectionObserver(es => { if (es[0].isIntersecting && !started) { started = true; loop(); } }, { threshold: .05 }).observe(root);
   })();
   /* scene kaspi */
   /* kaspi scene: driver's phone — debt 27 000 → picks two days → pays 18 000 in Kaspi → debt 9 000. Cursor clicks days and the pay button. Scope: [data-kpay] */
@@ -721,7 +722,7 @@
         for (let n = 1; n <= 5; n++) { set(n); await wait(n === 5 ? 3400 : 720); }
       }
     };
-    new IntersectionObserver(es => { if (es[0].isIntersecting && !started) { started = true; loop(); } }, { threshold: .35 }).observe(hub);
+    new IntersectionObserver(es => { if (es[0].isIntersecting && !started) { started = true; loop(); } }, { threshold: .05 }).observe(hub);
   })();
   /* scene egov */
   /* egov scene: driver's phone — contract waits for signature → cursor taps «Подписать в eGov mobile» → eGov sheet, bar travels 0 → 100 % → status «Подписан», PDF card grows in. No SMS code is shown. Scope: [data-egovplay] */
@@ -1088,7 +1089,7 @@
     const wait = ms => new Promise(r => setTimeout(r, ms));
     let n = 0, started = false;
     const loop = async () => { while (true) { const [step, pause] = steps[n % steps.length]; set(step); n++; await wait(pause); } };
-    new IntersectionObserver(es => { if (es[0].isIntersecting && !started) { started = true; loop(); } }, { threshold: .35 }).observe(gps);
+    new IntersectionObserver(es => { if (es[0].isIntersecting && !started) { started = true; loop(); } }, { threshold: .05 }).observe(gps);
   })();
   /* scene ai */
   /* scene: ai — /integrations/ai/ hero. Question «У кого долг?» is typed, cursor clicks «Спросить», answer: Ерлан С., 2 дня, 18 000 ₸. Scope: [data-aiplay] */
@@ -1271,7 +1272,7 @@
       const steps = ['in', 'link', 'disc'];
       let n = 0, started = false;
       const loop = async () => { while (true) { set(steps[n % 3]); n++; await wait(steps[(n - 1) % 3] === 'disc' ? 2200 : 1600); } };
-      new IntersectionObserver(es => { if (es[0].isIntersecting && !started) { started = true; loop(); } }, { threshold: .35 }).observe(fine);
+      new IntersectionObserver(es => { if (es[0].isIntersecting && !started) { started = true; loop(); } }, { threshold: .05 }).observe(fine);
     }
   }
 
@@ -1286,7 +1287,7 @@
     else {
       let n = 0, started = false;
       const loop = async () => { while (true) { set(n % 4); n++; await wait(n % 4 === 0 ? 1800 : 700); } };
-      new IntersectionObserver(es => { if (es[0].isIntersecting && !started) { started = true; loop(); } }, { threshold: .35 }).observe(drv);
+      new IntersectionObserver(es => { if (es[0].isIntersecting && !started) { started = true; loop(); } }, { threshold: .05 }).observe(drv);
     }
   }
 
@@ -1310,7 +1311,7 @@
       const cur = $('.rentcur', rent);
       const aim = i => { const b = kinds[i].getBoundingClientRect(), r = rent.getBoundingClientRect(); if (cur) { cur.style.left = (b.left - r.left + 18) + 'px'; cur.style.top = (b.top - r.top + 8) + 'px'; } };
       const loop = async () => { while (true) { const i = n % kinds.length; aim(i); cur && (cur.style.opacity = '1'); await wait(720); rent.dataset.press = '1'; kinds[i].classList.add('is-press'); await wait(160); set(i); rent.dataset.press = '0'; kinds[i].classList.remove('is-press'); n++; await wait(1100); } };
-      new IntersectionObserver(es => { if (es[0].isIntersecting && !started) { started = true; loop(); } }, { threshold: .35 }).observe(rent);
+      new IntersectionObserver(es => { if (es[0].isIntersecting && !started) { started = true; loop(); } }, { threshold: .05 }).observe(rent);
     }
   }
 
