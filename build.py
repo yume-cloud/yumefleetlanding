@@ -178,8 +178,13 @@ NAV_INTS = [
 def nav_ints():
     return [(p, n, (sk if L == 'kk' else sr), logo) for p, n, sr, sk, logo in NAV_INTS]
 
-ICON_BY_PATH = {p: i for p, _, _, i in NAV_FEATURES}
-ICON_BY_NAME = {'Посуточная аренда': 'i-cal', 'Фиксированный срок': 'i-flag'}
+ICON_BY_PATH = {p: i for p, _, _, i in LIST_FEATURES}
+ICON_BY_NAME = {
+    'Посуточная аренда': 'i-cal', 'Фиксированный срок': 'i-flag',
+    'Начисления по дням': 'i-cal', 'Долг в днях': 'i-alert', 'Приём оплаты': 'i-wallet',
+    'История не переписывается': 'i-doc', 'Точные начисления': 'i-check',
+    'Главная': 'i-chart', 'Окупаемость машин': 'i-car', 'Загрузка': 'i-pin', 'Выгрузка': 'i-upload',
+}
 ICON_BY_PATH.update({'/kaspi-pay/': 'i-link'})
 # ширина/высота картинок в первом экране раздела — против скачка вёрстки
 IMG_WH = {'img/gen/INT-egov.webp': (1500, 750), 'img/gen/INT-erap.webp': (1500, 750), 'img/gen/INT-debtors.webp': (1500, 750), 'img/gen/INT-blacklist.webp': (1500, 750), 'img/gen/INT-wazzup.webp': (1500, 750), 'img/gen/INT-wialon.webp': (1500, 750), 'img/gen/INT-ai.webp': (1500, 750), 'cards/rent.webp': (1483, 1080), 'cards/rent-debt.webp': (1098, 1080), 'cards/drivers.webp': (1135, 1080),
@@ -573,9 +578,9 @@ def drv_scene():
 def vehicle_scene():
     tabs = ''.join(f'<button type="button" data-veh-tab="{i}">{html.escape(x)}</button>' for i, x in enumerate(T('veh_tabs')))
     docs = ''.join(f'<li><b>{html.escape(a)}</b><em>{html.escape(b)}</em><span class="ov__pill{" ov__pill--ok" if c == "ok" else ""}">{html.escape(d)}</span></li>' for a, b, c, d in T('veh_docs'))
-    jobs = ''.join(f'<li><b>{html.escape(a)}</b><em>{html.escape(b)}</em><span>{html.escape(c)}</span></li>' for a, b, c in T('veh_jobs'))
-    looks = ''.join(f'<li><b>{html.escape(a)}</b><em>{html.escape(b)}</em><span class="ov__pill{" ov__pill--ok" if c == "ok" else ""}">{html.escape(d)}</span></li>' for a, b, c, d in T('veh_looks'))
-    fines = ''.join(f'<li class="ov__fine"><div><b>{html.escape(a)}</b><em><span class="plate plate--sm">015 ADM 02</span> {html.escape(d)}</em></div><span>{html.escape(c)}</span></li>' for a, b, c, d in T('veh_fines'))
+    jobs = ''.join(f'<li><i><svg><use href="#i-wrench"/></svg></i><div><b>{html.escape(a)}</b><em>{html.escape(b)}</em></div><span>{html.escape(c)}</span></li>' for a, b, c in T('veh_jobs'))
+    looks = ''.join(f'<li><i><svg><use href="#i-inst"/></svg></i><div><b>{html.escape(a)}</b><em>{html.escape(b)}</em></div><span class="ov__pill{" ov__pill--ok" if c == "ok" else ""}">{html.escape(d)}</span></li>' for a, b, c, d in T('veh_looks'))
+    fines = ''.join(f'<li class="ov__fine"><i><svg><use href="#i-alert"/></svg></i><div><b>{html.escape(a)}</b><em><span class="plate plate--sm">015 ADM 02</span> {html.escape(d)}</em></div><span class="neg">{html.escape(c)}</span></li>' for a, b, c, d in T('veh_fines'))
     return f'''<div class="phero__vis" data-reveal="scale"><div class="driverplay" data-vehplay data-tab="0" aria-hidden="true">
       <div class="ov">
         <svg class="ovcur" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 2.5v15.2l4.1-3.7 3.2 6.4 2.1-.9-3.2-6.3 5.6-.3z"/></svg>
@@ -590,9 +595,9 @@ def vehicle_scene():
               <section><header><b>{T("veh_docs_t")}</b></header><ul class="ov__docs">{docs}</ul></section>
             </div>
           </div>
-          <div class="ov__pane" data-veh-pane="1"><section><header><b>{T("veh_jobs_t")}</b><span class="ov__pill">{T("veh_soon")}</span></header><ul class="ov__docs">{jobs}</ul></section></div>
-          <div class="ov__pane" data-veh-pane="2"><section><header><b>{T("veh_looks_t")}</b></header><ul class="ov__docs">{looks}</ul></section></div>
-          <div class="ov__pane" data-veh-pane="3"><section><header><b>{'Штрафы этой машины' if L == 'ru' else 'Осы көліктің айыппұлдары'}</b></header><ul class="ov__docs">{fines}</ul></section></div>
+          <div class="ov__pane" data-veh-pane="1"><section class="ov__sheet"><header><b>{T("veh_jobs_t")}</b><span class="ov__pill">{T("veh_soon")}</span></header><ul class="ov__rows">{jobs}</ul></section></div>
+          <div class="ov__pane" data-veh-pane="2"><section class="ov__sheet"><header><b>{T("veh_looks_t")}</b><span class="ov__pill ov__pill--ok">{'2 осмотра' if L == 'ru' else '2 тексеру'}</span></header><ul class="ov__rows">{looks}</ul></section></div>
+          <div class="ov__pane" data-veh-pane="3"><section class="ov__sheet"><header><b>{'Штрафы этой машины' if L == 'ru' else 'Осы көліктің айыппұлдары'}</b><span class="ov__pill">{'26 625 ₸'}</span></header><ul class="ov__rows">{fines}</ul></section></div>
           <div class="ov__pane" data-veh-pane="4">
             <section><header><b>{T("veh_lease")}</b><span class="ov__pill ov__pill--ok">{T("veh_lease_on")}</span></header>
               <div class="ov__tiles"><div><small>{T("veh_pay")}</small><b>128 000 ₸</b></div><div><small>{T("veh_next")}</small><b>28 авг</b></div><div><small>{T("veh_left")}</small><b>4 224 000 ₸</b></div></div>
@@ -629,18 +634,11 @@ def rent_scene():
     </div></div>'''
 
 def finance_scene():
-    """Герой «Деньги и долги»: кто должен и сколько дней, а не сумма со знаком."""
-    rows = ''.join(
-        f'<li data-fin-row><b>{html.escape(a)}</b><span class="plate">{html.escape(b)}</span><em data-fin-days>{html.escape(c)}</em><strong data-fin-sum>{html.escape(d)}</strong></li>'
-        for a, b, c, d in T('fin_rows'))
-    return f'''<div class="phero__vis" data-reveal="scale"><div class="finplay" data-finplay data-step="0" aria-hidden="true">
-      <div class="fledger">
-        <header><b>{T("fin_head")}</b><span><i></i><em data-fin-event>{T("fin_live")}</em></span></header>
-        <div class="fledger__cols">{''.join(f'<span>{html.escape(x)}</span>' for x in T("fin_cols"))}</div>
-        <ul>{rows}</ul>
-        <footer><span>{T("fin_foot")}</span><b data-fin-total>{T("fin_total")}</b></footer>
-      </div>
-      <div class="finplay__toast"><i>✓</i><span data-fin-toast>{T("fin_toast")}</span></div>
+    """Та же лента, что на главной: одна анимация, а не вторая таблица."""
+    return f'''<div class="phero__vis" data-reveal="scale"><div class="ledger">
+      <div class="ledger__head"><b>{T("ledger_head")}</b><span><i></i> <em class="ledger__event">{T("ledger_live")}</em></span></div>
+      <table><thead><tr>{''.join(f'<th>{c}</th>' for c in T("ledger_cols"))}</tr></thead><tbody></tbody></table>
+      <div class="ledger__foot"><span>{T("ledger_foot")}</span><b>33 500 ₸</b></div>
     </div></div>'''
 
 def phero(sec, crumbs, R, extra='', img=None, logo='', vis=''):
@@ -880,7 +878,7 @@ def inner(p):
     if p['path'] == '/features/' and not hero:
         # индекс возможностей: заголовок из первой секции
         first = secs[0]
-        body = phero(dict(title='Всё, чем живёт таксопарк', eyebrow='Возможности', paras=first['paras']), crumbs_for(p, R), R, img=FEATURE_IMG.get('/features/')) + f'<section class="section section--card"><div class="wrap">{cards(first, R, 4)}</div></section>' + ''.join(generic_section(s, R, False) for s in secs[1:])
+        body = phero(dict(title='Всё, чем живёт таксопарк', eyebrow='Возможности', paras=first['paras']), crumbs_for(p, R), R) + f'<section class="section section--card"><div class="wrap">{cards(first, R, 4)}</div></section>' + ''.join(generic_section(s, R, False) for s in secs[1:])
         desc = strip_md(' '.join(first['paras']))[:300]
     other = ''
     if p['path'].startswith('/integrations/') and p['path'] != '/integrations/':

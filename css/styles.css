@@ -677,6 +677,15 @@ h1 .tag,h2 .tag{font-size:12px;padding:3px 9px;vertical-align:middle}
 .ov__docs i svg{width:15px;height:15px}
 .ov__docs b{font-weight:650}
 .ov__docs .ov__pill{margin-left:auto}
+.ov__sheet{background:#fff;border:1px solid var(--line);border-radius:14px;padding:12px;box-shadow:0 10px 24px -18px rgba(13,13,13,.4)}
+.ov__sheet>header{margin-bottom:8px}
+.ov__rows{display:grid;gap:6px}
+.ov__rows li{display:grid;grid-template-columns:32px 1fr auto;gap:8px;align-items:center;background:var(--bg);border-radius:10px;padding:8px}
+.ov__rows i{width:32px;height:32px;border-radius:8px;background:var(--yellow);display:grid;place-items:center;color:var(--ink)}
+.ov__rows i svg{width:16px;height:16px}
+.ov__rows b{font-weight:650}
+.ov__rows em{display:block;font-style:normal;color:var(--muted);font-size:11px;margin-top:2px}
+.ov__rows>li>span{font-weight:700;font-variant-numeric:tabular-nums;font-size:12px}
 .ov__fine div{min-width:0}
 .ov__fine em{display:flex;align-items:center;gap:6px;margin-top:3px}
 .plate--sm{height:18px;font-size:10px;padding:0 4px}
