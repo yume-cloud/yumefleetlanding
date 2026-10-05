@@ -451,18 +451,23 @@ h1 .tag,h2 .tag{font-size:12px;padding:3px 9px;vertical-align:middle}
 .bcard__sum b{font-size:clamp(28px,3vw,36px);font-weight:800;letter-spacing:-.03em}
 .bcard__bar{height:10px;border-radius:999px;background:var(--line-2);overflow:hidden}
 .bcard__bar i{display:block;height:100%;width:calc(var(--p)*100%);background:var(--yellow);border-radius:999px;transition:width 1.15s var(--ease)}
-.buyplay{position:relative;min-height:460px;padding-bottom:72px}
+.buyplay{position:relative;height:440px;padding-bottom:72px}
 .bform,.buyplay .bcard{transition:opacity .45s var(--ease),transform .45s var(--ease)}
-.buyplay[data-step="form"] .bcard,.buyplay[data-step="open"] .bcard{opacity:0;transform:translateY(12px);pointer-events:none;position:absolute;inset:0 auto auto 0;width:100%}
-.buyplay:not([data-step="form"]):not([data-step="open"]) .bform{opacity:0;transform:translateY(-12px);pointer-events:none;position:absolute;inset:0 auto auto 0;width:100%}
-.bform{background:var(--card);border:1px solid var(--line);border-radius:var(--r-lg);padding:22px;box-shadow:var(--shadow);display:grid;gap:10px}
-.bform header{display:flex;align-items:center;justify-content:space-between;margin-bottom:4px}
-.bform header b{font-size:16px}
-.bform label{display:grid;gap:4px;font-size:12px;color:var(--muted)}
-.bform i{display:block;min-height:36px;padding:8px 10px;border:1px solid var(--line);border-radius:8px;background:var(--bg);font-style:normal;font-size:14px;font-weight:600;color:transparent}
+.bform,.buyplay .bcard{position:absolute;left:0;right:0;top:0;height:360px}
+.buyplay[data-step="form"] .bcard,.buyplay[data-step="open"] .bcard{opacity:0;transform:translateY(10px);pointer-events:none}
+.buyplay:not([data-step="form"]):not([data-step="open"]) .bform{opacity:0;transform:translateY(-10px);pointer-events:none}
+.bform{background:var(--card);border:1px solid var(--line);border-radius:var(--r-lg);padding:22px 22px 18px;box-shadow:var(--shadow);display:flex;flex-direction:column;gap:14px;overflow:hidden}
+.bform header{display:flex;align-items:baseline;justify-content:space-between;gap:12px}
+.bform header b{font-size:18px;letter-spacing:-.02em}
+.bform header span{font-size:13px;color:var(--muted);white-space:nowrap}
+.bform__grid{display:grid;grid-template-columns:1fr 1fr;gap:10px 12px}
+.bform__wide{grid-column:1 / -1}
+.bform label{display:grid;gap:4px;font-size:11px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--muted)}
+.bform i{display:flex;align-items:center;min-height:36px;padding:0 10px;border:1px solid var(--line);border-radius:8px;background:var(--bg);font-style:normal;font-size:14px;font-weight:600;letter-spacing:0;text-transform:none;color:transparent}
 .bform i.is-in{color:var(--ink);background:#fff;border-color:var(--ink)}
-.bform__btn{margin-top:6px;padding:12px;border-radius:10px;background:var(--line);color:var(--muted);text-align:center;font-weight:700}
+.bform__btn{margin-top:auto;padding:12px;border-radius:10px;background:var(--line);color:var(--muted);text-align:center;font-weight:700}
 .buyplay[data-step="open"] .bform__btn{background:var(--yellow);color:var(--ink)}
+.buyplay .bcard{overflow:hidden;gap:12px;padding:20px 22px}
 .bcard__pay{padding:10px 12px;border-radius:10px;background:var(--yellow-tint);font-size:14px;font-weight:600;opacity:0;transform:translateY(8px);transition:opacity .4s,transform .45s var(--ease)}
 .buyplay[data-step="pay"] .bcard__pay,.buyplay[data-step="done"] .bcard__pay{opacity:1;transform:none}
 .buyplay[data-step="setup"] .bcard__head em{background:var(--bg);color:var(--muted)}
