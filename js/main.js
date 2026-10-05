@@ -116,6 +116,7 @@
     const bar = $('[data-buy-bar]', buy), saved = $('[data-buy-saved]', buy), left = $('[data-buy-left]', buy), next = $('[data-buy-next]', buy), type = $('[data-buy-type]', buy);
     const s0 = $('[data-buy-s0]', buy), s1 = $('[data-buy-s1]', buy);
     const fields = $$('[data-buy-field]', buy);
+    fields.forEach((f, i) => f.style.setProperty('--i', i));
     const money = n => fmt(n) + ' ₸';
     const typeOn = document.documentElement.lang === 'kk' ? 'Сатып алумен жалдау' : 'Аренда под выкуп';
     const nextOn = document.documentElement.lang === 'kk' ? '9 000 ₸ · ертең' : '9 000 ₸ · завтра';
@@ -135,9 +136,9 @@
     };
     if (reduced) { set('done', fields.length); }
     else {
-      const script = [['form', 0], ['form', 2], ['form', 4], ['form', 6], ['open', 6], ['card', 6], ['grow', 6], ['pay', 6], ['done', 6]];
+      const script = [['form', 0, 250], ['form', 6, 850], ['open', 6, 650], ['card', 6, 400], ['grow', 6, 1500], ['pay', 6, 750], ['done', 6, 1800]];
       let n = 0, started = false;
-      const loop = async () => { while (true) { const [step, filled] = script[n % script.length]; set(step, filled); n++; await wait(step === 'grow' ? 1800 : 1400); } };
+      const loop = async () => { while (true) { const [step, filled, pause] = script[n % script.length]; set(step, filled); n++; await wait(pause); } };
       new IntersectionObserver(es => { if (es[0].isIntersecting && !started) { started = true; loop(); } }, { threshold: .35 }).observe(buy);
     }
   }
