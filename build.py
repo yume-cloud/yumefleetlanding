@@ -578,7 +578,7 @@ def home():
     paras = ''.join(f'<p class="lead" style="margin-top:14px">{inline(x)}</p>' for x in p2['paras'])
     days = ''.join(f'<li data-day="6000"><i></i><span>{html.escape(d)}</span><b>6 000 ₸</b></li>' for d in T('pay_days'))
     out += f'''<section class="section section--card" id="driver">
-  <div class="wrap drv">
+  <div class="wrap drv drv--rev">
     <div data-reveal="left">{eyebrow(p2)}<h2>{inline(p2['title'])}</h2>{paras}{checks(p2['items'], 'drv__list')}</div>
     <div class="payplay" data-payplay data-step="debt" data-pick="{html.escape(T("pay_pick"))}" data-kaspi="{html.escape(T("pay_kaspi"))}" data-caps="{html.escape("|".join(T("pay_caps")))}" data-reveal="scale" aria-hidden="true">
       <div class="payplay__stage">
@@ -634,7 +634,7 @@ def home():
   </div>
 </section>
 <section class="section section--card" id="fines">
-  <div class="wrap promo promo--rev">
+  <div class="wrap promo">
     <div data-reveal="left">{eyebrow(p4)}<h2>{inline(p4['title'])}</h2><p class="lead" style="margin-top:18px">{inline(p4['paras'][0])}</p>{checks(p4['items'])}<a class="link" href="{R}features/fines/">{T("more_fines")} <svg><use href="#i-arrow"/></svg></a></div>
     <div class="promo__vis" data-reveal="scale">
       <div class="fineplay" data-fineplay data-step="photo" aria-hidden="true">
