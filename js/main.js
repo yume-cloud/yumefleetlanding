@@ -162,7 +162,7 @@
     if (!(reduced || matchMedia('(max-width: 900px)').matches)) {
       const cur = $('.ovcur', ov);
       let n = 1, started = false;
-      const aim = i => { const b = tabs.find(t => t.dataset.drvTab === String(i)).getBoundingClientRect(), r = ov.getBoundingClientRect(); if (cur) { cur.style.left = (b.right - r.left - 6) + 'px'; cur.style.top = (b.top - r.top + 6) + 'px'; } };
+      const aim = i => { const b = tabs.find(t => t.dataset.drvTab === String(i)).getBoundingClientRect(), r = ov.getBoundingClientRect(); if (cur) { cur.style.left = (b.right - r.left - 18) + 'px'; cur.style.top = (b.top - r.top + 6) + 'px'; } };
       const loop = async () => { while (true) { const i = order[n % order.length]; aim(i); cur && (cur.style.opacity = '1'); await wait(700); ov.dataset.press = '1'; await wait(150); set(i); ov.dataset.press = '0'; n++; await wait(1600); } };
       new IntersectionObserver(es => { if (es[0].isIntersecting && !started) { started = true; loop(); } }, { threshold: .35 }).observe(ov);
     }
@@ -183,7 +183,7 @@
     if (!(reduced || matchMedia('(max-width: 900px)').matches)) {
       const cur = $('.ovcur', veh);
       let n = 1, started = false;
-      const aim = i => { const b = tabs.find(t => t.dataset.vehTab === String(i)).getBoundingClientRect(), r = veh.getBoundingClientRect(); if (cur) { cur.style.left = (b.right - r.left - 6) + 'px'; cur.style.top = (b.top - r.top + 6) + 'px'; } };
+      const aim = i => { const b = tabs.find(t => t.dataset.vehTab === String(i)).getBoundingClientRect(), r = veh.getBoundingClientRect(); if (cur) { cur.style.left = (b.right - r.left - 18) + 'px'; cur.style.top = (b.top - r.top + 6) + 'px'; } };
       const loop = async () => { while (true) { const i = order[n % order.length]; aim(i); cur && (cur.style.opacity = '1'); await wait(700); veh.dataset.press = '1'; await wait(150); set(i); veh.dataset.press = '0'; n++; await wait(1600); } };
       new IntersectionObserver(es => { if (es[0].isIntersecting && !started) { started = true; loop(); } }, { threshold: .35 }).observe(veh);
     }

@@ -658,6 +658,10 @@ h1 .tag,h2 .tag{font-size:12px;padding:3px 9px;vertical-align:middle}
 .ov__docs i svg{width:15px;height:15px}
 .ov__docs b{font-weight:650}
 .ov__docs .ov__pill{margin-left:auto}
+.ov__fine div{min-width:0}
+.ov__fine em{display:flex;align-items:center;gap:6px;margin-top:3px}
+.plate--sm{height:18px;font-size:10px;padding:0 4px}
+.ov__car .neg{margin-left:auto;color:#dc2626;font-variant-numeric:tabular-nums}
 .driverplay[data-step="1"] [data-drv-sum]{background:var(--yellow-tint);border-radius:4px}
 .drvplay{position:relative}
 .dcard{background:#fff;border:1px solid var(--line);border-radius:var(--r-lg);padding:22px;box-shadow:var(--shadow);display:flex;flex-direction:column;gap:14px}
