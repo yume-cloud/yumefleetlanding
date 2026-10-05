@@ -110,23 +110,32 @@
     }
   }
 
-  /* buyout scene: balance, then a Kaspi payment lands in the buyout */
+  /* buyout: create → bar fills to 62% → Kaspi payment lands */
   const buy = $('[data-buyplay]');
   if (buy) {
-    const bar = $('[data-buy-bar]', buy), saved = $('[data-buy-saved]', buy), left = $('[data-buy-left]', buy);
+    const bar = $('[data-buy-bar]', buy), saved = $('[data-buy-saved]', buy), left = $('[data-buy-left]', buy), next = $('[data-buy-next]', buy), type = $('[data-buy-type]', buy);
+    const s0 = $('[data-buy-s0]', buy), s1 = $('[data-buy-s1]', buy);
     const money = n => fmt(n) + ' ₸';
+    const typeOn = buy.closest('html, body') && document.documentElement.lang === 'kk' ? 'Сатып алумен жалдау' : 'Аренда под выкуп';
+    const nextOn = document.documentElement.lang === 'kk' ? '9 000 ₸ · ертең' : '9 000 ₸ · завтра';
     const set = step => {
       buy.dataset.step = step;
-      const paid = step !== 'base';
-      if (bar) bar.style.setProperty('--p', paid ? '.62' : '.61875');
-      if (saved) saved.textContent = money(paid ? 4464000 : 4455000);
-      if (left) left.textContent = money(paid ? 2736000 : 2745000);
+      const grown = step === 'grow' || step === 'pay' || step === 'done';
+      const paid = step === 'pay' || step === 'done';
+      if (bar) bar.style.setProperty('--p', step === 'setup' ? '0' : paid ? '.62' : grown ? '.61875' : '0');
+      if (saved) saved.textContent = money(step === 'setup' ? 0 : paid ? 4464000 : 4455000);
+      if (left) left.textContent = money(step === 'setup' ? 7200000 : paid ? 2736000 : 2745000);
+      if (next) next.textContent = step === 'setup' ? '—' : nextOn;
+      if (type) type.textContent = step === 'setup' ? type.dataset.setup : typeOn;
+      s0?.classList.toggle('is-done', grown);
+      s1?.classList.toggle('is-on', grown);
     };
+    if (type) type.dataset.setup = type.textContent;
     if (reduced) set('done');
     else {
-      const steps = ['base', 'pay', 'done'];
+      const steps = ['setup', 'grow', 'pay', 'done'];
       let n = 0, started = false;
-      const loop = async () => { while (true) { set(steps[n % steps.length]); n++; await wait(2400); } };
+      const loop = async () => { while (true) { set(steps[n % steps.length]); n++; await wait(steps[(n - 1) % steps.length] === 'grow' ? 2000 : 2400); } };
       new IntersectionObserver(es => { if (es[0].isIntersecting && !started) { started = true; loop(); } }, { threshold: .35 }).observe(buy);
     }
   }
