@@ -636,7 +636,7 @@ def rent_scene():
     </div></div>'''
 
 def features_art(R):
-    return f'<div class="phero__vis phero__vis--art" data-reveal="scale"><img src="{R}assets/img/features-hero.jpg" width="832" height="1248" alt="" fetchpriority="high"></div>'
+    return f'<div class="phero__vis phero__vis--art" data-reveal="scale"><img src="{R}assets/img/features-hero.png" width="822" height="543" alt="" fetchpriority="high"></div>'
 
 def finance_scene():
     """Та же лента, что на главной: одна анимация, а не вторая таблица."""

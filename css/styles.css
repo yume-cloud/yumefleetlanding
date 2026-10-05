@@ -596,7 +596,8 @@ h1 .tag,h2 .tag{font-size:12px;padding:3px 9px;vertical-align:middle}
 /* phero with screenshot */
 .phero--grid .wrap{display:grid;grid-template-columns:1.05fr 1fr;gap:48px;align-items:start}
 .phero__vis img{width:100%;border-radius:14px;border:1px solid var(--line);box-shadow:var(--shadow);background:#fff}
-.phero__vis--art img{width:auto;max-width:100%;max-height:520px;margin-inline:auto;display:block;border:0;border-radius:0;background:transparent;box-shadow:none}
+.phero__vis--art{display:flex;align-items:center;justify-content:center;min-height:100%}
+.phero__vis--art img{width:118%;max-width:none;height:auto;margin:0 -9%;display:block;border:0;border-radius:0;background:transparent;box-shadow:none}
 .driverplay{position:relative}
 .ov{background:#fff;border:1px solid var(--line);border-radius:16px;box-shadow:var(--shadow);overflow:hidden;font-size:12px}
 .ov>header{display:flex;align-items:baseline;gap:8px;padding:12px 14px 10px}
