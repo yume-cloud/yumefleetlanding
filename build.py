@@ -69,7 +69,7 @@ def nav_feats():
 SITE = 'https://yumefleet.com'
 PHONE = '+7 777 947 99 90'
 WA = 'https://wa.me/77779479990'
-LOGIN = 'https://dev.yumefleet.kz/login'
+LOGIN = 'https://yumefleet.com/login'
 INST = 'https://www.instagram.com/yumecloudx/'
 YT = 'https://www.youtube.com/@yumecloud'
 LEAD = 'https://yume-cloud-zzydfr.vercel.app/api/lead/'
@@ -636,25 +636,7 @@ def rent_scene():
     </div></div>'''
 
 def features_art(R):
-    """Сцена вместо картинки: машина и четыре возможности, которые загораются по очереди."""
-    items = [
-        ('i-cal', 'Аренда', '9 000 ₸ / день'),
-        ('i-wallet', 'Kaspi', '+9 000 ₸'),
-        ('i-alert', 'Штраф ПДД', '21 625 ₸'),
-        ('i-car', 'Выкуп', '4 455 000 ₸'),
-    ]
-    rows = ''.join(
-        f'<li data-hub-row><i><svg><use href="#{ic}"/></svg></i><div><b>{html.escape(name)}</b><em>{html.escape(val)}</em></div></li>'
-        for ic, name, val in items)
-    return f'''<div class="phero__vis" data-reveal="scale"><div class="hub" data-hub data-step="0" aria-hidden="true">
-      <svg class="hub__car" viewBox="0 0 320 150" aria-hidden="true">
-        <path d="M26 92h268M46 92l22-34a18 18 0 0 1 16-8h92l30 26 46 4a14 14 0 0 1 12 14v8" fill="none" stroke="#14141c" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-        <path d="M78 52h52l10 18H74z" fill="#F0B100" stroke="#14141c" stroke-width="3" stroke-linejoin="round"/>
-        <circle cx="92" cy="98" r="16" fill="#fff" stroke="#14141c" stroke-width="3"/><circle cx="92" cy="98" r="6" fill="#14141c"/>
-        <circle cx="236" cy="98" r="16" fill="#fff" stroke="#14141c" stroke-width="3"/><circle cx="236" cy="98" r="6" fill="#14141c"/>
-      </svg>
-      <ul class="hub__rows">{rows}</ul>
-    </div></div>'''
+    return f'<div class="phero__vis phero__vis--art" data-reveal="scale"><img src="{R}assets/img/features-hero.jpg" width="832" height="1248" alt="" fetchpriority="high"></div>'
 
 def finance_scene():
     """Та же лента, что на главной: одна анимация, а не вторая таблица."""
