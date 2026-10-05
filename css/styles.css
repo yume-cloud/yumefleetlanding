@@ -591,6 +591,11 @@ h1 .tag,h2 .tag{font-size:12px;padding:3px 9px;vertical-align:middle}
 .ov__body{position:relative;min-height:262px}
 .ov__bar{height:8px;border-radius:99px;background:var(--line);overflow:hidden;margin:6px 0}
 .ov__bar i{display:block;height:100%;width:72%;background:var(--yellow)}
+.ov__big{font-size:22px;letter-spacing:-.03em;line-height:1}
+.ov__tiles{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin:8px 0}
+.ov__tiles div{background:#fff;border:1px solid var(--line);border-radius:8px;padding:6px}
+.ov__tiles small{display:block;color:var(--muted)}
+.ov__tabs{overflow-x:auto}
 .ov__pane{position:absolute;inset:0;opacity:0;transform:translateY(8px);transition:opacity .4s var(--ease),transform .4s var(--ease);pointer-events:none;padding:0 10px 12px}
 .ov__pane.is-on{opacity:1;transform:none}
 .ovcur{position:absolute;z-index:3;width:22px;height:22px;fill:#14141c;stroke:#fff;stroke-width:1.4;stroke-linejoin:round;filter:drop-shadow(0 3px 4px rgba(20,20,28,.3));pointer-events:none;opacity:0;transition:left .6s cubic-bezier(.4,0,.2,1),top .6s cubic-bezier(.4,0,.2,1),transform .15s,opacity .3s}

@@ -197,7 +197,7 @@
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 </style>
-<link rel="stylesheet" href="../../css/styles.css?v=63a651bd">
+<link rel="stylesheet" href="../../css/styles.css?v=f8becba6">
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Organization", "name": "Yume Fleet", "legalName": "ТОО «Yume.Cloud»", "url": "https://yumefleet.com/", "logo": "https://yumefleet.com/assets/logo/tile.svg", "telephone": "+77779479990", "address": {"@type": "PostalAddress", "addressLocality": "Алматы", "addressCountry": "KZ"}, "sameAs": ["https://www.instagram.com/yumecloudx/", "https://www.youtube.com/@yumecloud"]}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://yumefleet.com/"}, {"@type": "ListItem", "position": 2, "name": "Возможности", "item": "https://yumefleet.com/features/"}, {"@type": "ListItem", "position": 3, "name": "Машины", "item": "https://yumefleet.com/features/vehicles/"}]}</script>
 </head>
@@ -268,25 +268,27 @@
       <div class="ov">
         <svg class="ovcur" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 2.5v15.2l4.1-3.7 3.2 6.4 2.1-.9-3.2-6.3 5.6-.3z"/></svg>
         <header><span class="plate">015 ADM 02</span><b>Chevrolet Cobalt</b><em>На линии</em></header>
-        <div class="ov__tabs"><button type="button" data-veh-tab="0">Обзор</button><button type="button" data-veh-tab="1">ТО и ремонт</button><button type="button" data-veh-tab="2">Осмотры</button><button type="button" data-veh-tab="3">Доход</button></div>
+        <div class="ov__tabs"><button type="button" data-veh-tab="0">Обзор</button><button type="button" data-veh-tab="1">ТО и ремонт</button><button type="button" data-veh-tab="2">Осмотры</button><button type="button" data-veh-tab="3">Штрафы ПДД</button><button type="button" data-veh-tab="4">Лизинг</button></div>
         <div class="ov__body">
           <div class="ov__pane" data-veh-pane="0">
             <div class="ov__grid">
-              <div class="ov__main">
-                <section><header><b>Сейчас за рулём</b></header><div class="ov__car"><i><svg><use href="#i-user"/></svg></i><div><b>Ерлан С.</b><em>с 1 сентября</em></div></div></section>
-                <section><header><b>Пробег</b><span>84 210 км</span></header><div class="ov__bar"><i></i></div><small>ТО через 790 км</small></section>
-              </div>
-              <aside>
-                <section data-drv-money><small>Доход</small><b>1 240 000 ₸</b><span>окупилась за 14 мес</span></section>
-                <section><header><b>Штрафы ПДД</b></header><ul><li><span>1 штраф · 12 сент</span><b>21 625 ₸</b></li></ul></section>
-              </aside>
+              <section><header><b>Сейчас за рулём</b></header><div class="ov__car"><i><svg><use href="#i-user"/></svg></i><div><b>Ерлан С.</b><em>с 1 сентября</em></div></div></section>
+              <section><header><b>Пробег</b><span>84 320 км</span></header><div class="ov__bar"><i style="width:88%"></i></div><small>ТО через 790 км</small></section>
             </div>
           </div>
           <div class="ov__pane" data-veh-pane="1">
-            <section><header><b>Наряды</b><span>ТО через 790 км</span></header><ul><li><b>Замена масла</b><em>12 сент</em><span>закрыт</span></li><li><b>Колодки</b><em>в работе</em><span>открыт</span></li></ul></section>
+            <div class="ov__grid">
+              <section><header><b>По пробегу</b><span class="ov__pill">скоро</span></header><b class="ov__big">1 200</b><small>км до ТО</small><div class="ov__bar"><i style="width:88%"></i></div></section>
+              <section><header><b>По сроку</b><span class="ov__pill ov__pill--ok">в графике</span></header><b class="ov__big">57</b><small>дней до ТО</small><div class="ov__bar"><i style="width:69%"></i></div></section>
+            </div>
           </div>
-          <div class="ov__pane" data-veh-pane="3">
-            <section><header><b>Доход</b><span>1 240 000 ₸</span></header><ul><li><span>Аренда принесла</span><b class="pos">1 620 000 ₸</b></li><li><span>Ремонты и ТО</span><b>380 000 ₸</b></li></ul></section>
+          <div class="ov__pane" data-veh-pane="2"><section><header><b>Осмотры</b></header><ul class="ov__docs"><li><b>12 мая</b><em>при выдаче</em><span class="ov__pill ov__pill--ok">без замечаний</span></li><li><b>28 апр</b><em>при возврате</em><span class="ov__pill">царапина</span></li></ul></section></div>
+          <div class="ov__pane" data-veh-pane="3"><section><header><b>Штрафы ПДД</b><span>21 625 ₸</span></header><ul><li><b>1 штраф · 12 сент</b><em>12 сент</em><span>21 625 ₸</span></li></ul></section></div>
+          <div class="ov__pane" data-veh-pane="4">
+            <section><header><b>Лизинг · ЛЗ-2025-0417</b><span class="ov__pill ov__pill--ok">обслуживается</span></header>
+              <div class="ov__tiles"><div><small>Платёж</small><b>128 000 ₸</b></div><div><small>Следующий</small><b>28 авг</b></div><div><small>Остаток</small><b>4 224 000 ₸</b></div></div>
+              <div class="ov__bar"><i style="width:31%"></i></div><small>15 из 48</small>
+            </section>
           </div>
         </div>
       </div>
@@ -341,6 +343,6 @@
 <button class="to-top" aria-label="Наверх"><svg><use href="#i-up"/></svg></button>
 
 
-<script src="../../js/main.js?v=70123a60" defer></script>
+<script src="../../js/main.js?v=cd68f23e" defer></script>
 </body>
 </html>
