@@ -324,6 +324,7 @@
     const step = s => { root.dataset.step = s; };
 
     const final = () => { step('hold'); setStage(true); payline.textContent = T.paid; paint(DOWN + RATE); };
+    const land = v => { cancelAnimationFrame(raf); paint(v); };
 
     if (still) { final(); return; }
 
@@ -335,7 +336,7 @@
         await wait(350);
         step('stage'); setStage(true);                  /* этап меняется сам */
         await wait(1000);
-        step('pay'); payline.textContent = T.paid; await tween(DOWN + RATE, 650);     /* остаток −9 000 */
+        step('pay'); payline.textContent = T.paid; await tween(DOWN + RATE, 650); land(DOWN + RATE);  /* остаток ровно −9 000 */
         step('hold'); await wait(3400);                 /* финал держится дольше */
         step('reset'); await wait(550);
       }
