@@ -97,7 +97,7 @@
       pay.dataset.step = step;
       const picked = step !== 'debt';
       days.forEach((d, i) => d.classList.toggle('is-on', picked && i < 2));
-      if (sum) { sum.textContent = picked ? '12 000 ₸' : '18 000 ₸'; sum.classList.remove('is-flash'); void sum.offsetWidth; sum.classList.add('is-flash'); }
+      if (sum) sum.textContent = picked ? '12 000 ₸' : '18 000 ₸';
       if (btn) btn.textContent = picked ? pay.dataset.kaspi : pay.dataset.pick;
       if (cap) cap.textContent = caps[step === 'debt' ? 0 : step === 'days' ? 1 : 2] || '';
     };

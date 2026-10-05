@@ -582,7 +582,6 @@ def home():
     <div data-reveal="left">{eyebrow(p2)}<h2>{inline(p2['title'])}</h2>{paras}{checks(p2['items'], 'drv__list')}</div>
     <div class="payplay" data-payplay data-step="debt" data-pick="{html.escape(T("pay_pick"))}" data-kaspi="{html.escape(T("pay_kaspi"))}" data-caps="{html.escape("|".join(T("pay_caps")))}" data-reveal="scale" aria-hidden="true">
       <div class="payplay__stage">
-        <div class="payplay__toast"><i>✓</i><span>{html.escape(T("pay_toast"))}</span></div>
         <div class="payplay__phone">
           <div class="payplay__bezel">
             <header class="payplay__top"><b>yumefleet</b><em data-pay-cap>{html.escape(T("pay_caps")[0])}</em></header>
@@ -591,7 +590,8 @@ def home():
               <p class="payplay__sub">{html.escape(T("pay_sub"))}</p>
               <p class="payplay__sum" data-pay-sum>18 000 ₸</p>
               <p class="payplay__badge">{html.escape(T("pay_badge"))}</p>
-              <p class="payplay__meta"><span class="plate">847 ABC 02</span><span>Chevrolet Cobalt · {html.escape(T("pay_rate"))}</span></p>
+              <p class="payplay__meta"><span class="plate">847 ABC 02</span><span>Chevrolet Cobalt</span></p>
+              <p class="payplay__rate">{html.escape(T("pay_rate"))}</p>
               <ul class="payplay__days">{days}</ul>
               <div class="payplay__btn" data-pay-btn>{html.escape(T("pay_pick"))}</div>
             </div>
@@ -599,6 +599,7 @@ def home():
             <div class="payplay__ok"><i>✓</i><b>{html.escape(T("pay_done"))}</b><span>{html.escape(T("pay_done_sub"))}</span></div>
           </div>
         </div>
+        <div class="payplay__toast"><i>✓</i><span>{html.escape(T("pay_toast"))}</span></div>
       </div>
     </div>
   </div>
