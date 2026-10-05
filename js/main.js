@@ -189,6 +189,26 @@
     }
   }
 
+  /* fine card: arrives → linked to driver → discount visible */
+  const fine = $('[data-fineplay]');
+  if (fine) {
+    const kk = document.documentElement.lang === 'kk';
+    const st = $('[data-fine-st]', fine), who = $('[data-fine-who]', fine), pill = $('[data-fine-pill]', fine);
+    const copy = {
+      in: [kk ? 'Жаңа' : 'Новый', kk ? 'әлі байланбаған' : 'ещё не привязан', kk ? 'Күту' : 'Ждёт'],
+      link: [kk ? 'Байланды' : 'Привязан', kk ? 'рульде болды' : 'был за рулём', kk ? 'Қарызда' : 'В долг'],
+      disc: [kk ? 'Жеңілдік' : 'Скидка', kk ? 'рульде болды' : 'был за рулём', kk ? '−50%' : '−50%'],
+    };
+    const set = step => { fine.dataset.step = step; const c = copy[step]; if (st) st.textContent = c[0]; if (who) who.textContent = c[1]; if (pill) pill.textContent = c[2]; };
+    if (reduced || matchMedia('(max-width: 900px)').matches) set('disc');
+    else {
+      const steps = ['in', 'link', 'disc'];
+      let n = 0, started = false;
+      const loop = async () => { while (true) { set(steps[n % 3]); n++; await wait(steps[(n - 1) % 3] === 'disc' ? 2200 : 1600); } };
+      new IntersectionObserver(es => { if (es[0].isIntersecting && !started) { started = true; loop(); } }, { threshold: .35 }).observe(fine);
+    }
+  }
+
   /* driver check: three checks, then "can issue". Static on a phone. */
   const drv = $('[data-drvplay]');
   if (drv) {

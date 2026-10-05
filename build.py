@@ -638,6 +638,19 @@ def rent_scene():
 def features_art(R):
     return f'<div class="phero__vis phero__vis--art" data-reveal="scale"><img src="{R}assets/img/features-hero.png" width="822" height="543" alt="" fetchpriority="high"></div>'
 
+def fines_scene():
+    """Карточка штрафа: пришло → привязано к водителю → скидка видна."""
+    ru = L == 'ru'
+    return f'''<div class="phero__vis" data-reveal="scale"><div class="fineplay" data-fineplay data-step="in" aria-hidden="true">
+      <div class="fcard">
+        <header><span class="plate">015 ADM 02</span><b>{'Штраф ПДД' if ru else 'ЖҚЕ айыппұлы'}</b><em data-fine-st>{'Новый' if ru else 'Жаңа'}</em></header>
+        <div class="fcard__sum"><small>{'Превышение скорости' if ru else 'Жылдамдықты асырды'}</small><b data-fine-sum>21 625 ₸</b><s data-fine-full>43 250 ₸</s></div>
+        <div class="fcard__who"><i>ЕС</i><div><b>Ерлан С.</b><em data-fine-who>{'ещё не привязан' if ru else 'әлі байланбаған'}</em></div><span class="ov__pill" data-fine-pill>{'Ждёт' if ru else 'Күту'}</span></div>
+        <div class="fcard__disc"><b>{'Скидка до 18 окт' if ru else 'Жеңілдік 18 қаз дейін'}</b><em>−50%</em><i data-fine-bar></i></div>
+        <div class="fcard__line" data-fine-line>{'ЕРАП · протокол 0000123980' if ru else 'ЕРАП · хаттама 0000123980'}</div>
+      </div>
+    </div></div>'''
+
 def finance_scene():
     """Та же лента, что на главной: одна анимация, а не вторая таблица."""
     return f'''<div class="phero__vis" data-reveal="scale"><div class="ledger">
@@ -867,7 +880,7 @@ def inner(p):
     hero = next((s for s in secs if s['type'] == 'hero'), None)
     body = ''
     if hero:
-        vis = {'/features/rentals/': rent_scene, '/features/drivers/': driver_scene, '/features/check/': drv_scene, '/features/vehicles/': vehicle_scene, '/features/finance/': finance_scene}.get(p['path'])
+        vis = {'/features/rentals/': rent_scene, '/features/drivers/': driver_scene, '/features/check/': drv_scene, '/features/vehicles/': vehicle_scene, '/features/finance/': finance_scene, '/features/fines/': fines_scene}.get(p['path'])
         body += phero(hero, crumbs_for(p, R), R, img=None if vis else FEATURE_IMG.get(p['path']), logo=int_logo(p['path'], R), vis=vis() if vis else '')
         desc = strip_md(' '.join(hero['paras']))[:300]
     else:

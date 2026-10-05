@@ -691,6 +691,28 @@ h1 .tag,h2 .tag{font-size:12px;padding:3px 9px;vertical-align:middle}
 .ov__rows>li>span{font-weight:700;font-variant-numeric:tabular-nums;font-size:12px}
 .ov__fine div{min-width:0}
 .ov__fine em{display:flex;align-items:center;gap:6px;margin-top:3px}
+.fineplay{position:relative}
+.fcard{background:#fff;border:1px solid var(--line);border-radius:var(--r-lg);padding:18px;box-shadow:var(--shadow);display:grid;gap:12px}
+.fcard>header{display:flex;align-items:center;gap:8px}
+.fcard>header b{font-size:15px}
+.fcard>header em{margin-left:auto;font-style:normal;font-size:11px;font-weight:700;padding:3px 8px;border-radius:999px;background:var(--yellow-tint);color:var(--ink)}
+.fineplay[data-step="link"] .fcard>header em,.fineplay[data-step="disc"] .fcard>header em{background:var(--ok-soft);color:var(--ok)}
+.fcard__sum{display:flex;align-items:baseline;gap:10px}
+.fcard__sum small{color:var(--muted);font-size:12px}
+.fcard__sum b{font-size:28px;font-variant-numeric:tabular-nums;letter-spacing:-.02em}
+.fcard__sum s{color:var(--muted);font-size:14px;opacity:0;transition:opacity .4s var(--ease)}
+.fineplay[data-step="disc"] .fcard__sum s{opacity:1}
+.fcard__who{display:grid;grid-template-columns:36px 1fr auto;gap:10px;align-items:center;background:var(--bg);border-radius:12px;padding:10px}
+.fcard__who>i{width:36px;height:36px;border-radius:50%;background:var(--yellow);display:grid;place-items:center;font-style:normal;font-weight:700;font-size:12px}
+.fcard__who em{display:block;font-style:normal;color:var(--muted);font-size:12px;margin-top:2px}
+.fineplay[data-step="link"] .fcard__who em,.fineplay[data-step="disc"] .fcard__who em{color:var(--ok)}
+.fcard__disc{position:relative;display:flex;justify-content:space-between;align-items:center;border:1px dashed var(--line);border-radius:10px;padding:10px 12px;font-size:13px}
+.fcard__disc em{font-style:normal;font-weight:700;color:var(--ok);opacity:0;transition:opacity .4s var(--ease)}
+.fcard__disc i{position:absolute;left:0;bottom:0;height:3px;width:0;background:var(--yellow);border-radius:2px;transition:width 1.1s var(--ease)}
+.fineplay[data-step="disc"] .fcard__disc em{opacity:1}
+.fineplay[data-step="disc"] .fcard__disc i{width:62%}
+.fcard__line{font-size:12px;color:var(--muted);opacity:0;transform:translateY(4px);transition:opacity .4s var(--ease),transform .4s var(--ease)}
+.fineplay[data-step="link"] .fcard__line,.fineplay[data-step="disc"] .fcard__line{opacity:1;transform:none}
 
 .ov__car .neg{margin-left:auto;color:#dc2626;font-variant-numeric:tabular-nums}
 .driverplay[data-step="1"] [data-drv-sum]{background:var(--yellow-tint);border-radius:4px}
