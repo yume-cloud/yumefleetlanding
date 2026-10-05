@@ -33,7 +33,7 @@ UI = {
     pay_days=['1 сент', '2 сент', '3 сент'], pay_pick='Выбрать дни', pay_kaspi='Оплатить в Kaspi',
     pay_done='Оплачено', pay_done_sub='Зачислено в аренду', pay_toast='12 000 ₸ зачислено в аренду',
     pay_caps=['Видит долг по дням', 'Сам выбирает дни', 'Платит в Kaspi'],
-   bc_type='Аренда под выкуп', bc_price='Стоимость выкупа', bc_saved='Накоплено', bc_left='Осталось', bc_next='Ближайший платёж', bc_next_v='9 000 ₸ · завтра', bc_steps=['Взнос', 'Выкуп', 'Выкуплено'], more_buyout='Подробнее про выкуп', more_fines='Подробнее про штрафы', fines_alt='Карточка штрафа ПДД: нарушение, сумма, машина и водитель',
+   bc_type='Аренда под выкуп', bc_price='Стоимость выкупа', bc_saved='Накоплено', bc_left='Осталось', bc_next='Ближайший платёж', bc_next_v='9 000 ₸ · завтра', bc_steps=['Взнос', 'Выкуп', 'Выкуплено'], bc_line='Kaspi · +9 000 ₸ · в выкуп', bc_toast='9 000 ₸ зачислено в выкуп', more_buyout='Подробнее про выкуп', more_fines='Подробнее про штрафы', fines_alt='Карточка штрафа ПДД: нарушение, сумма, машина и водитель',
    all_ints='Все интеграции', price_btn='Узнать цену на демо',
    c_wa='WhatsApp, самый быстрый способ', c_wa_sub='Демо, вопросы по продукту и переходу', c_phone='Телефон', c_phone_sub='Пн–Пт 9:00–19:00, Сб 10:00–16:00 по Алматы', c_inst='Instagram', c_inst_sub='Новости продукта и парков', c_yt='YouTube', c_yt_sub='Видео о работе системы', c_sales='Продажи и партнёрство', c_sales_sub='Коммерческие предложения, интеграции, договоры', c_sup='Поддержка парков', c_sup_sub='Вопросы по работе системы', c_office='Офис', c_city='Алматы, Казахстан', c_office_sub='ТОО «Yume.Cloud». Встречи по договорённости, демо по видеосвязи.', c_login='Вход для парков', c_login_sub='Кабинет парка', c_form_h='Записаться на демо', c_form_p='Покажем систему за 20 минут на примере парка вашего размера.', crumbs='Хлебные крошки',
    t404='Страница не найдена', h404='Такой страницы нет', p404='Возможно, ссылка устарела. Вот куда можно пойти дальше.', to_home='На главную',
@@ -54,7 +54,7 @@ UI = {
     pay_days=['1 қыр', '2 қыр', '3 қыр'], pay_pick='Күндерді таңдау', pay_kaspi='Kaspi-де төлеу',
     pay_done='Төленді', pay_done_sub='Жалдауға түсті', pay_toast='12 000 ₸ жалдауға түсті',
     pay_caps=['Күндік қарызды көреді', 'Күндерді өзі таңдайды', 'Kaspi-де төлейді'],
-   bc_type='Сатып алумен жалдау', bc_price='Сатып алу құны', bc_saved='Жиналды', bc_left='Қалды', bc_next='Келесі төлем', bc_next_v='9 000 ₸ · ертең', bc_steps=['Жарна', 'Сатып алу', 'Сатып алынды'], more_buyout='Сатып алу туралы толығырақ', more_fines='Айыппұлдар туралы толығырақ', fines_alt='ЖҚЕ айыппұл картасы: бұзушылық, сома, көлік және жүргізуші',
+   bc_type='Сатып алумен жалдау', bc_price='Сатып алу құны', bc_saved='Жиналды', bc_left='Қалды', bc_next='Келесі төлем', bc_next_v='9 000 ₸ · ертең', bc_steps=['Жарна', 'Сатып алу', 'Сатып алынды'], bc_line='Kaspi · +9 000 ₸ · сатып алуға', bc_toast='9 000 ₸ сатып алуға түсті', more_buyout='Сатып алу туралы толығырақ', more_fines='Айыппұлдар туралы толығырақ', fines_alt='ЖҚЕ айыппұл картасы: бұзушылық, сома, көлік және жүргізуші',
    all_ints='Барлық интеграциялар', price_btn='Бағаны демода білу',
    c_wa='WhatsApp, ең жылдам тәсіл', c_wa_sub='Демо, өнім және көшу бойынша сұрақтар', c_phone='Телефон', c_phone_sub='Дс–Жм 9:00–19:00, Сб 10:00–16:00, Алматы уақыты', c_inst='Instagram', c_inst_sub='Өнім және парктер жаңалықтары', c_yt='YouTube', c_yt_sub='Жүйенің жұмысы туралы бейнелер', c_sales='Сату және серіктестік', c_sales_sub='Коммерциялық ұсыныстар, интеграциялар, шарттар', c_sup='Парктерді қолдау', c_sup_sub='Жүйенің жұмысы бойынша сұрақтар', c_office='Кеңсе', c_city='Алматы, Қазақстан', c_office_sub='«Yume.Cloud» ЖШС. Кездесулер келісім бойынша, демо бейнебайланыс арқылы.', c_login='Парктер үшін кіру', c_login_sub='Парк кабинеті', c_form_h='Демоға жазылу', c_form_p='Жүйені 20 минутта сіздің парк көлеміндегі мысалда көрсетеміз.', crumbs='Нан үгінділері',
    t404='Бет табылмады', h404='Мұндай бет жоқ', p404='Сілтеме ескірген болуы мүмкін. Әрі қарай қайда баруға болады.', to_home='Басты бетке',
@@ -610,12 +610,16 @@ def home():
     out += f'''<section class="section" id="buyout">
   <div class="wrap promo">
     <div class="promo__vis" data-reveal="scale">
-      <div class="bcard">
-        <div class="bcard__head"><span class="plate">015 ADM 02</span><b>Chevrolet Cobalt · 2022</b><em>{T("bc_type")}</em></div>
-        <div class="bcard__sum"><small>{T("bc_price")}</small><b>7 200 000 ₸</b></div>
-        <div class="bcard__bar"><i style="--p:.62"></i></div>
-        <div class="bcard__row"><div><small>{T("bc_saved")}</small><b class="pos">4 464 000 ₸</b></div><div><small>{T("bc_left")}</small><b>2 736 000 ₸</b></div><div><small>{T("bc_next")}</small><b>{T("bc_next_v")}</b></div></div>
-        <div class="bcard__steps"><span class="is-done">{T("bc_steps")[0]}</span><span class="is-on">{T("bc_steps")[1]}</span><span>{T("bc_steps")[2]}</span></div>
+      <div class="buyplay" data-buyplay data-step="base" aria-hidden="true">
+        <div class="bcard">
+          <div class="bcard__head"><span class="plate">015 ADM 02</span><b>Chevrolet Cobalt · 2022</b><em>{T("bc_type")}</em></div>
+          <div class="bcard__sum"><small>{T("bc_price")}</small><b>7 200 000 ₸</b></div>
+          <div class="bcard__bar"><i data-buy-bar style="--p:.61875"></i></div>
+          <div class="bcard__row"><div><small>{T("bc_saved")}</small><b class="pos" data-buy-saved>4 455 000 ₸</b></div><div><small>{T("bc_left")}</small><b data-buy-left>2 745 000 ₸</b></div><div><small>{T("bc_next")}</small><b>{T("bc_next_v")}</b></div></div>
+          <div class="bcard__pay" data-buy-line>{T("bc_line")}</div>
+          <div class="bcard__steps"><span class="is-done">{T("bc_steps")[0]}</span><span class="is-on">{T("bc_steps")[1]}</span><span>{T("bc_steps")[2]}</span></div>
+        </div>
+        <div class="buyplay__toast"><i>✓</i><span>{T("bc_toast")}</span></div>
       </div>
     </div>
     <div data-reveal="right">{eyebrow(p3)}<h2>{inline(p3['title'])}</h2><p class="lead" style="margin-top:18px">{inline(p3['paras'][0])}</p>{checks(p3['items'])}<a class="link" href="{R}features/buyout/">{T("more_buyout")} <svg><use href="#i-arrow"/></svg></a></div>

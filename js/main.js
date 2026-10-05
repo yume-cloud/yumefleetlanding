@@ -110,6 +110,27 @@
     }
   }
 
+  /* buyout scene: balance, then a Kaspi payment lands in the buyout */
+  const buy = $('[data-buyplay]');
+  if (buy) {
+    const bar = $('[data-buy-bar]', buy), saved = $('[data-buy-saved]', buy), left = $('[data-buy-left]', buy);
+    const money = n => fmt(n) + ' ₸';
+    const set = step => {
+      buy.dataset.step = step;
+      const paid = step !== 'base';
+      if (bar) bar.style.setProperty('--p', paid ? '.62' : '.61875');
+      if (saved) saved.textContent = money(paid ? 4464000 : 4455000);
+      if (left) left.textContent = money(paid ? 2736000 : 2745000);
+    };
+    if (reduced) set('done');
+    else {
+      const steps = ['base', 'pay', 'done'];
+      let n = 0, started = false;
+      const loop = async () => { while (true) { set(steps[n % steps.length]); n++; await wait(2400); } };
+      new IntersectionObserver(es => { if (es[0].isIntersecting && !started) { started = true; loop(); } }, { threshold: .35 }).observe(buy);
+    }
+  }
+
   /* faq */
   $$('.iacc button').forEach(b => b.addEventListener('click', () => { const it = b.parentElement, open = it.classList.contains('is-open'); $$('.iacc.is-open').forEach(x => x.classList.remove('is-open')); if (!open) it.classList.add('is-open'); }));
   $$('.q button').forEach(b => b.addEventListener('click', () => { const q = b.parentElement, open = q.classList.contains('is-open'); $$('.q.is-open').forEach(x => x.classList.remove('is-open')); if (!open) q.classList.add('is-open'); }));
