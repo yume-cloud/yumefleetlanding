@@ -143,6 +143,22 @@
     }
   }
 
+  /* fine: protocol arrives, driver is found, amount joins his debt */
+  const fine = $('[data-fineplay]');
+  if (fine) {
+    const who = $('[data-fine-who]', fine);
+    const searching = who ? who.textContent : '';
+    const found = document.documentElement.lang === 'kk' ? 'Ерлан С. · рульде болған' : 'Ерлан С. · был за рулём';
+    const set = step => { fine.dataset.step = step; if (who) who.textContent = step === 'in' ? searching : found; };
+    if (reduced) set('debt');
+    else {
+      const steps = [['in', 700], ['found', 1400], ['debt', 1800]];
+      let n = 0, started = false;
+      const loop = async () => { while (true) { const [step, pause] = steps[n % steps.length]; set(step); n++; await wait(pause); } };
+      new IntersectionObserver(es => { if (es[0].isIntersecting && !started) { started = true; loop(); } }, { threshold: .35 }).observe(fine);
+    }
+  }
+
   /* faq */
   $$('.iacc button').forEach(b => b.addEventListener('click', () => { const it = b.parentElement, open = it.classList.contains('is-open'); $$('.iacc.is-open').forEach(x => x.classList.remove('is-open')); if (!open) it.classList.add('is-open'); }));
   $$('.q button').forEach(b => b.addEventListener('click', () => { const q = b.parentElement, open = q.classList.contains('is-open'); $$('.q.is-open').forEach(x => x.classList.remove('is-open')); if (!open) q.classList.add('is-open'); }));

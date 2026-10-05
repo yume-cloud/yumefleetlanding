@@ -201,7 +201,7 @@
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 </style>
-<link rel="stylesheet" href="../css/styles.css?v=aff1c346">
+<link rel="stylesheet" href="../css/styles.css?v=944414da">
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Organization", "name": "Yume Fleet", "legalName": "ТОО «Yume.Cloud»", "url": "https://yumefleet.com/", "logo": "https://yumefleet.com/assets/logo/tile.svg", "telephone": "+77779479990", "address": {"@type": "PostalAddress", "addressLocality": "Алматы", "addressCountry": "KZ"}, "sameAs": ["https://www.instagram.com/yumecloudx/", "https://www.youtube.com/@yumecloud"]}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Қандай парктерге жарайды?", "acceptedAnswer": {"@type": "Answer", "text": "Кез келген көлемдегі таксопаркке. Жазылым әр көлік үшін есептеледі."}}, {"@type": "Question", "name": "Yume Fleet-тің Yume Cloud-тан айырмашылығы неде?", "acceptedAnswer": {"@type": "Answer", "text": "Yume Fleet тек таксопарктерге жасалған: өз жалдау модельдері, ЖҚЕ айыппұлдары, сатып алу, субжалдау, лизинг. Yume Cloud мүкәммал прокатына арналған жүйе болып қалады."}}, {"@type": "Question", "name": "Мен Yume Cloud-та жұмыс істеймін. Не істеуім керек?", "acceptedAnswer": {"@type": "Answer", "text": "Қиын ештеңе жоқ: деректерді біз көшіреміз, баға бұрынғыдай қалады. Толығырақ «Yume Cloud клиенттеріне» бетінде."}}, {"@type": "Question", "name": "Жүргізуші қалай төлейді?", "acceptedAnswer": {"@type": "Answer", "text": "Kaspi Pay сілтемесі арқылы, кірусіз және парольсіз. Қолма-қол ақша мен аударымдарды менеджер сол жалдауда белгілейді."}}, {"@type": "Question", "name": "Депозитпен не болады?", "acceptedAnswer": {"@type": "Answer", "text": "Депозит жалдаудан бөлек есепке алынады және қарызды өзі өтемейді. Депозитті қабылдау, есепке алу немесе қайтару жеке әрекетпен, тарихымен жасалады."}}, {"@type": "Question", "name": "Деректер кімге тиесілі?", "acceptedAnswer": {"@type": "Answer", "text": "Сізге. Әр компанияның деректері оқшауланған, кез келген уақытта Excel-ге шығаруға болады."}}]}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "Yume Fleet", "applicationCategory": "BusinessApplication", "operatingSystem": "Web", "description": "Платформа для управления таксопарком: аренда посуточно и под выкуп, долги, Kaspi Pay, штрафы ПДД, подписание через eGov.", "url": "https://yumefleet.com/", "publisher": {"@type": "Organization", "name": "Yume Fleet"}, "offers": {"@type": "Offer", "priceCurrency": "KZT", "description": "Цена по запросу, подписка за каждую машину"}}</script>
@@ -348,7 +348,20 @@
 <section class="section section--card" id="fines">
   <div class="wrap promo promo--rev">
     <div data-reveal="left"><p class="eyebrow">Айыппұлдар</p><h2>ЖҚЕ айыппұлы жүргізушіні өзі табады</h2><p class="lead" style="margin-top:18px">Қаулылар <strong>хаттамасымен</strong> келіп, сол сәтте рөлде болған жүргізушіге байланады. Айыппұлды қай күнге дейін <strong>жеңілдікпен</strong> төлеуге болатыны көрінеді.</p><ul class="debt__list checks"><li><i><svg><use href="#i-check"/></svg></i><span>Айыппұл карточкасында хаттама мен бұзушылық фотосы</span></li><li><i><svg><use href="#i-check"/></svg></i><span>Жеңілдік мерзімі менеджерге көрінеді</span></li><li><i><svg><use href="#i-check"/></svg></i><span>Айыппұл жүргізушінің қарызына қосылады</span></li><li><i><svg><use href="#i-check"/></svg></i><span>ЖКО-дан кейінгі залалды <strong>бөліп төлеуге</strong> болады</span></li></ul><a class="link" href="../features/fines/">Айыппұлдар туралы толығырақ <svg><use href="#i-arrow"/></svg></a></div>
-    <div class="promo__vis promo__vis--card" data-reveal="scale"><img src="../assets/cards/fine.webp" width="1615" height="1080" alt="ЖҚЕ айыппұл картасы: бұзушылық, сома, көлік және жүргізуші" loading="lazy"></div>
+    <div class="promo__vis" data-reveal="scale">
+      <div class="fineplay" data-fineplay data-step="in" aria-hidden="true">
+        <div class="fcard">
+          <header><b>Жаңа ЖҚЕ айыппұлы</b><span class="plate">015 ADM 02</span></header>
+          <p class="fcard__off">Жылдамдықты асыру</p>
+          <p class="fcard__when">12 қыр · 14:20</p>
+          <p class="fcard__who" data-fine-who>Жүргізушіні іздейміз…</p>
+          <p class="fcard__sum" data-fine-sum>21 625 ₸</p>
+          <p class="fcard__disc" data-fine-disc>жеңілдікпен 10 812 ₸ · 27 қыр дейін</p>
+          <p class="fcard__debt" data-fine-debt>Ерланның қарызына қосылды</p>
+        </div>
+        <div class="fineplay__toast"><i>✓</i><span>Айыппұл жүргізушіге байланды</span></div>
+      </div>
+    </div>
   </div>
 </section>
 <section class="section" id="shift"><div class="wrap"><div class="sec-head sec-head--center" data-reveal><div><p class="eyebrow">Бұрын және қазір</p><h2>Парктің жұмысы қалай өзгереді</h2></div></div><div class="shift" data-reveal><div class="shift__row"><div>Было</div><div></div><div>Стало</div></div><div class="shift__row"><div class="shift__was"><span style="color:#ef4444;margin-right:6px">✖</span>Қарызды ай соңында қолмен санайды</div><div class="shift__arr"><svg><use href="#i-arrow"/></svg></div><div class="shift__now"><span style="color:#22c55e;margin-right:6px">✔</span>Қарыз бен мерзімі өткен күндер әр жалдау бойынша <strong>күн сайын көрінеді</strong></div></div><div class="shift__row"><div class="shift__was"><span style="color:#ef4444;margin-right:6px">✖</span>Жүргізуші картаға аударады, менеджер төлемді іздейді</div><div class="shift__arr"><svg><use href="#i-arrow"/></svg></div><div class="shift__now"><span style="color:#22c55e;margin-right:6px">✔</span>Жүргізуші <strong>Kaspi сілтемесі</strong> арқылы төлейді, төлем жалдауға өзі түседі</div></div><div class="shift__row"><div class="shift__was"><span style="color:#ef4444;margin-right:6px">✖</span>Айыппұлды көлік қайтарылған соң біледі</div><div class="shift__arr"><svg><use href="#i-arrow"/></svg></div><div class="shift__now"><span style="color:#22c55e;margin-right:6px">✔</span>Айыппұл <strong>хаттамасымен</strong> келеді және бірден жүргізушіге байланған</div></div><div class="shift__row"><div class="shift__was"><span style="color:#ef4444;margin-right:6px">✖</span>Шарт қағазда, қол қою кездескенде</div><div class="shift__arr"><svg><use href="#i-arrow"/></svg></div><div class="shift__now"><span style="color:#22c55e;margin-right:6px">✔</span>Шартқа кездесусіз <strong>eGov немесе SMS арқылы</strong> қол қояды</div></div><div class="shift__row"><div class="shift__was"><span style="color:#ef4444;margin-right:6px">✖</span>Проблемалы жүргізушіні залалдан кейін біледі</div><div class="shift__arr"><svg><use href="#i-arrow"/></svg></div><div class="shift__now"><span style="color:#22c55e;margin-right:6px">✔</span>Көлік берер алдында борышкерлер тізілімі мен қара тізім бойынша <strong>тексеру</strong></div></div><div class="shift__row"><div class="shift__was"><span style="color:#ef4444;margin-right:6px">✖</span>Сатып алу мен субжалдау жеке кестеде</div><div class="shift__arr"><svg><use href="#i-arrow"/></svg></div><div class="shift__now"><span style="color:#22c55e;margin-right:6px">✔</span><strong>Сатып алу, субжалдау және лизинг</strong> жалдаумен бір жүйеде</div></div></div></div></section>
@@ -405,6 +418,6 @@
 <button class="to-top" aria-label="Жоғарыға"><svg><use href="#i-up"/></svg></button>
 
 
-<script src="../js/main.js?v=a4867e37" defer></script>
+<script src="../js/main.js?v=25df28d1" defer></script>
 </body>
 </html>

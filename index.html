@@ -201,7 +201,7 @@
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 </style>
-<link rel="stylesheet" href="./css/styles.css?v=aff1c346">
+<link rel="stylesheet" href="./css/styles.css?v=944414da">
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Organization", "name": "Yume Fleet", "legalName": "ТОО «Yume.Cloud»", "url": "https://yumefleet.com/", "logo": "https://yumefleet.com/assets/logo/tile.svg", "telephone": "+77779479990", "address": {"@type": "PostalAddress", "addressLocality": "Алматы", "addressCountry": "KZ"}, "sameAs": ["https://www.instagram.com/yumecloudx/", "https://www.youtube.com/@yumecloud"]}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Для каких парков подходит?", "acceptedAnswer": {"@type": "Answer", "text": "Для таксопарков любого размера. Ежедневная аренда, под выкуп. С инвесторскими машинами или от физических лиц под субаренду. Есть учет выкупа по лизингу."}}, {"@type": "Question", "name": "Чем Yume Fleet отличается от Yume Cloud?", "acceptedAnswer": {"@type": "Answer", "text": "Yume Fleet сделан только для таксопарков: свои модели аренды, штрафы ПДД, выкуп, субаренда, лизинг. Yume Cloud остаётся системой для проката инвентаря."}}, {"@type": "Question", "name": "Я уже работаю в Yume Cloud. Что мне делать?", "acceptedAnswer": {"@type": "Answer", "text": "Ничего сложного: данные переносим мы, цена остаётся прежней. Подробно на странице «Для клиентов Yume Cloud»."}}, {"@type": "Question", "name": "Как водитель платит?", "acceptedAnswer": {"@type": "Answer", "text": "По ссылке Kaspi Pay без входа и пароля. Наличные и переводы менеджер отмечает в той же аренде."}}, {"@type": "Question", "name": "Что с депозитом?", "acceptedAnswer": {"@type": "Answer", "text": "Депозит учитывается отдельно от аренды и не гасит долг сам. Принять, зачесть или вернуть депозит можно отдельным действием с историей."}}, {"@type": "Question", "name": "Кому принадлежат данные?", "acceptedAnswer": {"@type": "Answer", "text": "Вам. Данные каждой компании изолированы, выгрузка в Excel в любой момент."}}]}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "Yume Fleet", "applicationCategory": "BusinessApplication", "operatingSystem": "Web", "description": "Платформа для управления таксопарком: аренда посуточно и под выкуп, долги, Kaspi Pay, штрафы ПДД, подписание через eGov.", "url": "https://yumefleet.com/", "publisher": {"@type": "Organization", "name": "Yume Fleet"}, "offers": {"@type": "Offer", "priceCurrency": "KZT", "description": "Цена по запросу, подписка за каждую машину"}}</script>
@@ -348,7 +348,20 @@
 <section class="section section--card" id="fines">
   <div class="wrap promo promo--rev">
     <div data-reveal="left"><p class="eyebrow">Штрафы</p><h2>Штраф ПДД находит водителя сам</h2><p class="lead" style="margin-top:18px">Постановления приходят <strong>с протоколом</strong> и привязываются к водителю, который был за рулём. Видно, до какого дня штраф можно оплатить <strong>со скидкой</strong>.</p><ul class="debt__list checks"><li><i><svg><use href="#i-check"/></svg></i><span>Протокол и фото нарушения в карточке штрафа</span></li><li><i><svg><use href="#i-check"/></svg></i><span>Срок скидки виден менеджеру</span></li><li><i><svg><use href="#i-check"/></svg></i><span>Штраф добавляется к долгу водителя</span></li><li><i><svg><use href="#i-check"/></svg></i><span>Ущерб после ДТП можно разбить <strong>в рассрочку</strong></span></li></ul><a class="link" href="./features/fines/">Подробнее про штрафы <svg><use href="#i-arrow"/></svg></a></div>
-    <div class="promo__vis promo__vis--card" data-reveal="scale"><img src="./assets/cards/fine.webp" width="1615" height="1080" alt="Карточка штрафа ПДД: нарушение, сумма, машина и водитель" loading="lazy"></div>
+    <div class="promo__vis" data-reveal="scale">
+      <div class="fineplay" data-fineplay data-step="in" aria-hidden="true">
+        <div class="fcard">
+          <header><b>Новый штраф ПДД</b><span class="plate">015 ADM 02</span></header>
+          <p class="fcard__off">Превышение скорости</p>
+          <p class="fcard__when">12 сент · 14:20</p>
+          <p class="fcard__who" data-fine-who>Ищем водителя…</p>
+          <p class="fcard__sum" data-fine-sum>21 625 ₸</p>
+          <p class="fcard__disc" data-fine-disc>со скидкой 10 812 ₸ · до 27 сент</p>
+          <p class="fcard__debt" data-fine-debt>Добавлен к долгу Ерлана</p>
+        </div>
+        <div class="fineplay__toast"><i>✓</i><span>Штраф привязан к водителю</span></div>
+      </div>
+    </div>
   </div>
 </section>
 <section class="section" id="shift"><div class="wrap"><div class="sec-head sec-head--center" data-reveal><div><p class="eyebrow">Было и стало</p><h2>Как меняется работа парка</h2></div></div><div class="shift" data-reveal><div class="shift__row"><div>Было</div><div></div><div>Стало</div></div><div class="shift__row"><div class="shift__was"><span style="color:#ef4444;margin-right:6px">✖</span>Долги считают руками в конце месяца</div><div class="shift__arr"><svg><use href="#i-arrow"/></svg></div><div class="shift__now"><span style="color:#22c55e;margin-right:6px">✔</span>Долг и дни просрочки <strong>видны каждый день</strong> по каждой аренде</div></div><div class="shift__row"><div class="shift__was"><span style="color:#ef4444;margin-right:6px">✖</span>Водитель переводит на карту, менеджер ищет платёж</div><div class="shift__arr"><svg><use href="#i-arrow"/></svg></div><div class="shift__now"><span style="color:#22c55e;margin-right:6px">✔</span>Водитель платит <strong>по ссылке Kaspi</strong>, оплата сама попадает в аренду</div></div><div class="shift__row"><div class="shift__was"><span style="color:#ef4444;margin-right:6px">✖</span>Штраф узнают после возврата машины</div><div class="shift__arr"><svg><use href="#i-arrow"/></svg></div><div class="shift__now"><span style="color:#22c55e;margin-right:6px">✔</span>Штраф приходит <strong>с протоколом</strong> и сразу привязан к водителю</div></div><div class="shift__row"><div class="shift__was"><span style="color:#ef4444;margin-right:6px">✖</span>Договор на бумаге, подпись при встрече</div><div class="shift__arr"><svg><use href="#i-arrow"/></svg></div><div class="shift__now"><span style="color:#22c55e;margin-right:6px">✔</span>Договор подписывают <strong>через eGov или SMS</strong> без встречи</div></div><div class="shift__row"><div class="shift__was"><span style="color:#ef4444;margin-right:6px">✖</span>Проблемного водителя узнают после ущерба</div><div class="shift__arr"><svg><use href="#i-arrow"/></svg></div><div class="shift__now"><span style="color:#22c55e;margin-right:6px">✔</span><strong>Проверка</strong> по реестру должников и чёрному списку до выдачи машины</div></div><div class="shift__row"><div class="shift__was"><span style="color:#ef4444;margin-right:6px">✖</span>Выкуп и субаренда в отдельной таблице</div><div class="shift__arr"><svg><use href="#i-arrow"/></svg></div><div class="shift__now"><span style="color:#22c55e;margin-right:6px">✔</span><strong>Выкуп, субаренда и лизинг</strong> в той же системе, что и аренда</div></div></div></div></section>
@@ -405,6 +418,6 @@
 <button class="to-top" aria-label="Наверх"><svg><use href="#i-up"/></svg></button>
 
 
-<script src="./js/main.js?v=a4867e37" defer></script>
+<script src="./js/main.js?v=25df28d1" defer></script>
 </body>
 </html>
