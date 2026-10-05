@@ -80,7 +80,8 @@
         await wait(reduced ? 3000 : 3400);
         const s = script[k % script.length]; k++;
         rows[s.i][4] = s.bal; render(rows, s.i);
-        const ev = $('.ledger__event'); if (ev) { ev.textContent = s.note; ev.classList.remove('is-flash'); void ev.offsetWidth; ev.classList.add('is-flash'); }
+        const ev = $('.ledger__event');
+        if (ev) { ev.classList.add('is-out'); await wait(420); ev.textContent = s.note; ev.classList.remove('is-out'); }
         if (k % script.length === 0) { await wait(3000); rows[0][4] = -27000; rows[1][4] = 0; rows[4][4] = -6500; render(rows); }
       }
     };
