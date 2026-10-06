@@ -636,7 +636,7 @@ def rent_scene():
     </div></div>'''
 
 def features_art(R):
-    return f'<div class="phero__vis phero__vis--art" data-reveal="scale"><img src="{R}assets/img/features-hero.png" width="822" height="543" alt="" fetchpriority="high"></div>'
+    return f'<div class="phero__vis phero__vis--art" data-reveal="scale"><img src="{R}assets/img/features-hero.png" width="846" height="567" alt="" fetchpriority="high"></div>'
 
 def documents_scene():
     return '''<div class="phero__vis" data-reveal="scale"><div class="docplay" data-docplay data-step="empty" aria-hidden="true">
