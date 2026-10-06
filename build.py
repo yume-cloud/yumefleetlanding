@@ -664,7 +664,7 @@ def documents_scene():
 </div></div>'''
 
 def investors_scene():
-    return '''<div class="phero__vis" data-reveal="scale"><div class="invplay" data-invplay data-step="open" aria-hidden="true">
+    return '''<div class="phero__vis" data-reveal="scale"><div class="invplay" data-invplay data-step="income" aria-hidden="true">
   <div class="invplay__card invplay__card--inv">
     <div class="invplay__head">
       <span class="invplay__eyebrow">Ссылка для инвестора</span>

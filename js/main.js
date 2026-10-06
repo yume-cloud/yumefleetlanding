@@ -272,7 +272,7 @@
     };
     if (still) { set('done'); return; }
     const wait = (ms) => new Promise((r) => setTimeout(r, ms));
-    const script = [['open', 500], ['income', 1500], ['share', 1700], ['lease', 2100], ['done', 3600]];
+    const script = [['income', 1500], ['share', 1700], ['lease', 2100], ['done', 3600]];
     let n = 0, started = false;
     const loop = async () => { while (true) { const [step, pause] = script[n % script.length]; set(step); n++; await wait(pause); } };
     new IntersectionObserver((es) => { if (es[0].isIntersecting && !started) { started = true; loop(); } }, { threshold: 0.05 }).observe(inv);
