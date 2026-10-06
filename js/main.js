@@ -1257,6 +1257,25 @@
     }, { threshold: .35 }).observe(root);
   })();
 
+  /* camera photographs the car, then the fine appears in the system */
+  (() => {
+    const root = document.querySelector('[data-camplay]');
+    if (!root) return;
+    const motion = matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const narrow = matchMedia('(max-width: 900px)').matches;
+    if (motion || narrow) { root.dataset.step = 'who'; return; }
+    const steps = ['shot', 'photo', 'card', 'who'];
+    const holds = [1400, 1200, 1600, 2400];
+    let index = 0, armed = false;
+    const go = name => {
+      root.dataset.step = name;
+      if (name === 'shot') { root.classList.remove('camplay--flash'); void root.offsetWidth; root.classList.add('camplay--flash'); }
+      else root.classList.remove('camplay--flash');
+      setTimeout(() => { index = (index + 1) % steps.length; go(steps[index]); }, holds[index]);
+    };
+    new IntersectionObserver(es => { if (armed || !es[0].isIntersecting) return; armed = true; go(steps[0]); }, { threshold: .05 }).observe(root);
+  })();
+
   /* fine card: arrives → linked to driver → discount visible */
   const fine = $('[data-fineplay]');
   if (fine) {

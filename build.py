@@ -654,8 +654,11 @@ def documents_scene():
       <div class="docplay__row" style="--i:3"><dt>Ставка</dt><dd><span class="docplay__ph"></span><span class="docplay__val">9 000 ₸ в день</span></dd></div>
     </dl>
     <footer class="docplay__foot">
-      <button type="button" class="docplay__btn" data-docplay-btn><span class="docplay__btn-txt">Подписать в eGov</span><span class="docplay__btn-ok"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Подписано в eGov</span></button>
-      <small class="docplay__hint"><span class="docplay__hint-a">Подписывает водитель в eGov mobile</span><span class="docplay__hint-b">Договор в карточке аренды, водителя и машины</span></small>
+      <div class="docplay__acts">
+        <button type="button" class="docplay__btn" data-docplay-btn><span class="docplay__btn-txt">Подписать в eGov</span><span class="docplay__btn-ok"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Подписано</span></button>
+        <button type="button" class="docplay__btn docplay__btn--sms">Подписать через SMS</button>
+      </div>
+      <small class="docplay__hint"><span class="docplay__hint-a">Водитель подписывает в eGov mobile или по SMS</span><span class="docplay__hint-b">Договор в карточке аренды, водителя и машины</span></small>
     </footer>
   </div>
 </div></div>'''
@@ -1196,7 +1199,7 @@ def blacklist_scene():
         <span class="blplay__flag"><svg viewBox="0 0 24 24"><path d="M12 3l9.5 17h-19z"/><path d="M12 10v4M12 17.5v.5"/></svg>Запись другого парка</span>
         <small>не ваша · на Yume Fleet</small>
       </div>
-      <p class="blplay__reason"><small>Причина</small><b>Не вернул машину</b></p>
+      <p class="blplay__reason"><small>Причина</small><b>Совершил ДТП</b></p>
       <p class="blplay__foot" data-blplay-foot>Оба результата — в карточке водителя до выдачи</p>
     </div></div></div>
   </div>
@@ -1398,17 +1401,37 @@ def perehod_scene():
 </div></div>'''
 
 def fines_scene():
-    """Карточка штрафа: пришло → привязано к водителю → скидка видна."""
-    ru = L == 'ru'
-    return f'''<div class="phero__vis" data-reveal="scale"><div class="fineplay" data-fineplay data-step="in" aria-hidden="true">
-      <div class="fcard">
-        <header><span class="plate">015 ADM 02</span><b>{'Штраф ПДД' if ru else 'ЖҚЕ айыппұлы'}</b><em data-fine-st>{'Новый' if ru else 'Жаңа'}</em></header>
-        <div class="fcard__sum"><small>{'Превышение скорости' if ru else 'Жылдамдықты асырды'}</small><b data-fine-sum>21 625 ₸</b><s data-fine-full>43 250 ₸</s></div>
-        <div class="fcard__who"><i>ЕС</i><div><b>Ерлан С.</b><em data-fine-who>{'ещё не привязан' if ru else 'әлі байланбаған'}</em></div><span class="ov__pill" data-fine-pill>{'Ждёт' if ru else 'Күту'}</span></div>
-        <div class="fcard__disc"><b>{'Скидка до 18 окт' if ru else 'Жеңілдік 18 қаз дейін'}</b><em>−50%</em><i data-fine-bar></i></div>
-        <div class="fcard__line" data-fine-line>{'ЕРАП · протокол 0000123980' if ru else 'ЕРАП · хаттама 0000123980'}</div>
+    """Камера снимает машину, потом штраф появляется в системе."""
+    return '''<div class="phero__vis" data-reveal="scale"><div class="camplay" data-camplay data-step="shot" aria-hidden="true">
+  <div class="camplay__stage">
+    <div class="camplay__shot">
+      <div class="camplay__kicker">Камера · ЕРАП</div>
+      <div class="camplay__view">
+        <span class="plate">015 ADM 02</span>
+        <div class="camplay__car">Chevrolet Cobalt · 2022</div>
       </div>
-    </div></div>'''
+      <div class="camplay__reason">Превышение скорости</div>
+      <div class="camplay__sent">Снимок отправлен в систему</div>
+    </div>
+    <div class="camplay__card">
+      <div class="camplay__head">
+        <div class="camplay__title">Штраф ПДД</div>
+        <div class="camplay__badges">
+          <span class="camplay__badge camplay__badge--new">Новый</span>
+          <span class="camplay__badge camplay__badge--debt">В долг</span>
+        </div>
+      </div>
+      <span class="plate">015 ADM 02</span>
+      <div class="camplay__vio">Превышение скорости</div>
+      <div class="camplay__sum">21 625 ₸</div>
+      <div class="camplay__meta">ЕРАП · 0000123980</div>
+      <div class="camplay__who">
+        <div class="camplay__who-wait">ищем…</div>
+        <div class="camplay__who-name">Ерлан С. · был за рулём</div>
+      </div>
+    </div>
+  </div>
+</div></div>'''
 
 def finance_scene():
     """Та же лента, что на главной: одна анимация, а не вторая таблица."""
