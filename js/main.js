@@ -1264,7 +1264,7 @@
     const narrow = matchMedia('(max-width: 900px)').matches;
     if (motion || narrow) { root.dataset.step = 'who'; return; }
     const steps = ['shot', 'card', 'who'];
-    const holds = [1600, 1800, 2600];
+    const holds = [1600, 1100, 2400];
     let index = 0, armed = false;
     const go = name => {
       root.dataset.step = name;

@@ -1807,7 +1807,7 @@ i.setplay__sw{cursor:default}
 
 /* camplay: camera frame, then the fine appears in the system */
 .camplay,.camplay *,.camplay *::before,.camplay *::after{box-sizing:border-box}
-.camplay{height:360px;padding:22px;background:#fff;border:1px solid #E3E3E3;border-radius:16px;box-shadow:0 24px 60px -28px rgba(13,13,13,.28);overflow:hidden;position:relative;color:#0D0D0D;line-height:1.3;font-variant-numeric:tabular-nums}
+.camplay{height:440px;padding:22px;background:#fff;border:1px solid #E3E3E3;border-radius:16px;box-shadow:0 24px 60px -28px rgba(13,13,13,.28);overflow:hidden;position:relative;color:#0D0D0D;line-height:1.3;font-variant-numeric:tabular-nums}
 .camplay .camplay__stage{position:relative;height:100%}
 .camplay .camplay__shot,.camplay .camplay__card{position:absolute;inset:0;transition:opacity .42s cubic-bezier(.22,1,.36,1),transform .42s cubic-bezier(.22,1,.36,1)}
 .camplay .camplay__shot{z-index:2;display:flex;flex-direction:column;opacity:1;transform:none}
@@ -1824,14 +1824,15 @@ i.setplay__sw{cursor:default}
 .camplay .camplay__disc{font-size:13px;font-weight:700;color:#1F9D5B}
 .camplay .camplay__card{display:flex;flex-direction:column;gap:10px}
 .camplay .camplay__body{display:flex;gap:14px;align-items:stretch;min-height:0}
-.camplay .camplay__paper{flex:none;width:118px;padding:12px 10px;border:1px solid #E3E3E3;border-radius:8px;background:#fff;box-shadow:0 10px 22px -14px rgba(13,13,13,.45);display:flex;flex-direction:column;gap:7px}
-.camplay .camplay__paper small{font-size:8px;letter-spacing:.08em;color:#727272}
-.camplay .camplay__paper b{font-size:11px}
-.camplay .camplay__paper i{display:block;height:5px;border-radius:2px;background:#EFEFEF}
+.camplay .camplay__paper{flex:none;width:148px;min-height:210px;padding:16px 14px;border:1px solid #E3E3E3;border-radius:10px;background:#fff;box-shadow:0 14px 28px -16px rgba(13,13,13,.45);display:flex;flex-direction:column;gap:9px}
+.camplay .camplay__paper small{font-size:10px;letter-spacing:.08em;color:#727272}
+.camplay .camplay__paper b{font-size:14px}
+.camplay .camplay__paper i{display:block;height:6px;border-radius:3px;background:#EFEFEF}
 .camplay .camplay__paper i.is-short{width:62%}
-.camplay .camplay__paper span{font-size:9px;color:#727272}
-.camplay .camplay__paper em{margin-top:auto;font-style:normal;font-size:12px;font-weight:800}
-.camplay .camplay__info{display:flex;flex-direction:column;gap:8px;min-width:0}
+.camplay .camplay__paper span{font-size:11px;color:#727272}
+.camplay .camplay__paper em{margin-top:auto;font-style:normal;font-size:16px;font-weight:800}
+.camplay .camplay__info{display:flex;flex-direction:column;gap:8px;min-width:0;opacity:0;transform:translateX(12px);transition:opacity .42s cubic-bezier(.22,1,.36,1),transform .42s cubic-bezier(.22,1,.36,1)}
+.camplay[data-step="who"] .camplay__info{opacity:1;transform:none}
 .camplay[data-step="card"] .camplay__card,.camplay[data-step="who"] .camplay__card{opacity:1;transform:none}
 .camplay .camplay__head{display:flex;align-items:center;justify-content:space-between;gap:12px}
 .camplay .camplay__title{font-size:16px;font-weight:700}
@@ -1854,7 +1855,7 @@ i.setplay__sw{cursor:default}
 .camplay[data-step="who"] .camplay__badge--debt,.camplay[data-step="who"] .camplay__who-name{opacity:1}
 @media (prefers-reduced-motion:reduce),(max-width:900px){
   .camplay .camplay__shot,.camplay .camplay__badge--new,.camplay .camplay__who-wait{opacity:0!important;transform:none!important}
-  .camplay .camplay__card,.camplay .camplay__badge--debt,.camplay .camplay__who-name{opacity:1!important;transform:none!important}
+  .camplay .camplay__card,.camplay .camplay__info,.camplay .camplay__badge--debt,.camplay .camplay__who-name{opacity:1!important;transform:none!important}
   .camplay .camplay__view::after{animation:none!important;opacity:0!important}
   .camplay,.camplay *{transition:none!important}
 }
