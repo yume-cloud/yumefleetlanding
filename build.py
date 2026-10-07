@@ -1401,26 +1401,14 @@ def perehod_scene():
   </div>
 </div></div>'''
 
-def fines_scene():
+def fines_scene(R=''):
     """Камера снимает машину, потом штраф появляется в системе."""
-    return '''<div class="phero__vis" data-reveal="scale"><div class="camplay" data-camplay data-step="shot" aria-hidden="true">
+    return f'''<div class="phero__vis" data-reveal="scale"><div class="camplay" data-camplay data-step="shot" aria-hidden="true">
   <div class="camplay__stage">
     <div class="camplay__shot">
       <div class="camplay__kicker">Камера</div>
       <div class="camplay__view">
-        <svg class="camplay__carpic" viewBox="0 0 280 150" aria-hidden="true">
-          <path d="M38 96c8-22 28-34 62-38l28-22h62l24 22c22 4 40 16 46 38" fill="#E7E7E7" stroke="#0D0D0D" stroke-width="2.4" stroke-linejoin="round"/>
-          <path d="M104 58l22-18h48l18 18" fill="#fff" stroke="#0D0D0D" stroke-width="2.2" stroke-linejoin="round"/>
-          <path d="M112 58l16-12h28" fill="none" stroke="#0D0D0D" stroke-width="1.6"/>
-          <rect x="92" y="94" width="96" height="22" rx="3" fill="#fff" stroke="#0D0D0D" stroke-width="2"/>
-          <rect x="92" y="94" width="16" height="22" fill="#00AFCA"/>
-          <circle cx="100" cy="101" r="3.2" fill="#F5C84B"/>
-          <text x="148" y="109" text-anchor="middle" font-size="11" font-weight="700" fill="#0D0D0D" font-family="system-ui,sans-serif">015 ADM 02</text>
-          <circle cx="78" cy="108" r="16" fill="#0D0D0D"/><circle cx="78" cy="108" r="7" fill="#fff"/>
-          <circle cx="202" cy="108" r="16" fill="#0D0D0D"/><circle cx="202" cy="108" r="7" fill="#fff"/>
-          <path d="M46 92h18M216 92h20" stroke="#F0B100" stroke-width="3" stroke-linecap="round"/>
-        </svg>
-        <div class="camplay__car">Chevrolet Cobalt · 2022</div>
+        <img class="camplay__carpic" src="{R}assets/img/cam-car.png" width="1086" height="593" alt="Chevrolet Cobalt · 2022">
       </div>
       <div class="camplay__reason">Превышение скорости</div>
       <div class="camplay__sent">Снимок отправлен в систему</div>
@@ -1613,7 +1601,7 @@ def home():
 <section class="section section--card" id="fines">
   <div class="wrap promo">
     <div data-reveal="left">{eyebrow(p4)}<h2>{inline(p4['title'])}</h2><p class="lead" style="margin-top:18px">{inline(p4['paras'][0])}</p>{checks(p4['items'])}<a class="link" href="{R}features/fines/">{T("more_fines")} <svg><use href="#i-arrow"/></svg></a></div>
-    {fines_scene()}
+    {fines_scene(R)}
   </div>
 </section>
 '''
@@ -1662,7 +1650,7 @@ def inner(p):
     hero = next((s for s in secs if s['type'] == 'hero'), None)
     body = ''
     if hero:
-        vis = {'/features/rentals/': rent_scene, '/features/drivers/': driver_scene, '/features/check/': drv_scene, '/features/vehicles/': vehicle_scene, '/features/finance/': finance_scene, '/features/fines/': fines_scene, '/features/documents/': documents_scene, '/features/investors/': investors_scene, '/features/buyout/': buyout_scene, '/features/shifts/': shifts_scene, '/features/analytics/': analytics_scene, '/features/leads/': leads_scene, '/features/settings/': settings_scene, '/kaspi-pay/': kaspi_scene, '/integrations/': hub_scene, '/integrations/egov/': egov_scene, '/integrations/erap/': erap_scene, '/integrations/debtors/': debtors_scene, '/integrations/blacklist/': blacklist_scene, '/integrations/wazzup/': wazzup_scene, '/integrations/wialon/': wialon_scene, '/integrations/ai/': ai_scene, '/perehod/': perehod_scene}.get(p['path'])
+        vis = {'/features/rentals/': rent_scene, '/features/drivers/': driver_scene, '/features/check/': drv_scene, '/features/vehicles/': vehicle_scene, '/features/finance/': finance_scene, '/features/fines/': lambda: fines_scene(R), '/features/documents/': documents_scene, '/features/investors/': investors_scene, '/features/buyout/': buyout_scene, '/features/shifts/': shifts_scene, '/features/analytics/': analytics_scene, '/features/leads/': leads_scene, '/features/settings/': settings_scene, '/kaspi-pay/': kaspi_scene, '/integrations/': hub_scene, '/integrations/egov/': egov_scene, '/integrations/erap/': erap_scene, '/integrations/debtors/': debtors_scene, '/integrations/blacklist/': blacklist_scene, '/integrations/wazzup/': wazzup_scene, '/integrations/wialon/': wialon_scene, '/integrations/ai/': ai_scene, '/perehod/': perehod_scene}.get(p['path'])
         body += phero(hero, crumbs_for(p, R), R, img=None if vis else FEATURE_IMG.get(p['path']), logo=int_logo(p['path'], R), vis=vis() if vis else '')
         desc = strip_md(' '.join(hero['paras']))[:300]
     else:
