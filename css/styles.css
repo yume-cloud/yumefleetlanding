@@ -1823,6 +1823,15 @@ i.setplay__sw{cursor:default}
 .camplay .camplay__reason{margin-top:12px;text-align:center;font-size:13px;font-weight:600}
 .camplay .camplay__disc{font-size:13px;font-weight:700;color:#1F9D5B}
 .camplay .camplay__card{display:flex;flex-direction:column;gap:10px}
+.camplay .camplay__body{display:flex;gap:14px;align-items:stretch;min-height:0}
+.camplay .camplay__paper{flex:none;width:118px;padding:12px 10px;border:1px solid #E3E3E3;border-radius:8px;background:#fff;box-shadow:0 10px 22px -14px rgba(13,13,13,.45);display:flex;flex-direction:column;gap:7px}
+.camplay .camplay__paper small{font-size:8px;letter-spacing:.08em;color:#727272}
+.camplay .camplay__paper b{font-size:11px}
+.camplay .camplay__paper i{display:block;height:5px;border-radius:2px;background:#EFEFEF}
+.camplay .camplay__paper i.is-short{width:62%}
+.camplay .camplay__paper span{font-size:9px;color:#727272}
+.camplay .camplay__paper em{margin-top:auto;font-style:normal;font-size:12px;font-weight:800}
+.camplay .camplay__info{display:flex;flex-direction:column;gap:8px;min-width:0}
 .camplay[data-step="card"] .camplay__card,.camplay[data-step="who"] .camplay__card{opacity:1;transform:none}
 .camplay .camplay__head{display:flex;align-items:center;justify-content:space-between;gap:12px}
 .camplay .camplay__title{font-size:16px;font-weight:700}

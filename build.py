@@ -1420,11 +1420,21 @@ def fines_scene(R=''):
           <span class="camplay__badge camplay__badge--debt">В долг</span>
         </div>
       </div>
-      <span class="plate">015 ADM 02</span>
-      <div class="camplay__vio">Превышение скорости</div>
-      <div class="camplay__sum">21 625 ₸</div>
-      <div class="camplay__disc">скидка −50% до 18 окт</div>
-      <div class="camplay__meta">Протокол · 0000123980 · 12 окт, 14:20</div>
+      <div class="camplay__body">
+        <div class="camplay__paper" aria-hidden="true">
+          <small>ПОСТАНОВЛЕНИЕ</small>
+          <b>0000123980</b>
+          <i></i><i></i><i class="is-short"></i>
+          <span>12 окт · 14:20</span>
+          <em>21 625 ₸</em>
+        </div>
+        <div class="camplay__info">
+          <span class="plate">015 ADM 02</span>
+          <div class="camplay__vio">Превышение скорости</div>
+          <div class="camplay__sum">21 625 ₸</div>
+          <div class="camplay__disc">скидка −50% до 18 окт</div>
+        </div>
+      </div>
       <div class="camplay__who">
         <div class="camplay__who-wait">ищем…</div>
         <div class="camplay__who-name">Ерлан С. · был за рулём</div>
