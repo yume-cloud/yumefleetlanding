@@ -156,7 +156,7 @@ NAV_FEATURES = [
  ('/features/drivers/', 'Водители', 'Долг, депозит, документы', 'i-user'),
  ('/features/vehicles/', 'Машины', 'ТО, ремонты, склад, окупаемость', 'i-wrench'),
  ('/features/finance/', 'Деньги и долги', 'Начисления, оплаты, погашение', 'i-wallet'),
- ('/features/fines/', 'Ущерб и штрафы парка', 'Рассрочка, свои штрафы', 'i-alert'),
+ ('/features/fines/', 'Штрафы ПДД', 'Протокол, скидка, долг водителя', 'i-alert'),
  ('/features/documents/', 'Документы и подпись', 'Договоры, акты, eGov и SMS', 'i-doc'),
  ('/features/investors/', 'Субаренда и лизинг', 'Инвесторы, доли, кредиты', 'i-link'),
  ('/features/analytics/', 'Аналитика', 'P&L, cash flow, окупаемость', 'i-chart'),
