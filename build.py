@@ -1411,7 +1411,7 @@ def fines_scene(R=''):
         <img class="camplay__carpic" src="{R}assets/img/cam-car.png" width="1086" height="593" alt="Chevrolet Cobalt · 2022">
       </div>
       <div class="camplay__reason">Превышение скорости</div>
-      <div class="camplay__sent">Снимок отправлен в систему</div>
+      <div class="camplay__sent">Штраф 21 625 ₸ появился в системе</div>
     </div>
     <div class="camplay__card">
       <div class="camplay__head">
