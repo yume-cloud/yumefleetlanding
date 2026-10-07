@@ -1817,6 +1817,7 @@ i.setplay__sw{cursor:default}
 .camplay .camplay__view::after{content:"";position:absolute;inset:0;border-radius:inherit;background:#F0B100;opacity:0;pointer-events:none}
 .camplay.camplay--flash .camplay__view::after{animation:camplay-flash 200ms linear}
 @keyframes camplay-flash{0%{opacity:.62}35%{opacity:.62}100%{opacity:0}}
+.camplay .camplay__carpic{width:min(100%,280px);height:auto}
 .camplay .camplay__car{font-size:13px;color:#727272}
 .camplay .camplay__reason{margin-top:12px;text-align:center;font-size:13px;font-weight:600}
 .camplay .camplay__sent{position:absolute;left:0;right:0;bottom:0;padding:9px 12px;border-radius:10px;background:#F0B100;color:#0D0D0D;font-size:13px;font-weight:600;text-align:center;opacity:0;transform:translateY(8px);transition:opacity .42s cubic-bezier(.22,1,.36,1),transform .42s cubic-bezier(.22,1,.36,1)}

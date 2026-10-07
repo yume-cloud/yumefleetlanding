@@ -156,7 +156,7 @@ NAV_FEATURES = [
  ('/features/drivers/', 'Водители', 'Долг, депозит, документы', 'i-user'),
  ('/features/vehicles/', 'Машины', 'ТО, ремонты, склад, окупаемость', 'i-wrench'),
  ('/features/finance/', 'Деньги и долги', 'Начисления, оплаты, погашение', 'i-wallet'),
- ('/features/fines/', 'Штрафы ПДД и ущерб', 'Протокол, скидка, рассрочка', 'i-alert'),
+ ('/features/fines/', 'Ущерб и штрафы парка', 'Рассрочка, свои штрафы', 'i-alert'),
  ('/features/documents/', 'Документы и подпись', 'Договоры, акты, eGov и SMS', 'i-doc'),
  ('/features/investors/', 'Субаренда и лизинг', 'Инвесторы, доли, кредиты', 'i-link'),
  ('/features/analytics/', 'Аналитика', 'P&L, cash flow, окупаемость', 'i-chart'),
@@ -1408,7 +1408,18 @@ def fines_scene():
     <div class="camplay__shot">
       <div class="camplay__kicker">Камера</div>
       <div class="camplay__view">
-        <span class="plate">015 ADM 02</span>
+        <svg class="camplay__carpic" viewBox="0 0 280 150" aria-hidden="true">
+          <path d="M38 96c8-22 28-34 62-38l28-22h62l24 22c22 4 40 16 46 38" fill="#E7E7E7" stroke="#0D0D0D" stroke-width="2.4" stroke-linejoin="round"/>
+          <path d="M104 58l22-18h48l18 18" fill="#fff" stroke="#0D0D0D" stroke-width="2.2" stroke-linejoin="round"/>
+          <path d="M112 58l16-12h28" fill="none" stroke="#0D0D0D" stroke-width="1.6"/>
+          <rect x="92" y="94" width="96" height="22" rx="3" fill="#fff" stroke="#0D0D0D" stroke-width="2"/>
+          <rect x="92" y="94" width="16" height="22" fill="#00AFCA"/>
+          <circle cx="100" cy="101" r="3.2" fill="#F5C84B"/>
+          <text x="148" y="109" text-anchor="middle" font-size="11" font-weight="700" fill="#0D0D0D" font-family="system-ui,sans-serif">015 ADM 02</text>
+          <circle cx="78" cy="108" r="16" fill="#0D0D0D"/><circle cx="78" cy="108" r="7" fill="#fff"/>
+          <circle cx="202" cy="108" r="16" fill="#0D0D0D"/><circle cx="202" cy="108" r="7" fill="#fff"/>
+          <path d="M46 92h18M216 92h20" stroke="#F0B100" stroke-width="3" stroke-linecap="round"/>
+        </svg>
         <div class="camplay__car">Chevrolet Cobalt · 2022</div>
       </div>
       <div class="camplay__reason">Превышение скорости</div>
@@ -1602,19 +1613,7 @@ def home():
 <section class="section section--card" id="fines">
   <div class="wrap promo">
     <div data-reveal="left">{eyebrow(p4)}<h2>{inline(p4['title'])}</h2><p class="lead" style="margin-top:18px">{inline(p4['paras'][0])}</p>{checks(p4['items'])}<a class="link" href="{R}features/fines/">{T("more_fines")} <svg><use href="#i-arrow"/></svg></a></div>
-    <div class="promo__vis" data-reveal="scale">
-      <div class="fineplay" data-fineplay data-step="in" aria-hidden="true">
-        <div class="fcard">
-          <header><span class="fcard__cam"><svg viewBox="0 0 24 24"><path d="M4 8h3l2-2h6l2 2h3v11H4z"/><circle cx="12" cy="13" r="3.2"/></svg></span><div><b>{T("fn_title")}</b><small>{T("fn_when")}</small></div><span class="plate">015 ADM 02</span></header>
-          <p class="fcard__off">{T("fn_offence")}</p>
-          <p class="fcard__who" data-fine-who>{T("fn_who")}</p>
-          <p class="fcard__sum" data-fine-sum>{T("fn_sum")}</p>
-          <p class="fcard__disc" data-fine-disc>{T("fn_disc")}</p>
-          <p class="fcard__debt" data-fine-debt>{T("fn_debt")}</p>
-        </div>
-        <div class="fineplay__toast"><i>✓</i><span>{T("fn_toast")}</span></div>
-      </div>
-    </div>
+    {fines_scene()}
   </div>
 </section>
 '''

@@ -1259,8 +1259,7 @@
 
   /* camera photographs the car, then the fine appears in the system */
   (() => {
-    const root = document.querySelector('[data-camplay]');
-    if (!root) return;
+    document.querySelectorAll('[data-camplay]').forEach(root => {
     const motion = matchMedia('(prefers-reduced-motion: reduce)').matches;
     const narrow = matchMedia('(max-width: 900px)').matches;
     if (motion || narrow) { root.dataset.step = 'who'; return; }
@@ -1274,6 +1273,7 @@
       setTimeout(() => { index = (index + 1) % steps.length; go(steps[index]); }, holds[index]);
     };
     new IntersectionObserver(es => { if (armed || !es[0].isIntersecting) return; armed = true; go(steps[0]); }, { threshold: .05 }).observe(root);
+    });
   })();
 
   /* fine card: arrives → linked to driver → discount visible */
