@@ -1263,8 +1263,8 @@
     const motion = matchMedia('(prefers-reduced-motion: reduce)').matches;
     const narrow = matchMedia('(max-width: 900px)').matches;
     if (motion || narrow) { root.dataset.step = 'who'; return; }
-    const steps = ['shot', 'photo', 'card', 'who'];
-    const holds = [1400, 1200, 1600, 2400];
+    const steps = ['shot', 'card', 'who'];
+    const holds = [1600, 1800, 2600];
     let index = 0, armed = false;
     const go = name => {
       root.dataset.step = name;

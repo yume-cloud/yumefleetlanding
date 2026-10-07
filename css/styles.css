@@ -1810,8 +1810,9 @@ i.setplay__sw{cursor:default}
 .camplay{height:360px;padding:22px;background:#fff;border:1px solid #E3E3E3;border-radius:16px;box-shadow:0 24px 60px -28px rgba(13,13,13,.28);overflow:hidden;position:relative;color:#0D0D0D;line-height:1.3;font-variant-numeric:tabular-nums}
 .camplay .camplay__stage{position:relative;height:100%}
 .camplay .camplay__shot,.camplay .camplay__card{position:absolute;inset:0;transition:opacity .42s cubic-bezier(.22,1,.36,1),transform .42s cubic-bezier(.22,1,.36,1)}
-.camplay .camplay__shot{z-index:2;display:flex;flex-direction:column;padding-bottom:48px;opacity:1;transform:none}
-.camplay[data-step="card"] .camplay__shot,.camplay[data-step="who"] .camplay__shot{opacity:0;transform:translateY(-108%)}
+.camplay .camplay__shot{z-index:2;display:flex;flex-direction:column;opacity:1;transform:none}
+.camplay .camplay__card{z-index:1;opacity:0;transform:translateY(16px)}
+.camplay[data-step="card"] .camplay__shot,.camplay[data-step="who"] .camplay__shot{opacity:0;transform:translateY(-108%);z-index:1;pointer-events:none}
 .camplay .camplay__kicker{font-size:12px;color:#727272;letter-spacing:.02em}
 .camplay .camplay__view{position:relative;flex:1;min-height:0;margin-top:12px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;background:linear-gradient(#0D0D0D,#0D0D0D) left 12px top 12px/16px 1.5px no-repeat,linear-gradient(#0D0D0D,#0D0D0D) left 12px top 12px/1.5px 16px no-repeat,linear-gradient(#0D0D0D,#0D0D0D) right 12px top 12px/16px 1.5px no-repeat,linear-gradient(#0D0D0D,#0D0D0D) right 12px top 12px/1.5px 16px no-repeat,linear-gradient(#0D0D0D,#0D0D0D) left 12px bottom 12px/16px 1.5px no-repeat,linear-gradient(#0D0D0D,#0D0D0D) left 12px bottom 12px/1.5px 16px no-repeat,linear-gradient(#0D0D0D,#0D0D0D) right 12px bottom 12px/16px 1.5px no-repeat,linear-gradient(#0D0D0D,#0D0D0D) right 12px bottom 12px/1.5px 16px no-repeat,#FAFAFA;border:1px solid #E3E3E3;border-radius:12px;overflow:visible}
 .camplay .camplay__view::after{content:"";position:absolute;inset:0;border-radius:inherit;background:#F0B100;opacity:0;pointer-events:none}
@@ -1820,9 +1821,8 @@ i.setplay__sw{cursor:default}
 .camplay .camplay__carpic{width:min(100%,340px);height:auto;object-fit:contain}
 .camplay .camplay__car{font-size:13px;color:#727272}
 .camplay .camplay__reason{margin-top:12px;text-align:center;font-size:13px;font-weight:600}
-.camplay .camplay__sent{position:absolute;left:0;right:0;bottom:0;padding:9px 12px;border-radius:10px;background:#F0B100;color:#0D0D0D;font-size:13px;font-weight:600;text-align:center;opacity:0;transform:translateY(8px);transition:opacity .42s cubic-bezier(.22,1,.36,1),transform .42s cubic-bezier(.22,1,.36,1)}
-.camplay[data-step="photo"] .camplay__sent{opacity:1;transform:none}
-.camplay .camplay__card{z-index:1;display:flex;flex-direction:column;gap:10px;opacity:0;transform:translateY(16px)}
+.camplay .camplay__disc{font-size:13px;font-weight:700;color:#1F9D5B}
+.camplay .camplay__card{display:flex;flex-direction:column;gap:10px}
 .camplay[data-step="card"] .camplay__card,.camplay[data-step="who"] .camplay__card{opacity:1;transform:none}
 .camplay .camplay__head{display:flex;align-items:center;justify-content:space-between;gap:12px}
 .camplay .camplay__title{font-size:16px;font-weight:700}
@@ -1844,7 +1844,7 @@ i.setplay__sw{cursor:default}
 .camplay[data-step="who"] .camplay__badge--new,.camplay[data-step="who"] .camplay__who-wait{opacity:0}
 .camplay[data-step="who"] .camplay__badge--debt,.camplay[data-step="who"] .camplay__who-name{opacity:1}
 @media (prefers-reduced-motion:reduce),(max-width:900px){
-  .camplay .camplay__shot,.camplay .camplay__sent,.camplay .camplay__badge--new,.camplay .camplay__who-wait{opacity:0!important;transform:none!important}
+  .camplay .camplay__shot,.camplay .camplay__badge--new,.camplay .camplay__who-wait{opacity:0!important;transform:none!important}
   .camplay .camplay__card,.camplay .camplay__badge--debt,.camplay .camplay__who-name{opacity:1!important;transform:none!important}
   .camplay .camplay__view::after{animation:none!important;opacity:0!important}
   .camplay,.camplay *{transition:none!important}
