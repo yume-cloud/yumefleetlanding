@@ -168,7 +168,7 @@ LIST_FEATURES = NAV_FEATURES + [('/features/check/', 'Проверка води�
 NAV_INTS = [
  ('/kaspi-pay/', 'Kaspi Pay', 'Оплата по ссылке, без нашей комиссии', 'Сілтеме арқылы төлем, комиссиясыз', 'assets/img/int/kaspi.png'),
  ('/integrations/egov/', 'eGov mobile', 'Подписание договоров и актов', 'Шарттар мен актілерге қол қою', 'assets/img/int/egov.png'),
- ('/integrations/erap/', 'Штрафы ПДД и ЕРАП', 'Постановления с протоколом', 'Хаттамасы бар қаулылар', 'assets/img/int/erap.svg'),
+ ('/integrations/erap/', 'Штрафы ПДД', 'Постановления с протоколом', 'Хаттамасы бар қаулылар', 'assets/img/int/erap.svg'),
  ('/integrations/debtors/', 'Реестр должников', 'Проверка водителя до выдачи', 'Көлік берер алдында тексеру', 'assets/img/int/iin.svg'),
  ('/integrations/blacklist/', 'Чёрный список парков', 'Общая база проблемных водителей', 'Проблемалы жүргізушілердің базасы', 'assets/logo/tile-dark-yellow-mark.svg'),
  ('/integrations/wazzup/', 'WhatsApp через Wazzup', 'Переписка и заявки в системе', 'Жүйедегі хат алмасу мен өтінімдер', 'assets/img/int/wazzup.png'),
@@ -194,7 +194,7 @@ IMG_WH = {'img/gen/INT-egov.webp': (1500, 750), 'img/gen/INT-erap.webp': (1500, 
 
 FEATURE_IMG = {'/features/check/': ('screens/driver-card.webp', 'Проверка водителя до выдачи машины'), '/features/rentals/': ('cards/rent-debt.webp', 'Карточка аренды: стоимость, долг и просрочка'), '/features/buyout/': ('img/gen/F4.webp', 'Аренда под выкуп: машина, взнос и ключи'), '/features/shifts/': ('cards/rent.webp', 'Карточка аренды: машина, водитель и сроки'), '/features/drivers/': ('screens/driver-card.webp', 'Карточка водителя в Yume Fleet'), '/features/vehicles/': ('screens/vehicle-card.webp', 'Карточка машины в Yume Fleet'), '/features/finance/': ('cards/finance.webp', 'Карточка финансов парка: поступления, расходы, отчёты'), '/features/fines/': ('img/gen/F5.webp', 'Штраф ПДД: камера, протокол и срок скидки'), '/features/documents/': ('cards/waybills.webp', 'Карточка путевых листов: выпуск, пробег и история'), '/features/investors/': ('cards/sublease.webp', 'Карточка субаренды: передача авто, договоры и доходы'), '/features/analytics/': ('cards/analytics.webp', 'Карточка аналитики: выручка, утилизация и долг парка'), '/features/leads/': ('cards/drivers.webp', 'Карточка водителей: документы, допуски и график'), '/features/settings/': ('cards/settings.webp', 'Карточка настроек парка: параметры, правила и интеграции'), '/kaspi-pay/': ('img/gen/F3.webp', 'Водитель платит за аренду с телефона'), '/integrations/': ('cards/payment.webp', 'Карточка платежа: сумма, дата и закрытая аренда'), '/perehod/': ('img/gen/F6.webp', 'Переход с Yume Cloud на Yume Fleet'), '/integrations/egov/': ('img/gen/INT-egov.webp', 'Подписание договора через eGov mobile'), '/integrations/erap/': ('img/gen/INT-erap.webp', 'Штраф ПДД привязывается к водителю'), '/integrations/debtors/': ('img/gen/INT-debtors.webp', 'Проверка водителя по реестру должников'), '/integrations/blacklist/': ('img/gen/INT-blacklist.webp', 'Общий чёрный список парков'), '/integrations/wazzup/': ('img/gen/INT-wazzup.webp', 'Заявки из WhatsApp попадают в воронку'), '/integrations/wialon/': ('img/gen/INT-wialon.webp', 'Местоположение и пробег машины через GPS Wialon'), '/integrations/ai/': ('img/gen/INT-ai.webp', 'ИИ-ассистент отвечает по данным парка'), '/features/': ('img/gen/F1.webp', 'Таксопарк на платформе Yume Fleet')}
 INT_LOGO = {'Kaspi Pay': 'assets/img/int/kaspi.png', 'eGov mobile': 'assets/img/int/egov.png',
-            'Штрафы ПДД, ЕРАП': 'assets/img/int/erap.svg', 'Штрафы ПДД и ЕРАП': 'assets/img/int/erap.svg', 'Реестр должников': 'assets/img/int/iin.svg',
+            'Штрафы ПДД': 'assets/img/int/erap.svg', 'Реестр должников': 'assets/img/int/iin.svg',
             'GPS Wialon': 'assets/img/int/wialon.png', 'Wazzup': 'assets/img/int/wazzup.png', 'WhatsApp через Wazzup': 'assets/img/int/wazzup.png',
             'Яндекс Про': 'assets/img/int/yandex.svg', 'Чёрный список парков': 'assets/logo/tile-dark-yellow-mark.svg', 'ИИ-ассистент': 'assets/img/int/ai.svg',
             'Приложение водителя': 'assets/img/int/app.svg'}
@@ -1010,7 +1010,7 @@ def hub_scene():
       </li>
       <li class="hubplay__row" style="--i:3">
         <span class="hubplay__ico"><svg viewBox="0 0 24 24"><path d="M12 3l8 4v5c0 5-3.5 8-8 9-4.5-1-8-4-8-9V7z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M12 8v5M12 16h.01" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></span>
-        <span class="hubplay__txt"><b>Штрафы ПДД и ЕРАП</b><small>Постановление 21 625 ₸ с протоколом</small></span>
+        <span class="hubplay__txt"><b>Штрафы ПДД</b><small>Постановление 21 625 ₸ с протоколом</small></span>
         <span class="hubplay__ok"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
       </li>
       <li class="hubplay__row" style="--i:4">
@@ -1077,7 +1077,7 @@ def erap_scene():
     return '''<div class="phero__vis" data-reveal="scale"><div class="erapplay" data-erapplay data-step="in" aria-hidden="true">
   <div class="erapplay__card">
     <header class="erapplay__head">
-      <span class="erapplay__src"><i></i>Постановление · пришло из ЕРАП</span>
+      <span class="erapplay__src"><i></i>Постановление · пришло</span>
       <em class="erapplay__stage" data-erapplay-stage>Протокол</em>
     </header>
 
@@ -1111,7 +1111,7 @@ def erap_scene():
     <div class="erapplay__debt" data-erapplay-debt>
       <small>К долгу водителя</small>
       <b data-erapplay-amount>+0 ₸</b>
-      <em>оплата сверяется с ЕРАП</em>
+      <em>оплата сверяется</em>
     </div>
 
     <div class="erapplay__steps">
@@ -1406,7 +1406,7 @@ def fines_scene():
     return '''<div class="phero__vis" data-reveal="scale"><div class="camplay" data-camplay data-step="shot" aria-hidden="true">
   <div class="camplay__stage">
     <div class="camplay__shot">
-      <div class="camplay__kicker">Камера · ЕРАП</div>
+      <div class="camplay__kicker">Камера</div>
       <div class="camplay__view">
         <span class="plate">015 ADM 02</span>
         <div class="camplay__car">Chevrolet Cobalt · 2022</div>
@@ -1425,7 +1425,7 @@ def fines_scene():
       <span class="plate">015 ADM 02</span>
       <div class="camplay__vio">Превышение скорости</div>
       <div class="camplay__sum">21 625 ₸</div>
-      <div class="camplay__meta">ЕРАП · 0000123980</div>
+      <div class="camplay__meta">Протокол · 0000123980</div>
       <div class="camplay__who">
         <div class="camplay__who-wait">ищем…</div>
         <div class="camplay__who-name">Ерлан С. · был за рулём</div>

@@ -58,7 +58,7 @@ a thin amber signature stroke curving from the phone to the document, a small tr
 violet shield floating behind.
 ```
 
-## 2. Штрафы ПДД и ЕРАП — `/integrations/erap/`
+## 2. Штрафы ПДД — `/integrations/erap/`
 
 ```
 A rounded car licence plate tile on the left, a wide curved amber arrow carrying two small
