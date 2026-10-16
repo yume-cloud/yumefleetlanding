@@ -226,7 +226,6 @@ def nav(R, path):
         <li><a href="{home_href}"{act('/kk/' if L == 'kk' else '/')}>{T("home")}</a></li>
         <li class="has-dd"><a href="{href('/features/', R)}"{act('/features/')}>{T("features")} <svg><use href="#i-chev"/></svg></a><button class="dd__tgl" aria-label="{T("dd_open")}"><svg><use href="#i-chev"/></svg></button><div class="dd"><div class="dd__panel"><div class="dd__grid">{dd}</div><a class="dd__all" href="{href('/features/', R)}">{T("all_features")} <svg><use href="#i-arrow"/></svg></a></div></div></li>
         <li class="has-dd"><a href="{href('/integrations/', R)}"{act('/integrations/')}>{T("integrations")} <svg><use href="#i-chev"/></svg></a><button class="dd__tgl" aria-label="{T('integrations')}"><svg><use href="#i-chev"/></svg></button><div class="dd"><div class="dd__panel"><div class="dd__grid">{ddi}</div><a class="dd__all" href="{href('/integrations/', R)}">{T('all_ints')} <svg><use href="#i-arrow"/></svg></a></div></div></li>
-        <li><a href="{href('/faq/', R)}"{act('/faq/')}>{T("faq")}</a></li>
         <li><a href="{href('/perehod/', R)}"{act('/perehod/')}>{T("perehod")}</a></li>
         <li><a href="{contacts_href}"{act('/kk/contacts/' if L == 'kk' else '/contacts/')}>{T("contacts")}</a></li>
         <li><a class="nav__cta-m" href="#demo">{T("demo")}</a></li>
@@ -255,7 +254,7 @@ def footer(R):
         <a href="{WA}" rel="noopener">WhatsApp</a>
       </div>
       <div><h4>{T("features")}</h4><ul>{feats}<li><a href="{href('/features/', R)}">{T("all_features")}</a></li></ul></div>
-      <div><h4>{T("product")}</h4><ul><li><a href="{href('/faq/', R)}">{T("faq")}</a></li><li><a href="{href('/kaspi-pay/', R)}">{T("kaspi_pay")}</a></li><li><a href="{href('/integrations/', R)}">{T("integrations")}</a></li><li><a href="{href('/perehod/', R)}">{T("perehod")}</a></li><li><a href="{contacts_href}">{T("contacts")}</a></li><li><a href="{LOGIN}" rel="noopener">{T("login_sys")}</a></li></ul></div>
+      <div><h4>{T("product")}</h4><ul><li><a href="{href('/kaspi-pay/', R)}">{T("kaspi_pay")}</a></li><li><a href="{href('/integrations/', R)}">{T("integrations")}</a></li><li><a href="{href('/perehod/', R)}">{T("perehod")}</a></li><li><a href="{contacts_href}">{T("contacts")}</a></li><li><a href="{LOGIN}" rel="noopener">{T("login_sys")}</a></li></ul></div>
       <div><h4>{T("docs")}</h4><ul>{docs}</ul></div>
     </div>
     <div class="footer__bot">
@@ -489,7 +488,7 @@ def generic_section(sec, R, alt):
     if t == 'text':
         return text_block(sec, alt, R)
     if t == 'faq':
-        return f'<section class="{cls}" id="faq"><div class="wrap faq"><div data-reveal="left"><p class="eyebrow">{T("faq_eyebrow")}</p><h2>{inline(sec["title"])}</h2><p class="lead" style="margin-top:18px">{T("faq_lead")}</p></div><div class="faq__list" data-reveal="right">{faq(sec)}</div></div></section>'
+        return f'<section class="{cls}" id="faq"><div class="wrap faq"><div data-reveal="left"><p class="eyebrow">{T("faq_eyebrow")}</p><h2>{inline(sec["title"])}</h2><p class="lead" style="margin-top:18px">{T("faq_lead")}</p><a class="btn btn--ghost" href="{href("/faq/", R)}" style="margin-top:28px">Все вопросы и ответы</a></div><div class="faq__list" data-reveal="right">{faq(sec)}</div></div></section>'
     if t == 'table':
         return f'<section class="{cls}"><div class="wrap">{head(sec, center=True)}{shift(sec)}</div></section>'
     if t == 'quotes':

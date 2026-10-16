@@ -1,5 +1,7 @@
 /* yumefleet.com — interactions (no dependencies) */
 (() => {
+  if (window.__YF_MAIN) return;
+  window.__YF_MAIN = true;
   const $ = (s, r = document) => r.querySelector(s);
   const $$ = (s, r = document) => [...r.querySelectorAll(s)];
   const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
