@@ -19,7 +19,7 @@ def ver(rel):
 CSS_V, JS_V = ver('css/styles.css'), ver('js/main.js')
 L = 'ru'
 UI = {
- 'ru': dict(home='Главная', features='Возможности', dd_open='Раскрыть возможности', all_features='Все возможности', integrations='Интеграции', perehod='Для клиентов Yume Cloud', contacts='Контакты', demo='Записаться на демо', login='Войти', menu='Основное меню', burger='Меню',
+ 'ru': dict(home='Главная', features='Возможности', faq='Вопросы и ответы', dd_open='Раскрыть возможности', all_features='Все возможности', integrations='Интеграции', perehod='Для клиентов Yume Cloud', contacts='Контакты', demo='Записаться на демо', login='Войти', menu='Основное меню', burger='Меню',
    footer_about='Платформа для управления таксопарком. ТОО «Yume.Cloud», Алматы, Казахстан.', product='Продукт', kaspi_pay='Оплата по ссылке Kaspi Pay', login_sys='Войти в систему', docs='Документы',
    doc_list=['Политика конфиденциальности', 'Публичная оферта', 'Пользовательское соглашение', 'Рекуррентные платежи', 'Отмена и возврат платежей', 'Процедура оплаты', 'Удаление аккаунта'], copy='© ТОО «Yume.Cloud», 2026', cloud='Сдаёте инвентарь, а не машины? yume.cloud', wa='Написать в WhatsApp', top='Наверх',
    f_name='Имя', f_name_ph='Как к вам обращаться', f_phone='Телефон', f_cars='Сколько машин в парке', f_cars_opts=['до 10 машин', '10–30 машин', '30–100 машин', '100+ машин'], f_city='Город', f_city_ph='Алматы', f_consent='Согласен на обработку персональных данных в соответствии с', f_policy='политикой конфиденциальности', f_ok='Заявка отправлена', f_ok_sub='Перезвоним в течение 15 минут в рабочее время.',
@@ -40,7 +40,7 @@ UI = {
    ty_eyebrow='Заявка принята', ty_title='Спасибо, заявка у нас', ty_desc='Заявка на демо Yume Fleet принята. Перезвоним в течение 15 минут в рабочее время.',
    ty_lead='Перезвоним в течение 15 минут в рабочее время: будни 9:00–19:00, суббота 10:00–16:00 по Алматы.',
    ty_next='Пока ждёте, посмотрите', ty_items=[('Как всё устроено', 'features/'), ('Оплата через Kaspi', 'kaspi-pay/'), ('Переход с Yume Cloud', 'perehod/')]),
- 'kk': dict(home='Басты бет', features='Мүмкіндіктер', dd_open='Мүмкіндіктерді ашу', all_features='Барлық мүмкіндіктер', integrations='Интеграциялар', perehod='Yume Cloud клиенттеріне', contacts='Байланыс', demo='Демоға жазылу', login='Кіру', menu='Негізгі мәзір', burger='Мәзір',
+ 'kk': dict(home='Басты бет', features='Мүмкіндіктер', faq='Сұрақ-жауап', dd_open='Мүмкіндіктерді ашу', all_features='Барлық мүмкіндіктер', integrations='Интеграциялар', perehod='Yume Cloud клиенттеріне', contacts='Байланыс', demo='Демоға жазылу', login='Кіру', menu='Негізгі мәзір', burger='Мәзір',
    footer_about='Таксопаркті басқаруға арналған платформа. «Yume.Cloud» ЖШС, Алматы, Қазақстан.', product='Өнім', kaspi_pay='Kaspi Pay сілтемесі арқылы төлем', login_sys='Жүйеге кіру', docs='Құжаттар',
    doc_list=['Құпиялылық саясаты', 'Жария оферта', 'Пайдаланушы келісімі', 'Рекурренттік төлемдер', 'Төлемдерді болдырмау және қайтару', 'Төлем тәртібі', 'Аккаунтты жою'], copy='© «Yume.Cloud» ЖШС, 2026', cloud='Көлік емес, мүкәммал жалға бересіз бе? yume.cloud', wa='WhatsApp-қа жазу', top='Жоғарыға',
    f_name='Аты', f_name_ph='Сізге қалай жүгінуге болады', f_phone='Телефон', f_cars='Паркте қанша көлік', f_cars_opts=['10 көлікке дейін', '10–30 көлік', '30–100 көлік', '100+ көлік'], f_city='Қала', f_city_ph='Алматы', f_consent='Жеке деректерімді өңдеуге келісемін,', f_policy='құпиялылық саясатына сәйкес', f_ok='Өтінім жіберілді', f_ok_sub='Жұмыс уақытында 15 минут ішінде қайта қоңырау шаламыз.',
@@ -226,6 +226,7 @@ def nav(R, path):
         <li><a href="{home_href}"{act('/kk/' if L == 'kk' else '/')}>{T("home")}</a></li>
         <li class="has-dd"><a href="{href('/features/', R)}"{act('/features/')}>{T("features")} <svg><use href="#i-chev"/></svg></a><button class="dd__tgl" aria-label="{T("dd_open")}"><svg><use href="#i-chev"/></svg></button><div class="dd"><div class="dd__panel"><div class="dd__grid">{dd}</div><a class="dd__all" href="{href('/features/', R)}">{T("all_features")} <svg><use href="#i-arrow"/></svg></a></div></div></li>
         <li class="has-dd"><a href="{href('/integrations/', R)}"{act('/integrations/')}>{T("integrations")} <svg><use href="#i-chev"/></svg></a><button class="dd__tgl" aria-label="{T('integrations')}"><svg><use href="#i-chev"/></svg></button><div class="dd"><div class="dd__panel"><div class="dd__grid">{ddi}</div><a class="dd__all" href="{href('/integrations/', R)}">{T('all_ints')} <svg><use href="#i-arrow"/></svg></a></div></div></li>
+        <li><a href="{href('/faq/', R)}"{act('/faq/')}>{T("faq")}</a></li>
         <li><a href="{href('/perehod/', R)}"{act('/perehod/')}>{T("perehod")}</a></li>
         <li><a href="{contacts_href}"{act('/kk/contacts/' if L == 'kk' else '/contacts/')}>{T("contacts")}</a></li>
         <li><a class="nav__cta-m" href="#demo">{T("demo")}</a></li>
@@ -254,7 +255,7 @@ def footer(R):
         <a href="{WA}" rel="noopener">WhatsApp</a>
       </div>
       <div><h4>{T("features")}</h4><ul>{feats}<li><a href="{href('/features/', R)}">{T("all_features")}</a></li></ul></div>
-      <div><h4>{T("product")}</h4><ul><li><a href="{href('/kaspi-pay/', R)}">{T("kaspi_pay")}</a></li><li><a href="{href('/integrations/', R)}">{T("integrations")}</a></li><li><a href="{href('/perehod/', R)}">{T("perehod")}</a></li><li><a href="{contacts_href}">{T("contacts")}</a></li><li><a href="{LOGIN}" rel="noopener">{T("login_sys")}</a></li></ul></div>
+      <div><h4>{T("product")}</h4><ul><li><a href="{href('/faq/', R)}">{T("faq")}</a></li><li><a href="{href('/kaspi-pay/', R)}">{T("kaspi_pay")}</a></li><li><a href="{href('/integrations/', R)}">{T("integrations")}</a></li><li><a href="{href('/perehod/', R)}">{T("perehod")}</a></li><li><a href="{contacts_href}">{T("contacts")}</a></li><li><a href="{LOGIN}" rel="noopener">{T("login_sys")}</a></li></ul></div>
       <div><h4>{T("docs")}</h4><ul>{docs}</ul></div>
     </div>
     <div class="footer__bot">
@@ -1648,7 +1649,7 @@ def crumbs_for(p, R):
         parts.append(f'<a href="{href("/features/", R)}">Возможности</a>')
     if path.startswith('/integrations/') and path != '/integrations/':
         parts.append(f'<a href="{href("/integrations/", R)}">Интеграции</a>')
-    short = {'/features/': 'Возможности', '/integrations/': 'Интеграции', '/perehod/': 'Для клиентов Yume Cloud', '/contacts/': 'Контакты', '/kaspi-pay/': 'Kaspi Pay'}
+    short = {'/features/': 'Возможности', '/integrations/': 'Интеграции', '/perehod/': 'Для клиентов Yume Cloud', '/contacts/': 'Контакты', '/kaspi-pay/': 'Kaspi Pay', '/faq/': 'Вопросы и ответы'}
     name = (short.get(path) or next((n for pp, n, _, _ in LIST_FEATURES if pp == path), '')
             or next((n for pp, n, _, _, _ in NAV_INTS if pp == path), '') or strip_md(p['title']))
     parts.append(f'<b>{name}</b>')
@@ -1690,6 +1691,45 @@ def inner(p):
         other = f'<section class="section section--card"><div class="wrap"><div class="sec-head"><div data-reveal><p class="eyebrow">Ещё</p><h2>Другие возможности Yume Fleet</h2></div></div><div class="chips" data-reveal>{links}</div></div></section>'
         body = body.replace('<section class="section section--yellow cta"', other + '<section class="section section--yellow cta"', 1)
     write(p['path'] + 'index.html', page(p, body, R, desc))
+
+FAQ_ITEMS = [
+ ("Сколько это стоит?", "Цена зависит от числа машин. Называем её на демо под размер вашего парка, без пакетов «на вырост»."),
+ ("Есть ли договор и что будет, если не подойдёт?", "Работаем по договору. Если система не подошла, данные выгружаете и уходите. Привязки к нам нет."),
+ ("Как быстро парк начинает работать?", "Демо за 20 минут. Данные переносим мы, менеджер работает в тот же день."),
+ ("Сколько времени уйдёт у менеджера?", "Долг, оплата и штраф смотрятся в карточке аренды. Не нужно сводить Excel и WhatsApp каждый вечер."),
+ ("Водитель откажется ставить приложение?", "Не нужно. Он открывает ссылку в WhatsApp, видит долг и платит через Kaspi. Без входа и пароля."),
+ ("Водитель скажет, что ссылка не открылась?", "Ссылка живёт, пока действует аренда, и не сгорает после оплаты. Менеджер отправляет её снова."),
+ ("Что будет с долгами, которые уже есть?", "Они не пропадут. Долг считается по дням, оплата садится в ту же аренду, а не в общую кассу."),
+ ("Как понять, кто должен и за какие дни?", "По каждому водителю видно, сколько дней не оплачено. Требование в днях, а не «оплатить до»."),
+ ("Штрафы ПДД снова узнаем после возврата машины?", "Нет. Постановления приходят сами и садятся на водителя, который был за рулём."),
+ ("А если за рулём был сменщик?", "Штраф садится на того, кто был на смене. Если по времени неясно, штраф попадает менеджеру, а не теряется."),
+ ("Можно ли вести выкуп в той же системе?", "Да. Стоимость машины фиксируется, видно, сколько накоплено и сколько осталось. Отдельная таблица не нужна."),
+ ("Машины инвесторов и лизинг тоже здесь?", "Да. Доля инвестора, субаренда и лизинг считаются в той же системе, а не в соседнем файле."),
+ ("Данные парка останутся у нас?", "Да. Данные каждой компании изолированы, выгрузка в Excel в любой момент."),
+ ("Несколько парков в одной компании?", "Да. У каждого парка свои правила, роли и машины. Менеджер не путает их между собой."),
+ ("Кто будет обучать людей?", "Показываем систему на демо за 20 минут на примере парка вашего размера. Дальше менеджер работает сам."),
+ ("Я уже работаю в Yume Cloud. Что меняется?", "Данные переносим мы, цена остаётся прежней. Подробно на странице «Для клиентов Yume Cloud»."),
+]
+
+def faq_page():
+    """Полный список вопросов. Не из CONTENT.md: главная берёт короткий набор."""
+    path = '/faq/'
+    R = rel(path)
+    items = ''.join(
+        f'<div class="q"><button>{html.escape(q)}<i></i></button><div class="q__a"><div><p>{html.escape(a)}</p></div></div></div>'
+        for q, a in FAQ_ITEMS)
+    body = f'''<section class="phero">
+  <div class="hero__checks"></div>
+  <div class="wrap">
+    <nav class="crumbs" aria-label="{T("crumbs")}"><a href="{R}">{T("home")}</a><span>/</span><b>{T("faq")}</b></nav>
+    <p class="eyebrow">FAQ</p>
+    <h1>Вопросы, которые задают до демо</h1>
+    <p class="lead">Коротко о цене, переходе, долгах и штрафах. Остальное покажем за 20 минут на вашем парке.</p>
+  </div>
+</section>
+<section class="section" style="padding-top:0"><div class="wrap" style="max-width:860px"><div class="faq__list">{items}</div></div></section>'''
+    p = dict(path=path, title='Вопросы и ответы')
+    write(path + 'index.html', page(p, body, R, 'Сколько стоит Yume Fleet, как перейти и что будет с долгами и штрафами.'))
 
 def contacts():
     p = (BY_PATH_KK if L == 'kk' else BY_PATH)['/kk/contacts/' if L == 'kk' else '/contacts/']; R = rel(p['path']); hero = p['sections'][0]
@@ -1756,7 +1796,7 @@ def write(path, content):
 
 def service():
     today = datetime.date.today().isoformat()
-    paths = [p['path'] for p in PAGES] + [p['path'] for p in PAGES_KK]
+    paths = [p['path'] for p in PAGES] + [p['path'] for p in PAGES_KK] + ['/faq/']
     urls = ''.join(f'  <url><loc>{SITE}{u}</loc><lastmod>{today}</lastmod><priority>{"1.0" if u == "/" else "0.8"}</priority></url>\n' for u in paths)
     write('/sitemap.xml', f'<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n{urls}</urlset>\n')
     write('/robots.txt', f'User-agent: *\nAllow: /\n\nSitemap: {SITE}/sitemap.xml\n')
@@ -1770,6 +1810,7 @@ for p in PAGES:
     if p['path'] in ('/', '/contacts/'): continue
     inner(p)
 contacts()
+faq_page()
 spasibo()
 service()
 L = 'kk'
