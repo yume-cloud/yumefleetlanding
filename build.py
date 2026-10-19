@@ -1550,7 +1550,7 @@ def home():
     t = S['tools'][0]
     icons = ['i-user', 'i-car', 'i-wallet']
     tools = ''.join(f'<article class="tool"><i><svg><use href="#{icons[k]}"/></svg></i><h3>{inline(it["name"])}</h3><p>{inline(it["text"])}</p><ul class="checks checks--sm">' + ''.join(f'<li><i><svg><use href="#i-check"/></svg></i><span>{inline(c)}</span></li>' for c in it.get('checks', [])) + '</ul></article>' for k, it in enumerate(t['items']))
-    out += f'<section class="section" id="tools"><div class="wrap">{head(t)}<div class="tools" data-stagger>{tools}</div></div></section>\n'
+    out += f'<section class="section" id="tools"><div class="wrap">{head(t)}<div class="tools scroll-m" data-stagger>{tools}</div></div></section>\n'
     # text: история
     hist = S['text'][0]
     out += f'''<section class="section section--dark" id="story"><div class="wrap story"><div data-reveal="left">{eyebrow(hist)}<h2>{inline(hist['title'])}</h2></div><div class="story__body" data-reveal="right">{''.join(f'<p>{inline(x)}</p>' for x in hist['paras'])}<a class="link" href="{R}perehod/">{T("perehod")} <svg><use href="#i-arrow"/></svg></a></div></div></section>

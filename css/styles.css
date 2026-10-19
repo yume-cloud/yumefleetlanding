@@ -1890,4 +1890,20 @@ i.setplay__sw{cursor:default}
 }
 
 /* mobile: без таблицы долгов и формы выкупа, только текст */
-@media (max-width:900px){#debt .ledger,#buyout .promo__vis{display:none}#debt .debt,#buyout .promo{gap:0}}
+@media (max-width:900px){#debt .ledger,#buyout .promo__vis,#fines .phero__vis{display:none}#debt .debt,#buyout .promo,#fines .promo{gap:0}}
+
+/* mobile: короче главная (аудит 19 → ~14 экранов) */
+@media (max-width:760px){
+.section{padding:56px 0}
+.story__body p:nth-child(n+2){display:none}
+.shift__row:nth-child(n+5){display:none}
+.flow .step:nth-child(n+5){display:none}
+.flow{margin-top:36px;gap:22px}
+.step{display:grid;grid-template-columns:44px 1fr;column-gap:14px;align-items:start}
+.step__n{width:44px;height:44px;border-radius:12px;margin:0;grid-row:1/span 3}
+.step__n svg{width:20px;height:20px}
+.step small{margin-bottom:4px}
+.step h3{font-size:19px;margin-bottom:6px}
+#faq .q:nth-child(n+5){display:none}
+.tools.scroll-m>*{flex-basis:min(82vw,330px)}
+}
