@@ -30,7 +30,7 @@ UI = {
    ledger_head='Аренды · с просрочкой', ledger_live='обновляется в реальном времени', ledger_cols=['Водитель', 'Машина', 'Ставка', 'Баланс'], ledger_foot='Долг по парку сегодня',
    drv_cap1='Оплата по ссылке · уже сейчас', drv_cap2='Приложение водителя', drv_alt1='Страница оплаты аренды по ссылке Kaspi Pay', drv_alt2='Приложение водителя Yume Fleet', soon='скоро',
    bc_type='Аренда под выкуп', bc_price='Стоимость выкупа', bc_saved='Накоплено', bc_left='Осталось', bc_next='Ближайший платёж', bc_next_v='9 000 ₸ · завтра', bc_steps=['Взнос', 'Выкуп', 'Выкуплено'], bc_line='Kaspi · +9 000 ₸ · в выкуп', bc_toast='9 000 ₸ зачислено в выкуп', bc_setup='Аренда под выкуп · 7 200 000 ₸', bc_form='Новая аренда под выкуп', bc_create='Создать аренду', bc_fields=['Водитель', 'Машина', 'Тип', 'Стоимость выкупа', 'Взнос', 'Ставка в день'], bc_vals=['Ерлан С.', '015 ADM 02', 'Аренда под выкуп', '7 200 000 ₸', '1 500 000 ₸', '9 000 ₸'], more_buyout='Подробнее про выкуп', more_fines='Подробнее про штрафы', fines_alt='Карточка штрафа ПДД: нарушение, сумма, машина и водитель', drv_name='Ерлан С.', drv_iin='ИИН ···0123', drv_badge='Надёжный', drv_tabs=['Обзор', 'Аренды', 'Долг', 'Депозит', 'Документы'], drv_rent='Текущая аренда', drv_rent_on='В аренде', drv_per_day='/ день', drv_events_t='Последние события', drv_events=[('Оплата Kaspi', '−9 000 ₸', 'сегодня'), ('Штраф ПДД', '+21 625 ₸', '12 сент'), ('Выдача машины', 'Cobalt', '1 сент')], drv_debt='Долг', drv_deposit='Депозит 50 000 ₸', drv_deposit_t='Депозит', drv_journal_t='Журнал', drv_total='Итого долг', drv_pay_cols=['Операция', 'Когда', 'Сумма'], drv_pay='Принять оплату', drv_parts_t='Состав долга', drv_parts=[('Аренда', '18 000 ₸'), ('Штрафы ПДД', '21 625 ₸'), ('Ущерб', '0 ₸')], drv_pays=[('Аренда', '2 дня', '+18 000 ₸'), ('Оплата Kaspi', 'сегодня', '−9 000 ₸'), ('Штраф ПДД', '12 сент', '+21 625 ₸')], drv_docs_t='Документы', drv_docs=[('Договор аренды', 'подписан', 'ok'), ('Удостоверение', 'до 2028', 'ok'), ('Акт выдачи', '1 сент', '')], veh_tabs=['Обзор', 'ТО и ремонт', 'Осмотры', 'Штрафы ПДД', 'Лизинг'], veh_rent='Текущая аренда', veh_profit='Прибыль', veh_to_card='Техобслуживание', veh_soon='скоро ТО', veh_km_left='км до ТО', fin_head='Должники парка', fin_live='сегодня', fin_cols=['Водитель', 'Машина', 'Просрочка', 'Долг'], fin_rows=[('Ерлан С.', '015 ADM 02', '3 дня', '27 000 ₸'), ('Айбек Т.', '581 MRA 02', '1 день', '12 000 ₸'), ('Асхат Ж.', '348 KBA 02', 'сегодня', '8 500 ₸')], fin_foot='Долг по парку', fin_total='47 500 ₸', fin_toast='9 000 ₸ зачислено · осталось 2 дня', fin_notes=['Новый день: Асхату начислено 8 500 ₸', 'Kaspi: +9 000 ₸ от Ерлана', 'Наличные: 8 500 ₸ отметил менеджер'], veh_docs_t='Сроки и документы', veh_docs=[('Страховка ОГПО', 'до 12 ноя', 'ok', 'действует'), ('Техосмотр', 'через 13 дней', '', 'скоро'), ('СРТС', '2 файла', 'ok', 'есть')], veh_jobs_t='Журнал ТО', veh_jobs=[('Замена масла', '84 320 км', '14 апр'), ('Замена фильтра', '84 320 км', '14 апр'), ('Тормозные колодки', '74 100 км', '12 янв')], veh_looks_t='Журнал осмотров', veh_looks=[('12 мая', 'при выдаче · фото 6', 'ok', 'без замечаний'), ('28 апр', 'при возврате · фото 4', '', 'царапина на двери')], veh_fines=[('Превышение скорости', '015 ADM 02', '21 625 ₸', 'Ерлан С.'), ('Парковка', '015 ADM 02', '5 000 ₸', 'оплачен')], veh_lease='Лизинг · ЛЗ-2025-0417', veh_lease_on='обслуживается', veh_pay='Платёж', veh_next='Следующий', veh_left='Остаток', veh_on='На линии', veh_who='Сейчас за рулём', veh_since='с 1 сентября', veh_km_t='Пробег', veh_to='ТО через 790 км', veh_to_t='Наряды', veh_orders=[('Замена масла', '12 сент', 'закрыт'), ('Колодки', 'в работе', 'открыт')], veh_earn='Доход', veh_payback='окупилась за 14 мес', veh_fine_t='Штрафы ПДД', veh_fine='1 штраф · 12 сент', veh_rent_in='Аренда принесла', veh_cost='Ремонты и ТО', drv_checks=['Реестр должников', 'Чёрный список', 'Надёжность'], drv_ok='Можно выдать', rent_kinds=['Посуточно', 'Со сменами', 'Фиксированный срок', 'Под выкуп'], rent_facts=[['9 000 ₸ в день', 'График 6/1', 'Выходной не начисляется'], ['12/12 · два водителя', 'Долг каждого отдельно', 'Ерлан', 'Асан'], ['до 12 октября', 'На неделю или месяц', 'Неделя', 'Месяц'], ['7 200 000 ₸', 'Взнос 1 500 000 ₸', 'Взнос', 'Осталось']], fn_title='Штраф ПДД', fn_offence='Превышение скорости', fn_when='12 сент · 14:20', fn_who='Ищем водителя…', fn_found='Ерлан С. · был за рулём', fn_sum='21 625 ₸', fn_disc='со скидкой 10 812 ₸ · до 27 сент', fn_debt='Добавлен к долгу Ерлана', fn_toast='Штраф привязан к водителю', fn_cam='Камера · пр. Абая', fn_shot='Снимок с камеры',
-   all_ints='Все интеграции', price_btn='Узнать цену на демо',
+   all_ints='Все интеграции', price_btn='Узнать цену на демо', was='Было', now='Стало', faq_all='Все вопросы и ответы',
    c_wa='WhatsApp, самый быстрый способ', c_wa_sub='Демо, вопросы по продукту и переходу', c_phone='Телефон', c_phone_sub='Пн–Пт 9:00–19:00, Сб 10:00–16:00 по Алматы', c_inst='Instagram', c_inst_sub='Новости продукта и парков', c_yt='YouTube', c_yt_sub='Видео о работе системы', c_sales='Продажи и партнёрство', c_sales_sub='Коммерческие предложения, интеграции, договоры', c_sup='Поддержка парков', c_sup_sub='Вопросы по работе системы', c_office='Офис', c_city='Алматы, Казахстан', c_office_sub='ТОО «Yume.Cloud». Встречи по договорённости, демо по видеосвязи.', c_login='Вход для парков', c_login_sub='Кабинет парка', c_form_h='Записаться на демо', c_form_p='Покажем систему за 20 минут на примере парка вашего размера.', crumbs='Хлебные крошки',
    t404='Страница не найдена', h404='Такой страницы нет', p404='Возможно, ссылка устарела. Вот куда можно пойти дальше.', to_home='На главную',
    ty_eyebrow='Заявка принята', ty_title='Спасибо, заявка у нас', ty_desc='Заявка на демо Yume Fleet принята. Перезвоним в течение 15 минут в рабочее время.',
@@ -44,10 +44,10 @@ UI = {
    more='Толығырақ', step='ҚАДАМ', how='Қалай жұмыс істейді', faq_lead='Қалғанын 20 минуттық демода көрсетеміз.', faq_eyebrow='Сұрақ-жауап', wa_btn='WhatsApp-қа жазу',
    pill='ТАКСОПАРКТЕР', trust=['Тәуліктік және сатып алумен', 'Kaspi Pay біздің комиссиямызсыз', 'eGov арқылы қол қою'], hero_alt='Yume Fleet басты экраны: түсім, жалдаудағы көліктер, қарыздар',
    fl1=('Мерзімі өткен · 3 күн', 'Ерлан С. · Chevrolet Cobalt'), fl2=('Жаңа ЖҚЕ айыппұлы', '348 KBA 02 · жүргізушіге байланды'), fl3=('Kaspi Pay арқылы төлем', '+ 9 000 ₸ · жалдауға түсті'),
-   ledger_head='Жалдаулар · мерзімі өткен', ledger_live='нақты уақытта жаңарады', ledger_cols=['Жүргізуші', 'Көлік', 'Ставка', 'Баланс'], ledger_foot='Парк бойынша бүгінгі қарыз',
+   ledger_head='Жалдаулар · мерзімі өткен', ledger_live='нақты уақытта жаңарады', ledger_cols=['Жүргізуші', 'Көлік', 'Мөлшерлеме', 'Баланс'], ledger_foot='Парк бойынша бүгінгі қарыз',
    drv_cap1='Сілтеме арқылы төлем · қазірдің өзінде', drv_cap2='Жүргізуші қосымшасы', drv_alt1='Kaspi Pay сілтемесі арқылы жалдау төлемі беті', drv_alt2='Yume Fleet жүргізуші қосымшасы', soon='жақында',
    bc_type='Сатып алумен жалдау', bc_price='Сатып алу құны', bc_saved='Жиналды', bc_left='Қалды', bc_next='Келесі төлем', bc_next_v='9 000 ₸ · ертең', bc_steps=['Жарна', 'Сатып алу', 'Сатып алынды'], bc_line='Kaspi · +9 000 ₸ · сатып алуға', bc_toast='9 000 ₸ сатып алуға түсті', bc_setup='Сатып алумен жалдау · 7 200 000 ₸', bc_form='Жаңа сатып алумен жалдау', bc_create='Жалдау құру', bc_fields=['Жүргізуші', 'Көлік', 'Түрі', 'Сатып алу құны', 'Жарна', 'Күндік ставка'], bc_vals=['Ерлан С.', '015 ADM 02', 'Сатып алумен жалдау', '7 200 000 ₸', '1 500 000 ₸', '9 000 ₸'], more_buyout='Сатып алу туралы толығырақ', more_fines='Айыппұлдар туралы толығырақ', fines_alt='ЖҚЕ айыппұл картасы: бұзушылық, сома, көлік және жүргізуші', drv_name='Ерлан С.', drv_iin='ЖСН ···0123', drv_badge='Сенімді', drv_tabs=['Шолу', 'Жалдау', 'Қарыз', 'Депозит', 'Құжаттар'], drv_rent='Ағымдағы жалдау', drv_rent_on='Жалдауда', drv_per_day='/ күн', drv_events_t='Соңғы оқиғалар', drv_events=[('Kaspi төлемі', '−9 000 ₸', 'бүгін'), ('ЖҚЕ айыппұлы', '+21 625 ₸', '12 қыр'), ('Көлік беру', 'Cobalt', '1 қыр')], drv_debt='Қарыз', drv_deposit='Депозит 50 000 ₸', drv_deposit_t='Депозит', drv_journal_t='Журнал', drv_total='Жалпы қарыз', drv_pay_cols=['Операция', 'Қашан', 'Сома'], drv_pay='Төлем қабылдау', drv_parts_t='Қарыз құрамы', drv_parts=[('Жалдау', '18 000 ₸'), ('ЖҚЕ айыппұлдары', '21 625 ₸'), ('Залал', '0 ₸')], drv_pays=[('Жалдау', '2 күн', '+18 000 ₸'), ('Kaspi төлемі', 'бүгін', '−9 000 ₸'), ('ЖҚЕ айыппұлы', '12 қыр', '+21 625 ₸')], drv_docs_t='Құжаттар', drv_docs=[('Жалдау шарты', 'қол қойылған', 'ok'), ('Куәлік', '2028 дейін', 'ok'), ('Беру актісі', '1 қыр', '')], veh_tabs=['Шолу', 'ТҚ және жөндеу', 'Тексеру', 'ЖҚЕ айыппұлдары', 'Лизинг'], veh_rent='Ағымдағы жалдау', veh_profit='Пайда', veh_to_card='Техникалық қызмет', veh_soon='ТҚ жақын', fin_head='Парк борышкерлері', fin_live='бүгін', fin_cols=['Жүргізуші', 'Көлік', 'Мерзімі өткен', 'Қарыз'], fin_rows=[('Ерлан С.', '015 ADM 02', '3 күн', '27 000 ₸'), ('Айбек Т.', '581 MRA 02', '1 күн', '12 000 ₸'), ('Асхат Ж.', '348 KBA 02', 'бүгін', '8 500 ₸')], fin_foot='Парк бойынша қарыз', fin_total='47 500 ₸', fin_toast='9 000 ₸ түсті · 2 күн қалды', fin_notes=['Жаңа күн: Асхатқа 8 500 ₸ есептелді', 'Kaspi: Ерланнан +9 000 ₸', 'Қолма-қол: 8 500 ₸ менеджер белгіледі'], veh_docs_t='Мерзімдер мен құжаттар', veh_docs=[('ОГПО сақтандыру', '12 қарашаға дейін', 'ok', 'жарамды'), ('Техбайқау', '13 күннен кейін', '', 'жақын'), ('СТК', '2 файл', 'ok', 'бар')], veh_jobs_t='ТҚ журналы', veh_jobs=[('Май ауыстыру', '84 320 км', '14 сәуір'), ('Сүзгі ауыстыру', '84 320 км', '14 сәуір'), ('Тежегіш қалыптары', '74 100 км', '12 қаңтар')], veh_looks_t='Тексеру журналы', veh_looks=[('12 мамыр', 'бергенде · фото 6', 'ok', 'ескертусіз'), ('28 сәуір', 'қайтарғанда · фото 4', '', 'есікте сызат')], veh_fines=[('Жылдамдықты асыру', '015 ADM 02', '21 625 ₸', 'Ерлан С.'), ('Тұрақ', '015 ADM 02', '5 000 ₸', 'төленген')], veh_lease='Лизинг · ЛЗ-2025-0417', veh_lease_on='қызметте', veh_pay='Төлем', veh_next='Келесі', veh_left='Қалдық', veh_km_left='км ТҚ-ға дейін', veh_on='Желіде', veh_who='Қазір рульде', veh_since='1 қыркүйектен', veh_km_t='Жүріс', veh_to='ТҚ 790 км кейін', veh_to_t='Нарядтар', veh_orders=[('Май ауыстыру', '12 қыр', 'жабық'), ('Қалыптар', 'жұмыста', 'ашық')], veh_earn='Табыс', veh_payback='14 айда өтелді', veh_fine_t='ЖҚЕ айыппұлдары', veh_fine='1 айыппұл · 12 қыр', veh_rent_in='Жалдау әкелді', veh_cost='Жөндеу мен ТҚ', drv_checks=['Борышкерлер тізілімі', 'Қара тізім', 'Сенімділік'], drv_ok='Берсе болады', rent_kinds=['Күнделікті', 'Ауысыммен', 'Белгіленген мерзім', 'Сатып алумен'], rent_facts=[['9 000 ₸ күніне', 'Кесте 6/1', 'Демалыс есептелмейді'], ['12/12 · екі жүргізуші', 'Қарыз әркімдікі бөлек', 'Ерлан', 'Асан'], ['12 қазанға дейін', 'Аптаға немесе айға', 'Апта', 'Ай'], ['7 200 000 ₸', 'Жарна 1 500 000 ₸', 'Жарна', 'Қалды']], fn_title='ЖҚЕ айыппұлы', fn_offence='Жылдамдықты асыру', fn_when='12 қыр · 14:20', fn_who='Жүргізушіні іздейміз…', fn_found='Ерлан С. · рульде болған', fn_sum='21 625 ₸', fn_disc='жеңілдікпен 10 812 ₸ · 27 қыр дейін', fn_debt='Ерланның қарызына қосылды', fn_toast='Айыппұл жүргізушіге байланды', fn_cam='Камера · Абай даңғылы', fn_shot='Камерадағы сурет',
-   all_ints='Барлық интеграциялар', price_btn='Бағаны демода білу',
+   all_ints='Барлық интеграциялар', price_btn='Бағаны демода білу', was='Бұрын', now='Қазір', faq_all='Барлық сұрақтар мен жауаптар',
    c_wa='WhatsApp, ең жылдам тәсіл', c_wa_sub='Демо, өнім және көшу бойынша сұрақтар', c_phone='Телефон', c_phone_sub='Дс–Жм 9:00–19:00, Сб 10:00–16:00, Алматы уақыты', c_inst='Instagram', c_inst_sub='Өнім және парктер жаңалықтары', c_yt='YouTube', c_yt_sub='Жүйенің жұмысы туралы бейнелер', c_sales='Сату және серіктестік', c_sales_sub='Коммерциялық ұсыныстар, интеграциялар, шарттар', c_sup='Парктерді қолдау', c_sup_sub='Жүйенің жұмысы бойынша сұрақтар', c_office='Кеңсе', c_city='Алматы, Қазақстан', c_office_sub='«Yume.Cloud» ЖШС. Кездесулер келісім бойынша, демо бейнебайланыс арқылы.', c_login='Парктер үшін кіру', c_login_sub='Парк кабинеті', c_form_h='Демоға жазылу', c_form_p='Жүйені 20 минутта сіздің парк көлеміндегі мысалда көрсетеміз.', crumbs='Нан үгінділері',
    t404='Бет табылмады', h404='Мұндай бет жоқ', p404='Сілтеме ескірген болуы мүмкін. Әрі қарай қайда баруға болады.', to_home='Басты бетке',
    ty_eyebrow='Өтінім қабылданды', ty_title='Рақмет, өтінім бізде', ty_desc='Yume Fleet демосына өтінім қабылданды. Жұмыс уақытында 15 минут ішінде қайта қоңырау шаламыз.',
@@ -68,6 +68,10 @@ LEAD = 'https://yume-cloud-zzydfr.vercel.app/api/lead/'
 
 # ------------------------------------------------------------------ разбор markdown
 TAGS = {'НОВОЕ': ('new', 'новое'), 'ЛУЧШЕ': ('better', 'лучше'), 'СКОРО': ('soon', 'скоро')}
+TAGS_KK = {'new': 'жаңа', 'better': 'жақсырақ', 'soon': 'жақында'}
+def loc_tag(h):
+    """Подпись бейджа на языке страницы (tag_html считается один раз при парсинге)."""
+    return re.sub(r'(tag tag--(\w+)">)[^<]+<', lambda m: m.group(1) + TAGS_KK.get(m.group(2), m.group(0)) + '<', h) if L == 'kk' else h
 KEEP_TAGS = False  # бейджи «новое»/«лучше» показываем только на /perehod/, где сравниваем с Yume Cloud
 
 def inline(t, R=''):
@@ -79,7 +83,7 @@ def inline(t, R=''):
         k = m.group(1)
         if k in TAGS:
             if k != 'СКОРО' and not KEEP_TAGS: return ''
-            c, l = TAGS[k]; return f' <em class="tag tag--{c}">{l}</em>'
+            c, l = TAGS[k]; l = TAGS_KK[c] if L == 'kk' else l; return f' <em class="tag tag--{c}">{l}</em>'
         return ''
     t = re.sub(r'\s*\[([А-ЯЁ]+)\]', tag, t)
     t = re.sub(r'\[([^\]]+)\]\((/[^)]+)\)', lambda m: f'<a href="{href(m.group(2), R)}">{m.group(1)}</a>', t)
@@ -95,7 +99,7 @@ def inline_tags(t):
 def badge(it):
     """Бейдж элемента для текущей страницы: «скоро» везде, «новое»/«лучше» только на /perehod/."""
     t = it.get('tag_html', '') if isinstance(it, dict) else (it or '')
-    return t if (KEEP_TAGS or 'tag--soon' in t) else ''
+    return loc_tag(t) if (KEEP_TAGS or 'tag--soon' in t) else ''
 
 def strip_md(t):
     t = re.sub(r'\*\*(.+?)\*\*', r'\1', t)
@@ -181,8 +185,10 @@ NAV_INTS = [
  ('/integrations/wialon/', 'GPS Wialon', 'Местоположение и пробег машин', 'Көліктің орны және жүрісі', 'assets/img/int/wialon.png'),
  ('/integrations/ai/', 'ИИ-ассистент', 'Ответы по арендам и деньгам парка', 'Жалдау мен парк ақшасы бойынша жауаптар', 'assets/img/int/ai.svg'),
 ]
+NAV_INT_KK = {'Штрафы ПДД': 'ЖҚЕ айыппұлдары', 'Реестр должников': 'Борышкерлер тізілімі', 'Чёрный список парков': 'Парктердің қара тізімі',
+              'WhatsApp через Wazzup': 'Wazzup арқылы WhatsApp', 'ИИ-ассистент': 'ЖИ-ассистент'}
 def nav_ints():
-    return [(p, n, (sk if L == 'kk' else sr), logo) for p, n, sr, sk, logo in NAV_INTS]
+    return [(p, (NAV_INT_KK.get(n, n) if L == 'kk' else n), (sk if L == 'kk' else sr), logo) for p, n, sr, sk, logo in NAV_INTS]
 
 ICON_BY_PATH = {p: i for p, _, _, i in LIST_FEATURES}
 ICON_BY_NAME = {
@@ -203,7 +209,9 @@ INT_LOGO = {'Kaspi Pay': 'assets/img/int/kaspi.png', 'eGov mobile': 'assets/img/
             'Штрафы ПДД': 'assets/img/int/erap.svg', 'Реестр должников': 'assets/img/int/iin.svg',
             'GPS Wialon': 'assets/img/int/wialon.png', 'Wazzup': 'assets/img/int/wazzup.png', 'WhatsApp через Wazzup': 'assets/img/int/wazzup.png',
             'Яндекс Про': 'assets/img/int/yandex.svg', 'Чёрный список парков': 'assets/logo/tile-dark-yellow-mark.svg', 'ИИ-ассистент': 'assets/img/int/ai.svg',
-            'Приложение водителя': 'assets/img/int/app.svg'}
+            'Приложение водителя': 'assets/img/int/app.svg',
+            'ЖҚЕ айыппұлдары': 'assets/img/int/erap.svg', 'Борышкерлер тізілімі': 'assets/img/int/iin.svg',
+            'Парктердің қара тізімі': 'assets/logo/tile-dark-yellow-mark.svg', 'ЖИ-ассистент': 'assets/img/int/ai.svg'}
 
 # ------------------------------------------------------------------ каркас
 SPRITE = open(os.path.join(ROOT, 'content', 'sprite.svg'), encoding='utf-8').read()
@@ -481,7 +489,7 @@ def quotes(sec):
 
 def shift(sec):
     rows = ''.join(f'<div class="shift__row"><div class="shift__was"><span style="color:#ef4444;margin-right:6px">✖</span>{strip_md(it["was"])}</div><div class="shift__arr"><svg><use href="#i-arrow"/></svg></div><div class="shift__now"><span style="color:#22c55e;margin-right:6px">✔</span>{inline(it["now"])}</div></div>' for it in sec['items'])
-    return f'<div class="shift" data-reveal><div class="shift__row"><div>Было</div><div></div><div>Стало</div></div>{rows}</div>'
+    return f'<div class="shift" data-reveal><div class="shift__row"><div>{T("was")}</div><div></div><div>{T("now")}</div></div>{rows}</div>'
 
 def checks(items, cls='debt__list'):
     return '<ul class="%s checks">%s</ul>' % (cls, ''.join(f'<li><i><svg><use href="#i-check"/></svg></i><span>{inline(it["check"])}</span></li>' for it in items if 'check' in it))
@@ -503,7 +511,7 @@ def generic_section(sec, R, alt):
     if t == 'text':
         return text_block(sec, alt, R)
     if t == 'faq':
-        return f'<section class="{cls}" id="faq"><div class="wrap faq"><div data-reveal="left"><p class="eyebrow">{T("faq_eyebrow")}</p><h2>{inline(sec["title"])}</h2><p class="lead" style="margin-top:18px">{T("faq_lead")}</p><a class="btn btn--ghost" href="{href("/faq/", R)}" style="margin-top:28px">Все вопросы и ответы</a></div><div class="faq__list" data-reveal="right">{faq(sec)}</div></div></section>'
+        return f'<section class="{cls}" id="faq"><div class="wrap faq"><div data-reveal="left"><p class="eyebrow">{T("faq_eyebrow")}</p><h2>{inline(sec["title"])}</h2><p class="lead" style="margin-top:18px">{T("faq_lead")}</p><a class="btn btn--ghost" href="{href("/faq/", R)}" style="margin-top:28px">{T("faq_all")}</a></div><div class="faq__list" data-reveal="right">{faq(sec)}</div></div></section>'
     if t == 'table':
         return f'<section class="{cls}"><div class="wrap">{head(sec, center=True)}{shift(sec)}</div></section>'
     if t == 'quotes':
@@ -1425,41 +1433,45 @@ def perehod_scene():
 
 def fines_scene(R=''):
     """Камера снимает машину, потом штраф появляется в системе."""
+    C = {'ru': dict(cam='Камера', vio='Превышение скорости', title='Штраф ПДД', new='Новый', debt='В долг', paper='ПОСТАНОВЛЕНИЕ',
+                    date='12 окт · 14:20', disc='скидка −50% до 18 окт', wait='ищем…', who='Ерлан С. · был за рулём'),
+         'kk': dict(cam='Камера', vio='Жылдамдықты асыру', title='ЖҚЕ айыппұлы', new='Жаңа', debt='Қарызға', paper='ҚАУЛЫ',
+                    date='12 қаз · 14:20', disc='18 қазанға дейін −50% жеңілдік', wait='іздейміз…', who='Ерлан С. · рөлде болған')}[L]
     return f'''<div class="phero__vis" data-reveal="scale"><div class="camplay" data-camplay data-step="shot" aria-hidden="true">
   <div class="camplay__stage">
     <div class="camplay__shot">
-      <div class="camplay__kicker">Камера</div>
+      <div class="camplay__kicker">{C["cam"]}</div>
       <div class="camplay__view">
         <img class="camplay__carpic" src="{R}assets/img/cam-car.png" width="1086" height="593" alt="Chevrolet Cobalt · 2022">
       </div>
-      <div class="camplay__reason">Превышение скорости</div>
+      <div class="camplay__reason">{C["vio"]}</div>
     </div>
     <div class="camplay__card">
       <div class="camplay__head">
-        <div class="camplay__title">Штраф ПДД</div>
+        <div class="camplay__title">{C["title"]}</div>
         <div class="camplay__badges">
-          <span class="camplay__badge camplay__badge--new">Новый</span>
-          <span class="camplay__badge camplay__badge--debt">В долг</span>
+          <span class="camplay__badge camplay__badge--new">{C["new"]}</span>
+          <span class="camplay__badge camplay__badge--debt">{C["debt"]}</span>
         </div>
       </div>
       <div class="camplay__body">
         <div class="camplay__paper" aria-hidden="true">
-          <small>ПОСТАНОВЛЕНИЕ</small>
+          <small>{C["paper"]}</small>
           <b>0000123980</b>
           <i></i><i></i><i class="is-short"></i>
-          <span>12 окт · 14:20</span>
+          <span>{C["date"]}</span>
           <em>21 625 ₸</em>
         </div>
         <div class="camplay__info">
           <span class="plate">015 ADM 02</span>
-          <div class="camplay__vio">Превышение скорости</div>
+          <div class="camplay__vio">{C["vio"]}</div>
           <div class="camplay__sum">21 625 ₸</div>
-          <div class="camplay__disc">скидка −50% до 18 окт</div>
+          <div class="camplay__disc">{C["disc"]}</div>
         </div>
       </div>
       <div class="camplay__who">
-        <div class="camplay__who-wait">ищем…</div>
-        <div class="camplay__who-name">Ерлан С. · был за рулём</div>
+        <div class="camplay__who-wait">{C["wait"]}</div>
+        <div class="camplay__who-name">{C["who"]}</div>
       </div>
     </div>
   </div>
