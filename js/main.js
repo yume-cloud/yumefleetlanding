@@ -33,10 +33,18 @@
   $$('[data-count]').forEach(el => cio.observe(el));
 
   /* flow line */
+  /* линия идёт слева направо, как только блок показался; каждый шаг загорается, когда линия до него дошла. Не зависит от того, докрутил ли человек ниже */
   $$('.flow').forEach(flow => {
-    const line = $('.flow__line i', flow), steps = $$('.step', flow);
-    const upd = () => { const r = flow.getBoundingClientRect(), vh = innerHeight; const p = Math.min(1, Math.max(0, (vh * .8 - r.top) / (r.height + vh * .2))); line.style.setProperty('--p', p); steps.forEach((s, i) => s.classList.toggle('is-on', p >= (i + .5) / steps.length)); };
-    addEventListener('scroll', upd, { passive: true }); upd();
+    const line = $('.flow__line i', flow), steps = $$('.step', flow), n = steps.length;
+    const paint = p => { line && line.style.setProperty('--p', p); steps.forEach((s, i) => s.classList.toggle('is-on', p >= (n === 1 ? 1 : i / (n - 1)) - .001)); };
+    if (reduced) { paint(1); return; }
+    paint(0);
+    new IntersectionObserver((es, io) => {
+      if (!es[0].isIntersecting) return; io.disconnect();
+      const t0 = performance.now(), ms = 450 + n * 420;
+      const tick = t => { const p = Math.min(1, (t - t0) / ms); paint(p < .5 ? 2 * p * p : 1 - Math.pow(-2 * p + 2, 2) / 2); if (p < 1) requestAnimationFrame(tick); };
+      setTimeout(() => requestAnimationFrame(tick), 250);
+    }, { threshold: .35 }).observe(flow);
   });
 
   /* tabs */
@@ -89,29 +97,6 @@
     };
     new IntersectionObserver(es => { if (es[0].isIntersecting && !started) { started = true; play(); } }, { threshold: .3 }).observe(box);
   });
-
-  /* driver pay scene: debt → pick days → Kaspi → posted */
-  const pay = $('[data-payplay]');
-  if (pay) {
-    const sum = $('[data-pay-sum]', pay), cap = $('[data-pay-cap]', pay), btn = $('[data-pay-btn]', pay);
-    const days = $$('[data-day]', pay);
-    const caps = (pay.dataset.caps || '').split('|');
-    const set = step => {
-      pay.dataset.step = step;
-      const picked = step !== 'debt';
-      days.forEach((d, i) => d.classList.toggle('is-on', picked && i < 2));
-      if (sum) sum.textContent = picked ? '12 000 ₸' : '18 000 ₸';
-      if (btn) btn.textContent = picked ? pay.dataset.kaspi : pay.dataset.pick;
-      if (cap) cap.textContent = caps[step === 'debt' ? 0 : step === 'days' ? 1 : 2] || '';
-    };
-    if (reduced) set('days');
-    else {
-      const steps = ['debt', 'days', 'kaspi', 'ok'];
-      let n = 0, started = false;
-      const loop = async () => { while (true) { set(steps[n % steps.length]); n++; await wait(n % steps.length === 0 ? 2800 : 2200); } };
-      new IntersectionObserver(es => { if (es[0].isIntersecting && !started) { started = true; loop(); } }, { threshold: .05 }).observe(pay);
-    }
-  }
 
   /* buyout: form fills → card opens → bar grows → Kaspi payment */
   const buy = $('[data-buyplay]');
