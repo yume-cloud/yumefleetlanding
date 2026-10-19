@@ -10,7 +10,12 @@
 
   /* nav */
   const nav = $('.nav');
-  const onScroll = () => { nav.classList.toggle('is-scrolled', scrollY > 24); $('.to-top')?.classList.toggle('is-on', scrollY > 900); };
+  const stage = $('.hero__stage');
+  const onScroll = () => {
+    nav.classList.toggle('is-scrolled', scrollY > 24); $('.to-top')?.classList.toggle('is-on', scrollY > 900);
+    // карточки у мокапа: вылетают после 60px скролла, прячутся только у самого верха
+    if (stage) { if (scrollY > 60) stage.classList.add('is-scrolled'); else if (scrollY < 8) stage.classList.remove('is-scrolled'); }
+  };
   addEventListener('scroll', onScroll, { passive: true }); onScroll();
   $('.nav__burger')?.addEventListener('click', () => nav.classList.toggle('is-open'));
   $$('.nav__menu a').forEach(a => a.addEventListener('click', () => nav.classList.remove('is-open')));

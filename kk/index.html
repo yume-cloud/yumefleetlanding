@@ -9,7 +9,8 @@
 <link rel="alternate" hreflang="ru" href="https://yumefleet.com/">
 <link rel="alternate" hreflang="kk" href="https://yumefleet.com/kk/">
 <link rel="alternate" hreflang="x-default" href="https://yumefleet.com/">
-<link rel="preload" as="image" href="../assets/screens/dashboard.webp" imagesrcset="../assets/screens/dashboard-960.webp 960w, ../assets/screens/dashboard.webp 1800w" imagesizes="(max-width: 1200px) 100vw, 1140px">
+<link rel="preload" as="image" media="(min-width: 761px)" href="../assets/img/hero-tablet.webp" imagesrcset="../assets/img/hero-tablet-960.webp 960w, ../assets/img/hero-tablet.webp 1536w" imagesizes="(max-width: 1000px) 100vw, 920px">
+<link rel="preload" as="image" media="(max-width: 760px)" href="../assets/img/hero-phone.webp">
 
 <meta property="og:type" content="website">
 <meta property="og:title" content="Yume Fleet: таксопаркті басқаруға арналған платформа">
@@ -201,7 +202,7 @@
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 </style>
-<link rel="stylesheet" href="../css/styles.css?v=4a46cad3">
+<link rel="stylesheet" href="../css/styles.css?v=d28b4194">
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Organization", "name": "Yume Fleet", "legalName": "ТОО «Yume.Cloud»", "url": "https://yumefleet.com/", "logo": "https://yumefleet.com/assets/logo/tile.svg", "telephone": "+77779479990", "address": {"@type": "PostalAddress", "addressLocality": "Алматы", "addressCountry": "KZ"}, "sameAs": ["https://www.instagram.com/yumefleet/", "https://www.youtube.com/@yumecloud"]}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Қандай парктерге жарайды?", "acceptedAnswer": {"@type": "Answer", "text": "Кез келген көлемдегі таксопаркке. Жазылым әр көлік үшін есептеледі."}}, {"@type": "Question", "name": "Yume Fleet-тің Yume Cloud-тан айырмашылығы неде?", "acceptedAnswer": {"@type": "Answer", "text": "Yume Fleet тек таксопарктерге жасалған: өз жалдау модельдері, ЖҚЕ айыппұлдары, сатып алу, субжалдау, лизинг. Yume Cloud мүкәммал прокатына арналған жүйе болып қалады."}}, {"@type": "Question", "name": "Мен Yume Cloud-та жұмыс істеймін. Не істеуім керек?", "acceptedAnswer": {"@type": "Answer", "text": "Қиын ештеңе жоқ: деректерді біз көшіреміз, баға бұрынғыдай қалады. Толығырақ «Yume Cloud клиенттеріне» бетінде."}}, {"@type": "Question", "name": "Жүргізуші қалай төлейді?", "acceptedAnswer": {"@type": "Answer", "text": "Kaspi Pay сілтемесі арқылы, кірусіз және парольсіз. Қолма-қол ақша мен аударымдарды менеджер сол жалдауда белгілейді."}}, {"@type": "Question", "name": "Депозитпен не болады?", "acceptedAnswer": {"@type": "Answer", "text": "Депозит жалдаудан бөлек есепке алынады және қарызды өзі өтемейді. Депозитті қабылдау, есепке алу немесе қайтару жеке әрекетпен, тарихымен жасалады."}}, {"@type": "Question", "name": "Деректер кімге тиесілі?", "acceptedAnswer": {"@type": "Answer", "text": "Сізге. Әр компанияның деректері оқшауланған, кез келген уақытта Excel-ге шығаруға болады."}}]}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "Yume Fleet", "applicationCategory": "BusinessApplication", "operatingSystem": "Web", "description": "Платформа для управления таксопарком: аренда посуточно и под выкуп, долги, Kaspi Pay, штрафы ПДД, подписание через eGov.", "url": "https://yumefleet.com/", "publisher": {"@type": "Organization", "name": "Yume Fleet"}, "offers": {"@type": "Offer", "priceCurrency": "KZT", "description": "Цена по запросу, подписка за каждую машину"}}</script>
@@ -271,13 +272,14 @@
       </div>
     </div>
     <div class="hero__stage">
-      <div class="hero__frame">
-        <img width="1800" height="1125" src="../assets/screens/dashboard.webp" srcset="../assets/screens/dashboard-960.webp 960w, ../assets/screens/dashboard.webp 1800w" sizes="(max-width: 1200px) 100vw, 1140px" alt="Yume Fleet басты экраны: түсім, жалдаудағы көліктер, қарыздар" fetchpriority="high">
-        <div class="hero__fade"></div>
-      </div>
-      <div class="float float--1"><i><svg><use href="#i-alert"/></svg></i><div><b>Мерзімі өткен · 3 күн</b>Ерлан С. · Chevrolet Cobalt</div></div>
-      <div class="float float--2"><i><svg><use href="#i-car"/></svg></i><div><b>Жаңа ЖҚЕ айыппұлы</b>348 KBA 02 · жүргізушіге байланды</div></div>
-      <div class="float float--3"><i><svg><use href="#i-wallet"/></svg></i><div><b>Kaspi Pay арқылы төлем</b>+ 9 000 ₸ · жалдауға түсті</div></div>
+      <picture class="hero__mock">
+        <source media="(max-width: 760px)" srcset="../assets/img/hero-phone.webp" width="900" height="948">
+        <img width="1536" height="1024" src="../assets/img/hero-tablet.webp" srcset="../assets/img/hero-tablet-960.webp 960w, ../assets/img/hero-tablet.webp 1536w" sizes="(max-width: 1000px) 100vw, 920px" alt="Yume Fleet басты экраны: түсім, жалдаудағы көліктер, қарыздар" fetchpriority="high">
+      </picture>
+      <img class="hcard hcard--driver" src="../assets/img/hero-card-driver.webp" width="560" height="435" alt="" aria-hidden="true" loading="lazy">
+      <img class="hcard hcard--rent" src="../assets/img/hero-card-rent.webp" width="560" height="435" alt="" aria-hidden="true" loading="lazy">
+      <img class="hcard hcard--fine" src="../assets/img/hero-card-fine.webp" width="560" height="336" alt="" aria-hidden="true" loading="lazy">
+      <img class="hcard hcard--inspection" src="../assets/img/hero-card-inspection.webp" width="560" height="418" alt="" aria-hidden="true" loading="lazy">
     </div>
   </div>
 </section>
@@ -427,6 +429,6 @@
 <button class="to-top" aria-label="Жоғарыға"><svg><use href="#i-up"/></svg></button>
 
 
-<script src="../js/main.js?v=07a24272" defer></script>
+<script src="../js/main.js?v=bbfa3caa" defer></script>
 </body>
 </html>

@@ -386,7 +386,7 @@ def page(p, body, R, desc, noindex=False):
     alt = True if L == 'kk' else kk_has(p['path'])
     ru = ru_path(p['path'])
     hreflang = f'<link rel="alternate" hreflang="ru" href="{SITE}{ru}">\n<link rel="alternate" hreflang="kk" href="{SITE}/kk{ru}">\n<link rel="alternate" hreflang="x-default" href="{SITE}{ru}">\n' if alt else ''
-    preload = f'<link rel="preload" as="image" href="{R}assets/screens/dashboard.webp" imagesrcset="{R}assets/screens/dashboard-960.webp 960w, {R}assets/screens/dashboard.webp 1800w" imagesizes="(max-width: 1200px) 100vw, 1140px">\n' if p['path'] in ('/', '/kk/') else ''
+    preload = f'<link rel="preload" as="image" media="(min-width: 761px)" href="{R}assets/img/hero-tablet.webp" imagesrcset="{R}assets/img/hero-tablet-960.webp 960w, {R}assets/img/hero-tablet.webp 1536w" imagesizes="(max-width: 1000px) 100vw, 920px">\n<link rel="preload" as="image" media="(max-width: 760px)" href="{R}assets/img/hero-phone.webp">\n' if p['path'] in ('/', '/kk/') else ''
     return f'''<!doctype html>
 <html lang="{L}">
 <head>
@@ -1578,13 +1578,14 @@ def home():
       </div>
     </div>
     <div class="hero__stage">
-      <div class="hero__frame">
-        <img width="1800" height="1125" src="{R}assets/screens/dashboard.webp" srcset="{R}assets/screens/dashboard-960.webp 960w, {R}assets/screens/dashboard.webp 1800w" sizes="(max-width: 1200px) 100vw, 1140px" alt="{T("hero_alt")}" fetchpriority="high">
-        <div class="hero__fade"></div>
-      </div>
-      <div class="float float--1"><i><svg><use href="#i-alert"/></svg></i><div><b>{T("fl1")[0]}</b>{T("fl1")[1]}</div></div>
-      <div class="float float--2"><i><svg><use href="#i-car"/></svg></i><div><b>{T("fl2")[0]}</b>{T("fl2")[1]}</div></div>
-      <div class="float float--3"><i><svg><use href="#i-wallet"/></svg></i><div><b>{T("fl3")[0]}</b>{T("fl3")[1]}</div></div>
+      <picture class="hero__mock">
+        <source media="(max-width: 760px)" srcset="{R}assets/img/hero-phone.webp" width="900" height="948">
+        <img width="1536" height="1024" src="{R}assets/img/hero-tablet.webp" srcset="{R}assets/img/hero-tablet-960.webp 960w, {R}assets/img/hero-tablet.webp 1536w" sizes="(max-width: 1000px) 100vw, 920px" alt="{T("hero_alt")}" fetchpriority="high">
+      </picture>
+      <img class="hcard hcard--driver" src="{R}assets/img/hero-card-driver.webp" width="560" height="435" alt="" aria-hidden="true" loading="lazy">
+      <img class="hcard hcard--rent" src="{R}assets/img/hero-card-rent.webp" width="560" height="435" alt="" aria-hidden="true" loading="lazy">
+      <img class="hcard hcard--fine" src="{R}assets/img/hero-card-fine.webp" width="560" height="336" alt="" aria-hidden="true" loading="lazy">
+      <img class="hcard hcard--inspection" src="{R}assets/img/hero-card-inspection.webp" width="560" height="418" alt="" aria-hidden="true" loading="lazy">
     </div>
   </div>
 </section>
