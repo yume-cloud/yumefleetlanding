@@ -247,11 +247,27 @@ def nav(R, path):
 </header>'''
 
 def footer(R):
+    """Десктоп: полный футер с колонками. Мобилка (css): логотип, подпись, © и «Документы»."""
+    feats = ''.join(f'<li><a href="{href(p, R)}">{n}</a></li>' for p, n, _, _ in nav_feats()[:6])
+    D = T("doc_list"); docs_urls = ['/legal/privacy/', '/legal/oferta/', '/legal/terms/', '/legal/recurring/', '/legal/refund/', '/legal/payment/', '/delete-account/']
+    docs = ''.join(f'<li><a href="{href(u, R)}">{n}</a></li>' for n, u in zip(D, docs_urls))
+    contacts_href = href('/kk/contacts/' if L == 'kk' else '/contacts/', R)
     return f'''<footer class="footer">
-  <div class="wrap footer__short">
-    <a class="logo logo--dark" href="{R}"><i><svg><use href="#mark"/></svg></i><span><b>yume</b><em>fleet</em></span></a>
-    <p>{T("footer_about")}</p>
-    <div class="footer__bot"><span>{T("copy")}</span><a href="{href('/legal/', R)}">{T("docs")}</a></div>
+  <div class="wrap">
+    <div class="footer__top">
+      <div class="footer__brand">
+        <a class="logo logo--dark" href="{R}"><i><svg><use href="#mark"/></svg></i><span><b>yume</b><em>fleet</em></span></a>
+        <p>{T("footer_about")}</p>
+        <a href="tel:+77779479990">{PHONE}</a>
+        <a href="{WA}" rel="noopener">WhatsApp</a>
+      </div>
+      <div><h4>{T("features")}</h4><ul>{feats}<li><a href="{href('/features/', R)}">{T("all_features")}</a></li></ul></div>
+      <div><h4>{T("product")}</h4><ul><li><a href="{href('/integrations/', R)}">{T("integrations")}</a></li><li><a href="{href('/perehod/', R)}">{T("perehod")}</a></li><li><a href="{href('/blog/', R)}">{T("blog")}</a></li><li><a href="{contacts_href}">{T("contacts")}</a></li><li><a href="{LOGIN}" rel="noopener">{T("login_sys")}</a></li></ul></div>
+      <div><h4>{T("docs")}</h4><ul>{docs}</ul></div>
+    </div>
+    <div class="footer__bot">
+      <div class="legal"><span>{T("copy")}</span><a class="footer__docs-m" href="{href('/legal/', R)}">{T("docs")}</a><a href="{INST}" rel="noopener">Instagram</a><a href="{YT}" rel="noopener">YouTube</a></div>
+    </div>
   </div>
 </footer>
 <a class="wa-fab" href="{WA}" rel="noopener" aria-label="{T("wa")}"><svg><use href="#i-wa"/></svg><span>{T("wa")}</span></a>
