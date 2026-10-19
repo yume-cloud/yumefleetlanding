@@ -446,7 +446,7 @@
     const stage = root.querySelector('[data-leadplay-stage]');
     const c1 = root.querySelector('[data-leadplay-c1]'), c2 = root.querySelector('[data-leadplay-c2]');
     const cur = root.querySelector('.leadplay__cur');
-    const names = ['Новая', 'Связались', 'Документы', 'Проверка'];
+    const names = document.documentElement.lang === 'kk' ? ['Жаңа', 'Хабарластық', 'Құжаттар', 'Тексеру'] : ['Новая', 'Связались', 'Документы', 'Проверка'];
 
     /* stage i: buttons before it are done, bar fills to its centre (CSS transition, no jump) */
     const toStage = i => {

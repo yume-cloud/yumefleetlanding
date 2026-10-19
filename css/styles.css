@@ -1907,3 +1907,18 @@ i.setplay__sw{cursor:default}
 #faq .q:nth-child(n+5){display:none}
 .tools.scroll-m>*{flex-basis:min(82vw,330px)}
 }
+/* mobile: короче внутренние страницы (тот же набор приёмов, что на главной) */
+@media (max-width:760px){
+.others{padding:40px 0}
+.others .sec-head{margin-bottom:18px}
+.others h2{font-size:22px}
+.others .chips{flex-wrap:nowrap;overflow-x:auto;overscroll-behavior-x:contain;margin:0 -24px;padding:2px 24px 10px;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+.others .chips::-webkit-scrollbar{display:none}
+.others .chip{flex:0 0 auto;white-space:nowrap}
+.feat-index .cards{display:grid;gap:10px}
+.feat-index .card{flex-direction:row;align-items:center;gap:14px;padding:14px 16px;border-radius:14px}
+.feat-index .card p,.feat-index .card .link{display:none}
+.feat-index .card h3{font-size:16px;margin:0;flex:1}
+.feat-index .card__top{margin:0;display:flex;align-items:center;gap:8px;width:auto;min-height:0}
+.feat-index .card__top .tag{display:none}
+}

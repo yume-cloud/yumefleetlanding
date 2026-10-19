@@ -31,6 +31,11 @@ UI = {
    drv_cap1='Оплата по ссылке · уже сейчас', drv_cap2='Приложение водителя', drv_alt1='Страница оплаты аренды по ссылке Kaspi Pay', drv_alt2='Приложение водителя Yume Fleet', soon='скоро',
    bc_type='Аренда под выкуп', bc_price='Стоимость выкупа', bc_saved='Накоплено', bc_left='Осталось', bc_next='Ближайший платёж', bc_next_v='9 000 ₸ · завтра', bc_steps=['Взнос', 'Выкуп', 'Выкуплено'], bc_line='Kaspi · +9 000 ₸ · в выкуп', bc_toast='9 000 ₸ зачислено в выкуп', bc_setup='Аренда под выкуп · 7 200 000 ₸', bc_form='Новая аренда под выкуп', bc_create='Создать аренду', bc_fields=['Водитель', 'Машина', 'Тип', 'Стоимость выкупа', 'Взнос', 'Ставка в день'], bc_vals=['Ерлан С.', '015 ADM 02', 'Аренда под выкуп', '7 200 000 ₸', '1 500 000 ₸', '9 000 ₸'], more_buyout='Подробнее про выкуп', more_fines='Подробнее про штрафы', fines_alt='Карточка штрафа ПДД: нарушение, сумма, машина и водитель', drv_name='Ерлан С.', drv_iin='ИИН ···0123', drv_badge='Надёжный', drv_tabs=['Обзор', 'Аренды', 'Долг', 'Депозит', 'Документы'], drv_rent='Текущая аренда', drv_rent_on='В аренде', drv_per_day='/ день', drv_events_t='Последние события', drv_events=[('Оплата Kaspi', '−9 000 ₸', 'сегодня'), ('Штраф ПДД', '+21 625 ₸', '12 сент'), ('Выдача машины', 'Cobalt', '1 сент')], drv_debt='Долг', drv_deposit='Депозит 50 000 ₸', drv_deposit_t='Депозит', drv_journal_t='Журнал', drv_total='Итого долг', drv_pay_cols=['Операция', 'Когда', 'Сумма'], drv_pay='Принять оплату', drv_parts_t='Состав долга', drv_parts=[('Аренда', '18 000 ₸'), ('Штрафы ПДД', '21 625 ₸'), ('Ущерб', '0 ₸')], drv_pays=[('Аренда', '2 дня', '+18 000 ₸'), ('Оплата Kaspi', 'сегодня', '−9 000 ₸'), ('Штраф ПДД', '12 сент', '+21 625 ₸')], drv_docs_t='Документы', drv_docs=[('Договор аренды', 'подписан', 'ok'), ('Удостоверение', 'до 2028', 'ok'), ('Акт выдачи', '1 сент', '')], veh_tabs=['Обзор', 'ТО и ремонт', 'Осмотры', 'Штрафы ПДД', 'Лизинг'], veh_rent='Текущая аренда', veh_profit='Прибыль', veh_to_card='Техобслуживание', veh_soon='скоро ТО', veh_km_left='км до ТО', fin_head='Должники парка', fin_live='сегодня', fin_cols=['Водитель', 'Машина', 'Просрочка', 'Долг'], fin_rows=[('Ерлан С.', '015 ADM 02', '3 дня', '27 000 ₸'), ('Айбек Т.', '581 MRA 02', '1 день', '12 000 ₸'), ('Асхат Ж.', '348 KBA 02', 'сегодня', '8 500 ₸')], fin_foot='Долг по парку', fin_total='47 500 ₸', fin_toast='9 000 ₸ зачислено · осталось 2 дня', fin_notes=['Новый день: Асхату начислено 8 500 ₸', 'Kaspi: +9 000 ₸ от Ерлана', 'Наличные: 8 500 ₸ отметил менеджер'], veh_docs_t='Сроки и документы', veh_docs=[('Страховка ОГПО', 'до 12 ноя', 'ok', 'действует'), ('Техосмотр', 'через 13 дней', '', 'скоро'), ('СРТС', '2 файла', 'ok', 'есть')], veh_jobs_t='Журнал ТО', veh_jobs=[('Замена масла', '84 320 км', '14 апр'), ('Замена фильтра', '84 320 км', '14 апр'), ('Тормозные колодки', '74 100 км', '12 янв')], veh_looks_t='Журнал осмотров', veh_looks=[('12 мая', 'при выдаче · фото 6', 'ok', 'без замечаний'), ('28 апр', 'при возврате · фото 4', '', 'царапина на двери')], veh_fines=[('Превышение скорости', '015 ADM 02', '21 625 ₸', 'Ерлан С.'), ('Парковка', '015 ADM 02', '5 000 ₸', 'оплачен')], veh_lease='Лизинг · ЛЗ-2025-0417', veh_lease_on='обслуживается', veh_pay='Платёж', veh_next='Следующий', veh_left='Остаток', veh_on='На линии', veh_who='Сейчас за рулём', veh_since='с 1 сентября', veh_km_t='Пробег', veh_to='ТО через 790 км', veh_to_t='Наряды', veh_orders=[('Замена масла', '12 сент', 'закрыт'), ('Колодки', 'в работе', 'открыт')], veh_earn='Доход', veh_payback='окупилась за 14 мес', veh_fine_t='Штрафы ПДД', veh_fine='1 штраф · 12 сент', veh_rent_in='Аренда принесла', veh_cost='Ремонты и ТО', drv_checks=['Реестр должников', 'Чёрный список', 'Надёжность'], drv_ok='Можно выдать', rent_kinds=['Посуточно', 'Со сменами', 'Фиксированный срок', 'Под выкуп'], rent_facts=[['9 000 ₸ в день', 'График 6/1', 'Выходной не начисляется'], ['12/12 · два водителя', 'Долг каждого отдельно', 'Ерлан', 'Асан'], ['до 12 октября', 'На неделю или месяц', 'Неделя', 'Месяц'], ['7 200 000 ₸', 'Взнос 1 500 000 ₸', 'Взнос', 'Осталось']], fn_title='Штраф ПДД', fn_offence='Превышение скорости', fn_when='12 сент · 14:20', fn_who='Ищем водителя…', fn_found='Ерлан С. · был за рулём', fn_sum='21 625 ₸', fn_disc='со скидкой 10 812 ₸ · до 27 сент', fn_debt='Добавлен к долгу Ерлана', fn_toast='Штраф привязан к водителю', fn_cam='Камера · пр. Абая', fn_shot='Снимок с камеры',
    all_ints='Все интеграции', price_btn='Узнать цену на демо', was='Было', now='Стало', faq_all='Все вопросы и ответы',
+   more_eb='Ещё', other_ints='Другие интеграции', other_feats='Другие возможности Yume Fleet', feat_index='Всё, чем живёт таксопарк',
+   crumb_short={'/features/': 'Возможности', '/integrations/': 'Интеграции', '/perehod/': 'Для клиентов Yume Cloud', '/contacts/': 'Контакты', '/kaspi-pay/': 'Kaspi Pay', '/faq/': 'Вопросы и ответы', '/blog/': 'Блог'},
+   faq_h1='Вопросы, которые задают до демо', faq_page_lead='Цена, запуск, оплата водителей, штрафы, выкуп и данные. Остальное покажем за 20 минут на вашем парке.', faq_desc='Сколько стоит Yume Fleet, как перейти и что будет с долгами и штрафами.',
+   blog_h1='Новости и статьи', blog_lead='Что нового в Yume Fleet и как парки считают долги, выкуп и штрафы. Пишем коротко и по делу.', blog_desc='Новости Yume Fleet и статьи о том, как таксопарки считают долги, выкуп, штрафы и оплату через Kaspi.', blog_more='Ещё в блоге', blog_all='Все статьи', read='Читать',
+   months=['января', 'февраля', 'марта', 'апреля', 'мая', 'июня', 'июля', 'августа', 'сентября', 'октября', 'ноября', 'декабря'],
    c_wa='WhatsApp, самый быстрый способ', c_wa_sub='Демо, вопросы по продукту и переходу', c_phone='Телефон', c_phone_sub='Пн–Пт 9:00–19:00, Сб 10:00–16:00 по Алматы', c_inst='Instagram', c_inst_sub='Новости продукта и парков', c_yt='YouTube', c_yt_sub='Видео о работе системы', c_sales='Продажи и партнёрство', c_sales_sub='Коммерческие предложения, интеграции, договоры', c_sup='Поддержка парков', c_sup_sub='Вопросы по работе системы', c_office='Офис', c_city='Алматы, Казахстан', c_office_sub='ТОО «Yume.Cloud». Встречи по договорённости, демо по видеосвязи.', c_login='Вход для парков', c_login_sub='Кабинет парка', c_form_h='Записаться на демо', c_form_p='Покажем систему за 20 минут на примере парка вашего размера.', crumbs='Хлебные крошки',
    t404='Страница не найдена', h404='Такой страницы нет', p404='Возможно, ссылка устарела. Вот куда можно пойти дальше.', to_home='На главную',
    ty_eyebrow='Заявка принята', ty_title='Спасибо, заявка у нас', ty_desc='Заявка на демо Yume Fleet принята. Перезвоним в течение 15 минут в рабочее время.',
@@ -48,6 +53,11 @@ UI = {
    drv_cap1='Сілтеме арқылы төлем · қазірдің өзінде', drv_cap2='Жүргізуші қосымшасы', drv_alt1='Kaspi Pay сілтемесі арқылы жалдау төлемі беті', drv_alt2='Yume Fleet жүргізуші қосымшасы', soon='жақында',
    bc_type='Сатып алумен жалдау', bc_price='Сатып алу құны', bc_saved='Жиналды', bc_left='Қалды', bc_next='Келесі төлем', bc_next_v='9 000 ₸ · ертең', bc_steps=['Жарна', 'Сатып алу', 'Сатып алынды'], bc_line='Kaspi · +9 000 ₸ · сатып алуға', bc_toast='9 000 ₸ сатып алуға түсті', bc_setup='Сатып алумен жалдау · 7 200 000 ₸', bc_form='Жаңа сатып алумен жалдау', bc_create='Жалдау құру', bc_fields=['Жүргізуші', 'Көлік', 'Түрі', 'Сатып алу құны', 'Жарна', 'Күндік ставка'], bc_vals=['Ерлан С.', '015 ADM 02', 'Сатып алумен жалдау', '7 200 000 ₸', '1 500 000 ₸', '9 000 ₸'], more_buyout='Сатып алу туралы толығырақ', more_fines='Айыппұлдар туралы толығырақ', fines_alt='ЖҚЕ айыппұл картасы: бұзушылық, сома, көлік және жүргізуші', drv_name='Ерлан С.', drv_iin='ЖСН ···0123', drv_badge='Сенімді', drv_tabs=['Шолу', 'Жалдау', 'Қарыз', 'Депозит', 'Құжаттар'], drv_rent='Ағымдағы жалдау', drv_rent_on='Жалдауда', drv_per_day='/ күн', drv_events_t='Соңғы оқиғалар', drv_events=[('Kaspi төлемі', '−9 000 ₸', 'бүгін'), ('ЖҚЕ айыппұлы', '+21 625 ₸', '12 қыр'), ('Көлік беру', 'Cobalt', '1 қыр')], drv_debt='Қарыз', drv_deposit='Депозит 50 000 ₸', drv_deposit_t='Депозит', drv_journal_t='Журнал', drv_total='Жалпы қарыз', drv_pay_cols=['Операция', 'Қашан', 'Сома'], drv_pay='Төлем қабылдау', drv_parts_t='Қарыз құрамы', drv_parts=[('Жалдау', '18 000 ₸'), ('ЖҚЕ айыппұлдары', '21 625 ₸'), ('Залал', '0 ₸')], drv_pays=[('Жалдау', '2 күн', '+18 000 ₸'), ('Kaspi төлемі', 'бүгін', '−9 000 ₸'), ('ЖҚЕ айыппұлы', '12 қыр', '+21 625 ₸')], drv_docs_t='Құжаттар', drv_docs=[('Жалдау шарты', 'қол қойылған', 'ok'), ('Куәлік', '2028 дейін', 'ok'), ('Беру актісі', '1 қыр', '')], veh_tabs=['Шолу', 'ТҚ және жөндеу', 'Тексеру', 'ЖҚЕ айыппұлдары', 'Лизинг'], veh_rent='Ағымдағы жалдау', veh_profit='Пайда', veh_to_card='Техникалық қызмет', veh_soon='ТҚ жақын', fin_head='Парк борышкерлері', fin_live='бүгін', fin_cols=['Жүргізуші', 'Көлік', 'Мерзімі өткен', 'Қарыз'], fin_rows=[('Ерлан С.', '015 ADM 02', '3 күн', '27 000 ₸'), ('Айбек Т.', '581 MRA 02', '1 күн', '12 000 ₸'), ('Асхат Ж.', '348 KBA 02', 'бүгін', '8 500 ₸')], fin_foot='Парк бойынша қарыз', fin_total='47 500 ₸', fin_toast='9 000 ₸ түсті · 2 күн қалды', fin_notes=['Жаңа күн: Асхатқа 8 500 ₸ есептелді', 'Kaspi: Ерланнан +9 000 ₸', 'Қолма-қол: 8 500 ₸ менеджер белгіледі'], veh_docs_t='Мерзімдер мен құжаттар', veh_docs=[('ОГПО сақтандыру', '12 қарашаға дейін', 'ok', 'жарамды'), ('Техбайқау', '13 күннен кейін', '', 'жақын'), ('СТК', '2 файл', 'ok', 'бар')], veh_jobs_t='ТҚ журналы', veh_jobs=[('Май ауыстыру', '84 320 км', '14 сәуір'), ('Сүзгі ауыстыру', '84 320 км', '14 сәуір'), ('Тежегіш қалыптары', '74 100 км', '12 қаңтар')], veh_looks_t='Тексеру журналы', veh_looks=[('12 мамыр', 'бергенде · фото 6', 'ok', 'ескертусіз'), ('28 сәуір', 'қайтарғанда · фото 4', '', 'есікте сызат')], veh_fines=[('Жылдамдықты асыру', '015 ADM 02', '21 625 ₸', 'Ерлан С.'), ('Тұрақ', '015 ADM 02', '5 000 ₸', 'төленген')], veh_lease='Лизинг · ЛЗ-2025-0417', veh_lease_on='қызметте', veh_pay='Төлем', veh_next='Келесі', veh_left='Қалдық', veh_km_left='км ТҚ-ға дейін', veh_on='Желіде', veh_who='Қазір рульде', veh_since='1 қыркүйектен', veh_km_t='Жүріс', veh_to='ТҚ 790 км кейін', veh_to_t='Нарядтар', veh_orders=[('Май ауыстыру', '12 қыр', 'жабық'), ('Қалыптар', 'жұмыста', 'ашық')], veh_earn='Табыс', veh_payback='14 айда өтелді', veh_fine_t='ЖҚЕ айыппұлдары', veh_fine='1 айыппұл · 12 қыр', veh_rent_in='Жалдау әкелді', veh_cost='Жөндеу мен ТҚ', drv_checks=['Борышкерлер тізілімі', 'Қара тізім', 'Сенімділік'], drv_ok='Берсе болады', rent_kinds=['Күнделікті', 'Ауысыммен', 'Белгіленген мерзім', 'Сатып алумен'], rent_facts=[['9 000 ₸ күніне', 'Кесте 6/1', 'Демалыс есептелмейді'], ['12/12 · екі жүргізуші', 'Қарыз әркімдікі бөлек', 'Ерлан', 'Асан'], ['12 қазанға дейін', 'Аптаға немесе айға', 'Апта', 'Ай'], ['7 200 000 ₸', 'Жарна 1 500 000 ₸', 'Жарна', 'Қалды']], fn_title='ЖҚЕ айыппұлы', fn_offence='Жылдамдықты асыру', fn_when='12 қыр · 14:20', fn_who='Жүргізушіні іздейміз…', fn_found='Ерлан С. · рульде болған', fn_sum='21 625 ₸', fn_disc='жеңілдікпен 10 812 ₸ · 27 қыр дейін', fn_debt='Ерланның қарызына қосылды', fn_toast='Айыппұл жүргізушіге байланды', fn_cam='Камера · Абай даңғылы', fn_shot='Камерадағы сурет',
    all_ints='Барлық интеграциялар', price_btn='Бағаны демода білу', was='Бұрын', now='Қазір', faq_all='Барлық сұрақтар мен жауаптар',
+   more_eb='Тағы', other_ints='Басқа интеграциялар', other_feats='Yume Fleet-тің басқа мүмкіндіктері', feat_index='Таксопарк өмір сүретіннің бәрі',
+   crumb_short={'/features/': 'Мүмкіндіктер', '/integrations/': 'Интеграциялар', '/perehod/': 'Yume Cloud клиенттеріне', '/contacts/': 'Байланыс', '/kaspi-pay/': 'Kaspi Pay', '/faq/': 'Сұрақ-жауап', '/blog/': 'Блог'},
+   faq_h1='Демоға дейін қойылатын сұрақтар', faq_page_lead='Баға, іске қосу, жүргізушілердің төлемі, айыппұлдар, сатып алу және деректер. Қалғанын 20 минутта сіздің паркте көрсетеміз.', faq_desc='Yume Fleet қанша тұрады, қалай көшуге болады және қарыздар мен айыппұлдар не болады.',
+   blog_h1='Жаңалықтар мен мақалалар', blog_lead='Yume Fleet-те не жаңалық және парктер қарызды, сатып алуды және айыппұлдарды қалай есептейді. Қысқа әрі нақты жазамыз.', blog_desc='Yume Fleet жаңалықтары және таксопарктер қарызды, сатып алуды, айыппұлдарды және Kaspi арқылы төлемді қалай есептейтіні туралы мақалалар.', blog_more='Блогта тағы', blog_all='Барлық мақалалар', read='Оқу',
+   months=['қаңтар', 'ақпан', 'наурыз', 'сәуір', 'мамыр', 'маусым', 'шілде', 'тамыз', 'қыркүйек', 'қазан', 'қараша', 'желтоқсан'],
    c_wa='WhatsApp, ең жылдам тәсіл', c_wa_sub='Демо, өнім және көшу бойынша сұрақтар', c_phone='Телефон', c_phone_sub='Дс–Жм 9:00–19:00, Сб 10:00–16:00, Алматы уақыты', c_inst='Instagram', c_inst_sub='Өнім және парктер жаңалықтары', c_yt='YouTube', c_yt_sub='Жүйенің жұмысы туралы бейнелер', c_sales='Сату және серіктестік', c_sales_sub='Коммерциялық ұсыныстар, интеграциялар, шарттар', c_sup='Парктерді қолдау', c_sup_sub='Жүйенің жұмысы бойынша сұрақтар', c_office='Кеңсе', c_city='Алматы, Қазақстан', c_office_sub='«Yume.Cloud» ЖШС. Кездесулер келісім бойынша, демо бейнебайланыс арқылы.', c_login='Парктер үшін кіру', c_login_sub='Парк кабинеті', c_form_h='Демоға жазылу', c_form_p='Жүйені 20 минутта сіздің парк көлеміндегі мысалда көрсетеміз.', crumbs='Нан үгінділері',
    t404='Бет табылмады', h404='Мұндай бет жоқ', p404='Сілтеме ескірген болуы мүмкін. Әрі қарай қайда баруға болады.', to_home='Басты бетке',
    ty_eyebrow='Өтінім қабылданды', ty_title='Рақмет, өтінім бізде', ty_desc='Yume Fleet демосына өтінім қабылданды. Жұмыс уақытында 15 минут ішінде қайта қоңырау шаламыз.',
@@ -220,17 +230,24 @@ def rel(path):
     depth = path.strip('/').count('/') + (1 if path.strip('/') else 0)
     return '../' * depth if depth else './'
 
-def href(path, R):
+KK_RU_PATHS = {p['path'].replace('/kk', '', 1) for p in PAGES_KK} | {'/faq/', '/blog/', '/spasibo/'}
+def kk_has(path):
+    """Есть ли казахская версия у русского пути."""
+    return path in KK_RU_PATHS or path.startswith('/blog/')
+def href(path, R, raw=False):
     if path.startswith('http') or path.startswith('#') or path.startswith('mailto') or path.startswith('tel'): return path
+    if L == 'kk' and not raw and not path.startswith('/kk') and kk_has(path): path = '/kk' + path
     return R + path.lstrip('/') if path != '/' else R
+def ru_path(path):
+    return path.replace('/kk', '', 1) if path.startswith('/kk') else path
 
 def nav(R, path):
     dd = ''.join(f'<a class="dd__i" href="{href(p, R)}"><svg><use href="#{i}"/></svg><div><b>{n}</b><small>{s}</small></div></a>' for p, n, s, i in nav_feats())
     ddi = ''.join(f'<a class="dd__i" href="{href(p, R)}"><i class="dd__logo"><img src="{R}{logo}" alt="" width="28" height="28" loading="lazy"></i><div><b>{n}</b><small>{s}</small></div></a>' for p, n, s, logo in nav_ints())
     act = lambda p: ' class="is-cur"' if p == path else ''
     home_href = href('/kk/', R) if L == 'kk' else R
-    alt = {'/': '/kk/', '/contacts/': '/kk/contacts/', '/kk/': '/', '/kk/contacts/': '/contacts/'}.get(path)
-    lang = f'<a class="nav__lang" href="{href(alt, R)}" hreflang="{"ru" if L == "kk" else "kk"}" lang="{"ru" if L == "kk" else "kk"}">{"RU" if L == "kk" else "KZ"}</a>' if alt else ''
+    alt = ru_path(path) if L == 'kk' else ('/kk' + path if kk_has(path) else None)
+    lang = f'<a class="nav__lang" href="{href(alt, R, raw=True)}" hreflang="{"ru" if L == "kk" else "kk"}" lang="{"ru" if L == "kk" else "kk"}">{"RU" if L == "kk" else "KZ"}</a>' if alt else ''
     contacts_href = href('/kk/contacts/' if L == 'kk' else '/contacts/', R)
     return f'''<header class="nav">
   <div class="wrap">
@@ -239,7 +256,7 @@ def nav(R, path):
       <ul class="nav__menu">
         <li><a href="{home_href}"{act('/kk/' if L == 'kk' else '/')}>{T("home")}</a></li>
         <li class="has-dd"><a href="{href('/features/', R)}"{act('/features/')}>{T("features")} <svg><use href="#i-chev"/></svg></a><button class="dd__tgl" aria-label="{T("dd_open")}"><svg><use href="#i-chev"/></svg></button><div class="dd"><div class="dd__panel"><div class="dd__grid">{dd}</div><a class="dd__all" href="{href('/features/', R)}">{T("all_features")} <svg><use href="#i-arrow"/></svg></a></div></div></li>
-        <li class="has-dd"><a href="{href('/integrations/', R)}"{act('/integrations/')}>{T("integrations")} <svg><use href="#i-chev"/></svg></a><button class="dd__tgl" aria-label="{T('integrations')}"><svg><use href="#i-chev"/></svg></button><div class="dd"><div class="dd__panel"><div class="dd__grid">{ddi}</div><a class="dd__all" href="{href('/integrations/', R)}">{T('all_ints')} <svg><use href="#i-arrow"/></svg></a></div></div></li>
+        <li class="has-dd"><a href="{href("/integrations/", R)}"{act('/integrations/')}>{T("integrations")} <svg><use href="#i-chev"/></svg></a><button class="dd__tgl" aria-label="{T('integrations')}"><svg><use href="#i-chev"/></svg></button><div class="dd"><div class="dd__panel"><div class="dd__grid">{ddi}</div><a class="dd__all" href="{href('/integrations/', R)}">{T('all_ints')} <svg><use href="#i-arrow"/></svg></a></div></div></li>
         <li><a href="{href('/blog/', R)}"{act('/blog/')}>{T("blog")}</a></li>
         <li><a href="{contacts_href}"{act('/kk/contacts/' if L == 'kk' else '/contacts/')}>{T("contacts")}</a></li>
         <li><a class="nav__login-m" href="{LOGIN}">{T("login")}</a></li>
@@ -270,7 +287,7 @@ def footer(R):
         <a href="{WA}" rel="noopener">WhatsApp</a>
       </div>
       <div><h4>{T("features")}</h4><ul>{feats}<li><a href="{href('/features/', R)}">{T("all_features")}</a></li></ul></div>
-      <div><h4>{T("product")}</h4><ul><li><a href="{href('/integrations/', R)}">{T("integrations")}</a></li><li><a href="{href('/perehod/', R)}">{T("perehod")}</a></li><li><a href="{href('/blog/', R)}">{T("blog")}</a></li><li><a href="{contacts_href}">{T("contacts")}</a></li><li><a href="{LOGIN}" rel="noopener">{T("login_sys")}</a></li></ul></div>
+      <div><h4>{T("product")}</h4><ul><li><a href="{href("/integrations/", R)}">{T("integrations")}</a></li><li><a href="{href("/perehod/", R)}">{T("perehod")}</a></li><li><a href="{href('/blog/', R)}">{T("blog")}</a></li><li><a href="{contacts_href}">{T("contacts")}</a></li><li><a href="{LOGIN}" rel="noopener">{T("login_sys")}</a></li></ul></div>
       <div><h4>{T("docs")}</h4><ul>{docs}</ul></div>
     </div>
     <div class="footer__bot">
@@ -341,7 +358,24 @@ def analytics():
             "(function(){var done=false;function load(){if(done)return;done=true;" + ga + fb + "}"
             "['scroll','pointerdown','keydown','touchstart'].forEach(function(e){addEventListener(e,load,{once:true,passive:true})});setTimeout(load,4000);})();</script>\n")
 
+_SCENE_NS = {}
+exec(open(os.path.join(ROOT, 'content', 'scenes.kk.py'), encoding='utf-8').read(), _SCENE_NS)
+SCENE_KK = _SCENE_NS['SCENE_KK']
+def kk_scenes(body):
+    """Казахские подписи в сценах: текстовые узлы и alt/title/aria-label/placeholder с точным совпадением по словарю."""
+    if L != 'kk': return body
+    def node(m):
+        t = m.group(1); k = t.strip()
+        if k in SCENE_KK: return '>' + t.replace(k, SCENE_KK[k]) + '<'
+        return m.group(0)
+    body = re.sub(r'>([^<>]+)<', node, body)
+    def attr(m):
+        k = m.group(2)
+        return f'{m.group(1)}="{SCENE_KK.get(k, k)}"'
+    return re.sub(r'\b(alt|title|aria-label|placeholder)="([^"]*)"', attr, body)
+
 def page(p, body, R, desc, noindex=False):
+    body = kk_scenes(body)
     title = html.escape(p['title'])
     nav_html = nav(R, p['path'])
     if 'id="demo"' not in body:
@@ -349,8 +383,8 @@ def page(p, body, R, desc, noindex=False):
         nav_html = nav_html.replace('href="#demo"', f'href="{R}#demo"')
     if not title.startswith('Yume Fleet'): title += ' — Yume Fleet'
     canon = SITE + p['path']
-    alt = {'/': '/kk/', '/contacts/': '/kk/contacts/', '/kk/': '/', '/kk/contacts/': '/contacts/'}.get(p['path'])
-    ru = p['path'].replace('/kk', '', 1) if L == 'kk' else p['path']
+    alt = True if L == 'kk' else kk_has(p['path'])
+    ru = ru_path(p['path'])
     hreflang = f'<link rel="alternate" hreflang="ru" href="{SITE}{ru}">\n<link rel="alternate" hreflang="kk" href="{SITE}/kk{ru}">\n<link rel="alternate" hreflang="x-default" href="{SITE}{ru}">\n' if alt else ''
     preload = f'<link rel="preload" as="image" href="{R}assets/screens/dashboard.webp" imagesrcset="{R}assets/screens/dashboard-960.webp 960w, {R}assets/screens/dashboard.webp 1800w" imagesizes="(max-width: 1200px) 100vw, 1140px">\n' if p['path'] in ('/', '/kk/') else ''
     return f'''<!doctype html>
@@ -505,7 +539,7 @@ def generic_section(sec, R, alt):
     t = sec['type']
     cls = 'section section--card' if alt else 'section'
     if t == 'cards':
-        return f'<section class="{cls}"><div class="wrap">{head(sec)}{cards(sec, R)}</div></section>'
+        return f'<section class="{cls}"><div class="wrap">{head(sec)}{scrollm(cards(sec, R))}</div></section>'
     if t == 'steps':
         return f'<section class="{cls}"><div class="wrap">{head(sec, PAGE_EB or T("how"), center=True)}{steps(sec, R)}</div></section>'
     if t == 'text':
@@ -1565,7 +1599,7 @@ def home():
     out += f'<section class="section" id="tools"><div class="wrap">{head(t)}<div class="tools scroll-m" data-stagger>{tools}</div></div></section>\n'
     # text: история
     hist = S['text'][0]
-    out += f'''<section class="section section--dark" id="story"><div class="wrap story"><div data-reveal="left">{eyebrow(hist)}<h2>{inline(hist['title'])}</h2></div><div class="story__body" data-reveal="right">{''.join(f'<p>{inline(x)}</p>' for x in hist['paras'])}<a class="link" href="{R}perehod/">{T("perehod")} <svg><use href="#i-arrow"/></svg></a></div></div></section>
+    out += f'''<section class="section section--dark" id="story"><div class="wrap story"><div data-reveal="left">{eyebrow(hist)}<h2>{inline(hist['title'])}</h2></div><div class="story__body" data-reveal="right">{''.join(f'<p>{inline(x)}</p>' for x in hist['paras'])}<a class="link" href="{href("/perehod/", R)}">{T("perehod")} <svg><use href="#i-arrow"/></svg></a></div></div></section>
 '''
     # promo 1: оплаты — live ledger
     pr = S['promo']
@@ -1616,12 +1650,12 @@ def home():
         <div class="buyplay__toast"><i>✓</i><span>{T("bc_toast")}</span></div>
       </div>
     </div>
-    <div data-reveal="right">{eyebrow(p3)}<h2>{inline(p3['title'])}</h2><p class="lead" style="margin-top:18px">{inline(p3['paras'][0])}</p>{checks(p3['items'])}<a class="link" href="{R}features/buyout/">{T("more_buyout")} <svg><use href="#i-arrow"/></svg></a></div>
+    <div data-reveal="right">{eyebrow(p3)}<h2>{inline(p3['title'])}</h2><p class="lead" style="margin-top:18px">{inline(p3['paras'][0])}</p>{checks(p3['items'])}<a class="link" href="{href("/features/buyout/", R)}">{T("more_buyout")} <svg><use href="#i-arrow"/></svg></a></div>
   </div>
 </section>
 <section class="section section--card" id="fines">
   <div class="wrap promo">
-    <div data-reveal="left">{eyebrow(p4)}<h2>{inline(p4['title'])}</h2><p class="lead" style="margin-top:18px">{inline(p4['paras'][0])}</p>{checks(p4['items'])}<a class="link" href="{R}features/fines/">{T("more_fines")} <svg><use href="#i-arrow"/></svg></a></div>
+    <div data-reveal="left">{eyebrow(p4)}<h2>{inline(p4['title'])}</h2><p class="lead" style="margin-top:18px">{inline(p4['paras'][0])}</p>{checks(p4['items'])}<a class="link" href="{href("/features/fines/", R)}">{T("more_fines")} <svg><use href="#i-arrow"/></svg></a></div>
     {fines_scene(R)}
   </div>
 </section>
@@ -1634,7 +1668,7 @@ def home():
     out += f'<section class="section section--card" id="features"><div class="wrap">{head(c1)}{scrollm(cards(c1, R, 4))}</div></section>\n'
     # cards 3: интеграции
     c2 = S['cards'][2]
-    out += f'<section class="section" id="integrations"><div class="wrap">{head(c2)}{scrollm(ints(c2, R))}<p class="more" data-reveal><a class="link" href="{R}integrations/">{T("all_ints")} <svg><use href="#i-arrow"/></svg></a></p></div></section>\n'
+    out += f'<section class="section" id="integrations"><div class="wrap">{head(c2)}{scrollm(ints(c2, R))}<p class="more" data-reveal><a class="link" href="{href("/integrations/", R)}">{T("all_ints")} <svg><use href="#i-arrow"/></svg></a></p></div></section>\n'
     # steps
     st = S['steps'][0]
     out += f'<section class="section section--card" id="start"><div class="wrap">{head(st, center=True)}{steps(st, R)}</div></section>\n'
@@ -1654,56 +1688,58 @@ def home():
 
 # ------------------------------------------------------------------ внутренние
 def crumbs_for(p, R):
-    path = p['path']
-    parts = [f'<a href="{R}">Главная</a>']
+    path = ru_path(p['path'])
+    parts = [f'<a href="{href("/", R)}">{T("home")}</a>']
     if path.startswith('/features/') and path != '/features/':
-        parts.append(f'<a href="{href("/features/", R)}">Возможности</a>')
+        parts.append(f'<a href="{href("/features/", R)}">{T("features")}</a>')
     if path.startswith('/integrations/') and path != '/integrations/':
-        parts.append(f'<a href="{href("/integrations/", R)}">Интеграции</a>')
-    short = {'/features/': 'Возможности', '/integrations/': 'Интеграции', '/perehod/': 'Для клиентов Yume Cloud', '/contacts/': 'Контакты', '/kaspi-pay/': 'Kaspi Pay', '/faq/': 'Вопросы и ответы', '/blog/': 'Блог', '/legal/': 'Документы', '/delete-account/': 'Удаление аккаунта'}
-    name = (short.get(path) or next((n for pp, n, _, _ in LIST_FEATURES if pp == path), '')
-            or next((n for pp, n, _, _, _ in NAV_INTS if pp == path), '') or strip_md(p['title']))
+        parts.append(f'<a href="{href("/integrations/", R)}">{T("integrations")}</a>')
+    short = T('crumb_short')
+    feat = next((n for pp, n, _, _ in LIST_FEATURES if pp == path), '')
+    if L == 'kk' and path in NAV_KK: feat = NAV_KK[path][0]
+    name = (short.get(path) or feat or next((n for pp, n, _, _ in nav_ints() if pp == path), '') or strip_md(p['title']))
     parts.append(f'<b>{name}</b>')
     return '<span>/</span>'.join(parts)
 
 def inner(p):
     global PAGE_EB
     R = rel(p['path'])
+    rp = ru_path(p['path'])
     secs = p['sections']
     hero = next((s for s in secs if s['type'] == 'hero'), None)
     PAGE_EB = re.sub(r'<[^>]+>', '', inline(hero['eyebrow'])).strip() if hero and hero['eyebrow'] else ''
     if not PAGE_EB:
-        PAGE_EB = {'/features/': T('features'), '/integrations/': T('integrations')}.get(p['path'], strip_md(p['title']).split(' — ')[0].split(':')[0])
+        PAGE_EB = {'/features/': T('features'), '/integrations/': T('integrations')}.get(rp, strip_md(p['title']).split(' — ')[0].split(':')[0])
     body = ''
     if hero:
-        vis = {'/features/rentals/': rent_scene, '/features/drivers/': driver_scene, '/features/check/': drv_scene, '/features/vehicles/': vehicle_scene, '/features/finance/': finance_scene, '/features/fines/': lambda: fines_scene(R), '/features/documents/': documents_scene, '/features/investors/': investors_scene, '/features/buyout/': buyout_scene, '/features/shifts/': shifts_scene, '/features/analytics/': analytics_scene, '/features/leads/': leads_scene, '/features/settings/': settings_scene, '/kaspi-pay/': kaspi_scene, '/integrations/': hub_scene, '/integrations/egov/': egov_scene, '/integrations/erap/': erap_scene, '/integrations/debtors/': debtors_scene, '/integrations/blacklist/': blacklist_scene, '/integrations/wazzup/': wazzup_scene, '/integrations/wialon/': wialon_scene, '/integrations/ai/': ai_scene, '/perehod/': perehod_scene}.get(p['path'])
-        body += phero(hero, crumbs_for(p, R), R, img=None if vis else FEATURE_IMG.get(p['path']), logo=int_logo(p['path'], R), vis=vis() if vis else '')
+        vis = {'/features/rentals/': rent_scene, '/features/drivers/': driver_scene, '/features/check/': drv_scene, '/features/vehicles/': vehicle_scene, '/features/finance/': finance_scene, '/features/fines/': lambda: fines_scene(R), '/features/documents/': documents_scene, '/features/investors/': investors_scene, '/features/buyout/': buyout_scene, '/features/shifts/': shifts_scene, '/features/analytics/': analytics_scene, '/features/leads/': leads_scene, '/features/settings/': settings_scene, '/kaspi-pay/': kaspi_scene, '/integrations/': hub_scene, '/integrations/egov/': egov_scene, '/integrations/erap/': erap_scene, '/integrations/debtors/': debtors_scene, '/integrations/blacklist/': blacklist_scene, '/integrations/wazzup/': wazzup_scene, '/integrations/wialon/': wialon_scene, '/integrations/ai/': ai_scene, '/perehod/': perehod_scene}.get(rp)
+        body += phero(hero, crumbs_for(p, R), R, img=None if vis else FEATURE_IMG.get(rp), logo=int_logo(rp, R), vis=vis() if vis else '')
         desc = strip_md(' '.join(hero['paras']))[:300]
     else:
         desc = strip_md(p['title'])
     alt = True
     for s in secs:
         if s['type'] == 'hero': continue
-        if s['type'] == 'cards' and p['path'] == '/integrations/':
+        if s['type'] == 'cards' and rp == '/integrations/':
             body += f'<section class="section{" section--card" if alt else ""}"><div class="wrap">{head(s)}{ints(s, R)}</div></section>'
         else:
             body += generic_section(s, R, alt)
         if s['type'] != 'cta': alt = not alt
-    if p['path'] == '/features/' and not hero:
+    if rp == '/features/' and not hero:
         # индекс возможностей: заголовок из первой секции
         first = secs[0]
-        body = phero(dict(title='Всё, чем живёт таксопарк', eyebrow='Возможности', paras=first['paras']), crumbs_for(p, R), R, vis=features_art(R)) + f'<section class="section section--card"><div class="wrap">{cards(first, R, 4)}</div></section>' + ''.join(generic_section(s, R, False) for s in secs[1:])
+        body = phero(dict(title=T('feat_index'), eyebrow=T('features'), paras=first['paras']), crumbs_for(p, R), R, vis=features_art(R)) + f'<section class="section section--card feat-index"><div class="wrap">{cards(first, R, 4)}</div></section>' + ''.join(generic_section(s, R, False) for s in secs[1:])
         desc = strip_md(' '.join(first['paras']))[:300]
     other = ''
-    if p['path'].startswith('/integrations/') and p['path'] != '/integrations/':
+    if rp.startswith('/integrations/') and rp != '/integrations/':
         links = ''.join(f'<a class="chip chip--logo" href="{href(pp, R)}"><img src="{R}{logo}" alt="" width="20" height="20" loading="lazy">{n}</a>'
-                        for pp, n, _, _, logo in NAV_INTS if pp != p['path'])
-        other = f'<section class="section section--card"><div class="wrap"><div class="sec-head"><div data-reveal><p class="eyebrow">Ещё</p><h2>Другие интеграции</h2></div></div><div class="chips" data-reveal>{links}</div></div></section>'
+                        for pp, n, _, logo in nav_ints() if pp != rp)
+        other = f'<section class="section section--card others"><div class="wrap"><div class="sec-head"><div data-reveal><p class="eyebrow">{T("more_eb")}</p><h2>{T("other_ints")}</h2></div></div><div class="chips" data-reveal>{links}</div></div></section>'
         body = body.replace('<section class="section section--yellow cta"', other + '<section class="section section--yellow cta"', 1)
     other = ''
-    if p['path'].startswith('/features/') and p['path'] != '/features/':
-        links = ''.join(f'<a class="chip" href="{href(pp, R)}"><svg><use href="#{i}"/></svg>{n}</a>' for pp, n, _, i in LIST_FEATURES if pp != p['path'])
-        other = f'<section class="section section--card"><div class="wrap"><div class="sec-head"><div data-reveal><p class="eyebrow">Ещё</p><h2>Другие возможности Yume Fleet</h2></div></div><div class="chips" data-reveal>{links}</div></div></section>'
+    if rp.startswith('/features/') and rp != '/features/':
+        links = ''.join(f'<a class="chip" href="{href(pp, R)}"><svg><use href="#{i}"/></svg>{NAV_KK[pp][0] if L == "kk" and pp in NAV_KK else n}</a>' for pp, n, _, i in LIST_FEATURES if pp != rp)
+        other = f'<section class="section section--card others"><div class="wrap"><div class="sec-head"><div data-reveal><p class="eyebrow">{T("more_eb")}</p><h2>{T("other_feats")}</h2></div></div><div class="chips" data-reveal>{links}</div></div></section>'
         body = body.replace('<section class="section section--yellow cta"', other + '<section class="section section--yellow cta"', 1)
     write(p['path'] + 'index.html', page(p, body, R, desc))
     PAGE_EB = ''
@@ -1748,10 +1784,24 @@ FAQ_GROUPS = [
 ]
 FAQ_ITEMS = [qa for _, qs in FAQ_GROUPS for qa in qs]
 
+def load_faq_kk():
+    """content/FAQ.kk.md: «## Группа», затем пары «Q: …» / «A: …»."""
+    fn = os.path.join(ROOT, 'content', 'FAQ.kk.md')
+    if not os.path.exists(fn): return []
+    groups = []; q = None
+    for line in open(fn, encoding='utf-8'):
+        line = line.rstrip()
+        if line.startswith('## '): groups.append((line[3:].strip(), [])); continue
+        if line.startswith('Q: '): q = line[3:].strip(); continue
+        if line.startswith('A: ') and q and groups: groups[-1][1].append((q, line[3:].strip())); q = None
+    return groups
+
 def faq_page():
     """Полный список вопросов. Не из CONTENT.md: главная берёт короткий набор."""
-    path = '/faq/'
+    path = '/kk/faq/' if L == 'kk' else '/faq/'
     R = rel(path)
+    FAQ_GROUPS = load_faq_kk() if L == 'kk' else globals()['FAQ_GROUPS']
+    if not FAQ_GROUPS: return
     items = ''.join(
         f'<div class="faq__group" id="faq-{k}"><h2>{html.escape(g)}</h2><div class="faq__list">' +
         ''.join(f'<div class="q"><button>{html.escape(q)}<i></i></button><div class="q__a"><div><p>{html.escape(a)}</p></div></div></div>' for q, a in qs) + '</div></div>'
@@ -1762,14 +1812,14 @@ def faq_page():
   <div class="wrap">
     <nav class="crumbs" aria-label="{T("crumbs")}"><a href="{R}">{T("home")}</a><span>/</span><b>{T("faq")}</b></nav>
     <p class="eyebrow">FAQ</p>
-    <h1>Вопросы, которые задают до демо</h1>
-    <p class="lead">Цена, запуск, оплата водителей, штрафы, выкуп и данные. Остальное покажем за 20 минут на вашем парке.</p>
+    <h1>{T("faq_h1")}</h1>
+    <p class="lead">{T("faq_page_lead")}</p>
     <div class="chips" style="margin-top:28px">{toc}</div>
   </div>
 </section>
 <section class="section" style="padding-top:0"><div class="wrap" style="max-width:860px">{items}</div></section>'''
-    p = dict(path=path, title='Вопросы и ответы')
-    write(path + 'index.html', page(p, body, R, 'Сколько стоит Yume Fleet, как перейти и что будет с долгами и штрафами.'))
+    p = dict(path=path, title=T("faq"))
+    write(path + 'index.html', page(p, body, R, T("faq_desc")))
 
 def contacts():
     p = (BY_PATH_KK if L == 'kk' else BY_PATH)['/kk/contacts/' if L == 'kk' else '/contacts/']; R = rel(p['path']); hero = p['sections'][0]
@@ -1805,7 +1855,7 @@ def spasibo():
     R = rel(path)
     p = dict(path=path, title=T("ty_title"))
     cards_html = ''.join(
-        f'<a class="chip" href="{R}{href_}"><svg><use href="#i-arrow"/></svg>{name}</a>'
+        f'<a class="chip" href="{href("/" + href_, R)}"><svg><use href="#i-arrow"/></svg>{name}</a>'
         for name, href_ in T("ty_items"))
     body = f'''<section class="phero" style="min-height:62vh;display:grid;align-items:center">
   <div class="hero__checks"></div>
@@ -1882,7 +1932,7 @@ def legal_pages():
 MONTHS = ['января', 'февраля', 'марта', 'апреля', 'мая', 'июня', 'июля', 'августа', 'сентября', 'октября', 'ноября', 'декабря']
 def ru_date(iso):
     d = datetime.date.fromisoformat(iso)
-    return f'{d.day} {MONTHS[d.month - 1]} {d.year}'
+    return f'{d.day} {T("months")[d.month - 1]} {d.year}'
 
 def md_inline(t, R):
     t = html.escape(t, quote=False)
@@ -1912,12 +1962,12 @@ def md_to_html(md, R):
     flush()
     return '\n'.join(out)
 
-_POSTS = None
+_POSTS = {}
 def blog_posts():
-    global _POSTS
-    if _POSTS is not None: return _POSTS
+    if L in _POSTS: return _POSTS[L]
     posts = []
-    d = os.path.join(ROOT, 'content', 'blog')
+    d = os.path.join(ROOT, 'content', 'blog' + ('.kk' if L == 'kk' else ''))
+    if not os.path.isdir(d): _POSTS[L] = []; return []
     for fn in sorted(os.listdir(d)):
         if not fn.endswith('.md'): continue
         raw = open(os.path.join(d, fn), encoding='utf-8').read()
@@ -1927,7 +1977,7 @@ def blog_posts():
             k, _, v = lines[i].partition(':'); meta[k.strip()] = v.strip(); i += 1
         posts.append(dict(slug=fn[:-3], title=meta['Заголовок'], date=meta['Дата'], cat=meta.get('Рубрика', ''), lead=meta['Лид'], body='\n'.join(lines[i:]).strip()))
     posts.sort(key=lambda x: x['date'], reverse=True)
-    _POSTS = posts
+    _POSTS[L] = posts
     return posts
 
 def post_cover(x, R, sizes='(max-width: 760px) 86vw, 380px', eager=False):
@@ -1939,40 +1989,42 @@ def post_cover(x, R, sizes='(max-width: 760px) 86vw, 380px', eager=False):
 def post_card(x, R):
     return (f'<a class="post" href="{href("/blog/" + x["slug"] + "/", R)}">{post_cover(x, R)}<div class="post__body"><div class="post__meta"><span class="post__cat">{html.escape(x["cat"])}</span>'
             f'<time datetime="{x["date"]}">{ru_date(x["date"])}</time></div><h3>{html.escape(x["title"])}</h3><p>{html.escape(x["lead"])}</p>'
-            f'<span class="link">Читать <svg><use href="#i-arrow"/></svg></span></div></a>')
+            f'<span class="link">{T("read")} <svg><use href="#i-arrow"/></svg></span></div></a>')
 
 def news_section(R):
-    if L != 'ru': return ''
     cards = ''.join(post_card(x, R) for x in blog_posts()[:3])
+    if not cards: return ''
     return f"""<section class="section" id="news"><div class="wrap">
-  <div class="sec-head sec-head--row" data-reveal><div><p class="eyebrow">Блог</p><h2>Новости и статьи</h2></div><a class="btn btn--ghost" href="{href('/blog/', R)}">Все статьи <svg><use href="#i-arrow"/></svg></a></div>
+  <div class="sec-head sec-head--row" data-reveal><div><p class="eyebrow">{T("blog")}</p><h2>{T("blog_h1")}</h2></div><a class="btn btn--ghost" href="{href('/blog/', R)}">{T("blog_all")} <svg><use href="#i-arrow"/></svg></a></div>
   <div class="posts scroll-m" data-stagger>{cards}</div>
 </div></section>
 """
 
 def blog_pages():
     posts = blog_posts()
-    R = rel('/blog/')
+    if not posts: return
+    base = '/kk/blog/' if L == 'kk' else '/blog/'
+    R = rel(base)
     cards = ''.join(post_card(x, R) for x in posts)
     body = f"""<section class="phero">
   <div class="hero__checks"></div>
   <div class="wrap">
-    <nav class="crumbs" aria-label="{T("crumbs")}"><a href="{R}">{T("home")}</a><span>/</span><b>Блог</b></nav>
-    <p class="eyebrow">Блог</p>
-    <h1>Новости и статьи</h1>
-    <p class="lead">Что нового в Yume Fleet и как парки считают долги, выкуп и штрафы. Пишем коротко и по делу.</p>
+    <nav class="crumbs" aria-label="{T("crumbs")}"><a href="{R}">{T("home")}</a><span>/</span><b>{T("blog")}</b></nav>
+    <p class="eyebrow">{T("blog")}</p>
+    <h1>{T("blog_h1")}</h1>
+    <p class="lead">{T("blog_lead")}</p>
   </div>
 </section>
 <section class="section" style="padding-top:0"><div class="wrap"><div class="posts" data-stagger>{cards}</div></div></section>
-{cta(dict(title='Записаться на демо', paras=['Покажем систему за 20 минут на примере парка вашего размера.']), R)}"""
-    write('/blog/index.html', page(dict(path='/blog/', title='Блог'), body, R, 'Новости Yume Fleet и статьи о том, как таксопарки считают долги, выкуп, штрафы и оплату через Kaspi.'))
+{cta(dict(title=T('cta_default'), paras=[T('cta_lead')]), R)}"""
+    write(base + 'index.html', page(dict(path=base, title=T("blog")), body, R, T("blog_desc")))
     for x in posts:
-        path = f'/blog/{x["slug"]}/'; R = rel(path)
+        path = f'{base}{x["slug"]}/'; R = rel(path)
         others = ''.join(f'<a class="chip" href="{href("/blog/" + y["slug"] + "/", R)}">{html.escape(y["title"])}</a>' for y in posts if y is not x)
         body = f"""<section class="phero">
   <div class="hero__checks"></div>
   <div class="wrap" style="max-width:860px">
-    <nav class="crumbs" aria-label="{T("crumbs")}"><a href="{R}">{T("home")}</a><span>/</span><a href="{href('/blog/', R)}">Блог</a><span>/</span><b>{html.escape(x['cat'])}</b></nav>
+    <nav class="crumbs" aria-label="{T("crumbs")}"><a href="{R}">{T("home")}</a><span>/</span><a href="{href('/blog/', R)}">{T("blog")}</a><span>/</span><b>{html.escape(x['cat'])}</b></nav>
     <p class="eyebrow">{html.escape(x['cat'])} · <time datetime="{x['date']}">{ru_date(x['date'])}</time></p>
     <h1 style="font-size:clamp(30px,3.6vw,44px)">{html.escape(x['title'])}</h1>
     <p class="lead">{html.escape(x['lead'])}</p>
@@ -1980,8 +2032,8 @@ def blog_pages():
   </div>
 </section>
 <section class="section" style="padding-top:0"><div class="wrap doc"><article>{md_to_html(x['body'], R)}</article>
-<div class="post__more"><p class="eyebrow">Ещё в блоге</p><div class="chips">{others}</div></div></div></section>
-{cta(dict(title='Записаться на демо', paras=['Покажем систему за 20 минут на примере парка вашего размера.']), R)}"""
+<div class="post__more"><p class="eyebrow">{T("blog_more")}</p><div class="chips">{others}</div></div></div></section>
+{cta(dict(title=T('cta_default'), paras=[T('cta_lead')]), R)}"""
         write(path + 'index.html', page(dict(path=path, title=x['title']), body, R, x['lead']))
 
 def write(path, content):
@@ -1992,7 +2044,7 @@ def write(path, content):
 
 def service():
     today = datetime.date.today().isoformat()
-    paths = [p['path'] for p in PAGES] + [p['path'] for p in PAGES_KK] + ['/faq/', '/legal/', '/delete-account/'] + ['/legal/%s/' % k for k, *_ in LEGAL] + ['/blog/'] + ['/blog/%s/' % x['slug'] for x in blog_posts()]
+    paths = [p['path'] for p in PAGES] + [p['path'] for p in PAGES_KK] + ['/faq/', '/legal/', '/delete-account/'] + (['/kk/faq/'] if os.path.exists(os.path.join(ROOT, 'content', 'FAQ.kk.md')) else []) + (['/kk/blog/'] + ['/kk/blog/%s/' % f[:-3] for f in sorted(os.listdir(os.path.join(ROOT, 'content', 'blog.kk'))) if f.endswith('.md')] if os.path.isdir(os.path.join(ROOT, 'content', 'blog.kk')) else []) + ['/legal/%s/' % k for k, *_ in LEGAL] + ['/blog/'] + ['/blog/%s/' % x['slug'] for x in blog_posts()]
     urls = ''.join(f'  <url><loc>{SITE}{u}</loc><lastmod>{today}</lastmod><priority>{"1.0" if u == "/" else "0.8"}</priority></url>\n' for u in paths)
     write('/sitemap.xml', f'<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n{urls}</urlset>\n')
     write('/robots.txt', f'User-agent: *\nAllow: /\n\nSitemap: {SITE}/sitemap.xml\n')
@@ -2015,5 +2067,12 @@ spasibo()
 service()
 L = 'kk'
 home()
+for p in PAGES_KK:
+    if p['path'] in ('/kk/', '/kk/contacts/'): continue
+    KEEP_TAGS = p['path'] == '/kk/perehod/'
+    inner(p)
+KEEP_TAGS = False
 contacts()
+faq_page()
+blog_pages()
 spasibo()
