@@ -34,7 +34,7 @@ UI = {
    more_eb='Ещё', other_ints='Другие интеграции', other_feats='Другие возможности Yume Fleet', feat_index='Всё, чем живёт таксопарк',
    crumb_short={'/features/': 'Возможности', '/integrations/': 'Интеграции', '/perehod/': 'Для клиентов Yume Cloud', '/contacts/': 'Контакты', '/kaspi-pay/': 'Kaspi Pay', '/faq/': 'Вопросы и ответы', '/blog/': 'Блог'},
    faq_h1='Вопросы, которые задают до демо', faq_page_lead='Цена, запуск, оплата водителей, штрафы, выкуп и данные. Остальное покажем за 20 минут на вашем парке.', faq_desc='Сколько стоит Yume Fleet, как перейти и что будет с долгами и штрафами.',
-   blog_h1='Новости и статьи', blog_lead='Что происходит на рынке такси Казахстана и как парки считают долги, выкуп и штрафы. Пишем коротко и по делу.', blog_desc='Новости рынка такси Казахстана и статьи о том, как таксопарки считают долги, выкуп, штрафы и оплату через Kaspi.', blog_more='Ещё в блоге', blog_all='Все статьи', read='Читать', blog_q='Поиск по статьям', blog_q_ph='Например, штрафы или налоги', blog_none='Ничего не нашлось. Попробуйте другое слово.',
+   blog_h1='Новости и статьи', blog_lead='Что происходит на рынке такси Казахстана и как парки считают долги, выкуп и штрафы. Пишем коротко и по делу.', blog_desc='Новости рынка такси Казахстана и статьи о том, как таксопарки считают долги, выкуп, штрафы и оплату через Kaspi.', blog_more='Ещё в блоге', blog_all='Все статьи', read='Читать', blog_q='Поиск по статьям', blog_q_ph='Например, штрафы или налоги', blog_none='Ничего не нашлось. Попробуйте другое слово.', blog_every='Все', blog_cats='Рубрики', blog_mat=('материал', 'материала', 'материалов'), months_nom=['Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь', 'Июль', 'Август', 'Сентябрь', 'Октябрь', 'Ноябрь', 'Декабрь'],
    months=['января', 'февраля', 'марта', 'апреля', 'мая', 'июня', 'июля', 'августа', 'сентября', 'октября', 'ноября', 'декабря'],
    c_wa='WhatsApp, самый быстрый способ', c_wa_sub='Демо, вопросы по продукту и переходу', c_phone='Телефон', c_phone_sub='Пн–Пт 9:00–19:00, Сб 10:00–16:00 по Алматы', c_inst='Instagram', c_inst_sub='Новости продукта и парков', c_yt='YouTube', c_yt_sub='Видео о работе системы', c_sales='Продажи и партнёрство', c_sales_sub='Коммерческие предложения, интеграции, договоры', c_sup='Поддержка парков', c_sup_sub='Вопросы по работе системы', c_office='Офис', c_city='Алматы, Казахстан', c_office_sub='ТОО «Yume.Cloud». Встречи по договорённости, демо по видеосвязи.', c_login='Вход для парков', c_login_sub='Кабинет парка', c_form_h='Записаться на демо', c_form_p='Покажем систему за 20 минут на примере парка вашего размера.', crumbs='Хлебные крошки',
    t404='Страница не найдена', h404='Такой страницы нет', p404='Возможно, ссылка устарела. Вот куда можно пойти дальше.', to_home='На главную',
@@ -56,7 +56,7 @@ UI = {
    more_eb='Тағы', other_ints='Басқа интеграциялар', other_feats='Yume Fleet-тің басқа мүмкіндіктері', feat_index='Таксопарк өмір сүретіннің бәрі',
    crumb_short={'/features/': 'Мүмкіндіктер', '/integrations/': 'Интеграциялар', '/perehod/': 'Yume Cloud клиенттеріне', '/contacts/': 'Байланыс', '/kaspi-pay/': 'Kaspi Pay', '/faq/': 'Сұрақ-жауап', '/blog/': 'Блог'},
    faq_h1='Демоға дейін қойылатын сұрақтар', faq_page_lead='Баға, іске қосу, жүргізушілердің төлемі, айыппұлдар, сатып алу және деректер. Қалғанын 20 минутта сіздің паркте көрсетеміз.', faq_desc='Yume Fleet қанша тұрады, қалай көшуге болады және қарыздар мен айыппұлдар не болады.',
-   blog_h1='Жаңалықтар мен мақалалар', blog_lead='Қазақстандағы такси нарығында не болып жатыр және парктер қарызды, сатып алуды және айыппұлдарды қалай есептейді. Қысқа әрі нақты жазамыз.', blog_desc='Қазақстандағы такси нарығының жаңалықтары және таксопарктер қарызды, сатып алуды, айыппұлдарды және Kaspi арқылы төлемді қалай есептейтіні туралы мақалалар.', blog_more='Блогта тағы', blog_all='Барлық мақалалар', read='Оқу', blog_q='Мақалалардан іздеу', blog_q_ph='Мысалы, айыппұл немесе салық', blog_none='Ештеңе табылмады. Басқа сөзбен іздеп көріңіз.',
+   blog_h1='Жаңалықтар мен мақалалар', blog_lead='Қазақстандағы такси нарығында не болып жатыр және парктер қарызды, сатып алуды және айыппұлдарды қалай есептейді. Қысқа әрі нақты жазамыз.', blog_desc='Қазақстандағы такси нарығының жаңалықтары және таксопарктер қарызды, сатып алуды, айыппұлдарды және Kaspi арқылы төлемді қалай есептейтіні туралы мақалалар.', blog_more='Блогта тағы', blog_all='Барлық мақалалар', read='Оқу', blog_q='Мақалалардан іздеу', blog_q_ph='Мысалы, айыппұл немесе салық', blog_none='Ештеңе табылмады. Басқа сөзбен іздеп көріңіз.', blog_every='Барлығы', blog_cats='Айдарлар', blog_mat=('материал', 'материал', 'материал'), months_nom=['Қаңтар', 'Ақпан', 'Наурыз', 'Сәуір', 'Мамыр', 'Маусым', 'Шілде', 'Тамыз', 'Қыркүйек', 'Қазан', 'Қараша', 'Желтоқсан'],
    months=['қаңтар', 'ақпан', 'наурыз', 'сәуір', 'мамыр', 'маусым', 'шілде', 'тамыз', 'қыркүйек', 'қазан', 'қараша', 'желтоқсан'],
    c_wa='WhatsApp, ең жылдам тәсіл', c_wa_sub='Демо, өнім және көшу бойынша сұрақтар', c_phone='Телефон', c_phone_sub='Дс–Жм 9:00–19:00, Сб 10:00–16:00, Алматы уақыты', c_inst='Instagram', c_inst_sub='Өнім және парктер жаңалықтары', c_yt='YouTube', c_yt_sub='Жүйенің жұмысы туралы бейнелер', c_sales='Сату және серіктестік', c_sales_sub='Коммерциялық ұсыныстар, интеграциялар, шарттар', c_sup='Парктерді қолдау', c_sup_sub='Жүйенің жұмысы бойынша сұрақтар', c_office='Кеңсе', c_city='Алматы, Қазақстан', c_office_sub='«Yume.Cloud» ЖШС. Кездесулер келісім бойынша, демо бейнебайланыс арқылы.', c_login='Парктер үшін кіру', c_login_sub='Парк кабинеті', c_form_h='Демоға жазылу', c_form_p='Жүйені 20 минутта сіздің парк көлеміндегі мысалда көрсетеміз.', crumbs='Нан үгінділері',
    t404='Бет табылмады', h404='Мұндай бет жоқ', p404='Сілтеме ескірген болуы мүмкін. Әрі қарай қайда баруға болады.', to_home='Басты бетке',
@@ -1630,9 +1630,143 @@ def pcheck_scene(R=''):
   <footer class="pcheck__foot" data-pcheck-foot>{C["foot"]}</footer>
 </div>'''
 
+# ---------- схемы к статьям о рынке: HTML, оживают, когда figure.postvis получает is-in ----------
+def nv(kind, head, inner, note=''):
+    n = f'<p class="nv__note">{note}</p>' if note else ''
+    h = f'<div class="nv nv--{kind}"><p class="nv__head">{head}</p>{inner}{n}</div>'
+    # числа и ₸ не разрываются переносом строки
+    h = re.sub(r'(\d) (?=\d{3}\b)', '\\1\u00a0', h)
+    return re.sub(r'(\d) (₸|%|МРП|АЕК|млн|млрд)', '\\1\u00a0\\2', h)
+
+def nv_arrow(d='r', label='', i=0):
+    lb = f'<span>{label}</span>' if label else ''
+    return f'<div class="nv-arr nv-arr--{d} nv-a" style="--i:{i}" aria-hidden="true"><i></i>{lb}</div>'
+
+def nv_box(t, sub='', mod='', i=0, tag='div'):
+    s = f'<small>{sub}</small>' if sub else ''
+    return f'<{tag} class="nv-box nv-a{" nv-box--" + mod if mod else ""}" style="--i:{i}"><b>{t}</b>{s}</{tag}>'
+
+def nv_outage(R=''):
+    C = {'ru': dict(head='Сбой Яндекса 11 октября: заказы ушли к inDrive, а вопросы остались', note='Хронология по сообщениям СМИ, интервалы между точками условные',
+                    steps=[('8–11 октября', 'По сообщениям СМИ, атаки на дата-центры Яндекса в России', ''),
+                           ('11 октября', 'Яндекс Go, Лавка и «Яндекс Про» недоступны в Казахстане', 'key'),
+                           ('11 октября', 'Заказы уходят в inDrive: спрос почти втрое выше, цены местами тоже', ''),
+                           ('13 октября', 'АЗРК направляет inDrive предостережение о ценах', ''),
+                           ('После сбоя', 'Вопрос про данные: Минцифры отвечает, депутаты просят проверку', ''),
+                           ('Дальше', 'Серверы, устойчивость платформ и цены в час пик: решений пока нет', 'next')]),
+         'kk': dict(head='Яндекстің 11 қазандағы іркілісі: тапсырыстар inDrive-қа кетті, сұрақтар қалды', note='Хронология БАҚ хабарламалары бойынша, нүктелер арасындағы аралық шартты',
+                    steps=[('8–11 қазан', 'БАҚ хабарлауынша, Ресейдегі Яндекс дата-орталықтарына шабуыл', ''),
+                           ('11 қазан', 'Яндекс Go, Лавка және «Яндекс Про» Қазақстанда қолжетімсіз', 'key'),
+                           ('11 қазан', 'Тапсырыстар inDrive-қа ауысады: сұраныс үш есеге жуық өсті, баға да кей жерде', ''),
+                           ('13 қазан', 'БДҚА inDrive-қа баға туралы ескерту жібереді', ''),
+                           ('Іркілістен кейін', 'Деректер мәселесі: министрлік жауап береді, депутаттар тексеру сұрайды', ''),
+                           ('Әрі қарай', 'Серверлер, платформалардың тұрақтылығы және қарбалас уақыттағы баға: шешім әлі жоқ', 'next')])}[L]
+    li = ''.join(f'<li class="nv-a{" is-" + m if m else ""}" style="--i:{k}"><time>{d}</time><i aria-hidden="true"></i><span>{t}</span></li>' for k, (d, t, m) in enumerate(C['steps']))
+    return nv('tl', C['head'], f'<ol class="nv-tl">{li}</ol>', C['note'])
+
+def nv_admission(R=''):
+    C = {'ru': dict(head='Что поручил премьер: проверка водителя до первого заказа', a='Водитель подаёт заявку в приложении', b='Платформа сверяет с реестром нарушений',
+                    q='Лишение прав или много нарушений?', yes='да', no='нет', deny='Отказ в допуске', ok='Допуск к заказам', watch='Платформа следит за временем на линии',
+                    side='Порог «много нарушений» в поручении не назван', legend='Пунктир: поручено 22 сентября, срок не назван'),
+         'kk': dict(head='Премьер не тапсырды: алғашқы тапсырысқа дейін жүргізушіні тексеру', a='Жүргізуші қосымшада өтінім береді', b='Платформа бұзушылықтар тізілімімен салыстырады',
+                    q='Құқығынан айырылған ба, бұзушылығы көп пе?', yes='иә', no='жоқ', deny='Жұмысқа рұқсат жоқ', ok='Тапсырыстарға рұқсат', watch='Платформа желідегі уақытты бақылайды',
+                    side='Тапсырмада «көп бұзушылық» шегі аталмаған', legend='Пунктир: 22 қыркүйекте тапсырылды, мерзімі аталмаған')}[L]
+    top = nv_box(C['a'], i=0) + nv_arrow('r', i=1) + nv_box(C['b'], mod='plan', i=2) + nv_arrow('r', i=3) + nv_box(C['q'], mod='q', i=4)
+    fork = (f'<p class="nv-fl__side nv-a" style="--i:8">{C["side"]}</p>'
+            f'<div class="nv-fl__br">{nv_arrow("d", C["yes"], 5)}{nv_box(C["deny"], mod="key", i=6)}</div>'
+            f'<div class="nv-fl__br">{nv_arrow("d", C["no"], 5)}{nv_box(C["ok"], i=6)}{nv_arrow("d", "", 7)}{nv_box(C["watch"], mod="plan", i=8)}</div>')
+    legend = f'<span class="nv-legend"><i></i>{C["legend"]}</span>'
+    return nv('fl', C['head'], f'<div class="nv-fl__top">{top}</div><div class="nv-fl__fork">{fork}</div>', legend)
+
+def nv_taxpaths(R=''):
+    C = {'ru': dict(head='Три пути, три разных налога: что платит водитель, ИП и парк в 2026 году', bar='МРП 2026 = <b>4 325 ₸</b>: от него считаются лимиты, пороги и штрафы',
+                    cards=[('Водитель на платформе', '4%', ['Без ИП и отчётов', 'Платформа удерживает 4% с поездки', 'Доход до 1,3 млн ₸ в месяц', 'Без наёмных работников'], '400 000 ₸ дохода: налог 16 000 ₸', 1),
+                           ('ИП на общем режиме', '10 / 15%', ['Подоходный 10% до 230 000 МРП в год', '15% выше этого порога', 'НДС 16% при обороте выше 10 000 МРП'], '10 000 МРП это около 43 млн ₸ в год', 0),
+                           ('Парк на упрощёнке', '2,6 млрд ₸', ['Лимит оборота 600 000 МРП', 'В запретном списке есть лизинг авто'], 'Аренда легковых авто: вопрос к бухгалтеру', 0)]),
+         'kk': dict(head='Үш жол, үш түрлі салық: 2026 жылы жүргізуші, ЖК және парк не төлейді', bar='2026 жылғы АЕК = <b>4 325 ₸</b>: лимиттер, шектер және айыппұлдар осыдан есептеледі',
+                    cards=[('Платформадағы жүргізуші', '4%', ['ЖК мен есептерсіз', 'Платформа сапардан 4% ұстайды', 'Табыс айына 1,3 млн ₸-ге дейін', 'Жалдамалы қызметкерсіз'], '400 000 ₸ табыс: салық 16 000 ₸', 1),
+                           ('Жалпы режимдегі ЖК', '10 / 15%', ['Жылына 230 000 АЕК-ке дейін 10% табыс салығы', 'Бұл шектен жоғары 15%', 'Айналым 10 000 АЕК-тен асса, ҚҚС 16%'], '10 000 АЕК шамамен жылына 43 млн ₸', 0),
+                           ('Оңайлатылған режимдегі парк', '2,6 млрд ₸', ['Айналым лимиті 600 000 АЕК', 'Тыйым тізімінде көлік лизингі бар'], 'Жеңіл көлікті жалға беру: бухгалтерге сұрақ', 0)])}[L]
+    cards = ''.join(f'<div class="nv-card nv-a{" nv-card--key" if key else ""}" style="--i:{k}"><p class="nv-card__h">{h}</p><p class="nv-card__big">{big}</p><ul>{"".join(f"<li>{x}</li>" for x in lst)}</ul><p class="nv-card__foot">{foot}</p></div>'
+                    for k, (h, big, lst, foot, key) in enumerate(C['cards']))
+    return nv('tp', C['head'], f'<div class="nv-tp">{cards}</div><p class="nv-tp__bar nv-a" style="--i:3">{C["bar"]}</p>')
+
+def nv_taxtree(R=''):
+    C = {'ru': dict(head='Какой налог платит таксист: два вопроса решают всё', q1='Вы работаете один, без наёмных водителей?', q2='Доход через платформы до 300 МРП в месяц?', q2s='до 1,3 млн ₸',
+                    yes='да', no='нет', a='4% с каждой поездки', as_='Платформа удерживает сама, отчётов нет, ИП открывать не нужно', b='Лимит превышен', bs='Режим нужно уточнить у бухгалтера',
+                    c='ИП или ТОО: два режима', cs='Общий: 10% до 230 000 МРП в год, 15% выше. НДС 16%, если оборот выше 10 000 МРП, около 43 млн ₸.<br>Упрощёнка: лимит около 2,6 млрд ₸, «лизинг автомобилей» в запретном списке.',
+                    note='МРП в 2026 году равен 4 325 тенге'),
+         'kk': dict(head='Таксист қандай салық төлейді: бәрін екі сұрақ шешеді', q1='Жалғыз, жалдамалы жүргізушісіз жұмыс істейсіз бе?', q2='Платформалар арқылы табыс айына 300 АЕК-ке дейін бе?', q2s='1,3 млн ₸-ге дейін',
+                    yes='иә', no='жоқ', a='Әр сапардан 4%', as_='Платформа өзі ұстайды, есеп жоқ, ЖК ашу қажет емес', b='Лимиттен асты', bs='Режимді бухгалтерден нақтылаңыз',
+                    c='ЖК немесе ЖШС: екі режим', cs='Жалпы: жылына 230 000 АЕК-ке дейін 10%, одан жоғары 15%. Айналым 10 000 АЕК-тен асса, ҚҚС 16%, шамамен 43 млн ₸.<br>Оңайлатылған: лимит шамамен 2,6 млрд ₸, «автокөлік лизингі» тыйым тізімінде.',
+                    note='2026 жылы АЕК 4 325 теңге')}[L]
+    yes = (f'<div class="nv-tt__br">{nv_arrow("d", C["yes"], 1)}{nv_box(C["q2"], C["q2s"], "q", 2)}'
+           f'<div class="nv-tt__out"><div class="nv-tt__br">{nv_arrow("d", C["yes"], 3)}{nv_box(C["a"], C["as_"], "key", 4)}</div>'
+           f'<div class="nv-tt__br">{nv_arrow("d", C["no"], 3)}{nv_box(C["b"], C["bs"], "", 4)}</div></div></div>')
+    no = f'<div class="nv-tt__br">{nv_arrow("d", C["no"], 1)}{nv_box(C["c"], C["cs"], "wide", 2)}</div>'
+    return nv('tt', C['head'], f'{nv_box(C["q1"], "", "q nv-tt__root", 0)}<div class="nv-tt">{yes}{no}</div>', C['note'])
+
+def nv_carrier(R=''):
+    C = {'ru': dict(head='Перевозчик это тот, кто подал уведомление: парк, ИП или водитель', akim='Акимат', akims='Реестр перевозчиков и их автомобилей', up='уведомление и данные авто',
+                    park='ИП или ТОО (таксопарк)', parks='Подал уведомление как перевозчик, может сдавать авто в аренду', rent='аренда авто', rents='ст. 26-1',
+                    drv='Физлицо на платформе', drvs='Работает через приложение, подаёт своё уведомление', orders='заказы, ст. 26-2',
+                    app='Приложение (диспетчерская служба)', apps='Передаёт заказы перевозчикам или напрямую водителям', note='Жёлтым выделены те, кого закон называет перевозчиком такси'),
+         'kk': dict(head='Тасымалдаушы — хабарлама берген адам: парк, ЖК немесе жүргізуші', akim='Әкімдік', akims='Тасымалдаушылар мен олардың көліктерінің тізілімі', up='хабарлама және көлік деректері',
+                    park='ЖК немесе ЖШС (таксопарк)', parks='Тасымалдаушы ретінде хабарлама берді, көлікті жалға бере алады', rent='көлікті жалға беру', rents='26-1-бап',
+                    drv='Платформадағы жеке тұлға', drvs='Қосымша арқылы жұмыс істейді, өз хабарламасын береді', orders='тапсырыстар, 26-2-бап',
+                    app='Қосымша (диспетчерлік қызмет)', apps='Тапсырыстарды тасымалдаушыларға немесе тікелей жүргізушілерге береді', note='Сарымен заң такси тасымалдаушысы деп атайтындар белгіленген')}[L]
+    C['head'] = C['head'].replace(' — ', ': ')
+    inner = (f'{nv_box(C["akim"], C["akims"], "", 0)}'
+             f'<div class="nv-cr__ups">{nv_arrow("u", "", 3)}<span class="nv-a" style="--i:3">{C["up"]}</span>{nv_arrow("u", "", 3)}</div>'
+             f'<div class="nv-cr__mid">{nv_box(C["park"], C["parks"], "key", 1)}{nv_arrow("r", C["rent"] + "<br>" + C["rents"], 2)}{nv_box(C["drv"], C["drvs"], "key", 1)}</div>'
+             f'<div class="nv-cr__ups">{nv_arrow("u", "", 4)}<span class="nv-a" style="--i:4">{C["orders"]}</span>{nv_arrow("u", "", 4)}</div>'
+             f'{nv_box(C["app"], C["apps"], "", 2)}')
+    return nv('cr', C['head'], inner, C['note'])
+
+def nv_fine(R=''):
+    C = {'ru': dict(head='Штраф в 10 МРП: сколько это в тенге', y25='2025', y26='2026', mrp='МРП', d='+3 930 ₸ · +10%', mods_h='Что ещё меняет сумму',
+                    mods=[('Скидка 50% при быстрой оплате', '21 625 ₸', 'действует'), ('Скидку для злостных нарушителей хотят отменить', '43 250 ₸', 'поддержано'), ('Повтор в течение года', '× кратно', 'штраф растёт')]),
+         'kk': dict(head='10 АЕК айыппұл: теңгемен қанша', y25='2025', y26='2026', mrp='АЕК', d='+3 930 ₸ · +10%', mods_h='Соманы тағы не өзгертеді',
+                    mods=[('Жылдам төлегенде 50% жеңілдік', '21 625 ₸', 'қолданыста'), ('Жүйелі бұзушыларға жеңілдікті алып тастау', '43 250 ₸', 'қолдау тапты'), ('Жыл ішінде қайталау', '× еселеп', 'айыппұл өседі')])}[L]
+    rows = ''
+    for k, (y, m, tot, w) in enumerate([(C['y25'], '3 932', 39320, 90.9), (C['y26'], '4 325', 43250, 100)]):
+        rows += (f'<div class="nv-fn__row nv-a{" is-now" if k else ""}" style="--i:{k}"><span class="nv-fn__y">{y}</span>'
+                 f'<div class="nv-fn__track"><div class="nv-fn__bar" style="--w:{w}%"><span>10 × {m} ₸</span></div></div>'
+                 f'<b class="nv-fn__sum" data-count="{tot}" data-suffix=" ₸">{tot:,} ₸</b></div>').replace(',', ' ')
+    mods = ''.join(f'<div class="nv-fn__mod nv-a" style="--i:{k + 3}"><small>{st}</small><b>{v}</b><span>{t}</span></div>' for k, (t, v, st) in enumerate(C['mods']))
+    return nv('fn', C['head'], f'<div class="nv-fn">{rows}<p class="nv-fn__d nv-a" style="--i:2">{C["d"]}</p></div><p class="nv-fn__h">{C["mods_h"]}</p><div class="nv-fn__mods">{mods}</div>')
+
+def nv_rhd(R=''):
+    C = {'ru': dict(head='Запрет на праворульные: от ввоза в 2007 году до законопроекта для всех машин', note='Пунктир: пока только поручение',
+                    steps=[('2007', 'Запрет на ввоз и регистрацию праворульных машин', ''), ('2024', 'Меморандум МВД, Минтранса, Яндекс Go и inDrive: платформы закрывают доступ', ''),
+                           ('1 января 2025', 'Закон запрещает праворульные в такси, ответственность есть в КоАП', ''), ('Март 2026', 'Более 70 тысяч машин отключены от платформ', 'key'),
+                           ('22 сентября 2026', 'МВД поручили законопроект о всех праворульных машинах в стране', 'plan')], big='70 000+'),
+         'kk': dict(head='Оң рульді көліктерге тыйым: 2007 жылғы әкелуден барлық көлікке арналған заң жобасына дейін', note='Пунктир: әзірге тек тапсырма',
+                    steps=[('2007', 'Оң рульді көліктерді әкелуге және тіркеуге тыйым', ''), ('2024', 'ІІМ, Көлік министрлігі, Яндекс Go және inDrive меморандумы: платформалар қолжетімділікті жабады', ''),
+                           ('2025 жылғы 1 қаңтар', 'Заң таксиде оң рульді көліктерге тыйым салады, жауапкершілік ӘҚБтК-де бар', ''), ('2026 жылғы наурыз', '70 мыңнан астам көлік платформалардан ажыратылды', 'key'),
+                           ('2026 жылғы 22 қыркүйек', 'ІІМ-ге елдегі барлық оң рульді көліктер туралы заң жобасы тапсырылды', 'plan')], big='70 000+')}[L]
+    st = ''
+    for k, (y, t, m) in enumerate(C['steps']):
+        big = f'<b class="nv-st__big" data-count="70000" data-suffix="+">{C["big"]}</b>' if m == 'key' else ''
+        st += f'<li class="nv-a{" is-" + m if m else ""}" style="--i:{k};--h:{k + 1}"><div class="nv-st__txt"><time>{y}</time>{big}<span>{t}</span></div><i aria-hidden="true"></i></li>'
+    return nv('st', C['head'], f'<ol class="nv-st">{st}</ol>', C['note'])
+
+def nv_roadmap(R=''):
+    C = {'ru': dict(head='Что едет на дороги Казахстана: план на 2026–2028 годы', note='Жёлтым выделена главная проверка ближайших месяцев',
+                    stops=[('23 июня 2026', 'Green SM в Алматы', 'Только VinFast VF 6, сотни машин на старте', ''), ('Зима 2026/27', 'Первая зима электротакси', 'Запас хода на морозе, нагрузка на зарядки', 'key'),
+                           ('2027', 'Беспилотное такси', 'Первые коммерческие поездки, пилот в Астане через inDrive', ''), ('2028', 'Аэротакси', 'Первые коммерческие рейсы, закон подписан в июне', '')]),
+         'kk': dict(head='Қазақстан жолдарына не келеді: 2026–2028 жылдар жоспары', note='Сарымен жақын айлардағы басты сынақ белгіленген',
+                    stops=[('2026 жылғы 23 маусым', 'Green SM Алматыда', 'Тек VinFast VF 6, бастапқыда жүздеген көлік', ''), ('2026/27 қысы', 'Электр таксидің алғашқы қысы', 'Аяздағы жүру қоры, зарядтау стансаларына жүктеме', 'key'),
+                           ('2027', 'Жүргізушісіз такси', 'Алғашқы коммерциялық сапарлар, Астанада inDrive арқылы пилот', ''), ('2028', 'Аэротакси', 'Алғашқы коммерциялық рейстер, заңға маусымда қол қойылды', '')])}[L]
+    stops = ''.join(f'<li class="nv-a{" is-" + m if m else ""}" style="--i:{k + 1}"><i aria-hidden="true"></i><time>{d}</time><b>{t}</b><span>{s}</span></li>' for k, (d, t, s, m) in enumerate(C['stops']))
+    car = '<svg class="nv-rd__car" viewBox="0 0 40 20" aria-hidden="true"><path d="M5 13c0-2 1-3 3-3.5l4-4.5c1-1 2-1.5 3.5-1.5h9c1.5 0 2.6.6 3.5 1.6l3.5 4.4c3 .4 5 1.5 5 3.5v2.5H5z" fill="#F0B100"/><path d="M14 6h5v4h-8zM21 6h4.5l3 4H21z" fill="#fff" opacity=".85"/><circle cx="12" cy="16" r="3" fill="#0D0D0D"/><circle cx="30" cy="16" r="3" fill="#0D0D0D"/></svg>'
+    return nv('rd', C['head'], f'<div class="nv-rd"><div class="nv-rd__road nv-a" aria-hidden="true"><em></em>{car}</div><ol>{stops}</ol></div>', C['note'])
+
 POST_SCENES = {'documents': pdocs_scene, 'rental': prent_scene, 'debts': pdebt_scene,
                'inspection': pcheck_scene, 'kaspi': lambda R='': bare(kaspi_scene()),
-               'vehicle': lambda R='': bare(vehicle_scene())}
+               'vehicle': lambda R='': bare(vehicle_scene()),
+               'outage': nv_outage, 'admission': nv_admission, 'taxpaths': nv_taxpaths, 'taxtree': nv_taxtree,
+               'carrier': nv_carrier, 'fine': nv_fine, 'rhd': nv_rhd, 'roadmap': nv_roadmap}
 
 def bare(h):
     """Сцены для страниц приходят в обёртке героя — в статье она не нужна."""
@@ -2127,11 +2261,19 @@ def search_text(x):
     t = ' '.join([x['title'], x['cat'], x['lead'], re.sub(r'[#*]+', ' ', body)])
     return re.sub(r'\s+', ' ', t).lower().replace('ё', 'е').strip()
 
-def post_card(x, R, q=False):
-    dq = f' data-q="{html.escape(search_text(x))}"' if q else ''
-    return (f'<a class="post"{dq} href="{href("/blog/" + x["slug"] + "/", R)}">{post_cover(x, R)}<div class="post__body"><div class="post__meta"><span class="post__cat">{html.escape(x["cat"])}</span>'
+def post_card(x, R, q=False, sizes='(max-width: 760px) 86vw, 380px', eager=False):
+    dq = f' data-q="{html.escape(search_text(x))}" data-cat="{html.escape(x["cat"])}"' if q else ''
+    d = datetime.date.fromisoformat(x['date'])
+    return (f'<a class="post"{dq} href="{href("/blog/" + x["slug"] + "/", R)}">{post_cover(x, R, sizes, eager)}'
+            f'<span class="post__day" aria-hidden="true"><b>{d.day}</b>{T("months")[d.month - 1]}</span>'
+            f'<div class="post__body"><div class="post__meta"><span class="post__cat">{html.escape(x["cat"])}</span>'
             f'<time datetime="{x["date"]}">{ru_date(x["date"])}</time></div><h3>{html.escape(x["title"])}</h3><p>{html.escape(x["lead"])}</p>'
             f'<span class="link">{T("read")} <svg><use href="#i-arrow"/></svg></span></div></a>')
+
+def plural(n, forms):
+    if n % 10 == 1 and n % 100 != 11: return forms[0]
+    if 2 <= n % 10 <= 4 and not 12 <= n % 100 <= 14: return forms[1]
+    return forms[2]
 
 def news_section(R):
     cards = ''.join(post_card(x, R) for x in blog_posts()[:3])
@@ -2147,22 +2289,41 @@ def blog_pages():
     if not posts: return
     base = '/kk/blog/' if L == 'kk' else '/blog/'
     R = rel(base)
-    cards = ''.join(post_card(x, R, q=True) for x in posts)
-    body = f"""<section class="phero">
+    mat = lambda n: f'{n} {plural(n, T("blog_mat"))}'
+    cover = post_card(posts[0], R, True, '(max-width: 760px) 100vw, 680px', True)
+    pair = ''.join(post_card(x, R, True, '(max-width: 760px) 100vw, 590px') for x in posts[1:3])
+    months = {}
+    for x in posts[3:]: months.setdefault(x['date'][:7], []).append(x)
+    rows = ''
+    for ym, xs in months.items():
+        y, m = ym.split('-')
+        rows += (f'<div class="mag-group" data-group><div class="mag-month"><h2>{T("months_nom")[int(m) - 1]} {y}</h2><span>{mat(len(xs))}</span></div>'
+                 f'<div class="mag-rows">{"".join(post_card(x, R, True, "(max-width: 760px) 34vw, 300px") for x in xs)}</div></div>')
+    cats = {}
+    for x in posts: cats[x['cat']] = cats.get(x['cat'], 0) + 1
+    tabs = f'<button type="button" class="mag-tab is-on" data-blog-cat="" aria-pressed="true">{T("blog_every")} <span>{len(posts)}</span></button>' + ''.join(
+        f'<button type="button" class="mag-tab" data-blog-cat="{html.escape(c)}" aria-pressed="false">{html.escape(c)} <span>{n}</span></button>' for c, n in cats.items())
+    body = f"""<section class="phero mag-head">
   <div class="hero__checks"></div>
   <div class="wrap">
     <nav class="crumbs" aria-label="{T("crumbs")}"><a href="{R}">{T("home")}</a><span>/</span><b>{T("blog")}</b></nav>
-    <p class="eyebrow">{T("blog")}</p>
-    <h1>{T("blog_h1")}</h1>
-    <p class="lead">{T("blog_lead")}</p>
+    <div class="mag-head__row">
+      <div><p class="eyebrow">{T("blog")} · {mat(len(posts))}</p><h1>{T("blog_h1")}</h1></div>
+      <p class="lead">{T("blog_lead")}</p>
+    </div>
+    <div class="mag-bar">
+      <div class="mag-tabs" role="group" aria-label="{T("blog_cats")}">{tabs}</div>
+      <div class="bsearch" role="search">
+        <label class="bsearch__field"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M16 16l4.5 4.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg><input type="search" data-blog-q aria-label="{T("blog_q")}" placeholder="{T("blog_q_ph")}" autocomplete="off" enterkeyhint="search"></label>
+      </div>
+    </div>
   </div>
 </section>
-<section class="section" style="padding-top:0"><div class="wrap">
-  <div class="bsearch" role="search">
-    <label class="bsearch__field"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M16 16l4.5 4.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg><input type="search" data-blog-q aria-label="{T("blog_q")}" placeholder="{T("blog_q_ph")}" autocomplete="off" enterkeyhint="search"></label>
-    <p class="bsearch__none" data-blog-none role="status" hidden>{T("blog_none")}</p>
-  </div>
-  <div class="posts" data-stagger>{cards}</div>
+<section class="section mag"><div class="wrap">
+  <div class="mag-group mag-cover" data-group>{cover}</div>
+  <div class="mag-group mag-pair" data-group>{pair}</div>
+  {rows}
+  <p class="bsearch__none" data-blog-none role="status" hidden>{T("blog_none")}</p>
 </div></section>
 {cta(dict(title=T('cta_default'), paras=[T('cta_lead')]), R)}"""
     write(base + 'index.html', page(dict(path=base, title=T("blog")), body, R, T("blog_desc")))

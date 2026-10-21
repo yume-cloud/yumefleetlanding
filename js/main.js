@@ -26,17 +26,24 @@
   /* reveal */
   const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('is-in'); io.unobserve(e.target); } }), { threshold: .12, rootMargin: '0px 0px -8% 0px' });
   $$('[data-reveal]').forEach(el => io.observe(el));
-  // поиск по статьям блога: карточка остаётся, если в её тексте есть все введённые слова
+  // блог: рубрика и поиск. Карточка остаётся, если совпала рубрика и в её тексте есть все введённые слова
   const blogQ = $('[data-blog-q]');
   if (blogQ) {
-    const posts = $$('.post[data-q]'), none = $('[data-blog-none]');
+    const posts = $$('.post[data-q]'), none = $('[data-blog-none]'), tabs = $$('[data-blog-cat]');
+    let cat = '';
     const run = () => {
       const words = blogQ.value.toLowerCase().replace(/ё/g, 'е').split(/\s+/).filter(Boolean);
       let shown = 0;
-      posts.forEach(p => { const ok = words.every(w => p.dataset.q.includes(w)); p.hidden = !ok; if (ok) { shown++; p.classList.add('is-in'); } });
+      posts.forEach(p => { const ok = (!cat || p.dataset.cat === cat) && words.every(w => p.dataset.q.includes(w)); p.hidden = !ok; if (ok) { shown++; p.classList.add('is-in'); } });
+      $$('[data-group]').forEach(g => { const n = $$('.post:not([hidden])', g).length; g.hidden = !n; g.classList.toggle('is-one', n === 1); });
       none.hidden = shown > 0;
     };
     blogQ.addEventListener('input', run);
+    tabs.forEach(t => t.addEventListener('click', () => {
+      cat = t.dataset.blogCat;
+      tabs.forEach(x => { const on = x === t; x.classList.toggle('is-on', on); x.setAttribute('aria-pressed', on); });
+      run();
+    }));
   }
   $$('[data-stagger]').forEach(g => $$(':scope > *', g).forEach((c, i) => { c.setAttribute('data-reveal', g.dataset.stagger || ''); c.style.setProperty('--d', `${i * .09}s`); io.observe(c); }));
 
