@@ -2324,8 +2324,7 @@ def blog_pages():
   <div class="mag-group mag-pair" data-group>{pair}</div>
   {rows}
   <p class="bsearch__none" data-blog-none role="status" hidden>{T("blog_none")}</p>
-</div></section>
-{cta(dict(title=T('cta_default'), paras=[T('cta_lead')]), R)}"""
+</div></section>"""
     write(base + 'index.html', page(dict(path=base, title=T("blog")), body, R, T("blog_desc")))
     for x in posts:
         path = f'{base}{x["slug"]}/'; R = rel(path)
