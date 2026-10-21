@@ -34,7 +34,7 @@ UI = {
    more_eb='Ещё', other_ints='Другие интеграции', other_feats='Другие возможности Yume Fleet', feat_index='Всё, чем живёт таксопарк',
    crumb_short={'/features/': 'Возможности', '/integrations/': 'Интеграции', '/perehod/': 'Для клиентов Yume Cloud', '/contacts/': 'Контакты', '/kaspi-pay/': 'Kaspi Pay', '/faq/': 'Вопросы и ответы', '/blog/': 'Блог'},
    faq_h1='Вопросы, которые задают до демо', faq_page_lead='Цена, запуск, оплата водителей, штрафы, выкуп и данные. Остальное покажем за 20 минут на вашем парке.', faq_desc='Сколько стоит Yume Fleet, как перейти и что будет с долгами и штрафами.',
-   blog_h1='Новости и статьи', blog_lead='Что нового в Yume Fleet и как парки считают долги, выкуп и штрафы. Пишем коротко и по делу.', blog_desc='Новости Yume Fleet и статьи о том, как таксопарки считают долги, выкуп, штрафы и оплату через Kaspi.', blog_more='Ещё в блоге', blog_all='Все статьи', read='Читать',
+   blog_h1='Новости и статьи', blog_lead='Что происходит на рынке такси Казахстана и как парки считают долги, выкуп и штрафы. Пишем коротко и по делу.', blog_desc='Новости рынка такси Казахстана и статьи о том, как таксопарки считают долги, выкуп, штрафы и оплату через Kaspi.', blog_more='Ещё в блоге', blog_all='Все статьи', read='Читать', blog_q='Поиск по статьям', blog_q_ph='Например, штрафы или налоги', blog_none='Ничего не нашлось. Попробуйте другое слово.',
    months=['января', 'февраля', 'марта', 'апреля', 'мая', 'июня', 'июля', 'августа', 'сентября', 'октября', 'ноября', 'декабря'],
    c_wa='WhatsApp, самый быстрый способ', c_wa_sub='Демо, вопросы по продукту и переходу', c_phone='Телефон', c_phone_sub='Пн–Пт 9:00–19:00, Сб 10:00–16:00 по Алматы', c_inst='Instagram', c_inst_sub='Новости продукта и парков', c_yt='YouTube', c_yt_sub='Видео о работе системы', c_sales='Продажи и партнёрство', c_sales_sub='Коммерческие предложения, интеграции, договоры', c_sup='Поддержка парков', c_sup_sub='Вопросы по работе системы', c_office='Офис', c_city='Алматы, Казахстан', c_office_sub='ТОО «Yume.Cloud». Встречи по договорённости, демо по видеосвязи.', c_login='Вход для парков', c_login_sub='Кабинет парка', c_form_h='Записаться на демо', c_form_p='Покажем систему за 20 минут на примере парка вашего размера.', crumbs='Хлебные крошки',
    t404='Страница не найдена', h404='Такой страницы нет', p404='Возможно, ссылка устарела. Вот куда можно пойти дальше.', to_home='На главную',
@@ -56,7 +56,7 @@ UI = {
    more_eb='Тағы', other_ints='Басқа интеграциялар', other_feats='Yume Fleet-тің басқа мүмкіндіктері', feat_index='Таксопарк өмір сүретіннің бәрі',
    crumb_short={'/features/': 'Мүмкіндіктер', '/integrations/': 'Интеграциялар', '/perehod/': 'Yume Cloud клиенттеріне', '/contacts/': 'Байланыс', '/kaspi-pay/': 'Kaspi Pay', '/faq/': 'Сұрақ-жауап', '/blog/': 'Блог'},
    faq_h1='Демоға дейін қойылатын сұрақтар', faq_page_lead='Баға, іске қосу, жүргізушілердің төлемі, айыппұлдар, сатып алу және деректер. Қалғанын 20 минутта сіздің паркте көрсетеміз.', faq_desc='Yume Fleet қанша тұрады, қалай көшуге болады және қарыздар мен айыппұлдар не болады.',
-   blog_h1='Жаңалықтар мен мақалалар', blog_lead='Yume Fleet-те не жаңалық және парктер қарызды, сатып алуды және айыппұлдарды қалай есептейді. Қысқа әрі нақты жазамыз.', blog_desc='Yume Fleet жаңалықтары және таксопарктер қарызды, сатып алуды, айыппұлдарды және Kaspi арқылы төлемді қалай есептейтіні туралы мақалалар.', blog_more='Блогта тағы', blog_all='Барлық мақалалар', read='Оқу',
+   blog_h1='Жаңалықтар мен мақалалар', blog_lead='Қазақстандағы такси нарығында не болып жатыр және парктер қарызды, сатып алуды және айыппұлдарды қалай есептейді. Қысқа әрі нақты жазамыз.', blog_desc='Қазақстандағы такси нарығының жаңалықтары және таксопарктер қарызды, сатып алуды, айыппұлдарды және Kaspi арқылы төлемді қалай есептейтіні туралы мақалалар.', blog_more='Блогта тағы', blog_all='Барлық мақалалар', read='Оқу', blog_q='Мақалалардан іздеу', blog_q_ph='Мысалы, айыппұл немесе салық', blog_none='Ештеңе табылмады. Басқа сөзбен іздеп көріңіз.',
    months=['қаңтар', 'ақпан', 'наурыз', 'сәуір', 'мамыр', 'маусым', 'шілде', 'тамыз', 'қыркүйек', 'қазан', 'қараша', 'желтоқсан'],
    c_wa='WhatsApp, ең жылдам тәсіл', c_wa_sub='Демо, өнім және көшу бойынша сұрақтар', c_phone='Телефон', c_phone_sub='Дс–Жм 9:00–19:00, Сб 10:00–16:00, Алматы уақыты', c_inst='Instagram', c_inst_sub='Өнім және парктер жаңалықтары', c_yt='YouTube', c_yt_sub='Жүйенің жұмысы туралы бейнелер', c_sales='Сату және серіктестік', c_sales_sub='Коммерциялық ұсыныстар, интеграциялар, шарттар', c_sup='Парктерді қолдау', c_sup_sub='Жүйенің жұмысы бойынша сұрақтар', c_office='Кеңсе', c_city='Алматы, Қазақстан', c_office_sub='«Yume.Cloud» ЖШС. Кездесулер келісім бойынша, демо бейнебайланыс арқылы.', c_login='Парктер үшін кіру', c_login_sub='Парк кабинеті', c_form_h='Демоға жазылу', c_form_p='Жүйені 20 минутта сіздің парк көлеміндегі мысалда көрсетеміз.', crumbs='Нан үгінділері',
    t404='Бет табылмады', h404='Мұндай бет жоқ', p404='Сілтеме ескірген болуы мүмкін. Әрі қарай қайда баруға болады.', to_home='Басты бетке',
@@ -1519,6 +1519,128 @@ def finance_scene():
       <div class="ledger__foot"><span>{T("ledger_foot")}</span><b>33 500 ₸</b></div>
     </div></div>'''
 
+# ------------------------------------------------- сцены для статей блога
+def pdocs_scene(R=''):
+    """Блок «Документы» в карточке аренды: три документа подписываются один за другим."""
+    C = {'ru': dict(rent='Аренда №1042', who='Ерлан С.', cnt='из 3 подписано', wait='Ждёт подписи',
+                    docs=[('Договор аренды', '9 000 ₸ в день · посуточно', 'eGov · 12:05'),
+                          ('Акт приёма-передачи', 'Chevrolet Cobalt · пробег 84 320 км', 'eGov · 12:06'),
+                          ('Путевой лист', 'на смену 12 мая', 'SMS · 12:07')],
+                    foot='Все документы подписаны — машину можно выдавать'),
+         'kk': dict(rent='Жалдау №1042', who='Ерлан С.', cnt='3-тен қол қойылды', wait='Қол күтуде',
+                    docs=[('Жалдау шарты', 'күніне 9 000 ₸ · тәуліктік', 'eGov · 12:05'),
+                          ('Қабылдау-тапсыру актісі', 'Chevrolet Cobalt · жүрісі 84 320 км', 'eGov · 12:06'),
+                          ('Жол парағы', '12 мамырдағы ауысымға', 'SMS · 12:07')],
+                    foot='Барлық құжатқа қол қойылды — көлікті беруге болады')}[L]
+    rows = ''.join(f'''<li class="pdocs__row" data-pdocs-row style="--i:{i}">
+      <i class="pdocs__ico"><svg><use href="#i-doc"/></svg></i>
+      <div class="pdocs__name"><b>{html.escape(a)}</b><em>{html.escape(b)}</em></div>
+      <span class="pdocs__st"><em class="pdocs__wait">{C["wait"]}</em><em class="pdocs__ok"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>{html.escape(c)}</em></span>
+    </li>''' for i, (a, b, c) in enumerate(C['docs']))
+    return f'''<div class="pdocs" data-pdocs aria-hidden="true">
+  <header class="pdocs__head">
+    <div><small>{C["rent"]}</small><b>{C["who"]} · <span class="plate plate--sm">015 ADM 02</span></b></div>
+    <span class="pdocs__cnt"><i data-pdocs-cnt>0</i> {C["cnt"]}</span>
+  </header>
+  <ul class="pdocs__list">{rows}</ul>
+  <footer class="pdocs__foot">{C["foot"]}</footer>
+</div>'''
+
+def prent_scene(R=''):
+    """Карточка аренды целиком: долг, документы, осмотры и штрафы рядом."""
+    C = {'ru': dict(rent='Аренда №1042', who='Ерлан С. · Chevrolet Cobalt', on='активна',
+                    tiles=[('Долг', '39 625 ₸', '4 дня просрочки', 'neg'),
+                           ('Документы', '3 из 3', 'подписаны', 'pos'),
+                           ('Осмотры', '2', 'выдача и возврат', ''),
+                           ('Штрафы ПДД', '21 625 ₸', '1 постановление', '')],
+                    foot='Посуточно · 9 000 ₸ в день · с 1 сентября'),
+         'kk': dict(rent='Жалдау №1042', who='Ерлан С. · Chevrolet Cobalt', on='белсенді',
+                    tiles=[('Қарыз', '39 625 ₸', '4 күн мерзімі өткен', 'neg'),
+                           ('Құжаттар', '3-тен 3', 'қол қойылған', 'pos'),
+                           ('Тексерулер', '2', 'беру және қайтару', ''),
+                           ('ЖҚЕ айыппұлдары', '21 625 ₸', '1 қаулы', '')],
+                    foot='Тәуліктік · күніне 9 000 ₸ · 1 қыркүйектен')}[L]
+    tiles = ''.join(f'''<article class="prent__tile" data-prent-tile style="--i:{i}">
+      <small>{html.escape(a)}</small><b class="{k}">{html.escape(b)}</b><em>{html.escape(c)}</em></article>''' for i, (a, b, c, k) in enumerate(C['tiles']))
+    return f'''<div class="prent" data-prent aria-hidden="true">
+  <header class="prent__head">
+    <span class="plate">015 ADM 02</span>
+    <div><b>{C["rent"]}</b><em>{C["who"]}</em></div>
+    <span class="prent__on">{C["on"]}</span>
+  </header>
+  <div class="prent__grid">{tiles}</div>
+  <footer class="prent__foot">{C["foot"]}</footer>
+</div>'''
+
+def pdebt_scene(R=''):
+    """Раздел «Аренды»: вкладка «С просрочкой» оставляет только должников."""
+    C = {'ru': dict(title='Аренды', all='Все', late='С просрочкой', foot='Долг по парку',
+                    cols=['Водитель', 'Машина', 'Просрочка', 'Долг'], none='—',
+                    rows=[('Ерлан С.', '015 ADM 02', '4 дня', '39 625 ₸', 1),
+                          ('Айбек Т.', '581 MRA 02', '1 день', '12 000 ₸', 1),
+                          ('Данияр К.', '774 ABC 02', '', '0 ₸', 0),
+                          ('Асхат Ж.', '348 KBA 02', '17 дней', '153 000 ₸', 1),
+                          ('Марат О.', '902 LKM 02', '', '0 ₸', 0)]),
+         'kk': dict(title='Жалдаулар', all='Барлығы', late='Мерзімі өткен', foot='Парк бойынша қарыз',
+                    cols=['Жүргізуші', 'Көлік', 'Мерзімі өткен', 'Қарыз'], none='—',
+                    rows=[('Ерлан С.', '015 ADM 02', '4 күн', '39 625 ₸', 1),
+                          ('Айбек Т.', '581 MRA 02', '1 күн', '12 000 ₸', 1),
+                          ('Данияр К.', '774 ABC 02', '', '0 ₸', 0),
+                          ('Асхат Ж.', '348 KBA 02', '17 күн', '153 000 ₸', 1),
+                          ('Марат О.', '902 LKM 02', '', '0 ₸', 0)])}[L]
+    rows = ''.join(f'''<tr data-pdebt-row data-late="{l}" style="--i:{i}"><td>{html.escape(a)}</td>
+      <td><span class="plate plate--sm">{b}</span></td>
+      <td class="{"pdebt__late" if l else "pdebt__ok"}">{html.escape(c) if c else C["none"]}</td>
+      <td class="{"neg" if l else ""}">{html.escape(d)}</td></tr>''' for i, (a, b, c, d, l) in enumerate(C['rows']))
+    return f'''<div class="pdebt" data-pdebt data-tab="0" aria-hidden="true">
+  <svg class="pdebt__cur" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 2.5v15.2l4.1-3.7 3.2 6.4 2.1-.9-3.2-6.3 5.6-.3z"/></svg>
+  <header class="pdebt__head"><b>{C["title"]}</b>
+    <div class="pdebt__tabs">
+      <button type="button" data-pdebt-tab="0" class="is-on">{C["all"]} <i>28</i></button>
+      <button type="button" data-pdebt-tab="1">{C["late"]} <i>6</i></button>
+    </div>
+  </header>
+  <table class="pdebt__table"><thead><tr>{''.join(f'<th>{html.escape(c)}</th>' for c in C['cols'])}</tr></thead>
+    <tbody>{rows}</tbody></table>
+  <footer class="pdebt__foot"><span>{C["foot"]}</span><b class="neg" data-pdebt-sum>214 300 ₸</b></footer>
+</div>'''
+
+def pcheck_scene(R=''):
+    """Осмотр при выдаче: фото по чек-листу, потом осмотр уходит в карточку аренды."""
+    C = {'ru': dict(title='Осмотр при выдаче', sub='015 ADM 02 · 12 мая, 12:08',
+                    shots=['Зад', 'Правый борт', 'Колёса', 'Номер'],
+                    checks=['Кузов без новых повреждений', 'Салон чистый', 'Шины и диски в норме', 'Документы в машине'],
+                    km='Пробег при выдаче', kmv='84 320 км',
+                    foot='Осмотр сохранён в карточке аренды · без замечаний'),
+         'kk': dict(title='Бергендегі тексеру', sub='015 ADM 02 · 12 мамыр, 12:08',
+                    shots=['Арты', 'Оң бүйір', 'Дөңгелектер', 'Нөмір'],
+                    checks=['Шанақта жаңа зақым жоқ', 'Салон таза', 'Шиналар мен дискілер жақсы', 'Құжаттар көлікте'],
+                    km='Бергендегі жүріс', kmv='84 320 км',
+                    foot='Тексеру жалдау картасында сақталды · ескертусіз')}[L]
+    pos = ['18% 62%', '72% 55%', '46% 86%', '16% 74%']
+    zoom = ['175%', '190%', '320%', '340%']
+    shots = ''.join(f'''<figure class="pcheck__shot" data-pcheck-shot style="--i:{i};--pos:{pos[i]};--zoom:{zoom[i]}">
+      <span class="pcheck__flash"></span><figcaption>{html.escape(s)}</figcaption></figure>''' for i, s in enumerate(C['shots']))
+    checks = ''.join(f'''<li data-pcheck-row style="--i:{i}"><i><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></i>{html.escape(c)}</li>''' for i, c in enumerate(C['checks']))
+    return f'''<div class="pcheck" data-pcheck aria-hidden="true" style="--shot:url({R}assets/img/cam-car.png)">
+  <header class="pcheck__head"><b>{C["title"]}</b><span>{C["sub"]}</span></header>
+  <div class="pcheck__shots">{shots}</div>
+  <ul class="pcheck__list">{checks}</ul>
+  <div class="pcheck__km"><span>{C["km"]}</span><b>{C["kmv"]}</b></div>
+  <footer class="pcheck__foot" data-pcheck-foot>{C["foot"]}</footer>
+</div>'''
+
+POST_SCENES = {'documents': pdocs_scene, 'rental': prent_scene, 'debts': pdebt_scene,
+               'inspection': pcheck_scene, 'kaspi': lambda R='': bare(kaspi_scene()),
+               'vehicle': lambda R='': bare(vehicle_scene())}
+
+def bare(h):
+    """Сцены для страниц приходят в обёртке героя — в статье она не нужна."""
+    h = h.strip()
+    pre = '<div class="phero__vis" data-reveal="scale">'
+    return h[len(pre):-6].strip() if h.startswith(pre) and h.endswith('</div>') else h
+
+
 def phero(sec, crumbs, R, extra='', img=None, logo='', vis=''):
     lead = ''.join(f'<p class="lead">{inline(x)}</p>' for x in sec['paras'])
     if vis:
@@ -1944,6 +2066,11 @@ def md_inline(t, R):
     t = re.sub(r'\[([^\]]+)\]\(([^)]+)\)', link, t)
     return t
 
+def post_vis(inner, cap, R):
+    """Визуал внутри статьи: сцена шире колонки текста, под ней подпись."""
+    figcap = f'<figcaption>{md_inline(cap, R)}</figcaption>' if cap else ''
+    return f'<figure class="postvis" data-reveal="scale"><div class="postvis__stage">{inner}</div>{figcap}</figure>'
+
 def md_to_html(md, R):
     out, para, lst = [], [], None
     def flush():
@@ -1955,6 +2082,12 @@ def md_to_html(md, R):
         if not ln: flush(); continue
         if ln.startswith('## '): flush(); out.append(f'<h2>{md_inline(ln[3:], R)}</h2>'); continue
         if ln.startswith('### '): flush(); out.append(f'<h3>{md_inline(ln[4:], R)}</h3>'); continue
+        if ln.startswith('::'):
+            flush()
+            name, _, cap = ln[2:].partition('::')
+            fn = POST_SCENES.get(name.strip())
+            if fn: out.append(post_vis(fn(R), cap.strip(), R))
+            continue
         if ln.startswith('- '):
             if para: flush()
             lst = (lst or []) + [ln[2:]]; continue
@@ -1987,8 +2120,16 @@ def post_cover(x, R, sizes='(max-width: 760px) 86vw, 380px', eager=False):
     load = ' fetchpriority="high"' if eager else ' loading="lazy" decoding="async"'
     return f'<img class="post__img" src="{b}.webp" srcset="{b}-600.webp 600w, {b}.webp 1200w" sizes="{sizes}" width="1200" height="675" alt=""{load}>'
 
-def post_card(x, R):
-    return (f'<a class="post" href="{href("/blog/" + x["slug"] + "/", R)}">{post_cover(x, R)}<div class="post__body"><div class="post__meta"><span class="post__cat">{html.escape(x["cat"])}</span>'
+def search_text(x):
+    """Заголовок, рубрика, лид и текст статьи без разметки, в нижнем регистре: по нему ищет поиск блога."""
+    body = '\n'.join(l for l in x['body'].split('\n') if not l.startswith('::'))
+    body = re.sub(r'\[([^\]]+)\]\([^)]+\)', r'\1', body)
+    t = ' '.join([x['title'], x['cat'], x['lead'], re.sub(r'[#*]+', ' ', body)])
+    return re.sub(r'\s+', ' ', t).lower().replace('ё', 'е').strip()
+
+def post_card(x, R, q=False):
+    dq = f' data-q="{html.escape(search_text(x))}"' if q else ''
+    return (f'<a class="post"{dq} href="{href("/blog/" + x["slug"] + "/", R)}">{post_cover(x, R)}<div class="post__body"><div class="post__meta"><span class="post__cat">{html.escape(x["cat"])}</span>'
             f'<time datetime="{x["date"]}">{ru_date(x["date"])}</time></div><h3>{html.escape(x["title"])}</h3><p>{html.escape(x["lead"])}</p>'
             f'<span class="link">{T("read")} <svg><use href="#i-arrow"/></svg></span></div></a>')
 
@@ -2006,7 +2147,7 @@ def blog_pages():
     if not posts: return
     base = '/kk/blog/' if L == 'kk' else '/blog/'
     R = rel(base)
-    cards = ''.join(post_card(x, R) for x in posts)
+    cards = ''.join(post_card(x, R, q=True) for x in posts)
     body = f"""<section class="phero">
   <div class="hero__checks"></div>
   <div class="wrap">
@@ -2016,12 +2157,20 @@ def blog_pages():
     <p class="lead">{T("blog_lead")}</p>
   </div>
 </section>
-<section class="section" style="padding-top:0"><div class="wrap"><div class="posts" data-stagger>{cards}</div></div></section>
+<section class="section" style="padding-top:0"><div class="wrap">
+  <div class="bsearch" role="search">
+    <label class="bsearch__field"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M16 16l4.5 4.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg><input type="search" data-blog-q aria-label="{T("blog_q")}" placeholder="{T("blog_q_ph")}" autocomplete="off" enterkeyhint="search"></label>
+    <p class="bsearch__none" data-blog-none role="status" hidden>{T("blog_none")}</p>
+  </div>
+  <div class="posts" data-stagger>{cards}</div>
+</div></section>
 {cta(dict(title=T('cta_default'), paras=[T('cta_lead')]), R)}"""
     write(base + 'index.html', page(dict(path=base, title=T("blog")), body, R, T("blog_desc")))
     for x in posts:
         path = f'{base}{x["slug"]}/'; R = rel(path)
-        others = ''.join(f'<a class="chip" href="{href("/blog/" + y["slug"] + "/", R)}">{html.escape(y["title"])}</a>' for y in posts if y is not x)
+        rest = [y for y in posts if y is not x]
+        rest = ([y for y in rest if y['cat'] == x['cat']] + [y for y in rest if y['cat'] != x['cat']])[:4]
+        others = ''.join(f'<a class="chip" href="{href("/blog/" + y["slug"] + "/", R)}">{html.escape(y["title"])}</a>' for y in rest)
         body = f"""<section class="phero">
   <div class="hero__checks"></div>
   <div class="wrap" style="max-width:860px">

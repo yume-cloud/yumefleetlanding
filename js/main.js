@@ -26,6 +26,18 @@
   /* reveal */
   const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('is-in'); io.unobserve(e.target); } }), { threshold: .12, rootMargin: '0px 0px -8% 0px' });
   $$('[data-reveal]').forEach(el => io.observe(el));
+  // поиск по статьям блога: карточка остаётся, если в её тексте есть все введённые слова
+  const blogQ = $('[data-blog-q]');
+  if (blogQ) {
+    const posts = $$('.post[data-q]'), none = $('[data-blog-none]');
+    const run = () => {
+      const words = blogQ.value.toLowerCase().replace(/ё/g, 'е').split(/\s+/).filter(Boolean);
+      let shown = 0;
+      posts.forEach(p => { const ok = words.every(w => p.dataset.q.includes(w)); p.hidden = !ok; if (ok) { shown++; p.classList.add('is-in'); } });
+      none.hidden = shown > 0;
+    };
+    blogQ.addEventListener('input', run);
+  }
   $$('[data-stagger]').forEach(g => $$(':scope > *', g).forEach((c, i) => { c.setAttribute('data-reveal', g.dataset.stagger || ''); c.style.setProperty('--d', `${i * .09}s`); io.observe(c); }));
 
   /* counters */
@@ -1367,6 +1379,55 @@
     // если сервер не ответил, человек остаётся здесь: у него открыт WhatsApp с текстом заявки
     if (sent && DONE_URL) setTimeout(() => location.assign(DONE_URL), 250);
   });
+
+  /* визуалы в статьях блога: каждая сцена оживает, когда доскроллили до неё */
+  const pvStart = (el, run) => { let on = false; new IntersectionObserver(es => { if (es[0].isIntersecting && !on) { on = true; run(); } }, { threshold: .2 }).observe(el); };
+
+  /* документы в карточке аренды: три документа подписываются один за другим */
+  const pdocs = $('[data-pdocs]');
+  if (pdocs) {
+    const rows = $$('[data-pdocs-row]', pdocs), cnt = $('[data-pdocs-cnt]', pdocs);
+    const set = n => { rows.forEach((r, i) => r.classList.toggle('is-ok', i < n)); if (cnt) cnt.textContent = n; };
+    if (reduced) set(rows.length);
+    else pvStart(pdocs, async () => { for (;;) { set(0); await wait(900); for (let i = 1; i <= rows.length; i++) { set(i); await wait(850); } await wait(3400); } });
+  }
+
+  /* карточка аренды: подсветка обходит плитки — долг, документы, осмотры, штрафы */
+  const prent = $('[data-prent]');
+  if (prent) {
+    const tiles = $$('[data-prent-tile]', prent);
+    if (!reduced) pvStart(prent, async () => { let i = 0; for (;;) { tiles.forEach((t, k) => t.classList.toggle('is-on', k === i % tiles.length)); i++; await wait(1500); } });
+  }
+
+  /* аренды: курсор переключает на «С просрочкой», и в списке остаются только должники */
+  const pdebt = $('[data-pdebt]');
+  if (pdebt) {
+    const tabs = $$('[data-pdebt-tab]', pdebt), rows = $$('[data-pdebt-row]', pdebt), cur = $('.pdebt__cur', pdebt);
+    const set = async i => {
+      pdebt.dataset.tab = i;
+      tabs.forEach(t => t.classList.toggle('is-on', t.dataset.pdebtTab === String(i)));
+      rows.forEach(r => { if (i === 1 && r.dataset.late === '0') r.classList.add('is-off'); else { r.classList.remove('is-gone'); requestAnimationFrame(() => r.classList.remove('is-off')); } });
+      await wait(360);
+      rows.forEach(r => r.classList.toggle('is-gone', r.classList.contains('is-off')));
+    };
+    tabs.forEach(t => t.addEventListener('click', () => set(Number(t.dataset.pdebtTab))));
+    const narrow = matchMedia('(max-width: 700px)').matches;
+    if (reduced || narrow) { set(1); if (cur) cur.style.display = 'none'; }
+    else {
+      const aim = el => { const b = el.getBoundingClientRect(), r = pdebt.getBoundingClientRect(); cur.style.left = (b.left - r.left + b.width / 2) + 'px'; cur.style.top = (b.top - r.top + b.height - 2) + 'px'; };
+      const click = async i => { aim(tabs[i]); cur.style.opacity = '1'; await wait(760); pdebt.dataset.press = '1'; await wait(150); pdebt.dataset.press = '0'; await set(i); };
+      pvStart(pdebt, async () => { for (;;) { await wait(1100); await click(1); await wait(3000); await click(0); cur.style.opacity = '0'; await wait(2400); } });
+    }
+  }
+
+  /* осмотр при выдаче: кадры снимаются, чек-лист отмечается, осмотр уходит в аренду */
+  const pcheck = $('[data-pcheck]');
+  if (pcheck) {
+    const shots = $$('[data-pcheck-shot]', pcheck), list = $$('[data-pcheck-row]', pcheck), foot = $('[data-pcheck-foot]', pcheck);
+    const set = n => { shots.forEach((s, i) => s.classList.toggle('is-on', i < n)); list.forEach((r, i) => r.classList.toggle('is-on', i < n)); foot.classList.toggle('is-on', n >= shots.length); };
+    if (reduced) set(shots.length);
+    else pvStart(pcheck, async () => { for (;;) { set(0); await wait(850); for (let i = 1; i <= shots.length; i++) { set(i); await wait(720); } await wait(3400); } });
+  }
 
   $('.to-top')?.addEventListener('click', () => scrollTo({ top: 0, behavior: reduced ? 'auto' : 'smooth' }));
 })();

@@ -1878,6 +1878,14 @@ i.setplay__sw{cursor:default}
 .legal-cards .card p{color:var(--muted);flex:1}
 .sec-head--row{display:flex;align-items:flex-end;justify-content:space-between;gap:24px;flex-wrap:wrap}
 .posts{display:grid;gap:16px;grid-template-columns:repeat(3,1fr)}
+.bsearch{margin-bottom:24px;max-width:560px}
+.bsearch__field{position:relative;display:block}
+.bsearch__field svg{position:absolute;left:16px;top:50%;width:20px;height:20px;transform:translateY(-50%);color:var(--muted);pointer-events:none}
+.bsearch__field input{font:inherit;font-size:16px;width:100%;height:52px;padding:0 16px 0 46px;border-radius:999px;border:1px solid var(--line);background:var(--card);color:var(--ink);outline:none;transition:border-color .3s,box-shadow .3s}
+.bsearch__field input::placeholder{color:var(--faint)}
+.bsearch__field input:focus{border-color:var(--ink);box-shadow:0 0 0 4px rgba(240,177,0,.25)}
+.bsearch__none{margin-top:16px;color:var(--muted);font-size:15px}
+.post[hidden]{display:none!important}
 .post{display:flex;flex-direction:column;padding:0;overflow:hidden;border-radius:var(--r-lg);background:var(--card);border:1px solid var(--line);color:var(--ink);text-decoration:none;transition:transform .4s var(--ease),box-shadow .4s var(--ease),border-color .3s}
 .post:hover{transform:translateY(-3px);box-shadow:var(--shadow);border-color:var(--line-2)}
 .post__img{display:block;width:100%;aspect-ratio:16/9;object-fit:cover;border-bottom:1px solid var(--line);background:var(--yellow-tint)}
@@ -1934,4 +1942,113 @@ i.setplay__sw{cursor:default}
 .feat-index .card h3{font-size:16px;margin:0;flex:1}
 .feat-index .card__top{margin:0;display:flex;align-items:center;gap:8px;width:auto;min-height:0}
 .feat-index .card__top .tag{display:none}
+}
+
+/* ============ ВИЗУАЛЫ В СТАТЬЯХ БЛОГА ============ */
+.postvis{margin:30px 0 34px}
+.postvis__stage{position:relative}
+.postvis figcaption{margin:14px 0 0;padding-left:14px;border-left:2px solid var(--yellow);font-size:13.5px;line-height:1.5;color:var(--muted)}
+
+/* документы в карточке аренды */
+.pdocs{background:var(--card);border:1px solid var(--line);border-radius:var(--r-lg);box-shadow:var(--shadow);overflow:hidden}
+.pdocs__head{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:15px 18px;border-bottom:1px solid var(--line-2);background:linear-gradient(180deg,var(--yellow-tint),#fff)}
+.pdocs__head small{display:block;font-size:12px;color:var(--muted);margin-bottom:3px}
+.pdocs__head b{display:flex;align-items:center;gap:8px;font-size:14.5px}
+.pdocs__cnt{flex:none;font-size:12px;color:var(--muted);background:#fff;border:1px solid var(--line);border-radius:999px;padding:5px 11px;font-variant-numeric:tabular-nums}
+.pdocs__list{list-style:none;margin:0;padding:6px}
+.pdocs__row{display:flex;align-items:center;gap:12px;padding:12px;border-radius:12px;transition:background .45s var(--ease)}
+.pdocs__row.is-ok{background:#F6FBF8}
+.pdocs__ico{flex:none;width:34px;height:34px;border-radius:10px;display:grid;place-items:center;background:var(--yellow-soft);color:var(--yellow-deep)}
+.pdocs__ico svg{width:17px;height:17px}
+.pdocs__name{flex:1;min-width:0}
+.pdocs__name b{display:block;font-size:14px;line-height:1.3}
+.pdocs__name em{font-style:normal;font-size:12px;color:var(--muted)}
+.pdocs__st{flex:none;display:grid}
+.pdocs__st em{grid-area:1/1;font-style:normal;font-size:11.5px;border-radius:999px;padding:5px 10px;display:inline-flex;align-items:center;gap:6px;white-space:nowrap;transition:opacity .35s var(--ease),transform .35s var(--ease)}
+.pdocs__wait{background:var(--bg);border:1px solid var(--line);color:var(--muted)}
+.pdocs__ok{background:var(--ok-soft);color:var(--ok);font-weight:600;opacity:0;transform:translateY(5px)}
+.pdocs__ok svg{width:13px;height:13px;flex:none}
+.pdocs__row.is-ok .pdocs__wait{opacity:0;transform:translateY(-5px)}
+.pdocs__row.is-ok .pdocs__ok{opacity:1;transform:none}
+.pdocs__foot{padding:12px 18px;border-top:1px solid var(--line-2);background:var(--bg);font-size:12.5px;color:var(--muted)}
+
+/* карточка аренды целиком */
+.prent{background:var(--card);border:1px solid var(--line);border-radius:var(--r-lg);box-shadow:var(--shadow);overflow:hidden}
+.prent__head{display:flex;align-items:center;gap:12px;padding:15px 18px;border-bottom:1px solid var(--line-2)}
+.prent__head div{flex:1;min-width:0}
+.prent__head b{display:block;font-size:14.5px}
+.prent__head em{font-style:normal;font-size:12.5px;color:var(--muted)}
+.prent__on{flex:none;font-size:11.5px;color:var(--ok);background:var(--ok-soft);border-radius:999px;padding:5px 11px;font-weight:600}
+.prent__grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line-2)}
+.prent__tile{background:#fff;padding:16px 14px;transition:background .5s var(--ease),box-shadow .5s var(--ease)}
+.prent__tile small{display:block;font-size:11.5px;color:var(--muted);margin-bottom:7px}
+.prent__tile b{display:block;font-size:19px;font-weight:800;letter-spacing:-.03em;line-height:1.1;margin-bottom:5px;font-variant-numeric:tabular-nums}
+.prent__tile em{font-style:normal;font-size:11.5px;color:var(--muted)}
+.prent__tile.is-on{background:var(--yellow-tint);box-shadow:inset 0 -3px 0 var(--yellow)}
+.prent__foot{padding:12px 18px;border-top:1px solid var(--line-2);background:var(--bg);font-size:12.5px;color:var(--muted)}
+
+/* аренды: вкладка «С просрочкой» */
+.pdebt{position:relative;background:var(--card);border:1px solid var(--line);border-radius:var(--r-lg);box-shadow:var(--shadow);overflow:hidden}
+.pdebt__cur{position:absolute;z-index:3;width:22px;height:22px;left:50%;top:50%;fill:#14141c;stroke:#fff;stroke-width:1.4;stroke-linejoin:round;filter:drop-shadow(0 3px 4px rgba(20,20,28,.3));pointer-events:none;opacity:0;transition:left .7s cubic-bezier(.4,0,.2,1),top .7s cubic-bezier(.4,0,.2,1),transform .15s,opacity .3s}
+.pdebt[data-press="1"] .pdebt__cur{transform:scale(.86)}
+.pdebt__head{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:13px 16px;border-bottom:1px solid var(--line-2)}
+.pdebt__head>b{font-size:14.5px}
+.pdebt__tabs{display:flex;gap:4px;background:var(--bg);border:1px solid var(--line);border-radius:999px;padding:3px}
+.pdebt__tabs button{border:0;background:none;font:inherit;font-size:12.5px;color:var(--muted);padding:6px 12px;border-radius:999px;cursor:pointer;display:inline-flex;align-items:center;gap:6px;transition:background .3s,color .3s,box-shadow .3s}
+.pdebt__tabs i{font-style:normal;font-size:11px;background:var(--line-2);border-radius:999px;padding:1px 6px;transition:background .3s}
+.pdebt__tabs .is-on{background:#fff;color:var(--ink);font-weight:600;box-shadow:0 1px 3px rgba(13,13,13,.1)}
+.pdebt__tabs .is-on i{background:var(--yellow-soft)}
+.pdebt__table{width:100%;border-collapse:collapse;font-size:13.5px}
+.pdebt__table th{text-align:left;font-size:10.5px;letter-spacing:.07em;text-transform:uppercase;color:var(--faint);font-weight:600;padding:10px 16px}
+.pdebt__table td{padding:11px 16px;border-top:1px solid var(--line-2);font-variant-numeric:tabular-nums}
+.pdebt__table td:last-child{text-align:right;font-weight:600}
+.pdebt__table tr[data-pdebt-row]{transition:opacity .35s var(--ease),transform .35s var(--ease)}
+.pdebt__table tr.is-off{opacity:0;transform:translateX(-10px)}
+.pdebt__table tr.is-gone{display:none}
+.pdebt__late{color:var(--bad);font-weight:600}
+.pdebt__ok{color:var(--faint)}
+.pdebt__foot{display:flex;align-items:center;justify-content:space-between;padding:12px 16px;border-top:1px solid var(--line);background:var(--bg);font-size:13px;color:var(--muted)}
+.pdebt__foot b{font-variant-numeric:tabular-nums}
+
+/* осмотр при выдаче */
+.pcheck{background:var(--card);border:1px solid var(--line);border-radius:var(--r-lg);box-shadow:var(--shadow);overflow:hidden}
+.pcheck__head{display:flex;align-items:baseline;justify-content:space-between;gap:10px;padding:15px 18px;border-bottom:1px solid var(--line-2)}
+.pcheck__head b{font-size:14.5px}
+.pcheck__head span{font-size:12.5px;color:var(--muted)}
+.pcheck__shots{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;padding:16px 18px 6px}
+.pcheck__shot{position:relative;margin:0;aspect-ratio:4/3;border-radius:12px;overflow:hidden;border:1px solid var(--line);background:#F2F2F2 var(--shot) no-repeat var(--pos)/var(--zoom);opacity:0;transform:scale(.95);transition:opacity .45s var(--ease),transform .45s var(--ease)}
+.pcheck__shot.is-on{opacity:1;transform:none}
+.pcheck__shot figcaption{position:absolute;left:6px;bottom:6px;font-size:10.5px;line-height:1;background:rgba(13,13,13,.72);color:#fff;border-radius:6px;padding:4px 7px}
+.pcheck__flash{position:absolute;inset:0;background:#fff;opacity:0;pointer-events:none}
+.pcheck__shot.is-on .pcheck__flash{animation:pcflash .55s var(--ease)}
+@keyframes pcflash{0%{opacity:.92}100%{opacity:0}}
+.pcheck__list{list-style:none;margin:0;padding:10px 18px 0;display:grid;gap:9px}
+.pcheck__list li{display:flex;align-items:center;gap:10px;font-size:13.5px;color:var(--muted);opacity:.5;transition:opacity .35s var(--ease),color .35s}
+.pcheck__list li i{flex:none;width:20px;height:20px;border-radius:50%;background:var(--line-2);color:#fff;display:grid;place-items:center;transition:background .35s}
+.pcheck__list li i svg{width:12px;height:12px;opacity:0;transition:opacity .3s}
+.pcheck__list li.is-on{opacity:1;color:var(--ink)}
+.pcheck__list li.is-on i{background:var(--ok)}
+.pcheck__list li.is-on i svg{opacity:1}
+.pcheck__km{display:flex;align-items:center;justify-content:space-between;margin:16px 18px 18px;padding:11px 14px;border:1px dashed var(--line);border-radius:12px;font-size:13px;color:var(--muted)}
+.pcheck__km b{color:var(--ink);font-variant-numeric:tabular-nums}
+.pcheck__foot{padding:12px 18px;border-top:1px solid var(--line-2);background:var(--ok-soft);color:var(--ok);font-size:12.5px;font-weight:600;opacity:0;transition:opacity .45s var(--ease)}
+.pcheck__foot.is-on{opacity:1}
+
+/* сцены, взятые с продуктовых страниц, свёрстаны под ~500px — на узком экране ужимаем */
+@media (max-width:560px){ .postvis__stage .ov{zoom:.72} }
+@media (max-width:420px){ .postvis__stage .ov{zoom:.64} }
+
+@media (max-width:640px){
+.postvis{margin:24px 0 28px}
+.pdocs__row{gap:10px;padding:10px}
+.pdocs__ico{width:30px;height:30px}
+.pdocs__st em{font-size:11px;padding:4px 8px}
+.pdocs__cnt{display:none}
+.prent__grid{grid-template-columns:1fr 1fr}
+.pdebt__head{flex-direction:column;align-items:stretch;gap:10px}
+.pdebt__table th,.pdebt__table td{padding:10px 12px;font-size:12.5px}
+/* на узком экране колонка с номером не влезает — остаются водитель, просрочка и долг */
+.pdebt__table th:nth-child(2),.pdebt__table td:nth-child(2){display:none}
+.pcheck__shots{grid-template-columns:1fr 1fr}
+.pcheck__list li{font-size:13px}
 }
