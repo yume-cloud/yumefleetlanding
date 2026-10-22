@@ -2166,7 +2166,7 @@ def legal_pages():
     for key, title, desc in LEGAL:
         t = open(os.path.join(ROOT, 'legal-src', key + '.html'), encoding='utf-8').read()
         t = re.sub(r'^<h1>.*?</h1>\n?', '', t)
-        doc_page(f'/legal/{key}/', title, desc, t)
+        doc_page(f'/legal/{key}/', title, desc, t, updated='22 октября 2026' if key == 'privacy' else '16 октября 2026')
     da = open(os.path.join(ROOT, 'legal-src', 'delete-account.html'), encoding='utf-8').read()
     doc_page('/delete-account/', 'Удаление аккаунта', 'Как удалить аккаунт в Yume Fleet и какие данные при этом удаляются.', da, parent=None, updated=None)
     # индекс
