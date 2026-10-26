@@ -74,7 +74,7 @@ WA = 'https://wa.me/77779479990'
 LOGIN = 'https://yumefleet.com/login'
 INST = 'https://www.instagram.com/yumefleet/'
 YT = 'https://www.youtube.com/@yumecloud'
-LEAD = 'https://yume-cloud-zzydfr.vercel.app/api/lead/'
+LEAD = 'https://yumefleet.com/api/lead/'
 
 # ------------------------------------------------------------------ разбор markdown
 TAGS = {'НОВОЕ': ('new', 'новое'), 'ЛУЧШЕ': ('better', 'лучше'), 'СКОРО': ('soon', 'скоро')}

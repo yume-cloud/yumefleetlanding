@@ -26,7 +26,7 @@ python3 -m http.server 4173
 
 ## Форма заявки
 
-Заявки уходят POST-запросом на серверную функцию, адрес задан в атрибуте `data-endpoint` у `<form class="form">` (сейчас `https://yume-cloud-zzydfr.vercel.app/api/lead/`, та же функция, что у yume.cloud — `api/lead.js`). Если запрос не прошёл, форма открывает WhatsApp с заполненным текстом заявки.
+Заявки уходят POST-запросом на серверную функцию, адрес задан в атрибуте `data-endpoint` у `<form class="form">` (сейчас `https://yumefleet.com/api/lead/`, та же функция, что у yume.cloud — `api/lead.js`). Если запрос не прошёл, форма открывает WhatsApp с заполненным текстом заявки.
 
 ## Аналитика
 
