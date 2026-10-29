@@ -2122,7 +2122,7 @@ def spasibo():
       <h1>{T("ty_title")}</h1>
       <p class="lead" style="margin-top:18px">{T("ty_lead")}</p>
       <div class="hero__ctas" style="justify-content:flex-start;opacity:1;animation:none;margin-top:28px">
-        <a class="btn btn--lg btn--yellow" href="{WA}" rel="noopener"><svg><use href="#i-wa"/></svg> {T("wa_btn")}</a>
+        <a class="btn btn--lg btn--yellow" href="{WA}" rel="noopener" data-ty-wa><svg><use href="#i-wa"/></svg> {T("wa_btn")}</a>
         <a class="btn btn--lg btn--ghost" href="{href('/kk/', R) if L == 'kk' else R}">{T("to_home")}</a>
       </div>
     </div>

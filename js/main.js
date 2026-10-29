@@ -1373,18 +1373,27 @@
     const payload = { name: name.value.trim(), phone: phone.value.trim(), segment: [cars?.value, city?.value.trim()].filter(Boolean).join(' · '), page: location.pathname, source: 'yumefleet.com', website: $('input[name=website]', form)?.value || '' };
     const label = btn.textContent; btn.disabled = true; btn.textContent = document.documentElement.lang === 'kk' ? 'Жіберілуде…' : 'Отправляем…';
     let sent = false;
+    try { sessionStorage.removeItem('yf_lead_wa'); } catch (x) {}
     if (LEAD_ENDPOINT) {
-      try { const r = await fetch(LEAD_ENDPOINT, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload) }); const j = await r.json().catch(() => ({})); sent = r.ok && j.ok; } catch (x) { sent = false; }
+      // обычная веб-форма, а не JSON: браузер не шлёт предварительный OPTIONS, который на сервере перехватывает общий CORS
+      try { const r = await fetch(LEAD_ENDPOINT, { method: 'POST', body: new URLSearchParams(payload) }); const j = await r.json().catch(() => ({})); sent = r.ok && j.ok; } catch (x) { sent = false; }
     }
     if (!sent) {
       const msg = `Здравствуйте! Хочу демо Yume Fleet.\nИмя: ${payload.name}\nТелефон: ${payload.phone}\nПарк: ${payload.segment}`;
+      // текст заявки ждёт на «спасибо» в кнопке WhatsApp, если окно ниже заблокирует браузер
+      try { sessionStorage.setItem('yf_lead_wa', msg); } catch (x) {}
       window.open('https://wa.me/77779479990?text=' + encodeURIComponent(msg), '_blank', 'noopener');
     }
     form.classList.add('is-done'); btn.disabled = false; btn.textContent = label;
     try { window.gtag && gtag('event', 'generate_lead', { product: 'fleet' }); } catch (x) {}
-    // заявка ушла на сервер — уводим на страницу «спасибо».
-    // если сервер не ответил, человек остаётся здесь: у него открыт WhatsApp с текстом заявки
-    if (sent && DONE_URL) setTimeout(() => location.assign(DONE_URL), 250);
+    // после любой отправленной заявки уводим на страницу «спасибо»
+    if (DONE_URL) setTimeout(() => location.assign(DONE_URL), 250);
+  });
+
+  /* «спасибо» после заявки, которая не дошла до сервера: кнопка WhatsApp с готовым текстом */
+  $$('[data-ty-wa]').forEach(a => {
+    let msg = ''; try { msg = sessionStorage.getItem('yf_lead_wa') || ''; } catch (x) {}
+    if (msg) a.href = 'https://wa.me/77779479990?text=' + encodeURIComponent(msg);
   });
 
   /* визуалы в статьях блога: каждая сцена оживает, когда доскроллили до неё */
