@@ -1,0 +1,333 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Yume Fleet – платформа для таксопарка</title>
+<meta name="description" content="Учет аренд, контроль задолженности, оплаты через Kaspi, штрафы, подписание через eGov, ТО/СТО и осмотры. Всё в одной системе.">
+<link rel="canonical" href="https://yumefleet.com/fleetshort/">
+<meta name="robots" content="noindex, follow">
+<link rel="preload" as="image" media="(min-width: 761px)" href="../assets/img/hero-tablet.webp" imagesrcset="../assets/img/hero-tablet-960.webp 960w, ../assets/img/hero-tablet.webp 1536w" imagesizes="(max-width: 1000px) 100vw, 920px">
+<link rel="preload" as="image" media="(max-width: 760px)" href="../assets/img/hero-phone.webp">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Yume Fleet – платформа для таксопарка">
+<meta property="og:description" content="Учет аренд, контроль задолженности, оплаты через Kaspi, штрафы, подписание через eGov, ТО/СТО и осмотры. Всё в одной системе.">
+<meta property="og:url" content="https://yumefleet.com/fleetshort/">
+<meta property="og:image" content="https://yumefleet.com/assets/img/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../assets/logo/favicon.svg" type="image/svg+xml">
+<link rel="preload" as="font" type="font/woff2" href="../assets/fonts/geist-800-cyrillic.woff2" crossorigin>
+<link rel="preload" as="font" type="font/woff2" href="../assets/fonts/geist-400-cyrillic.woff2" crossorigin>
+<style>/* cyrillic-ext */
+@font-face {
+  font-family: 'Geist';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(../assets/fonts/geist-400-cyrillic-ext.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Geist';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(../assets/fonts/geist-400-cyrillic.woff2) format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Geist';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(../assets/fonts/geist-400-latin-ext.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Geist';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(../assets/fonts/geist-400-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Geist';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(../assets/fonts/geist-500-cyrillic-ext.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Geist';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(../assets/fonts/geist-500-cyrillic.woff2) format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Geist';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(../assets/fonts/geist-500-latin-ext.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Geist';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(../assets/fonts/geist-500-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Geist';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(../assets/fonts/geist-600-cyrillic-ext.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Geist';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(../assets/fonts/geist-600-cyrillic.woff2) format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Geist';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(../assets/fonts/geist-600-latin-ext.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Geist';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(../assets/fonts/geist-600-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Geist';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(../assets/fonts/geist-700-cyrillic-ext.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Geist';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(../assets/fonts/geist-700-cyrillic.woff2) format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Geist';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(../assets/fonts/geist-700-latin-ext.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Geist';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(../assets/fonts/geist-700-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Geist';
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url(../assets/fonts/geist-800-cyrillic-ext.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Geist';
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url(../assets/fonts/geist-800-cyrillic.woff2) format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Geist';
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url(../assets/fonts/geist-800-latin-ext.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Geist';
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url(../assets/fonts/geist-800-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+</style>
+<link rel="stylesheet" href="../css/styles.css?v=3e737209">
+<link rel="stylesheet" href="../css/fleetshort.css?v=6bdd227f">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Organization", "name": "Yume Fleet", "legalName": "ТОО «Yume.Cloud»", "url": "https://yumefleet.com/", "logo": "https://yumefleet.com/assets/logo/tile.svg", "telephone": "+77051552524", "address": {"@type": "PostalAddress", "addressLocality": "Алматы", "addressCountry": "KZ"}, "sameAs": ["https://www.instagram.com/yumefleet/", "https://www.youtube.com/@yumecloud"]}</script>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="mark" viewBox="0 0 42 18"><path d="M6 0l9 0-3 9-9 0z m18 0l9 0-3 9-9 0z m-12 9l9 0-3 9-9 0z m18 0l9 0-3 9-9 0z" fill="currentColor"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-play" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" stroke-width="2"/><path d="m10 8 6 4-6 4z" fill="currentColor"/></symbol>
+  <symbol id="i-wa" viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M8.5 9.5c0 3 2.5 5.5 5.5 5.5l1.5-1.5-2-1-1 1a4 4 0 0 1-2.5-2.5l1-1-1-2z" fill="currentColor"/></symbol>
+  <symbol id="i-up" viewBox="0 0 24 24"><path d="M12 19V5M5 12l7-7 7 7" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-alert" viewBox="0 0 24 24"><path d="M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0zM12 9v4M12 17h.01" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-wallet" viewBox="0 0 24 24"><path d="M3 7a2 2 0 0 1 2-2h13v4M3 7v11a2 2 0 0 0 2 2h15a1 1 0 0 0 1-1v-9a1 1 0 0 0-1-1H5a2 2 0 0 1-2-2z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><circle cx="16.5" cy="14" r="1.2" fill="currentColor"/></symbol>
+  <symbol id="i-car" viewBox="0 0 24 24"><path d="M5 11l1.5-4.5A2 2 0 0 1 8.4 5h7.2a2 2 0 0 1 1.9 1.5L19 11M3 11h18v6h-2M3 17h2M7 17h10" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="7" cy="17" r="2" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="17" cy="17" r="2" fill="none" stroke="currentColor" stroke-width="2"/></symbol>
+  <symbol id="i-user" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4" fill="none" stroke="currentColor" stroke-width="2"/><path d="M4 21a8 8 0 0 1 16 0" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+  <symbol id="i-doc" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8zM14 2v6h6M9 15l2 2 4-4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="m9 12 2 2 4-4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-wrench" viewBox="0 0 24 24"><path d="M14.7 6.3a4 4 0 0 0 5 5L13 18a2.1 2.1 0 0 1-3-3l6.7-6.7zM21 3l-4 4M3 21l4-4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 22s7-6.2 7-12a7 7 0 1 0-14 0c0 5.8 7 12 7 12z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><circle cx="12" cy="10" r="2.5" fill="none" stroke="currentColor" stroke-width="2"/></symbol>
+  <symbol id="i-phone" viewBox="0 0 24 24"><rect x="6" y="2" width="12" height="20" rx="2.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M11 18h2" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+  <symbol id="i-inbox" viewBox="0 0 24 24"><path d="M22 12h-6l-2 3h-4l-2-3H2M5.5 5h13L22 12v7H2v-7z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></symbol>
+  <symbol id="i-upload" viewBox="0 0 24 24"><path d="M12 16V4M6 10l6-6 6 6M4 20h16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-cal" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2" fill="none" stroke="currentColor" stroke-width="2"/><path d="M3 10h18M8 3v4M16 3v4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+  <symbol id="i-flag" viewBox="0 0 24 24"><path d="M5 21V4M5 4h11l-2.2 4 2.2 4H5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-link" viewBox="0 0 24 24"><path d="M10 14a5 5 0 0 0 7 0l3-3a5 5 0 0 0-7-7l-1 1M14 10a5 5 0 0 0-7 0l-3 3a5 5 0 0 0 7 7l1-1" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+  <symbol id="i-chev" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-chart" viewBox="0 0 24 24"><path d="M4 20v-8M10 20V5M16 20v-6M2 20h20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+  <symbol id="i-cog" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3" fill="none" stroke="currentColor" stroke-width="2"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.8-.3 1.7 1.7 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-1.1-1.5 1.7 1.7 0 0 0-1.8.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.8 1.7 1.7 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.1a1.7 1.7 0 0 0 1.5-1.1 1.7 1.7 0 0 0-.3-1.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.8.3H9a1.7 1.7 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.8-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.8V9a1.7 1.7 0 0 0 1.5 1H21a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></symbol>
+  <symbol id="i-inst" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="17.2" cy="6.8" r="1.2" fill="currentColor"/></symbol>
+  <symbol id="i-yt" viewBox="0 0 24 24"><rect x="2.5" y="5" width="19" height="14" rx="4" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M10.2 9.3l5 2.7-5 2.7z" fill="currentColor"/></symbol>
+</svg>
+
+<header class="nav nav--min">
+  <div class="wrap">
+    <a class="logo" href="../"><i><svg><use href="#mark"/></svg></i><span><b>yume</b><em>fleet</em></span></a>
+    <div class="nav__actions"><a class="btn btn--sm btn--yellow" href="#demo">Записаться на демо</a></div>
+  </div>
+</header>
+
+<section class="hero fshero">
+  <div class="hero__checks"></div>
+  <div class="wrap">
+    <div class="hero__inner">
+      <h1>Единая платформа для управления <span class="hl">таксопарком</span></h1>
+      <p class="lead">Учет аренд, <strong>контроль задолженности,</strong> оплаты через <strong>Kaspi</strong>, штрафы, подписание через eGov, ТО/СТО и осмотры.<br>Всё в одной системе.</p>
+      <div class="hero__ctas">
+        <a class="btn btn--lg btn--yellow" href="#demo">Записаться на демо <svg><use href="#i-arrow"/></svg></a>
+      </div>
+      <p class="fsnote">Запустим ваш парк за 1 день</p>
+    </div>
+    <div class="hero__stage">
+      <picture class="hero__mock">
+        <source media="(max-width: 760px)" srcset="../assets/img/hero-phone.webp" width="900" height="948">
+        <img width="1536" height="1024" src="../assets/img/hero-tablet.webp" srcset="../assets/img/hero-tablet-960.webp 960w, ../assets/img/hero-tablet.webp 1536w" sizes="(max-width: 1000px) 100vw, 920px" alt="Главный экран Yume Fleet: выручка, машины в аренде, долги" fetchpriority="high">
+      </picture>
+      <img class="hcard hcard--driver" src="../assets/img/hero-card-driver.webp" width="560" height="435" alt="" aria-hidden="true" loading="lazy">
+      <img class="hcard hcard--rent" src="../assets/img/hero-card-rent.webp" width="560" height="435" alt="" aria-hidden="true" loading="lazy">
+      <img class="hcard hcard--fine" src="../assets/img/hero-card-fine.webp" width="560" height="336" alt="" aria-hidden="true" loading="lazy">
+      <img class="hcard hcard--inspection" src="../assets/img/hero-card-inspection.webp" width="560" height="418" alt="" aria-hidden="true" loading="lazy">
+    </div>
+  </div>
+</section>
+<div class="fsstats"><div class="wrap" data-stagger><div class="fsstat"><b>1000+</b><span>авто уже работают в нашей системе</span></div><div class="fsstat"><b>0 ₸</b><span>наша комиссия с оплат Kaspi Pay</span></div><div class="fsstat"><b>1 день</b><span>до запуска парка в системе</span></div></div></div>
+<section class="section" id="first"><div class="wrap"><div class="sec-head sec-head--center" data-reveal><div><p class="eyebrow">Без рутины</p><h2>Yume Fleet берёт операционку на себя</h2></div></div><div class="fscards fscards--4" data-stagger><article class="fscard"><small>01</small><h3>Видно, кто должен</h3><p>Сумма долга по всем статьям и <strong>дни просрочки</strong> по каждому водителю. Без Excel и сверок в конце месяца.</p></article><article class="fscard"><small>02</small><h3>Водитель платит сам</h3><p>Ссылка <strong>для водителя,</strong> где он сам выбирает дни и платит через <strong>Kaspi Pay.</strong> Оплата зачисляется в систему сама.</p></article><article class="fscard"><small>03</small><h3>Осмотры, ТО, СТО – контроль железного парка</h3><p>Осмотры при выдаче и возврате, <strong>ТО по пробегу</strong> с напоминаниями, ремонты и мастерская. Видно состояние каждой машины.</p></article><article class="fscard"><small>04</small><h3>Любые условия аренды</h3><p>Посуточно, смены, фиксированный срок, <strong>аренда под выкуп</strong>. Учет субаренды и лизинга.</p></article></div></div></section>
+<section class="section section--card" id="ui"><div class="wrap"><div class="sec-head sec-head--center" data-reveal><div><p class="eyebrow">Интерфейс</p><h2>Что внутри</h2></div></div><div class="fsuis"><article class="fsui" data-reveal>
+        <div class="fsui__txt"><small>01</small><h3>Аренды</h3><p>Остаток к оплате, <strong>график оплат по дням</strong>, журнал платежей, осмотры, штрафы, услуги, документы. Посуточно, фиксированный срок.</p></div>
+        <div class="fsui__vis"><div class="fsui__stage"><img class="fsui__img" src="../assets/img/fleetshort/rent.webp" width="1100" height="805" alt="Аренды" loading="lazy" decoding="async"></div></div>
+      </article><article class="fsui fsui--rev" data-reveal>
+        <div class="fsui__txt"><small>02</small><h3>Карточка машины</h3><p>Кто ездит сейчас, пробег, <strong>ТО и ремонты</strong>, штрафы, доход и окупаемость машины. Мастерская и склад запчастей.</p></div>
+        <div class="fsui__vis"><div class="fsui__stage"><img class="fsui__img" src="../assets/img/fleetshort/vehicle.webp" width="1100" height="898" alt="Карточка машины" loading="lazy" decoding="async"></div></div>
+      </article><article class="fsui" data-reveal>
+        <div class="fsui__txt"><small>03</small><h3>Карточка водителя</h3><p>Все аренды, долг, депозит, штрафы, документы. Видно, можно ли выдавать ему машину снова.</p></div>
+        <div class="fsui__vis"><div class="fsui__stage"><img class="fsui__img" src="../assets/img/fleetshort/driver.webp" width="1100" height="913" alt="Карточка водителя" loading="lazy" decoding="async"></div></div>
+      </article><article class="fsui fsui--rev" data-reveal>
+        <div class="fsui__txt"><small>04</small><h3>Оплата по ссылке Kaspi</h3><p>Прямая связь с вашим Kaspi, <strong>без нашей комиссии</strong>.</p></div>
+        <div class="fsui__vis"><div class="fsui__stage"><img class="fsui__img" src="../assets/img/fleetshort/kaspi.webp" width="1100" height="982" alt="Оплата по ссылке Kaspi" loading="lazy" decoding="async"></div></div>
+      </article><article class="fsui" data-reveal>
+        <div class="fsui__txt"><small>05</small><h3>Документы и подпись</h3><p>Договор, акт, путевой лист. Подпись через eGov и SMS.</p></div>
+        <div class="fsui__vis"><div class="fsui__stage"><img class="fsui__img" src="../assets/img/fleetshort/docs.webp" width="1100" height="1031" alt="Документы и подпись" loading="lazy" decoding="async"></div></div>
+      </article><article class="fsui fsui--rev" data-reveal>
+        <div class="fsui__txt"><small>06</small><h3>Штрафы ПДД</h3><p>Постановления с протоколом, скидка и долг водителя.</p></div>
+        <div class="fsui__vis"><div class="fsui__stage"><img class="fsui__img" src="../assets/img/fleetshort/fines.webp" width="1100" height="811" alt="Штрафы ПДД" loading="lazy" decoding="async"></div></div>
+      </article><article class="fsui" data-reveal>
+        <div class="fsui__txt"><small>07</small><h3>Аналитика</h3><p>Обзор, финансы, P&amp;L, cash flow, эффективность и окупаемость машин, водители, СТО.</p></div>
+        <div class="fsui__vis"><div class="fsui__stage"><img class="fsui__img" src="../assets/img/fleetshort/analytics.webp" width="1100" height="739" alt="Аналитика" loading="lazy" decoding="async"></div></div>
+      </article></div></div></section>
+<div class="fsmid"><div class="wrap" data-reveal><a class="btn btn--lg btn--yellow" href="#demo">Записаться на демо <svg><use href="#i-arrow"/></svg></a></div></div>
+<section class="section" id="start"><div class="wrap"><div class="sec-head sec-head--center" data-reveal><div><p class="eyebrow">Запуск</p><h2>Не нужно останавливать работу парка</h2><p class="lead">Поможем быстро перенести данные и настроить систему под ваш парк.</p></div></div><div class="flow flow--3"><div class="flow__line"><i></i></div><div class="step" data-reveal style="--d:0.0s"><div class="step__n"><svg><use href="#i-cal"/></svg></div><small>ШАГ 01</small><h3>Демо</h3><p>Показываем систему на примере парка вашего размера.</p></div><div class="step" data-reveal style="--d:0.1s"><div class="step__n"><svg><use href="#i-upload"/></svg></div><small>ШАГ 02</small><h3>Перенос</h3><p>Машины, водителей и аренды переносим мы. Парк продолжает работать.</p></div><div class="step" data-reveal style="--d:0.2s"><div class="step__n"><svg><use href="#i-doc"/></svg></div><small>ШАГ 03</small><h3>Запуск</h3><p>Подключаем Kaspi и договоры, обучаем менеджеров. Поддерживаем после подключения.</p></div></div></div></section>
+<section class="section section--card" id="shift"><div class="wrap"><div class="sec-head sec-head--center" data-reveal><div><p class="eyebrow">Было и стало</p><h2>Как меняется работа парка</h2></div></div><div class="shift" data-reveal><div class="shift__row"><div>Было</div><div></div><div>Стало</div></div><div class="shift__row"><div class="shift__was"><span style="color:#ef4444;margin-right:6px">✖</span>Долги считают руками в конце месяца</div><div class="shift__arr"><svg><use href="#i-arrow"/></svg></div><div class="shift__now"><span style="color:#22c55e;margin-right:6px">✔</span>Долг и дни просрочки <strong>видны каждый день</strong> по каждой аренде</div></div><div class="shift__row"><div class="shift__was"><span style="color:#ef4444;margin-right:6px">✖</span>Водитель переводит на карту, менеджер ищет платёж</div><div class="shift__arr"><svg><use href="#i-arrow"/></svg></div><div class="shift__now"><span style="color:#22c55e;margin-right:6px">✔</span>Водитель платит <strong>по ссылке Kaspi</strong>, оплата сама попадает в аренду</div></div><div class="shift__row"><div class="shift__was"><span style="color:#ef4444;margin-right:6px">✖</span>Штраф узнают после возврата машины</div><div class="shift__arr"><svg><use href="#i-arrow"/></svg></div><div class="shift__now"><span style="color:#22c55e;margin-right:6px">✔</span>Штраф приходит <strong>с протоколом</strong> и сразу привязан к водителю</div></div><div class="shift__row"><div class="shift__was"><span style="color:#ef4444;margin-right:6px">✖</span>Договор на бумаге, подпись при встрече</div><div class="shift__arr"><svg><use href="#i-arrow"/></svg></div><div class="shift__now"><span style="color:#22c55e;margin-right:6px">✔</span>Договор подписывают <strong>через eGov или SMS</strong> без встречи</div></div><div class="shift__row"><div class="shift__was"><span style="color:#ef4444;margin-right:6px">✖</span>Проблемного водителя узнают после ущерба</div><div class="shift__arr"><svg><use href="#i-arrow"/></svg></div><div class="shift__now"><span style="color:#22c55e;margin-right:6px">✔</span><strong>Проверка</strong> по реестру должников и чёрному списку до выдачи машины</div></div><div class="shift__row"><div class="shift__was"><span style="color:#ef4444;margin-right:6px">✖</span>Выкуп и субаренда в отдельной таблице</div><div class="shift__arr"><svg><use href="#i-arrow"/></svg></div><div class="shift__now"><span style="color:#22c55e;margin-right:6px">✔</span><strong>Выкуп, субаренда и лизинг</strong> в той же системе, что и аренда</div></div><div class="shift__row"><div class="shift__was"><span style="color:#ef4444;margin-right:6px">✖</span>Состояние машины узнают, когда она уже сломалась</div><div class="shift__arr"><svg><use href="#i-arrow"/></svg></div><div class="shift__now"><span style="color:#22c55e;margin-right:6px">✔</span><strong>Осмотры, ТО и ремонты</strong> под контролем, состояние каждой машины всегда свежее</div></div><div class="shift__row"><div class="shift__was"><span style="color:#ef4444;margin-right:6px">✖</span>Несколько менеджеров ведут учёт вручную</div><div class="shift__arr"><svg><use href="#i-arrow"/></svg></div><div class="shift__now"><span style="color:#22c55e;margin-right:6px">✔</span><strong>Меньше рутины</strong> – одного менеджера хватает на весь парк</div></div><div class="shift__row"><div class="shift__was"><span style="color:#ef4444;margin-right:6px">✖</span>Прибыль парка считают на глаз</div><div class="shift__arr"><svg><use href="#i-arrow"/></svg></div><div class="shift__now"><span style="color:#22c55e;margin-right:6px">✔</span><strong>Аналитика</strong> по доходу, долгам и окупаемости машин – видно, где растить прибыль</div></div></div></div></section>
+<section class="section section--yellow cta" id="demo">
+  <div class="wrap">
+    <div data-reveal="left">
+      <p class="eyebrow" style="color:var(--ink)">Персональная демонстрация</p>
+      <h2>Записаться на демо</h2>
+      <p class="lead" style="margin-top:18px;color:var(--ink);opacity:.8">Покажем систему за 20 минут.</p>
+      <p class="fschip">Для таксопарков от 10+ машин</p>
+    </div>
+    <form class="form" data-reveal="right" data-endpoint="https://yumefleet.com/api/lead/" data-done="../spasibo/" novalidate>
+      <div class="field"><label for="name">Имя</label><input id="name" name="name" placeholder="Как к вам обращаться" required autocomplete="name"></div>
+      <div class="field"><label for="phone">Телефон</label><input id="phone" name="phone" type="tel" placeholder="+7 777 000 00 00" required autocomplete="tel" inputmode="tel"></div>
+      <div class="form__row">
+        <div class="field"><label for="cars">Сколько машин в парке</label><select id="cars" name="cars"><option>до 10 машин</option><option>10–30 машин</option><option>30–100 машин</option><option>100+ машин</option></select></div>
+        <div class="field"><label for="city">Город</label><input id="city" name="city" placeholder="Алматы" autocomplete="address-level2"></div>
+      </div>
+      <input type="text" name="website" tabindex="-1" autocomplete="off" class="hp" aria-hidden="true">
+      <button class="btn btn--lg" type="submit">Записаться на демо</button>
+      <label class="consent"><input type="checkbox" checked required> Согласен на обработку персональных данных в соответствии с <a href="../legal/privacy/" style="text-decoration:underline">политикой конфиденциальности</a></label>
+      <div class="form__ok"><div><i><svg><use href="#i-check"/></svg></i><h3>Заявка отправлена</h3><p style="color:var(--muted);margin-top:8px">Перезвоним в течение 15 минут в рабочее время.</p></div></div>
+    </form>
+  </div>
+</section>
+
+<footer class="fsfoot">
+  <div class="wrap">
+    <a class="logo logo--dark" href="../"><i><svg><use href="#mark"/></svg></i><span><b>yume</b><em>fleet</em></span></a>
+    <nav class="fsfoot__links" aria-label="Контакты">
+      <a href="tel:+77051552524">+7 705 155 25 24</a>
+      <a href="https://wa.me/77051552524" rel="noopener">WhatsApp</a>
+      <a href="../legal/privacy/">Политика конфиденциальности</a>
+    </nav>
+    <span class="fsfoot__copy">© Yume Fleet 2026</span>
+  </div>
+</footer>
+<a class="wa-fab" href="https://wa.me/77051552524" rel="noopener" aria-label="Написать в WhatsApp"><svg><use href="#i-wa"/></svg><span>Написать в WhatsApp</span></a>
+
+
+<script src="../js/main.js?v=09cda8fe" defer></script>
+</body>
+</html>

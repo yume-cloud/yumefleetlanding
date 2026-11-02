@@ -17,6 +17,7 @@ def ver(rel):
     except OSError:
         return '1'
 CSS_V, JS_V = ver('css/styles.css'), ver('js/main.js')
+FS_CSS_V = ver('css/fleetshort.css')
 L = 'ru'
 UI = {
  'ru': dict(home='Главная', features='Возможности', faq='Вопросы и ответы', dd_open='Раскрыть возможности', all_features='Все возможности', integrations='Интеграции', perehod='Для клиентов Yume Cloud', contacts='Контакты', blog='Блог', app_alt='Приложение водителя Yume Fleet: долг по аренде, оплата через Kaspi, ближайшие платежи, ТО и страховка', demo='Записаться на демо', login='Войти', menu='Основное меню', burger='Меню',
@@ -69,8 +70,8 @@ def T(k): return UI[L][k]
 def nav_feats():
     return [(p, NAV_KK[p][0] if L == 'kk' else n, NAV_KK[p][1] if L == 'kk' else s, i) for p, n, s, i in NAV_FEATURES]
 SITE = 'https://yumefleet.com'
-PHONE = '+7 777 947 99 90'
-WA = 'https://wa.me/77779479990'
+PHONE = '+7 705 155 25 24'
+WA = 'https://wa.me/77051552524'
 LOGIN = 'https://yumefleet.com/login'
 INST = 'https://www.instagram.com/yumefleet/'
 YT = 'https://www.youtube.com/@yumecloud'
@@ -283,7 +284,7 @@ def footer(R):
       <div class="footer__brand">
         <a class="logo logo--dark" href="{R}"><i><svg><use href="#mark"/></svg></i><span><b>yume</b><em>fleet</em></span></a>
         <p>{T("footer_about")}</p>
-        <a href="tel:+77779479990">{PHONE}</a>
+        <a href="tel:+77051552524">{PHONE}</a>
         <a href="{WA}" rel="noopener">WhatsApp</a>
       </div>
       <div><h4>{T("features")}</h4><ul>{feats}<li><a href="{href('/features/', R)}">{T("all_features")}</a></li></ul></div>
@@ -333,7 +334,7 @@ def cta(sec, R):
 
 def ld(p, body):
     import json
-    org = {'@context': 'https://schema.org', '@type': 'Organization', 'name': 'Yume Fleet', 'legalName': 'ТОО «Yume.Cloud»', 'url': SITE + '/', 'logo': SITE + '/assets/logo/tile.svg', 'telephone': '+77779479990', 'address': {'@type': 'PostalAddress', 'addressLocality': 'Алматы', 'addressCountry': 'KZ'}, 'sameAs': [INST, YT]}
+    org = {'@context': 'https://schema.org', '@type': 'Organization', 'name': 'Yume Fleet', 'legalName': 'ТОО «Yume.Cloud»', 'url': SITE + '/', 'logo': SITE + '/assets/logo/tile.svg', 'telephone': '+77051552524', 'address': {'@type': 'PostalAddress', 'addressLocality': 'Алматы', 'addressCountry': 'KZ'}, 'sameAs': [INST, YT]}
     blocks = [org]
     crumbs = re.findall(r'<nav class="crumbs"[^>]*>(.*?)</nav>', body, re.S)
     if crumbs:
@@ -374,10 +375,10 @@ def kk_scenes(body):
         return f'{m.group(1)}="{SCENE_KK.get(k, k)}"'
     return re.sub(r'\b(alt|title|aria-label|placeholder)="([^"]*)"', attr, body)
 
-def page(p, body, R, desc, noindex=False):
+def page(p, body, R, desc, noindex=False, minimal=False):
     body = kk_scenes(body)
     title = html.escape(p['title'])
-    nav_html = nav(R, p['path'])
+    nav_html = fs_nav(R) if minimal else nav(R, p['path'])
     if 'id="demo"' not in body:
         # своей формы на странице нет (404) — ведём на форму главной
         nav_html = nav_html.replace('href="#demo"', f'href="{R}#demo"')
@@ -386,7 +387,8 @@ def page(p, body, R, desc, noindex=False):
     alt = True if L == 'kk' else kk_has(p['path'])
     ru = ru_path(p['path'])
     hreflang = f'<link rel="alternate" hreflang="ru" href="{SITE}{ru}">\n<link rel="alternate" hreflang="kk" href="{SITE}/kk{ru}">\n<link rel="alternate" hreflang="x-default" href="{SITE}{ru}">\n' if alt else ''
-    preload = f'<link rel="preload" as="image" media="(min-width: 761px)" href="{R}assets/img/hero-tablet.webp" imagesrcset="{R}assets/img/hero-tablet-960.webp 960w, {R}assets/img/hero-tablet.webp 1536w" imagesizes="(max-width: 1000px) 100vw, 920px">\n<link rel="preload" as="image" media="(max-width: 760px)" href="{R}assets/img/hero-phone.webp">\n' if p['path'] in ('/', '/kk/') else ''
+    preload = f'<link rel="preload" as="image" media="(min-width: 761px)" href="{R}assets/img/hero-tablet.webp" imagesrcset="{R}assets/img/hero-tablet-960.webp 960w, {R}assets/img/hero-tablet.webp 1536w" imagesizes="(max-width: 1000px) 100vw, 920px">\n<link rel="preload" as="image" media="(max-width: 760px)" href="{R}assets/img/hero-phone.webp">\n' if p['path'] in ('/', '/kk/', '/fleetshort/') else ''
+    extra_css = f'<link rel="stylesheet" href="{R}css/fleetshort.css?v={FS_CSS_V}">\n' if minimal else ''
     return f'''<!doctype html>
 <html lang="{L}">
 <head>
@@ -407,7 +409,7 @@ def page(p, body, R, desc, noindex=False):
 <link rel="preload" as="font" type="font/woff2" href="{R}assets/fonts/geist-400-cyrillic.woff2" crossorigin>
 <style>{FONTS_CSS.replace('url(', 'url(' + R + 'assets/fonts/')}</style>
 <link rel="stylesheet" href="{R}css/styles.css?v={CSS_V}">
-{ld(p, body)}{analytics()}</head>
+{extra_css}{ld(p, body)}{analytics()}</head>
 <body>
 
 {SPRITE}
@@ -416,7 +418,7 @@ def page(p, body, R, desc, noindex=False):
 
 {body}
 
-{footer(R)}
+{fs_footer(R) if minimal else footer(R)}
 
 <script src="{R}js/main.js?v={JS_V}" defer></script>
 </body>
@@ -2091,7 +2093,7 @@ def contacts():
   <div class="wrap contacts">
     <div class="ccards" data-stagger>
       <a class="ccard ccard--wa" href="{WA}?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5%21%20%D0%A5%D0%BE%D1%87%D1%83%20%D0%B4%D0%B5%D0%BC%D0%BE%20Yume%20Fleet" rel="noopener"><i><svg><use href="#i-wa"/></svg></i><div><small>{T("c_wa")}</small><b>{PHONE}</b><span>{T("c_wa_sub")}</span></div><svg class="ccard__arr"><use href="#i-arrow"/></svg></a>
-      <a class="ccard" href="tel:+77779479990"><i><svg><use href="#i-phone"/></svg></i><div><small>{T("c_phone")}</small><b>{PHONE}</b><span>{T("c_phone_sub")}</span></div><svg class="ccard__arr"><use href="#i-arrow"/></svg></a>
+      <a class="ccard" href="tel:+77051552524"><i><svg><use href="#i-phone"/></svg></i><div><small>{T("c_phone")}</small><b>{PHONE}</b><span>{T("c_phone_sub")}</span></div><svg class="ccard__arr"><use href="#i-arrow"/></svg></a>
       <a class="ccard" href="{INST}" rel="noopener"><i><svg><use href="#i-inst"/></svg></i><div><small>{T("c_inst")}</small><b>@yumefleet</b><span>{T("c_inst_sub")}</span></div><svg class="ccard__arr"><use href="#i-arrow"/></svg></a>
       <a class="ccard" href="{YT}" rel="noopener"><i><svg><use href="#i-yt"/></svg></i><div><small>{T("c_yt")}</small><b>@yumecloud</b><span>{T("c_yt_sub")}</span></div><svg class="ccard__arr"><use href="#i-arrow"/></svg></a>
     </div>
@@ -2131,6 +2133,119 @@ def spasibo():
   <div class="chips" data-reveal>{cards_html}</div>
 </div></section>'''
     write(path + 'index.html', page(p, body, R, T("ty_desc"), noindex=True))
+
+# ------------------------------------------------------------------ мини-лендинг /fleetshort/ (платный трафик)
+FS_PAGE = parse(open(os.path.join(ROOT, 'content', 'FLEETSHORT.md'), encoding='utf-8').read())[0]
+
+def fs_nav(R):
+    """Минимальная шапка: логотип и одна кнопка, без меню."""
+    return f'''<header class="nav nav--min">
+  <div class="wrap">
+    <a class="logo" href="{R}"><i><svg><use href="#mark"/></svg></i><span><b>yume</b><em>fleet</em></span></a>
+    <div class="nav__actions"><a class="btn btn--sm btn--yellow" href="#demo">{T("demo")}</a></div>
+  </div>
+</header>'''
+
+def fs_footer(R):
+    """Минимальный подвал: телефон, WhatsApp, политика, ©."""
+    sec = next(s for s in FS_PAGE['sections'] if s['type'] == 'footer')
+    policy, copy = sec['paras'][0], sec['paras'][1]
+    return f'''<footer class="fsfoot">
+  <div class="wrap">
+    <a class="logo logo--dark" href="{R}"><i><svg><use href="#mark"/></svg></i><span><b>yume</b><em>fleet</em></span></a>
+    <nav class="fsfoot__links" aria-label="Контакты">
+      <a href="tel:+77051552524">{PHONE}</a>
+      <a href="{WA}" rel="noopener">WhatsApp</a>
+      <a href="{href('/legal/privacy/', R)}">{policy}</a>
+    </nav>
+    <span class="fsfoot__copy">{copy}</span>
+  </div>
+</footer>
+<a class="wa-fab" href="{WA}" rel="noopener" aria-label="{T("wa")}"><svg><use href="#i-wa"/></svg><span>{T("wa")}</span></a>
+'''
+
+# картинки владельца 02.11 вместо сцен (фон блока остаётся); у «Аренды» своей нет – там сцена
+FS_IMGS = {'Оплата по ссылке Kaspi': ('kaspi', 1100, 982), 'Документы и подпись': ('docs', 1100, 1031), 'Штрафы ПДД': ('fines', 1100, 811),
+           'Карточка машины': ('vehicle', 1100, 898), 'Карточка водителя': ('driver', 1100, 913), 'Аналитика': ('analytics', 1100, 739), 'Аренды': ('rent', 1100, 805)}
+
+def fleetshort():
+    """Все тексты – content/FLEETSHORT.md; с главной берутся только мокап героя и сцены."""
+    p = dict(path='/fleetshort/', title=FS_PAGE['title']); R = rel(p['path'])
+    own = {s['type']: s for s in FS_PAGE['sections']}
+    hero = own['hero']
+    words = strip_md(hero['title']).split(' ')
+    h1 = ' '.join(words[:-1]) + ' <span class="hl">' + words[-1] + '</span>'
+    # 1. первый экран: тот же мокап с карточками, что на главной
+    out = f'''<section class="hero fshero">
+  <div class="hero__checks"></div>
+  <div class="wrap">
+    <div class="hero__inner">
+      <h1>{h1}</h1>
+      <p class="lead">{inline(hero['paras'][0])}</p>
+      <div class="hero__ctas">
+        <a class="btn btn--lg btn--yellow" href="#demo">{hero['button'] or T("demo")} <svg><use href="#i-arrow"/></svg></a>
+      </div>
+      <p class="fsnote">{inline(hero['paras'][1])}</p>
+    </div>
+    <div class="hero__stage">
+      <picture class="hero__mock">
+        <source media="(max-width: 760px)" srcset="{R}assets/img/hero-phone.webp" width="900" height="948">
+        <img width="1536" height="1024" src="{R}assets/img/hero-tablet.webp" srcset="{R}assets/img/hero-tablet-960.webp 960w, {R}assets/img/hero-tablet.webp 1536w" sizes="(max-width: 1000px) 100vw, 920px" alt="{T("hero_alt")}" fetchpriority="high">
+      </picture>
+      <img class="hcard hcard--driver" src="{R}assets/img/hero-card-driver.webp" width="560" height="435" alt="" aria-hidden="true" loading="lazy">
+      <img class="hcard hcard--rent" src="{R}assets/img/hero-card-rent.webp" width="560" height="435" alt="" aria-hidden="true" loading="lazy">
+      <img class="hcard hcard--fine" src="{R}assets/img/hero-card-fine.webp" width="560" height="336" alt="" aria-hidden="true" loading="lazy">
+      <img class="hcard hcard--inspection" src="{R}assets/img/hero-card-inspection.webp" width="560" height="418" alt="" aria-hidden="true" loading="lazy">
+    </div>
+  </div>
+</section>
+'''
+    # 2. три цифры
+    stats = ''.join(f'<div class="fsstat"><b>{inline(it["name"])}</b><span>{inline(it["text"])}</span></div>' for it in own['stats']['items'])
+    out += f'<div class="fsstats"><div class="wrap" data-stagger>{stats}</div></div>\n'
+    # 3. операционка: 4 карточки
+    c0 = own['cards']
+    cards4 = ''.join(f'<article class="fscard"><small>{k + 1:02d}</small><h3>{inline(it["name"])}</h3><p>{inline(it["text"])}</p></article>' for k, it in enumerate(c0['items']))
+    out += f'<section class="section" id="first"><div class="wrap">{head(c0, center=True)}<div class="fscards fscards--{len(c0["items"])}" data-stagger>{cards4}</div></div></section>\n'
+    # 4. что внутри: готовые сцены сайта
+    scenes = {'Аренды': rent_scene, 'Карточка машины': vehicle_scene, 'Карточка водителя': driver_scene, 'Оплата по ссылке Kaspi': kaspi_scene,
+              'Документы и подпись': egov_scene, 'Штрафы ПДД': lambda: fines_scene(R), 'Аналитика': analytics_scene}
+    ui = own['ui']
+    blocks = ''
+    for k, it in enumerate(ui['items']):
+        name = strip_md(it['name'])
+        img = FS_IMGS.get(name)
+        vis = (f'<img class="fsui__img" src="{R}assets/img/fleetshort/{img[0]}.webp" width="{img[1]}" height="{img[2]}" alt="{html.escape(name)}" loading="lazy" decoding="async">'
+               if img else bare(scenes[name]()))
+        blocks += f'''<article class="fsui{" fsui--rev" if k % 2 else ""}" data-reveal>
+        <div class="fsui__txt"><small>{k + 1:02d}</small><h3>{inline(it["name"])}</h3><p>{inline(it["text"])}</p></div>
+        <div class="fsui__vis"><div class="fsui__stage">{vis}</div></div>
+      </article>'''
+    out += f'<section class="section section--card" id="ui"><div class="wrap"><div class="sec-head sec-head--center" data-reveal><div>{eyebrow(ui)}<h2>{inline(ui["title"])}</h2></div></div><div class="fsuis">{blocks}</div></div></section>\n'
+    # 5. кнопка
+    out += f'<div class="fsmid"><div class="wrap" data-reveal><a class="btn btn--lg btn--yellow" href="#demo">{T("demo")} <svg><use href="#i-arrow"/></svg></a></div></div>\n'
+    # 6. запуск
+    st = own['steps']
+    out += f'<section class="section" id="start"><div class="wrap">{head(st, center=True)}{steps(st, R)}</div></section>\n'
+    # 7. было и стало
+    tb = own['table']
+    out += f'<section class="section section--card" id="shift"><div class="wrap">{head(tb, center=True)}{shift(tb)}</div></section>\n'
+    # 8. демо: без списка и строки WhatsApp, с чипом
+    c = own['cta']
+    chip = ''.join(f'<p class="fschip">{inline(it["text"])}</p>' for it in c['items'])
+    out += f'''<section class="section section--yellow cta" id="demo">
+  <div class="wrap">
+    <div data-reveal="left">
+      <p class="eyebrow" style="color:var(--ink)">{inline(c['eyebrow'])}</p>
+      <h2>{html.escape(strip_md(c['title']))}</h2>
+      <p class="lead" style="margin-top:18px;color:var(--ink);opacity:.8">{inline(c['paras'][0])}</p>
+      {chip}
+    </div>
+    {form(R)}
+  </div>
+</section>'''
+    doc = page(p, out, R, strip_md(hero['paras'][0]).replace('<br>', ' '), noindex=True, minimal=True)
+    write(p['path'] + 'index.html', doc)
 
 # ------------------------------------------------------------------ служебные
 # ---------- юридические документы ----------
@@ -2372,6 +2487,7 @@ faq_page()
 legal_pages()
 blog_pages()
 spasibo()
+fleetshort()
 service()
 L = 'kk'
 home()

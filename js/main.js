@@ -1382,7 +1382,7 @@
       const msg = `Здравствуйте! Хочу демо Yume Fleet.\nИмя: ${payload.name}\nТелефон: ${payload.phone}\nПарк: ${payload.segment}`;
       // текст заявки ждёт на «спасибо» в кнопке WhatsApp, если окно ниже заблокирует браузер
       try { sessionStorage.setItem('yf_lead_wa', msg); } catch (x) {}
-      window.open('https://wa.me/77779479990?text=' + encodeURIComponent(msg), '_blank', 'noopener');
+      window.open('https://wa.me/77051552524?text=' + encodeURIComponent(msg), '_blank', 'noopener');
     }
     form.classList.add('is-done'); btn.disabled = false; btn.textContent = label;
     try { window.gtag && gtag('event', 'generate_lead', { product: 'fleet' }); } catch (x) {}
@@ -1393,7 +1393,7 @@
   /* «спасибо» после заявки, которая не дошла до сервера: кнопка WhatsApp с готовым текстом */
   $$('[data-ty-wa]').forEach(a => {
     let msg = ''; try { msg = sessionStorage.getItem('yf_lead_wa') || ''; } catch (x) {}
-    if (msg) a.href = 'https://wa.me/77779479990?text=' + encodeURIComponent(msg);
+    if (msg) a.href = 'https://wa.me/77051552524?text=' + encodeURIComponent(msg);
   });
 
   /* визуалы в статьях блога: каждая сцена оживает, когда доскроллили до неё */
