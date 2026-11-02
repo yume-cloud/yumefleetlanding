@@ -1990,7 +1990,7 @@ i.setplay__sw{cursor:default}
 .scroll-m>*{flex:0 0 min(80vw,320px);min-width:0;scroll-snap-align:start}
 .reviews.scroll-m>*{flex-basis:min(86vw,340px)}
 .posts.scroll-m>*{flex-basis:min(84vw,330px)}
-.scroll-m>[data-reveal]{transform:none}
+.scroll-m>[data-reveal]{opacity:1;transform:none;transition:none} /* без анимации: следующая карточка видна сразу (владелец 02.11) */
 }
 
 /* mobile: без таблицы долгов и формы выкупа, только текст */
