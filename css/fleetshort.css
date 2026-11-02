@@ -108,3 +108,7 @@
   .fsui:not(:first-child) .fsui__txt h3{font-size:22px}
   .fsui:not(:first-child) .fsui__txt p{font-size:15px}
 }
+
+/* подвал: на десктопе полный футер сайта, на телефоне короткий */
+@media (min-width:761px){.fsfoot{display:none}}
+@media (max-width:760px){.footer{display:none}}

@@ -2147,10 +2147,10 @@ def fs_nav(R):
 </header>'''
 
 def fs_footer(R):
-    """Минимальный подвал: телефон, WhatsApp, политика, ©."""
+    """Десктоп: полный футер сайта (владелец 02.11). Телефон: короткий подвал – телефон, WhatsApp, политика, ©."""
     sec = next(s for s in FS_PAGE['sections'] if s['type'] == 'footer')
     policy, copy = sec['paras'][0], sec['paras'][1]
-    return f'''<footer class="fsfoot">
+    return footer(R) + f'''<footer class="fsfoot">
   <div class="wrap">
     <a class="logo logo--dark" href="{R}"><i><svg><use href="#mark"/></svg></i><span><b>yume</b><em>fleet</em></span></a>
     <nav class="fsfoot__links" aria-label="Контакты">
@@ -2161,7 +2161,6 @@ def fs_footer(R):
     <span class="fsfoot__copy">{copy}</span>
   </div>
 </footer>
-<a class="wa-fab" href="{WA}" rel="noopener" aria-label="{T("wa")}"><svg><use href="#i-wa"/></svg><span>{T("wa")}</span></a>
 '''
 
 # картинки владельца 02.11 вместо сцен (фон блока остаётся); у «Аренды» своей нет – там сцена
