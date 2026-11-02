@@ -89,7 +89,7 @@ p{margin:0}
   .nav__menu,.nav__login,.nav .btn{display:none}
   .nav__burger{display:grid}
   .nav.is-open{background:var(--bg)}
-  .nav.is-open .nav__menu{display:flex;flex-direction:column;position:absolute;top:76px;left:0;right:0;background:var(--bg);padding:12px 24px 24px;gap:4px;box-shadow:0 30px 40px -20px rgba(0,0,0,.2);border-top:1px solid var(--line)}
+  .nav.is-open .nav__menu{display:flex;flex-direction:column;position:absolute;top:76px;left:0;right:0;background:var(--bg);padding:12px 24px 24px;gap:4px;box-shadow:0 30px 40px -20px rgba(0,0,0,.2);border-top:1px solid var(--line);max-height:calc(100vh - 76px);max-height:calc(100dvh - 76px);overflow-y:auto;overscroll-behavior:contain;-webkit-overflow-scrolling:touch}
   .nav.is-open .nav__menu a{font-size:18px;padding:12px 8px;opacity:1}
   .nav.is-open .nav__cta-m{display:flex;background:var(--yellow);border-radius:12px;justify-content:center;margin-top:8px;font-weight:600}
   .nav.is-open .nav__login-m{display:flex;justify-content:center;border:1px solid var(--line-2);border-radius:12px;margin-top:8px;font-weight:600}
