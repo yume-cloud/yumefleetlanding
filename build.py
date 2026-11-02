@@ -2204,11 +2204,7 @@ def fleetshort():
     # 2. три цифры
     stats = ''.join(f'<div class="fsstat"><b>{inline(it["name"])}</b><span>{inline(it["text"])}</span></div>' for it in own['stats']['items'])
     out += f'<div class="fsstats"><div class="wrap" data-stagger>{stats}</div></div>\n'
-    # 3. операционка: 4 карточки
-    c0 = own['cards']
-    cards4 = ''.join(f'<article class="fscard"><small>{k + 1:02d}</small><h3>{inline(it["name"])}</h3><p>{inline(it["text"])}</p></article>' for k, it in enumerate(c0['items']))
-    out += f'<section class="section" id="first"><div class="wrap">{head(c0, center=True)}<div class="fscards fscards--{len(c0["items"])}" data-stagger>{cards4}</div></div></section>\n'
-    # 4. что внутри: готовые сцены сайта
+    # 3. операционка: 7 карточек интерфейса (блок «Что внутри» слит сюда 02.11)
     scenes = {'Аренды': rent_scene, 'Карточка машины': vehicle_scene, 'Карточка водителя': driver_scene, 'Оплата по ссылке Kaspi': kaspi_scene,
               'Документы и подпись': egov_scene, 'Штрафы ПДД': lambda: fines_scene(R), 'Аналитика': analytics_scene}
     ui = own['ui']
@@ -2223,15 +2219,15 @@ def fleetshort():
         <div class="fsui__vis"><div class="fsui__stage">{vis}</div></div>
       </article>'''
     out += f'<section class="section section--card" id="ui"><div class="wrap"><div class="sec-head sec-head--center" data-reveal><div>{eyebrow(ui)}<h2>{inline(ui["title"])}</h2></div></div><div class="fsuis">{blocks}</div></div></section>\n'
-    # 5. кнопка
+    # 4. кнопка
     out += f'<div class="fsmid"><div class="wrap" data-reveal><a class="btn btn--lg btn--yellow" href="#demo">{T("demo")} <svg><use href="#i-arrow"/></svg></a></div></div>\n'
-    # 6. запуск
+    # 5. запуск
     st = own['steps']
     out += f'<section class="section" id="start"><div class="wrap">{head(st, center=True)}{steps(st, R)}</div></section>\n'
-    # 7. было и стало
+    # 6. было и стало
     tb = own['table']
     out += f'<section class="section section--card" id="shift"><div class="wrap">{head(tb, center=True)}{shift(tb)}</div></section>\n'
-    # 8. демо: без списка и строки WhatsApp, с чипом
+    # 7. демо: без списка и строки WhatsApp, с чипом
     c = own['cta']
     chip = ''.join(f'<p class="fschip">{inline(it["text"])}</p>' for it in c['items'])
     out += f'''<section class="section section--yellow cta" id="demo">

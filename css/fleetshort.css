@@ -21,17 +21,6 @@
   .fsstat:first-child{border-top:0}
 }
 
-/* «что вы получаете с первого дня» */
-.fscards{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
-.fscard{position:relative;padding:28px 26px 30px;border-radius:var(--r-lg);background:var(--card);border:1px solid var(--line);display:grid;gap:12px;align-content:start;transition:transform .5s var(--ease),box-shadow .5s var(--ease)}
-.fscard:hover{transform:translateY(-6px);box-shadow:var(--shadow)}
-.fscard small{font-size:44px;font-weight:800;letter-spacing:-.05em;line-height:1;color:var(--yellow);font-variant-numeric:tabular-nums}
-.fscard h3{font-size:21px}
-.fscard p{color:var(--muted);font-size:15px}
-.fscard p strong{color:var(--ink);font-weight:600}
-@media (max-width:1060px){.fscards{grid-template-columns:1fr 1fr}}
-@media (max-width:620px){.fscards{grid-template-columns:1fr}.fscard{padding:24px 22px}.fscard small{font-size:36px}}
-
 /* интерфейс платформы: шесть больших блоков */
 .fsuis{display:grid;gap:28px}
 .fsui{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);align-items:stretch;background:var(--bg);border:1px solid var(--line);border-radius:28px;overflow:hidden}
