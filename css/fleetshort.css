@@ -90,8 +90,8 @@
 .fschip{display:inline-flex;align-items:center;margin-top:22px;padding:10px 16px;border-radius:999px;background:var(--ink);color:#fff;font-weight:600;font-size:15px}
 
 /* иллюстрации владельца 02.11 на фоне блока */
-.fsui__img{position:relative;display:block;width:100%;max-width:520px;height:auto;margin:0 auto}
-@media (max-width:760px){.fsui__img{max-width:360px}}
+.fsui__img{position:relative;display:block;width:100%;max-width:364px;height:auto;margin:0 auto}
+@media (max-width:760px){.fsui__img{max-width:252px}}
 
-/* на главной телефон режет «Было и стало» до 3 строк; здесь все 9 (владелец 02.11) */
+/* на главной телефон режет «Было и стало» до 3 строк; здесь все 6 (владелец 02.11) */
 @media (max-width:760px){.shift__row:nth-child(n+5){display:grid}}
