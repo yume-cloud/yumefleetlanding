@@ -272,13 +272,17 @@ def nav(R, path):
   </div>
 </header>'''
 
-def footer(R):
-    """Десктоп: полный футер с колонками. Мобилка (css): логотип, подпись, © и «Документы»."""
+def footer(R, short=False):
+    """Десктоп: полный футер с колонками. Мобилка (css): логотип, подпись, © и «Документы».
+    short (fleetshort): без «Возможностей» и «Продукта» – только контакты и документы."""
     feats = ''.join(f'<li><a href="{href(p, R)}">{n}</a></li>' for p, n, _, _ in nav_feats()[:6])
     D = T("doc_list"); docs_urls = ['/legal/privacy/', '/legal/oferta/', '/legal/terms/', '/legal/recurring/', '/legal/refund/', '/legal/payment/', '/delete-account/']
     docs = ''.join(f'<li><a href="{href(u, R)}">{n}</a></li>' for n, u in zip(D, docs_urls))
     contacts_href = href('/kk/contacts/' if L == 'kk' else '/contacts/', R)
-    return f'''<footer class="footer">
+    cols = '' if short else f'''
+      <div><h4>{T("features")}</h4><ul>{feats}<li><a href="{href('/features/', R)}">{T("all_features")}</a></li></ul></div>
+      <div><h4>{T("product")}</h4><ul><li><a href="{href("/integrations/", R)}">{T("integrations")}</a></li><li><a href="{href("/perehod/", R)}">{T("perehod")}</a></li><li><a href="{href('/blog/', R)}">{T("blog")}</a></li><li><a href="{contacts_href}">{T("contacts")}</a></li><li><a href="{LOGIN}" rel="noopener">{T("login_sys")}</a></li></ul></div>'''
+    return f'''<footer class="footer{' footer--short' if short else ''}">
   <div class="wrap">
     <div class="footer__top">
       <div class="footer__brand">
@@ -286,9 +290,7 @@ def footer(R):
         <p>{T("footer_about")}</p>
         <a href="tel:+77051552524">{PHONE}</a>
         <a href="{WA}" rel="noopener">WhatsApp</a>
-      </div>
-      <div><h4>{T("features")}</h4><ul>{feats}<li><a href="{href('/features/', R)}">{T("all_features")}</a></li></ul></div>
-      <div><h4>{T("product")}</h4><ul><li><a href="{href("/integrations/", R)}">{T("integrations")}</a></li><li><a href="{href("/perehod/", R)}">{T("perehod")}</a></li><li><a href="{href('/blog/', R)}">{T("blog")}</a></li><li><a href="{contacts_href}">{T("contacts")}</a></li><li><a href="{LOGIN}" rel="noopener">{T("login_sys")}</a></li></ul></div>
+      </div>{cols}
       <div><h4>{T("docs")}</h4><ul>{docs}</ul></div>
     </div>
     <div class="footer__bot">
@@ -2147,10 +2149,10 @@ def fs_nav(R):
 </header>'''
 
 def fs_footer(R):
-    """Десктоп: полный футер сайта (владелец 02.11). Телефон: короткий подвал – телефон, WhatsApp, политика, ©."""
+    """Десктоп: футер сайта без «Возможностей» и «Продукта» (владелец 02.11). Телефон: короткий подвал – телефон, WhatsApp, политика, ©."""
     sec = next(s for s in FS_PAGE['sections'] if s['type'] == 'footer')
     policy, copy = sec['paras'][0], sec['paras'][1]
-    return footer(R) + f'''<footer class="fsfoot">
+    return footer(R, short=True) + f'''<footer class="fsfoot">
   <div class="wrap">
     <a class="logo logo--dark" href="{R}"><i><svg><use href="#mark"/></svg></i><span><b>yume</b><em>fleet</em></span></a>
     <nav class="fsfoot__links" aria-label="Контакты">
