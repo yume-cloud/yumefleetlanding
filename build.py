@@ -7,7 +7,8 @@ ROOT = os.path.dirname(os.path.abspath(__file__))
 SRC = open(os.path.join(ROOT, 'content', 'CONTENT.md'), encoding='utf-8').read()
 SRC_KK = open(os.path.join(ROOT, 'content', 'CONTENT.kk.md'), encoding='utf-8').read()
 GA_ID = ''      # счётчик Google Analytics для yumefleet.com, например G-XXXXXXX
-FB_PIXEL = ''   # Meta Pixel ID для yumefleet.com
+FB_PIXEL = '585278450875697'   # Meta Pixel ID для yumefleet.com
+YM_ID = '114002485'   # Яндекс Метрика для yumefleet.com
 FONTS_CSS = open(os.path.join(ROOT, 'assets', 'fonts', 'fonts.css'), encoding='utf-8').read()
 
 def ver(rel):
@@ -353,12 +354,14 @@ def ld(p, body):
     return ''.join('<script type="application/ld+json">' + json.dumps(b, ensure_ascii=False) + '</script>\n' for b in blocks)
 
 def analytics():
-    if not GA_ID and not FB_PIXEL: return ''
+    if not GA_ID and not FB_PIXEL and not YM_ID: return ''
     ga = f"var g=document.createElement('script');g.async=true;g.src='https://www.googletagmanager.com/gtag/js?id={GA_ID}';document.head.appendChild(g);gtag('js',new Date());gtag('config','{GA_ID}');" if GA_ID else ''
     fb = f"var f=document.createElement('script');f.async=true;f.src='https://connect.facebook.net/en_US/fbevents.js';document.head.appendChild(f);fbq('init','{FB_PIXEL}');fbq('track','PageView');" if FB_PIXEL else ''
+    ym = f"var y=document.createElement('script');y.async=true;y.src='https://mc.yandex.ru/metrika/tag.js?id={YM_ID}';document.head.appendChild(y);" if YM_ID else ''
+    ymq = f"window.ym=window.ym||function(){{(ym.a=ym.a||[]).push(arguments)}};ym.l=1*new Date();ym({YM_ID},'init',{{ssr:true,webvisor:true,clickmap:true,ecommerce:'dataLayer',referrer:document.referrer,url:location.href,accurateTrackBounce:true,trackLinks:true}});" if YM_ID else ''
     return ("<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}"
-            "!function(f,b){if(f.fbq)return;var n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[]}(window,document);"
-            "(function(){var done=false;function load(){if(done)return;done=true;" + ga + fb + "}"
+            "!function(f,b){if(f.fbq)return;var n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[]}(window,document);" + ymq +
+            "(function(){var done=false;function load(){if(done)return;done=true;" + ga + fb + ym + "}"
             "['scroll','pointerdown','keydown','touchstart'].forEach(function(e){addEventListener(e,load,{once:true,passive:true})});setTimeout(load,4000);})();</script>\n")
 
 _SCENE_NS = {}
