@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://yumefleet.com/sitemap.xml
+Sitemap: https://www.yumefleet.com/sitemap.xml

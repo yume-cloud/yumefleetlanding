@@ -70,7 +70,7 @@ NAV_KK = {'/features/rentals/': ('Жалдау карточкасы', 'Тәул�
 def T(k): return UI[L][k]
 def nav_feats():
     return [(p, NAV_KK[p][0] if L == 'kk' else n, NAV_KK[p][1] if L == 'kk' else s, i) for p, n, s, i in NAV_FEATURES]
-SITE = 'https://yumefleet.com'
+SITE = 'https://www.yumefleet.com'
 PHONE = '+7 705 155 25 24'
 WA = 'https://wa.me/77051552524'
 LOGIN = 'https://yumefleet.com/login'
