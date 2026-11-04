@@ -4,6 +4,28 @@
   window.__YF_MAIN = true;
   const $ = (s, r = document) => r.querySelector(s);
   const $$ = (s, r = document) => [...r.querySelectorAll(s)];
+
+  // Источник посетителя для карточки регистрации: UTM рекламы > клик-метка > чужой сайт.
+  // Метка из рекламы перезаписывает прежнюю, переход с сайта пишется только в пустое.
+  try {
+    const q = new URLSearchParams(location.search);
+    const utm = ['utm_source', 'utm_medium', 'utm_campaign'].map((k) => q.get(k)).filter(Boolean).join(' / ');
+    const click = q.get('fbclid') ? 'реклама Meta (fbclid)' : q.get('gclid') ? 'реклама Google (gclid)' : '';
+    const ref = document.referrer && !/(^|\.)yumefleet\.com$/.test(new URL(document.referrer).hostname)
+      ? 'переход с ' + new URL(document.referrer).hostname : '';
+    const src = q.get('yf_src') || utm || click;
+    if (src) localStorage.setItem('yf_src', src);
+    else if (ref && !localStorage.getItem('yf_src')) localStorage.setItem('yf_src', ref);
+    // www и yumefleet.com хранят localStorage раздельно: на вход в приложение источник едет в ссылке.
+    const saved = localStorage.getItem('yf_src');
+    if (saved && location.hostname !== 'yumefleet.com') {
+      $$('a[href^="https://yumefleet.com/"]').forEach((a) => {
+        const u = new URL(a.href);
+        u.searchParams.set('yf_src', saved);
+        a.href = u.toString();
+      });
+    }
+  } catch (e) {}
   const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
   const wait = ms => new Promise(r => setTimeout(r, ms));
   const fmt = n => Math.round(n).toLocaleString('ru-RU');
