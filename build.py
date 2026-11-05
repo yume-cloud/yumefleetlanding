@@ -407,7 +407,9 @@ def page(p, body, R, desc, noindex=False, minimal=False):
 <meta property="og:title" content="{title}">
 <meta property="og:description" content="{html.escape(desc)}">
 <meta property="og:url" content="{canon}">
-<meta property="og:image" content="{SITE}/assets/img/og.png">
+<meta property="og:image" content="{SITE}/assets/img/og-1105.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="{R}assets/logo/favicon.svg" type="image/svg+xml">
 <link rel="preload" as="font" type="font/woff2" href="{R}assets/fonts/geist-800-cyrillic.woff2" crossorigin>
