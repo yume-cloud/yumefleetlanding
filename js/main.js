@@ -26,45 +26,6 @@
       });
     }
   } catch (e) {}
-
-  // UTM и referrer первого захода для заявки: переживают переход по страницам (sessionStorage)
-  const UTM_KEYS = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term'];
-  const getUtm = () => {
-    let utm = {};
-    try {
-      const q = new URLSearchParams(location.search);
-      const urlUtm = {};
-      UTM_KEYS.forEach(k => { const v = q.get(k); if (v) urlUtm[k] = v; });
-      if (Object.keys(urlUtm).length) {
-        utm = urlUtm;
-        sessionStorage.setItem('yf_utm', JSON.stringify(urlUtm));
-      } else {
-        const saved = sessionStorage.getItem('yf_utm');
-        if (saved) utm = JSON.parse(saved);
-      }
-    } catch (e) {}
-    Object.defineProperty(utm, 'toString', { value: function() { return JSON.stringify(this); }, enumerable: false });
-    return utm;
-  };
-
-  const getRef = () => {
-    try {
-      if (sessionStorage.getItem('yf_ref') === null) {
-        sessionStorage.setItem('yf_ref', document.referrer || '');
-      }
-      return sessionStorage.getItem('yf_ref') ?? document.referrer ?? '';
-    } catch (e) {
-      return document.referrer || '';
-    }
-  };
-
-  try {
-    const q0 = new URLSearchParams(location.search);
-    const u0 = {};
-    UTM_KEYS.forEach(k => { const v = q0.get(k); if (v) u0[k] = v; });
-    if (Object.keys(u0).length) sessionStorage.setItem('yf_utm', JSON.stringify(u0));
-    if (sessionStorage.getItem('yf_ref') === null) sessionStorage.setItem('yf_ref', document.referrer || '');
-  } catch (e) {}
   const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
   const wait = ms => new Promise(r => setTimeout(r, ms));
   const fmt = n => Math.round(n).toLocaleString('ru-RU');
@@ -1426,12 +1387,21 @@
     e.target.value = d ? '+7' + (p[0] ? ' ' + p[0] : '') + (p[1] ? ' ' + p[1] : '') + (p[2] ? ' ' + p[2] : '') + (p[3] ? ' ' + p[3] : '') : '';
   });
   $$('.form input').forEach(i => i.addEventListener('input', () => i.classList.remove('is-invalid')));
+
+  // UTM и referrer первого захода живут в sessionStorage, пока открыт сайт.
+  try {
+    const q = new URLSearchParams(location.search), u = {};
+    ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term'].forEach(k => q.get(k) && (u[k] = q.get(k)));
+    if (Object.keys(u).length) sessionStorage.setItem('yf_utm', JSON.stringify(u));
+    if (sessionStorage.getItem('yf_ref') === null) sessionStorage.setItem('yf_ref', document.referrer);
+  } catch (x) {}
+
   form?.addEventListener('submit', async e => {
     e.preventDefault();
     const btn = $('button[type=submit]', form), name = $('#name', form), phone = $('#phone', form), cars = $('#cars', form), city = $('#city', form);
     if (!name.value.trim()) { name.focus(); name.classList.add('is-invalid'); return; }
     if (phone.value.replace(/\D/g, '').length < 11) { phone.focus(); phone.classList.add('is-invalid'); return; }
-    const payload = { name: name.value.trim(), phone: phone.value.trim(), segment: [cars?.value, city?.value.trim()].filter(Boolean).join(' · '), page: location.pathname, source: 'yumefleet.com', website: $('input[name=website]', form)?.value || '', utm: getUtm(), referrer: getRef() };
+    const payload = { name: name.value.trim(), phone: phone.value.trim(), segment: [cars?.value, city?.value.trim()].filter(Boolean).join(' · '), page: location.pathname, source: 'yumefleet.com', website: $('input[name=website]', form)?.value || '', utm: JSON.parse(sessionStorage.getItem('yf_utm') || '{}'), referrer: sessionStorage.getItem('yf_ref') || '' };
     const label = btn.textContent; btn.disabled = true; btn.textContent = document.documentElement.lang === 'kk' ? 'Жіберілуде…' : 'Отправляем…';
     let sent = false;
     try { sessionStorage.removeItem('yf_lead_wa'); } catch (x) {}
