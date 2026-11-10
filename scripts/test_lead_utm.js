@@ -106,7 +106,8 @@ console.log('\nПерехвачен вызов fetch к LEAD_ENDPOINT:');
 console.log('  URL:', call1.endpoint);
 console.log('  Method:', call1.opts.method);
 console.log('  Тело запроса (URLSearchParams):', Object.fromEntries(call1.opts.body));
-console.log('  Тело запроса utm:', call1.opts.body.get('utm'));
+console.log('  Тело запроса utm_source / utm_campaign:', call1.opts.body.get('utm_source'), call1.opts.body.get('utm_campaign'));
+if (call1.opts.body.get('utm_source') !== 'ig' || call1.opts.body.get('utm_campaign') !== 'test' || call1.opts.body.has('utm')) { console.error('FAIL: utm не плоскими полями'); process.exit(1); }
 console.log('  Тело запроса referrer:', call1.opts.body.get('referrer'));
 
 // 2. Второй переход: без UTM в URL (внутренний переход на страницу /contacts/)
@@ -124,5 +125,6 @@ console.log('\nПерехвачен вызов fetch к LEAD_ENDPOINT на вт�
 console.log('  URL:', call2.endpoint);
 console.log('  Method:', call2.opts.method);
 console.log('  Тело запроса (URLSearchParams):', Object.fromEntries(call2.opts.body));
-console.log('  Тело запроса utm (взяты из sessionStorage):', call2.opts.body.get('utm'));
+console.log('  Тело запроса utm_source (взят из sessionStorage):', call2.opts.body.get('utm_source'));
+if (call2.opts.body.get('utm_source') !== 'ig') { console.error('FAIL: utm из sessionStorage потерян'); process.exit(1); }
 console.log('  Тело запроса referrer (первый заход из sessionStorage):', call2.opts.body.get('referrer'));

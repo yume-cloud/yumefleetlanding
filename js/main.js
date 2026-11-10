@@ -1415,7 +1415,7 @@
       if (fbclid) fbc = `fb.1.${Date.now()}.${fbclid}`;
     }
 
-    const payload = { name: name.value.trim(), phone: phone.value.trim(), segment: [cars?.value, city?.value.trim()].filter(Boolean).join(' · '), page: location.pathname, source: 'yumefleet.com', website: $('input[name=website]', form)?.value || '', utm: JSON.parse(sessionStorage.getItem('yf_utm') || '{}'), referrer: sessionStorage.getItem('yf_ref') || '', event_id: event_id, fbp: fbp, fbc: fbc };
+    const payload = { name: name.value.trim(), phone: phone.value.trim(), segment: [cars?.value, city?.value.trim()].filter(Boolean).join(' · '), page: location.pathname, source: 'yumefleet.com', website: $('input[name=website]', form)?.value || '', ...JSON.parse(sessionStorage.getItem('yf_utm') || '{}'), referrer: sessionStorage.getItem('yf_ref') || '', event_id: event_id, fbp: fbp, fbc: fbc };
     const label = btn.textContent; btn.disabled = true; btn.textContent = document.documentElement.lang === 'kk' ? 'Жіберілуде…' : 'Отправляем…';
     let sent = false;
     try { sessionStorage.removeItem('yf_lead_wa'); } catch (x) {}
