@@ -1394,6 +1394,7 @@
     ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term'].forEach(k => q.get(k) && (u[k] = q.get(k)));
     if (Object.keys(u).length) sessionStorage.setItem('yf_utm', JSON.stringify(u));
     if (sessionStorage.getItem('yf_ref') === null) sessionStorage.setItem('yf_ref', document.referrer);
+    if (q.get('fbclid')) sessionStorage.setItem('yf_fbclid', q.get('fbclid'));
   } catch (x) {}
 
   form?.addEventListener('submit', async e => {
@@ -1401,13 +1402,29 @@
     const btn = $('button[type=submit]', form), name = $('#name', form), phone = $('#phone', form), cars = $('#cars', form), city = $('#city', form);
     if (!name.value.trim()) { name.focus(); name.classList.add('is-invalid'); return; }
     if (phone.value.replace(/\D/g, '').length < 11) { phone.focus(); phone.classList.add('is-invalid'); return; }
-    const payload = { name: name.value.trim(), phone: phone.value.trim(), segment: [cars?.value, city?.value.trim()].filter(Boolean).join(' · '), page: location.pathname, source: 'yumefleet.com', website: $('input[name=website]', form)?.value || '', utm: JSON.parse(sessionStorage.getItem('yf_utm') || '{}'), referrer: sessionStorage.getItem('yf_ref') || '' };
+
+    const event_id = (typeof crypto !== 'undefined' && crypto.randomUUID) ? crypto.randomUUID() : ('ev_' + Date.now() + '_' + Math.random().toString(36).slice(2, 11));
+    const getCookie = k => {
+      const m = (document.cookie || '').match(new RegExp('(?:^|; )' + k + '=([^;]*)'));
+      return m ? decodeURIComponent(m[1]) : '';
+    };
+    const fbp = getCookie('_fbp');
+    let fbc = getCookie('_fbc');
+    if (!fbc) {
+      const fbclid = new URLSearchParams(location.search).get('fbclid') || (typeof sessionStorage !== 'undefined' ? sessionStorage.getItem('yf_fbclid') : '') || '';
+      if (fbclid) fbc = `fb.1.${Date.now()}.${fbclid}`;
+    }
+
+    const payload = { name: name.value.trim(), phone: phone.value.trim(), segment: [cars?.value, city?.value.trim()].filter(Boolean).join(' · '), page: location.pathname, source: 'yumefleet.com', website: $('input[name=website]', form)?.value || '', utm: JSON.parse(sessionStorage.getItem('yf_utm') || '{}'), referrer: sessionStorage.getItem('yf_ref') || '', event_id: event_id, fbp: fbp, fbc: fbc };
     const label = btn.textContent; btn.disabled = true; btn.textContent = document.documentElement.lang === 'kk' ? 'Жіберілуде…' : 'Отправляем…';
     let sent = false;
     try { sessionStorage.removeItem('yf_lead_wa'); } catch (x) {}
     if (LEAD_ENDPOINT) {
       // обычная веб-форма, а не JSON: браузер не шлёт предварительный OPTIONS, который на сервере перехватывает общий CORS
       try { const r = await fetch(LEAD_ENDPOINT, { method: 'POST', body: new URLSearchParams(payload) }); const j = await r.json().catch(() => ({})); sent = r.ok && j.ok; } catch (x) { sent = false; }
+    }
+    if (sent) {
+      if (window.fbq) fbq('track', 'Lead', {}, { eventID: event_id });
     }
     if (!sent) {
       const msg = `Здравствуйте! Хочу демо Yume Fleet.\nИмя: ${payload.name}\nТелефон: ${payload.phone}\nПарк: ${payload.segment}`;
