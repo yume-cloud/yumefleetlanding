@@ -1403,7 +1403,7 @@
     if (!name.value.trim()) { name.focus(); name.classList.add('is-invalid'); return; }
     if (phone.value.replace(/\D/g, '').length < 11) { phone.focus(); phone.classList.add('is-invalid'); return; }
 
-    const event_id = (typeof crypto !== 'undefined' && crypto.randomUUID) ? crypto.randomUUID() : ('ev_' + Date.now() + '_' + Math.random().toString(36).slice(2, 11));
+    const event_id = crypto.randomUUID();
     const getCookie = k => {
       const m = (document.cookie || '').match(new RegExp('(?:^|; )' + k + '=([^;]*)'));
       return m ? decodeURIComponent(m[1]) : '';
@@ -1411,11 +1411,11 @@
     const fbp = getCookie('_fbp');
     let fbc = getCookie('_fbc');
     if (!fbc) {
-      const fbclid = new URLSearchParams(location.search).get('fbclid') || (typeof sessionStorage !== 'undefined' ? sessionStorage.getItem('yf_fbclid') : '') || '';
+      const fbclid = sessionStorage.getItem('yf_fbclid');
       if (fbclid) fbc = `fb.1.${Date.now()}.${fbclid}`;
     }
 
-    const payload = { name: name.value.trim(), phone: phone.value.trim(), segment: [cars?.value, city?.value.trim()].filter(Boolean).join(' · '), page: location.pathname, source: 'yumefleet.com', website: $('input[name=website]', form)?.value || '', ...JSON.parse(sessionStorage.getItem('yf_utm') || '{}'), referrer: sessionStorage.getItem('yf_ref') || '', event_id: event_id, fbp: fbp, fbc: fbc };
+    const payload = { name: name.value.trim(), phone: phone.value.trim(), segment: [cars?.value, city?.value.trim()].filter(Boolean).join(' · '), page: location.pathname, source: 'yumefleet.com', website: $('input[name=website]', form)?.value || '', ...JSON.parse(sessionStorage.getItem('yf_utm') || '{}'), referrer: sessionStorage.getItem('yf_ref') || '', event_id, fbp, fbc };
     const label = btn.textContent; btn.disabled = true; btn.textContent = document.documentElement.lang === 'kk' ? 'Жіберілуде…' : 'Отправляем…';
     let sent = false;
     try { sessionStorage.removeItem('yf_lead_wa'); } catch (x) {}

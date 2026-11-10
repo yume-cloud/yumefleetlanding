@@ -66,6 +66,7 @@ function createEnv(url, referrer, storage = {}) {
       assign: () => {}
     },
     sessionStorage: sessionStorageMock,
+    crypto,
     localStorage: localStorageMock,
     matchMedia: () => ({ matches: false }),
     addEventListener: () => {},
